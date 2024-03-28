@@ -87,7 +87,7 @@ body {
 }
 .btn-second {
     background-color: #04690d;
-    border: 1px solid #04690d;
+    border: 1px solid #95b398;
     transition: background-color .5s;
 }
 .btn-second:hover {
@@ -141,6 +141,3 @@ input:-webkit-autofill {
     margin: 8px;
 }
 
-
-
-/* second content*/

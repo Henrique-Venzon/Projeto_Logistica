@@ -16,7 +16,7 @@
             <div class="second-column">
                 <h2 class="title title-second">Conta</h2>
                 <p class="description description-second">Use sua conta para entrar:</p>
-                <form class="form">
+                <form class="form" action="">
                     <label class="label-input" for="">
                         <input type="text" placeholder="Usuario">
                     </label>
@@ -31,4 +31,3 @@
         
     </body>
 </html>
-<!-- TESTE-content -->
