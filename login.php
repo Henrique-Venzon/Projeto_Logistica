@@ -30,16 +30,7 @@
                     <label class="label-input" for="">
                         <input type="password" placeholder="Senha">
                     </label>
-
-                    <label class="opcaoRadio" for="">
-                    <input  type="radio" name="opcao" value="CLIENTE">
-                        <h3>Cliente</h3>
-                    <input  type="radio" name="opcao" value="FORNECEDOR">
-                        <h3>Fornecedor</h3>
-                    </label>
-                    
-                    <button class="btn btn-second"><h3 class="ajeitarcadastro">Cadastrar</h3></button>        
-                </form>
+                    </form>
             </div>
         
     </body>
