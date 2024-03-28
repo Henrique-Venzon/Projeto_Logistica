@@ -14,8 +14,8 @@
                 <h2 class="title title-primary">Seja<br>Bem-Vindo!</h2>
             </div>    
             <div class="second-column">
-                <h2 class="title title-second">Crie sua conta</h2>
-                <p class="description description-second">Use seu email para o registro:</p>
+                <h2 class="title title-second">Conta</h2>
+                <p class="description description-second">Use sua conta para entrar:</p>
                 <form class="form">
                     <label class="label-input" for="">
                         <input type="text" placeholder="Usuario">
