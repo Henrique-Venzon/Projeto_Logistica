@@ -23,8 +23,7 @@
 
         $sql = "SELECT `idUsuario`, `nomeUsuario` FROM `usuario`
 					WHERE `nomeUsuario` = '" . $nomeUsuario . "'
-					AND `senha` = '" . $senha . "'
-					AND ativo = 's';";
+					AND `senha` = '" . $senha .";";
 
         $resultado = $conexao->query($sql);
 
