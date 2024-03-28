@@ -169,49 +169,6 @@ input:-webkit-autofill {
     align-items: center;
     margin: 8px;
 }
-.opcaoRadio {
-    background-color: #ecf0f1;
-    display: flex;
-    align-items: center;
-    margin: 8px;
-
-    height: 45px;
-    width: 100%;
-    border: none;
-    background-color: #ecf0f1;
-    text-align: center; 
-}
-.opcaoRadio input{
-    height: 25px;
-    width: 25px;
-    margin: 4%;
-    margin-left: 17%;
-}
-
-
-/* second content*/
-
-.second-content {
-    position: absolute;
-    display: flex;
-}
-.second-content .first-column {
-    order: 2;
-    z-index: -1;
-}
-.second-content .second-column {
-    order: 1;
-    z-index: -1;
-}
-.password {
-    color: #34495e;
-    font-size: 14px;
-    margin: 15px 0;
-    text-align: center;
-}
-.password::first-letter {
-    text-transform: capitalize;
-}
 
 
 
