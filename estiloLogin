@@ -128,11 +128,7 @@ body {
 .link-social-media:hover .item-social-media{
     background-color: #04690d;
     color: #fff;
-<<<<<<< Updated upstream
     border-color: #04690d;
-=======
-    border-color: #52628e;
->>>>>>> Stashed changes
 }
 .list-social-media {
     display: flex;
@@ -172,6 +168,32 @@ input:-webkit-autofill {
     display: flex;
     align-items: center;
     margin: 8px;
+}
+
+
+
+/* second content*/
+
+.second-content {
+    position: absolute;
+    display: flex;
+}
+.second-content .first-column {
+    order: 2;
+    z-index: -1;
+}
+.second-content .second-column {
+    order: 1;
+    z-index: -1;
+}
+.password {
+    color: #34495e;
+    font-size: 14px;
+    margin: 15px 0;
+    text-align: center;
+}
+.password::first-letter {
+    text-transform: capitalize;
 }
 
 
@@ -423,12 +445,10 @@ input:-webkit-autofill {
     .form {
         width: 50%;
     }
-  
 }
 
 @media screen and (max-width: 425px) {
     .form {
         width: 100%;
     }
-    
 }
