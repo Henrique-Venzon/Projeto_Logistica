@@ -30,7 +30,9 @@
                     <label class="label-input" for="">
                         <input type="password" placeholder="Senha">
                     </label>
-                    </form>
+                    
+                    <button class="btn btn-second"><h3 class="ajeitarcadastro">Cadastrar</h3></button>        
+                </form>
             </div>
         
     </body>
