@@ -128,11 +128,7 @@ body {
 .link-social-media:hover .item-social-media{
     background-color: #04690d;
     color: #fff;
-<<<<<<< Updated upstream
     border-color: #04690d;
-=======
-    border-color: #52628e;
->>>>>>> Stashed changes
 }
 .list-social-media {
     display: flex;
@@ -464,14 +460,12 @@ input:-webkit-autofill {
 
 @media screen and (max-width: 740px) {
     .form {
-        width: 50%;
+        width: 100%;
     }
-  
 }
 
 @media screen and (max-width: 425px) {
     .form {
         width: 100%;
     }
-    
 }
