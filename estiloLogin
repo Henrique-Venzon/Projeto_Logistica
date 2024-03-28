@@ -53,11 +53,7 @@ body {
     font-weight: 300;
     line-height: 30px;
 }
-.description-primary {
-    color: #fff;
-    margin-bottom: 3%;
-    font-size: 30px;
-}
+
 .description-second {
     color: #7f8c8d;
     font-size: 30px;
@@ -119,30 +115,7 @@ body {
 .social-media {
     margin: 1rem 0;
 }
-.link-social-media:not(:first-child){
-    margin-left: 10px;
-}
-.link-social-media .item-social-media {
-    transition: background-color .5s;
-}
-.link-social-media:hover .item-social-media{
-    background-color: #04690d;
-    color: #fff;
-    border-color: #04690d;
-}
-.list-social-media {
-    display: flex;
-    list-style-type: none;
-}
-.item-social-media {
-    border: 1px solid #bdc3c7;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-    color: #95a5a6;
-}
+
 .form {
     display: flex;
     flex-direction: column;
