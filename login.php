@@ -40,34 +40,7 @@
                     
                     <button class="btn btn-second"><h3 class="ajeitarcadastro">Cadastrar</h3></button>        
                 </form>
-            </div><!-- second column -->
-        </div><!-- first content -->
-        <div class="content second-content">
-            <div class="first-column">
-                <h2 class="title title-primary">Seja<br>bem-vindo!</h2>
-                <p class="description description-primary">Não tem uma conta?</p>
-                <button id="signup" class="btn btn-primary"><h3>Crie sua conta</h3></button>
             </div>
-            <div class="second-column">
-                <h2 class="title title-second">entre na sua conta</h2>
-                <p class="description description-second">Use sua conta do email:</p>
-                <form class="form">
-                
-                    <label class="label-input" for="">
-                        <input type="email" placeholder="Email">
-                    </label>
-                
-                    <label class="label-input" for="">
-                        <input type="password" placeholder="Senha">
-                    </label>
-                
-                    <a class="password" href="#">Esqueceu sua senha?</a>
-                    <button class="btn btn-second"><h3>Entrar</h3></button>
-                </form>
-            </div><!-- second column -->
-        </div><!-- second-content -->
-    </div>
-    <script src="login.js"></script>
         
     </body>
 </html>
