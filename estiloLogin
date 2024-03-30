@@ -40,7 +40,7 @@ body {
 }
 .title-primary {
     color: #fff;
-    font-size: 80px;
+    font-size: 5em;
     margin-bottom: 3%;
 }
 .title-second {
