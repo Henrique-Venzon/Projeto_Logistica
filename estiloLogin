@@ -7,32 +7,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
 }
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #ecf0f1;
-}
-.content {
-    background-color: #fff;
-    border-radius: 15px;
-    width: 80%;
-    height: 80%;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-.content::before {
-    content: "";
-    position: absolute;
-    background-color: #04690d;
-    width: 40%;
-    height: 100%;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    left: 0;
-}
+
 .title {
     font-size: 28px;
     font-weight: bold;
