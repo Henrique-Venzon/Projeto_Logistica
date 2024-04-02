@@ -18,23 +18,41 @@
             <img src="" alt="">
             </div>
         </header>
+
         <ul class="Ulprincipal">
                 <li><input type="checkbox" id="chec">
-                <label for="chec">
-                    <img class="imgLabel" src="img/caminhao.png" alt="">
-                    <img class="imgLabel" src="img/caminhao.png" >
-                    <img class="imgLabel" src="img/caminhao.png" alt="">
-                    <img class="imgLabel" src="img/caminhao.png" >
+                <label  for="chec">
+                    <div class="label1">
+                    <div class="img-T"><img src="img/caminhao.png" style="cursor: pointer;" class="imgbotao"></div>
+                    <div class="img-T"><img src="img/caminhao.png" style="cursor: pointer;" class="imgbotao"></div>
+                    <div class="img-T"><img src="img/caminhao.png" style="cursor: pointer;" class="imgbotao"></div>
+                    <div class="img-T"><img src="img/caminhao.png" style="cursor: pointer;" class="imgbotao"></div>
+                    </div>
                 </label>
                 <nav>
                     <ul class="Ulvertical">
-                        <h1></h1>
-                        <h1></h1>
-                        <h1></h1>
-                        <h1></h1>
+                        <div class="text">
+                        <h1 >Docas </h1>
+                        </div>
+                        <div class="text">
+                        <h1 >Piking</h1>
+                        </div>
+                        <div class="text">
+                        <h1 >Pedidos</h1>
+                        </div>
+                        <div class="text">
+                        <h1 >Configuração</h1>
+                        </div>
+                    </ul>
                 </nav>
             </li>
             </ul>
+
+            <div class="inicioConteudo">
+                <div class="imgCont">
+                    img
+                </div>
+            </div>
         
         <script src="" async defer></script>
     </body>
