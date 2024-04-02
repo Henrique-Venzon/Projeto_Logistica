@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 02/04/2024 às 11:18
+-- Tempo de geração: 02/04/2024 às 11:29
 -- Versão do servidor: 8.0.36
 -- Versão do PHP: 8.2.13
 
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
-
+--
 -- Banco de dados: `logistica`
 --
-CREATE DATABASE IF NOT EXISTS `logistica` DEFAULT CHARACTER SET utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE DATABASE IF NOT EXISTS `logistica` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 USE `logistica`;
 
 -- --------------------------------------------------------
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `armazem` (
 --
 
 INSERT INTO `armazem` (`id`, `quantidade_atual`, `limite_maximo`) VALUES
-(1, 20, 20);
+(1, 5, 10);
 
 -- --------------------------------------------------------
 

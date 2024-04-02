@@ -7,8 +7,8 @@
     session_start();
 
     $hostname = "127.0.0.1";
-    $user = "root.Att";
-    $password = "root";
+    $user = "";
+    $password = "";
     $database = "logistica";
 
     $conexao = new mysqli($hostname, $user, $password, $database);
