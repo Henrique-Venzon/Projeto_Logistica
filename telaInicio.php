@@ -20,7 +20,7 @@
         </header>
 
         <aside>
-            <input type="checlbox" id="chec">
+            <input type="checkbox" id="chec">
             <div class="coisas">
                 <label for="chec">
                 <img src="" alt="">
