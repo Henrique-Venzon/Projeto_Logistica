@@ -45,15 +45,18 @@ input[type=checkbox]:checked~.aparecer {
     display: flex;
 }
 nav {
-    border-radius: 0.3em;
     width: 20em;
     height: 90dvh;
     position: absolute;
-    margin-top: 18px;
-    background-color: rgba(82, 82, 82, 0.637);
+    margin-top: 0px;
+    background-color: #04690d;
     left: 0px;
     transition: all 1.0s;
+    cursor: pointer;
 }
 .aparecer{
     display: none;
+}
+.coisas{
+    margin-top: 15px;
 }
