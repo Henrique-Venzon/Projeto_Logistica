@@ -1,56 +1,72 @@
--- MySQL dump 10.13  Distrib 8.2.0, for Win64 (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1    Database: logistica
--- ------------------------------------------------------
--- Server version	8.0.36
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 02/04/2024 às 10:37
+-- Versão do servidor: 8.0.36
+-- Versão do PHP: 8.2.13
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `itens_notas_fiscais`
+-- Banco de dados: `logistica`
+--
+CREATE DATABASE IF NOT EXISTS `logistica` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `logistica`;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `armazem`
+--
+
+DROP TABLE IF EXISTS `armazem`;
+CREATE TABLE IF NOT EXISTS `armazem` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `quantidade_atual` int NOT NULL,
+  `limite_maximo` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Despejando dados para a tabela `armazem`
+--
+
+INSERT INTO `armazem` (`id`, `quantidade_atual`, `limite_maximo`) VALUES(1, 20, 20);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `itens_notas_fiscais`
 --
 
 DROP TABLE IF EXISTS `itens_notas_fiscais`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `itens_notas_fiscais` (
+CREATE TABLE IF NOT EXISTS `itens_notas_fiscais` (
   `NUMERO` int NOT NULL,
   `CODIGO_DO_PRODUTO` varchar(10) NOT NULL,
   `QUANTIDADE` int NOT NULL,
   `PRECO` float NOT NULL,
   PRIMARY KEY (`NUMERO`,`CODIGO_DO_PRODUTO`),
-  KEY `CODIGO_DO_PRODUTO` (`CODIGO_DO_PRODUTO`),
-  CONSTRAINT `itens_notas_fiscais_ibfk_1` FOREIGN KEY (`CODIGO_DO_PRODUTO`) REFERENCES `tabela_de_produtos` (`CODIGO_DO_PRODUTO`),
-  CONSTRAINT `itens_notas_fiscais_ibfk_2` FOREIGN KEY (`NUMERO`) REFERENCES `notas_fiscais` (`NUMERO`)
+  KEY `CODIGO_DO_PRODUTO` (`CODIGO_DO_PRODUTO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `itens_notas_fiscais`
---
-
-LOCK TABLES `itens_notas_fiscais` WRITE;
-/*!40000 ALTER TABLE `itens_notas_fiscais` DISABLE KEYS */;
-/*!40000 ALTER TABLE `itens_notas_fiscais` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `notas_fiscais`
+-- Estrutura para tabela `notas_fiscais`
 --
 
 DROP TABLE IF EXISTS `notas_fiscais`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `notas_fiscais` (
+CREATE TABLE IF NOT EXISTS `notas_fiscais` (
   `CPF` varchar(11) NOT NULL,
   `MATRICULA` varchar(5) NOT NULL,
   `DATA_VENDA` date DEFAULT NULL,
@@ -58,29 +74,17 @@ CREATE TABLE `notas_fiscais` (
   `IMPOSTO` float NOT NULL,
   PRIMARY KEY (`NUMERO`),
   KEY `MATRICULA` (`MATRICULA`),
-  KEY `CPF` (`CPF`),
-  CONSTRAINT `notas_fiscais_ibfk_1` FOREIGN KEY (`MATRICULA`) REFERENCES `tabela_de_vendedores` (`MATRICULA`),
-  CONSTRAINT `notas_fiscais_ibfk_2` FOREIGN KEY (`CPF`) REFERENCES `tabela_de_clientes` (`CPF`)
+  KEY `CPF` (`CPF`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `notas_fiscais`
---
-
-LOCK TABLES `notas_fiscais` WRITE;
-/*!40000 ALTER TABLE `notas_fiscais` DISABLE KEYS */;
-/*!40000 ALTER TABLE `notas_fiscais` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tabela_de_clientes`
+-- Estrutura para tabela `tabela_de_clientes`
 --
 
 DROP TABLE IF EXISTS `tabela_de_clientes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tabela_de_clientes` (
+CREATE TABLE IF NOT EXISTS `tabela_de_clientes` (
   `CPF` varchar(11) NOT NULL,
   `NOME` varchar(100) DEFAULT NULL,
   `ENDERECO_1` varchar(150) DEFAULT NULL,
@@ -97,25 +101,15 @@ CREATE TABLE `tabela_de_clientes` (
   `PRIMEIRA_COMPRA` bit(1) DEFAULT NULL,
   PRIMARY KEY (`CPF`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `tabela_de_clientes`
---
-
-LOCK TABLES `tabela_de_clientes` WRITE;
-/*!40000 ALTER TABLE `tabela_de_clientes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tabela_de_clientes` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tabela_de_produtos`
+-- Estrutura para tabela `tabela_de_produtos`
 --
 
 DROP TABLE IF EXISTS `tabela_de_produtos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tabela_de_produtos` (
+CREATE TABLE IF NOT EXISTS `tabela_de_produtos` (
   `CODIGO_DO_PRODUTO` varchar(10) NOT NULL,
   `NOME_DO_PRODUTO` varchar(50) DEFAULT NULL,
   `EMBALAGEM` varchar(20) DEFAULT NULL,
@@ -124,25 +118,15 @@ CREATE TABLE `tabela_de_produtos` (
   `PRECO_DE_LISTA` float NOT NULL,
   PRIMARY KEY (`CODIGO_DO_PRODUTO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `tabela_de_produtos`
---
-
-LOCK TABLES `tabela_de_produtos` WRITE;
-/*!40000 ALTER TABLE `tabela_de_produtos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tabela_de_produtos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tabela_de_vendedores`
+-- Estrutura para tabela `tabela_de_vendedores`
 --
 
 DROP TABLE IF EXISTS `tabela_de_vendedores`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tabela_de_vendedores` (
+CREATE TABLE IF NOT EXISTS `tabela_de_vendedores` (
   `MATRICULA` varchar(5) NOT NULL,
   `NOME` varchar(100) DEFAULT NULL,
   `PERCENTUAL_COMISSAO` float DEFAULT NULL,
@@ -151,24 +135,26 @@ CREATE TABLE `tabela_de_vendedores` (
   `BAIRRO` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`MATRICULA`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tabela_de_vendedores`
+-- Restrições para tabelas despejadas
 --
 
-LOCK TABLES `tabela_de_vendedores` WRITE;
-/*!40000 ALTER TABLE `tabela_de_vendedores` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tabela_de_vendedores` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+--
+-- Restrições para tabelas `itens_notas_fiscais`
+--
+ALTER TABLE `itens_notas_fiscais`
+  ADD CONSTRAINT `itens_notas_fiscais_ibfk_1` FOREIGN KEY (`CODIGO_DO_PRODUTO`) REFERENCES `tabela_de_produtos` (`CODIGO_DO_PRODUTO`),
+  ADD CONSTRAINT `itens_notas_fiscais_ibfk_2` FOREIGN KEY (`NUMERO`) REFERENCES `notas_fiscais` (`NUMERO`);
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Restrições para tabelas `notas_fiscais`
+--
+ALTER TABLE `notas_fiscais`
+  ADD CONSTRAINT `notas_fiscais_ibfk_1` FOREIGN KEY (`MATRICULA`) REFERENCES `tabela_de_vendedores` (`MATRICULA`),
+  ADD CONSTRAINT `notas_fiscais_ibfk_2` FOREIGN KEY (`CPF`) REFERENCES `tabela_de_clientes` (`CPF`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2024-03-28 12:04:33
