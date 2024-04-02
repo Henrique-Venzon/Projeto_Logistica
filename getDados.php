@@ -12,7 +12,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT quantidade_atual, limite_maximo FROM armazem_limite WHERE id=1";
+$sql = "SELECT quantidade_atual, limite_maximo FROM armazem_limite WHERE id=" . $_SESSION[id] . "";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
