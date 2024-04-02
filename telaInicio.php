@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="coisas">
-                <img src="img/caminhao.png" alt="">
+                <img class="imagemEsquerda" src="img/caminhao.png" alt="">
                 <div class="aparecer">
                 <h1>Configuração</h1>
             </div>
