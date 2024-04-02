@@ -50,7 +50,7 @@ nav {
     position: absolute;
     background-color: #04690d;
     left: -350px;
-    top: 60px;
+    margin-top: 60px;
 }
 .imgLabel{
     height: 60px;
