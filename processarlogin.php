@@ -32,13 +32,6 @@ if ($conexao->connect_errno) {
             // Verificar se já existe um registro para esse usuário na tabela armazem
             $sql = "SELECT `id` FROM `armazem_limite` WHERE `login_id` = " . $_SESSION['id'] . ";";
             $resultado = $conexao->query($sql);
-
-            if ($resultado->num_rows == 0) {
-                // Se não existir, inserir um novo registro com o limite máximo padrão de 300
-                $sql = "INSERT INTO `armazem_limite` (`login_id`, `quantidade_atual`, `limite_maximo`) VALUES (" . $_SESSION['id'] . ", 0, 300);";
-                $conexao->query($sql);
-            }
-
             $conexao->close();
 
             header('Location: telaInicio.php', true, 301);
@@ -50,4 +43,3 @@ if ($conexao->connect_errno) {
         }
     }
 }
-?>
