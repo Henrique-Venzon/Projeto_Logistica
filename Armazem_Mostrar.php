@@ -16,10 +16,8 @@ $sql = "SELECT * FROM armazem";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["id"]. " - Quantidade Atual: " . $row["quantidade_atual"]. " - Limite Máximo: " . $row["limite_maximo"]. "<br>";
-  }
+  // output data of each row mostrar cada produto.
+
 } else {
   echo "0 results";
 }
