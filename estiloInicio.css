@@ -18,10 +18,12 @@ header img{
 header h1{
     font-size: 30px;
     display: flex;
+    margin-left: 30%;
 }
 .imagemDec{
     margin-left: 30px;
 }
 .imgperfil{
     margin-right: 30px;
+    margin-left: 30%;
 }
