@@ -4,11 +4,14 @@ header{
     display: flex;
     align-items: center;
     padding: 10px 0;
+    justify-content: space-between;
 }
 header img{
     height: 15px;
     width: 15px;
+    display: flex;
 }
 header h1{
     font-size: 13px;
+    display: flex;
 }
