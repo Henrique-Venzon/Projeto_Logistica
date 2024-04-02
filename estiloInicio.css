@@ -38,11 +38,11 @@ header h1{
     margin-left: 10px;
     margin-right: 5px;
 }
-.input[type=checkbox] {
+input[type=checkbox] {
     display: none;
 }
-input[type=checkbox]:checked~nav {
-    transform: translate(350px);
+input[type=checkbox]:checked~.aparecer {
+    display: flex;
 }
 nav {
     border-radius: 0.3em;
