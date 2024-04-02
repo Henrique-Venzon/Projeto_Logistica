@@ -15,12 +15,12 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES latin1 */;
 
 --
 -- Banco de dados: `logistica`
 --
-CREATE DATABASE IF NOT EXISTS `logistica` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+CREATE DATABASE IF NOT EXISTS `logistica` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `logistica`;
 
 -- --------------------------------------------------------
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `armazem` (
   `quantidade_atual` int NOT NULL,
   `limite_maximo` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Despejando dados para a tabela `armazem`
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `itens_notas_fiscais` (
   `PRECO` float NOT NULL,
   PRIMARY KEY (`NUMERO`,`CODIGO_DO_PRODUTO`),
   KEY `CODIGO_DO_PRODUTO` (`CODIGO_DO_PRODUTO`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `logins` (
   `password` varchar(255) NOT NULL,
   `tipo_login` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `notas_fiscais` (
   PRIMARY KEY (`NUMERO`),
   KEY `MATRICULA` (`MATRICULA`),
   KEY `CPF` (`CPF`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `tabela_de_clientes` (
   `VOLUME_DE_COMPRA` float DEFAULT NULL,
   `PRIMEIRA_COMPRA` bit(1) DEFAULT NULL,
   PRIMARY KEY (`CPF`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -133,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `tabela_de_produtos` (
   `SABOR` varchar(20) DEFAULT NULL,
   `PRECO_DE_LISTA` float NOT NULL,
   PRIMARY KEY (`CODIGO_DO_PRODUTO`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `tabela_de_vendedores` (
   `DE_FERIAS` bit(1) DEFAULT NULL,
   `BAIRRO` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`MATRICULA`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Restrições para tabelas despejadas
