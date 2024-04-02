@@ -5,7 +5,7 @@
 <head>
 
     <title>ENTRAR e REGISTRAR</title>
-    <link rel="stylesheet" href="estiloLogin">
+    <link rel="stylesheet" href="estiloLogin.css">
 
 </head>
 

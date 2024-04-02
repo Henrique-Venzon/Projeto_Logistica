@@ -52,17 +52,17 @@ session_start();
         </li>
     </ul>
 
-    <div class="inicioConteudo">
-        <div class="imgCont">
-            <img src="" alt="">
-        </div>
-        <div class="textCon">
+            <div class="inicioConteudo">
+                <div class="imgCont">
+                    <img src="" alt="">
+                </div>
+                <div class="textCon">
 
-        </div>
-
-    </div>
-
-    <script src="" async defer></script>
-</body>
-
+                </div>
+                
+            </div>
+            <a href="limite_armazem.php">LIMITE</a>
+        
+        <script src="" async defer></script>
+    </body>
 </html>
