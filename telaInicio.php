@@ -4,7 +4,7 @@
 
         <title>Inicio</title>
 
-        <link rel="stylesheet" href="estiloInicio">
+        <link rel="stylesheet" href="estiloInicio.css">
     </head>
     <body>
         <header>
