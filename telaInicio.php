@@ -24,7 +24,7 @@
             <li><input type="checkbox" id="chec">
             <label for="chec">
             <div class="coisas">
-                <img src="" alt=""> 
+                <img src="img" alt=""> 
                 <div class="aparecer">
                 <h1>Docas</h1>
                 </div>
