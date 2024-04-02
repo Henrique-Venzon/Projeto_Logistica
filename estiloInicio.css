@@ -10,14 +10,13 @@ header{
     align-items: center;
     padding: 10px 0;
     justify-content: space-between;
-    height:60px;
 }
 header img{
-    height: 15px;
-    width: 15px;
+    height: 25px;
+    width: 25px;
     display: flex;
 }
 header h1{
-    font-size: 13px;
+    font-size: 30px;
     display: flex;
 }
