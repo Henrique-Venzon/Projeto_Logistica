@@ -33,7 +33,7 @@
             $_SESSION['nomeUsuario'] = $row[1];
             $conexao->close();
 
-            header('Location: site.php', true, 301);
+            header('Location: telaIncio.php', true, 301);
             exit();
         } else {
 

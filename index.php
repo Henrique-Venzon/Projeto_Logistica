@@ -20,7 +20,6 @@
                     <label class="label-input" for="">
                         <input type="text" name = "" placeholder="Usuario">
                     </label>
-         
                     <label class="label-input"  for="">
                         <input type="password" name = "" placeholder="Senha">
                     </label>
