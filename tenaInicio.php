@@ -10,7 +10,7 @@
         <header>
             <img src="" alt="">
             <h1>Armazém</h1>
-            
+            <img src="" alt="">
         </header>
         
         <script src="" async defer></script>
