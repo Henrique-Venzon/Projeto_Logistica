@@ -9,7 +9,6 @@ header{
     display: flex;
     align-items: center;
     padding: 10px 0;
-    justify-content: space-between;
 }
 header img{
     height: 25px;
