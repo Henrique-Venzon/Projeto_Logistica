@@ -24,25 +24,25 @@
             <li><input type="checkbox" id="chec">
             <label for="chec">
             <div class="coisas">
-                <img src="img" alt=""> 
+                <img src="img/caminhao.png" alt=""> 
                 <div class="aparecer">
                 <h1>Docas</h1>
                 </div>
             </div>
             <div class="coisas">
-                <img src="" alt="">
+                <img src="img/caminhao.png" alt="">
                 <div class="aparecer">
                 <h1>Pikin</h1>
                 </div>
             </div>
             <div class="coisas"> 
-                <img src="" alt="">
+                <img src="img/caminhao.png" alt="">
                 <div class="aparecer">
                 <h1>Pedidos</h1>
                 </div>
             </div>
             <div class="coisas">
-                <img src="" alt="">
+                <img src="img/caminhao.png" alt="">
                 <div class="aparecer">
                 <h1>Configuração</h1>
             </div>

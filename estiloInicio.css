@@ -60,3 +60,7 @@ nav {
 .coisas{
     margin-top: 15px;
 }
+.coisas img{
+    height: 20px;
+    width: 20px;
+}
