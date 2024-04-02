@@ -2,9 +2,9 @@
 
     <head>
 
-        <title></title>
+        <title>Inicio</title>
 
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="estiloInicio">
     </head>
     <body>
         <header>

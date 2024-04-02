@@ -5,3 +5,10 @@ header{
     align-items: center;
     padding: 10px 0;
 }
+header img{
+    height: 15px;
+    width: 15px;
+}
+header h1{
+    font-size: 13px;
+}
