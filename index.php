@@ -16,7 +16,7 @@
             <div class="second-column">
                 <h2 class="title title-second">Conta</h2>
                 <p class="description description-second">Use sua conta para entrar:</p>
-                <form class="form" action="">
+                <form class="form" action="telaInicio.php">
                     <label class="label-input" for="">
                         <input type="text" name = "" placeholder="Usuario">
                     </label>
