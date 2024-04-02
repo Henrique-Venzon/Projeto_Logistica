@@ -18,11 +18,11 @@
                 <p class="description description-second">Use sua conta para entrar:</p>
                 <form class="form" action="">
                     <label class="label-input" for="">
-                        <input type="text" placeholder="Usuario">
+                        <input type="text" name = "" placeholder="Usuario">
                     </label>
          
-                    <label class="label-input" for="">
-                        <input type="password" placeholder="Senha">
+                    <label class="label-input"  for="">
+                        <input type="password" name = "" placeholder="Senha">
                     </label>
                     
                     <button class="btn btn-second"><h3 class="ajeitarcadastro">Entrar</h3></button>        
