@@ -26,3 +26,34 @@ header h1{
 .imgperfil{
     margin-left: 88%;
 }
+.ulPrincipal{
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.input[type=checkbox] {
+    display: none;
+}
+input[type=checkbox]:checked~nav {
+    transform: translate(350px);
+}
+nav {
+    border-radius: 0.3em;
+    width: 20em;
+    height: 90dvh;
+    position: absolute;
+    margin-top: 18px;
+    background-color: rgba(82, 82, 82, 0.637);
+    left: 0px;
+    transition: all 1.0s;
+}
+.aparecer{
+    display: none;
+}
