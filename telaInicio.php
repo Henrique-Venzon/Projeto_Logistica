@@ -50,9 +50,14 @@
 
             <div class="inicioConteudo">
                 <div class="imgCont">
-                    img
+                    <img src="" alt="">
                 </div>
+                <div class="textCon">
+
+                </div>
+                
             </div>
+            <a href="limite_armazem.php">LIMITE</a>
         
         <script src="" async defer></script>
     </body>
