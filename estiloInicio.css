@@ -41,26 +41,26 @@ header h1{
 input[type=checkbox] {
     display: none;
 }
-input[type=checkbox]:checked~.aparecer {
-    display: flex;
+input[type=checkbox]:checked~nav {
+    transform: translate(350px);
 }
 nav {
     width: 20em;
     height: 90dvh;
     position: absolute;
-    margin-top: 0px;
     background-color: #04690d;
-    left: 0px;
-    transition: all 1.0s;
+    left: -350px;
+    top: 60px;
+}
+.imgLabel{
+    height: 60px;
+    width: 60px;
     cursor: pointer;
+    display: flex;
+    z-index: 1000;
 }
-.aparecer{
-    display: none;
-}
-.coisas{
-    margin-top: 15px;
-}
-.imagemEsquerda{
-    height: 20px;
-    width: 20px;
+label{
+    height: 90vh;
+    display: flex;
+    height: 90px;
 }

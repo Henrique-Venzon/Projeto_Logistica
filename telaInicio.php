@@ -18,39 +18,23 @@
             <img src="" alt="">
             </div>
         </header>
-
-        <nav>
-            <ul class="ulPrincipal">
-            <li><input type="checkbox" id="chec">
-            <label for="chec">
-            <div class="coisas">
-                <img src="img/caminhao.png" alt=""> 
-                <div class="aparecer">
-                <h1>Docas</h1>
-                </div>
-            </div>
-            <div class="coisas">
-                <img src="img/caminhao.png" alt="">
-                <div class="aparecer">
-                <h1>Pikin</h1>
-                </div>
-            </div>
-            <div class="coisas"> 
-                <img src="img/caminhao.png" alt="">
-                <div class="aparecer">
-                <h1>Pedidos</h1>
-                </div>
-            </div>
-            <div class="coisas">
-                <img class="imagemEsquerda" src="img/caminhao.png" alt="">
-                <div class="aparecer">
-                <h1>Configuração</h1>
-            </div>
-            </div>
-            </label>
+        <ul class="Ulprincipal">
+                <li><input type="checkbox" id="chec">
+                <label for="chec">
+                    <img class="imgLabel" src="img/caminhao.png" alt="">
+                    <img class="imgLabel" src="img/caminhao.png" >
+                    <img class="imgLabel" src="img/caminhao.png" alt="">
+                    <img class="imgLabel" src="img/caminhao.png" >
+                </label>
+                <nav>
+                    <ul class="Ulvertical">
+                        <h1></h1>
+                        <h1></h1>
+                        <h1></h1>
+                        <h1></h1>
+                </nav>
             </li>
             </ul>
-    </nav>
         
         <script src="" async defer></script>
     </body>
