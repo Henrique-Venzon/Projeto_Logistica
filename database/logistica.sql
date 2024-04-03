@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 02/04/2024 às 12:08
+-- Tempo de geração: 03/04/2024 às 10:58
 -- Versão do servidor: 8.0.36
 -- Versão do PHP: 8.2.13
 
@@ -26,23 +26,16 @@ USE `logistica`;
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `armazem`
+-- Estrutura para tabela `armazem_limite`
 --
 
-DROP TABLE IF EXISTS `armazem`;
-CREATE TABLE IF NOT EXISTS `armazem` (
+DROP TABLE IF EXISTS `armazem_limite`;
+CREATE TABLE IF NOT EXISTS `armazem_limite` (
   `id` int NOT NULL AUTO_INCREMENT,
   `quantidade_atual` int NOT NULL,
   `limite_maximo` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `armazem`
---
-
-INSERT INTO `armazem` (`id`, `quantidade_atual`, `limite_maximo`) VALUES
-(1, 5, 10);
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -69,18 +62,19 @@ CREATE TABLE IF NOT EXISTS `itens_notas_fiscais` (
 DROP TABLE IF EXISTS `logins`;
 CREATE TABLE IF NOT EXISTS `logins` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
+  `username` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `password` varchar(255) NOT NULL,
   `tipo_login` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `logins`
 --
 
 INSERT INTO `logins` (`id`, `username`, `password`, `tipo_login`) VALUES
-(1, 'root.Att', 'root', 'professor');
+(1, 'root.Att', 'root', 'professor'),
+(12, 'teste', 'teste', 'professor');
 
 -- --------------------------------------------------------
 
@@ -111,7 +105,6 @@ CREATE TABLE IF NOT EXISTS `tabela_de_clientes` (
   `CPF` varchar(11) NOT NULL,
   `NOME` varchar(100) DEFAULT NULL,
   `ENDERECO_1` varchar(150) DEFAULT NULL,
-  `ENDERECO_2` varchar(150) DEFAULT NULL,
   `BAIRRO` varchar(50) DEFAULT NULL,
   `CIDADE` varchar(50) DEFAULT NULL,
   `ESTADO` varchar(2) DEFAULT NULL,
@@ -119,9 +112,6 @@ CREATE TABLE IF NOT EXISTS `tabela_de_clientes` (
   `DATA_DE_NASCIMENTO` date DEFAULT NULL,
   `IDADE` smallint DEFAULT NULL,
   `SEXO` varchar(1) DEFAULT NULL,
-  `LIMITE_DE_CREDITO` float DEFAULT NULL,
-  `VOLUME_DE_COMPRA` float DEFAULT NULL,
-  `PRIMEIRA_COMPRA` bit(1) DEFAULT NULL,
   PRIMARY KEY (`CPF`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -137,7 +127,6 @@ CREATE TABLE IF NOT EXISTS `tabela_de_produtos` (
   `NOME_DO_PRODUTO` varchar(50) DEFAULT NULL,
   `EMBALAGEM` varchar(20) DEFAULT NULL,
   `TAMANHO` varchar(10) DEFAULT NULL,
-  `SABOR` varchar(20) DEFAULT NULL,
   `PRECO_DE_LISTA` float NOT NULL,
   PRIMARY KEY (`CODIGO_DO_PRODUTO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
