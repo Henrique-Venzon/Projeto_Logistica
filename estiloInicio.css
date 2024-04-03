@@ -38,7 +38,7 @@ header h1{
     justify-content: space-between;
     align-content: center;
     margin-right: 5px;
-    background-color: #999999;
+    background-color: #0a37ff;
     width: 80px;
 }
 
@@ -54,7 +54,7 @@ nav {
     height: 909px;
     position: relative;
     margin-top: -560px;
-    background-color: #e7e7e7 ;
+    background-color: #2998ff ;
     left: -350px;
     transition: all 1.0s;
     display: flex;
