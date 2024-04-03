@@ -23,6 +23,7 @@ session_start();
         </div>
     </header>
     <main>
+        <div class="DivEsquerda">
     <ul class="Ulprincipal">
         <li><input type="checkbox" id="chec">
             <label for="chec">
@@ -51,8 +52,10 @@ session_start();
             </nav>
         </li>
     </ul>
-
+    </div>
+    <div class="DivDireita">
             <div class="inicioConteudo">
+                <div class="cabeca">
                 <div class="imgCont">
                     <img src="" alt="">
                 </div>
@@ -65,7 +68,8 @@ session_start();
                 <div class="botaoConfig">
                     <button></button>
                 </div>
-                
+                </div>
+            </div>
             </div>
             </main>
             <a href="limite_armazem.php">LIMITE</a>
