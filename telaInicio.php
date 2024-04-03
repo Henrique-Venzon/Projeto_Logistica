@@ -22,7 +22,7 @@ session_start();
             <img src="" alt="">
         </div>
     </header>
-
+    <main>
     <ul class="Ulprincipal">
         <li><input type="checkbox" id="chec">
             <label for="chec">
@@ -57,10 +57,17 @@ session_start();
                     <img src="" alt="">
                 </div>
                 <div class="textCon">
-
+                    <h1>Produtos</h1>
+                </div>
+                <div class="botaoAdd">
+                    <button></button>
+                </div>
+                <div class="botaoConfig">
+                    <button></button>
                 </div>
                 
             </div>
+            </main>
             <a href="limite_armazem.php">LIMITE</a>
         
         <script src="" async defer></script>
