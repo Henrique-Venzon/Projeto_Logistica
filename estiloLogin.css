@@ -26,7 +26,7 @@ body {
 .content::before {
     content: "";
     position: absolute;
-    background-color: #04690d;
+    background-color: #64acff;
     width: 40%;
     height: 100%;
     border-top-left-radius: 15px;
@@ -44,7 +44,7 @@ body {
     margin-bottom: 3%;
 }
 .title-second {
-    color: #04690d;
+    color: #64acff;
     margin-bottom: 1%;
     font-size: 60px;
 }
@@ -83,17 +83,17 @@ body {
 }
 .btn-primary:hover {
     background-color: #fff;
-    color: #04690d;
+    color: #64acff;
 }
 .btn-second {
-    background-color: #04690d;
-    border: 1px solid #95b398;
+    background-color: #64acff;
+    border: 1px solid #a7d0ff;
     transition: background-color .5s;
 }
 .btn-second:hover {
     background-color: #fff;
-    border: 1px solid #04690d;
-    color: #04690d;
+    border: 1px solid #64acff;
+    color: #64acff;
 }
 .first-content {
     display: flex;

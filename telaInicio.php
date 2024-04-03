@@ -57,16 +57,16 @@ session_start();
             <div class="inicioConteudo">
                 <div class="cabeca">
                 <div class="imgCont">
-                    <img src="" alt="">
+                    <img src="img/caminhao.png" alt="">
                 </div>
                 <div class="textCon">
                     <h1>Produtos</h1>
                 </div>
                 <div class="botaoAdd">
-                    <button></button>
+                    <button><h1>Adicionar</h1></button>
                 </div>
                 <div class="botaoConfig">
-                    <button></button>
+                    <img src="img/caminhao.png" alt="">
                 </div>
                 </div>
             </div>
