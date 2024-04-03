@@ -3,8 +3,8 @@
 session_start();
 
 $hostname = "127.0.0.1";
-$user = "root";
-$password = "";
+$user = "root.Att";
+$password = "root";
 $database = "logistica";
 
 $conexao = new mysqli($hostname, $user, $password, $database);
@@ -28,11 +28,6 @@ if ($conexao->connect_errno) {
             $row = $resultado->fetch_array();
             $_SESSION['id'] = $row[0];
             $_SESSION['username'] = $row[1];
-
-            // Verificar se já existe um registro para esse usuário na tabela armazem
-            $sql = "SELECT `id` FROM `armazem_limite` WHERE `login_id` = " . $_SESSION['id'] . ";";
-            $resultado = $conexao->query($sql);
-            $conexao->close();
 
             header('Location: telaInicio.php', true, 301);
             exit();
