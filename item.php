@@ -200,7 +200,7 @@
             <br>
             <label for="tipo_login">Tipo de Produtos:</label>
             <br>
-            <select name="tipo_alimento" id="tipo_alimento">
+            <select name="tipo_eletronico" id="tipo_eletronico">
                 <option value="Celulares">Celulares</option>
                 <option value="Computadores">Computadores</option>
                 <option value="Notebooks">Notebooks</option>
@@ -226,7 +226,7 @@
             <br>
             <label for="tipo_login">Tipo de Produtos:</label>
             <br>
-            <select name="tipo_alimento" id="tipo_alimento">
+            <select name="tipo_movel" id="tipo_movel">
                 <option value="Guarda Roupa">Guarda Roupa</option>
                 <option value="Mesas">Mesas</option>
                 <option value="Prateleiras">Prateleiras</option>
@@ -246,24 +246,121 @@
             <br>
             <label class="label-input" for=""> Dimenções do movel:
                 <br>
-                <input type="text" name="tamanho_movel" placeholder="Dimenções" id="tamanho_movel">
+                <input type="text" name="tamanho_equipamento" placeholder="Dimenções" id="tamanho_equipamento">
             </label>
             <br>
-            <label for="tipo_login">Tipo de Produtos:</label>
+            <label for="tipo_login">Tipo de Equipamento:</label>
             <br>
-            <select name="tipo_alimento" id="tipo_alimento">
-                <option value="Guarda Roupa">Guarda Roupa</option>
-                <option value="Mesas">Mesas</option>
-                <option value="Prateleiras">Prateleiras</option>
-                <option value="Camas">Camas</option>
-                <option value="Escrivaninhas">Escrivaninhas</option>
-                <option value="Churrasqueiras">Churrasqueiras</option>
+            <select name="tipo_equipamento" id="tipo_equipamento">
+                <option value="Capacete">Capacete</option>
+                <option value="luvas">luvas</option>
+                <option value="Botas">Botas</option>
+                <option value="Solda MIG">Solda MIG</option>
+                <option value="Solda TIG">Solda TIG</option>
+                <option value="Andaimes">Andaimes</option>
             </select>
             <br>
         `;
         }
+        if (tipo_produto === "materiais_de_construcao") {
+            caracteristicas.innerHTML = `
+            <label class="label-input" for=""> Fabricante do Material:
+                <br>
+                <input type="text" name="fabricante_construcao" placeholder="fabricante" id="fabricante_construcao">
+            </label>
+            <br>
+            <label class="label-input" for=""> Peso do Material:
+                <br>
+                <input type="text" name="tamanho_Material" placeholder="Peso" id="tamanho_Material">
+            </label>
+            <br>
+            <label for="tipo_login">Tipo de Material:</label>
+            <br>
+            <select name="tipo_equipamento" id="tipo_equipamento">
+                <option value="Concreto">Concreto</option>
+                <option value="Brita">Brita</option>
+                <option value="Areia">Areia</option>
+                <option value="Aço">Aço</option>
+                <option value="Paineis de Vidro">Paineis de Vidro</option>
+                <option value="Lajes">Lajes</option>
+            </select>
+            <br>
+        `;
+        }
+        if (tipo_produto === "produtos_quimicos") {
+            caracteristicas.innerHTML = `
+            <label class="label-input" for=""> Fornecedor:
+                <br>
+                <input type="text" name="fornecedor" placeholder="fabricante" id="fornecedor">
+            </label>
+            <br>
+            <label class="label-input" for=""> Peso do Material/Litros:
+                <br>
+                <input type="text" name="tamanho_quimicos" placeholder="Peso/Litros" id="tamanho_quimicos">
+            </label>
+            <br>
+            <label for="tipo_login">Tipo de Quimicos:</label>
+            <br>
+            <select name="tipo_quimicos" id="tipo_quimicos">
+                <option value="Gases">Gases</option>
+                <option value="Líquidos inflamáveis">Líquidos inflamáveis</option>
+                <option value="Sólidos inflamáveis">Sólidos inflamáveis</option>
+                <option value="Substâncias oxidantes e peróxidos orgânicos">Substâncias oxidantes e peróxidos orgânicos</option>
+                <option value="Substâncias tóxicas e substâncias infectantes">Substâncias tóxicas e substâncias infectantes</option>
+                <option value="Substâncias corrosivas">Substâncias corrosivas</option>
+                <option value="Substâncias e artigos perigosos diversos.">Substâncias e artigos perigosos diversos.</option>
+            </select>
+            <br>
+        `;
+        }
+        if (tipo_produto === "bebidas") {
+            caracteristicas.innerHTML = `
+            <label class="label-input" for=""> Marca:
+                <br>
+                <input type="text" name="marca_bebidas" placeholder="Marca" id="marca_bebidas">
+            </label>
+            <br>
+            <label class="label-input" for=""> Litros:
+                <br>
+                <input type="text" name="litros" placeholder="Litros" id="litros">
+            </label>
+            <br>
+            <label for="tipo_login">Tipo de Bebida:</label>
+            <br>
+            <select name="tipo_bebidas" id="tipo_bebidas">
+                <option value="Sem alchol">Sem alchol</option>
+                <option value="Com Alchol">Com Alchol</option>
+                <option value="Sucos">Sucos</option>
+                <option value="Água">Água</option>
+                <option value="Energéticos">Energéticos</option>
+                <option value="Tonicas">Tonicas</option>
+            </select>
+            <br>
+        `;
+        }
+        if (tipo_produto === "brinquedos") {
+            caracteristicas.innerHTML = `
+            <label class="label-input" for=""> Marca:
+                <br>
+                <input type="text" name="marca_brinquedos" placeholder="Marca" id="marca_brinquedos">
+            </label>
+            <br>
+            <label class="label-input" for=""> Tamanho:
+                <br>
+                <input type="text" name="tamanho_brinquedo" placeholder="Tamanho" id="tamanho_brinquedo">
+            </label>
+            <br>
+            <label for="tipo_login">Tipo de brinquedos:</label>
+            <br>
+            <select name="tipo_brinqueds" id="tipo_brinqueds">
+                <option value="Carros">Carros</option>
+                <option value="Pelucias">Pelucias</option>
+                <option value="Bonecos">Bonecos</option>
 
-
+            </select>
+            <br>
+        `;
+        }
     });
 
 </script>
