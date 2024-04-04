@@ -17,7 +17,7 @@ session_start();
         </div>
         <div class="textArmazem">
             <h1>Armazém</h1>
-        </div>
+        </div> 
         <div class="imgperfil">
             <img src="" alt="">
         </div>
@@ -74,6 +74,25 @@ session_start();
                     <div class="botaoConfig">
                         <img class="imgCabeca" src="img/caminhao.png" style="margin-right:10px;" alt="">
                     </div>
+                </div>
+    
+            </div>
+            <div class="conteudo">
+                <div class="borda" class="IDs">
+                    <h1>ID</h1>
+                </div>
+                <div class="borda" class="Buscas">
+                    <div class="buscar">
+                    <input type="text" class="barra" name="search" placeholder="Pesquisar">
+                        <input type="submit" class="busca"value="Buscar">
+                    </div>
+
+                </div>
+                <div class="borda" class="disponivel">
+
+                </div>
+                <div class="quantidade">
+
                 </div>
             </div>
         </div>

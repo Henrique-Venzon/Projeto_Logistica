@@ -12,7 +12,7 @@ header{
 }
 header img{
     height: 25px;
-    width: 25px;
+    width: 25px; 
     display: flex;
 }
 header h1{
@@ -96,7 +96,6 @@ nav h1 {
     color: black;
     right: 110px;
 
-    
 }
 main{
     width: 100%;
@@ -137,4 +136,11 @@ main{
     font-size: 20px;
     width: 180px;
 
+}
+.borda{
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+.conteudo{
+    display: flex;
 }
