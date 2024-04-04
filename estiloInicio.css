@@ -53,7 +53,7 @@ input[type=checkbox]:checked~nav {
 }
 nav {
     width: 18em;
-    height: 909px;
+    height: 906px;
     position: relative;
     margin-top: -560px;
     background-color: #c1deff ;
@@ -122,9 +122,11 @@ main{
 .imgCabeca{
     width: 100px;
     height: 90px;
+    
 }
 .textCon{
     font-size: 30px;
+    
 }
 .botaoAdd{
     height: 60px;
@@ -133,5 +135,6 @@ main{
 }
 .botaoAdd h1{
     font-size: 20px;
-    width: 120px;
+    width: 180px;
+
 }

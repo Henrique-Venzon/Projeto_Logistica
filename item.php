@@ -1,4 +1,4 @@
-<button id="btnAbreModal">Cadastrar</button>
+<button id="btnAbreModal"><h1>Cadastrar</h1></button>
 
 <div id="meuModal" class="modal">
     <div class="modal-conteudo">
@@ -56,7 +56,7 @@
         display: none;
         position: fixed;
         z-index: 1;
-        padding-top: 100px;
+        padding-top: 280px;
         left: 0;
         top: 0;
         width: 100%;
@@ -64,14 +64,15 @@
         overflow: auto;
         background-color: rgb(0, 0, 0);
         background-color: rgba(0, 0, 0, 0.4);
+        
     }
 
     .modal-conteudo {
         background-color: #fefefe;
         margin: auto;
         padding: 20px;
-        border: 1px solid #888;
         width: 80%;
+
     }
 
     .fechar {
@@ -86,6 +87,13 @@
         color: #000;
         text-decoration: none;
         cursor: pointer;
+    }
+    button{
+        background-color: white;
+        box-shadow: 2px 2px 10px black;
+        background-color: #64acff;
+
+
     }
 </style>
 
