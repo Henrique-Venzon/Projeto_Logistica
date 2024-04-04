@@ -1,5 +1,5 @@
 <!-- Botão que abre o modal -->
-<button id="btnAbreModal" style="cursor: pointer;">Cadastrar</button>
+<button id="btnAbreModal" >Cadastrar</button>
 
 <div id="meuModal" class="modal">
     <div class="modal-conteudo">
@@ -84,6 +84,10 @@
         text-decoration: none;
         cursor: pointer;
     }
+    button{
+        cursor: pointer;
+    }
+
 </style>
 
 <!-- JavaScript para abrir e fechar o modal -->
