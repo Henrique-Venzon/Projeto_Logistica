@@ -105,11 +105,10 @@ main{
 }
 .cabeca{
     display: flex;
-    padding: 25px;
+    padding: 10px;
     justify-content: space-between;
     border-bottom: 2px solid black;
     align-items: center;
-
 
 }
 .DivDireita{
@@ -121,8 +120,8 @@ main{
     z-index: -3;
     height: 83%;
 }
-.inicioConteudo img{
-    width: 90px;
+.imgCabeca{
+    width: 100px;
     height: 90px;
 }
 .textCon{

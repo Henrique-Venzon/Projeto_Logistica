@@ -1,5 +1,5 @@
 <!-- Botão que abre o modal -->
-<button id="btnAbreModal">Cadastrar</button>
+<button id="btnAbreModal" style="cursor: pointer;">Cadastrar</button>
 
 <div id="meuModal" class="modal">
     <div class="modal-conteudo">
