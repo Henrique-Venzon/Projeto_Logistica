@@ -57,16 +57,18 @@ session_start();
             <div class="inicioConteudo">
                 <div class="cabeca">
                 <div class="imgCont">
-                    <img src="img/caminhao.png" alt="">
+                    <img class="imgCabeca" src="img/caminhao.png" style="margin-left:10px;" alt="">
                 </div>
                 <div class="textCon">
                     <h1>Produtos</h1>
                 </div>
                 <div class="botaoAdd">
-                    <button><h1>Adicionar</h1></button>
+                        <?php
+                        include 'item.php';
+                    ?>
                 </div>
                 <div class="botaoConfig">
-                    <img src="img/caminhao.png" alt="">
+                    <img class="imgCabeca" src="img/caminhao.png" style="margin-right:10px;" alt="">
                 </div>
                 </div>
             </div>

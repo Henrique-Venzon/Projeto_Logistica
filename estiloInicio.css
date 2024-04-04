@@ -60,7 +60,7 @@ nav {
     left: -350px;
     transition: all 1.0s;
     display: flex;
-    z-index: 50;
+    z-index: -1;
 }
 .imgbotao{
     height: 80px;
@@ -105,21 +105,23 @@ main{
 }
 .cabeca{
     display: flex;
-    padding: 30px;
+    padding: 10px;
     justify-content: space-between;
     border-bottom: 2px solid black;
     align-items: center;
 
-
 }
 .DivDireita{
-    margin-top: 3%;
-    margin-left: 4%;
+    margin-top: 4%;
+    margin-left: 14%;
+    margin-right: 4%;
     border: 2px solid black;
     width: 100%;
+    z-index: -3;
+    height: 83%;
 }
-.inicioConteudo img{
-    width: 90px;
+.imgCabeca{
+    width: 100px;
     height: 90px;
 }
 .textCon{
