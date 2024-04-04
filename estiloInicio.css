@@ -48,7 +48,9 @@ input[type=checkbox] {
 input[type=checkbox]:checked~nav {
     transform: translate(370px);
 }
-
+.label1{
+    z-index: 100;
+}
 nav {
     width: 18em;
     height: 909px;
@@ -58,7 +60,7 @@ nav {
     left: -350px;
     transition: all 1.0s;
     display: flex;
-    z-index: -300;
+    z-index: 50;
 }
 .imgbotao{
     height: 80px;
@@ -111,10 +113,10 @@ main{
 
 }
 .DivDireita{
-    margin-left: 18%;
+    margin-top: 3%;
+    margin-left: 4%;
     border: 2px solid black;
     width: 100%;
-
 }
 .inicioConteudo img{
     width: 90px;
