@@ -1,4 +1,3 @@
-<!-- Botão que abre o modal -->
 <button id="btnAbreModal">Cadastrar</button>
 
 <div id="meuModal" class="modal">
@@ -357,3 +356,4 @@
     });
 
 </script>
+

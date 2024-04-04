@@ -93,7 +93,7 @@ nav h1 {
     justify-content: flex-start; 
 }
 .inicioConteudo{
-    color: rgb(0, 0, 0);
+    color: black;
     right: 110px;
 
     
@@ -117,7 +117,6 @@ main{
     margin-right: 4%;
     border: 2px solid black;
     width: 100%;
-    z-index: -3;
     height: 83%;
 }
 .imgCabeca{
