@@ -1,5 +1,5 @@
 <!-- Botão que abre o modal -->
-<button id="btnAbreModal" style="cursor: pointer;">Cadastrar</button>
+<button id="btnAbreModal">Cadastrar</button>
 
 <div id="meuModal" class="modal">
     <div class="modal-conteudo">
@@ -39,9 +39,13 @@
                 <option value="tercearia">Terceária</option>
                 <option value="quartenaria">Quartenária</option>
                 <option value="quintenaria">Quintenária</option>
+                
             </select>
             <br>
+            
+            
             <div id="caracteristicas"></div>
+            <br>
             <input type="submit" value="Cadastrar">
         </form>
     </div>
@@ -84,10 +88,6 @@
         text-decoration: none;
         cursor: pointer;
     }
-    button{
-        cursor: pointer;
-    }
-
 </style>
 
 <!-- JavaScript para abrir e fechar o modal -->
@@ -131,6 +131,131 @@
             <br>
         `;
         }
+        if (tipo_produto === "higiene") {
+            caracteristicas.innerHTML = `
+            <label class="label-input" for=""> Fabricante:
+                <br>
+                <input type="text" name="Fabricante" placeholder="Fabricante" id="Fabricante">
+            </label>
+            <br>
+            <label class="label-input" for=""> Tamanho:
+                <br>
+                <input type="text" name="Tamanho" placeholder="Tamanho" id="Tamanho">
+            </label>
+            <br>
+            
+            <label class="label-input" for=""> Tipo do Produto:
+                <br>
+            <select name="tipo_higiene" id="tipo_higiene">
+                <option value="Produtos Gerais">Produtos Gerais</option>
+                <option value="Panos e Esponjas">Panos e Esponjas</option>
+                <option value="Limpeza de Pisos">Limpeza de Pisos</option>
+                <option value="Limpeza de Superfícies">Limpeza de Superfícies</option>
+                <option value="Coleta de Resíduos e Descartáveis">Coleta de Resíduos e Descartáveis</option>
+                <option value="Higiene Sanitária">Higiene Sanitária</option>
+            </select>
+        `;
+        }
+        if (tipo_produto === "alimentos") {
+            caracteristicas.innerHTML = `
+            <label class="label-input" for=""> Marca do Alimento:
+                <br>
+                <input type="text" name="marca_alimentos" placeholder="Marca" id="marca_alimentos">
+            </label>
+            <br>
+            <label class="label-input" for=""> Tamanho do Conteudo:
+                <br>
+                <input type="text" name="Tamanho_alimentos" placeholder="Tamanho" id="Tamanho_alimentos">
+            </label>
+            <br>
+            <label for="tipo_login">Tipo de Produtos:</label>
+            <br>
+            <select name="tipo_alimento" id="tipo_alimento">
+                <option value="Salgado">Salgado</option>
+                <option value="Doce">Doce</option>
+                <option value="Legumes">Leguminosas</option>
+                <option value="Verduras">Verduras</option>
+            </select>
+            <br>
+        `;
+        }
+        if (tipo_produto === "eletronicos") {
+            caracteristicas.innerHTML = `
+            <label class="label-input" for=""> Marca:
+                <br>
+                <input type="text" name="marca_eletronicos" placeholder="Marca" id="marca_eletronicos">
+            </label>
+            <br>
+            <label class="label-input" for=""> Dimenções do Produto:
+                <br>
+                <input type="text" name="tamanho_eletronicos" placeholder="Tamanho" id="tamanho_eletronicos">
+            </label>
+            <br>
+            <label for="tipo_login">Tipo de Produtos:</label>
+            <br>
+            <select name="tipo_alimento" id="tipo_alimento">
+                <option value="Celulares">Celulares</option>
+                <option value="Computadores">Computadores</option>
+                <option value="Notebooks">Notebooks</option>
+                <option value="Maquinas de Lavar">Maquinas de Lavar</option>
+                <option value="Micro Ondas">Micro Ondas</option>
+                <option value="Fornos">Fornos</option>
+                <option value="Aspiradores">Aspiradores</option>
+            </select>
+            <br>
+        `;
+        }
+        if (tipo_produto === "moveis") {
+            caracteristicas.innerHTML = `
+            <label class="label-input" for=""> Fabricante do movel:
+                <br>
+                <input type="text" name="fabricante" placeholder="fabricante" id="fabricante">
+            </label>
+            <br>
+            <label class="label-input" for=""> Dimenções do movel:
+                <br>
+                <input type="text" name="tamanho_movel" placeholder="Dimenções" id="tamanho_movel">
+            </label>
+            <br>
+            <label for="tipo_login">Tipo de Produtos:</label>
+            <br>
+            <select name="tipo_alimento" id="tipo_alimento">
+                <option value="Guarda Roupa">Guarda Roupa</option>
+                <option value="Mesas">Mesas</option>
+                <option value="Prateleiras">Prateleiras</option>
+                <option value="Camas">Camas</option>
+                <option value="Escrivaninhas">Escrivaninhas</option>
+                <option value="Churrasqueiras">Churrasqueiras</option>
+            </select>
+            <br>
+        `;
+        }
+        if (tipo_produto === "equipamentos") {
+            caracteristicas.innerHTML = `
+            <label class="label-input" for=""> Fabricante do equipamentos:
+                <br>
+                <input type="text" name="fabricante_equipamento" placeholder="fabricante" id="fabricante_equipamento">
+            </label>
+            <br>
+            <label class="label-input" for=""> Dimenções do movel:
+                <br>
+                <input type="text" name="tamanho_movel" placeholder="Dimenções" id="tamanho_movel">
+            </label>
+            <br>
+            <label for="tipo_login">Tipo de Produtos:</label>
+            <br>
+            <select name="tipo_alimento" id="tipo_alimento">
+                <option value="Guarda Roupa">Guarda Roupa</option>
+                <option value="Mesas">Mesas</option>
+                <option value="Prateleiras">Prateleiras</option>
+                <option value="Camas">Camas</option>
+                <option value="Escrivaninhas">Escrivaninhas</option>
+                <option value="Churrasqueiras">Churrasqueiras</option>
+            </select>
+            <br>
+        `;
+        }
+
 
     });
 
