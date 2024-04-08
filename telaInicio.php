@@ -78,21 +78,22 @@ session_start();
     
             </div>
             <div class="conteudo">
-                <div class="borda" class="IDs">
+                <div class="borda IDs">
                     <h1>ID</h1>
-                </div>
-                <div class="borda" class="Buscas">
-                    <div class="buscar">
-                    <input type="text" class="barra" name="search" placeholder="Pesquisar">
-                        <input type="submit" class="busca"value="Buscar">
+                    <div class="conteudoID">
+                        <h1 class="conBorda">vre</h1>
+                        <h1 class="conBorda">d44</h1>
                     </div>
+                </div>
+                <div class="borda Buscas">
+                    <input class="botaoBusca" type="text" class="barra" name="search" placeholder="Pesquisar">
 
                 </div>
-                <div class="borda" class="disponivel">
-
+                <div class="borda disponivel">
+                    <h1>Disponível?</h1>
                 </div>
                 <div class="quantidade">
-
+                <h1>Quantidade</h1>
                 </div>
             </div>
         </div>

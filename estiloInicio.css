@@ -143,4 +143,28 @@ main{
 }
 .conteudo{
     display: flex;
+    text-align: center;
+}
+.quantidade{
+    width: 25%;
+    border-bottom: 2px solid black;
+}
+
+.conBorda{
+    border-top: 2px solid black;
+}
+.IDs{
+    width: 20%;
+}
+.Buscas{
+    width: 37%;
+}
+.disponivel{
+    width: 18%;
+}
+.botaoBusca{
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    margin: 0.8%;
 }
