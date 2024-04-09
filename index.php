@@ -9,6 +9,7 @@
     </head>
     <body>
     <div class="container">
+        <img src="se" alt="">
         <div class="content first-content">
             <div class="first-column">
                 <h2 class="title title-primary">Professor</h2>
