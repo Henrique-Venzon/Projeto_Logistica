@@ -7,7 +7,7 @@ session_start();
     <meta charset="utf-8">
     <title>Inicio</title>
 
-    <link rel="stylesheet" href="estiloInicio.css">
+    <link rel="stylesheet" href="cadastrar.css">
 </head>
 
 <body>
@@ -66,36 +66,10 @@ session_start();
             </ul>
         </div>
         <div class="DivDireita">
-            <div class="inicioConteudo">
-                <div class="cabeca">
-                    <div class="imgCont">
-                        <img class="imgCabeca" src="img/caminhao.png" style="margin-left:10px;" alt="">
-                    </div>
-                    <div class="textCon">
-                        <h1>Produtos</h1>
-                    </div>
-
-                    <div class="botaoConfig">
-                        <img class="imgCabeca" src="img/caminhao.png" style="margin-right:10px;" alt="">
-                    </div>
-                </div>
-    
+            <div class="imgPerfil">
+                
             </div>
-            <div class="conteudo">
-                <div class="borda IDs">
-                    <h1>ID</h1>
-
-                </div>
-                <div class="borda Buscas">
-                    <input class="botaoBusca" type="text" class="barra" name="search" placeholder="Pesquisar">
-
-                </div>
-                <div class="borda disponivel">
-                    <h1>Disponível?</h1>
-                </div>
-                <div class="quantidade">
-                <h1>Quantidade</h1>
-                </div>
+            
             </div>
         </div>
     </main>

@@ -49,7 +49,7 @@ header h1{
 input[type=checkbox] {
     display: none;
 }
-input[type=checkbox]:hover~nav {
+input[type=checkbox]:checked~nav {
     transform: translate(370px);
 }
 
@@ -96,80 +96,4 @@ nav h1 {
     display: flex; 
     align-items: center;
     justify-content: flex-start; 
-}
-.inicioConteudo{
-    color: black;
-    right: 110px;
-
-}
-main{
-    width: 100%;
-    height: 909px;
-    display: flex;
-}
-.cabeca{
-    display: flex;
-    padding: 10px;
-    justify-content: space-between;
-    border-bottom: 2px solid black;
-    align-items: center;
-
-}
-.DivDireita{
-    margin-top: 4%;
-    margin-left: 14%;
-    margin-right: 4%;
-    border: 2px solid black;
-    width: 100%;
-    height: 83%;
-}
-.imgCabeca{
-    width: 100px;
-    height: 90px;
-    
-}
-.textCon{
-    font-size: 30px;
-    
-}
-.botaoAdd{
-    height: 60px;
-    font-size: 20px;
-    display: flex;
-}
-.botaoAdd h1{
-    font-size: 20px;
-    width: 180px;
-
-}
-.borda{
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
-}
-.conteudo{
-    display: flex;
-    text-align: center;
-}
-.quantidade{
-    width: 25%;
-    border-bottom: 2px solid black;
-}
-
-.conBorda{
-    border-top: 2px solid black;
-}
-.IDs{
-    width: 20%;
-}
-.Buscas{
-    width: 37%;
-}
-.disponivel{
-    width: 18%;
-}
-.botaoBusca{
-    text-align: center;
-    width: 200px;
-    height: 30px;
-    margin: 0.8%;
 }
