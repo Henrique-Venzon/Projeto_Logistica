@@ -20,15 +20,7 @@ session_start();
         </div> 
         <div class="nomeLogin">
         <?php
-			// iniciar uma sessão
-			session_start();
-
-			if (empty($_SESSION['Usuario'])){
-				header('Location: sair.php');
-				exit();
-			} else {
-				echo '"<h1 class="nomeLogin">'.$_SESSION['Usuario'].'</h1>';}
-            
+				echo '"<h1 class="nomeLogin">'.$Usuario.'</h1>';
                             ?>
             
         </div> 
