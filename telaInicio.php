@@ -20,7 +20,7 @@ session_start();
         </div> 
         <div class="nomeLogin">
         <?php
-				echo '"<h1 class="nomeLogin">'.$Usuario.'</h1>';
+				echo '"<h1 class="nomeLogin">'.$username.'</h1>';
                             ?>
             
         </div> 
