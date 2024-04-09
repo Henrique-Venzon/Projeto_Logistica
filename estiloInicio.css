@@ -26,6 +26,9 @@ header h1{
 .imgperfil{
     margin-left: 88%;
 }
+.nomeLogin{
+    font-size: 12px;
+}
 
 
 .Ulprincipal {
@@ -48,6 +51,7 @@ input[type=checkbox] {
 input[type=checkbox]:checked~nav {
     transform: translate(370px);
 }
+
 .label1{
     z-index: 100;
 }

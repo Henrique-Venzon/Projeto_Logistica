@@ -18,6 +18,20 @@ session_start();
         <div class="textArmazem">
             <h1>Armazém</h1>
         </div> 
+        <div class="nomeLogin">
+        <?php
+			// iniciar uma sessão
+			session_start();
+
+			if (empty($_SESSION['Usuario'])){
+				header('Location: sair.php');
+				exit();
+			} else {
+				echo '"<h1 class="nomeLogin">'.$_SESSION['Usuario'].'</h1>';}
+            
+                            ?>
+            
+        </div> 
         <div class="imgperfil">
             <img src="" alt="">
         </div>
@@ -81,8 +95,8 @@ session_start();
                 <div class="borda IDs">
                     <h1>ID</h1>
                     <div class="conteudoID">
-                        <h1 class="conBorda">vre</h1>
-                        <h1 class="conBorda">d44</h1>
+                        <h1 class="conBorda">1</h1>
+                        <h1 class="conBorda">2</h1>
                     </div>
                 </div>
                 <div class="borda Buscas">
