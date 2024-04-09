@@ -16,9 +16,9 @@ body {
 }
 .content {
     background-color: #fff;
-    border-radius: 15px;
+    border-radius: 30px;
     width: 80%;
-    height: 80%;
+    height:75%;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -26,11 +26,11 @@ body {
 .content::before {
     content: "";
     position: absolute;
-    background-color: #04690d;
-    width: 40%;
+    background-color: #64acff;
+    width: 50%;
     height: 100%;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
     left: 0;
 }
 .title {
@@ -44,7 +44,7 @@ body {
     margin-bottom: 3%;
 }
 .title-second {
-    color: #04690d;
+    color: #64acff;
     margin-bottom: 1%;
     font-size: 60px;
 }
@@ -87,17 +87,17 @@ body {
 }
 .btn-primary:hover {
     background-color: #fff;
-    color: #04690d;
+    color: #64acff;
 }
 .btn-second {
-    background-color: #04690d;
-    border: 1px solid #04690d;
+    background-color: #64acff;
+    border: 1px solid #64acff;
     transition: background-color .5s;
 }
 .btn-second:hover {
     background-color: #fff;
-    border: 1px solid #04690d;
-    color: #04690d;
+    border: 1px solid #64acff;
+    color: #64acff;
 }
 .first-content {
     display: flex;
@@ -107,46 +107,20 @@ body {
 }
 .first-column {
     text-align: center;
-    width: 40%;
+    width: 50%;
     z-index: 10;
 }
 .second-column {
-    width: 60%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.social-media {
-    margin: 1rem 0;
-}
-.link-social-media:not(:first-child){
-    margin-left: 10px;
-}
-.link-social-media .item-social-media {
-    transition: background-color .5s;
-}
-.link-social-media:hover .item-social-media{
-    background-color: #04690d;
-    color: #fff;
-    border-color: #04690d;
-}
-.list-social-media {
-    display: flex;
-    list-style-type: none;
-}
-.item-social-media {
-    border: 1px solid #bdc3c7;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-    color: #95a5a6;
-}
+
 .form {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 50%;
     box-sizing: border-box;
 
 }
@@ -227,18 +201,18 @@ input:-webkit-autofill {
 }
 
 .sign-in-js .content::before {
-    left: 60%;
+    left: 50%;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    animation: slidein 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+    animation: slidein 2s; /*MODIFIQUEI DE 3s PARA 1.3s*/
 
     z-index: 12;
 }
 
 .sign-up-js .content::before {
-    animation: slideout 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+    animation: slideout 2s; /*MODIFIQUEI DE 3s PARA 1.3s*/
 
     z-index: 12;
 }
@@ -262,13 +236,11 @@ input:-webkit-autofill {
 
     z-index: -1;
     position: relative;
-    animation: deslocamentoEsq 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
 }
 
 .sign-up-js .second-content .second-column {
     position: relative;
     z-index: -1;
-    animation: deslocamentoDir 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
 }
 
 /*ANIMAÇÃOO CSS PARA O CONTEÚDO*/
@@ -281,17 +253,7 @@ input:-webkit-autofill {
         z-index: 12;
     }
 
-    25% {
-        left: -80px;
-        opacity: .5;
-        /* z-index: 12; NÃO HÁ NECESSIDADE */
-    }
 
-    50% {
-        left: -100px;
-        opacity: .2;
-        /* z-index: 12; NÃO HÁ NECESSIDADE */
-    }
 
     to {
         left: -110px;
@@ -308,16 +270,7 @@ input:-webkit-autofill {
         z-index: 12;
     }
 
-    25% {
-        left: 80px;
-        /* z-index: 12;  NÃO HÁ NECESSIDADE*/
-    }
 
-    50% {
-        left: 100px;
-        /* z-index: 12; NÃO HÁ NECESSIDADE*/
-        /* background-color: yellow;  Exemplo que dei no vídeo*/
-    }
 
     to {
         left: 110px;
@@ -332,29 +285,29 @@ input:-webkit-autofill {
 
     from {
         left: 0;
-        width: 40%;
+        width: 50%;
     }
 
 
 
     to {
-        left: 60%;
-        width: 40%;
+        left: 50%;
+        width: 50%;
     }
 }
 
 @keyframes slideout {
 
     from {
-        left: 60%;
-        width: 40%;
+        left: 50%;
+        width: 50%;
     }
 
 
 
     to {
         left: 0;
-        width: 40%;
+        width: 50%;
     }
 }
 
