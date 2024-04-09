@@ -8,8 +8,9 @@
 
     </head>
     <body>
+        <div class="caixa">
     <div class="container">
-        <img src="se" alt="">
+    <img class="imgS" src="img/senai-logo-1.png" alt="">
         <div class="content first-content">
             <div class="first-column">
                 <h2 class="title title-primary">Professor</h2>
@@ -55,6 +56,8 @@
                 </form>
             </div>
         </div>
+    </div>
+
     </div>
     <script src="login.js"></script>
         
