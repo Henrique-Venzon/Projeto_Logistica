@@ -35,7 +35,7 @@
             <div class="first-column">
                 <h2 class="title title-primary">Aluno</h2>
                 <p class="description description-primary">Conta do aluno</p>
-                <button id="signup" class="btn btn-primary"><h3>entar</h3></button>
+                <button id="signup" class="btn btn-primary"><h3>entrar</h3></button>
             </div>
             <div class="second-column">
                 <h2 class="title title-second">Professor</h2>
