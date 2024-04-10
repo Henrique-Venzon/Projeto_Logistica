@@ -31,8 +31,8 @@ body {
     background-color: #64acff;
     width: 50%;
     height: 100%;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-radius: 50px;
+
     left: 0;
 }
 .title {
@@ -204,10 +204,8 @@ input:-webkit-autofill {
 
 .sign-in-js .content::before {
     left: 50%;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
+
+    border-radius: 50px;
     animation: slidein 2s; /*MODIFIQUEI DE 3s PARA 1.3s*/
 
     z-index: 12;
