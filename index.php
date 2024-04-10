@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<img class="imgSenai" src="img/senai-logo-1.png" alt="">
     <div class="container">
         <div class="content first-content">
             <div class="first-column">

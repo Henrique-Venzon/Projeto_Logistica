@@ -7,7 +7,14 @@
 body {
     font-family: 'Open Sans', sans-serif;
 }
-
+.imgSenai{
+    height: 50px;
+    position: absolute;
+    top: 25px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 10; 
+} 
 .container {
     display: flex;
     justify-content: center;
