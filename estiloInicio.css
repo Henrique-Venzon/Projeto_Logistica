@@ -11,8 +11,8 @@ header{
     padding: 15px 0;
 }
 header img{
-    height: 25px;
-    width: 25px; 
+    height: 50px;
+    width: 50px; 
     display: flex;
 }
 header h1{
@@ -24,7 +24,7 @@ header h1{
     margin-left: 30px;
 }
 .imgperfil{
-    margin-left: 88%;
+    margin-left: 85%;
 }
 .nomeLogin{
     font-size: 12px;
@@ -60,7 +60,7 @@ nav {
     width: 18em;
     height: 906px;
     position: relative;
-    margin-top: -560px;
+    margin-top: -700px;
     background-color: #c1deff ;
     left: -350px;
     transition: all 1.0s;

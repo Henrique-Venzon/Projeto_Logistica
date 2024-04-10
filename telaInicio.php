@@ -13,7 +13,7 @@ session_start();
 <body>
     <header>
         <div class="imagemDec">
-            <img src="" alt="">
+            <img src="img/armazem.png" alt="">
         </div>
         <div class="textArmazem">
             <h1>Armazém</h1>
@@ -27,7 +27,7 @@ session_start();
         -->
    
         <div class="imgperfil">
-            <img src="" alt="">
+            <img src="img/perfil.png" alt="">
         </div>
     </header>
     <main>
@@ -38,12 +38,15 @@ session_start();
                         <div class="label1">
                             <div class="img-T"><img src="img/caminhao.png" style="cursor: pointer;" class="imgbotao">
                             </div>
-                            <div class="img-T"><img src="img/caminhao.png" style="cursor: pointer;" class="imgbotao">
+                            <div class="img-T"><img src="img/Piking.png" style="cursor: pointer;" class="imgbotao">
                             </div>
-                            <div class="img-T"><img src="img/caminhao.png" style="cursor: pointer;" class="imgbotao">
+                            <div class="img-T"><img src="img/armazem.png" style="cursor: pointer;" class="imgbotao">
                             </div>
-                            <div class="img-T"><img src="img/caminhao.png" style="cursor: pointer;" class="imgbotao">
+                            <div class="img-T"><img src="img/armazem.png" style="cursor: pointer;" class="imgbotao">
                             </div>
+                            <div class="img-T"><img src="img/armazem.png" style="cursor: pointer;" class="imgbotao">
+                            </div>
+
                         </div>
                     </label>
                     <nav>
@@ -56,6 +59,9 @@ session_start();
                             </div>
                             <div class="text">
                                 <h1>Pedidos</h1>
+                            </div>
+                            <div class="text">
+                                <h1>Armazém</h1>
                             </div>
                             <div class="text">
                                 <h1>Configuração</h1>
