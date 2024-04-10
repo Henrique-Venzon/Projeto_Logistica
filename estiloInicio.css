@@ -14,7 +14,7 @@ header{
 .senai{
     height: 45px;
     display: flex;
-    margin-left: 30%;
+    margin-left: 35%;
 }
 header h1{
     font-size: 30px;
@@ -28,7 +28,7 @@ header h1{
     display: flex;
 }
 .imgperfil{
-    margin-left: 45%;
+    margin-left: 40%;
     height: 55px;
     width: 55px; 
     display: flex;
