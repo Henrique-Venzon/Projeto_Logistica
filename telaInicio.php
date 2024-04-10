@@ -18,6 +18,9 @@ session_start();
         <div class="textArmazem">
             <h1>Armazém</h1>
         </div> 
+        <div class="senai">
+            <img src="img/senai-logo-1.png" alt="">
+        </div>
         <!--
         <div class="nomeLogin">  
         <?php
@@ -40,11 +43,11 @@ session_start();
                             </div>
                             <div class="img-T"><img src="img/Piking.png" style="cursor: pointer;" class="imgbotao">
                             </div>
-                            <div class="img-T"><img src="img/armazem.png" style="cursor: pointer;" class="imgbotao">
+                            <div class="img-T"><img src="img/pedidos.png" style="cursor: pointer;" class="imgbotao">
                             </div>
                             <div class="img-T"><img src="img/armazem.png" style="cursor: pointer;" class="imgbotao">
                             </div>
-                            <div class="img-T"><img src="img/armazem.png" style="cursor: pointer;" class="imgbotao">
+                            <div class="img-T"><img src="img/configuracoes.png" style="cursor: pointer;" class="imgbotao">
                             </div>
 
                         </div>
