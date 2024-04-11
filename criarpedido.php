@@ -24,8 +24,8 @@ function gerarCampos() {
     container.innerHTML = ''; 
 
     for (var i = 0; i < quantidade; i++) {
-        container.innerHTML += `
-            <label class="label-input" for=""> Nome do produto:<br>
+        container.innerHTML += `  
+            <label class="label-input" for=""> ${i + 1} Nome do produto: <br>
                 <input type="text" name="nome_produto[]" placeholder="Nome do produto" id="nome_produto${i}">
             </label>
             <br>
@@ -52,8 +52,10 @@ function gerarCampos() {
             <br>
             <label for="quantidade">NCM (8 Digitos): </label>
             <input type="text" id="NCM" name="NCM">
-
-            
+            <br>
+            <label for="quantidade">CST: </label>
+            <input type="text" id="CST" name="CST">
+            <br>
             <label class="label-input" for="">CFOP: <br>
                 <input type="text" name="nome_produto[]" placeholder="Nome do produto" id="nome_produto${i}">
             </label>
