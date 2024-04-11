@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['id'] = $row[0];
                     $_SESSION['username'] = $row[1];
 
-                    header('Location: telainicio.php', true, 301);
+                    header('Location: telainicio.html', true, 301);
                     exit();
                 } else {
 
