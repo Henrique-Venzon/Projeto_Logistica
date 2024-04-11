@@ -73,8 +73,8 @@ body {
 
 }
 .ajeitarcadastro{
-    margin-left: -30%;
-}
+    text-align: center;
+    }
 .btn {
     border-radius: 15px;
     text-transform: uppercase;
@@ -150,6 +150,7 @@ input:-webkit-autofill {
     display: flex;
     align-items: center;
     margin: 8px;
+    border: 1px solid black;
 }
 .opcaoRadio {
     background-color: #ecf0f1;
