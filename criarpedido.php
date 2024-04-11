@@ -50,8 +50,8 @@ function gerarCampos() {
             <label for="quantidade">Quantidade: </label>
             <input type="number" id="quantidade" name="quantidade" min="1">
             <br>
-            <label for="quantidade">Quantidade: </label>
-            <input type="text" id="quantidade" name="quantidade" pattern="\\d{8}" title="Insira exatamente 8 dígitos." required>
+            <label for="quantidade">NCM (8 Digitos): </label>
+            <input type="text" id="NCM" name="NCM">
 
             
             <label class="label-input" for="">CFOP: <br>
