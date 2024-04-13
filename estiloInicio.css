@@ -31,7 +31,8 @@ header h1{
     display: flex;
 }
 .imgperfil{
-    margin-left: 82%;
+    right: 1%;
+    position: absolute;
     height: 55px;
     width: 55px; 
     display: flex;
@@ -94,6 +95,7 @@ ul h1{
     width: 100%;
     font-size: 30px;
 }
+
 .imgbotao {
     background-color: #64acff;
 }
@@ -102,6 +104,8 @@ ul h1{
     width: 223px;
     background-color: #64acff;
 }
+
+
 nav h1 {
     background-color: #64acff; 
     height: 80px; 
