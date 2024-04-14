@@ -31,40 +31,93 @@
         </div>
     </header>
     <main>
-        <div class="DivEsquerda">
-            <ul class="Ulprincipal">
-                <li><input type="checkbox" id="chec">
-                    <label for="chec">
-                        <div class="label1">
-                            <div class="img-T"><img src="img/caminhao.png" style="cursor: pointer;" class="imgbotao">
-                            </div>
-                            <div class="img-T"><img src="img/Piking.png" style="cursor: pointer;" class="imgbotao">
-                            </div>
-                            <div class="img-T"><img src="img/pedidos.png" style="cursor: pointer;" class="imgbotao">
-                            </div>
-                            <div class="img-T"><img src="img/armazempreto.png" style="cursor: pointer;" class="imgbotao">
-                            </div>
-                        </div>
-                    </label>
-                    <nav>
-                        <ul class="Ulvertical">
-                            <div class="text">
-                                <li><h1>Docas </h1></li>
-                            </div>
-                            <div class="text">
-                                <li><h1>Piking</h1></li>
-                            </div>
-                            <div class="text">
-                                <li><h1>Pedidos</h1></li>
-                            </div>
-                            <div class="text">
-                                <li><h1>Armazém</h1></li>
-                            </div>
+
+        <div class="menuL">
+            <aside id="sidebar">
+                <div class="d-flex">
+                    <button class="toggle-btn" type="button">
+                        <img src="img/menu.png" alt="">
+                    </button>
+                    <div class="sidebar-logo">
+                        <a href="#">CodzSword</a>
+                    </div>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="lni lni-user"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="lni lni-agenda"></i>
+                            <span>Task</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                            data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                            <i class="lni lni-protection"></i>
+                            <span>Auth</span>
+                        </a>
+                        <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Login</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Register</a>
+                            </li>
                         </ul>
-                    </nav>
-                </li>
-            </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                            data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
+                            <i class="lni lni-layout"></i>
+                            <span>Multi Level</span>
+                        </a>
+                        <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#multi-two" aria-expanded="false" aria-controls="multi-two">
+                                    Two Links
+                                </a>
+                                <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link">Link 1</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link">Link 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="lni lni-popup"></i>
+                            <span>Notification</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="lni lni-cog"></i>
+                            <span>Setting</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="sidebar-footer">
+                    <a href="#" class="sidebar-link">
+                        <i class="lni lni-exit"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </aside>
+            
         </div>
+
+        
+        
         <div class="DivDireita">
             <div class="inicioConteudo">
                 <div class="cabeca">
@@ -102,7 +155,10 @@
             </div>
         </div>
     </main>
-    <script src="" async defer></script>
+
+    
+
+    <script src="telaInico.js"></script>
 </body>
 
 </html>
