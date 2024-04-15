@@ -19,13 +19,16 @@ header{
     position: absolute;
 
 }
-header h1{
+.textArmazem{
     font-size: 30px;
     display: flex;
-    margin-left: 60%;
+    margin-left: 4%;
+    color: #FFF;
+    text-shadow: 2px 2px 10px #000000;
+    
 }
 .imagemDec{
-    margin-left: 30px;
+    margin-left: 27px;
     height: 55px;
     width: 55px; 
     display: flex;
@@ -62,8 +65,8 @@ main{
 }
 .DivDireita{
     margin-top: 4%;
-    margin-left: 14%;
-    margin-right: 14%;
+    margin-left: 8%;
+    margin-right: 8%;
     border: 2px solid black;
     width: 100%;
     height: 85%;
@@ -110,13 +113,13 @@ main{
     border-bottom: 2px solid black;
 }
 .IDs{
-    width: 15%;
+    width: 14%;
 }
 .produtoCont{
-    width: 18%;
+    width: 20%;
 }
 .Desc{
-    width: 30%;
+    width: 29%;
 }
 .Preco{
     width: 17%;
@@ -149,20 +152,32 @@ main{
     height: 40px;
     width: 40px;
 }
+.d-flex{
+    display: flex;
+    margin-top: 10px;
+}
+.sidebar-link img{
+    height: 50px;
+}
+.menuImg{
+    margin-left: 10px;
+}
+
 
 #sidebar {
-    width: 90px;
-    min-width: 70px;
+    width: 100px;
+    min-width: 90px;
     z-index: 1000;
     transition: all .25s ease-in-out;
-    background-color: #0e2238;
+    background-color: #64acff;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 #sidebar.expand {
     width: 260px;
-    min-width: 260px;
+    min-width: 200px;
 }
 
 .toggle-btn {
@@ -183,9 +198,10 @@ main{
 
 .sidebar-logo a {
     color: #FFF;
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
+
 
 #sidebar:not(.expand) .sidebar-logo,
 #sidebar:not(.expand) a.sidebar-link span {
@@ -201,19 +217,14 @@ a.sidebar-link {
     padding: .625rem 1.625rem;
     color: #FFF;
     display: block;
-    font-size: 0.9rem;
+    font-size: 1rem;
     white-space: nowrap;
     border-left: 3px solid transparent;
 }
 
-.sidebar-link i {
-    font-size: 1.1rem;
-    margin-right: .75rem;
-}
-
 a.sidebar-link:hover {
     background-color: rgba(255, 255, 255, .075);
-    border-left: 3px solid #3b7ddd;
+    border-left: 3px solid #3776bd;
 }
 
 .sidebar-item {
@@ -223,8 +234,8 @@ a.sidebar-link:hover {
 #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
     position: absolute;
     top: 0;
-    left: 70px;
-    background-color: #0e2238;
+    left: 100px;
+    background-color: #104581;
     padding: 0;
     min-width: 15rem;
     display: none;
