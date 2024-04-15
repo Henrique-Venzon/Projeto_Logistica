@@ -144,6 +144,9 @@ main{
 .menuL li {
     list-style: none;
 }
+.sidebar-link{
+    margin-top: 10px;
+}
 
 .menuL h1 {
     font-weight: 600;
@@ -180,6 +183,7 @@ main{
     display: flex;
     flex-direction: column;
     height: 100%;
+
 }
 
 #sidebar.expand {
@@ -230,8 +234,8 @@ a.sidebar-link {
 }
 
 a.sidebar-link:hover {
-    background-color: rgba(255, 255, 255, .075);
-    border-left: 3px solid #3776bd;
+    background-color: rgba(255, 255, 255, 0.301);
+    border-left: 3px solid #132c4b;
 }
 
 .sidebar-item {
@@ -242,7 +246,7 @@ a.sidebar-link:hover {
     position: absolute;
     top: 0;
     left: 100px;
-    background-color: #104581;
+    background-color: #002753;
     padding: 0;
     min-width: 15rem;
     display: none;
