@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="estiloInicio.css">
+    <link rel="stylesheet" href="TelaUsuarios.css">
 </head>
 
 <body>
@@ -144,7 +145,7 @@
         
         <div class="DivDireita">
             
-        <h1>Lista de alunos</h1>
+        <h1 class="centroT">Lista de alunos</h1>
 
         <?php
         $servername = "localhost";
@@ -168,6 +169,8 @@
                     print "<th>Nome</th>";
                     print "<th>Senha</th>";
                     print "<th>Turma</th>";
+                    print "<th>Cargo</th>";
+                    print "<th>Ações</th>";
                     print "</tr>";
             
                 while($row = $res->fetch_object()){
@@ -175,6 +178,10 @@
                     print "<td>".$row->username."</td>";
                     print "<td>".$row->password."</td>";
                     print "<td>".$row->turma."</td>";
+                    print "<td>".$row->cargo."</td>";
+                    print "<td>
+                    <button onclick=\"location.href='?page=editar&id=".$row->id."';\">Resetar senha</button>
+                        </td>"; 
                     print "</tr>";
 
                 }
