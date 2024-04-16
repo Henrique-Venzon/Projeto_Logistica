@@ -3,6 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="estiloInicio.css">
 </head>
@@ -10,10 +14,10 @@
 <body>
     <header>
         <div class="imagemDec">
-            <img src="img/armazem.png" alt="">
+            <img src="img/armazempreto.png" alt="">
         </div>
         <div class="textArmazem">
-            <h1>Armazém</h1>
+            <h1>Estoque</h1>
         </div> 
         <div class="senai">
             <img src="img/senai-logo-1.png" alt="">
@@ -21,17 +25,17 @@
         <!--
         <div class="nomeLogin">  
         <?php
-				echo '"<h1 class="nomeLogin">'.'Bem vindo professor: '.$username.'</h1>';
+				echo '"<h1 class="nomeLogin">'.$username.'</h1>';
                             ?>
         </div> 
         -->
    
         <div class="imgperfil">
-            <img src="img/perfil.png" alt="">
+            <img src="" alt="">
         </div>
     </header>
     <main>
-    <div class="menuL">
+        <div class="menuL">
             <aside id="sidebar">
                 <div class="d-flex">
                     <button class="toggle-btn" type="button">
@@ -66,10 +70,40 @@
                             <span>Estoque</span>
                         </a>
                     </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                            data-bs-target="#Pedidos" aria-expanded="false" >
+                            <img src="img/pedidos.png" alt="">
+                            <span>Pedidos</span>
+                        </a>
+                        <ul id="Pedidos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Criar pedidos</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Ver meus pedidos</a>
+                            </li>
+                        </ul>
+                    </li> 
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                            data-bs-target="#Nota" aria-expanded="false" >
+                            <img src="img/caminhao.png" alt="">
+                            <span>Nota fiscal</span>
+                        </a>
+                        <ul id="Nota" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Criar Danfe</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Minhas Danfe</a>
+                            </li>
+                        </ul>
+                    </li> 
                     
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                            data-bs-target="#Recebimentos" aria-expanded="false" aria-controls="Recebimentos">
+                            data-bs-target="#Recebimentos" aria-expanded="false" >
                             <img src="img/caminhao.png" alt="">
                             <span>Recebimentos</span>
                         </a>
@@ -106,6 +140,9 @@
             </aside>
             
         </div>
+
+        
+        
         <div class="DivDireita">
             <div class="inicioConteudo">
                 <div class="cabeca">
@@ -115,32 +152,41 @@
                     <div class="textCon">
                         <h1>Produtos</h1>
                     </div>
-
-                    <div class="botaoConfig">
-                        <img class="imgCabeca" src="img/confpreto.png" style="margin-right:10px;" alt="">
+                    <div class="Pesquisa">
+                        <input class="botaoBusca" type="text" class="barra" name="search" placeholder="Pesquisar">
                     </div>
+
                 </div>
     
             </div>
             <div class="conteudo">
+                <div class="cabCont">
                 <div class="borda IDs">
                     <h1>ID</h1>
-
                 </div>
-                <div class="borda Buscas">
-                    <input class="botaoBusca" type="text" class="barra" name="search" placeholder="Pesquisar">
-
+                <div class="borda produtoCont">
+                    <h1>Produto</h1>
                 </div>
-                <div class="borda disponivel">
-                    <h1>UD</h1>
+                <div class="borda Desc">
+                    <h1>Descrição</h1>
                 </div>
-                <div class="quantidade">
-                <h1>Quantidade</h1>
+                <div class="borda Preco">
+                    <h1>Preço</h1>
                 </div>
+                <div class="Estoque">
+                <h1>Estoque</h1>
+                </div>
+            </div>
             </div>
         </div>
     </main>
-    <script src="" async defer></script>
+
+    
+
+    <script src="telaInico.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
