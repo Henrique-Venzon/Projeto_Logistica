@@ -1,8 +1,11 @@
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Platypi';
 }
+
 header{
     width: 100%;
     background-color: #64acff;
@@ -28,7 +31,7 @@ header{
     
 }
 .imagemDec{
-    margin-left: 27px;
+    margin-left: 25px;
     height: 55px;
     width: 55px; 
     display: flex;
@@ -144,9 +147,6 @@ main{
 .menuL li {
     list-style: none;
 }
-.sidebar-link{
-    margin-top: 10px;
-}
 
 .menuL h1 {
     font-weight: 600;
@@ -176,7 +176,7 @@ main{
 
 #sidebar {
     width: 100px;
-    min-width: 90px;
+    min-width: 100px;
     z-index: 1000;
     transition: all .25s ease-in-out;
     background-color: #64acff;
@@ -235,7 +235,6 @@ a.sidebar-link {
 
 a.sidebar-link:hover {
     background-color: rgba(255, 255, 255, 0.301);
-    border-left: 3px solid #132c4b;
 }
 
 .sidebar-item {
@@ -247,7 +246,7 @@ a.sidebar-link:hover {
     top: 0;
     left: 100px;
     background-color: #002753;
-    padding: 0;
+    padding: 0 ;
     min-width: 15rem;
     display: none;
 }
@@ -269,10 +268,10 @@ a.sidebar-link:hover {
     right: 1.5rem;
     top: 1.4rem;
     transform: rotate(-135deg);
-    transition: all .2s ease-out;
+    transition: all .1s ease-out;
 }
 
 #sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
     transform: rotate(45deg);
-    transition: all .2s ease-out;
+    transition: all .1s ease-out;
 }
