@@ -147,8 +147,15 @@
         <h1>Lista de alunos</h1>
 
         <?php
+        $servername = "localhost";
+        $username = "root.Att";
+        $password = "root";
+        $dbname = "logistica";
+        
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);     
 
-        $sql = "SELECT * FROM logins";
+        $sql = "SELECT * FROM aluno";
 
         $res = $conn->query($sql);
 
@@ -161,7 +168,7 @@
                     print "<th>ID</th>";
                     print "<th>Nome</th>";
                     print "<th>Senha</th>";
-                    print "<th>Tipo</th>";
+                    print "<th>Turma</th>";
                     print "</tr>";
             
                 while($row = $res->fetch_object()){
@@ -169,7 +176,7 @@
                     print "<td>".$row->id."</td>";
                     print "<td>".$row->username."</td>";
                     print "<td>".$row->password."</td>";
-                    print "<td>".$row->tipo_login."</td>";
+                    print "<td>".$row->turma."</td>";
                     print "</tr>";
 
                 }
