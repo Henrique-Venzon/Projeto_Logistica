@@ -143,40 +143,44 @@
         
         
         <div class="DivDireita">
-            <div class="inicioConteudo">
-                <div class="cabeca">
-                    <div class="imgCont">
-                        <img class="imgCabeca" src="img/produtos.png" style="margin-left:10px;" alt="">
-                    </div>
-                    <div class="textCon">
-                        <h1>Produtos</h1>
-                    </div>
-                    <div class="Pesquisa">
-                        <input class="botaoBusca" type="text" class="barra" name="search" placeholder="Pesquisar">
-                    </div>
+            
+        <h1>Lista de alunos</h1>
 
-                </div>
-    
-            </div>
-            <div class="conteudo">
-                <div class="cabCont">
-                <div class="borda IDs">
-                    <h1>ID</h1>
-                </div>
-                <div class="borda produtoCont">
-                    <h1>Produto</h1>
-                </div>
-                <div class="borda Desc">
-                    <h1>Descrição</h1>
-                </div>
-                <div class="borda Preco">
-                    <h1>Preço</h1>
-                </div>
-                <div class="Estoque">
-                <h1>Estoque</h1>
-                </div>
-            </div>
-            </div>
+        <?php
+
+        $sql = "SELECT * FROM logins";
+
+        $res = $conn->query($sql);
+
+        $qtd = $res->num_rows;
+
+        if($qtd > 0){
+            print "<table class='table' >";
+
+            print "<tr>";
+                    print "<th>ID</th>";
+                    print "<th>Nome</th>";
+                    print "<th>Senha</th>";
+                    print "<th>Tipo</th>";
+                    print "</tr>";
+            
+                while($row = $res->fetch_object()){
+                    print "<tr>";
+                    print "<td>".$row->id."</td>";
+                    print "<td>".$row->username."</td>";
+                    print "<td>".$row->password."</td>";
+                    print "<td>".$row->tipo_login."</td>";
+                    print "</tr>";
+
+                }
+                print "</table>";
+
+        }else{
+            print "<p class='alert alert-danger'>Não encrontrou nenhum usuario</p>";
+        }
+
+        ?>
+
         </div>
     </main>
 
