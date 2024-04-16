@@ -31,6 +31,9 @@
                     <label class="label-input" for="">
                         <input type="password" placeholder="Senha" name='Senha'>
                     </label>
+                    <label class="label-input" for="">
+                        <input type="Number" placeholder="Turma" name='turma'>
+                    </label>
 
                     <button class="btn btn-second" value="aluno" type='submit' name='action'>
                         <h3 class="ajeitarcadastro">Entrar</h3>

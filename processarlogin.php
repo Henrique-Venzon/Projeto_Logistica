@@ -1,5 +1,4 @@
 <?php
-// iniciar uma sessão
 session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $action = $_POST['action'] ?? 'padrão';
@@ -41,10 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (isset($_POST['Usuario']) && isset($_POST['Senha'])) {
                 $username = $conexao->real_escape_string($_POST['Usuario']);
                 $password = $conexao->real_escape_string($_POST['Senha']);
+                $turma = $conexao->real_escape_string($_POST['turma']);
 
-                $sql = "SELECT `id`, `username` FROM `aluno`
-                            WHERE `username` = '" . $username . "'
-                            AND `password` = '" . $password . "';";
+                $sql = "SELECT `id`, `username` FROM `aluno` WHERE `username` = '" . $username . "' AND `password` = '" . $password . "' AND `turma` = '" . $turma . "'";
+
                 $resultado = $conexao->query($sql);
 
                 if ($resultado->num_rows != 0) {
@@ -52,8 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['id'] = $row[0];
                     $_SESSION['username'] = $row[1];
 
-                    header('Location: telainicio.html', true, 301);
-                    exit();
+                    header('Location: telainicio.php', true, 301);
                 } else {
 
                     $conexao->close();
