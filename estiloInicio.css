@@ -56,8 +56,9 @@ header{
 
 }
 main{
-    height: 790px;
+    height: 877px;
     display: flex;
+    max-height: 1500px;
 }
 .cabeca{
     display: flex;
@@ -137,8 +138,6 @@ main{
 .Estoque{
     width: 20%;
 }
-
-
 
 .menuL a {
     text-decoration: none;
