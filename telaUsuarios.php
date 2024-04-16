@@ -169,7 +169,7 @@
                     print "<th>Nome</th>";
                     print "<th>Senha</th>";
                     print "<th>Turma</th>";
-                    print "<th>Cargo</th>";
+                    print "<th>Ação</th>";
                     print "</tr>";
             
                 while($row = $res->fetch_object()){
