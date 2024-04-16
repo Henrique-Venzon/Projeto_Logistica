@@ -24,16 +24,18 @@ if(!isset($_SESSION['id'])){
             <img src="img/armazempreto.png" alt="">
         </div>
         <div class="textArmazem">
-            <h1>Armazém</h1>
+            <h1>Estoque</h1>
         </div> 
         <div class="senai">
             <img src="img/senai-logo-1.png" alt="">
         </div>
+        
         <div class="nomeLogin">  
         <?php
-				echo '"<h1 class="nomeLogin">'. $_SESSION['username'] .'</h1>';
+				echo '"<h1 class="nomeLogin">'.$_SESSION['username'].'</h1>';
                             ?>
         </div> 
+        
    
         <div class="imgperfil">
             <img src="" alt="">
@@ -108,6 +110,11 @@ if(!isset($_SESSION['id'])){
                         <a href="#" class="sidebar-link">
                             <img src="img/confpreto.png" alt="">
                             <span>Controle</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="sair.php" class="sidebar-link">
+                            <span>Sair</span>
                         </a>
                     </li>
                 </ul>
