@@ -158,7 +158,6 @@
             print "<table class='table' >";
 
             print "<tr>";
-                    print "<th>ID</th>";
                     print "<th>Nome</th>";
                     print "<th>Senha</th>";
                     print "<th>Tipo</th>";
@@ -166,7 +165,6 @@
             
                 while($row = $res->fetch_object()){
                     print "<tr>";
-                    print "<td>".$row->id."</td>";
                     print "<td>".$row->username."</td>";
                     print "<td>".$row->password."</td>";
                     print "<td>".$row->tipo_login."</td>";
