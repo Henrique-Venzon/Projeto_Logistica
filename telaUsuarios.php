@@ -170,7 +170,6 @@
                     print "<th>Senha</th>";
                     print "<th>Turma</th>";
                     print "<th>Cargo</th>";
-                    print "<th>Ações</th>";
                     print "</tr>";
             
                 while($row = $res->fetch_object()){
@@ -178,7 +177,6 @@
                     print "<td>".$row->username."</td>";
                     print "<td>".$row->password."</td>";
                     print "<td>".$row->turma."</td>";
-                    print "<td>".$row->cargo."</td>";
                     print "<td>
                     <button onclick=\"location.href='?page=editar&id=".$row->id."';\">Resetar senha</button>
                         </td>"; 
