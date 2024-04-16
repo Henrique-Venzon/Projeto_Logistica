@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 03/04/2024 às 10:58
+-- Tempo de geração: 16/04/2024 às 11:16
 -- Versão do servidor: 8.0.36
 -- Versão do PHP: 8.2.13
 
@@ -22,6 +22,29 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `logistica` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `logistica`;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `aluno`
+--
+
+DROP TABLE IF EXISTS `aluno`;
+CREATE TABLE IF NOT EXISTS `aluno` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `turma` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `aluno`
+--
+
+INSERT INTO `aluno` (`id`, `username`, `password`, `turma`) VALUES
+(1, 'root.Att', 'root', 0),
+(12, 'teste', 'teste', 0);
 
 -- --------------------------------------------------------
 
@@ -56,29 +79,6 @@ CREATE TABLE IF NOT EXISTS `itens_notas_fiscais` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `logins`
---
-
-DROP TABLE IF EXISTS `logins`;
-CREATE TABLE IF NOT EXISTS `logins` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `tipo_login` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `logins`
---
-
-INSERT INTO `logins` (`id`, `username`, `password`, `tipo_login`) VALUES
-(1, 'root.Att', 'root', 'professor'),
-(12, 'teste', 'teste', 'professor');
-
--- --------------------------------------------------------
-
---
 -- Estrutura para tabela `notas_fiscais`
 --
 
@@ -93,6 +93,27 @@ CREATE TABLE IF NOT EXISTS `notas_fiscais` (
   KEY `MATRICULA` (`MATRICULA`),
   KEY `CPF` (`CPF`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `professor`
+--
+
+DROP TABLE IF EXISTS `professor`;
+CREATE TABLE IF NOT EXISTS `professor` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL,
+  `password` varchar(65) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `professor`
+--
+
+INSERT INTO `professor` (`id`, `username`, `password`) VALUES
+(1, 'teste', 'teste');
 
 -- --------------------------------------------------------
 
