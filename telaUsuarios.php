@@ -149,8 +149,8 @@
 
         <?php
         $servername = "localhost";
-        $username = "root.Att";
-        $password = "root";
+        $username = "root";
+        $password = "";
         $dbname = "logistica";
         
         // Create connection
@@ -169,16 +169,16 @@
                     print "<th>Nome</th>";
                     print "<th>Senha</th>";
                     print "<th>Turma</th>";
-                    print "<th>Ação</th>";
+                    print "<th style=\"border-right:none;\">Resetar senha</th>";
                     print "</tr>";
             
                 while($row = $res->fetch_object()){
                     print "<tr>";
                     print "<td>".$row->username."</td>";
                     print "<td>".$row->password."</td>";
-                    print "<td>".$row->turma."</td>";
-                    print "<td>
-                    <button onclick=\"location.href='?page=editar&id=".$row->id."';\">Resetar senha</button>
+                    print "<td >".$row->turma."</td>";
+                    print "<td style=\"border-right:none;\">
+                    <button class=\"reset\" onclick=\"location.href='?page=editar&id=".$row->id."';\">Resetar</button>
                         </td>"; 
                     print "</tr>";
 

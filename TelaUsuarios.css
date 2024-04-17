@@ -5,4 +5,16 @@
 }
 .table{
     font-size: 30px;
+    text-align: center;
+    
+}
+.table th,td{
+    border: solid 1.5px black;
+    border-left: none;
+
+}
+.reset{
+    border-radius: 80px;
+    height: 70px;
+    width: 170px;
 }
