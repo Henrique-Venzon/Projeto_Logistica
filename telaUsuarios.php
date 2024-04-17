@@ -7,7 +7,6 @@
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="estiloInicio.css">
     <link rel="stylesheet" href="TelaUsuarios.css">
 </head>
 
@@ -163,6 +162,7 @@
         $qtd = $res->num_rows;
 
         if($qtd > 0){
+            print "<div class=\"tabela-scroll\">";
             print "<table class='table' >";
 
             print "<tr>";
@@ -184,6 +184,7 @@
 
                 }
                 print "</table>";
+                print "</div>";
 
         }else{
             print "<p class='alert alert-danger'>Não encrontrou nenhum usuario</p>";
