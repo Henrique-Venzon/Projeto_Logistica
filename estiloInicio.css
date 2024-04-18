@@ -15,13 +15,15 @@ header{
 }
 
 .nomeLogin{
-    left: 80%;
+    left: 70%;
     display: flex;
     position: absolute;
+    align-items: center;
     text-shadow: 2px 2px 10px #000000;
 }
 .nomeLogin h1{
     color: #FFF;
+    font-size: 35px;
 }
 
 .senai{
@@ -34,8 +36,10 @@ header{
 }
 .textArmazem{
     font-size: 30px;
+    left: 90%;
     display: flex;
-    margin-left: 4%;
+    position: absolute;
+    align-items: center;
     color: #FFF;
     text-shadow: 2px 2px 10px #000000;
     
@@ -46,107 +50,59 @@ header{
     width: 55px; 
     display: flex;
 }
-.imgperfil{
-    right: 1%;
-    position: absolute;
+.logo{
+    align-items: center;
+    display: flex;
+}
+.logo h1{
+    margin-left: 5%;
+    color: #FFF;
+    font-size: 40px;
+    text-shadow: 2px 2px 10px #000000; 
+}
+.logo img{
+    margin-left: 3%;
     height: 55px;
     width: 55px; 
-    display: flex;
-}
-.nomeLogin{
-    font-size: 12px;
-    color: #000;
 }
 
 
 
-.inicioConteudo{
-    color: black;
-    right: 110px;
 
-}
+
 main{
-    height: 877px;
+    height: page;
     display: flex;
-    max-height: 1500px;
 }
-.cabeca{
-    display: flex;
-    padding: 10px;
-    justify-content: space-around;
-    border-bottom: 2px solid black;
-    align-items: center;
-}
+
 .DivDireita{
-    margin-top: 4%;
-    margin-left: 8%;
-    margin-right: 8%;
-    border: 1.5px solid black;
     width: 100%;
-    height: 85%;
-    background-color: #90b9e7;
-    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.733);
-    border-radius: 40px;
+    height: 100%;
+    background-color: #ebebeb;
+    display: flex;
     
 }
-.imgCabeca{
-    width: 100px;
-    height: 90px;
-    
-}
-.textCon{
-    font-size: 30px;
-    color: white;
-    text-shadow: 2px 2px 10px #000000;
-
-}
-.DivDireita h1{
-    color: white;
-    text-shadow: 2px 2px 10px #000000;
-}
-
-.botaoAdd{
-    height: 60px;
-    font-size: 20px;
+.Imagem{
     display: flex;
+    justify-content: end;
+    align-items: end;
 }
-.botaoAdd h1{
-    font-size: 20px;
-    width: 180px;
+.imgLog{
+    height: 877px;
+    width: 1291px;
+    filter: drop-shadow(-15px 0px 20px rgb(98, 179, 255));
 }
-.borda{
-    border-right: 2px solid black;
-}
-.conteudo{
-    display: flex;
+.bv h1{
+    font-size: 60px;
+    color: #FFF;
+    text-shadow: 2px 2px 10px #000000; 
+    text-transform: uppercase;
+    text-wrap: nowrap;
     text-align: center;
-}
-
-.botaoBusca{
-    text-align: center;
-    width: 200px;
-    height: 30px;
-    margin: 0.8%;
-}
-.cabCont{
-    width: 100%;
-    display: flex;
-    border-bottom: 2px solid black;
-}
-.IDs{
-    width: 14%;
-}
-.produtoCont{
-    width: 20%;
-}
-.Desc{
-    width: 29%;
-}
-.Preco{
-    width: 17%;
-}
-.Estoque{
-    width: 20%;
+    }
+.bv{
+    height: 100%;
+    margin-top: 18%;
 }
 
 .menuL a {
@@ -163,7 +119,6 @@ main{
 }
 
 
-
 .menuL {
     display: flex;
 }
@@ -177,6 +132,7 @@ main{
 }
 .sidebar-link img{
     height: 50px;
+    width: 50px;
 }
 .menuImg{
     margin-left: 10px;
@@ -192,7 +148,6 @@ main{
     display: flex;
     flex-direction: column;
     height: 100%;
-
 }
 
 #sidebar.expand {
@@ -242,12 +197,14 @@ a.sidebar-link {
     border-left: 3px solid transparent;
 }
 
+
 a.sidebar-link:hover {
     background-color: rgba(255, 255, 255, 0.301);
 }
 
 .sidebar-item {
     position: relative;
+    margin-bottom: 10px;
 }
 
 #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {

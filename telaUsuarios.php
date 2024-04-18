@@ -155,8 +155,8 @@ if(!isset($_SESSION['id'])){
 
         <?php
         $servername = "localhost";
-        $username = "root";
-        $password = "";
+        $username = "root.Att";
+        $password = "root";
         $dbname = "logistica";
         
         // Create connection
