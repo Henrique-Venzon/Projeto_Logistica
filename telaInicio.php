@@ -32,7 +32,7 @@ if(!isset($_SESSION['id'])){
         
         <div class="nomeLogin">  
         <?php
-				echo '"<h1 class="nomeLogin">'.$_SESSION['username'].'</h1>';
+				print '<h1>'.$_SESSION['username'].'</h1>';
                             ?>
         </div> 
         
@@ -54,7 +54,7 @@ if(!isset($_SESSION['id'])){
                 </div>
                 <ul class="sidebar-nav">
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
+                        <a href="telaUsuarios.php" class="sidebar-link">
                             <img src="img/perfil.png" alt="">
                             <span>Perfil</span>
                         </a>

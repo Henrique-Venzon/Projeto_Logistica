@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['id'])){
+    header("Location: index.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 
 <head>
@@ -21,13 +28,13 @@
         <div class="senai">
             <img src="img/senai-logo-1.png" alt="">
         </div>
-        <!--
+        
         <div class="nomeLogin">  
         <?php
-				echo '"<h1 class="nomeLogin">'.$username.'</h1>';
-                            ?>
+            print '<h1>'.$_SESSION['username'].'</h1>';
+                ?>                            
         </div> 
-        -->
+        
    
         <div class="imgperfil">
             <img src="" alt="">
@@ -178,7 +185,7 @@
                     print "<td>".$row->password."</td>";
                     print "<td >".$row->turma."</td>";
                     print "<td style=\"border-right:none;\">
-                    <button class=\"reset\" onclick=\"location.href='?page=editar&id=".$row->id."';\">Resetar</button>
+                    <button class=\"reset\" onclick=\"location.href='?page=editar&id=".$row->id."';\"><span>Resetar</span></button>
                         </td>"; 
                     print "</tr>";
 
