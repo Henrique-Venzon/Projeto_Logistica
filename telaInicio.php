@@ -61,7 +61,7 @@ if(!isset($_SESSION['id'])){
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
-                            <img src="" alt="">
+                            <img src="img/movimentação.png" alt="">
                             <span>Movimentações</span>
                         </a>
                     </li>
@@ -73,7 +73,7 @@ if(!isset($_SESSION['id'])){
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
-                            <img src="" alt=""><i class="lni lni-agenda"></i>
+                            <img src="img/armazem_sidebar.png" alt=""><i class="lni lni-agenda"></i>
                             <span>Estoque</span>
                         </a>
                     </li>
@@ -95,25 +95,26 @@ if(!isset($_SESSION['id'])){
                     </li> 
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
-                            <img src="" alt=""><i class="lni lni-agenda"></i>
+                            <img src="img/expedição.png" alt="">
                             <span>Expedição</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
-                            <img src="" alt=""><i class="lni lni-agenda"></i>
+                            <img style="width: 70px;margin-left:-10px;" src="img/relatorio.png" alt="">
                             <span>Relatórios</span>
                         </a>
                     </li>
                     
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
-                            <img src="img/confpreto.png" alt="">
+                            <img  src="img/confpreto.png" alt="">
                             <span>Controle</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="sair.php" class="sidebar-link">
+                        <img style="width: 45px;margin-left:5px;height:45px;" src="img/sair.png" alt="">
                             <span>Sair</span>
                         </a>
                     </li>
@@ -126,40 +127,7 @@ if(!isset($_SESSION['id'])){
         
         
         <div class="DivDireita">
-            <div class="inicioConteudo">
-                <div class="cabeca">
-                    <div class="imgCont">
-                        <img class="imgCabeca" src="img/produtos.png" style="margin-left:10px;" alt="">
-                    </div>
-                    <div class="textCon">
-                        <h1>Produtos</h1>
-                    </div>
-                    <div class="Pesquisa">
-                        <input class="botaoBusca" type="text" class="barra" name="search" placeholder="Pesquisar">
-                    </div>
-
-                </div>
-    
-            </div>
-            <div class="conteudo">
-                <div class="cabCont">
-                <div class="borda IDs">
-                    <h1>ID</h1>
-                </div>
-                <div class="borda produtoCont">
-                    <h1>Produto</h1>
-                </div>
-                <div class="borda Desc">
-                    <h1>Descrição</h1>
-                </div>
-                <div class="borda Preco">
-                    <h1>Preço</h1>
-                </div>
-                <div class="Estoque">
-                <h1>Estoque</h1>
-                </div>
-            </div>
-            </div>
+            
         </div>
     </main>
 

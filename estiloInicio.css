@@ -177,6 +177,7 @@ main{
 }
 .sidebar-link img{
     height: 50px;
+    width: 50px;
 }
 .menuImg{
     margin-left: 10px;
@@ -192,7 +193,6 @@ main{
     display: flex;
     flex-direction: column;
     height: 100%;
-
 }
 
 #sidebar.expand {
@@ -241,6 +241,7 @@ a.sidebar-link {
     white-space: nowrap;
     border-left: 3px solid transparent;
 }
+
 
 a.sidebar-link:hover {
     background-color: rgba(255, 255, 255, 0.301);
