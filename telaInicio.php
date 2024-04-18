@@ -20,12 +20,11 @@ if(!isset($_SESSION['id'])){
 
 <body>
     <header>
-        <div class="imagemDec">
-            <img src="img/armazempreto.png" alt="">
+    <div class="logo">
+            <img src="" alt="">
+            <h1>LogConnect</h1>
         </div>
-        <div class="textArmazem">
-            <h1>Estoque</h1>
-        </div> 
+         
         <div class="senai">
             <img src="img/senai-logo-1.png" alt="">
         </div>
@@ -35,11 +34,11 @@ if(!isset($_SESSION['id'])){
 				print '<h1>'.$_SESSION['username'].'</h1>';
                             ?>
         </div> 
+        <div class="textArmazem">
+            <h1>Home</h1>
+        </div> 
         
    
-        <div class="imgperfil">
-            <img src="" alt="">
-        </div>
     </header>
     <main>
         <div class="menuL">
@@ -49,7 +48,7 @@ if(!isset($_SESSION['id'])){
                         <img class="menuImg" src="img/menu.png" alt="">
                     </button>
                     <div class="sidebar-logo">
-            <a href="#" >Nome</a>
+            <a href="#" >Home</a>
                     </div>
                 </div>
                 <ul class="sidebar-nav">
@@ -127,8 +126,14 @@ if(!isset($_SESSION['id'])){
         
         
         <div class="DivDireita">
+            <div class="bv">
+                <h1>Seja Bem-Vindo</h1>
+                <?php
+				print '<h1>'.$_SESSION['username'].'</h1>';
+                            ?>
+            </div>
             <div class="Imagem">
-                <img class="imgLog" src="img/imgLOG.png" alt="">
+                <img class="imgLog" src="img/imgLog2.png" alt="">
             </div>
         </div>
     </main>
