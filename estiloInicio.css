@@ -249,6 +249,7 @@ a.sidebar-link:hover {
 
 .sidebar-item {
     position: relative;
+    margin-bottom: 10px;
 }
 
 #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {

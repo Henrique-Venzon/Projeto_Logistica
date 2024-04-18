@@ -81,7 +81,7 @@ if(!isset($_SESSION['id'])){
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                             data-bs-target="#Recebimentos" aria-expanded="false" aria-controls="Recebimentos">
-                            <img src="img/caminhao.png" alt="">
+                            <img src="img/receb.png" alt="">
                             <span>Recebimentos</span>
                         </a>
                         <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
