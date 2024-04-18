@@ -61,7 +61,7 @@ if(!isset($_SESSION['id'])){
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
-                            <img src="img/movimentação.png" alt="">
+                            <img src="img/movimentação02.png" alt="">
                             <span>Movimentações</span>
                         </a>
                     </li>
