@@ -21,7 +21,7 @@ if(!isset($_SESSION['id'])){
 <body>
     <header>
     <div class="logo">
-            <img src="" alt="">
+            <img src="img/logo.png" alt="">
             <h1>LogConnect</h1>
         </div>
          
@@ -33,9 +33,6 @@ if(!isset($_SESSION['id'])){
         <?php
 				print '<h1>'.$_SESSION['username'].'</h1>';
                             ?>
-        </div> 
-        <div class="textArmazem">
-            <h1>Home</h1>
         </div> 
         
    
