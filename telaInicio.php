@@ -34,6 +34,7 @@ if(!isset($_SESSION['id'])){
 				print '<h1>'.$_SESSION['username'].'</h1>';
                             ?>
         </div> 
+
         
    
     </header>
@@ -124,14 +125,21 @@ if(!isset($_SESSION['id'])){
         
         <div class="DivDireita">
             <div class="bv">
+                <div class="centT">
+                    <div>
                 <h1>Seja Bem-Vindo</h1>
+                </div>
+                <div>
                 <?php
 				print '<h1>'.$_SESSION['username'].'</h1>';
                             ?>
+                                        </div>
+            </div>
             </div>
             <div class="Imagem">
                 <img class="imgLog" src="img/imgLog2.png" alt="">
             </div>
+            
         </div>
     </main>
 

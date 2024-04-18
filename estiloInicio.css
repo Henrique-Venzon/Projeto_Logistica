@@ -11,7 +11,7 @@ header{
     background-color: #64acff;
     display: flex;
     align-items: center;
-    padding: 10px 0;
+    padding: 5.3px 0;
 }
 
 .nomeLogin{
@@ -37,8 +37,8 @@ header{
 
 .imagemDec{
     margin-left: 25px;
-    height: 55px;
-    width: 55px; 
+    height: 65px;
+    width: 65px; 
     display: flex;
 }
 .logo{
@@ -64,6 +64,7 @@ header{
 
 main{
     height: page;
+    width: 100%;
     display: flex;
 }
 
@@ -80,10 +81,16 @@ main{
     align-items: end;
 }
 .imgLog{
-    height: 865px;
-    width: 1270px;
+    height: 877px;
+    width: 1250px;
     filter: drop-shadow(-15px 0px 20px rgb(98, 179, 255));
+    margin-left:-400px;
+
 }
+        .centT{
+        margin-top: 25%;
+        display: block;
+        }
 .bv h1{
     font-size: 60px;
     color: #FFF;
@@ -93,8 +100,15 @@ main{
     text-align: center;
     }
 .bv{
-    height: 100%;
-    margin-top: 18%;
+    height: 500px;
+    margin-top: 10%;
+    background-color: #64acff;
+    margin-left:10%;
+    align-items: center;
+    width: 900px;
+    border-radius: 130px;
+    border: 0.5px solid black;
+
 }
 
 .menuL a {
@@ -196,7 +210,7 @@ a.sidebar-link:hover {
 
 .sidebar-item {
     position: relative;
-    margin-bottom: 7px;
+    margin-bottom: 10px;
 }
 
 #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
