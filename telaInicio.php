@@ -127,7 +127,9 @@ if(!isset($_SESSION['id'])){
         
         
         <div class="DivDireita">
-            
+            <div class="Imagem">
+                <img class="imgLog" src="img/imgLOG.png" alt="">
+            </div>
         </div>
     </main>
 
