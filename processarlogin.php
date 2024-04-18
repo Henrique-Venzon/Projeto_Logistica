@@ -1,10 +1,9 @@
 <?php
 session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $action = $_POST['action'] ?? 'padrão';
     $hostname = "127.0.0.1";
-    $user = "root";
-    $password = "";
+    $user = "root.Att";
+    $password = "root";
     $database = "logistica";
 
     $conexao = new mysqli($hostname, $user, $password, $database);
