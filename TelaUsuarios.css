@@ -1,0 +1,345 @@
+.centroT{
+    font-size: 58px;
+    text-align: center;
+    margin-top: 10px;
+}
+.table{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    justify-content: center;
+    align-items: center;
+}
+.table th,td{
+    border: solid 1.5px black;
+    border-left: none;
+    border-bottom: none;
+    font-size: 30px;
+}
+.table th{
+    height: 50px;
+}
+.table td{
+    height: 60px;
+}
+.reset{
+    border-radius: 80px;
+    height: 50px;
+    width: 170px;
+    font-size: 25px;
+}
+
+
+.reset,
+.reset *,
+.reset :after,
+.reset :before,
+.reset:after,
+.reset:before {
+  box-sizing: border-box;
+}
+.reset {
+  -webkit-tap-highlight-color: transparent;
+  background-color: #ffffff;
+  color: #fff;
+  background-image: none;
+  color: #fff;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  border: 0.8 solid black;
+}
+
+.reset {
+  overflow: hidden;
+  position: relative;
+}
+.reset:hover {
+  transform: scale(1);
+
+}
+.reset span {
+  font-weight: 900;
+  mix-blend-mode: difference;
+}
+.reset:before {
+  aspect-ratio: 1;
+  background: #000000;
+  border-radius: 50%;
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 1s;
+  width: 0;
+  
+}
+
+.reset:hover:before {
+  width: 100%;
+}
+
+
+
+
+
+.tabela-scroll {
+    max-height: 610px; /* Define a altura máxima da div que contém a tabela */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
+    border-bottom: solid 1.5px black;
+
+  }
+  .tabela-scroll::-webkit-scrollbar {
+    height: 5px; /* Altura da barra de rolagem */
+  }
+  
+  
+  .tabela-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #1d82d4; /* Altera a cor do "ponteiro" quando o mouse está sobre ele */
+  }
+  
+
+  .tabela-scroll::-webkit-scrollbar-track {
+    background-color: #808080; /* Cor de fundo da barra de rolagem */
+  }
+  
+  .tabela-scroll::-webkit-scrollbar-thumb {
+    background-color: #68c8ff; /* Cor do "ponteiro" da barra de rolagem */
+    border-radius: 200px; /* Arredondamento do "ponteiro" da barra de rolagem */
+  }
+
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Platypi';
+}
+
+header{
+    width: 100%;
+    background-color: #64acff;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+.nomeLogin{
+    left: 80%;
+    display: flex;
+    position: absolute;
+    text-shadow: 2px 2px 10px #000000;
+}
+.nomeLogin h1{
+    color: #FFF;
+}
+
+.senai{
+    height: 45px;
+    display: flex;
+    left: 50%; 
+    transform: translateX(-50%); 
+    position: absolute;
+
+}
+.textArmazem{
+    font-size: 30px;
+    display: flex;
+    margin-left: 4%;
+    color: #FFF;
+    text-shadow: 2px 2px 10px #000000;
+    
+}
+.imagemDec{
+    margin-left: 25px;
+    height: 55px;
+    width: 55px; 
+    display: flex;
+}
+.imgperfil{
+    right: 1%;
+    position: absolute;
+    height: 55px;
+    width: 55px; 
+    display: flex;
+}
+.nomeLogin{
+    font-size: 12px;
+    color: #000;
+}
+
+
+
+.inicioConteudo{
+    color: black;
+    right: 110px;
+
+}
+main{
+    height: 877px;
+    display: flex;
+    max-height: 1500px;
+}
+
+.DivDireita{
+    margin-top: 4%;
+    margin-left: 8%;
+    margin-right: 8%;
+    border: 1.5px solid black;
+    width: 100%;
+    height: 85%;
+    background-color: #cde4ff;
+    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.733);
+    border-radius: 40px; 
+}
+
+.DivDireita:hover{
+    transform: scale(1.03);
+}
+
+.DivDireita h1{
+    color: white;
+    text-shadow: 2px 2px 10px #000000;
+}
+
+
+.menuL a {
+    text-decoration: none;
+}
+
+.menuL li {
+    list-style: none;
+}
+
+.menuL h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+
+
+.menuL {
+    display: flex;
+}
+.toggle-btn img{
+    height: 40px;
+    width: 40px;
+}
+.d-flex{
+    display: flex;
+    margin-top: 10px;
+}
+.sidebar-link img{
+    height: 50px;
+}
+.menuImg{
+    margin-left: 10px;
+}
+
+
+#sidebar {
+    width: 100px;
+    min-width: 100px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    background-color: #64acff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 200px;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #FFF;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    display: block;
+    font-size: 1rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.301);
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 100px;
+    background-color: #002753;
+    padding: 0 ;
+    min-width: 15rem;
+    display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .1s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .1s ease-out;
+}
