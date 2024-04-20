@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
 
 <style>
@@ -150,7 +151,9 @@ a.sidebar-link:hover {
                         <img class="menuImg" src="img/menu.png" alt="">
                     </button>
                     <div class="sidebar-logo">
-                    <a href="#" >Home</a>
+                    <a href="#" ><?php
+                      print $tituloPag; 
+                     ?></a>
                     </div>
                 </div>
                 <ul class="sidebar-nav">

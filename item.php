@@ -2,7 +2,7 @@
 
 <div id="meuModal" class="modal">
     <div class="modal-conteudo">
-        <span class="fechar">×</span>
+        <span class="fechar"></span>
         <form class="form" action="adicionaritem.php" method="post">
             <label class="label-input" for=""> Nome do item:
                 <br>
