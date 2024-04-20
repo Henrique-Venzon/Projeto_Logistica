@@ -19,107 +19,13 @@ if(!isset($_SESSION['id'])){
 </head>
 
 <body>
-    <header>
-    <div class="logo">
-            <img src="img/logo.png" alt="">
-            <h1>LogConnect</h1>
-        </div>
-         
-        <div class="senai">
-            <img src="img/senai-logo-1.png" alt="">
-        </div>
-        
-        <div class="nomeLogin">  
-        <?php
-				print '<h1>'.$_SESSION['username'].'</h1>';
-                            ?>
-        </div> 
-
-        
-   
-    </header>
+    <?php
+    include 'header.php'
+    ?>
     <main>
-        <div class="menuL">
-            <aside id="sidebar">
-                <div class="d-flex">
-                    <button class="toggle-btn" type="button">
-                        <img class="menuImg" src="img/menu.png" alt="">
-                    </button>
-                    <div class="sidebar-logo">
-            <a href="#" >Home</a>
-                    </div>
-                </div>
-                <ul class="sidebar-nav">
-                    <li class="sidebar-item">
-                        <a href="telaUsuarios.php" class="sidebar-link">
-                            <img src="img/perfil.png" alt="">
-                            <span>Perfil</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <img src="img/mov03.png">
-                            <span>Movimentações</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <img src="img/Piking.png" alt=""><i class="lni lni-agenda"></i>
-                            <span>Piking</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <img src="img/armazem_sidebar.png" alt=""><i class="lni lni-agenda"></i>
-                            <span>Estoque</span>
-                        </a>
-                    </li>
-                    
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                            data-bs-target="#Recebimentos" aria-expanded="false" aria-controls="Recebimentos">
-                            <img src="img/receb.png" alt="">
-                            <span>Recebimentos</span>
-                        </a>
-                        <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Container</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Carga</a>
-                            </li>
-                        </ul>
-                    </li> 
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <img src="img/carMov.png" alt="">
-                            <span>Expedição</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <img style="width: 70px;margin-left:-10px;" src="img/relatorio.png" alt="">
-                            <span>Relatórios</span>
-                        </a>
-                    </li>
-                    
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <img  src="img/confpreto.png" alt="">
-                            <span>Controle</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="sair.php" class="sidebar-link">
-                        <img style="width: 45px;margin-left:5px;height:45px;" src="img/sair.png" alt="">
-                            <span>Sair</span>
-                        </a>
-                    </li>
-                </ul>
-                
-            </aside>
-            
-        </div>
+        <?php
+        include 'menuLateral.php'
+        ?>
 
         
         
@@ -127,11 +33,11 @@ if(!isset($_SESSION['id'])){
             <div class="bv">
                 <div class="centT">
                     <div>
-                <h1>Seja Bem-Vindo</h1>
+                <h1 style = "margin-bottom:-5%;">Seja Bem-Vindo</h1>
                 </div>
                 <div>
                 <?php
-				print '<h1>'.$_SESSION['username'].'</h1>';
+				print '<h1  style = "margin-top:-10%;">'.$_SESSION['username'].'</h1>';
                             ?>
                                         </div>
             </div>
