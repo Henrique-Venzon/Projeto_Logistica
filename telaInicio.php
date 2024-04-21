@@ -35,14 +35,11 @@ if(!isset($_SESSION['id'])){
         <div class="DivDireita">
             <div class="bv">
                 <div class="centT">
-                    <div>
-                <h1 style = "margin-bottom:-5%;">Seja Bem-Vindo</h1>
-                </div>
-                <div>
                 <?php
-				print '<h1  style = "margin-top:-10%;">'.$_SESSION['username'].'</h1>';
+                print '<h1 >Seja Bem-Vindo</h1>';
+                print '<br>';
+				print '<h1  >'.$_SESSION['username'].'</h1>';
                             ?>
-                                        </div>
             </div>
             </div>
             <div class="Imagem">
