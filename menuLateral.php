@@ -47,6 +47,9 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+
+
+
 }
 
 #sidebar.expand {
@@ -94,8 +97,8 @@ a.sidebar-link {
     font-size: 1rem;
     white-space: nowrap;
     border-left: 3px solid transparent;
+    background-color: #64acff;
 }
-
 
 a.sidebar-link:hover {
     background-color: rgba(255, 255, 255, 0.301);
@@ -104,6 +107,7 @@ a.sidebar-link:hover {
 .sidebar-item {
     position: relative;
     margin-bottom: 7.5px;
+    background-color: #64acff;
 }
 
 #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
@@ -118,7 +122,6 @@ a.sidebar-link:hover {
 
 #sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
     display: block;
-    max-height: 15em;
     width: 100%;
     opacity: 1;
 }
@@ -140,6 +143,7 @@ a.sidebar-link:hover {
     transform: rotate(45deg);
     transition: all .1s ease-out;
 }
+
 </style>
 
 
@@ -163,6 +167,7 @@ a.sidebar-link:hover {
                             <span>Perfil</span>
                         </a>
                     </li>
+                    
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
                             <img src="img/mov03.png">
@@ -225,5 +230,4 @@ a.sidebar-link:hover {
                 </ul>
                 
             </aside>
-            
-        </div>
+            </div>

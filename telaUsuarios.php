@@ -30,7 +30,6 @@ if(!isset($_SESSION['id'])){
         
         ?>
 
-        
         <div class="DivDireita">
             
         <h1 class="centroT">Lista de alunos</h1>
