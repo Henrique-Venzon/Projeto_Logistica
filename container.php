@@ -6,7 +6,6 @@ if(!isset($_SESSION['id'])){
 }
 ?>
 <!DOCTYPE html>
-
 <head>
     <meta charset="utf-8">
     <title><?php 
@@ -41,48 +40,54 @@ if(!isset($_SESSION['id'])){
                 <div class="inputs">
                     <div class="juntar">
                     <label for="">Placa do Caminhão:</label>
-                    <input type="text">
+                    <input type="text" name="" placeholder="Placa do Caminhão">
                     </div>
                     <div class="juntar">
                     <label for="">Nome do Motorista:</label>
-                    <input type="text">
+                    <input type="text" name="" placeholder="Nome do Motorista">
                     </div>
                     <div class="juntar">
                     <label for="">Container:</label>
-                    <input type="text">
+                    <input type="text" name="" placeholder="Container">
                     </div>
                     <div class="juntar">
                     <label for="">Navio:</label>
-                    <input type="text">
+                    <input type="text" name="" placeholder="Navio">
                     </div>
                     <div class="juntar">
                     <label for="">Cliente:</label>
-                    <input type="text">
+                    <input type="text" name="" placeholder="Cliente">
                     </div>
                     <div class="juntar">
                     <label for="">Tipo:</label>
-                    <input type="text">
+                    <input type="text" name="" placeholder="Tipo">
                     </div>
                     <div class="juntar">
                     <label for="">Lacre:</label>
-                    <input type="text">
+                    <input type="text" name="" placeholder="Lacre">
                     </div>
                     <div class="juntar">
                     <label for="">Lacre SIF:</label>
-                    <input type="text">
+                    <input type="text" name="" placeholder="Lacre SIF">
                     </div>
                     <div class="juntar">
                     <label for="">Temperatura:</label>
-                    <input type="text">
+                    <input type="text" name="" placeholder="Temperatura">
                     </div>
                     <div class="juntar">
                     <label for="">IMO:</label>
-                    <input type="text">
+                    <input type="text" name="" placeholder="IMO">
                     </div>
                     <div class="juntar">
                     <label for="">N° ONU:</label>
-                    <input type="text">
+                    <input type="text" name="" placeholder="N° ONU">
                     </div>
+                    </div>
+                </div>
+                <div class="problema">
+                    <h1>Assinale se tiver algum problema</h1>
+                    <div class="inputChek">
+                        
                     </div>
                 </div>
                 </form>

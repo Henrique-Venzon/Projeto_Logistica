@@ -4,7 +4,6 @@
     box-sizing: border-box;
     font-family: 'Platypi';
 }
-
 main{
     width: 100%;
     display: flex;
@@ -20,7 +19,7 @@ main{
 .juntar{
     display: block;
     width: 30%;
-    margin-top: 20px;
+    margin-top: 2%;
 
 }
 
@@ -29,16 +28,22 @@ main{
     flex-wrap: wrap;
     width:90%;
     justify-content: center;
-    margin-top: 20px;
 }
 .juntar input{
     display: grid;
-    width: 300px;
-    margin-left: 65px;
+    width: 85%;
+    margin-left: 7%;
+    text-align: center;
+    height: 70%;
+    border-radius: 20px;
+    border: solid 1px black;
 }
 .juntar label{
-    font-size: 25px;
-    
+    font-size: 140%;
+    color: white;
+    text-shadow: 0px 0px 8px black;
+    margin-bottom: 2%;
+    margin-top: 2%;
 }
 
 
@@ -53,11 +58,12 @@ main{
 .txtCont{
     text-align: center;
     margin-left: -6%;
+    margin-top: 2%;
 }
 .txtCont h1{
     font-size: 60px;
-    color: #ebebeb;
-    text-shadow: 0px 0px 15px #00115a;
+    color: #ffffff;
+    text-shadow: 0px 0px 15px #000000;
 }
 
 
