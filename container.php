@@ -33,7 +33,60 @@ if(!isset($_SESSION['id'])){
         
         
         <div class="DivDireita">
-            
+            <div class="table-inputs">
+                <div class="txtCont">
+                    <h1>Container</h1>
+                </div>
+                <form action="">
+                <div class="inputs">
+                    <div class="juntar">
+                    <label for="">Placa do Caminhão:</label>
+                    <input type="text">
+                    </div>
+                    <div class="juntar">
+                    <label for="">Nome do Motorista:</label>
+                    <input type="text">
+                    </div>
+                    <div class="juntar">
+                    <label for="">Container:</label>
+                    <input type="text">
+                    </div>
+                    <div class="juntar">
+                    <label for="">Navio:</label>
+                    <input type="text">
+                    </div>
+                    <div class="juntar">
+                    <label for="">Cliente:</label>
+                    <input type="text">
+                    </div>
+                    <div class="juntar">
+                    <label for="">Tipo:</label>
+                    <input type="text">
+                    </div>
+                    <div class="juntar">
+                    <label for="">Lacre:</label>
+                    <input type="text">
+                    </div>
+                    <div class="juntar">
+                    <label for="">Lacre SIF:</label>
+                    <input type="text">
+                    </div>
+                    <div class="juntar">
+                    <label for="">Temperatura:</label>
+                    <input type="text">
+                    </div>
+                    <div class="juntar">
+                    <label for="">IMO:</label>
+                    <input type="text">
+                    </div>
+                    <div class="juntar">
+                    <label for="">N° ONU:</label>
+                    <input type="text">
+                    </div>
+                    </div>
+                </div>
+                </form>
+            </div>
         </div>
     </main>
 

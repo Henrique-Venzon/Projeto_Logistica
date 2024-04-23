@@ -17,3 +17,47 @@ main{
     align-items: center;
     justify-content: center;
 }
+.juntar{
+    display: block;
+    justify-content: space-between;
+    width: 19%;
+}
+.juntar input{
+}
+.inputs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: 10%;
+}
+.juntar label{
+    font-size: 25px;
+    text-wrap: nowrap;
+    justify-content: center;
+}
+.table-inputs{
+    border: 1.5px solid black;
+    width: 90%;
+    height: 90%;
+    background-color: #aad2ff;
+    box-shadow: 0px 0px  10px black;
+    border-radius: 40px; 
+}
+.txtCont{
+    text-align: center;
+    margin-left: -6%;
+}
+.txtCont h1{
+    font-size: 60px;
+    color: #ebebeb;
+    text-shadow: 0px 0px 15px #00115a;
+}
+
+
+form{
+    display: flex;
+    justify-content: center;
+    margin-left: -10%;
+
+}

@@ -218,7 +218,7 @@ a.sidebar-link:hover {
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                             data-bs-target="#Nota" aria-expanded="false" aria-controls="Nota">
-                            <img src="img/receb.png" alt="">
+                            <img src="img/nota.png" alt="">
                             <span style="margin-left:10px;">Nota Fiscal</span>
                         </a>
                         <ul id="Nota" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
