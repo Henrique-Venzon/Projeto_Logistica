@@ -28,7 +28,6 @@ main{
     height: 100%;
     width: 190%;
     filter: drop-shadow(-15px 0px 20px rgb(98, 179, 255));
-    margin-left:-400px;
 }
 .centT{
     display: block;

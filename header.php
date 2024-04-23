@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     padding: 5.3px 0;
+
 }
 
 .nomeLogin{
