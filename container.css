@@ -19,7 +19,7 @@ main{
 .juntar{
     display: block;
     width: 30%;
-    margin-top: 2%;
+    margin-top: 1.5%;
 
 }
 
@@ -28,6 +28,7 @@ main{
     flex-wrap: wrap;
     width:90%;
     justify-content: center;
+    margin-top: -1%;
 }
 .juntar input{
     display: grid;
@@ -58,7 +59,7 @@ main{
 .txtCont{
     text-align: center;
     margin-left: -6%;
-    margin-top: 2%;
+    margin-top: 1%;
 }
 .txtCont h1{
     font-size: 60px;
@@ -66,9 +67,39 @@ main{
     text-shadow: 0px 0px 15px #000000;
 }
 
+.inputChek{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
 
+    
+}
 form{
     display: flex;
     justify-content: center;
     text-align: center;
 }
+form h1{
+    margin-top: 5%;
+    color: #ffffff;
+    text-shadow: 0px 0px 15px #000000;
+}
+.junChek {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    text-align: center;
+    margin-top: 5px;
+}
+.inputChek label{
+    font-size: 140%;
+    text-wrap: nowrap;
+    margin-left: 10px;
+}
+.inputChek input[type="checkbox"]{
+    width: 30px;
+    height: 30px;
+}
+

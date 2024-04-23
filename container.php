@@ -82,14 +82,70 @@ if(!isset($_SESSION['id'])){
                     <label for="">N° ONU:</label>
                     <input type="text" name="" placeholder="N° ONU">
                     </div>
-                    </div>
-                </div>
-                <div class="problema">
+                    <div class="problema">
                     <h1>Assinale se tiver algum problema</h1>
                     <div class="inputChek">
-                        
+                        <div class="junChek">
+                    <input type="checkbox" name="">
+                    <label for="meuCheckbox">Container bem desgastado</label>
+                    </div>
+                    <div class="junChek">
+                    <input type="checkbox" name="">
+                    <label for="meuCheckbox">Avariana lateral direita</label>
+                    </div>
+                    <div class="junChek">
+                    <input type="checkbox" name="">
+                    <label for="meuCheckbox">Avariana na lateral esquerda</label>
+                    </div>
+                    <div class="junChek">
+                    <input type="checkbox" name="">
+                    <label for="meuCheckbox">Avaria no teto</label>
+                    </div>
+                    <div class="junChek">
+                    <input type="checkbox" name="">
+                    <label for="meuCheckbox">Avaria na frente</label>
+                    </div>
+                    <div class="junChek">
+                    <input type="checkbox" name="">
+                    <label for="meuCheckbox">Sem lacre</label>
+                    </div>
+                    <div class="junChek">
+                    <input type="checkbox" name="">
+                    <label for="meuCheckbox">Adesivos avariados</label>
+                    </div>
+                    <div class="junChek">
+                    <input type="checkbox" name="">
+                    <label for="meuCheckbox">Excesso de altura</label>
+                    </div>
+                    <div class="junChek">
+                    <input type="checkbox" name="">
+                    <label for="meuCheckbox">Excesso na direita</label>
+                    </div>
+                    <div class="junChek">
+                    <input type="checkbox" name="">
+                    <label for="meuCheckbox">Excessona esquerda</label>
+                    </div>
+                    <div class="junChek">
+                    <input type="checkbox" name="">
+                    <label for="meuCheckbox">Excesso frontal</label>
+                    </div>
+                    <div class="junChek">
+                    <input type="checkbox" name="">
+                    <label for="meuCheckbox">Painel avariado</label>
+                    </div>
+                    <div class="junChek">
+                    <input type="checkbox" name="">
+                    <label for="meuCheckbox">Sem cabo de energia</label>
+                    </div>
+                    <div class="junChek">
+                    <input type="checkbox" name="">
+                    <label for="meuCheckbox">Sem lona</label>
+                    </div>
                     </div>
                 </div>
+                    </div>
+                </div>
+                
                 </form>
             </div>
         </div>
