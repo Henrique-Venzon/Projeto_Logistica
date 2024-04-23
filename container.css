@@ -26,7 +26,7 @@ main{
 .inputs{
     display: flex;
     flex-wrap: wrap;
-    width:90%;
+    width:100%;
     justify-content: center;
     margin-top: -1%;
 }
@@ -35,7 +35,7 @@ main{
     width: 85%;
     margin-left: 7%;
     text-align: center;
-    height: 70%;
+    height: 60%;
     border-radius: 20px;
     border: solid 1px black;
 }
@@ -70,9 +70,9 @@ main{
 .inputChek{
     display: flex;
     flex-wrap: wrap;
+    width:100%;
     justify-content: center;
-    text-align: center;
-    margin-top: 30px;
+    margin-top:10px;
 
     
 }
@@ -82,24 +82,28 @@ form{
     text-align: center;
 }
 form h1{
-    margin-top: 5%;
+    margin-top: 3%;
     color: #ffffff;
     text-shadow: 0px 0px 15px #000000;
 }
 .junChek {
     display: flex;
-    flex-direction: row;
     width: 30%;
-    text-align: center;
     margin-top: 5px;
+
+    
 }
 .inputChek label{
     font-size: 140%;
     text-wrap: nowrap;
     margin-left: 10px;
+    justify-content: center;
+
 }
 .inputChek input[type="checkbox"]{
     width: 30px;
     height: 30px;
+    justify-content: center;
+
 }
 

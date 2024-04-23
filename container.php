@@ -85,61 +85,61 @@ if(!isset($_SESSION['id'])){
                     <div class="problema">
                     <h1>Assinale se tiver algum problema</h1>
                     <div class="inputChek">
-                        <div class="junChek">
+                    <div class="juntar">
                     <input type="checkbox" name="">
-                    <label for="meuCheckbox">Container bem desgastado</label>
+                    <label>Container bem desgastado</label>
+                    </div>
+                    <div class="juntar">
+                    <input type="checkbox" name="">
+                    <label>Avariana lateral direita</label>
+                    </div>
+                    <div class="juntar">
+                    <input type="checkbox" name="">
+                    <label>Avariana na lateral esquerda</label>
+                    </div>
+                    <div class="juntar">
+                    <input type="checkbox" name="">
+                    <label>Avaria no teto</label>
                     </div>
                     <div class="junChek">
                     <input type="checkbox" name="">
-                    <label for="meuCheckbox">Avariana lateral direita</label>
+                    <label>Avaria na frente</label>
                     </div>
                     <div class="junChek">
                     <input type="checkbox" name="">
-                    <label for="meuCheckbox">Avariana na lateral esquerda</label>
+                    <label>Sem lacre</label>
                     </div>
                     <div class="junChek">
                     <input type="checkbox" name="">
-                    <label for="meuCheckbox">Avaria no teto</label>
+                    <label>Adesivos avariados</label>
                     </div>
                     <div class="junChek">
                     <input type="checkbox" name="">
-                    <label for="meuCheckbox">Avaria na frente</label>
+                    <label>Excesso de altura</label>
                     </div>
                     <div class="junChek">
                     <input type="checkbox" name="">
-                    <label for="meuCheckbox">Sem lacre</label>
+                    <label>Excesso na direita</label>
                     </div>
                     <div class="junChek">
                     <input type="checkbox" name="">
-                    <label for="meuCheckbox">Adesivos avariados</label>
+                    <label>Excessona esquerda</label>
                     </div>
                     <div class="junChek">
                     <input type="checkbox" name="">
-                    <label for="meuCheckbox">Excesso de altura</label>
+                    <label>Excesso frontal</label>
                     </div>
                     <div class="junChek">
                     <input type="checkbox" name="">
-                    <label for="meuCheckbox">Excesso na direita</label>
+                    <label>Painel avariado</label>
                     </div>
                     <div class="junChek">
                     <input type="checkbox" name="">
-                    <label for="meuCheckbox">Excessona esquerda</label>
+                    <label>Sem cabo de energia</label>
                     </div>
                     <div class="junChek">
                     <input type="checkbox" name="">
-                    <label for="meuCheckbox">Excesso frontal</label>
-                    </div>
-                    <div class="junChek">
-                    <input type="checkbox" name="">
-                    <label for="meuCheckbox">Painel avariado</label>
-                    </div>
-                    <div class="junChek">
-                    <input type="checkbox" name="">
-                    <label for="meuCheckbox">Sem cabo de energia</label>
-                    </div>
-                    <div class="junChek">
-                    <input type="checkbox" name="">
-                    <label for="meuCheckbox">Sem lona</label>
+                    <label>Sem lona</label>
                     </div>
                     </div>
                 </div>
