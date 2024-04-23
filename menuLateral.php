@@ -202,7 +202,7 @@ a.sidebar-link:hover {
                         </a>
                         <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a style="margin-bottom: -10px;" href="#" class="sidebar-link">Container</a>
+                                <a style="margin-bottom: -10px;" href="container.php" class="sidebar-link">Container</a>
                             </li>
                             <li class="sidebar-item">
                                 <a  style="margin-bottom: -10px;" href="#" class="sidebar-link">Carga</a>
