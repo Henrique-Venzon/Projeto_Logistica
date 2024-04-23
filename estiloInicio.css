@@ -7,23 +7,22 @@
 }
 
 main{
-    height: 877px;
     width: 100%;
     display: flex;
 }
-.bv + .menuL{
-    height: 100vh;
-}
+
 .DivDireita{
-    width: 100%;
-    height: 100%;
+    flex-grow: 1;
     background-color: #ebebeb;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .Imagem{
     justify-content: end;
     width: 100%;
     display: flex;
+    height: 100%;
 }
 .imgLog{
     height: 100%;
@@ -53,7 +52,6 @@ main{
     
     }
 .bv{
-    margin-top: 25%;
     height: 30%;
     display: flex;
     background-color: #64acff;
