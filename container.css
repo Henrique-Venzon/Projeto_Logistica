@@ -19,23 +19,29 @@ main{
 }
 .juntar{
     display: block;
-    justify-content: space-between;
-    width: 19%;
+    width: 30%;
+    margin-top: 20px;
+
 }
-.juntar input{
-}
+
 .inputs{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    width: 80%;
-    margin-left: 10%;
+    width:90%;
+    justify-content: center;
+    margin-top: 20px;
+}
+.juntar input{
+    display: grid;
+    width: 300px;
+    margin-left: 65px;
 }
 .juntar label{
     font-size: 25px;
-    text-wrap: nowrap;
-    justify-content: center;
+    
 }
+
+
 .table-inputs{
     border: 1.5px solid black;
     width: 90%;
@@ -58,6 +64,5 @@ main{
 form{
     display: flex;
     justify-content: center;
-    margin-left: -10%;
-
+    text-align: center;
 }
