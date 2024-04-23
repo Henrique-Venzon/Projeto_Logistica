@@ -144,9 +144,7 @@ main{
     border-radius: 40px; 
 }
 
-.DivDireita:hover{
-    transform: scale(1.03);
-}
+
 
 .DivDireita h1{
     color: white;
