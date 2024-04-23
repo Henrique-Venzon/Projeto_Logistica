@@ -88,6 +88,7 @@
 .sidebar-nav {
     padding: 2rem 0;
     flex: 1 1 auto;
+    background-color: #64acff;
 }
 
 a.sidebar-link {
@@ -134,7 +135,6 @@ a.sidebar-link:hover {
     padding: 2px;
     position: absolute;
     right: 1.5rem;
-    top: 1.4rem;
     transform: rotate(-135deg);
     transition: all .1s ease-out;
 }
@@ -161,6 +161,12 @@ a.sidebar-link:hover {
                     </div>
                 </div>
                 <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                        <a href="telaInicio.php" class="sidebar-link">
+                            <img src="img/home.png" alt="">
+                            <span>Home</span>
+                        </a>
+                    </li>
                     <li class="sidebar-item">
                         <a href="telaUsuarios.php" class="sidebar-link">
                             <img src="img/perfil.png" alt="">
@@ -221,12 +227,14 @@ a.sidebar-link:hover {
                             <span>Controle</span>
                         </a>
                     </li>
+                    
                     <li class="sidebar-item">
                         <a href="sair.php" class="sidebar-link">
                         <img style="width: 45px;margin-left:5px;height:45px;" src="img/sair.png" alt="">
                             <span>Sair</span>
                         </a>
                     </li>
+                    
                 </ul>
                 
             </aside>

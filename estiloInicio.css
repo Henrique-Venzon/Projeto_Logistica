@@ -11,7 +11,9 @@ main{
     width: 100%;
     display: flex;
 }
-
+.bv + .menuL{
+    height: 100vh;
+}
 .DivDireita{
     width: 100%;
     height: 100%;
@@ -67,6 +69,8 @@ main{
     justify-content: center;
     overflow: hidden;
     position: relative;
+    box-shadow: 0px 0px 8px #000000; 
+
     
 }
 .bv::before{
