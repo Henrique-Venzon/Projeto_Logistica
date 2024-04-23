@@ -1,4 +1,6 @@
-<button id="btnAbreModal"><h1>Cadastrar</h1></button>
+<button id="btnAbreModal">
+    <h1>Cadastrar</h1>
+</button>
 
 <div id="meuModal" class="modal">
     <div class="modal-conteudo">
@@ -38,11 +40,11 @@
                 <option value="tercearia">Terceária</option>
                 <option value="quartenaria">Quartenária</option>
                 <option value="quintenaria">Quintenária</option>
-                
+
             </select>
             <br>
-            
-            
+
+
             <div id="caracteristicas"></div>
             <br>
             <input type="submit" value="Cadastrar">
@@ -64,7 +66,7 @@
         overflow: auto;
         background-color: rgb(0, 0, 0);
         background-color: rgba(0, 0, 0, 0.4);
-        
+
     }
 
     .modal-conteudo {
@@ -88,7 +90,8 @@
         text-decoration: none;
         cursor: pointer;
     }
-    button{
+
+    button {
         background-color: white;
         box-shadow: 2px 2px 10px black;
         background-color: #64acff;
@@ -200,11 +203,9 @@
             <br>
             <label for="tipo_login">Tipo de Produtos:</label>
             <br>
-<<<<<<< Updated upstream
             <select name="tipo_eletronico" id="tipo_eletronico">
-=======
             <select name="tipo_alimento" id="tipo_alimento">
->>>>>>> Stashed changes
+
                 <option value="Celulares">Celulares</option>
                 <option value="Computadores">Computadores</option>
                 <option value="Notebooks">Notebooks</option>
@@ -230,11 +231,8 @@
             <br>
             <label for="tipo_login">Tipo de Produtos:</label>
             <br>
-<<<<<<< Updated upstream
             <select name="tipo_movel" id="tipo_movel">
-=======
             <select name="tipo_alimento" id="tipo_alimento">
->>>>>>> Stashed changes
                 <option value="Guarda Roupa">Guarda Roupa</option>
                 <option value="Mesas">Mesas</option>
                 <option value="Prateleiras">Prateleiras</option>
@@ -254,7 +252,6 @@
             <br>
             <label class="label-input" for=""> Dimenções do movel:
                 <br>
-<<<<<<< Updated upstream
                 <input type="text" name="tamanho_equipamento" placeholder="Dimenções" id="tamanho_equipamento">
             </label>
             <br>
@@ -267,7 +264,6 @@
                 <option value="Solda MIG">Solda MIG</option>
                 <option value="Solda TIG">Solda TIG</option>
                 <option value="Andaimes">Andaimes</option>
-=======
                 <input type="text" name="tamanho_movel" placeholder="Dimenções" id="tamanho_movel">
             </label>
             <br>
@@ -280,7 +276,6 @@
                 <option value="Camas">Camas</option>
                 <option value="Escrivaninhas">Escrivaninhas</option>
                 <option value="Churrasqueiras">Churrasqueiras</option>
->>>>>>> Stashed changes
             </select>
             <br>
         `;
@@ -380,9 +375,6 @@
                 <option value="Carros">Carros</option>
                 <option value="Pelucias">Pelucias</option>
                 <option value="Bonecos">Bonecos</option>
-=======
-
->>>>>>> Stashed changes
 
             </select>
             <br>
@@ -391,4 +383,3 @@
     });
 
 </script>
-
