@@ -44,7 +44,7 @@ main{
     color: #FFF;
     text-shadow: 2px 2px 4px #000000; 
     text-transform: uppercase;
-    z-index: 100000;
+    z-index: 1000;
     margin-bottom: -2.5%;
     margin-top: -2.5%;
 
@@ -55,11 +55,10 @@ main{
     display: flex;
     background-color: #64acff;
     margin-left:5%;
-    margin-right: 5%;
-    width: 100%;
+    margin-right: 8%;
+    width: 70%;
     padding: 3%;
     border-radius: 110px;
-
 
     display: flex;
     align-items: center;
@@ -72,12 +71,12 @@ main{
 }
 .bv::before{
     content: "";
-    width: 40%;
-    height: 250%;
+    width: 30%;
+    height: 300%;
     position: absolute;
     background: linear-gradient(180deg, #ffee00,#fc7216);
 
-    animation: animate 4s linear infinite;
+    animation: animate 5s linear infinite;
 }
 
 @keyframes animate{
