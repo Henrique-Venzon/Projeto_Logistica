@@ -1,10 +1,9 @@
-
-header {
+body{
+  background-color: #ebebeb;
+}
+main{
   width: 100%;
-  background-color: #64acff;
   display: flex;
-  align-items: center;
-  padding: 5.3px 0;
 }
 * {
   padding: 0;
@@ -61,5 +60,19 @@ textarea {
   box-shadow: 0px 0px 10px black;
   border-radius: 40px;
 }
+label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coluna-1 { width: 10%; }
+.coluna-2 { width: 20%; }
+.coluna-3 { width: 30%; }
+/* ... outras classes de coluna ... */
+
+[class^="coluna-"] { display: inline-block; }
+.linha { display: flex; display: -webkit-flex; }
+.alinhamento { text-align: right; margin-right: 1vw; }
+
 
 
