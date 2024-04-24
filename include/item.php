@@ -5,7 +5,7 @@
 <div id="meuModal" class="modal">
     <div class="modal-conteudo">
         <span class="fechar"></span>
-        <form class="form" action="cadastrarproduto.php" method="post">
+        <form class="form" action="../processamento/cadastrarproduto.php" method="post">
             <label class="label-input" for=""> Nome do Produto:
                 <br>
                 <input type="text" name="nome_produto" placeholder="Nome do Produto" id="nome_produto">

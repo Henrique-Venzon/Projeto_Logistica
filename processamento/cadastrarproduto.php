@@ -17,5 +17,7 @@ if ($conn->connect_error) {
     $UN = $_POST['UN'];
     $sql = "INSERT INTO `produto`(`nome_produto`, `preco`, `UN`) VALUES ('$nome_produto', '$preco', '$UN')";
     $result = $conn->query($sql);
+    header('location:../table_armazem.php');
+
 }
 
