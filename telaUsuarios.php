@@ -91,7 +91,7 @@ if(!isset($_SESSION['id'])){
         $(".reset").click(function(){
             var id = $(this).data('id'); // Pega o ID do aluno
             $.ajax({
-                url: 'reset_password.php', // O arquivo PHP que irá lidar com a solicitação
+                url: 'processamento/reset_password.php', // O arquivo PHP que irá lidar com a solicitação
                 type: 'post',
                 data: {id: id}, // Envia o ID do aluno para o servidor
                 success: function(response){
