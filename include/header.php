@@ -23,7 +23,7 @@
 .senai{
     height: 45px;
     display: flex;
-    left: 50%; 
+    left: 52%; 
     transform: translateX(-50%); 
     position: absolute;
     filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
