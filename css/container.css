@@ -51,10 +51,8 @@ main{
 
 .juntar2 {
     display: flex;
-    justify-content: center;
     width: 30%;
     margin-top: 0.8%;
-    text-align: center;
     overflow: hidden; 
 }
 
@@ -63,7 +61,6 @@ main{
     display: flex;
     align-items: center;
     margin-bottom: 5px;
-
 }
 
 
@@ -72,7 +69,6 @@ main{
 }
 
 .input-group label {
-    display: inline-block;
     cursor: pointer;
     position: relative;
     padding-left: 42px; 
@@ -83,7 +79,6 @@ main{
 }
 
 .input-group label::before {
-    
     content: '';
     position: absolute;
     left: 1px;
@@ -149,8 +144,6 @@ main{
     background-color: #ffffff;
     color: #307cd3;
 }
-
-
 
 .txtCont{
     text-align: center;

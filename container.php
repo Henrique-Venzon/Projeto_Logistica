@@ -142,7 +142,7 @@ if(!isset($_SESSION['id'])){
                     <div class="juntar2">
                     <div class="input-group">
                     <input id="10" type="checkbox" name="">
-                    <label for="10">Excessona esquerda</label>
+                    <label for="10">Excesso na esquerda</label>
                     </div>
                     </div>
                     <div class="juntar2">
