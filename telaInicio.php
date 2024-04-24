@@ -18,16 +18,16 @@ if(!isset($_SESSION['id'])){
         
         <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="estiloInicio.css">
+    <link rel="stylesheet" href="css/estiloInicio.css">
 </head>
 
 <body>
     <?php
-    include 'header.php'
+    include 'include/header.php'
     ?>
     <main>
         <?php
-        include 'menuLateral.php'
+        include 'include/menuLateral.php'
         ?>
 
         
@@ -51,7 +51,7 @@ if(!isset($_SESSION['id'])){
 
     
 
-    <script src="sidebar.js"></script>
+    <script src="js/sidebar.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>

@@ -5,7 +5,7 @@
 <head>
 
     <title>ENTRAR e REGISTRAR</title>
-    <link rel="stylesheet" href="estiloLogin.css">
+    <link rel="stylesheet" href="css/estiloLogin.css">
 
 </head>
 
@@ -70,7 +70,7 @@
         </div>
     </div>
 
-    <script src="login.js"></script>
+    <script src="js/login.js"></script>
 
 </body>
 
