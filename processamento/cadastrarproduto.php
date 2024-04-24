@@ -15,7 +15,8 @@ if ($conn->connect_error) {
     $nome_produto = $_POST['nome_produto'];
     $preco = $_POST['preco'];
     $UN = $_POST['UN'];
-    $sql = "INSERT INTO `produto`(`nome_produto`, `preco`, `UN`) VALUES ('$nome_produto', '$preco', '$UN')";
+    $quantidade = $_POST['quantidade'];
+    $sql = "INSERT INTO `produto`(`nome_produto`, `preco`, `UN`, `quantidade` VALUES ('$nome_produto', '$preco', '$UN', '$quantidade')";
     $result = $conn->query($sql);
     header('location:../table_armazem.php');
 

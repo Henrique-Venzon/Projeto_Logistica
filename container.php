@@ -36,6 +36,7 @@ if(!isset($_SESSION['id'])){
                 <div class="txtCont">
                     <h1>Container</h1>
                 </div>
+                <div class="form">
                 <form action="">
                 <div class="inputs">
                     <div class="juntar">
@@ -171,10 +172,12 @@ if(!isset($_SESSION['id'])){
 
                     </div>
                     </div>
-                </form>
+                    </div>
                     <div class="enviar">
                         <input type="submit">
                     </div>
+                </form>
+                    
             </div>
         </div>
                 
