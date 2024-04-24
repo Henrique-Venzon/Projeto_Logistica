@@ -89,13 +89,14 @@ if(!isset($_SESSION['id'])){
     <script>
     $(document).ready(function(){
         $(".reset").click(function(){
-            var id = $(this).data('id'); // Pega o ID do aluno
+            var id = $(this).data('id'); 
             $.ajax({
-                url: 'processamento/reset_password.php', // O arquivo PHP que irá lidar com a solicitação
+                url: 'processamento/reset_password.php', 
                 type: 'post',
-                data: {id: id}, // Envia o ID do aluno para o servidor
+                data: {id: id}, 
                 success: function(response){
-                    alert(response); // Mostra uma mensagem de sucesso
+                    alert(response); 
+                location.reload()
                 }
             });
         });
