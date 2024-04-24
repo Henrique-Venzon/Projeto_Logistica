@@ -87,8 +87,8 @@ if(!isset($_SESSION['id'])){
                     <div class="problema">
                     <div class="juntar2">
                     <div class="input-group">
-                    <input type="checkbox" name="">
-                    <label>Container bem desgastado</label>
+                    <input id="teste" type="checkbox" name="">
+                    <label for="teste">Container bem desgastado</label>
                     </div>
                     </div>
                     <div class="juntar2">

@@ -65,10 +65,36 @@ main{
     margin-bottom: 5px;
 }
 
+
 .input-group input[type="checkbox"] {
-    margin-right: 20px; 
-    width: 31px;
-    height: 31px;
+    display: none;
+}
+
+
+.input-group label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 31px; 
+    height: 31px; 
+    border: 1px solid #aaa; 
+    background-color: #fff; 
+}
+
+/* Adicionar um estilo quando o checkbox está marcado */
+.input-group input[type="checkbox"]:checked + label::before {
+    background-color: #0a7a06; /* Cor de fundo quando marcado */
+}
+
+/* Adicionar uma marcação dentro do checkbox quando está marcado */
+.input-group input[type="checkbox"]:checked + label::before {
+    content: '\2713'; /* Símbolo de marcação (✓) */
+    color: #fff; /* Cor do símbolo */
+    font-size: 19px; /* Tamanho do símbolo */
+    text-align: center; /* Centralizar o símbolo */
+    line-height: 28px; /* Centralizar verticalmente o símbolo */
+
 }
 
 
@@ -78,6 +104,7 @@ main{
     text-shadow: 0px 0px  10px black;
     margin-bottom: 0;
     margin-top: 0;
+    margin-left: 10px;
 }
 
 
