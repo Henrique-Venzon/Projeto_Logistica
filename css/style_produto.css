@@ -1,15 +1,28 @@
-body{
-    background-color: #1E90FF;
-}
-  .ordem-form label, .ordem-form input {
 
-    display: block;
-    margin-bottom: 10px; 
-    
-  }
-  .buttons {
-    margin-top: 20px; 
-  }
+header {
+  width: 100%;
+  background-color: #64acff;
+  display: flex;
+  align-items: center;
+  padding: 5.3px 0;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Platypi';
+}
+
+.DivDireita {
+  flex-grow: 1;
+  background-color: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center
+ 
+}
+  
+ 
   .button {
     background-color: #4682B4; 
     border: none;
@@ -39,6 +52,14 @@ textarea {
 
 .buttons .button {
     width: 50%; 
+}
+.table-inputs {
+  border: 1.5px solid black;
+  width: 88%;
+  height: 94%;
+  background-color: #aad2ff;
+  box-shadow: 0px 0px 10px black;
+  border-radius: 40px;
 }
 
 
