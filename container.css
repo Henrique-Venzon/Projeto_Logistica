@@ -20,7 +20,6 @@ main{
     display: block;
     width: 30%;
     margin-top: 1.5%;
-
 }
 
 .inputs{
@@ -48,6 +47,50 @@ main{
 }
 
 
+.juntar2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    margin-top: 1.5%;
+    text-align: center;
+    overflow: hidden; /* Adicionado para evitar que o conteúdo extrapole o contêiner */
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-group input[type="checkbox"] {
+    margin-right: 20px; 
+    width: 31px;
+    height: 31px;
+}
+
+.input-group label {
+    font-size: 16px;
+    color: #fff;
+    text-shadow: 0px 0px  10px black;
+    margin-bottom: 0;
+    margin-top: 0;
+     /* Adicionado para ocupar o espaço disponível */
+}
+
+
+
+
+.problema{
+    width: 92%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-left: 6%;
+}
+
 .table-inputs{
     border: 1.5px solid black;
     width: 90%;
@@ -56,6 +99,8 @@ main{
     box-shadow: 0px 0px  10px black;
     border-radius: 40px; 
 }
+
+
 .txtCont{
     text-align: center;
     margin-left: -6%;
@@ -67,15 +112,6 @@ main{
     text-shadow: 0px 0px 15px #000000;
 }
 
-.inputChek{
-    display: flex;
-    flex-wrap: wrap;
-    width:100%;
-    justify-content: center;
-    margin-top:10px;
-
-    
-}
 form{
     display: flex;
     justify-content: center;
@@ -86,24 +122,5 @@ form h1{
     color: #ffffff;
     text-shadow: 0px 0px 15px #000000;
 }
-.junChek {
-    display: flex;
-    width: 30%;
-    margin-top: 5px;
 
-    
-}
-.inputChek label{
-    font-size: 140%;
-    text-wrap: nowrap;
-    margin-left: 10px;
-    justify-content: center;
-
-}
-.inputChek input[type="checkbox"]{
-    width: 30px;
-    height: 30px;
-    justify-content: center;
-
-}
 

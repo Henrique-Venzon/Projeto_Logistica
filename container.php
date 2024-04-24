@@ -82,73 +82,101 @@ if(!isset($_SESSION['id'])){
                     <label for="">N° ONU:</label>
                     <input type="text" name="" placeholder="N° ONU">
                     </div>
-                    <div class="problema">
                     <h1>Assinale se tiver algum problema</h1>
-                    <div class="inputChek">
-                    <div class="juntar">
+                    <div class="problema">
+                    <div class="juntar2">
+                    <div class="input-group">
                     <input type="checkbox" name="">
                     <label>Container bem desgastado</label>
                     </div>
-                    <div class="juntar">
+                    </div>
+                    <div class="juntar2">
+                    <div class="input-group">
                     <input type="checkbox" name="">
                     <label>Avariana lateral direita</label>
                     </div>
-                    <div class="juntar">
+                    </div>
+                    <div class="juntar2">
+                    <div class="input-group">
                     <input type="checkbox" name="">
                     <label>Avariana na lateral esquerda</label>
                     </div>
-                    <div class="juntar">
+                    </div>
+                    <div class="juntar2">
+                    <div class="input-group">
                     <input type="checkbox" name="">
                     <label>Avaria no teto</label>
                     </div>
-                    <div class="junChek">
+                    </div>
+                    <div class="juntar2">
+                    <div class="input-group">
                     <input type="checkbox" name="">
                     <label>Avaria na frente</label>
                     </div>
-                    <div class="junChek">
+                    </div>
+                    <div class="juntar2">
+                    <div class="input-group">
                     <input type="checkbox" name="">
                     <label>Sem lacre</label>
                     </div>
-                    <div class="junChek">
+                    </div>
+                    <div class="juntar2">
+                    <div class="input-group">
                     <input type="checkbox" name="">
                     <label>Adesivos avariados</label>
                     </div>
-                    <div class="junChek">
+                    </div>
+                    <div class="juntar2">
+                    <div class="input-group">
                     <input type="checkbox" name="">
                     <label>Excesso de altura</label>
                     </div>
-                    <div class="junChek">
+                    </div>
+                    <div class="juntar2">
+                    <div class="input-group">
                     <input type="checkbox" name="">
                     <label>Excesso na direita</label>
                     </div>
-                    <div class="junChek">
+                    </div>
+                    <div class="juntar2">
+                    <div class="input-group">
                     <input type="checkbox" name="">
                     <label>Excessona esquerda</label>
                     </div>
-                    <div class="junChek">
+                    </div>
+                    <div class="juntar2">
+                    <div class="input-group">
                     <input type="checkbox" name="">
                     <label>Excesso frontal</label>
                     </div>
-                    <div class="junChek">
+                    </div>
+                    <div class="juntar2">
+                    <div class="input-group">
                     <input type="checkbox" name="">
                     <label>Painel avariado</label>
                     </div>
-                    <div class="junChek">
+                    </div>
+                    <div class="juntar2">
+                    <div class="input-group">
                     <input type="checkbox" name="">
                     <label>Sem cabo de energia</label>
                     </div>
-                    <div class="junChek">
+                    </div>
+                    <div class="juntar2">
+                    <div class="input-group">
                     <input type="checkbox" name="">
                     <label>Sem lona</label>
                     </div>
                     </div>
-                </div>
+
                     </div>
-                </div>
-                
+                    </div>
                 </form>
+
             </div>
         </div>
+                
+
     </main>
 
     
