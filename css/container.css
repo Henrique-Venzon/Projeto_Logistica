@@ -29,15 +29,16 @@ main{
     width:100%;
     justify-content: center;
     margin-top: -1%;
+    
 }
 .juntar input{
     display: grid;
-    width: 85%;
-    margin-left: 7%;
+    width: 68%;
     text-align: center;
     height: 60%;
     border-radius: 20px;
     border: solid 1px black;
+    margin-left: 14%;
 }
 .juntar label{
     font-size: 140%;
@@ -94,7 +95,7 @@ main{
 
 .table-inputs{
     border: 1.5px solid black;
-    width: 90%;
+    width: 88%;
     height: 90%;
     background-color: #aad2ff;
     box-shadow: 0px 0px  10px black;
