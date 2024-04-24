@@ -10,6 +10,8 @@
     margin-bottom: 0px;
     justify-content: center;
     align-items: center;
+    color: #fff;
+    text-shadow: 0 0 7px black;
 }
 .table th,td{
     border: solid 1.5px black;

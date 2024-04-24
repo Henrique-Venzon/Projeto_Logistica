@@ -67,7 +67,7 @@ if(!isset($_SESSION['id'])){
                     print "<td>".$row->password."</td>";
                     print "<td >".$row->turma."</td>";
                     print "<td style=\"border-right:none;\">
-                    <button class=\"reset\" onclick=\"location.href='?page=editar&id=".$row->id."';\"><span>Resetar</span></button>
+                    <button class=\"reset\"><span>Resetar</span></button>
                         </td>"; 
                     print "</tr>";
 

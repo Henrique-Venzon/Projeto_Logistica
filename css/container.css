@@ -71,6 +71,7 @@ main{
     height: 31px;
 }
 
+
 .input-group label {
     font-size: 16px;
     color: #fff;
@@ -108,7 +109,20 @@ main{
 .enviar input{
     width: 140px;
     height: 45px;
+    border-radius: 30px;
+    border: solid 2px white;
+    background-color: #569ae7;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
 }
+.enviar input:hover{
+    transition: 2s;
+    border: solid 2px #569ae7;
+    background-color: #ffffff;
+    color: #307cd3;
+}
+
 
 
 .txtCont{
