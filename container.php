@@ -172,7 +172,9 @@ if(!isset($_SESSION['id'])){
                     </div>
                     </div>
                 </form>
-
+                    <div class="enviar">
+                        <input type="submit">
+                    </div>
             </div>
         </div>
                 
