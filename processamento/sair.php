@@ -6,4 +6,4 @@
     session_destroy();
  
     // redirecionar o utilizador para outra página, login.php por exemplo
-    header('Location: index.php');
+    header('Location:index.php');
