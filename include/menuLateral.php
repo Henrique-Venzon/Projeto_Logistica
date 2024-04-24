@@ -245,7 +245,7 @@ a.sidebar-link:hover {
                     </li>
                     
                     <li class="sidebar-item">
-                        <a href="sair.php" class="sidebar-link">
+                        <a href="../processamento/sair.php" class="sidebar-link">
                         <img style="width: 45px;margin-left:5px;height:45px;" src="img/sair.png" alt="">
                             <span style="margin-left:10px;">Sair</span>
                         </a>

@@ -15,6 +15,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 .juntar{
     display: block;
@@ -103,7 +104,6 @@ main{
 
 .txtCont{
     text-align: center;
-    margin-left: -6%;
     margin-top: 1%;
 }
 .txtCont h1{
