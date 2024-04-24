@@ -4,28 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Formulário de Pedido</title>
-<link rel="stylesheet" href="style_produto.css">
+<link rel="stylesheet" href="css/style_produto.css">
 </head>
 
 <body>
 
+<div class="DivDireita">
+<div class="table-inputs">
 
 
-</div>
 
 <div class="ordem-form">
+
   <form action="" method="post">
     <label for="ordem-numero">Pedido Nº</label>
     <input type="text" id="" name="">
 
-    <div class="input">
-    <label for="produto">Produtos</label>
-   
 
   
 </div>
-
+<label for="produto">Produtos</label>
 <div class="input">
+
     <input type="text" id="" name="">
     <input type="text" id="" name="">
     <input type="text" id="" name="">
@@ -85,7 +85,11 @@
     <button type="submit" class="button">Enviar</button>
     <button type="button" class="button">Adicionar</button>
 </div>
+
     </form>
+    
+</div>
+
 </div>
 
 </body>
