@@ -6,7 +6,7 @@ if(isset($_POST['id'])){
     $conn = new mysqli('localhost', 'root.Att', 'root', 'logistica');
 
     // Gera uma nova senha com 6 caracteres e números diferentes
-    $new_password = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 6);
+    $new_password = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 4);
 
     // Atualiza a senha no banco de dados
     $sql = "UPDATE aluno SET password = '$new_password' WHERE id = $id";
