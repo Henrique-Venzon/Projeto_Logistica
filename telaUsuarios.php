@@ -67,7 +67,7 @@ if(!isset($_SESSION['id'])){
                     print "<td>".$row->password."</td>";
                     print "<td >".$row->turma."</td>";
                     print "<td style=\"border-right:none;\">
-                    <button class=\"reset\"><span>Resetar</span></button>
+                    <button class=\"reset\" data-id=\"".$row->id."\"><span>Resetar</span></button>
                         </td>"; 
                     print "</tr>";
 
@@ -85,7 +85,22 @@ if(!isset($_SESSION['id'])){
         </div>
     </main>
 
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".reset").click(function(){
+            var id = $(this).data('id'); // Pega o ID do aluno
+            $.ajax({
+                url: 'reset_password.php', // O arquivo PHP que irá lidar com a solicitação
+                type: 'post',
+                data: {id: id}, // Envia o ID do aluno para o servidor
+                success: function(response){
+                    alert(response); // Mostra uma mensagem de sucesso
+                }
+            });
+        });
+    });
+    </script>
 
     <script src="js/sidebar.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
