@@ -47,7 +47,7 @@ if(!isset($_SESSION['id'])){
             if ($result->num_rows > 0) {
                 // Saída de cada linha
                 while($row = $result->fetch_assoc()) {
-                    echo "id: " . $row["id"]. " - Nome do Produto: " . $row["nome_produto"]. " - Preço: " . $row["preco"]. ' - UN :' . $row["UN"]. "<br>". ' - Quantidade :' . $row["quantidade"]. "<br>";
+                    echo "id: " . $row["id"]. " - Nome do Produto: " . $row["nome_produto"]. " - Preço: " . $row["preco"]. ' - UN :' . $row["UN"]. "<br>". ' - Quantidade :' . $row["Quantidade"]. "<br>";
                 }
             } else {
                 echo "0 resultados";
