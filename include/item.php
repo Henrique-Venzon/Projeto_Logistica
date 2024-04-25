@@ -91,7 +91,6 @@
     }
 </style>
 
-<!-- JavaScript para abrir e fechar o modal -->
 <script>
     var modal = document.getElementById("meuModal");
     var btn = document.getElementById("btnAbreModal");
