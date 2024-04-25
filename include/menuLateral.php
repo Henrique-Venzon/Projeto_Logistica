@@ -188,7 +188,7 @@ a.sidebar-link:hover {
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
+                        <a href="armazem.php" class="sidebar-link">
                             <img src="img/armazem_sidebar.png" alt=""><i class="lni lni-agenda"></i>
                             <span style="margin-left:10px;">Estoque</span>
                         </a>
