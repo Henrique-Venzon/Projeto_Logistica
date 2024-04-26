@@ -1,0 +1,169 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Platypi';
+}
+main{
+    width: 100%;
+    display: flex;
+}
+
+.DivDireita{
+    flex-grow: 1;
+    background-color: #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.juntar{
+    display: block;
+    width: 30%;
+    margin-top: 1.5%;
+}
+
+.inputs{
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: center;
+    margin-top: -1%;
+    
+}
+.juntar input{
+    display: grid;
+    width: 68%;
+    text-align: center;
+    height: 60%;
+    border-radius: 20px;
+    border: solid 1px black;
+    margin-left: 14%;
+}
+.juntar label{
+    font-size: 140%;
+    color: white;
+    text-shadow: 0px 0px 8px black;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+
+.juntar2 {
+    display: flex;
+    width: 30%;
+    margin-top: 0.8%;
+    overflow: hidden; 
+}
+
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+
+.input-group input[type="checkbox"] {
+    display: none;
+}
+
+.input-group label {
+    cursor: pointer;
+    position: relative;
+    padding-left: 42px; 
+    margin-bottom: -1px;
+    font-size: 120%;
+    color: white;
+    text-shadow: 0px 0px 8px black;
+}
+
+.input-group label::before {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: 0;
+    width: 31px; 
+    height: 31px; 
+    border: 1px solid #000000;
+    background-color: #fff; 
+}
+
+.input-group input[type="checkbox"]:checked + label::before {
+    background-color: rgb(0, 0, 0);
+    border: 2px solid #ffffff;
+}
+
+.input-group input[type="checkbox"]:checked + label::before {
+    content: '\2713';
+    color: #fff; 
+    font-size: 19px; 
+    text-align: center;
+    line-height: 28px; 
+}
+
+
+
+
+.problema{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-left: 10%;
+}
+
+.table-inputs{
+    border: 1.5px solid black;
+    width: 88%;
+    height: 94%;
+    background-color: #aad2ff;
+    box-shadow: 0px 0px  10px black;
+    border-radius: 40px; 
+}
+.enviar{
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5%;
+    width: 100%;
+}
+.enviar input{
+    width: 140px;
+    height: 45px;
+    border-radius: 30px;
+    border: solid 2px white;
+    background-color: #569ae7;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.enviar input:hover{
+    transition: 2s;
+    border: solid 2px #569ae7;
+    background-color: #ffffff;
+    color: #307cd3;
+}
+
+.txtCont{
+    text-align: center;
+    margin-top: 1%;
+}
+.txtCont h1{
+    font-size: 60px;
+    color: #ffffff;
+    text-shadow: 0px 0px 15px #000000;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+form h1{
+    margin-top: 3%;
+    color: #ffffff;
+    text-shadow: 0px 0px 15px #000000;
+}
+
+

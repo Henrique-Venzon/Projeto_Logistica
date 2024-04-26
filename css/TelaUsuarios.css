@@ -1,0 +1,155 @@
+.centroT{
+    font-size: 58px;
+    text-align: center;
+    margin-top: 10px;
+}
+.table{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 0 0 7px black;
+}
+.table th,td{
+    border: solid 1.5px black;
+    border-left: none;
+    border-bottom: none;
+    font-size: 30px;
+}
+.table th{
+    height: 50px;
+}
+.table td{
+    height: 60px;
+}
+.reset{
+    border-radius: 80px;
+    height: 50px;
+    width: 170px;
+    font-size: 25px;
+}
+
+
+.reset,
+.reset *,
+.reset :after,
+.reset :before,
+.reset:after,
+.reset:before {
+  box-sizing: border-box;
+}
+.reset {
+  -webkit-tap-highlight-color: transparent;
+  background-color: #ffffff;
+  color: #fff;
+  background-image: none;
+  color: #fff;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  border: 0.8 solid black;
+}
+
+.reset {
+  overflow: hidden;
+  position: relative;
+}
+.reset:hover {
+  transform: scale(1);
+
+}
+.reset span {
+  font-weight: 900;
+  mix-blend-mode: difference;
+}
+.reset:before {
+  aspect-ratio: 1;
+  background: #000000;
+  border-radius: 50%;
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 1s;
+  width: 0;
+  
+}
+
+.reset:hover:before {
+  width: 100%;
+}
+
+
+
+
+
+.tabela-scroll {
+    max-height: 610px; /* Define a altura máxima da div que contém a tabela */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
+    border-bottom: solid 1.5px black;
+
+  }
+  .tabela-scroll::-webkit-scrollbar {
+    height: 5px; /* Altura da barra de rolagem */
+  }
+  
+  
+  .tabela-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #1d82d4; /* Altera a cor do "ponteiro" quando o mouse está sobre ele */
+  }
+  
+
+  .tabela-scroll::-webkit-scrollbar-track {
+    background-color: #808080; /* Cor de fundo da barra de rolagem */
+  }
+  
+  .tabela-scroll::-webkit-scrollbar-thumb {
+    background-color: #68c8ff; /* Cor do "ponteiro" da barra de rolagem */
+    border-radius: 200px; /* Arredondamento do "ponteiro" da barra de rolagem */
+  }
+
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Platypi';
+}
+
+
+main{
+  width: 100%;
+  display: flex;
+}
+.meio{
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+}
+.DivDireita{
+    border: 1.5px solid black;
+    width: 90%;
+    height: 90%;
+    background-color: #aad2ff;
+    box-shadow: 0px 0px  10px black;
+    border-radius: 40px; 
+}
+
+
+
+.DivDireita h1{
+    color: white;
+    text-shadow: 2px 2px 5px #000000;
+}
+

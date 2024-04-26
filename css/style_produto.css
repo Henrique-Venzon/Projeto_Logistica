@@ -1,0 +1,78 @@
+body{
+  background-color: #ebebeb;
+}
+main{
+  width: 100%;
+  display: flex;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Platypi';
+}
+
+.DivDireita {
+  flex-grow: 1;
+  background-color: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center
+ 
+}
+  
+ 
+  .button {
+    background-color: #4682B4; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .input {
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 10px; 
+}
+
+textarea {
+    overflow: hidden;
+}
+.descricao textarea, .buttons {
+    width: 50%; 
+
+}
+
+.buttons .button {
+    width: 50%; 
+}
+.table-inputs {
+  border: 1.5px solid black;
+  width: 88%;
+  height: 94%;
+  background-color: #aad2ff;
+  box-shadow: 0px 0px 10px black;
+  border-radius: 40px;
+}
+label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coluna-1 { width: 10%; }
+.coluna-2 { width: 20%; }
+.coluna-3 { width: 30%; }
+/* ... outras classes de coluna ... */
+
+[class^="coluna-"] { display: inline-block; }
+.linha { display: flex; display: -webkit-flex; }
+.alinhamento { text-align: right; margin-right: 1vw; }
+
+
+

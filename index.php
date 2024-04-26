@@ -5,7 +5,7 @@
 <head>
 
     <title>ENTRAR e REGISTRAR</title>
-    <link rel="stylesheet" href="estiloLogin.css">
+    <link rel="stylesheet" href="css/estiloLogin.css">
 
 </head>
 
@@ -23,7 +23,7 @@
             <div class="second-column">
                 <h2 class="title title-second">Aluno</h2>
                 <p class="description description-second">Entre com seu registro de aluno:</p>
-                <form class="form" action='processarlogin.php' method="POST">
+                <form class="form" action='processamento/processarlogin.php' method="POST">
                     <label class="label-input" for="">
                         <input type="text" placeholder="Nome" name="Usuario">
                     </label>
@@ -52,7 +52,7 @@
             <div class="second-column">
                 <h2 class="title title-second">Professor</h2>
                 <p class="description description-second">Entre com seu registro de professor:</p>
-                <form class="form" action='processarlogin.php' method="POST">
+                <form class="form" action='processamento/processarlogin.php' method="POST">
 
                     <label class="label-input" for="">
                         <input type="text" placeholder="nome" name='Usuario'>
@@ -70,7 +70,7 @@
         </div>
     </div>
 
-    <script src="login.js"></script>
+    <script src="js/login.js"></script>
 
 </body>
 

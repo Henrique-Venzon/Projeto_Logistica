@@ -33,19 +33,28 @@ if(!isset($_SESSION['id'])){
         
         
         <div class="DivDireita">
-            <div class="bv">
-                <div class="centT">
-                <?php
-                print '<h1 >Seja Bem-Vindo</h1>';
-                print '<br>';
-				print '<h1  >'.$_SESSION['username'].'</h1>';
-                            ?>
-            </div>
-            </div>
-            <div class="Imagem">
-                <img class="imgLog" src="img/imgLog2.png" alt="">
-            </div>
-            
+        <?php
+            // Conexão com o banco de dados
+            $mysqli = new mysqli('127.0.0.1', 'root.Att', 'root', 'logistica');
+
+            if ($mysqli->connect_error) {
+                die('Erro na conexão (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
+            }
+
+            $sql = "SELECT * FROM produto";
+            $result = $mysqli->query($sql);
+
+            if ($result->num_rows > 0) {
+                // Saída de cada linha
+                while($row = $result->fetch_assoc()) {
+                    echo "id: " . $row["id"]. " - Nome do Produto: " . $row["nome_produto"]. " - Preço: " . $row["preco"]. ' - UN :' . $row["UN"]. ' - Quantidade : ' . $row["Quantidade"]. "<br>";
+                }
+            } else {
+                echo "0 resultados";
+            }
+            $mysqli->close();
+        ?>
+
         </div>
     </main>
 
