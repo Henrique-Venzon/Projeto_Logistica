@@ -18,7 +18,19 @@
   <form action="" method="post">
     <label for="ordem-numero">Pedido Nº</label>
     <input type="text" id="" name="">
+ type="text" id="" name="">
+    <input type="text" id="" name="">
+    <input type="text" id="" name="">
+    <input type="text" id="" name="">
+    <input type="text" id="" name="">
+</div>
 
+<div class="input">
+    <input type="text" id="" name="">
+    <input type="text" id="" name="">
+    <input type="text" id="" name="">
+    <input type="text" id="" name="">
+ 
     <div class="input">
     <label for="produto">Produtos</label>
    
@@ -35,19 +47,7 @@
 </div>
 
 <div class="input">
-    <input type="text" id="" name="">
-    <input type="text" id="" name="">
-    <input type="text" id="" name="">
-    <input type="text" id="" name="">
-    <input type="text" id="" name="">
-</div>
-
-<div class="input">
-    <input type="text" id="" name="">
-    <input type="text" id="" name="">
-    <input type="text" id="" name="">
-    <input type="text" id="" name="">
-    <input type="text" id="" name="">
+    <input   <input type="text" id="" name="">
 </div>
 
 <div class="input">
