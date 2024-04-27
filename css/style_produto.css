@@ -12,6 +12,7 @@ main{
   font-family: 'Platypi';
 }
 
+
 .DivDireita {
   flex-grow: 1;
   background-color: #ebebeb;
@@ -20,38 +21,13 @@ main{
   justify-content: center
  
 }
-  
- 
-  .button {
-    background-color: #08090a; 
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  .input {
-    display: flex; 
-    justify-content: space-between; 
-    margin-bottom: 10px; 
+.centroTxt{
+  margin-top: 1%;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 5px black;
 }
 
-textarea {
-    overflow: hidden;
-}
-.descricao textarea, .buttons {
-    width: 50%; 
-
-}
-
-.buttons .button {
-    width: 50%; 
-}
 .table-inputs {
   border: 1.5px solid black;
   width: 88%;
@@ -60,19 +36,70 @@ textarea {
   box-shadow: 0px 0px 10px black;
   border-radius: 40px;
 }
-label{
+
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+}
+
+input,
+select {
+  padding: 10px;
+  padding-right: 2px;
+  border: 1.5px solid #ffffff;
+  box-sizing: border-box;
+  width: 93%;
+  font-size: 18px;
+  background-color: #f6f6f6;
+  border-radius: 5px;
+  margin-bottom: 4px;
+
+}
+select{
+  height: 16.8%;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 22px;
+  border: none;
+  cursor: pointer;
+  border-radius: 18px;
+  font-size: 22px;
+
+}
+.colunas{
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 1.2%;
+  justify-content: space-around;
+
+
+}
+.colunas1{
+  margin-top: 1.2%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-around;
+}
+.colunas1 input {
+  padding: 5px;
+  border: 1px solid #ddd;
+  width: 100%;
+  height: 35px;
+}
+.colunas1 label{
+  font-size: 18px;
+}
+.botao{
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 1.5%;
 }
-.coluna-1 { width: 10%; }
-.coluna-2 { width: 20%; }
-.coluna-3 { width: 30%; }
-/* ... outras classes de coluna ... */
-
-[class^="coluna-"] { display: inline-block; }
-.linha { display: flex; display: -webkit-flex; }
-.alinhamento { text-align: right; margin-right: 1vw; }
-
-
-
