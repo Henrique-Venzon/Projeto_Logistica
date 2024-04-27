@@ -55,8 +55,13 @@ if(!isset($_SESSION['id'])){
         <label for="telefone">Telefone:</label>
         <input id="telefone" type="number" required>
         </div>
+        <div class="numeroPedido">
+        <label for="num">N° pedido:</label>
+        <input id="num" type="number" required>
+        </div>
 
             </div>
+           
 
   <div class="colunas">
         <div class="produto">
