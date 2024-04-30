@@ -124,7 +124,7 @@ main{
     border: 1.5px solid black;
     width: 88%;
     height: 94%;
-    background-color: #aad2ff;
+    background-color: #90c7ff;
     box-shadow: 0px 0px  10px black;
     border-radius: 40px; 
 }
@@ -145,7 +145,7 @@ main{
     font-size: 20px;
 }
 .enviar input:hover{
-    transition: 2s;
+    transition: 1.5s;
     border: solid 2px #569ae7;
     background-color: #ffffff;
     color: #307cd3;
