@@ -68,8 +68,8 @@ main{
 }
 
 .input-group input[type="checkbox"]:checked + label::before {
-    background-color: rgb(0, 63, 6);
-    border: 2px solid #ffffff;
+    background-color: #174ede;
+    border: 1.5px solid #ffffff;
 }
 
 .input-group input[type="checkbox"]:checked + label::before {
