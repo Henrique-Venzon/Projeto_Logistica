@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 30/04/2024 às 10:12
--- Versão do servidor: 8.2.0
+-- Tempo de geração: 30/04/2024 às 11:12
+-- Versão do servidor: 8.0.36
 -- Versão do PHP: 8.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -35,16 +35,18 @@ CREATE TABLE IF NOT EXISTS `aluno` (
   `username` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `password` varchar(255) NOT NULL,
   `turma` int NOT NULL,
-  PRIMARY KEY (`id`)
+  `turma_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `turma_id` (`turma_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `aluno`
 --
 
-INSERT INTO `aluno` (`id`, `username`, `password`, `turma`) VALUES
-(1, 'root.Att', 'root', 0),
-(12, 'teste', 'qgrp', 0);
+INSERT INTO `aluno` (`id`, `username`, `password`, `turma`, `turma_id`) VALUES
+(1, 'root.Att', 'root', 0, 1),
+(12, 'teste', 'qgrp', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -59,23 +61,6 @@ CREATE TABLE IF NOT EXISTS `armazem_limite` (
   `limite_maximo` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `logins`
---
-
-DROP TABLE IF EXISTS `logins`;
-CREATE TABLE IF NOT EXISTS `logins` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `turma` int NOT NULL,
-  `tipo_login` varchar(9) NOT NULL,
-  `ativo` varchar(1) NOT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -107,15 +92,18 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `nome_produto` varchar(255) NOT NULL,
   `preco` float(10,2) NOT NULL,
   `UN` varchar(4) NOT NULL,
-  PRIMARY KEY (`id`)
+  `Quantidade` int NOT NULL,
+  `turma_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `turma_id` (`turma_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `produto`
 --
 
-INSERT INTO `produto` (`id`, `nome_produto`, `preco`, `UN`) VALUES
-(1, 'Tesoura', 5.00, 'UN');
+INSERT INTO `produto` (`id`, `nome_produto`, `preco`, `UN`, `Quantidade`, `turma_id`) VALUES
+(1, 'Tesoura', 5.00, 'UN', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -128,15 +116,17 @@ CREATE TABLE IF NOT EXISTS `professor` (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(255) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL,
   `password` varchar(65) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL,
-  PRIMARY KEY (`id`)
+  `turma_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `turma_id` (`turma_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `professor`
 --
 
-INSERT INTO `professor` (`id`, `username`, `password`) VALUES
-(1, 'teste', 'teste');
+INSERT INTO `professor` (`id`, `username`, `password`, `turma_id`) VALUES
+(1, 'teste', 'teste', 1);
 
 -- --------------------------------------------------------
 
@@ -192,9 +182,37 @@ CREATE TABLE IF NOT EXISTS `tabela_de_vendedores` (
   PRIMARY KEY (`MATRICULA`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `turma`
+--
+
+DROP TABLE IF EXISTS `turma`;
+CREATE TABLE IF NOT EXISTS `turma` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `turma`
+--
+
+INSERT INTO `turma` (`id`) VALUES
+(1),
+(2),
+(3),
+(4);
+
 --
 -- Restrições para tabelas despejadas
 --
+
+--
+-- Restrições para tabelas `aluno`
+--
+ALTER TABLE `aluno`
+  ADD CONSTRAINT `aluno_ibfk_1` FOREIGN KEY (`turma_id`) REFERENCES `turma` (`id`);
 
 --
 -- Restrições para tabelas `notas_fiscais`
@@ -202,6 +220,18 @@ CREATE TABLE IF NOT EXISTS `tabela_de_vendedores` (
 ALTER TABLE `notas_fiscais`
   ADD CONSTRAINT `notas_fiscais_ibfk_1` FOREIGN KEY (`MATRICULA`) REFERENCES `tabela_de_vendedores` (`MATRICULA`),
   ADD CONSTRAINT `notas_fiscais_ibfk_2` FOREIGN KEY (`CPF`) REFERENCES `tabela_de_clientes` (`CPF`);
+
+--
+-- Restrições para tabelas `produto`
+--
+ALTER TABLE `produto`
+  ADD CONSTRAINT `produto_ibfk_1` FOREIGN KEY (`turma_id`) REFERENCES `turma` (`id`);
+
+--
+-- Restrições para tabelas `professor`
+--
+ALTER TABLE `professor`
+  ADD CONSTRAINT `professor_ibfk_1` FOREIGN KEY (`turma_id`) REFERENCES `turma` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
