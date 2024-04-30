@@ -24,16 +24,15 @@
                 <h2 class="title title-second">Aluno</h2>
                 <p class="description description-second">Entre com seu registro de aluno:</p>
                 <form class="form" action='processamento/processarlogin.php' method="POST">
-                    <label class="label-input" for="">
+                    <label class="label-input" for=""></label>
                         <input type="text" placeholder="Nome" name="Usuario">
-                    </label>
-
-                    <label class="label-input" for="">
+                    
+                    <label class="label-input" for=""></label>
                         <input type="password" placeholder="Senha" name='Senha'>
-                    </label>
-                    <label class="label-input" for="">
+                    
+                    <label class="label-input" for=""></label>
                         <input type="Number" placeholder="Turma" name='turma'>
-                    </label>
+                    
 
                     <button class="btn btn-second" value="aluno" type='submit' name='action'>
                         <h3 class="ajeitarcadastro">Entrar</h3>
@@ -54,13 +53,13 @@
                 <p class="description description-second">Entre com seu registro de professor:</p>
                 <form class="form" action='processamento/processarlogin.php' method="POST">
 
-                    <label class="label-input" for="">
+                    <label class="label-input" for=""></label>
                         <input type="text" placeholder="nome" name='Usuario'>
-                    </label>
+                    
 
-                    <label class="label-input" for="">
+                    <label class="label-input" for=""></label>
                         <input type="password" placeholder="Senha" name='Senha'>
-                    </label>
+                    
 
                     <button class="btn btn-second" value="professor" name="action" type='submit'>
                         <h3>Entrar</h3>

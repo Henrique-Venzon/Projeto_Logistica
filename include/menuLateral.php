@@ -213,7 +213,7 @@ a.sidebar-link:hover {
                         <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                             data-bs-target="#pedido" aria-expanded="false" aria-controls="Recebimentos">
                             <img src="img/pedidos.png" alt="">
-                            <span style="margin-left:10px;">Recebimentos</span>
+                            <span style="margin-left:10px;">Pedidos</span>
                         </a>
                         <ul id="pedido" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
