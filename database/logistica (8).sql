@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 30/04/2024 às 11:12
+-- Tempo de geração: 30/04/2024 às 11:39
 -- Versão do servidor: 8.0.36
 -- Versão do PHP: 8.2.13
 
@@ -192,7 +192,7 @@ DROP TABLE IF EXISTS `turma`;
 CREATE TABLE IF NOT EXISTS `turma` (
   `id` int NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1001 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `turma`
