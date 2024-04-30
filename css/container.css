@@ -46,51 +46,29 @@ main{
     text-shadow: 0px 0px 8px black;
     margin-bottom: 2%;
     margin-top: 2%;
+    
 }
 
-
-.juntar2 {
-    display: flex;
-    width: 30%;
-    margin-top: 0.8%;
-    overflow: hidden; 
-}
-
-
-.input-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-}
 
 
 .input-group input[type="checkbox"] {
     display: none;
 }
 
-.input-group label {
-    cursor: pointer;
-    position: relative;
-    padding-left: 42px; 
-    margin-bottom: -1px;
-    font-size: 120%;
-    color: white;
-    text-shadow: 0px 0px 8px black;
-}
+
 
 .input-group label::before {
     content: '';
     position: absolute;
     left: 1px;
-    top: 0;
-    width: 31px; 
-    height: 31px; 
+    width: 28px; 
+    height: 27px; 
     border: 1px solid #000000;
     background-color: #fff; 
 }
 
 .input-group input[type="checkbox"]:checked + label::before {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 63, 6);
     border: 2px solid #ffffff;
 }
 
@@ -99,20 +77,48 @@ main{
     color: #fff; 
     font-size: 19px; 
     text-align: center;
-    line-height: 28px; 
+    line-height: 24px; 
 }
 
 
 
 
-.problema{
+.problema {
     width: 100%;
-    justify-content: center;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     text-align: center;
-    margin-left: 10%;
+    margin-top: 2%;
+    margin-left: 4%;
 }
+
+.juntar2 {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    margin-top: 0.8%;
+    overflow: hidden;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.input-group label {
+    cursor: pointer;
+    position: relative;
+    padding-left: 33px;
+    margin-bottom: 0px;
+    font-size: 90%;
+    color: white;
+    text-shadow: 0px 0px 8px black;
+    text-wrap: nowrap;
+}
+
+
 
 .table-inputs{
     border: 1.5px solid black;
@@ -165,5 +171,4 @@ form h1{
     color: #ffffff;
     text-shadow: 0px 0px 15px #000000;
 }
-
 

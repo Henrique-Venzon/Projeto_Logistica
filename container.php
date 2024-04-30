@@ -88,7 +88,7 @@ if(!isset($_SESSION['id'])){
                     <div class="juntar2">
                     <div class="input-group">
                     <input id="1" type="checkbox" name="">
-                    <label for="1">Container bem desgastado</label>
+                    <label for="1">Sem lona</label>
                     </div>
                     </div>
                     <div class="juntar2">
@@ -100,7 +100,7 @@ if(!isset($_SESSION['id'])){
                     <div class="juntar2">
                     <div class="input-group">
                     <input id="3" type="checkbox" name="">
-                    <label for="3">Avariana na lateral esquerda</label>
+                    <label for="3">Sem cabo de energia</label>
                     </div>
                     </div>
                     <div class="juntar2">
@@ -160,13 +160,13 @@ if(!isset($_SESSION['id'])){
                     <div class="juntar2">
                     <div class="input-group">
                     <input id="13" type="checkbox" name="">
-                    <label for="13">Sem cabo de energia</label>
+                    <label class="ajeitarTxt" for="13">Avariana na lateral esquerda</label>
                     </div>
                     </div>
                     <div class="juntar2">
                     <div class="input-group">
                     <input id="14" type="checkbox" name="">
-                    <label for="14">Sem lona</label>
+                    <label for="14">Container bem desgastado</label>
                     </div>
                     </div>
 
