@@ -72,9 +72,9 @@ main{
 .bv::before{
     content: "";
     width: 30%;
-    height: 300%;
+    height: 600%;
     position: absolute;
-    background: linear-gradient(180deg, #ffee00,#fc7216);
+    background: linear-gradient(180deg, #1f64f1,#1941b4);
 
     animation: animate 5s linear infinite;
 }

@@ -31,7 +31,7 @@
                         <input type="password" placeholder="Senha" name='Senha'>
                     
                     <label class="label-input" for=""></label>
-                        <input type="Number" placeholder="Turma" name='turma'>
+                        <input type="text" placeholder="Turma" name='turma'>
                     
 
                     <button class="btn btn-second" value="aluno" type='submit' name='action'>
@@ -54,7 +54,7 @@
                 <form class="form" action='processamento/processarlogin.php' method="POST">
 
                     <label class="label-input" for=""></label>
-                        <input type="text" placeholder="nome" name='Usuario'>
+                        <input type="text" placeholder="Nome" name='Usuario'>
                     
 
                     <label class="label-input" for=""></label>

@@ -20,7 +20,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #e9e9e9;
+    background-color: #fcfcfc;
 }
 .content {
     background-color: #fff;
@@ -147,11 +147,13 @@ input:-webkit-autofill {
     -webkit-text-fill-color: #000 !important;
 }
 .label-input {
-    background-color: #ecf0f1;
+    font-size: 19px;
+    justify-content: center;
     display: flex;
     align-items: center;
     margin: 8px;
 }
+
 .opcaoRadio {
     background-color: #ecf0f1;
     display: flex;
