@@ -39,13 +39,13 @@ main{
 }
 
 
-label {
+.table-inputs label {
   display: block;
   margin-bottom: 5px;
   color: black;
 }
 
-input,
+.table-inputs input,
 select {
   padding: 10px;
   padding-right: 2px;
@@ -59,11 +59,11 @@ select {
   box-shadow: 0px 0px 4px rgb(0, 0, 0);
 
 }
-select{
+.table-inputs select{
   height: 16.8%;
 }
 
-button {
+.table-inputs button {
   background-color: #4CAF50;
   color: white;
   padding: 12px 22px;
@@ -71,7 +71,7 @@ button {
   cursor: pointer;
   border-radius: 18px;
   font-size: 22px;
-
+  box-shadow: 0 0 7px rgb(255, 255, 255);
 }
 .colunas{
   margin-left: 15px;
