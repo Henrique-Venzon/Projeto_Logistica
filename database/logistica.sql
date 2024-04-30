@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 16/04/2024 às 11:16
--- Versão do servidor: 8.0.36
+-- Tempo de geração: 30/04/2024 às 10:12
+-- Versão do servidor: 8.2.0
 -- Versão do PHP: 8.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `aluno` (
 
 INSERT INTO `aluno` (`id`, `username`, `password`, `turma`) VALUES
 (1, 'root.Att', 'root', 0),
-(12, 'teste', 'teste', 0);
+(12, 'teste', 'qgrp', 0);
 
 -- --------------------------------------------------------
 
@@ -63,18 +63,19 @@ CREATE TABLE IF NOT EXISTS `armazem_limite` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `itens_notas_fiscais`
+-- Estrutura para tabela `logins`
 --
 
-DROP TABLE IF EXISTS `itens_notas_fiscais`;
-CREATE TABLE IF NOT EXISTS `itens_notas_fiscais` (
-  `NUMERO` int NOT NULL,
-  `CODIGO_DO_PRODUTO` varchar(10) NOT NULL,
-  `QUANTIDADE` int NOT NULL,
-  `PRECO` float NOT NULL,
-  PRIMARY KEY (`NUMERO`,`CODIGO_DO_PRODUTO`),
-  KEY `CODIGO_DO_PRODUTO` (`CODIGO_DO_PRODUTO`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS `logins`;
+CREATE TABLE IF NOT EXISTS `logins` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `turma` int NOT NULL,
+  `tipo_login` varchar(9) NOT NULL,
+  `ativo` varchar(1) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -93,6 +94,28 @@ CREATE TABLE IF NOT EXISTS `notas_fiscais` (
   KEY `MATRICULA` (`MATRICULA`),
   KEY `CPF` (`CPF`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `produto`
+--
+
+DROP TABLE IF EXISTS `produto`;
+CREATE TABLE IF NOT EXISTS `produto` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome_produto` varchar(255) NOT NULL,
+  `preco` float(10,2) NOT NULL,
+  `UN` varchar(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `produto`
+--
+
+INSERT INTO `produto` (`id`, `nome_produto`, `preco`, `UN`) VALUES
+(1, 'Tesoura', 5.00, 'UN');
 
 -- --------------------------------------------------------
 
@@ -172,13 +195,6 @@ CREATE TABLE IF NOT EXISTS `tabela_de_vendedores` (
 --
 -- Restrições para tabelas despejadas
 --
-
---
--- Restrições para tabelas `itens_notas_fiscais`
---
-ALTER TABLE `itens_notas_fiscais`
-  ADD CONSTRAINT `itens_notas_fiscais_ibfk_1` FOREIGN KEY (`CODIGO_DO_PRODUTO`) REFERENCES `tabela_de_produtos` (`CODIGO_DO_PRODUTO`),
-  ADD CONSTRAINT `itens_notas_fiscais_ibfk_2` FOREIGN KEY (`NUMERO`) REFERENCES `notas_fiscais` (`NUMERO`);
 
 --
 -- Restrições para tabelas `notas_fiscais`
