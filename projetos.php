@@ -4,6 +4,10 @@ if(!isset($_SESSION['id'])){
     header("Location: index.php");
     exit;
 }
+if(($_SESSION['tipo_login']!='professor')){
+    header("Location: telainicio.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 
