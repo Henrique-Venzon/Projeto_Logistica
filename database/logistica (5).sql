@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 24/04/2024 às 11:19
+-- Tempo de geração: 30/04/2024 às 10:49
 -- Versão do servidor: 8.0.36
 -- Versão do PHP: 8.2.13
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `aluno` (
 
 INSERT INTO `aluno` (`id`, `username`, `password`, `turma`) VALUES
 (1, 'root.Att', 'root', 0),
-(12, 'teste', 'teste', 0);
+(12, 'teste', 'qgrp', 0);
 
 -- --------------------------------------------------------
 
@@ -59,6 +59,23 @@ CREATE TABLE IF NOT EXISTS `armazem_limite` (
   `limite_maximo` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `logins`
+--
+
+DROP TABLE IF EXISTS `logins`;
+CREATE TABLE IF NOT EXISTS `logins` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `turma` int NOT NULL,
+  `tipo_login` varchar(9) NOT NULL,
+  `ativo` varchar(1) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -90,6 +107,7 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `nome_produto` varchar(255) NOT NULL,
   `preco` float(10,2) NOT NULL,
   `UN` varchar(4) NOT NULL,
+  `Quantidade` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
@@ -97,8 +115,8 @@ CREATE TABLE IF NOT EXISTS `produto` (
 -- Despejando dados para a tabela `produto`
 --
 
-INSERT INTO `produto` (`id`, `nome_produto`, `preco`, `UN`) VALUES
-(1, 'Tesoura', 5.00, 'UN');
+INSERT INTO `produto` (`id`, `nome_produto`, `preco`, `UN`, `Quantidade`) VALUES
+(1, 'Tesoura', 5.00, 'UN', 0);
 
 -- --------------------------------------------------------
 
