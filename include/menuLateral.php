@@ -204,7 +204,7 @@ a.sidebar-link:hover {
                         </a>
                         <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a style="margin-bottom: -10px;" href="container.php" class="sidebar-link">Container</a>
+                                <a id="linkContainer" style="margin-bottom: -10px;" href="container.php" class="sidebar-link">Container</a>
                             </li>
                             <li class="sidebar-item">
                                 <a  style="margin-bottom: -10px;" href="#" class="sidebar-link">Carga</a>
@@ -275,3 +275,11 @@ a.sidebar-link:hover {
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
+        <script>
+            
+            if (<?php echo json_encode($_SESSION['tipo_login']); ?> == 'professor') {
+                document.getElementById('linkContainer').setAttribute('href', 'containerP.php');
+            } else if (<?php echo json_encode($_SESSION['tipo_login']); ?> == 'aluno') {
+                document.getElementById('linkContainer').setAttribute('href', 'containerA.php');
+            }
+        </script>
