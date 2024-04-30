@@ -15,16 +15,18 @@ if(!isset($_SESSION['id'])){
     ?></title>
 
 
-    <link rel="stylesheet" href="projetosCSS.css">
+    <link rel="stylesheet" href="css/projetosCSS.css">
 </head>
 
 <body>
     <?php
     include 'include/header.php'
     ?>
-    
-    <main>
 
+    <main>
+        <aside>
+            
+        </aside>
     </main>
 
 </body>

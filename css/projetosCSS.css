@@ -9,6 +9,12 @@ main{
     height: 92.1dvh;
     width: 100%;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+
+}
+aside{
+    background-color: #64acff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 300px;
 }
