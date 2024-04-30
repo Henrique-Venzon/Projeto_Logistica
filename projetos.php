@@ -22,16 +22,9 @@ if(!isset($_SESSION['id'])){
     <?php
     include 'include/header.php'
     ?>
+    
     <main>
-        <div class="Card">
-                
-        </div>
-        <div class="imgCentro">
-                    <img src="" alt="">
-        </div>
-        <div class="Card">
-                
-        </div>
+
     </main>
 
 </body>
