@@ -171,5 +171,3 @@ if(!isset($_SESSION['id'])){
         crossorigin="anonymous"></script>
 </body>
 </html>
-
-z

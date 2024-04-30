@@ -12,9 +12,29 @@ main{
 
 }
 aside{
-    background-color: #64acff;
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 300px;
+    width: 350px;
+    background-color: rgb(223, 240, 255);
 }
+.sidebar-item a{
+    text-decoration: none;
+    list-style: none;
+    background-color: #64acff;
+    width: 100%;
+    font-size: 40px;
+    padding: 20px;
+    border-top: 2.5px solid rgb(255, 255, 255);
+    border-bottom: 2.5px solid rgb(255, 255, 255);
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+
+.sidebar-item{
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+}
+

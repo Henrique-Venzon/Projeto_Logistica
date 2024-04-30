@@ -26,11 +26,25 @@ if(($_SESSION['tipo_login']!='professor')){
     <?php
     include 'include/header.php'
     ?>
-
     <main>
         <aside>
-            
+            <li class="sidebar-item">
+                        <a href="" class="sidebar-link">
+                            <span style="margin-left:10px;">Criar projeto</span>
+                        </a>
+                    </li>
+            <li class="sidebar-item">
+                        <a href="" class="sidebar-link">
+                            <span style="margin-left:10px;">Continuar projeto</span>
+                        </a>
+                    </li>
+            <li class="sidebar-item">
+                        <a href="" class="sidebar-link">
+                            <span style="margin-left:10px;">Listar projeto</span>
+                        </a>
+                    </li>
         </aside>
+
     </main>
 
 </body>
