@@ -6,15 +6,9 @@
     font-family: 'Platypi';
 }
 main{
-    height: 90dvh;
+    height: 92.1dvh;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-image: url(img/);
-}
-.Card{
-    width: 300px;
-    height: 400px;
-    background-color: #64acff;
 }
