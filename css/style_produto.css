@@ -45,10 +45,8 @@ main{
   color: black;
 }
 
-.table-inputs input,
-select {
-  padding: 10px;
-  padding-right: 2px;
+.table-inputs input {
+  height: 50px;
   border: 1.5px solid #ffffff;
   box-sizing: border-box;
   width: 93%;
@@ -57,11 +55,22 @@ select {
   border-radius: 5px;
   margin-bottom: 4px;
   box-shadow: 0px 0px 4px rgb(0, 0, 0);
+  margin-top: 8px;
+}
+
+.table-inputs select{
+  height: 50px;
+  box-shadow: 0px 0px 4px rgb(0, 0, 0);
+  background-color: #f6f6f6;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 4px;
+
+  margin-top: 8px;
+
 
 }
-.table-inputs select{
-  height: 16.8%;
-}
+
 
 .table-inputs button {
   border-radius: 30px;
@@ -83,7 +92,7 @@ select {
   color: #307cd3;
 }
 .colunas{
-  margin-left: 15px;
+  margin-left: 5px;
   margin-right: 15px;
   display: flex;
   flex-direction: row;
@@ -91,8 +100,8 @@ select {
   margin-top: 1.2%;
   justify-content: space-around;
 
-
 }
+
 .colunas1{
 
   margin-top: 1.2%;
@@ -115,6 +124,41 @@ select {
 }
 .botao{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin-top: 1.5%;
+}
+#removerUltimo{
+  border-radius: 30px;
+  border: solid 2px rgb(255, 0, 0);
+  background-color: #ffffff;
+  color: #ff0000;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 12px 22px;
+  cursor: pointer;
+
+  box-shadow: 0 0 7px rgb(255, 255, 255);
+}
+#removerUltimo:hover{
+  transition: 1.5s;
+  border: solid 2px #ffffff;
+  background-color: #ff0000;
+  color: #ffffff;
+}
+#adicionarInputs{
+  border-radius: 30px;
+  border: solid 2px rgb(20, 118, 0);
+  background-color: #ffffff;
+  color:rgb(20, 118, 0);
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 12px 22px;
+  cursor: pointer;
+  box-shadow: 0 0 7px rgb(255, 255, 255);
+}
+#adicionarInputs:hover{
+  transition: 1.5s;
+  border: solid 2px #ffffff;
+  background-color: rgb(20, 118, 0);
+  color: #ffffff;
 }
