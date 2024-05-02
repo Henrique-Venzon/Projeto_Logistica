@@ -51,6 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['id'] = $row[0];
                     $_SESSION['username'] = $row[1];
                     $_SESSION['tipo_login'] = 'aluno';
+                    $_SESSION['turma_id'] = $row[2];
+
 
                     header('Location: ../telaInicio.php', true, 301);
                 } else {

@@ -65,7 +65,7 @@ if(!isset($_SESSION['id'])){
                     print "<tr>";
                     print "<td>".$row->username."</td>";
                     print "<td>".$row->password."</td>";
-                    print "<td >".$row->turma."</td>";
+                    print "<td >".$row->turma_id."</td>";
                     print "<td style=\"border-right:none;\">
                     <button class=\"reset\" data-id=\"".$row->id."\"><span>Resetar</span></button>
                         </td>"; 
