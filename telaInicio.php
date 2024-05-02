@@ -38,6 +38,7 @@ if(!isset($_SESSION['id'])){
                 print '<h1>Seja Bem-Vindo</h1>';
                 print '<br>';
 				print '<h1  >'.$_SESSION['username'].'</h1>';
+                print '<h3  > Turma: '.$_SESSION['turma'].' </h3>';
                             ?>
             </div>
             </div>

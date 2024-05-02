@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $password = $conexao->real_escape_string($_POST['Senha']);
                 $turma = $conexao->real_escape_string($_POST['turma']);
 
-                $sql = "SELECT `id`, `username` FROM `aluno` WHERE `username` = '" . $username . "' AND `password` = '" . $password . "' AND `turma_id` = '" . $turma . "'";
+                $sql = "SELECT `id`, `username`, `turma_id` FROM `aluno` WHERE `username` = '" . $username . "' AND `password` = '" . $password . "' AND `turma_id` = '" . $turma . "'";
 
                 $resultado = $conexao->query($sql);
 
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['id'] = $row[0];
                     $_SESSION['username'] = $row[1];
                     $_SESSION['tipo_login'] = 'aluno';
-                    $_SESSION['turma_id'] = $row[2];
+                    $_SESSION['turma'] = $row[2];
 
 
                     header('Location: ../telaInicio.php', true, 301);
