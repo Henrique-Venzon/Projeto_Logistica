@@ -52,6 +52,14 @@
     height: 65px;
     width: 65px; 
 }
+.sair{
+    position: absolute;
+    left: 97.5%; 
+    transform: translateX(-50%);
+}
+.sair{
+    filter: drop-shadow(0px 0px 4px black);
+}
 </style>
 
 
@@ -70,6 +78,9 @@
         <?php
 				print '<h1>'.$_SESSION['username'].'</h1>';
                             ?>
+        </div>
+        <div class="sair">
+        <a href="processamento/sair.php"><img style="width: 100px;height:100px;" src="img/sairBranco.png" alt=""></a>
         </div> 
 
         

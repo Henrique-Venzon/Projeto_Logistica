@@ -260,12 +260,6 @@ a.sidebar-link:hover {
                         </a>
                     </li>
                     
-                    <li class="sidebar-item">
-                        <a href="processamento/sair.php" class="sidebar-link">
-                        <img style="width: 45px;margin-left:5px;height:45px;" src="img/sair.png" alt="">
-                            <span style="margin-left:10px;">Sair</span>
-                        </a>
-                    </li>
                     
                 </ul>
                 
