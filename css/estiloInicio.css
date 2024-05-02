@@ -6,19 +6,7 @@
     font-family: 'Platypi';
 }
 
-::-webkit-scrollbar {
-    height: 500px;
 
-  }
-
-  ::-webkit-scrollbar-track {
-    background-color: #64acff;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: #ffffff; /* Cor do "ponteiro" da barra de rolagem */
-    border-radius: 200px;
-  }
 
 main{
     width: 100%;
@@ -39,8 +27,9 @@ main{
     height: 100%;
 }
 .imgLog{
-    height: 100%;
-    width: 190%;
+    height: 92.1%;
+    width: 1400px;
+    position: absolute;
     filter: drop-shadow(-25px 0px 15px rgb(98, 179, 255));
 }
 .centT{
