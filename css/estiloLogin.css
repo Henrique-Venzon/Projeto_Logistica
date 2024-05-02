@@ -3,10 +3,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Platypi';
+
 }
-body {
-    font-family: 'Open Sans', sans-serif;
-}
+
 .imgSenai{
     height: 50px;
     position: absolute;
