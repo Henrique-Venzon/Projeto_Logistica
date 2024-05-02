@@ -13,10 +13,12 @@ if(($_SESSION['tipo_login']!='professor')){
 
 <head>
     <meta charset="utf-8">
-    <title><?php 
+    <title>
+        <?php 
     $tituloPag = 'Projetos';
     echo "$tituloPag"; 
     ?></title>
+
 
 <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
