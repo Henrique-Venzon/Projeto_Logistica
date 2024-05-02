@@ -212,6 +212,8 @@ a.sidebar-link:hover {
                             </li>
                         </ul>
                     </li>
+                    <?php if($_SESSION['tipo_login']=='professor')
+                    echo '
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                             data-bs-target="#pedido" aria-expanded="false" aria-controls="Recebimentos">
@@ -226,13 +228,17 @@ a.sidebar-link:hover {
                                 <a  style="margin-bottom: -10px;" href="#" class="sidebar-link">Ver pedidos</a>
                             </li>
                         </ul>
-                    </li>  
+                    </li>'
+                    ?>
+                    
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
                             <img src="img/carMov.png" alt="">
                             <span style="margin-left:10px;">Expedição</span>
                         </a>
                     </li>
+                    <?php if($_SESSION['tipo_login']=='professor')
+                    echo '
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                             data-bs-target="#Nota" aria-expanded="false" aria-controls="Nota">
@@ -248,6 +254,7 @@ a.sidebar-link:hover {
                             </li>
                         </ul>
                     </li> 
+                    
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
                             <img style="width: 70px;margin-left:-10px;" src="img/relatorio.png" alt="">
@@ -260,8 +267,8 @@ a.sidebar-link:hover {
                             <img  src="img/confpreto.png" alt="">
                             <span style="margin-left:10px;">Controle</span>
                         </a>
-                    </li>
-                    
+                    </li>'
+                    ?>
                 </ul>
                 
             </aside>
