@@ -169,13 +169,15 @@ a.sidebar-link:hover {
                             <span style="margin-left:10px;">Home</span>
                         </a>
                     </li>
+                    <?php if($_SESSION['tipo_login']=='professor')
+                    echo '
                     <li class="sidebar-item">
                         <a href="telaUsuarios.php" class="sidebar-link">
                             <img src="img/perfil.png" alt="">
-                            <span style="margin-left:10px;">Perfil</span>
+                            <span style="margin-left:10px;">Alunos</span>
                         </a>
-                    </li>
-                    
+                    </li>'
+                    ?>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
                             <img src="img/mov03.png">
@@ -259,7 +261,6 @@ a.sidebar-link:hover {
                             <span style="margin-left:10px;">Controle</span>
                         </a>
                     </li>
-                    
                     
                 </ul>
                 
