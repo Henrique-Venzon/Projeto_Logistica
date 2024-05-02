@@ -164,10 +164,12 @@ a.sidebar-link:hover {
                 </div>
                 <ul class="sidebar-nav">
                 <li class="sidebar-item">
+                <?php if($tituloPag!='Home')
+                    echo '
                         <a href="telaInicio.php" class="sidebar-link">
                             <img src="img/home.png" alt="">
                             <span style="margin-left:10px;">Home</span>
-                        </a>
+                        </a>'?>
                     </li>
                     <?php if($_SESSION['tipo_login']=='professor')
                     echo '
