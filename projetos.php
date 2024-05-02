@@ -29,24 +29,52 @@ if(($_SESSION['tipo_login']!='professor')){
     <main>
         <aside>
             <li class="sidebar-item">
-                        <a href="" class="sidebar-link">
+                        <button id="btnCriarProjeto" class="sidebar-link">
                             <span style="margin-left:10px;">Criar projeto</span>
-                        </a>
+                        </button>
                     </li>
             <li class="sidebar-item">
-                        <a href="" class="sidebar-link">
+                        <button id="btnContinuarProjeto"  class="sidebar-link">
                             <span style="margin-left:10px;">Continuar projeto</span>
-                        </a>
+                        </button>
                     </li>
             <li class="sidebar-item">
-                        <a href="" class="sidebar-link">
+                        <button id="btnListarProjetos"  class="sidebar-link">
                             <span style="margin-left:10px;">Listar projeto</span>
-                        </a>
+                        </button>
                     </li>
         </aside>
+            <div class="direita">
+        
+                    <div class="bv">
+                        <div class="centT">
+                        <?php
+                        print '<h1 >Seja</h1>';
+                        print '<br>';
+                        print '<h1 >Bem-Vindo</h1>';
+                        print '<br>';
+                        print '<h1  >'.$_SESSION['username'].'</h1>';
+                                    ?>
+                            </div>
+                            </div>
+                    <div class="Imagem">
+                        <img class="imgLog" src="img/imgLog2.png" alt="">
+                    </div>
 
+                    <div id="divCriarProjeto" style="display: none;">
+                criar
+            </div>
+            <div id="divContinuarProjeto" style="display: none;">
+            continuar
+            </div>
+            <div id="divListarProjetos" style="display: none;">
+               listar
+            </div>
+                
+
+            </div>
     </main>
-
+    <script src="js/projetos.js"></script>
 </body>
 
 </html>

@@ -36,7 +36,7 @@ if(!isset($_SESSION['id'])){
             <div class="bv">
                 <div class="centT">
                 <?php
-                print '<h1 >Seja Bem-Vindo</h1>';
+                print '<h1 Seja Bem-Vindo</h1>';
                 print '<br>';
 				print '<h1  >'.$_SESSION['username'].'</h1>';
                             ?>
