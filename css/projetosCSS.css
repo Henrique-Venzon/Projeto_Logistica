@@ -72,5 +72,5 @@ main {
     transition:  1s ease;
 }
 .centroTable:hover .cards:not(:hover) {
-    filter: blur(4px); /* Aplica o desfoque ao card que não está em foco quando o pai está em foco */
+    filter: blur(2.5px); /* Aplica o desfoque ao card que não está em foco quando o pai está em foco */
 }
