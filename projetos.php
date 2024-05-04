@@ -12,6 +12,8 @@ if(($_SESSION['tipo_login']!='professor')){
 <!DOCTYPE html>
 
 <head>
+<meta name="vierport" content="width=device-width, initial-scale=1.0" >
+
     <meta charset="utf-8">
     <title>
         <?php 

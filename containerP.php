@@ -7,6 +7,8 @@ if(!isset($_SESSION['id'])){
 ?>
 <!DOCTYPE html>
 <head>
+<meta name="vierport" content="width=device-width, initial-scale=1.0" >
+
     <meta charset="utf-8">
     <title><?php 
     $tituloPag = 'Container';
@@ -16,6 +18,7 @@ if(!isset($_SESSION['id'])){
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         
         <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <meta name="vierport" content="width=device-width, initial-scale=1.0" >
 
     <link rel="stylesheet" href="css/container.css">
 </head>

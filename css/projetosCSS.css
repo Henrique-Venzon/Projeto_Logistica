@@ -5,31 +5,50 @@
     box-sizing: border-box;
     font-family: 'Platypi';
 }
-main{
+main {
     width: 100%;
-    height: 92.1dvh;
+    height: 92.1vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #bddcff;
+    background: linear-gradient(-60deg, rgb(0, 0, 0),rgb(23, 0, 170),rgb(0, 10, 57),rgb(23, 0, 170), rgb(0, 0, 0));
+    background-size: 300% 300%; /* Aumente o tamanho do gradiente */
+    animation: gradient 6s ease infinite;
 }
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
 .centroTable{
-    width: 90%;
-    height: 88%;
-    background-color: rgb(247, 247, 247);
+    width: 87%;
+    height: 85%;
+    background-color: rgb(232, 232, 232);
     display: flex;
     align-items: center;
     justify-content: space-around;
     border-radius: 40px;
-    box-shadow: 0 0 14px black;
+    box-shadow: 0 0 9px black;
+    transition: transform 1s ease;
+
 
 }
 .cards{
-    width: 550px;
+    width: 40%;
     height: 80%;
     background-color: #64acff;
     border-radius: 40px;
     box-shadow: 0 0 14px black;
+    transition: transform 1.5s ease;
+
 
 }
 .textTit{
@@ -44,9 +63,10 @@ main{
 
 .cards:hover{
     transform: scale(1.1);
-    transition: 1s;
+    transition:1s ease;
+    
 }
 .centroTable:hover{
     transform: scale(1.01);
-    transition: 1s;
+    transition:  1s ease;
 }
