@@ -47,8 +47,7 @@ main {
     background-color: #64acff;
     border-radius: 40px;
     box-shadow: 0 0 14px black;
-    transition: transform 1.5s ease;
-
+    transition: transform 1.5s ease,filter 0.5s ease;
 
 }
 .textTit{
@@ -64,9 +63,14 @@ main {
 .cards:hover{
     transform: scale(1.1);
     transition:1s ease;
+    filter: blur(0); /* Remove o desfoque ao passar o mouse */
+
     
 }
 .centroTable:hover{
     transform: scale(1.01);
     transition:  1s ease;
+}
+.centroTable:hover .cards:not(:hover) {
+    filter: blur(4px); /* Aplica o desfoque ao card que não está em foco quando o pai está em foco */
 }
