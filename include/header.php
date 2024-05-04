@@ -39,7 +39,7 @@
 .logo{
     align-items: center;
     display: flex;
-    margin-left: 0.8%;
+    margin-left: 0.2%;
 }
 .logo h1{
     margin-left: 5.3%;

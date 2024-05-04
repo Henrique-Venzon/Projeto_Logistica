@@ -35,22 +35,20 @@
     }
 
     .menuImg {
-        margin-left: 10px;
+        margin-left: 8px;
     }
 
     #sidebar {
         width: 100px;
-        min-width: 100px;
         z-index: 1000;
-        transition: all .25s ease-in-out;
+        transition:  .05s ease-out;
         background-color: #64acff;
         display: flex;
         flex-direction: column;
-        height: 92.1vh;
     }
 
     #sidebar.expand {
-        min-width: 260px;
+        width: 260px;
     }
 
     .toggle-btn {
@@ -64,33 +62,21 @@
     .sidebar-logo {
         margin: auto 0;
     }
-    #sidebar:not(.expand) .sidebar-logo,
-#sidebar:not(.expand) a.sidebar-link span {
-    transition-delay: 3s;
-}
-
-#sidebar.expand .sidebar-logo,
-#sidebar.expand a.sidebar-link span {
-    opacity: 1;
-}
 
 
 
     #sidebar:not(.expand) .sidebar-logo,
     #sidebar:not(.expand) a.sidebar-link span {
         display: none;
-        opacity: 0;
-    transition: opacity 0.25s ease-in-out;
     }
 
     .sidebar-nav {
         margin-top: 0;
-        padding: 0.3rem 0;
+        padding: 0 0;
         background-color: #64acff;
     }
 
     a.sidebar-link {
-
         padding: .425rem 1.425rem;
         color: #FFF;
         display: block;
@@ -145,24 +131,36 @@
     }
 
 
-    @media only screen and (min-height: 200px) {
+
+
+    @media  screen and (max-height: 768px) {
         .menuL img {
-        height: 40px;
-        width: 40px;
+        height: 32px;
+        width: 32px;
     }
-  }@media only screen and (min-height: 200px) {
-        #sidebar.expand {
-        width: 80px;
+    #sidebar.expand {
+        width: 220px;
     }
     #sidebar {
-        width: 80px;
+        width: 90px;
     }
-  }
+    #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+        left: 90px;
+    }
+}
+@media  screen and (min-height: 770px) {
+        .menuL img {
+        height: 43px;
+        width: 43px;
+    }
+
+}
+
 
 </style>
 
 <div class="menuL">
-    <aside id="sidebar">
+    <aside id="sidebar" class="sidebar-transition">
         <div class="d-flex">
             <button class="toggle-btn" type="button">
                 <img class="menuImg" src="img/menu.png" alt="">
