@@ -8,6 +8,7 @@
 
 
 
+
 main{
     width: 100%;
     display: flex;
@@ -27,6 +28,7 @@ main{
     height: 100%;
 }
 .imgLog{
+    right: 0;
     height: 92.1%;
     width: 1400px;
     position: absolute;
@@ -53,7 +55,7 @@ main{
 
     }
 .bv{
-    height: 30%;
+    height: 35%;
     display: flex;
     background-color: #64acff;
     margin-left:5%;

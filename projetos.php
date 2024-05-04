@@ -44,7 +44,6 @@ if(($_SESSION['tipo_login']!='professor')){
         </div>
         
     </main>
-    <script src="js/projetos.js"></script>
 </body>
 
 </html>

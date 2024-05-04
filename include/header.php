@@ -54,7 +54,7 @@
 }
 .sair{
     position: absolute;
-    left: 97%; 
+    left: 96%; 
     transform: translateX(-50%);
 }
 .sair{
