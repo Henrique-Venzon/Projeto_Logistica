@@ -33,19 +33,20 @@ if(($_SESSION['tipo_login']!='professor')){
     ?>
     <main>
         <div class="centroTable">
-            <div class="cards cards1">
+            <div id="criarProjeto" class="cards cards1">
                     <div class="textTit">
                         <h1>Criar projetos</h1>
                     </div>
             </div>
-            <div class="cards cards2">
+            <div id="listarProjeto" class="cards cards2">
             <div class="textTit">
                         <h1>Listas de projetos</h1>
                     </div>
             </div>
         </div>
-        
     </main>
+    <script src="js/projeto.js"></script>
+
 </body>
 
 </html>

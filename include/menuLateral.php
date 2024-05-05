@@ -153,7 +153,6 @@
         height: 43px;
         width: 43px;
     }
-
 }
 
 
