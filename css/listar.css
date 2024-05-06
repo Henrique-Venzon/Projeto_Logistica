@@ -5,6 +5,8 @@
     box-sizing: border-box;
     font-family: 'Platypi';
 }
+
+
 main {
     width: 100%;
     height: 92.1vh;
@@ -27,7 +29,6 @@ main {
         background-position: 0 50%;
     }
 }
-
 .centroTable{
     width: 87%;
     height: 85%;
@@ -38,39 +39,8 @@ main {
     border-radius: 40px;
     box-shadow: 0 0 9px black;
     transition: transform 1s ease;
-
-
-}
-.cards{
-    width: 40%;
-    height: 80%;
-    background-color: #00499c;
-    border-radius: 40px;
-    box-shadow: 0 0 14px black;
-    transition: transform 1.5s ease,filter 0.5s ease;
-    cursor: pointer;
-
-}
-.textTit{
-    display: flex;
-    justify-content: center;
-    margin-top: 2%;
-}
-.textTit h1{
-    color: white;
-    text-transform: uppercase;
-}
-
-.cards:hover{
-    transform: scale(1.1);
-    transition:1s ease;
-    filter: blur(0); 
-
 }
 .centroTable:hover{
     transform: scale(1.01);
     transition:  1s ease;
-}
-.blur {
-    filter: blur(2.5px); /* Ajuste o valor de desfoque conforme necessário */
 }

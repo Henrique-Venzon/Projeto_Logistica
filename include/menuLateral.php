@@ -93,7 +93,6 @@
 
     .sidebar-item {
         position: relative;
-        margin-bottom: 1%;
         background-color: #64acff;
     }
 
