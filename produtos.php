@@ -8,6 +8,8 @@ if(!isset($_SESSION['id'])){
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
+<link rel="shortcut icon" href="img/logo32.png" type="image/x-icon">
+
     <title><?php 
     $tituloPag = 'Pedidos';
     echo "$tituloPag"; 

@@ -4,11 +4,14 @@ if(!isset($_SESSION['id'])){
     header("Location: index.php");
     exit;
 }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['turma'] = $_POST['turma'];}
 ?>
 <!DOCTYPE html>
 
 <head>
 <meta name="vierport" content="width=device-width, initial-scale=1.0" >
+<link rel="shortcut icon" href="img/logo32.png" type="image/x-icon">
 
     <meta charset="utf-8">
     <title><?php 
@@ -46,7 +49,7 @@ if(!isset($_SESSION['id'])){
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);     
 
-        $sql = "SELECT * FROM aluno";
+        $sql = "SELECT * FROM aluno WHERE turma_id = '{$_SESSION['turma']}'";
 
         $res = $conn->query($sql);
 

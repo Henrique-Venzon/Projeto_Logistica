@@ -4,6 +4,8 @@ if(!isset($_SESSION['id'])){
     header("Location: index.php");
     exit;
 }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['turma'] = $_POST['turma'];}
 ?>
 <!DOCTYPE html>
 
@@ -16,7 +18,7 @@ if(!isset($_SESSION['id'])){
     ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-        <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="img/logo32.png" type="image/x-icon">
 
         <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
@@ -42,7 +44,7 @@ if(!isset($_SESSION['id'])){
                 print '<h1>Bem-Vindo</h1>';
                 print '<br>';
 				print '<h1  >'.$_SESSION['username'].'</h1>';
-                //print '<h1  > Turma: '.$_SESSION['turma'].' </h1>';
+                print '<h1  > Turma: '.$_SESSION['turma'].' </h1>';
                             ?>
             </div>
             </div>

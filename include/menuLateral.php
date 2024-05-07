@@ -15,7 +15,8 @@
 
     .menuL {
         display: flex;
-        height: 92.1vh;
+        height: 92.05vh;
+        background-color: #64acff;
     }
 
     .toggle-btn img {
@@ -28,11 +29,12 @@
         margin-top: -10px;
         margin-bottom: 0px;
     }
-
-    .sidebar-item img {
-        height: 50px;
-        width: 50px;
+    .menuL img {
+        height: 35px;
+        width: 35px;
     }
+
+
 
     .menuImg {
         margin-left: 8px;
@@ -100,7 +102,6 @@
         position: absolute;
         top: 0;
         left: 100px;
-        background-color: #002753;
         padding: 0;
         min-width: 11rem;
         display: none;
@@ -147,11 +148,36 @@
         left: 90px;
     }
 }
-@media  screen and (min-height: 770px) {
-        .menuL img {
-        height: 43px;
-        width: 43px;
+@media only screen and( min-height:769px) and (max-height:859px) {
+    .menuL img {
+        height: 35px;
+        width: 35px;
     }
+    #sidebar.expand {
+        width: 220px;
+    }
+    #sidebar {
+        width: 90px;
+    }
+    #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+        left: 90px;
+    }
+}
+@media  screen and (min-height: 860px) {
+        .menuL img {
+        height: 47px;
+        width: 47px;
+    }
+    .sidebar-item{
+        margin-top: 0.7%;
+        margin-bottom: 0.8%;
+    }
+    a.sidebar-link {
+
+        font-size: 1.2rem;
+
+    }
+
 }
 
 
@@ -218,11 +244,11 @@
                     </a>
                     <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a id="linkContainer" style="margin-bottom: -10px;" href="container.php"
+                            <a id="linkContainer" style="margin-bottom: -1.4px;" href="container.php"
                                 class="sidebar-link">Container</a>
                         </li>
                         <li class="sidebar-item">
-                            <a style="margin-bottom: -10px;" href="#" class="sidebar-link">Carga</a>
+                            <a  href="#" style="margin-top: -1.4px;" class="sidebar-link">Carga</a>
                         </li>
                     </ul>
                 </li>
@@ -236,10 +262,10 @@
                     </a>
                     <ul id="pedido" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a style="margin-bottom: -10px;" href="produtos.php" class="sidebar-link">Criar pedidos</a>
+                            <a style="margin-bottom: -1.25px;" href="produtos.php" class="sidebar-link">Criar pedidos</a>
                         </li>
                         <li class="sidebar-item">
-                            <a style="margin-bottom: -10px;" href="#" class="sidebar-link">Ver pedidos</a>
+                            <a style="margin-top: -1.25px;" href="#" class="sidebar-link">Ver pedidos</a>
                         </li>
                     </ul>
                 </li>'
@@ -261,10 +287,10 @@
                     </a>
                     <ul id="Nota" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a style="margin-bottom: -10px;" href="#" class="sidebar-link">Criar Danfe</a>
+                            <a style="margin-bottom: -1.25px;" href="#" class="sidebar-link">Criar Danfe</a>
                         </li>
                         <li class="sidebar-item">
-                            <a style="margin-bottom: -10px;" href="#" class="sidebar-link">Minhas Danfe</a>
+                            <a style="margin-top: -1.25px;" href="#" class="sidebar-link">Minhas Danfe</a>
                         </li>
                     </ul>
                 </li>

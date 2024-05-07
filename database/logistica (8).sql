@@ -33,17 +33,18 @@ CREATE TABLE `aluno` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `turma` int(11) NOT NULL,
-  `turma_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `turma_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `turma_id` (`turma_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `aluno`
 --
 
-INSERT INTO `aluno` (`id`, `username`, `password`, `turma`, `turma_id`) VALUES
-(1, 'root.Att', 'root', 0, 1),
-(12, 'teste', 'qgrp', 0, NULL);
+INSERT INTO `aluno` (`id`, `username`, `password`, `turma_id`) VALUES
+(1, 'root.Att', 'root', 1),
+(12, 'teste', 'TWbr', 1);
 
 -- --------------------------------------------------------
 
@@ -225,7 +226,8 @@ INSERT INTO `turma` (`id`) VALUES
 (1),
 (2),
 (3),
-(4);
+(4),
+(223);
 
 --
 -- Indexes for dumped tables
