@@ -6,9 +6,45 @@
     font-family: 'Platypi';
 
 }
+.tabela-scroll {
+    max-height: 350px; 
+    overflow-y: auto; 
+  }
+  .tabela-scroll::-webkit-scrollbar {
+    height: 5px;
+  }
+  
+  
+  .tabela-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #1d82d4; 
+  }
+  
 
+  .tabela-scroll::-webkit-scrollbar-track {
+    background-color: #808080; 
+  }
+  
+  .tabela-scroll::-webkit-scrollbar-thumb {
+    background-color: #68c8ff;
+    border-radius: 200px;
+  }
 
-
+.table{
+    border: 2px solid black;
+    text-align: center;
+    margin-top: 20px;
+}
+.table th,td{
+    font-size: 30px;
+    padding: 6px;
+    
+}
+.table th{
+    height: 50px;
+}
+.table td{
+    height: 60px;
+}
 
 .container {
     display: flex;

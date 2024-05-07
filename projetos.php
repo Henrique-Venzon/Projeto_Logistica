@@ -62,7 +62,7 @@ if (isset($_SESSION['error'])) {
                     print "<th>Turma</th>";
                     print "<th>N° Alunos</th>";
                     print "<th>Acessar</th>";
-                    print "<th>Editar</th>";
+                    print "<th >Editar</th>";
                     print "<th style=\"border-right:none;\">Excluir</th>";
                     print "</tr>";
 
