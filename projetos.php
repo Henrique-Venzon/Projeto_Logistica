@@ -37,10 +37,16 @@ if(($_SESSION['tipo_login']!='professor')){
                     <div class="textTit">
                         <h1>Criar projetos</h1>
                     </div>
+                    <div class="img">
+                        <img src="img/adicionarprojeto (5).png" alt="">
+                    </div>
             </div>
             <div id="listarProjeto" class="cards cards2">
             <div class="textTit">
                         <h1>Listas de projetos</h1>
+                    </div>
+                    <div class="img">
+                        <img src="img\editarprojetobranco.png" alt="">
                     </div>
             </div>
         </div>

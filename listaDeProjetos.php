@@ -31,11 +31,16 @@ if(($_SESSION['tipo_login']!='professor')){
     <?php
     include 'include/header.php'
     ?>
-    <main>
+        <main>
     <div class="centroTable">
+        <div class="textCriarVoltar">
+            <h1 class="txtNone">Lista de Projetos</h1>
+            <h1 id="voltar">Voltar</h1>
+        </div>
 
-</div>
+            </div>
     </main>
+    <script src="js/criarProj.js"></script>
 
 </body>
 

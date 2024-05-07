@@ -33,9 +33,14 @@ if(($_SESSION['tipo_login']!='professor')){
     ?>
     <main>
     <div class="centroTable">
+        <div class="textCriarVoltar">
+            <h1 class="txtNone">Criar turma</h1>
+            <h1 id="voltar">Voltar</h1>
+        </div>
 
             </div>
     </main>
+    <script src="js/criarProj.js"></script>
 
 </body>
 

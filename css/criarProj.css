@@ -33,9 +33,7 @@ main {
     width: 87%;
     height: 85%;
     background-color: rgb(232, 232, 232);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+
     border-radius: 40px;
     box-shadow: 0 0 9px black;
     transition: transform 1s ease;
@@ -43,4 +41,27 @@ main {
 .centroTable:hover{
     transform: scale(1.01);
     transition:  1s ease;
+}
+
+.textCriarVoltar{
+    display:flex;
+    justify-content:space-between;
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:0.6%;
+    
+}
+#voltar{
+    cursor: pointer;
+}
+.textCriarVoltar h1{
+    text-transform: uppercase;
+    transition:0.7s;
+    padding:8px;
+}
+.textCriarVoltar h1:hover{
+    color:#1E90FF;
+}
+.txtNone{
+    cursor: default;
 }
