@@ -36,6 +36,9 @@ if(($_SESSION['tipo_login']!='professor')){
         <div class="textCriarVoltar">
             <h1 class="txtNone">Criar turma</h1>
             <h1 id="voltar">Voltar</h1>
+            <form action="novaturma.php">
+                
+            </form>
         </div>
 
             </div>
