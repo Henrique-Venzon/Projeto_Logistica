@@ -24,6 +24,53 @@
             <div class="second-column">
                 <h2 class="title title-second">Lista de projetos</h2>
                 <p class="description description-second">Exclua, edite ou continue no projeto</p>
+                <?php        
+
+        $servername = "localhost";
+        $username = "root.Att";
+        $password = "root";
+        $dbname = "logistica";
+        
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);     
+
+        $sql = "SELECT * FROM aluno";
+
+        $res = $conn->query($sql);
+
+        $qtd = $res->num_rows;
+
+        if($qtd > 0){
+            print "<div class=\"tabela-scroll\">";
+            print "<table class='table' >";
+
+            print "<tr>";
+                    print "<th>Nome</th>";
+                    print "<th>Senha</th>";
+                    print "<th>Turma</th>";
+                    print "<th style=\"border-right:none;\">Resetar senha</th>";
+                    print "</tr>";
+            
+                while($row = $res->fetch_object()){
+                    print "<tr>";
+                    print "<td>".$row->username."</td>";
+                    print "<td>".$row->password."</td>";
+                    print "<td >".$row->turma_id."</td>";
+                    print "<td style=\"border-right:none;\">
+                    <button class=\"reset\" data-id=\"".$row->id."\"><span>Resetar</span></button>
+                        </td>"; 
+                    print "</tr>";
+
+                }
+                print "</table>";
+                print "</div>";
+
+        }else{
+            print "<p class='alert alert-danger'>Não encrontrou nenhum usuario</p>";
+        }
+
+        ?>
+
 
             </div>
         </div>

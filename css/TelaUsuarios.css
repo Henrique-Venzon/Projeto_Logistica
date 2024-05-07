@@ -89,9 +89,8 @@
 
 
 .tabela-scroll {
-    max-height: 610px; /* Define a altura máxima da div que contém a tabela */
-    overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
-    border-bottom: solid 1.5px black;
+    max-height: 610px; 
+    overflow-y: auto; 
 
   }
   .tabela-scroll::-webkit-scrollbar {

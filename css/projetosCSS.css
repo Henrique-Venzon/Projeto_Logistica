@@ -7,6 +7,9 @@
 
 }
 
+
+
+
 .container {
     display: flex;
     justify-content: center;
@@ -201,13 +204,13 @@ input:-webkit-autofill {
 .sign-in-js .content::before {
     left: 50%;
 
-    animation: slidein 2s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+    animation: slidein 2s; 
 
     z-index: 12;
 }
 
 .sign-up-js .content::before {
-    animation: slideout 2s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+    animation: slideout 2s; 
 
     z-index: 12;
 }
@@ -226,7 +229,6 @@ input:-webkit-autofill {
 }
 
 
-/* DESLOCAMENTO CONTEÚDO ATRÁS DO CONTENT:BEFORE*/
 .sign-in-js .first-content .second-column {
 
     z-index: -1;
@@ -238,7 +240,6 @@ input:-webkit-autofill {
     z-index: -1;
 }
 
-/*ANIMAÇÃOO CSS PARA O CONTEÚDO*/
 
 @keyframes deslocamentoEsq {
 
@@ -417,3 +418,4 @@ input:-webkit-autofill {
         width: 100%;
     }
 }
+
