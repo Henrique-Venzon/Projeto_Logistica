@@ -30,8 +30,38 @@ if(!isset($_SESSION['id'])){
         <?php
         include 'include/menuLateral.php'
         ?>
-
-        
+       <?php
+    
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $hostname = "127.0.0.1";
+        $user = "root.Att";
+        $password = "root";
+        $database = "logistica";
+    
+        $conn = new mysqli($hostname, $user, $password, $database);
+    
+        // Verifique a conexão
+        if ($conn->connect_error) {
+            die("Falha na conexão: " . $conn->connect_error);
+        }
+    
+        $sql = "SELECT * FROM processo_container ORDER BY id DESC";
+        $resultado = $conn->query($sql);
+    
+        echo '<hr>';
+    
+        while($row = mysqli_fetch_array($resultado)){
+            echo 'Placa: ';
+            echo $row['placa'];
+            echo '<br>';
+            echo 'NomeMotorista';
+            echo $row['NomeMotorista'];
+            echo '<br>';
+            echo '<br>';
+        }
+    }
+    
+       ?>
         
         <div class="DivDireita">
             <div class="table-inputs">
@@ -41,49 +71,49 @@ if(!isset($_SESSION['id'])){
                 <div class="form">
                 <form action="">
                 <div class="inputs">
-                    <div class="juntar">
+                   <div class="juntar">
                     <label for="">Placa do Caminhão:</label>
-                    <input type="text" name="" placeholder="Placa do Caminhão">
+                    <input type="text" name="placa" placeholder="Placa do Caminhão">
                     </div>
                     <div class="juntar">
                     <label for="">Nome do Motorista:</label>
-                    <input type="text" name="" placeholder="Nome do Motorista">
+                    <input type="text" name="NomeMotorista" placeholder="Nome do Motorista">
                     </div>
                     <div class="juntar">
                     <label for="">Container:</label>
-                    <input type="text" name="" placeholder="Container">
+                    <input type="text" name="container" placeholder="Container">
                     </div>
                     <div class="juntar">
                     <label for="">Navio:</label>
-                    <input type="text" name="" placeholder="Navio">
+                    <input type="text" name="navio" placeholder="Navio">
                     </div>
                     <div class="juntar">
                     <label for="">Cliente:</label>
-                    <input type="text" name="" placeholder="Cliente">
+                    <input type="text" name="cliente" placeholder="Cliente">
                     </div>
                     <div class="juntar">
                     <label for="">Tipo:</label>
-                    <input type="text" name="" placeholder="Tipo">
+                    <input type="text" name="tipo" placeholder="Tipo">
                     </div>
                     <div class="juntar">
                     <label for="">Lacre:</label>
-                    <input type="text" name="" placeholder="Lacre">
+                    <input type="text" name="lacre" placeholder="Lacre">
                     </div>
                     <div class="juntar">
                     <label for="">Lacre SIF:</label>
-                    <input type="text" name="" placeholder="Lacre SIF">
+                    <input type="text" name="LacreSif" placeholder="Lacre SIF">
                     </div>
                     <div class="juntar">
                     <label for="">Temperatura:</label>
-                    <input type="text" name="" placeholder="Temperatura">
+                    <input type="text" name="Temperatura" placeholder="Temperatura">
                     </div>
                     <div class="juntar">
                     <label for="">IMO:</label>
-                    <input type="text" name="" placeholder="IMO">
+                    <input type="text" name="IMD" placeholder="IMO">
                     </div>
                     <div class="juntar">
                     <label for="">N° ONU:</label>
-                    <input type="text" name="" placeholder="N° ONU">
+                    <input type="text" name="NOnu" placeholder="N° ONU">
                     </div>
                     <h1>Assinale se tiver algum problema</h1>
                     <div class="problema">

@@ -40,58 +40,60 @@ if(!isset($_SESSION['id'])){
                     <h1>Container</h1>
                 </div>
                 <div class="form">
-                <form action="">
+                <form action="processamento/processarcontainer.php" method="post">
                 <div class="inputs">
                     <div class="juntar">
-                    <label for="">Placa do Caminhão:</label>
-                    <input type="text" name="" placeholder="Placa do Caminhão">
-                    </div>
                     <div class="juntar">
-                    <label for="">Nome do Motorista:</label>
-                    <input type="text" name="" placeholder="Nome do Motorista">
-                    </div>
-                    <div class="juntar">
-                    <label for="">Container:</label>
-                    <input type="text" name="" placeholder="Container">
-                    </div>
-                    <div class="juntar">
-                    <label for="">Navio:</label>
-                    <input type="text" name="" placeholder="Navio">
-                    </div>
-                    <div class="juntar">
-                    <label for="">Cliente:</label>
-                    <input type="text" name="" placeholder="Cliente">
-                    </div>
-                    <div class="juntar">
-                    <label for="">Tipo:</label>
-                    <input type="text" name="" placeholder="Tipo">
-                    </div>
-                    <div class="juntar">
-                    <label for="">Lacre:</label>
-                    <input type="text" name="" placeholder="Lacre">
-                    </div>
-                    <div class="juntar">
-                    <label for="">Lacre SIF:</label>
-                    <input type="text" name="" placeholder="Lacre SIF">
-                    </div>
-                    <div class="juntar">
-                    <label for="">Temperatura:</label>
-                    <input type="text" name="" placeholder="Temperatura">
-                    </div>
-                    <div class="juntar">
-                    <label for="">IMO:</label>
-                    <input type="text" name="" placeholder="IMO">
-                    </div>
-                    <div class="juntar">
-                    <label for="">N° ONU:</label>
-                    <input type="text" name="" placeholder="N° ONU">
-                    </div>
+    <label for="">Placa do Caminhão:</label>
+</div>
+<div class="juntar">
+    <label for="">Nome do Motorista:</label>
+</div>
+<div class="juntar">
+    <label for="">Container:</label>
+</div>
+<div class="juntar">
+    <label for="">Navio:</label>
+</div>
+<div class="juntar">
+    <label for="">Cliente:</label>
+</div>
+<div class="juntar">
+    <label for="">Tipo:</label>
+</div>
+<div class="juntar">
+    <label for="">Lacre:</label>
+</div>
+<div class="juntar">
+    <label for="">Lacre SIF:</label>
+</div>
+<div class="juntar">
+    <label for="">Temperatura:</label>
+</div>
+<div class="juntar">
+    <label for="">IMO:</label>
+</div>
+<div class="juntar">
+    <label for="">N° ONU:</label>
+</div>
+
+        
                     <div class="enviar">
-                        <input type="submit">
-                    </div>
-                </form>
-                    
+                <input type="submit" onclick="exibirMensagem()">
             </div>
+        </form>
+    </div>
+
+    <script>
+        function exibirMensagem() {
+            alert('Dados enviados com sucesso!'); 
+            
+        }
+    </script>
+    </form>
+
+"
+            
         </div>
                 
 
