@@ -4,6 +4,8 @@ if(!isset($_SESSION['id'])){
     header("Location: index.php");
     exit;
 }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['turma'] = $_POST['turma'];}
 ?>
 <!DOCTYPE html>
 
@@ -47,7 +49,7 @@ if(!isset($_SESSION['id'])){
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);     
 
-        $sql = "SELECT * FROM aluno";
+        $sql = "SELECT * FROM aluno WHERE turma_id = '{$_SESSION['turma']}'";
 
         $res = $conn->query($sql);
 

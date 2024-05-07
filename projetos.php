@@ -57,8 +57,8 @@ if (!isset($_SESSION['id'])) {
                     print "<th>Turma</th>";
                     print "<th>N° Alunos</th>";
                     print "<th>Acessar</th>";
-                    print "<th>Excluir</th>";
-                    print "<th style=\"border-right:none;\">Resetar senha</th>";
+                    print "<th>Editar</th>";
+                    print "<th style=\"border-right:none;\">Excluir</th>";
                     print "</tr>";
 
                     while ($row = $res->fetch_object()) {
@@ -69,12 +69,27 @@ if (!isset($_SESSION['id'])) {
 
                         print "<tr>";
                         print "<td>" . $row->id . "</td>";
-                        print "<td>" . $row_alunos->num_alunos . "</td>"; // Mostra a quantidade de alunos
-                        print "<td style=\"border-right:none;\">
-                        <button class=\"reset\" data-id=\"" . $row->id . "\"><span>Resetar</span></button>
-                        </td>";
+                        print "<td>" . $row_alunos->num_alunos . "</td>"; 
+                        print "<td style=\"border-right:none;\">";
+                        print "<form action='telainicio.php' method='post'>";
+                        print "<input type='hidden' name='turma' value='" . $row->id . "'>";
+                        print "<button type='submit' class='reset'><span>Acessar</span> " . $row->id . "</button>";
+                        print "</form>";
+                        print "<td style=\"border-right:none;\">";
+                        print "<form action='telaUsuarios.php' method='post'>";
+                        print "<input type='hidden' name='turma' value='" . $row->id . "'>";
+                        print "<button type='submit' class='reset'><span>editar</span> " . $row->id . "</button>";
+                        print "</form>";
+                        print "<td style=\"border-right:none;\">";
+                        print "<form action='processamento/Excluir.php' method='post' onsubmit='return confirm(\"Tem certeza que deseja excluir?\");'>";
+                        print "<input type='hidden' name='turma' value='" . $row->id . "'>";
+                        print "<button type='submit' class='reset'><span>Excluir</span> " . $row->id . "</button>";
+                        print "</form>";
+                        print "</td>";
                         print "</tr>";
                     }
+
+
 
                     print "</table>";
                     print "</div>";
