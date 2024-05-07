@@ -15,13 +15,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $codigo_projeto = $conexao->real_escape_string($_POST['codigo_projeto']);
         $alunos = $conexao->real_escape_string($_POST['qtd_alunos']);
 
+        
+        $sql_check = "SELECT * FROM `turma` WHERE `id` = $codigo_projeto";
+        $resultado_check = $conexao->query($sql_check);
+
+        if ($resultado_check->num_rows > 0) {
+            
+            $_SESSION['error'] = "O turma_id já existe.";
+            
+            header('Location: ../projetos.php', true, 301);
+            exit();
+        }
+
         $sql = "INSERT INTO `turma`(`id`) VALUES ($codigo_projeto)";
         $resultado = $conexao->query($sql);
 
-        if ($resultado) { // Se a inserção foi bem-sucedida
-            // Inserir alunos na tabela 'aluno'
+        if ($resultado) {
             for ($i = 1; $i <= $alunos; $i++) {
-                // Gera uma nova senha com 4 caracteres e números diferentes
+                
                 $new_password = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 4);
                 $username = "Aluno " . $i;
                 $sql = "INSERT INTO `aluno`(`username`, `password`, `turma_id`) VALUES ('$username', '$new_password', $codigo_projeto)";
@@ -37,6 +48,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     }
 }
-
-
 

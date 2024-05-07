@@ -4,6 +4,11 @@ if (!isset($_SESSION['id'])) {
     header("Location: index.php");
     exit;
 }
+if (isset($_SESSION['error'])) {
+    echo "<script type='text/javascript'>alert('" . $_SESSION['error'] . "');</script>";
+    // Limpar a mensagem de erro após a exibição
+    unset($_SESSION['error']);
+}
 ?>
 <!DOCTYPE html>
 
@@ -78,7 +83,7 @@ if (!isset($_SESSION['id'])) {
                         print "<td style=\"border-right:none;\">";
                         print "<form action='telaUsuarios.php' method='post'>";
                         print "<input type='hidden' name='turma' value='" . $row->id . "'>";
-                        print "<button type='submit' class='reset'><span>editar</span> " . $row->id . "</button>";
+                        print "<button type='submit' class='reset'><span>Editar</span> " . $row->id . "</button>";
                         print "</form>";
                         print "<td style=\"border-right:none;\">";
                         print "<form action='processamento/Excluir.php' method='post' onsubmit='return confirm(\"Tem certeza que deseja excluir?\");'>";
