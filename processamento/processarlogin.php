@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['username'] = $row[1];
                     $_SESSION['tipo_login'] = 'professor';
 
-                    header('Location: ../telainicio.php', true, 301);
+                    header('Location: ../projetos.php', true, 301);
                     exit();
                 } else {
 
