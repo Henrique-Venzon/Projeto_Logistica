@@ -28,10 +28,10 @@
         </div><!-- first content -->
         <div class="content second-content">
             <div class="first-column">
-                <h2 class="title title-primary">Aluno</h2>
-                <p class="description description-primary">Conta do aluno</p>
+                <h2 class="title title-primary">Lista de Projetos</h2>
+                <p class="description description-primary">Projetos</p>
                 <button id="signup" class="btn btn-primary">
-                    <h3>entrar</h3>
+                    <h3>Acessar</h3>
                 </button>
             </div>
             <div class="second-column">
