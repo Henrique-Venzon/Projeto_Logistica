@@ -24,8 +24,8 @@
                 <h2 class="title title-second">Lista de projetos</h2>
                 <p class="description description-second">Exclua, edite ou continue no projeto</p>
 
-            </div><!-- second column -->
-        </div><!-- first content -->
+            </div>
+        </div>
         <div class="content second-content">
             <div class="first-column">
                 <h2 class="title title-primary">Lista de Projetos</h2>
@@ -37,14 +37,14 @@
             <div class="second-column">
                 <h2 class="title title-second">Criar Projetos</h2>
                 <p class="description description-second">Crie um novo Projeto</p>
-                <form class="form" action='' method="POST">
+                <form class="form" action='processamento/adicionarturma.php' method="POST">
 
                     <label class="label-input" for=""></label>
-                        <input type="text" placeholder="Código do Projeto" name='codigo'>
+                        <input type="number" placeholder="Código do Projeto" name='codigo_projeto'>
                     
 
                     <label class="label-input" for=""></label>
-                        <input type="number" placeholder="Número de Alunos" name=''>
+                        <input type="number" placeholder="Número de Alunos" name='qtd_alunos' oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min= "1" maxlength = "2">
                     
 
                     <button class="btn btn-second" value="professor" name="action" type='submit'>
