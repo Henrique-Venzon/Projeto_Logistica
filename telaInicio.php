@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 print '<h1>Bem-Vindo</h1>';
                 print '<br>';
 				print '<h1  >'.$_SESSION['username'].'</h1>';
+                print '<br>';
                 print '<h1  > Turma: '.$_SESSION['turma'].' </h1>';
                             ?>
             </div>
