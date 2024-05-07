@@ -6,12 +6,12 @@
 .table{
     font-size: 30px;
     text-align: center;
-    margin-top: 20px;
     margin-bottom: 0px;
     justify-content: center;
     align-items: center;
     color: #fff;
     text-shadow: 0 0 7px black;
+    border-right: #000000 1px solid
 }
 .table th,td{
     border: solid 1.5px black;
@@ -21,6 +21,8 @@
 }
 .table th{
     height: 50px;
+    border-top: none;
+
 }
 .table td{
     height: 60px;
@@ -91,6 +93,7 @@
 .tabela-scroll {
     max-height: 610px; 
     overflow-y: auto; 
+    outline: 1px solid black;
 
   }
   .tabela-scroll::-webkit-scrollbar {
@@ -104,12 +107,11 @@
   
 
   .tabela-scroll::-webkit-scrollbar-track {
-    background-color: #808080; /* Cor de fundo da barra de rolagem */
+    background-color: #ffffff; /* Cor de fundo da barra de rolagem */
   }
   
   .tabela-scroll::-webkit-scrollbar-thumb {
-    background-color: #68c8ff; /* Cor do "ponteiro" da barra de rolagem */
-    border-radius: 200px; /* Arredondamento do "ponteiro" da barra de rolagem */
+    background-color: #1954ad; /* Cor do "ponteiro" da barra de rolagem */
   }
 
 

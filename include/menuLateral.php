@@ -15,7 +15,8 @@
 
     .menuL {
         display: flex;
-        height: 92.1vh;
+        height: 92.05vh;
+        background-color: #64acff;
     }
 
     .toggle-btn img {
