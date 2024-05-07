@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 30/04/2024 às 11:39
+-- Tempo de geração: 07/05/2024 às 11:50
 -- Versão do servidor: 8.0.36
 -- Versão do PHP: 8.2.13
 
@@ -34,7 +34,6 @@ CREATE TABLE IF NOT EXISTS `aluno` (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `password` varchar(255) NOT NULL,
-  `turma` int NOT NULL,
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
@@ -44,9 +43,9 @@ CREATE TABLE IF NOT EXISTS `aluno` (
 -- Despejando dados para a tabela `aluno`
 --
 
-INSERT INTO `aluno` (`id`, `username`, `password`, `turma`, `turma_id`) VALUES
-(1, 'root.Att', 'root', 0, 1),
-(12, 'teste', 'qgrp', 0, NULL);
+INSERT INTO `aluno` (`id`, `username`, `password`, `turma_id`) VALUES
+(1, 'root.Att', 'root', 1),
+(12, 'teste', 'TWbr', 1);
 
 -- --------------------------------------------------------
 
@@ -202,7 +201,8 @@ INSERT INTO `turma` (`id`) VALUES
 (1),
 (2),
 (3),
-(4);
+(4),
+(223);
 
 --
 -- Restrições para tabelas despejadas
