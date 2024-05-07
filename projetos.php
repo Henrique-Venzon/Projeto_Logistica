@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['id'])){
+if (!isset($_SESSION['id'])) {
     header("Location: index.php");
     exit;
 }
@@ -13,7 +13,8 @@ if(!isset($_SESSION['id'])){
 
     <title>Projetos</title>
     <link rel="stylesheet" href="css/projetosCSS.css">
-    <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
     <link rel="shortcut icon" href="img/logo32.png" type="image/x-icon">
 
 </head>
@@ -31,52 +32,58 @@ if(!isset($_SESSION['id'])){
             <div class="second-column">
                 <h2 class="title title-second">Lista de projetos</h2>
                 <p class="description description-second">Exclua, edite ou continue no projeto</p>
-                <?php        
+                <?php
 
-        $servername = "localhost";
-        $username = "root.Att";
-        $password = "root";
-        $dbname = "logistica";
-        
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);     
+                $servername = "localhost";
+                $username = "root.Att";
+                $password = "root";
+                $dbname = "logistica";
 
-        $sql = "SELECT * FROM aluno";
+                // Create connection
+                $conn = new mysqli($servername, $username, $password, $dbname);
 
-        $res = $conn->query($sql);
+                $sql = "SELECT * FROM turma";
 
-        $qtd = $res->num_rows;
 
-        if($qtd > 0){
-            print "<div class=\"tabela-scroll\">";
-            print "<table class='table' >";
+                $res = $conn->query($sql);
 
-            print "<tr>";
-                    print "<th>Nome</th>";
-                    print "<th>Senha</th>";
+                $qtd = $res->num_rows;
+
+                if ($qtd > 0) {
+                    print "<div class=\"tabela-scroll\">";
+                    print "<table class='table' >";
+
+                    print "<tr>";
                     print "<th>Turma</th>";
+                    print "<th>N° Alunos</th>";
+                    print "<th>Acessar</th>";
+                    print "<th>Excluir</th>";
                     print "<th style=\"border-right:none;\">Resetar senha</th>";
                     print "</tr>";
-            
-                while($row = $res->fetch_object()){
-                    print "<tr>";
-                    print "<td>".$row->username."</td>";
-                    print "<td>".$row->password."</td>";
-                    print "<td >".$row->turma_id."</td>";
-                    print "<td style=\"border-right:none;\">
-                    <button class=\"reset\" data-id=\"".$row->id."\"><span>Resetar</span></button>
-                        </td>"; 
-                    print "</tr>";
 
+                    while ($row = $res->fetch_object()) {
+                        // Consulta SQL para contar o número de alunos na turma
+                        $sql_alunos = "SELECT COUNT(*) AS num_alunos FROM aluno WHERE turma_id = " . $row->id;
+                        $res_alunos = $conn->query($sql_alunos);
+                        $row_alunos = $res_alunos->fetch_object();
+
+                        print "<tr>";
+                        print "<td>" . $row->id . "</td>";
+                        print "<td>" . $row_alunos->num_alunos . "</td>"; // Mostra a quantidade de alunos
+                        print "<td style=\"border-right:none;\">
+                        <button class=\"reset\" data-id=\"" . $row->id . "\"><span>Resetar</span></button>
+                        </td>";
+                        print "</tr>";
+                    }
+
+                    print "</table>";
+                    print "</div>";
+
+                } else {
+                    print "<p class='alert alert-danger'>Não encrontrou nenhum usuario</p>";
                 }
-                print "</table>";
-                print "</div>";
 
-        }else{
-            print "<p class='alert alert-danger'>Não encrontrou nenhum usuario</p>";
-        }
-
-        ?>
+                ?>
 
 
             </div>
@@ -95,12 +102,14 @@ if(!isset($_SESSION['id'])){
                 <form class="form" action='processamento/adicionarturma.php' method="POST">
 
                     <label class="label-input" for=""></label>
-                        <input type="number" placeholder="Código do Projeto" name='codigo_projeto'>
-                    
+                    <input type="number" placeholder="Código do Projeto" name='codigo_projeto'>
+
 
                     <label class="label-input" for=""></label>
-                        <input type="number" placeholder="Número de Alunos" name='qtd_alunos' oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min= "1" maxlength = "2">
-                    
+                    <input type="number" placeholder="Número de Alunos" name='qtd_alunos'
+                        oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        min="1" maxlength="2">
+
 
                     <button class="btn btn-second" value="professor" name="action" type='submit'>
                         <h3>Criar</h3>
