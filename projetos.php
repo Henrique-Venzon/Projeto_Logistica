@@ -23,21 +23,7 @@
             <div class="second-column">
                 <h2 class="title title-second">Lista de projetos</h2>
                 <p class="description description-second">Exclua, edite ou continue no projeto</p>
-                <form class="form" action='processamento/processarlogin.php' method="POST">
-                    <label class="label-input" for=""></label>
-                        <input type="text" placeholder="Nome" name="Usuario">
-                    
-                    <label class="label-input" for=""></label>
-                        <input type="password" placeholder="Senha" name='Senha'>
-                    
-                    <label class="label-input" for=""></label>
-                        <input type="text" placeholder="Turma" name='turma'>
-                    
 
-                    <button class="btn btn-second" value="aluno" type='submit' name='action'>
-                        <h3 class="ajeitarcadastro">Entrar</h3>
-                    </button>
-                </form>
             </div><!-- second column -->
         </div><!-- first content -->
         <div class="content second-content">
@@ -49,20 +35,20 @@
                 </button>
             </div>
             <div class="second-column">
-                <h2 class="title title-second">Professor</h2>
-                <p class="description description-second">Entre com seu registro de professor:</p>
-                <form class="form" action='processamento/processarlogin.php' method="POST">
+                <h2 class="title title-second">Criar Projetos</h2>
+                <p class="description description-second">Crie um novo Projeto</p>
+                <form class="form" action='' method="POST">
 
                     <label class="label-input" for=""></label>
-                        <input type="text" placeholder="Nome" name='Usuario'>
+                        <input type="text" placeholder="Código do Projeto" name='codigo'>
                     
 
                     <label class="label-input" for=""></label>
-                        <input type="password" placeholder="Senha" name='Senha'>
+                        <input type="number" placeholder="Número de Alunos" name=''>
                     
 
                     <button class="btn btn-second" value="professor" name="action" type='submit'>
-                        <h3>Entrar</h3>
+                        <h3>Criar</h3>
                     </button>
                 </form>
             </div>
