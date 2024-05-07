@@ -287,4 +287,14 @@
 
     </aside>
 </div>
+        <script>
+            
+            if (<?php echo json_encode($_SESSION['tipo_login']); ?> == 'professor') {
+                document.getElementById('linkContainer').setAttribute('href', 'containerP.php');
+                //Control c + control v a linha de cima colocar um id no texto e mudar o nome do arquivo aqui.
+            } else if (<?php echo json_encode($_SESSION['tipo_login']); ?> == 'aluno') {
+                document.getElementById('linkContainer').setAttribute('href', 'containerA.php');
+                //Control c + control v a linha de cima colocar um id no texto e mudar o nome do arquivo aqui.
+            }
+        </script>
 
