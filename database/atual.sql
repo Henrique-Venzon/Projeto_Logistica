@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 07-Maio-2024 às 15:17
+-- Generation Time: 08-Maio-2024 às 11:19
 -- Versão do servidor: 5.7.11
 -- PHP Version: 5.6.18
 
@@ -33,18 +33,17 @@ CREATE TABLE `aluno` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `turma_id` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+  `turma` int(11) NOT NULL,
+  `turma_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `aluno`
 --
 
-INSERT INTO `aluno` (`id`, `username`, `password`, `turma_id`) VALUES
-(1, 'root.Att', 'root', 1),
-(12, 'teste', 'TWbr', 1);
+INSERT INTO `aluno` (`id`, `username`, `password`, `turma`, `turma_id`) VALUES
+(1, 'root.Att', 'root', 0, 1),
+(12, 'teste', 'qgrp', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -102,15 +101,6 @@ CREATE TABLE `processo_container` (
 
 INSERT INTO `processo_container` (`id`, `placa`, `NomeMotorista`, `container`, `navio`, `cliente`, `tipo`, `lacre`, `LacreSif`, `Temperatura`, `IMD`, `NOnu`) VALUES
 (1, 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'),
-(2, 'q', 'q', 'q', 'q', 'q', 'q', 'qq', 'q', 'q', 'q', 'q'),
-(3, 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c'),
-(4, 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c'),
-(5, 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c'),
-(6, 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c'),
-(7, 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c'),
-(8, 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c'),
-(9, 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c'),
-(10, 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c');
 
 -- --------------------------------------------------------
 
@@ -226,8 +216,7 @@ INSERT INTO `turma` (`id`) VALUES
 (1),
 (2),
 (3),
-(4),
-(223);
+(4);
 
 --
 -- Indexes for dumped tables
@@ -311,12 +300,12 @@ ALTER TABLE `aluno`
 -- AUTO_INCREMENT for table `armazem_limite`
 --
 ALTER TABLE `armazem_limite`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `processo_container`
 --
 ALTER TABLE `processo_container`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `produto`
 --
@@ -331,7 +320,7 @@ ALTER TABLE `professor`
 -- AUTO_INCREMENT for table `turma`
 --
 ALTER TABLE `turma`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1001;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
