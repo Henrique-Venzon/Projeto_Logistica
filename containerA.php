@@ -74,47 +74,47 @@ if(!isset($_SESSION['id'])){
                 <div class="inputs">
                    <div class="juntar">
                     <label for="">Placa do Caminhão:</label>
-                    <input type="text" name="placa" placeholder="Placa do Caminhão">
+                    <input type="text" name="placa" placeholder="Placa do Caminhão"readonly>
                     </div>
                     <div class="juntar">
                     <label for="">Nome do Motorista:</label>
-                    <input type="text" name="NomeMotorista" placeholder="Nome do Motorista">
+                    <input type="text" name="NomeMotorista" placeholder="Nome do Motorista"readonly>
                     </div>
                     <div class="juntar">
                     <label for="">Container:</label>
-                    <input type="text" name="container" placeholder="Container">
+                    <input type="text" name="container" placeholder="Container"readonly>
                     </div>
                     <div class="juntar">
                     <label for="">Navio:</label>
-                    <input type="text" name="navio" placeholder="Navio">
+                    <input type="text" name="navio" placeholder="Navio"readonly>
                     </div>
                     <div class="juntar">
                     <label for="">Cliente:</label>
-                    <input type="text" name="cliente" placeholder="Cliente">
+                    <input type="text" name="cliente" placeholder="Cliente"readonly>
                     </div>
                     <div class="juntar">
                     <label for="">Tipo:</label>
-                    <input type="text" name="tipo" placeholder="Tipo">
+                    <input type="text" name="tipo" placeholder="Tipo"readonly>
                     </div>
                     <div class="juntar">
                     <label for="">Lacre:</label>
-                    <input type="text" name="lacre" placeholder="Lacre">
+                    <input type="text" name="lacre" placeholder="Lacre"readonly>
                     </div>
                     <div class="juntar">
                     <label for="">Lacre SIF:</label>
-                    <input type="text" name="LacreSif" placeholder="Lacre SIF">
+                    <input type="text" name="LacreSif" placeholder="Lacre SIF"readonly>
                     </div>
                     <div class="juntar">
                     <label for="">Temperatura:</label>
-                    <input type="text" name="Temperatura" placeholder="Temperatura">
+                    <input type="text" name="Temperatura" placeholder="Temperatura"readonly>
                     </div>
                     <div class="juntar">
                     <label for="">IMO:</label>
-                    <input type="text" name="IMD" placeholder="IMO">
+                    <input type="text" name="IMD" placeholder="IMO"readonly>
                     </div>
                     <div class="juntar">
                     <label for="">N° ONU:</label>
-                    <input type="text" name="NOnu" placeholder="N° ONU">
+                    <input type="text" name="NOnu" placeholder="N° ONU"readonly>
                     </div>
                     <h1>Assinale se tiver algum problema</h1>
                     <div class="problema">
