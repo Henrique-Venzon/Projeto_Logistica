@@ -1,4 +1,5 @@
 <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/6934df05fc.js" crossorigin="anonymous"></script>
 
 <style>
     .menuL a {
@@ -19,26 +20,14 @@
         background-color: #64acff;
     }
 
-    .toggle-btn img {
-        height: 40px;
-        width: 40px;
-    }
+
 
     .d-flex {
         display: flex;
         margin-top: -10px;
         margin-bottom: 0px;
     }
-    .menuL img {
-        height: 35px;
-        width: 35px;
-    }
 
-
-
-    .menuImg {
-        margin-left: 8px;
-    }
 
     #sidebar {
         width: 100px;
@@ -58,6 +47,12 @@
         cursor: pointer;
         border: 0;
         padding: 0.9rem 1.3rem;
+        align-items: center;
+    }
+    .toggle-btn i {
+        margin-left:14px ;
+        font-size: 37px;
+        color: white;
     }
 
 
@@ -133,6 +128,7 @@
 
 
 
+
     @media  screen and (max-height: 768px) {
         .menuL img {
         height: 32px;
@@ -181,13 +177,14 @@
 }
 
 
+
 </style>
 
 <div class="menuL">
     <aside id="sidebar" class="sidebar-transition">
         <div class="d-flex">
             <button class="toggle-btn" type="button">
-                <img class="menuImg" src="img/menu.png" alt="">
+            <i class="fa-solid fa-bars"></i>
             </button>
             <div class="sidebar-logo">
                 <h1 class="sidebar-text" style="text-shadow: 0px 0px 4px #002753 ;color:white;">

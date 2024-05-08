@@ -8,7 +8,24 @@ main{
     width: 100%;
     display: flex;
 }
-
+.tabela-scroll {
+    margin-top: 20px;
+    max-height: 680px; 
+    overflow-y: auto; 
+    outline: 1px solid black;
+    
+  }
+  .tabela-scroll::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+  
+  .tabela-scroll::-webkit-scrollbar-thumb {
+    background-color: #045483; 
+  }
+  .tabela-scroll::-webkit-scrollbar {
+    height: 1px;
+    width: 10px;
+  }
 .DivDireita{
     flex-grow: 1;
     background-color: #ebebeb;
@@ -22,13 +39,63 @@ main{
     width: 30%;
     margin-top: 1.5%;
 }
+.colunas1{
+
+    margin-top: 1.2%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+  }
+  .colunas1 label,.colunas label {
+    display: block;
+    margin-bottom: 3px;
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    text-shadow: 0 0 5px black;
+  }
+  
+  .colunas1 input,.colunas input{
+    height: 50px;
+    border: 1.5px solid #ffffff;
+    box-sizing: border-box;
+    width: 93%;
+    font-size: 18px;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    margin-bottom: 4px;
+    box-shadow: 0px 0px 4px rgb(0, 0, 0);
+    margin-top: 8px;
+  }
+  .colunas select{
+    height: 50px;
+    box-shadow: 0px 0px 4px rgb(0, 0, 0);
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 4px;
+  
+    margin-top: 8px;
+  
+  
+  }
+  .colunas{
+    margin-left: 5px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 1.2%;
+    justify-content: space-around;
+  
+  }
 
 .inputs{
     display: flex;
     flex-wrap: wrap;
     width:100%;
     justify-content: center;
-    margin-top: -1%;
+    margin-top: -1.5%;
     
 }
 .juntar input{
@@ -133,6 +200,7 @@ main{
     justify-content: center;
     margin-top: 1%;
     width: 100%;
+    margin-bottom: 1.5%;
 }
 .enviar input{
     width: 140px;
@@ -158,7 +226,7 @@ main{
 .txtCont h1{
     font-size: 60px;
     color: #ffffff;
-    text-shadow: 0px 0px 15px #000000;
+    text-shadow: 0px 0px 10px #000000;
 }
 
 .form{
@@ -169,6 +237,29 @@ main{
 form h1{
     margin-top: 3%;
     color: #ffffff;
-    text-shadow: 0px 0px 15px #000000;
+    text-shadow: 0px 0px 10px #000000;
 }
-
+.inputObs{
+    display: block;
+    margin-top: 2%;
+}
+.inputObs input{
+    height: 60px;
+    width: 240px;
+    text-align: center;
+}
+.inputObs label{
+    font-size: 24px;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+}
+.transportes{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+}
+.transportes h1{
+    font-size: 36px;
+    color: #ffffff;
+    text-shadow: 0px 0px 7px #000000;
+}
