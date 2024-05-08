@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <?php
 session_start();
 if(!isset($_SESSION['id'])){
@@ -235,4 +234,4 @@ include'header.php'
 
 </body>
 </html>
->>>>>>> Stashed changes
+
