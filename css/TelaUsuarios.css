@@ -14,7 +14,7 @@
     border-right: #000000 1px solid
 }
 .table th,td{
-    border: solid 1.5px black;
+    border: solid 1.5px #ffffff;
     border-left: none;
     border-bottom: none;
     font-size: 30px;
@@ -22,10 +22,11 @@
 .table th{
     height: 50px;
     border-top: none;
-
+    background-color: #000000;
 }
 .table td{
     height: 60px;
+    background-color: #333333;
 }
 .reset{
     border-radius: 80px;
@@ -93,25 +94,24 @@
 .tabela-scroll {
     max-height: 610px; 
     overflow-y: auto; 
-    outline: 1px solid black;
+    outline: 1px solid #ffffff;
 
   }
   .tabela-scroll::-webkit-scrollbar {
     height: 5px; /* Altura da barra de rolagem */
+    width: 25px;
+    border-right: 1px solid black;
+
   }
   
-  
-  .tabela-scroll::-webkit-scrollbar-thumb:hover {
-    background-color: #1d82d4; /* Altera a cor do "ponteiro" quando o mouse está sobre ele */
-  }
   
 
   .tabela-scroll::-webkit-scrollbar-track {
-    background-color: #ffffff; /* Cor de fundo da barra de rolagem */
+    background-color: #333333; /* Cor de fundo da barra de rolagem */
   }
   
   .tabela-scroll::-webkit-scrollbar-thumb {
-    background-color: #1954ad; /* Cor do "ponteiro" da barra de rolagem */
+    background-color: #000000; /* Cor do "ponteiro" da barra de rolagem */
   }
 
 
@@ -139,11 +139,10 @@ main{
 
 }
 .DivDireita{
-    border: 1.5px solid black;
+    border: 1.5px solid #ffffff;
     width: 90%;
     height: 90%;
-    background-color: #90c7ff;
-    box-shadow: 0px 0px  10px black;
+    background-color: #1c1c1c;
     border-radius: 40px; 
 }
 

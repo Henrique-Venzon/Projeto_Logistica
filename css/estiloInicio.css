@@ -16,7 +16,6 @@ main{
 
 .DivDireita{
     flex-grow: 1;
-    background-color: #ebebeb;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,9 +29,8 @@ main{
 .imgLog{
     right: 0;
     height: 92.1%;
-    width: 1400px;
+    width: 1600px;
     position: absolute;
-    filter: drop-shadow(-25px 0px 15px rgb(98, 179, 255));
 }
 .centT{
     display: block;
@@ -57,7 +55,7 @@ main{
 .bv{
     height: 35%;
     display: flex;
-    background-color: #64acff;
+    background-color: #3e4043;
     margin-left:5%;
     margin-right: 8%;
     width: 70%;
@@ -78,7 +76,7 @@ main{
     width: 30%;
     height: 600%;
     position: absolute;
-    background: linear-gradient(180deg, #1f64f1,#1941b4);
+    background: linear-gradient(180deg, #ffffff,#ffffff);
 
     animation: animate 5s linear infinite;
 }
@@ -90,7 +88,7 @@ main{
 }
 .bv::after{
     content: "";
-    background-color: #64acff;
+    background-color: #414141;
     inset: 5px;
     position: absolute;
     border-radius: inherit;

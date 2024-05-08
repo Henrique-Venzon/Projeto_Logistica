@@ -1,7 +1,7 @@
 <style>
     header{
     width: 100%;
-    background-color: #64acff;
+    background-color: #1c1c1c;
     display: flex;
     align-items: center;
     height:7.95vh;
@@ -26,7 +26,7 @@
     left: 52%; 
     transform: translateX(-50%); 
     position: absolute;
-    filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
+    box-shadow: 0 0 5px #fff;
 
 }
 
@@ -75,7 +75,7 @@
         </div>
          
         <div class="senai">
-            <img src="img/senai-logo-1.png" alt="">
+            <img src="img/logo-senai03.png" alt="">
         </div>
         
         <div class="nomeLogin">  
