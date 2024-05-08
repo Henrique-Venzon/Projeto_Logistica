@@ -33,10 +33,11 @@ $NOnu= $_POST["NOnu"];
 
 
 // Insira os dados na tabela 'processo_container'
-$sql = "INSERT INTO processo_container (placa, NomeMotorista, container,navio,cliente,tipo,lacre,LacreSif,Temperatura,IMD,NOnu)
-        VALUES ('$placa', '$NomeMotorista', '$container','$navio','$cliente','$tipo','$lacre','$LacreSif','$Temperatura','$IMD','$NOnu')";
+$sql = "INSERT INTO processo_container (placa, NomeMotorista, container,navio,cliente,tipo,lacre,LacreSif,Temperatura,IMD,NOnu,situacao)
+        VALUES ('$placa', '$NomeMotorista', '$container','$navio','$cliente','$tipo','$lacre','$LacreSif','$Temperatura','$IMD','$NOnu','enviado')";
 if ($conn->query($sql) === TRUE) {
     echo "Dados inseridos com sucesso!";
+    header('location:../containerP.php');
 } else {
     echo "Erro ao inserir dados: " . $conn->error;
 }
