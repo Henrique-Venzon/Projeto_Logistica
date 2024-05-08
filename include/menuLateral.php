@@ -50,12 +50,12 @@
         align-items: center;
     }
     .toggle-btn i {
-        margin-left:14px ;
+        margin-left:17px ;
         font-size: 37px;
         color: white;
     }
     i{
-        font-size: 32px;
+        font-size: 36px;
     }
 
 
