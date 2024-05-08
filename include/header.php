@@ -4,7 +4,7 @@
     background-color: #64acff;
     display: flex;
     align-items: center;
-    padding: 5.3px 0;
+    height:7.95vh;
 
 }
 
@@ -17,11 +17,11 @@
 }
 .nomeLogin h1{
     color: #FFF;
-    font-size: 35px;
+    font-size: 200%;
 }
 
 .senai{
-    height: 45px;
+    height: 5%;
     display: flex;
     left: 52%; 
     transform: translateX(-50%); 
@@ -44,13 +44,13 @@
 .logo h1{
     margin-left: 5.3%;
     color: #FFF;
-    font-size: 40px;
+    font-size: 200%;
     text-shadow: 2px 2px 10px #000000; 
 }
 .logo img{
     margin-left: 3%;
-    height: 65px;
-    width: 65px; 
+    height: 5%;
+    width: 7%;
 }
 .sair{
     position: absolute;
@@ -59,6 +59,10 @@
 }
 .sair{
     filter: drop-shadow(0px 0px 4px black);
+}
+.sair img{
+    height: 150%;
+    width: 150%;
 }
 </style>
 
@@ -80,7 +84,7 @@
                             ?>
         </div>
         <div class="sair">
-        <a href="processamento/sair.php"><img style="width: 100px;height:100px;" src="img/sairBranco.png" alt=""></a>
+        <a href="processamento/sair.php"><img  src="img/sairBranco.png" alt=""></a>
         </div> 
 
         
