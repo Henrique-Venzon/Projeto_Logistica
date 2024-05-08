@@ -1,51 +1,51 @@
 <?php
-$data = array();
+    $hostname = "127.0.0.1";
+    $user = "root.Att";
+    $password = "root";
+    $database = "logistica";
 
-$data['nCdEmpresa'] = '';
-$data['sDsSenha'] = '';
+    $conexao = new mysqli($hostname,$user,$password,$database);
 
-$cep_origem = '86300000';
-$cep = '86300000';
-$peso = '0.100';
+    if ($conexao -> connect_errno) {
+        echo "Failed to connect to MySQL: " . $conexao -> connect_error;
+        exit();
+    } else {
+        // Evita caracteres epsciais (SQL Inject)
+        $cep = $conexao -> real_escape_string($_POST['CEP']);
+        $CNPJ = $conexao -> real_escape_string($_POST['CNPJ']);
+        $nome = $conexao -> real_escape_string($_POST['nome']);
+        $razaoSocial = $conexao -> real_escape_string($_POST['razao']);
+        $telefone = $conexao -> real_escape_string($_POST['telefone']);
 
-$data['sCepOrigem'] = $cep_origem;
-$data['sCepDestino'] = $cep;
-$data['nVlPeso'] = $peso;
+        function get_endereco($cep){
+            $CEP = preg_replace("/[^0-9]/", "", $cep);
+            $url= "https://viacep.com.br/ws/$CEP/xml/";
 
-$data['nCdFormato'] = '1';
+            $xml= simplexml_load_file($url);
+            return $xml;
+        }
 
-$data['nVlComprimento'] = '16';
-$data['nVlAltura'] = '5';
-$data['nVlLargura'] = '15';
-$data['nVlDiametro'] = '0';
+        $endereco = get_endereco($cep);
 
-$data['sCdMaoPropria'] = 'n';
-$data['nVlValorDeclarado'] = '0';
-$data['sCdAvisoRecebimento'] = 'n';
-$data['StrRetorno'] = 'xml';
+        if ($endereco === false) {
+            echo "Erro ao buscar o endereço. Verifique o CEP e tente novamente.";
+        } else {
+            
+            $rua = (string)$endereco -> logradouro;
+            $bairro = (string) $endereco->bairro;
+            $localidade = (string) $endereco->localidade;
+            $estado = (string) $endereco->uf;
 
-$data['nCdServico'] = '40010,41106';
+           
 
-$data = http_build_query($data);
-$url = 'http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx';
-		 
-$curl = curl_init($url . '?' . $data);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-		 
-$result = curl_exec($curl);
-$result = simplexml_load_string($result);
+            $sql = "INSERT INTO `fornecedores` (`CNPJ`, `nomeFantasia`, `CEP`,
+            `telefone`, `razaoSocial`, `rua`, `bairro`, `localidade`, `estado`)
+            VALUES ('".$CNPJ."', '".$nome."', '".$cep."', '".$telefone."', '".$razaoSocial."', 
+            '".$rua."', '".$bairro."', '".$localidade."', '".$estado."')";
 
-foreach($result -> cServico as $row){
-		 
-  if($row->Erro == 0){
-  
-	echo $row->Codigo . " - " . $row->Valor  . "
-";
+            $resultado = $conexao->query($sql);
+            $conexao -> close();
+            header('Location: ../fabricante.php', true, 301);
 
-    // $row->Codigo
-    // $row->PrazoEntrega
-    // $row->Valor 
-
-  }
-
-}
+        }
+    }
