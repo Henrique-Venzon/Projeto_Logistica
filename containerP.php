@@ -42,61 +42,62 @@ if (!isset($_SESSION['id'])) {
                 <div class="txtCont">
                     <h1>Criar pedido</h1>
                     </div>
+                    <div class="form">
         <div class="tabela-scroll">
-                    <form action="">
+        <form action="processamento/processarcontainer.php" method="post">
                     <div class="colunas1">
                     <div class="numeroPedido">
         <label for="num">N° pedido:</label>
-        <input id="num" type="number" required>
+        <input id="num" type="number"Nome="npedido"  >
         </div>
         <div class="NomeDaEmpresa">
         <label for="empresa">Empresa:</label>
-        <input id="empresa" type="text" required>
+        <input id="empresa" type="text"Nome="Empresa" >
         </div>
           <div class="cliente">
         <label for="nomeCliente">Cliente:</label>
-        <input id="nomeCliente" type="text" required>
+        <input id="nomeCliente" type="text"Nome="Cliente" >
         </div>
         <div class="telefone">
         <label for="telefone">Telefone:</label>
-        <input id="telefone" type="number" required>
+        <input id="telefone" type="number"Nome="Telefone" >
         </div>
         <div class="cep">
         <label for="cep">CEP:</label>
-        <input id="cep" type="number" required>
+        <input id="cep" type="number" Nome="CEP">
         </div>
     </div>
 
     <div class="colunas">
     <div class="produto">
       <label for="produto">Nome do Produto:</label>
-      <input type="text" id="produto" name="produto" required>
-      <input type="text" id="produto" name="produto" required>
-      <input type="text" id="produto" name="produto" required>
-      <input type="text" id="produto" name="produto" required>
+      <input type="text" id="produto" name="produto1" >
+      <input type="text" id="produto" name="produto2" >
+      <input type="text" id="produto" name="produto3" >
+      <input type="text" id="produto" name="produto4" >
     </div>
 
     <div class="unidade">
       <label for="unidade">Unidade:</label>
-      <select id="unidade" name="unidade" required>
+      <select id="unidade" name="unidade1" >
         <option value="UN">UN</option>
         <option value="RL">RL</option>
         <option value="FD">FD</option>
         <option value="KG">KG</option>
       </select>
-      <select id="unidade" name="unidade" required>
+      <select id="unidade" name="unidade2" >
         <option value="UN">UN</option>
         <option value="RL">RL</option>
         <option value="FD">FD</option>
         <option value="KG">KG</option>
       </select>
-      <select id="unidade" name="unidade" required>
+      <select id="unidade" name="unidade3" >
         <option value="UN">UN</option>
         <option value="RL">RL</option>
         <option value="FD">FD</option>
         <option value="KG">KG</option>
       </select>
-      <select id="unidade" name="unidade" required>
+      <select id="unidade" name="unidade4" >
         <option value="UN">UN</option>
         <option value="RL">RL</option>
         <option value="FD">FD</option>
@@ -106,51 +107,51 @@ if (!isset($_SESSION['id'])) {
 
     <div class="quantidade">
       <label for="quantidade">Quantidade:</label>
-      <input type="number" id="quantidade" name="quantidade" min="1" >
-      <input type="number" id="quantidade" name="quantidade" min="1" >
-      <input type="number" id="quantidade" name="quantidade" min="1" >
-      <input type="number" id="quantidade" name="quantidade" min="1" >
+      <input type="number" id="quantidade" name="quantidade1" min="1" >
+      <input type="number" id="quantidade" name="quantidade2" min="1" >
+      <input type="number" id="quantidade" name="quantidade3" min="1" >
+      <input type="number" id="quantidade" name="quantidade4" min="1" >
     </div>
 
     <div class="valor">
       <label for="valor">Valor Unitário:</label>
-      <input type="number" id="valor" name="valor" step="0.01" >
-      <input type="number" id="valor" name="valor" step="0.01" >
-      <input type="number" id="valor" name="valor" step="0.01" >
-      <input type="number" id="valor" name="valor" step="0.01" >
+      <input type="number" id="valor" name="valor1" step="0.01" >
+      <input type="number" id="valor" name="valor2" step="0.01" >
+      <input type="number" id="valor" name="valor3" step="0.01" >
+      <input type="number" id="valor" name="valor4" step="0.01" >
     </div>
 
     <div class="ncm">
       <label for="ncm">NCM:</label>
-      <input type="text" id="ncm" name="ncm" required>
-      <input type="text" id="ncm" name="ncm" required>
-      <input type="text" id="ncm" name="ncm" required>
-      <input type="text" id="ncm" name="ncm" required>
+      <input type="text" id="ncm" name="ncm1" >
+      <input type="text" id="ncm" name="ncm2" >
+      <input type="text" id="ncm" name="ncm3" >
+      <input type="text" id="ncm" name="ncm4" >
     </div>
 
     <div class="cst">
       <label for="cst">CST:</label>
-      <input type="text" id="cst" name="cst" required>
-      <input type="text" id="cst" name="cst" required>
-      <input type="text" id="cst" name="cst" required>
-      <input type="text" id="cst" name="cst" required>
+      <input type="text" id="cst" name="cst1" >
+      <input type="text" id="cst" name="cst2" >
+      <input type="text" id="cst" name="cst3" >
+      <input type="text" id="cst" name="cst4" >
     </div>
 
     <div class="cfop">
       <label for="cfop">CFOP:</label>
-      <input type="text" id="cfop" name="cfop" required>
-      <input type="text" id="cfop" name="cfop" required>
-      <input type="text" id="cfop" name="cfop" required>
-      <input type="text" id="cfop" name="cfop" required>
+      <input type="text" id="cfop" name="cfop1" >
+      <input type="text" id="cfop" name="cfop2" >
+      <input type="text" id="cfop" name="cfop3" >
+      <input type="text" id="cfop" name="cfop4" >
     </div>
   </div>
 
-  </form>
+  
         <div class="transportes">
             <h1>Cadastro de Transportes</h1>
         </div>
-                <div class="form">
-              <form  action="processamento/processarcontainer.php" method="post">
+
+             
                 <div class="inputs">
                    <div class="juntar">
                     <label for="">Placa do Caminhão:</label>
@@ -201,6 +202,7 @@ if (!isset($_SESSION['id'])) {
                     <div class="enviar">
         <input type="submit" onclick="exibirMensagem()">
     </div>
+    
 </form>
       
         </div>
