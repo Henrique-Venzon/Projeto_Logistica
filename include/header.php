@@ -57,12 +57,11 @@
     left: 96%; 
     transform: translateX(-50%);
 }
-.sair{
-    filter: drop-shadow(0px 0px 4px black);
-}
-.sair img{
-    height: 150%;
-    width: 150%;
+
+.sair i{
+    font-size: 45px;
+    color: white;
+    padding: 7px;
 }
 </style>
 
@@ -84,7 +83,7 @@
                             ?>
         </div>
         <div class="sair">
-        <a href="processamento/sair.php"><img  src="img/sairBranco.png" alt=""></a>
+        <a href="processamento/sair.php"><i class="fa-solid fa-right-from-bracket"></i></a>
         </div> 
 
         

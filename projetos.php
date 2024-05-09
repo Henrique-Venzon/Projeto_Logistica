@@ -21,6 +21,8 @@ if (isset($_SESSION['error'])) {
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <link rel="shortcut icon" href="img/logo32.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/6934df05fc.js" crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -28,6 +30,9 @@ if (isset($_SESSION['error'])) {
     <div class="container">
         <div class="content first-content">
             <div class="first-column">
+                <div class="sair">
+                <i id="sair" class="fa-solid fa-right-from-bracket"></i>
+                </div>
                 <h2 class="title title-primary">Criar projeto</h2>
                 <p class="description description-primary">Crie um novo projeto</p>
                 <button id="signin" class="btn btn-primary">
@@ -112,6 +117,9 @@ if (isset($_SESSION['error'])) {
         </div>
         <div class="content second-content">
             <div class="first-column">
+                <div class="sair2">
+                <i id="sair2" class="fa-solid fa-right-from-bracket"></i>
+                </div>
                 <h2 class="title title-primary">Lista de Projetos</h2>
                 <p class="description description-primary">Projetos</p>
                 <button id="signup" class="btn btn-primary">
@@ -142,6 +150,8 @@ if (isset($_SESSION['error'])) {
     </div>
 
     <script src="js/login.js"></script>
+    <script src="js/projetos.js"></script>
+
 
 </body>
 

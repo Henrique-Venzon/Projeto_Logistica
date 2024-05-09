@@ -6,6 +6,24 @@
     font-family: 'Platypi';
 
 }
+.sair{
+    position: absolute;
+    top: 2%;
+    left: 1%;
+
+}
+.sair2{
+    position: absolute;
+    top: 2%;
+    right: 1%;
+}
+i{
+    cursor: pointer;
+    padding: 6px;
+    font-size: 40px;
+    color: white;
+}
+
 .tabela-scroll {
     margin-top: 15px;
     max-height: 400px; 
