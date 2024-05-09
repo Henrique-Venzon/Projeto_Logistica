@@ -129,6 +129,7 @@
 main{
   width: 100%;
   display: flex;
+  
 }
 .meio{
   flex-grow: 1;
