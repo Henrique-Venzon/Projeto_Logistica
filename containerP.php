@@ -84,24 +84,28 @@ if (!isset($_SESSION['turma'])) {
                                 <div class="unidade">
                                     <label for="unidade">Unidade:</label>
                                     <select id="unidade" name="unidade1">
+                                        <option value=" "> </option>
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
                                         <option value="KG">KG</option>
                                     </select>
                                     <select id="unidade" name="unidade2">
+                                        <option value=" "> </option>    
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
                                         <option value="KG">KG</option>
                                     </select>
                                     <select id="unidade" name="unidade3">
+                                        <option value=" "> </option>     
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
                                         <option value="KG">KG</option>
                                     </select>
                                     <select id="unidade" name="unidade4">
+                                        <option value=" "> </option>
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
@@ -160,6 +164,10 @@ if (!isset($_SESSION['turma'])) {
                                 <div class="juntar">
                                     <label for="">Placa do Caminhão:</label>
                                     <input type="text" name="placa" placeholder="Placa do Caminhão">
+                                </div>
+                                <div class="juntar">
+                                    <label for="">Temperatura:</label>
+                                    <input type="text" name="temperatura" placeholder="Temperatura">
                                 </div>
                                 <div class="juntar">
                                     <label for="">Nome do Motorista:</label>

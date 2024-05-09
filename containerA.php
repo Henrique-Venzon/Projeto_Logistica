@@ -51,7 +51,7 @@ if(!isset($_SESSION['turma'])){
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "SELECT `id`, `placa`, `NomeMotorista`, `container`, `navio`, `cliente`, `tipo`, `lacre`, `LacreSif`, `Temperatura`, `IMD`, `NOnu`, `situacao` FROM `processo_container` where situacao='enviado' ORDER BY id ASC";
+        $sql = "SELECT `id`, `placa`, `NomeMotorista`, `container`, `navio`, `cliente`, `tipo`, `lacre`, `LacreSif`, `Temperatura`, `IMD`, `NOnu`, `situacao` FROM `transporte` where situacao='enviado' ORDER BY id ASC";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {

@@ -57,17 +57,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cfop2 = $_POST['cfop2'];
     $cfop3 = $_POST['cfop3'];
     $cfop4 = $_POST['cfop4'];
-
-
-
-
-
-
-    // Insira os dados na tabela 'processo_container'
-    $sql = " INSERT INTO processo_container 
-    (`placa`,`NomeMotorista`,`container`,`navio`,`tipo`,`lacre`,`LacreSif`,`IMD`,`NOnu`,`situacao`,`npedido`,`Empresa`,`cliente`,`Telefone`,`CEP`,`produto1`,`produto2`,`produto3`,`produto4`,`unidade1`,`unidade2`,`unidade3`,`unidade4`,`quantidade1`,`quantidade2`,`quantidade3`,`quantidade4`,`valor1`,`valor2`,`valor3`,`valor4`,`ncm1`,`ncm2`,`ncm3`,`ncm4`,`cst1`,`cst2`,`cst3`,`cst4`,cfop1,cfop2,cfop3,cfop4
+    $Temperatura = $_POST['temperatura'];
+    $sql = " INSERT INTO transporte
+    (`placa`,`NomeMotorista`,`container`,`navio`,`tipo`,`lacre`,`LacreSif`,`IMD`,`NOnu`,`situacao`,`npedido`,`Empresa`,`cliente`,`Telefone`,`CEP`,`produto1`,`produto2`,`produto3`,`produto4`,`unidade1`,`unidade2`,`unidade3`,`unidade4`,`quantidade1`,`quantidade2`,`quantidade3`,`quantidade4`,`valor1`,`valor2`,`valor3`,`valor4`,`ncm1`,`ncm2`,`ncm3`,`ncm4`,`cst1`,`cst2`,`cst3`,`cst4`,`cfop1`,`cfop2`,`cfop3`,`cfop4`,`temperatura`
     )
-    VALUES ('".$placa."', '".$NomeMotorista."', '".$container."', '".$navio."', '".$tipo."', '".$lacre."', '".$LacreSif."', '".$IMD."', '".$NOnu."', 'enviado', '".$npedido."', '".$Empresa."', '".$cliente."', '".$Telefone."', '".$CEP."', '".$produto1."', '".$produto2."', '".$produto3."', '".$produto4."', '".$unidade1."', '".$unidade2."', '".$unidade3."', '".$unidade4."', '".$quantidade1."', '".$quantidade2."', '".$quantidade3."', '".$quantidade4."', '".$valor1."', '".$valor2."', '".$valor3."', '".$valor4."', '".$ncm1."', '".$ncm2."', '".$ncm3."', '".$ncm4."', '".$cst1."', '".$cst2."', '".$cst3."','".$cst4."','".$cfop1."','".$cfop2."','".$cfop3."','".$cfop4."');";
+    VALUES ('".$placa."', '".$NomeMotorista."', '".$container."', '".$navio."', '".$tipo."', '".$lacre."', '".$LacreSif."', '".$IMD."', '".$NOnu."', 'enviado', '".$npedido."', '".$Empresa."', '".$cliente."', '".$Telefone."', '".$CEP."', '".$produto1."', '".$produto2."', '".$produto3."', '".$produto4."', '".$unidade1."', '".$unidade2."', '".$unidade3."', '".$unidade4."', '".$quantidade1."', '".$quantidade2."', '".$quantidade3."', '".$quantidade4."', '".$valor1."', '".$valor2."', '".$valor3."', '".$valor4."', '".$ncm1."', '".$ncm2."', '".$ncm3."', '".$ncm4."', '".$cst1."', '".$cst2."', '".$cst3."','".$cst4."','".$cfop1."','".$cfop2."','".$cfop3."','".$cfop4."','".$Temperatura."');";
     ;
 
     if ($conn->query($sql) === TRUE) {
