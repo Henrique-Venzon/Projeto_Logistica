@@ -1,0 +1,269 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 09/05/2024 às 12:37
+-- Versão do servidor: 8.0.36
+-- Versão do PHP: 8.2.13
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `logistica`
+--
+CREATE DATABASE IF NOT EXISTS `logistica` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `logistica`;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `aluno`
+--
+
+DROP TABLE IF EXISTS `aluno`;
+CREATE TABLE IF NOT EXISTS `aluno` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `turma_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `turma_id` (`turma_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `aluno`
+--
+
+INSERT INTO `aluno` (`id`, `username`, `password`, `turma_id`) VALUES
+(1, 'root.Att', 'root', 1),
+(12, 'teste', 'teste', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `armazem_limite`
+--
+
+DROP TABLE IF EXISTS `armazem_limite`;
+CREATE TABLE IF NOT EXISTS `armazem_limite` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `quantidade_atual` int NOT NULL,
+  `limite_maximo` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `notas_fiscais`
+--
+
+DROP TABLE IF EXISTS `notas_fiscais`;
+CREATE TABLE IF NOT EXISTS `notas_fiscais` (
+  `CPF` varchar(11) NOT NULL,
+  `MATRICULA` varchar(5) NOT NULL,
+  `DATA_VENDA` date DEFAULT NULL,
+  `NUMERO` int NOT NULL,
+  `IMPOSTO` float NOT NULL,
+  PRIMARY KEY (`NUMERO`),
+  KEY `MATRICULA` (`MATRICULA`),
+  KEY `CPF` (`CPF`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `processo_container`
+--
+
+DROP TABLE IF EXISTS `processo_container`;
+CREATE TABLE IF NOT EXISTS `processo_container` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `placa` varchar(7) NOT NULL,
+  `NomeMotorista` varchar(255) NOT NULL,
+  `container` varchar(255) NOT NULL,
+  `navio` varchar(255) NOT NULL,
+  `cliente` varchar(255) NOT NULL,
+  `tipo` varchar(255) NOT NULL,
+  `lacre` varchar(255) NOT NULL,
+  `LacreSif` varchar(255) NOT NULL,
+  `Temperatura` varchar(255) NOT NULL,
+  `IMD` varchar(255) NOT NULL,
+  `NOnu` varchar(255) NOT NULL,
+  `situacao` varchar(25) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `processo_container`
+--
+
+INSERT INTO `processo_container` (`id`, `placa`, `NomeMotorista`, `container`, `navio`, `cliente`, `tipo`, `lacre`, `LacreSif`, `Temperatura`, `IMD`, `NOnu`, `situacao`) VALUES
+(13, '231QAC', 'Matheus Yan dos Reis', '2231', 'KL2332', 'Rosangela', '22G1', 'ty223At', '41231', '-10', '1', '2546', 'enviado');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `produto`
+--
+
+DROP TABLE IF EXISTS `produto`;
+CREATE TABLE IF NOT EXISTS `produto` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome_produto` varchar(255) NOT NULL,
+  `preco` float(10,2) NOT NULL,
+  `UN` varchar(4) NOT NULL,
+  `Quantidade` int NOT NULL,
+  `turma_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `turma_id` (`turma_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `produto`
+--
+
+INSERT INTO `produto` (`id`, `nome_produto`, `preco`, `UN`, `Quantidade`, `turma_id`) VALUES
+(1, 'Tesoura', 5.00, 'UN', 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `professor`
+--
+
+DROP TABLE IF EXISTS `professor`;
+CREATE TABLE IF NOT EXISTS `professor` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL,
+  `password` varchar(65) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL,
+  `turma_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `turma_id` (`turma_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `professor`
+--
+
+INSERT INTO `professor` (`id`, `username`, `password`, `turma_id`) VALUES
+(1, 'teste', 'teste', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tabela_de_clientes`
+--
+
+DROP TABLE IF EXISTS `tabela_de_clientes`;
+CREATE TABLE IF NOT EXISTS `tabela_de_clientes` (
+  `CPF` varchar(11) NOT NULL,
+  `NOME` varchar(100) DEFAULT NULL,
+  `ENDERECO_1` varchar(150) DEFAULT NULL,
+  `BAIRRO` varchar(50) DEFAULT NULL,
+  `CIDADE` varchar(50) DEFAULT NULL,
+  `ESTADO` varchar(2) DEFAULT NULL,
+  `CEP` varchar(8) DEFAULT NULL,
+  `DATA_DE_NASCIMENTO` date DEFAULT NULL,
+  `IDADE` smallint DEFAULT NULL,
+  `SEXO` varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`CPF`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tabela_de_produtos`
+--
+
+DROP TABLE IF EXISTS `tabela_de_produtos`;
+CREATE TABLE IF NOT EXISTS `tabela_de_produtos` (
+  `CODIGO_DO_PRODUTO` varchar(10) NOT NULL,
+  `NOME_DO_PRODUTO` varchar(50) DEFAULT NULL,
+  `EMBALAGEM` varchar(20) DEFAULT NULL,
+  `TAMANHO` varchar(10) DEFAULT NULL,
+  `PRECO_DE_LISTA` float NOT NULL,
+  PRIMARY KEY (`CODIGO_DO_PRODUTO`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tabela_de_vendedores`
+--
+
+DROP TABLE IF EXISTS `tabela_de_vendedores`;
+CREATE TABLE IF NOT EXISTS `tabela_de_vendedores` (
+  `MATRICULA` varchar(5) NOT NULL,
+  `NOME` varchar(100) DEFAULT NULL,
+  `PERCENTUAL_COMISSAO` float DEFAULT NULL,
+  `DATA_ADMISSAO` date DEFAULT NULL,
+  `DE_FERIAS` bit(1) DEFAULT NULL,
+  `BAIRRO` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`MATRICULA`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `turma`
+--
+
+DROP TABLE IF EXISTS `turma`;
+CREATE TABLE IF NOT EXISTS `turma` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=669 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `turma`
+--
+
+INSERT INTO `turma` (`id`) VALUES
+(1),
+(2),
+(3),
+(4);
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `aluno`
+--
+ALTER TABLE `aluno`
+  ADD CONSTRAINT `aluno_ibfk_1` FOREIGN KEY (`turma_id`) REFERENCES `turma` (`id`);
+
+--
+-- Restrições para tabelas `notas_fiscais`
+--
+ALTER TABLE `notas_fiscais`
+  ADD CONSTRAINT `notas_fiscais_ibfk_1` FOREIGN KEY (`MATRICULA`) REFERENCES `tabela_de_vendedores` (`MATRICULA`),
+  ADD CONSTRAINT `notas_fiscais_ibfk_2` FOREIGN KEY (`CPF`) REFERENCES `tabela_de_clientes` (`CPF`);
+
+--
+-- Restrições para tabelas `produto`
+--
+ALTER TABLE `produto`
+  ADD CONSTRAINT `produto_ibfk_1` FOREIGN KEY (`turma_id`) REFERENCES `turma` (`id`);
+
+--
+-- Restrições para tabelas `professor`
+--
+ALTER TABLE `professor`
+  ADD CONSTRAINT `professor_ibfk_1` FOREIGN KEY (`turma_id`) REFERENCES `turma` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
