@@ -85,7 +85,7 @@
         </div>
         <div class="sair">
         <a href="processamento/sair.php"><img  src="img/sairBranco.png" alt=""></a>
-        </div> 
+        </div>
 
         
    
