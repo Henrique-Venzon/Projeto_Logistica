@@ -52,7 +52,7 @@ if (!isset($_SESSION['turma'])) {
                             <div class="colunas1">
                                 <div class="numeroPedido">
                                     <label for="num">N° pedido:</label>
-                                    <input id="num" type="number" name="npedido">
+                                    <input id="num" type="number" name="npedido" min="0">
                                 </div>
                                 <div class="NomeDaEmpresa">
                                     <label for="empresa">Empresa:</label>
