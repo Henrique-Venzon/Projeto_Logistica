@@ -231,9 +231,9 @@
             <li class="sidebar-item" id="sidebarItem">
                 <a href="telaInicio.php" class="sidebar-link">
                 <i class="fa-solid fa-house"></i>
-                <span class=\"sidebar-text\" style="margin-left:10px;">Home</span>
+                <span class="sidebar-text" style="margin-left:10px;">Home</span>
                 </a>
-                ?>
+                
             </li>
             <?php if($_SESSION['tipo_login']=='professor')
                 echo '

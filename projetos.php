@@ -34,7 +34,7 @@ if (isset($_SESSION['error'])) {
         <div class="content first-content">
             <div class="first-column">
                 <div class="sair">
-                <i id="sair" class="fa-solid fa-right-from-bracket"></i>
+                <i id="sair" class="fa-solid fa-person-running"></i>
                 </div>
                 <h2 class="title title-primary">Criar projeto</h2>
                 <p class="description description-primary">Crie um novo projeto</p>
@@ -121,7 +121,7 @@ if (isset($_SESSION['error'])) {
         <div class="content second-content">
             <div class="first-column">
                 <div class="sair2">
-                <i id="sair2" class="fa-solid fa-right-from-bracket"></i>
+                <i id="sair2" class="fa-solid fa-person-running"></i>
                 </div>
                 <h2 class="title title-primary">Lista de Projetos</h2>
                 <p class="description description-primary">Projetos</p>

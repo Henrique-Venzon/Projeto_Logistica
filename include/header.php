@@ -83,7 +83,7 @@
                             ?>
         </div>
         <div class="sair">
-        <a href="processamento/sair.php"><i class="fa-solid fa-right-from-bracket"></i></a>
+        <a href="processamento/sair.php"><i class="fa-solid fa-person-running"></i></a>
         </div> 
 
         
