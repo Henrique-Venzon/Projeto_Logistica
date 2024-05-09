@@ -34,7 +34,7 @@ if (isset($_SESSION['error'])) {
         <div class="content first-content">
             <div class="first-column">
                 <div class="sair">
-                <i id="sair" class="fa-solid fa-right-from-bracket"></i>
+                <i id="sair" class="fa-solid fa-person-running"></i>
                 </div>
                 <h2 class="title title-primary">Criar projeto</h2>
                 <p class="description description-primary">Crie um novo projeto</p>
@@ -84,7 +84,7 @@ if (isset($_SESSION['error'])) {
                         print "<td>" . $row->id . "</td>";
                         print "<td>" . $row_alunos->num_alunos . "</td>";
                         print "<td>";
-                        print "<form action='telainicio.php' method='post'>";
+                        print "<form action='telainicio.php' method='POST'>";
                         print "<input type='hidden' name='turma' value='" . $row->id . "'>";
                         print "<button class=\"acessar\" type='submit' ><span>Acessar</span></button>";
                         print "</form>";
@@ -121,7 +121,7 @@ if (isset($_SESSION['error'])) {
         <div class="content second-content">
             <div class="first-column">
                 <div class="sair2">
-                <i id="sair2" class="fa-solid fa-right-from-bracket"></i>
+                <i id="sair2" class="fa-solid fa-person-running"></i>
                 </div>
                 <h2 class="title title-primary">Lista de Projetos</h2>
                 <p class="description description-primary">Projetos</p>

@@ -20,7 +20,7 @@ main{
   }
   
   .tabela-scroll::-webkit-scrollbar-thumb {
-    background-color: #045483; 
+    background-color: #000000; 
   }
   .tabela-scroll::-webkit-scrollbar {
     height: 1px;
@@ -191,7 +191,7 @@ main{
     border: 1.5px solid black;
     width: 88%;
     height: 95%;
-    background-color: #90c7ff;
+    background-color: #919191;
     box-shadow: 0px 0px  10px black;
     border-radius: 40px; 
 }
@@ -207,16 +207,16 @@ main{
     height: 45px;
     border-radius: 30px;
     border: solid 2px white;
-    background-color: #569ae7;
+    background-color: #000000;
     color: #fff;
     text-transform: uppercase;
     font-size: 20px;
 }
 .enviar input:hover{
     transition: 1.5s;
-    border: solid 2px #569ae7;
+    border: solid 2px #000000;
     background-color: #ffffff;
-    color: #307cd3;
+    color: #000000;
 }
 
 .txtCont{
