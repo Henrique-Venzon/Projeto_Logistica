@@ -39,13 +39,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="bv">
                 <div class="centT">
                 <?php
-                print '<h1>Seja</h1>';
+
+				print '<h1>Olá '.$_SESSION['username'].'</h1>';
                 print '<br>';
-                print '<h1>Bem-Vindo</h1>';
+                print '<h1>Você está na</h1>';
                 print '<br>';
-				print '<h1  >'.$_SESSION['username'].'</h1>';
-                print '<br>';
-                print '<h1  > Turma: '.$_SESSION['turma'].' </h1>';
+                print '<h1>turma: '.$_SESSION['turma'].'</h1>';
                             ?>
             </div>
             </div>

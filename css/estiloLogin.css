@@ -14,6 +14,7 @@
     left: 50%; 
     transform: translateX(-50%); 
     z-index: 10; 
+    box-shadow: 0 0 10px rgb(0, 0, 0);
 } 
 .container {
     display: flex;
@@ -35,7 +36,7 @@
 .content::before {
     content: "";
     position: absolute;
-    background-color: #64acff;
+    background-color: #1c1c1c;
     width: 50%;
     height: 100%;
     border-radius: 50px;
@@ -52,7 +53,7 @@
     margin-bottom: 3%;
 }
 .title-second {
-    color: #64acff;
+    color: #1c1c1c;
     margin-bottom: 1%;
     font-size: 60px;
 }
@@ -95,17 +96,17 @@
 }
 .btn-primary:hover {
     background-color: #fff;
-    color: #64acff;
+    color: #1c1c1c;
 }
 .btn-second {
-    background-color: #64acff;
-    border: 1px solid #64acff;
+    background-color: #1c1c1c;
+    border: 1px solid #1c1c1c;
     transition: background-color .5s;
 }
 .btn-second:hover {
     background-color: #fff;
-    border: 1px solid #64acff;
-    color: #64acff;
+    border: 1px solid #1c1c1c;
+    color: #1c1c1c;
 }
 .first-content {
     display: flex;

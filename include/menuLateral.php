@@ -17,7 +17,7 @@
     .menuL {
         display: flex;
         height: 92.05vh;
-        background-color: #64acff;
+        background-color: #1c1c1c;
     }
 
 
@@ -31,9 +31,9 @@
 
     #sidebar {
         width: 100px;
-        z-index: 1000;
+        z-index: 13;
         transition:  .05s ease-out;
-        background-color: #64acff;
+        background-color: #1c1c1c;
         display: flex;
         flex-direction: column;
     }
@@ -50,9 +50,12 @@
         align-items: center;
     }
     .toggle-btn i {
-        margin-left:14px ;
+        margin-left:17px ;
         font-size: 37px;
         color: white;
+    }
+    i{
+        font-size: 36px;
     }
 
 
@@ -70,7 +73,7 @@
     .sidebar-nav {
         margin-top: 0;
         padding: 0 0;
-        background-color: #64acff;
+        background-color: #1c1c1c;
     }
 
     a.sidebar-link {
@@ -80,17 +83,17 @@
         font-size: 0.9rem;
         white-space: nowrap;
         border-left: 5px solid transparent;
-        background-color: #64acff;
+        background-color: #1c1c1c;
     }
 
     a.sidebar-link:hover {
         background-color: rgba(255, 255, 255, 0.301);
-        border-left: 5px solid #002753;
+        border-left: 5px solid #fff;
     }
 
     .sidebar-item {
         position: relative;
-        background-color: #64acff;
+        background-color: #1c1c1c;
     }
 
     #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
@@ -175,9 +178,39 @@
     }
 
 }
-
-
-
+.fa-house{
+    margin-left: 5px;
+}
+.fa-user{
+    margin-left: 10px;
+}
+.fa-route{
+    margin-left: 6px;
+}
+.fa-boxes-packing{
+    margin-left: 2px;
+}
+.fa-warehouse{
+    margin-left: 3px;
+}
+.fa-hand-holding-hand{
+    margin-left: 4px;
+}
+.fa-box{
+    margin-left: 8px;
+}
+.fa-truck-front{
+    margin-left: 6px;
+}
+.fa-receipt{
+    margin-left: 10px;
+}
+.fa-clipboard{
+    margin-left: 10px;
+}
+.fa-gear{
+    margin-left: 6px;
+}
 </style>
 
 <div class="menuL">
@@ -199,8 +232,8 @@
                 <?php if($tituloPag!='Home')
                 echo '
                 <a href="telaInicio.php" class="sidebar-link">
-                    <img src="img/home.png" alt="">
-                    <span class=\"sidebar-text\" style="margin-left:10px;">Home</span>
+                <i class="fa-solid fa-house"></i>
+                <span class=\"sidebar-text\" style="margin-left:10px;">Home</span>
                 </a>'
                 ?>
             </li>
@@ -208,7 +241,7 @@
                 echo '
                 <li class="sidebar-item">
                     <a href="telaUsuarios.php" class="sidebar-link">
-                        <img src="img/perfil.png" alt="">
+                    <i class="fa-solid fa-user"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Alunos</span>
                     </a>
                 </li>'
@@ -216,19 +249,19 @@
 
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
-                        <img src="img/mov03.png">
-                        <span class="sidebar-text" style="margin-left:10px;">Movimentações</span>
+                    <i class="fa-solid fa-route"></i>
+                    <span class="sidebar-text" style="margin-left:10px;">Movimentações</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
-                        <img src="img/Piking.png" alt=""><i class="lni lni-agenda"></i>
+                    <i class="fa-solid fa-boxes-packing"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Piking</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a href="armazem.php" class="sidebar-link">
-                        <img src="img/armazem_sidebar.png" alt=""><i class="lni lni-agenda"></i>
+                    <i class="fa-solid fa-warehouse"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Estoque</span>
                     </a>
                 </li>
@@ -236,7 +269,7 @@
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                         data-bs-target="#Recebimentos" aria-expanded="false" aria-controls="Recebimentos">
-                        <img src="img/receb.png" alt="">
+                        <i class="fa-solid fa-hand-holding-hand"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Recebimentos</span>
                     </a>
                     <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
@@ -254,7 +287,7 @@
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                         data-bs-target="#pedido" aria-expanded="false" aria-controls="Recebimentos">
-                        <img src="img/pedidos.png" alt="">
+                        <i class="fa-solid fa-box"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Pedidos</span>
                     </a>
                     <ul id="pedido" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
@@ -270,7 +303,7 @@
 
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
-                        <img src="img/carMov.png" alt="">
+                    <i class="fa-solid fa-truck-front"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Expedição</span>
                     </a>
                 </li>
@@ -279,7 +312,7 @@
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                         data-bs-target="#Nota" aria-expanded="false" aria-controls="Nota">
-                        <img src="img/nota.png" alt="">
+                        <i class="fa-solid fa-receipt"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
                     </a>
                     <ul id="Nota" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
@@ -294,14 +327,14 @@
 
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
-                        <img  src="img/relatorio02.png" alt="">
+                    <i class="fa-solid fa-clipboard"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Relatórios</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
-                        <img src="img/confpreto.png" alt="">
+                    <i class="fa-solid fa-gear"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Controle</span>
                     </a>
                 </li>'
