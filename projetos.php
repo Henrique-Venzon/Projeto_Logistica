@@ -4,9 +4,12 @@ if (!isset($_SESSION['id'])) {
     header("Location: index.php");
     exit;
 }
+if (($_SESSION['tipo_login'] != 'professor')) {
+    header("Location: index.php");
+    exit;
+}
 if (isset($_SESSION['error'])) {
     echo "<script type='text/javascript'>alert('" . $_SESSION['error'] . "');</script>";
-    // Limpar a mensagem de erro após a exibição
     unset($_SESSION['error']);
 }
 ?>
@@ -79,7 +82,7 @@ if (isset($_SESSION['error'])) {
 
                         print "<tr style=\"border-bottom: none;\">";
                         print "<td>" . $row->id . "</td>";
-                        print "<td>" . $row_alunos->num_alunos . "</td>"; 
+                        print "<td>" . $row_alunos->num_alunos . "</td>";
                         print "<td>";
                         print "<form action='telainicio.php' method='post'>";
                         print "<input type='hidden' name='turma' value='" . $row->id . "'>";
@@ -133,8 +136,6 @@ if (isset($_SESSION['error'])) {
 
                     <label class="label-input" for=""></label>
                     <input type="number" placeholder="Código do Projeto" name='codigo_projeto'>
-
-
                     <label class="label-input" for=""></label>
                     <input type="number" placeholder="Número de Alunos" name='qtd_alunos'
                         oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
