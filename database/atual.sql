@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 08/05/2024 às 12:29
--- Versão do servidor: 8.0.36
+-- Tempo de geração: 09/05/2024 às 23:59
+-- Versão do servidor: 8.2.0
 -- Versão do PHP: 8.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `aluno` (
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `aluno`
@@ -78,37 +78,6 @@ CREATE TABLE IF NOT EXISTS `notas_fiscais` (
   KEY `MATRICULA` (`MATRICULA`),
   KEY `CPF` (`CPF`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `processo_container`
---
-
-DROP TABLE IF EXISTS `processo_container`;
-CREATE TABLE IF NOT EXISTS `processo_container` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `placa` varchar(7) NOT NULL,
-  `NomeMotorista` varchar(255) NOT NULL,
-  `container` varchar(255) NOT NULL,
-  `navio` varchar(255) NOT NULL,
-  `cliente` varchar(255) NOT NULL,
-  `tipo` varchar(255) NOT NULL,
-  `lacre` varchar(255) NOT NULL,
-  `LacreSif` varchar(255) NOT NULL,
-  `Temperatura` varchar(255) NOT NULL,
-  `IMD` varchar(255) NOT NULL,
-  `NOnu` varchar(255) NOT NULL,
-  `situacao` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `processo_container`
---
-
-INSERT INTO `processo_container` (`id`, `placa`, `NomeMotorista`, `container`, `navio`, `cliente`, `tipo`, `lacre`, `LacreSif`, `Temperatura`, `IMD`, `NOnu`, `situacao`) VALUES
-(13, '231QAC', 'Matheus Yan dos Reis', '2231', 'KL2332', 'Rosangela', '22G1', 'ty223At', '41231', '-10', '1', '2546', 'enviado');
 
 -- --------------------------------------------------------
 
@@ -215,6 +184,70 @@ CREATE TABLE IF NOT EXISTS `tabela_de_vendedores` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `transporte`
+--
+
+DROP TABLE IF EXISTS `transporte`;
+CREATE TABLE IF NOT EXISTS `transporte` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `placa` varchar(30) NOT NULL,
+  `NomeMotorista` varchar(100) NOT NULL,
+  `container` varchar(30) NOT NULL,
+  `navio` varchar(30) NOT NULL,
+  `tipo` varchar(30) NOT NULL,
+  `lacre` varchar(30) NOT NULL,
+  `LacreSif` int NOT NULL,
+  `IMD` varchar(30) NOT NULL,
+  `NOnu` int NOT NULL,
+  `situacao` varchar(30) NOT NULL,
+  `npedido` varchar(30) NOT NULL,
+  `temperatura` int DEFAULT NULL,
+  `Empresa` varchar(30) NOT NULL,
+  `cliente` varchar(30) NOT NULL,
+  `Telefone` varchar(30) NOT NULL,
+  `CEP` varchar(30) NOT NULL,
+  `produto1` varchar(30) NOT NULL,
+  `produto2` varchar(30) DEFAULT NULL,
+  `produto3` varchar(30) DEFAULT NULL,
+  `produto4` varchar(30) DEFAULT NULL,
+  `unidade1` varchar(30) NOT NULL,
+  `unidade2` varchar(30) DEFAULT NULL,
+  `unidade3` varchar(30) DEFAULT NULL,
+  `unidade4` varchar(30) DEFAULT NULL,
+  `quantidade1` int NOT NULL,
+  `quantidade2` int DEFAULT NULL,
+  `quantidade3` int DEFAULT NULL,
+  `quantidade4` int DEFAULT NULL,
+  `valor1` decimal(10,2) NOT NULL,
+  `valor2` decimal(10,2) DEFAULT NULL,
+  `valor3` decimal(10,2) DEFAULT NULL,
+  `valor4` decimal(10,2) DEFAULT NULL,
+  `ncm1` int NOT NULL,
+  `ncm2` int DEFAULT NULL,
+  `ncm3` int DEFAULT NULL,
+  `ncm4` int DEFAULT NULL,
+  `cst1` int NOT NULL,
+  `cst2` int DEFAULT NULL,
+  `cst3` int DEFAULT NULL,
+  `cst4` int DEFAULT NULL,
+  `cfop1` int NOT NULL,
+  `cfop2` int DEFAULT NULL,
+  `cfop3` int DEFAULT NULL,
+  `cfop4` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `transporte`
+--
+
+INSERT INTO `transporte` (`id`, `placa`, `NomeMotorista`, `container`, `navio`, `tipo`, `lacre`, `LacreSif`, `IMD`, `NOnu`, `situacao`, `npedido`, `temperatura`, `Empresa`, `cliente`, `Telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`) VALUES
+(1, '231QAC', 'Portifólio Matheus Yan', '2231', 'KL2332', '22G1', 'ty223At', 41231, '1', 2546, 'enviado', '231', 0, 'a', 'a', '', '88380000', 'Portifólio Matheus Yan', 'Portifólio Matheus Yan', '', '', 'UN', 'RL', 'UN', 'UN', 231, 266, 0, 0, 5.00, 2.00, 0.00, 0.00, 231, 52143, 0, 0, 231, 2314, 0, 0, 123, 2313, 0, 0),
+(2, '231QAC', 'Portifólio Matheus Yan', '2231', 'KL2332', '22G1', 'ty223At', 41231, '1', 2546, 'enviado', '56213', 23, 'a', 'a', '', '88380000', 'Portifólio Matheus Yan', 'Portifólio Matheus Yan', '', '', ' ', ' ', ' ', ' ', 231, 266, 0, 0, 5.00, 2.00, 0.00, 0.00, 231, 52143, 0, 0, 231, 2314, 0, 0, 123, 2313, 0, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `turma`
 --
 
@@ -222,7 +255,7 @@ DROP TABLE IF EXISTS `turma`;
 CREATE TABLE IF NOT EXISTS `turma` (
   `id` int NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=669 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `turma`
