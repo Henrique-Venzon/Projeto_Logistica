@@ -132,7 +132,7 @@ $turma = $_SESSION['turma']
                             </div>
                             <div class="juntar">
                                 <label for="">N° ONU:</label>
-                                <input type="text" name="NOnu" value="<?php if(!isset($Nonu))($NOnu='');echo ($NOnu) ?>" readonly>
+                                <input type="text" name="NOnu" value="<?php if(!isset($NOnu))($NOnu='');echo ($NOnu) ?>" readonly>
                             </div>
                             <h1>Assinale se tiver algum problema</h1>
                             <div class="problema">
