@@ -4,11 +4,12 @@ if (!isset($_SESSION['id'])) {
     header("Location: index.php");
     exit;
 }
-if(!isset($_SESSION['turma'])){
+if (!isset($_SESSION['turma'])) {
     header("Location: index.php");
     exit;
 }
-?>
+$turma = $_SESSION['turma']
+    ?>
 <!DOCTYPE html>
 
 <head>
@@ -51,11 +52,10 @@ if(!isset($_SESSION['turma'])){
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "SELECT `id`, `placa`, `NomeMotorista`, `container`, `navio`, `cliente`, `tipo`, `lacre`, `LacreSif`, `Temperatura`, `IMD`, `NOnu`, `situacao` FROM `transporte` where situacao='enviado' ORDER BY id ASC";
+        $sql = "SELECT `id`, `placa`, `NomeMotorista`, `container`, `navio`, `cliente`, `tipo`, `lacre`, `LacreSif`, `Temperatura`, `IMD`, `NOnu`, `situacao` FROM `transporte` where situacao='enviado' AND `turma_id` = $turma ORDER BY id ASC";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-            // output data of each row
             while ($row = $result->fetch_assoc()) {
                 $id = $row["id"];
                 $placa = $row["placa"];
@@ -70,10 +70,11 @@ if(!isset($_SESSION['turma'])){
                 $IMD = $row["IMD"];
                 $NOnu = $row["NOnu"];
                 $situacao = $row["situacao"];
+                $resultado_de_container='True';
             }
 
         } else {
-            echo "0 results";
+            $resultado_de_container = 'false';
         }
         $conn->close();
         ?>
@@ -88,47 +89,50 @@ if(!isset($_SESSION['turma'])){
                         <div class="inputs">
                             <div class="juntar">
                                 <label for="">Placa do Caminhão:</label>
-                                <input type="text" id="placa" name="placa" value="<?php echo $placa; ?>" readonly><br>
+                                <input type="text" id="placa" name="placa" value="<?php if(!isset($placa))($placa = '');echo ($placa); ?>"
+                                    readonly><br>
                             </div>
                             <div class="juntar">
                                 <label for="">Nome do Motorista:</label>
-                                <input type="text" name="NomeMotorista" value="<?php echo $NomeMotorista ?>" readonly>
+                                <input type="text" name="NomeMotorista" value="<?php if(!isset($NomeMotorista))($NomeMotorista='');echo $NomeMotorista ?>"
+                                    readonly>
                             </div>
                             <div class="juntar">
                                 <label for="">Container:</label>
-                                <input type="text" name="container" value="<?php echo $container ?>" readonly>
+                                <input type="text" name="container" value="<?php if(!isset($container))($container='');echo ($container) ?>" readonly>
                             </div>
                             <div class="juntar">
                                 <label for="">Navio:</label>
-                                <input type="text" name="navio" value="<?php echo $navio ?>" readonly>
+                                <input type="text" name="navio" value="<?php if(!isset($navio))($navio='');echo ($navio) ?>" readonly>
                             </div>
                             <div class="juntar">
                                 <label for="">Cliente:</label>
-                                <input type="text" name="cliente" value="<?php echo $cliente ?>" readonly>
+                                <input type="text" name="cliente" value="<?php if(!isset($cliente))($cliente='');echo ($cliente) ?>" readonly>
                             </div>
                             <div class="juntar">
                                 <label for="">Tipo:</label>
-                                <input type="text" name="tipo" value="<?php echo $tipo ?>" readonly>
+                                <input type="text" name="tipo" value="<?php if(!isset($tipo))($tipo='');echo ($tipo) ?>" readonly>
                             </div>
                             <div class="juntar">
                                 <label for="">Lacre:</label>
-                                <input type="text" name="lacre" value="<?php echo $lacre ?>" readonly>
+                                <input type="text" name="lacre" value="<?php if(!isset($lacre))($lacre='');echo ($lacre) ?>" readonly>
                             </div>
                             <div class="juntar">
                                 <label for="">Lacre SIF:</label>
-                                <input type="text" name="LacreSif" value="<?php echo $LacreSif ?>" readonly>
+                                <input type="text" name="LacreSif" value="<?php if(!isset($LacreSif))($LacreSif='');echo ($LacreSif) ?>" readonly>
                             </div>
                             <div class="juntar">
                                 <label for="">Temperatura:</label>
-                                <input type="text" name="Temperatura" value="<?php echo $Temperatura ?>" readonly>
+                                <input type="text" name="Temperatura" value="<?php if(!isset($Temperatura))($Temperatura='');echo ($Temperatura) ?>"
+                                    readonly>
                             </div>
                             <div class="juntar">
                                 <label for="">IMO:</label>
-                                <input type="text" name="IMD" value="<?php echo $IMD ?>" readonly>
+                                <input type="text" name="IMD" value="<?php if(!isset($IMD))($IMD='');echo ($IMD) ?>" readonly>
                             </div>
                             <div class="juntar">
                                 <label for="">N° ONU:</label>
-                                <input type="text" name="NOnu" value="<?php echo $NOnu ?>" readonly>
+                                <input type="text" name="NOnu" value="<?php if(!isset($Nonu))($NOnu='');echo ($NOnu) ?>" readonly>
                             </div>
                             <h1>Assinale se tiver algum problema</h1>
                             <div class="problema">
@@ -220,23 +224,33 @@ if(!isset($_SESSION['turma'])){
                             </div>
                         </div>
                 </div>
-                <div class="enviar">
-                    <input type="submit">
+                <?php
+                if ($resultado_de_container != 'false')
+                    echo '
+                    <div class="enviar">
+                        <input type="submit">
+                    </div>
+                    </form>';
+                    elseif ($resultado_de_container == 'false')
+
+                    echo '
+                    <div class="enviar">
+                        <text>Nenhum Container Selecionado.</text>
+                    </div>
+                    </form>';
+                        ?>
                 </div>
-                </form>
-
             </div>
-        </div>
 
 
-    </main>
+        </main>
 
 
 
-    <script src="js/sidebar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
-</body>
+        <script src="js/sidebar.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+    </body>
 
-</html>
+    </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 09/05/2024 às 23:59
+-- Tempo de geração: 10/05/2024 às 17:26
 -- Versão do servidor: 8.2.0
 -- Versão do PHP: 8.2.13
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `aluno` (
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `aluno`
@@ -45,7 +45,9 @@ CREATE TABLE IF NOT EXISTS `aluno` (
 
 INSERT INTO `aluno` (`id`, `username`, `password`, `turma_id`) VALUES
 (1, 'root.Att', 'root', 1),
-(12, 'teste', 'teste', 1);
+(12, 'teste', 'teste', 1),
+(94, 'Aluno 1', 'xSTt', 2),
+(95, 'Aluno 2', 'blFm', 2);
 
 -- --------------------------------------------------------
 
@@ -234,16 +236,18 @@ CREATE TABLE IF NOT EXISTS `transporte` (
   `cfop2` int DEFAULT NULL,
   `cfop3` int DEFAULT NULL,
   `cfop4` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `turma_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `turma_id` (`turma_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `transporte`
 --
 
-INSERT INTO `transporte` (`id`, `placa`, `NomeMotorista`, `container`, `navio`, `tipo`, `lacre`, `LacreSif`, `IMD`, `NOnu`, `situacao`, `npedido`, `temperatura`, `Empresa`, `cliente`, `Telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`) VALUES
-(1, '231QAC', 'Portifólio Matheus Yan', '2231', 'KL2332', '22G1', 'ty223At', 41231, '1', 2546, 'enviado', '231', 0, 'a', 'a', '', '88380000', 'Portifólio Matheus Yan', 'Portifólio Matheus Yan', '', '', 'UN', 'RL', 'UN', 'UN', 231, 266, 0, 0, 5.00, 2.00, 0.00, 0.00, 231, 52143, 0, 0, 231, 2314, 0, 0, 123, 2313, 0, 0),
-(2, '231QAC', 'Portifólio Matheus Yan', '2231', 'KL2332', '22G1', 'ty223At', 41231, '1', 2546, 'enviado', '56213', 23, 'a', 'a', '', '88380000', 'Portifólio Matheus Yan', 'Portifólio Matheus Yan', '', '', ' ', ' ', ' ', ' ', 231, 266, 0, 0, 5.00, 2.00, 0.00, 0.00, 231, 52143, 0, 0, 231, 2314, 0, 0, 123, 2313, 0, 0);
+INSERT INTO `transporte` (`id`, `placa`, `NomeMotorista`, `container`, `navio`, `tipo`, `lacre`, `LacreSif`, `IMD`, `NOnu`, `situacao`, `npedido`, `temperatura`, `Empresa`, `cliente`, `Telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`, `turma_id`) VALUES
+(1, '231QAC', 'Portifólio Matheus Yan', '2231', 'KL2332', '22G1', 'ty223At', 41231, '1', 2546, 'enviado', '231', 0, 'a', 'a', '', '88380000', 'Portifólio Matheus Yan', 'Portifólio Matheus Yan', '', '', 'UN', 'RL', 'UN', 'UN', 231, 266, 0, 0, 5.00, 2.00, 0.00, 0.00, 231, 52143, 0, 0, 231, 2314, 0, 0, 123, 2313, 0, 0, 1),
+(2, '231QAC', 'Portifólio Matheus Yan', '2231', 'KL2332', '22G1', 'ty223At', 41231, '1', 2546, 'enviado', '56213', 23, 'a', 'a', '', '88380000', 'Portifólio Matheus Yan', 'Portifólio Matheus Yan', '', '', ' ', ' ', ' ', ' ', 231, 266, 0, 0, 5.00, 2.00, 0.00, 0.00, 231, 52143, 0, 0, 231, 2314, 0, 0, 123, 2313, 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -263,9 +267,7 @@ CREATE TABLE IF NOT EXISTS `turma` (
 
 INSERT INTO `turma` (`id`) VALUES
 (1),
-(2),
-(3),
-(4);
+(2);
 
 --
 -- Restrições para tabelas despejadas
