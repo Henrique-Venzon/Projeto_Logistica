@@ -326,7 +326,7 @@ ALTER TABLE `notas_fiscais`
   ADD CONSTRAINT `notas_fiscais_ibfk_1` FOREIGN KEY (`MATRICULA`) REFERENCES `tabela_de_vendedores` (`MATRICULA`),
   ADD CONSTRAINT `notas_fiscais_ibfk_2` FOREIGN KEY (`CPF`) REFERENCES `tabela_de_clientes` (`CPF`);
 
---
+--  
 -- Restrições para tabelas `produto`
 --
 ALTER TABLE `produto`

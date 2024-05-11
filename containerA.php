@@ -53,8 +53,7 @@ $turma = $_SESSION['turma']
         }
 
         $id_aluno = $_SESSION['id_aluno'];
-
-        $sql = "SELECT id, placa, NomeMotorista, container, navio, cliente, tipo, lacre, LacreSif, Temperatura, IMD, NOnu, situacao FROM transporte WHERE situacao = 'enviado' AND id NOT IN (SELECT id_transporte FROM atividade_concluida WHERE id_aluno = '" . $id_aluno . "');";
+        $sql = "SELECT id, placa, NomeMotorista, container, navio, cliente, tipo, lacre, LacreSif, Temperatura, IMD, NOnu, situacao FROM transporte WHERE turma_id='" . $_SESSION['turma'] . "' AND situacao = 'enviado' AND id NOT IN (SELECT id_transporte FROM atividade_concluida WHERE id_aluno = '" . $id_aluno . "');";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -97,7 +96,8 @@ $turma = $_SESSION['turma']
                                 echo ($placa); ?>" readonly><br>
                                 <!-- Tags escondidas para o form! NÂO EXCLUIR VENZON! -->
                                 <input type="hidden" name="id_atividade" value="<?php if (!isset($id))
-                                    ($id = '');echo $id; ?>">
+                                    ($id = '');
+                                echo $id; ?>">
                             </div>
                             <div class="juntar">
                                 <label for="">Nome do Motorista:</label>
