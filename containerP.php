@@ -94,7 +94,6 @@ if (!isset($_SESSION['turma'])) {
                                 <div class="unidade">
                                     <label for="unidade">Unidade:</label>
                                     <select id="unidade" name="unidade1">
-                                        <option value=" "> </option>
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
@@ -125,10 +124,10 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="quantidade">
                                     <label for="quantidade">Quantidade:</label>
-                                    <input type="number" id="quantidade" name="quantidade1" min="1">
-                                    <input type="number" id="quantidade" name="quantidade2" min="1">
-                                    <input type="number" id="quantidade" name="quantidade3" min="1">
-                                    <input type="number" id="quantidade" name="quantidade4" min="1">
+                                    <input type="number" id="quantidade" name="quantidade1" min="0">
+                                    <input type="number" id="quantidade" name="quantidade2" min="0">
+                                    <input type="number" id="quantidade" name="quantidade3" min="0">
+                                    <input type="number" id="quantidade" name="quantidade4" min="0">
                                 </div>
 
                                 <div class="valor">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 11/05/2024 às 23:16
+-- Tempo de geração: 11/05/2024 às 23:36
 -- Versão do servidor: 8.0.36
 -- Versão do PHP: 8.2.13
 
@@ -251,45 +251,44 @@ CREATE TABLE IF NOT EXISTS `transporte` (
   `Telefone` varchar(30) NOT NULL,
   `CEP` varchar(30) NOT NULL,
   `produto1` varchar(30) NOT NULL,
-  `produto2` varchar(30) DEFAULT NULL,
-  `produto3` varchar(30) DEFAULT NULL,
-  `produto4` varchar(30) DEFAULT NULL,
+  `produto2` varchar(30) DEFAULT '',
+  `produto3` varchar(30) DEFAULT '',
+  `produto4` varchar(30) DEFAULT '',
   `unidade1` varchar(30) NOT NULL,
-  `unidade2` varchar(30) DEFAULT NULL,
-  `unidade3` varchar(30) DEFAULT NULL,
-  `unidade4` varchar(30) DEFAULT NULL,
+  `unidade2` varchar(30) DEFAULT '0',
+  `unidade3` varchar(30) DEFAULT '0',
+  `unidade4` varchar(30) DEFAULT '0',
   `quantidade1` int NOT NULL,
-  `quantidade2` int DEFAULT NULL,
-  `quantidade3` int DEFAULT NULL,
-  `quantidade4` int DEFAULT NULL,
+  `quantidade2` int DEFAULT '0',
+  `quantidade3` int DEFAULT '0',
+  `quantidade4` int DEFAULT '0',
   `valor1` decimal(10,2) NOT NULL,
-  `valor2` decimal(10,2) DEFAULT NULL,
-  `valor3` decimal(10,2) DEFAULT NULL,
-  `valor4` decimal(10,2) DEFAULT NULL,
+  `valor2` decimal(10,2) DEFAULT '0.00',
+  `valor3` decimal(10,2) DEFAULT '0.00',
+  `valor4` decimal(10,2) DEFAULT '0.00',
   `ncm1` int NOT NULL,
-  `ncm2` int DEFAULT NULL,
-  `ncm3` int DEFAULT NULL,
-  `ncm4` int DEFAULT NULL,
+  `ncm2` int DEFAULT '0',
+  `ncm3` int DEFAULT '0',
+  `ncm4` int DEFAULT '0',
   `cst1` int NOT NULL,
-  `cst2` int DEFAULT NULL,
-  `cst3` int DEFAULT NULL,
-  `cst4` int DEFAULT NULL,
+  `cst2` int DEFAULT '0',
+  `cst3` int DEFAULT '0',
+  `cst4` int DEFAULT '0',
   `cfop1` int NOT NULL,
-  `cfop2` int DEFAULT NULL,
-  `cfop3` int DEFAULT NULL,
-  `cfop4` int DEFAULT NULL,
+  `cfop2` int DEFAULT '0',
+  `cfop3` int DEFAULT '0',
+  `cfop4` int DEFAULT '0',
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `transporte`
 --
 
 INSERT INTO `transporte` (`id`, `placa`, `NomeMotorista`, `container`, `navio`, `tipo`, `lacre`, `LacreSif`, `IMD`, `NOnu`, `situacao`, `npedido`, `temperatura`, `Empresa`, `cliente`, `Telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`, `turma_id`) VALUES
-(1, '231QAC', 'Portifólio Matheus Yan', '2231', 'KL2332', '22G1', 'ty223At', 41231, '1', 2546, 'enviado', '231', 0, 'a', 'a', '', '88380000', 'Portifólio Matheus Yan', 'Portifólio Matheus Yan', '', '', 'UN', 'RL', 'UN', 'UN', 231, 266, 0, 0, 5.00, 2.00, 0.00, 0.00, 231, 52143, 0, 0, 231, 2314, 0, 0, 123, 2313, 0, 0, 1),
-(2, '231QAC', 'Portifólio Matheus Yan', '2231', 'KL2332', '22G1', 'ty223At', 41231, '1', 2546, 'enviado', '56213', 23, 'a', 'a', '23124', '88380000', 'Portifólio Matheus Yan', 'Portifólio Matheus Yan', '', '', ' ', ' ', ' ', ' ', 231, 266, 0, 0, 5.00, 2.00, 0.00, 0.00, 231, 52143, 0, 0, 231, 2314, 0, 0, 123, 2313, 0, 0, 1);
+(5, '231QAC', 'Portifólio Matheus Yan', '2231', 'KL2332', '22G1', 'ty223At', 41231, '1', 2546, 'enviado', '4124', 235, 'a', 'a', '4799684', '88380000', 'tesoura', 'apk', '', '', 'UN', 'FD', ' ', ' ', 5, 23, 0, 0, 5.00, 4.00, 0.00, 0.00, 231, 52143, 0, 0, 231, 2314, 0, 0, 123, 2313, 0, 0, 2);
 
 -- --------------------------------------------------------
 
