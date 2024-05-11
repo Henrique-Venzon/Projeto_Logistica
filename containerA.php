@@ -9,7 +9,7 @@ if (!isset($_SESSION['turma'])) {
     exit;
 }
 $turma = $_SESSION['turma']
-    ?>
+        ?>
 <!DOCTYPE html>
 
 <head>
