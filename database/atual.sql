@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 10/05/2024 às 17:26
--- Versão do servidor: 8.2.0
+-- Tempo de geração: 11/05/2024 às 23:16
+-- Versão do servidor: 8.0.36
 -- Versão do PHP: 8.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `aluno` (
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `aluno`
@@ -47,7 +47,9 @@ INSERT INTO `aluno` (`id`, `username`, `password`, `turma_id`) VALUES
 (1, 'root.Att', 'root', 1),
 (12, 'teste', 'teste', 1),
 (94, 'Aluno 1', 'xSTt', 2),
-(95, 'Aluno 2', 'blFm', 2);
+(95, 'Aluno 2', 'blFm', 2),
+(97, 'Aluno 1', 'Wd7A', 3),
+(98, 'Aluno 2', '2Zcj', 3);
 
 -- --------------------------------------------------------
 
@@ -62,6 +64,46 @@ CREATE TABLE IF NOT EXISTS `armazem_limite` (
   `limite_maximo` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `atividade_concluida`
+--
+
+DROP TABLE IF EXISTS `atividade_concluida`;
+CREATE TABLE IF NOT EXISTS `atividade_concluida` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_transporte` int NOT NULL,
+  `id_turma` int NOT NULL,
+  `id_aluno` int NOT NULL,
+  `sem_lona` tinyint(1) NOT NULL DEFAULT '0',
+  `avariana_lateral_direita` tinyint(1) NOT NULL DEFAULT '0',
+  `sem_cabo_de_energia` tinyint(1) NOT NULL DEFAULT '0',
+  `avaria_no_teto` tinyint(1) NOT NULL DEFAULT '0',
+  `avaria_na_frente` tinyint(1) NOT NULL DEFAULT '0',
+  `sem_lacre` tinyint(1) NOT NULL DEFAULT '0',
+  `adesivos_avariados` tinyint(1) NOT NULL DEFAULT '0',
+  `excesso_de_altura` tinyint(1) NOT NULL DEFAULT '0',
+  `excesso_na_direita` tinyint(1) NOT NULL DEFAULT '0',
+  `excesso_na_esquerda` tinyint(1) NOT NULL DEFAULT '0',
+  `excesso_na_frente` tinyint(1) NOT NULL DEFAULT '0',
+  `painel_avariado` tinyint(1) NOT NULL DEFAULT '0',
+  `avariana_na_lateral_esquerda` tinyint(1) NOT NULL DEFAULT '0',
+  `container_bem_desgastado` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `id_turma` (`id_turma`),
+  KEY `id_aluno` (`id_aluno`),
+  KEY `id_transporte` (`id_transporte`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `atividade_concluida`
+--
+
+INSERT INTO `atividade_concluida` (`id`, `id_transporte`, `id_turma`, `id_aluno`, `sem_lona`, `avariana_lateral_direita`, `sem_cabo_de_energia`, `avaria_no_teto`, `avaria_na_frente`, `sem_lacre`, `adesivos_avariados`, `excesso_de_altura`, `excesso_na_direita`, `excesso_na_esquerda`, `excesso_na_frente`, `painel_avariado`, `avariana_na_lateral_esquerda`, `container_bem_desgastado`) VALUES
+(18, 2, 1, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(19, 1, 1, 12, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -239,7 +281,7 @@ CREATE TABLE IF NOT EXISTS `transporte` (
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `transporte`
@@ -247,7 +289,7 @@ CREATE TABLE IF NOT EXISTS `transporte` (
 
 INSERT INTO `transporte` (`id`, `placa`, `NomeMotorista`, `container`, `navio`, `tipo`, `lacre`, `LacreSif`, `IMD`, `NOnu`, `situacao`, `npedido`, `temperatura`, `Empresa`, `cliente`, `Telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`, `turma_id`) VALUES
 (1, '231QAC', 'Portifólio Matheus Yan', '2231', 'KL2332', '22G1', 'ty223At', 41231, '1', 2546, 'enviado', '231', 0, 'a', 'a', '', '88380000', 'Portifólio Matheus Yan', 'Portifólio Matheus Yan', '', '', 'UN', 'RL', 'UN', 'UN', 231, 266, 0, 0, 5.00, 2.00, 0.00, 0.00, 231, 52143, 0, 0, 231, 2314, 0, 0, 123, 2313, 0, 0, 1),
-(2, '231QAC', 'Portifólio Matheus Yan', '2231', 'KL2332', '22G1', 'ty223At', 41231, '1', 2546, 'enviado', '56213', 23, 'a', 'a', '', '88380000', 'Portifólio Matheus Yan', 'Portifólio Matheus Yan', '', '', ' ', ' ', ' ', ' ', 231, 266, 0, 0, 5.00, 2.00, 0.00, 0.00, 231, 52143, 0, 0, 231, 2314, 0, 0, 123, 2313, 0, 0, NULL);
+(2, '231QAC', 'Portifólio Matheus Yan', '2231', 'KL2332', '22G1', 'ty223At', 41231, '1', 2546, 'enviado', '56213', 23, 'a', 'a', '23124', '88380000', 'Portifólio Matheus Yan', 'Portifólio Matheus Yan', '', '', ' ', ' ', ' ', ' ', 231, 266, 0, 0, 5.00, 2.00, 0.00, 0.00, 231, 52143, 0, 0, 231, 2314, 0, 0, 123, 2313, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -259,7 +301,7 @@ DROP TABLE IF EXISTS `turma`;
 CREATE TABLE IF NOT EXISTS `turma` (
   `id` int NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=669 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=670 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `turma`
@@ -267,7 +309,8 @@ CREATE TABLE IF NOT EXISTS `turma` (
 
 INSERT INTO `turma` (`id`) VALUES
 (1),
-(2);
+(2),
+(3);
 
 --
 -- Restrições para tabelas despejadas
