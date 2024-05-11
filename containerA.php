@@ -72,7 +72,7 @@ $turma = $_SESSION['turma']
                 $NOnu = $row["NOnu"];
                 $situacao = $row["situacao"];
                 $resultado_de_container = 'True';
-                // Processa os dados conforme necessário
+            
             }
 
         } else {
