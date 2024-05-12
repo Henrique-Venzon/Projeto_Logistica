@@ -46,7 +46,6 @@ main{
     width:100%;
     justify-content: center;
     margin-top: -1.5%;
-<<<<<<< Updated upstream
 }
 .juntar input{
     display: grid;
@@ -56,7 +55,6 @@ main{
     border-radius: 20px;
     border: solid 1px black;
     margin-left: 12%;
-=======
     
 }
 .juntar input{
@@ -67,7 +65,6 @@ main{
     border-radius: 20px;
     border: solid 1px black;
     margin-left: 14%;
->>>>>>> Stashed changes
 }
 .juntar label{
     font-size: 140%;

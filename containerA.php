@@ -86,11 +86,8 @@ $turma = $_SESSION['turma']
                 <div class="txtCont">
                     <h1>Container</h1>
                 </div>
-<<<<<<< Updated upstream
-            <div class="tabela-scroll">
-=======
+
                 <div class="tabela-scroll">
->>>>>>> Stashed changes
                 <div class="form">
                     <form action="processamento/processarcontaineraluno.php" method="POST">
                         <div class="inputs">
@@ -270,11 +267,8 @@ $turma = $_SESSION['turma']
                         </div>
                 </div>
                 </div>
-<<<<<<< Updated upstream
             </div>
         </div>
-=======
->>>>>>> Stashed changes
 
     </main>
 
