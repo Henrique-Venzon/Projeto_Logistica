@@ -27,7 +27,7 @@ $turma = $_SESSION['turma']
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="css/container.css">
+    <link rel="stylesheet" href="css/containerA.css">
 </head>
 
 <body>
@@ -56,7 +56,7 @@ $turma = $_SESSION['turma']
         $sql = "SELECT id, placa, NomeMotorista, container, navio, cliente, tipo, lacre, LacreSif, Temperatura, IMD, NOnu, situacao FROM transporte WHERE turma_id='" . $_SESSION['turma'] . "' AND situacao = 'enviado' AND id NOT IN (SELECT id_transporte FROM atividade_concluida WHERE id_aluno = '" . $id_aluno . "');";
         $result = $conn->query($sql);
 
-        if ($result->num_rows > 0) {
+        if ($result && $result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $id = $row["id"];
                 $placa = $row["placa"];
@@ -86,6 +86,7 @@ $turma = $_SESSION['turma']
                 <div class="txtCont">
                     <h1>Container</h1>
                 </div>
+            <div class="tabela-scroll">
                 <div class="form">
                     <form action="processamento/processarcontaineraluno.php" method="POST">
                         <div class="inputs">
@@ -93,7 +94,7 @@ $turma = $_SESSION['turma']
                                 <label for="">Placa do Caminhão:</label>
                                 <input type="text" id="placa" name="placa" value="<?php if (!isset($placa))
                                     ($placa = '');
-                                echo ($placa); ?>" readonly><br>
+                                echo ($placa); ?>" readonly>
                                 <!-- Tags escondidas para o form! NÂO EXCLUIR VENZON! -->
                                 <input type="hidden" name="id_atividade" value="<?php if (!isset($id))
                                     ($id = '');
@@ -264,7 +265,9 @@ $turma = $_SESSION['turma']
                             ?>
                         </div>
                 </div>
-
+                </div>
+            </div>
+        </div>
 
     </main>
 
