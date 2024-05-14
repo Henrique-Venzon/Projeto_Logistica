@@ -133,9 +133,13 @@
 
 
     @media  screen and (max-height: 768px) {
-        .menuL img {
-        height: 32px;
-        width: 32px;
+        .toggle-btn i {
+        margin-left:12px ;
+        font-size: 28px;
+        color: white;
+    }
+        i{
+        font-size: 24.5px;
     }
     #sidebar.expand {
         width: 220px;
@@ -148,10 +152,7 @@
     }
 }
 @media only screen and( min-height:769px) and (max-height:859px) {
-    .menuL img {
-        height: 35px;
-        width: 35px;
-    }
+
     #sidebar.expand {
         width: 220px;
     }
@@ -163,10 +164,7 @@
     }
 }
 @media  screen and (min-height: 860px) {
-        .menuL img {
-        height: 47px;
-        width: 47px;
-    }
+
     .sidebar-item{
         margin-top: 0.7%;
         margin-bottom: 0.8%;
@@ -180,36 +178,47 @@
 }
 .fa-house{
     margin-left: 5px;
+    margin-right: 5px;
 }
 .fa-user{
     margin-left: 10px;
+    margin-right: 5px;
 }
 .fa-route{
     margin-left: 6px;
+    margin-right: 5px;
 }
 .fa-boxes-packing{
     margin-left: 2px;
+    margin-right: 5px;
 }
 .fa-warehouse{
     margin-left: 3px;
+    margin-right: 5px;
 }
 .fa-hand-holding-hand{
     margin-left: 4px;
+    margin-right: 5px;
 }
 .fa-box{
     margin-left: 8px;
+    margin-right: 5px;
 }
 .fa-truck-front{
     margin-left: 6px;
+    margin-right: 5px;
 }
 .fa-receipt{
     margin-left: 10px;
+    margin-right: 5px;
 }
 .fa-clipboard{
     margin-left: 10px;
+    margin-right: 5px;
 }
 .fa-gear{
     margin-left: 6px;
+    margin-right: 5px;
 }
 </style>
 
@@ -246,7 +255,7 @@
                 ?>
 
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="docas.php" class="sidebar-link">
                     <i class="fa-solid fa-route"></i>
                     <span class="sidebar-text" style="margin-left:10px;">Movimentações</span>
                     </a>

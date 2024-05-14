@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if ($resultado->num_rows != 0) {
                     $row = $resultado->fetch_array();
                     $_SESSION['id'] = $row[0];
+                    $_SESSION['id_aluno'] = $row[0];
                     $_SESSION['username'] = $row[1];
                     $_SESSION['tipo_login'] = 'aluno';
                     $_SESSION['turma'] = $row[2];

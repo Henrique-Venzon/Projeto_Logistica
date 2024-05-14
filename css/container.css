@@ -10,10 +10,9 @@ main{
 }
 .tabela-scroll {
     margin-top: 20px;
-    max-height: 680px; 
+    max-height: 54.5vh; 
     overflow-y: auto; 
     outline: 1px solid black;
-    
   }
   .tabela-scroll::-webkit-scrollbar-track {
     background-color: #fff;
@@ -262,4 +261,111 @@ form h1{
     font-size: 36px;
     color: #ffffff;
     text-shadow: 0px 0px 7px #000000;
+}
+
+/* CSS MODAL */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    color: #aaaaaa;
+    font-size: 28px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  .botaoAtt{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+  }
+  .botaoAtt button{
+    padding: 5px;
+    border-radius: 18px;
+    border: 2px solid black;
+  }
+  .botaoAtt button:hover{
+    background-color: green;
+    border: 2px solid #ffffff;
+    color: white;
+    transition: 1.5s ease-in-out;
+  }
+
+
+
+.tooltip-container {
+   cursor: pointer;
+   position: absolute;
+   width: 60px;
+   vertical-align: middle;
+   right: 10%;
+   margin-top: 2%;
+}
+.tooltip-container .fa-circle-question{
+  font-size: 60px;
+  height: 100%;
+  width: 100%;
+  color: black;
+}
+
+
+
+.tooltip {
+  opacity: 0;
+   z-index: 99;
+   color: #FFF;
+   width: 190px;
+   display: block;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 19px;
+   padding: 15px 20px;
+   border-radius: 8px;
+   text-align: center;
+   background: #4B5064;
+   transition: all .2s ease-in-out;
+   transform: scale(0);
+   position: absolute;
+   right: -65px;
+   bottom: 85px;
+   font-family: Sans-Serif;
+}
+
+.tooltip:before,.tooltip:after {
+   content: '';
+   border-left: 10px solid transparent;
+   border-right: 10px solid transparent;
+   border-top: 10px solid #4B5064;
+   position: absolute;
+   bottom: -10px;
+   left: 45%;
+}
+
+.tooltip-container:hover .tooltip {
+   opacity: 1;
+   transform: scale(1);
 }

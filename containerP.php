@@ -43,8 +43,22 @@ if (!isset($_SESSION['turma'])) {
 
         <div class="DivDireita">
             <div class="table-inputs">
+            <span class="tooltip-container">
+            <i class="fa-regular fa-circle-question"></i>
+        <span class="tooltip">Insira os dados para criar o pedido!</span>
+    </span>
                 <div class="txtCont">
                     <h1>Criar pedido</h1>
+                </div>
+                <div class="botaoAtt">
+                <button id="myBtn">Verificar Atividades Concluídas</button>
+                </div>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="close"><span class="close">&times;</span></div>
+                        <?php ?>
+                        <p>Atividades concluídas pelos alunos serão exibidas aqui.</p>
+                    </div>
                 </div>
                 <div class="form">
                     <div class="tabela-scroll">
@@ -90,18 +104,21 @@ if (!isset($_SESSION['turma'])) {
                                         <option value="KG">KG</option>
                                     </select>
                                     <select id="unidade" name="unidade2">
+                                        <option value=" "> </option>
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
                                         <option value="KG">KG</option>
                                     </select>
                                     <select id="unidade" name="unidade3">
+                                        <option value=" "> </option>
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
                                         <option value="KG">KG</option>
                                     </select>
                                     <select id="unidade" name="unidade4">
+                                        <option value=" "> </option>
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
@@ -111,10 +128,10 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="quantidade">
                                     <label for="quantidade">Quantidade:</label>
-                                    <input type="number" id="quantidade" name="quantidade1" min="1">
-                                    <input type="number" id="quantidade" name="quantidade2" min="1">
-                                    <input type="number" id="quantidade" name="quantidade3" min="1">
-                                    <input type="number" id="quantidade" name="quantidade4" min="1">
+                                    <input type="number" id="quantidade" name="quantidade1" min="0">
+                                    <input type="number" id="quantidade" name="quantidade2" min="0">
+                                    <input type="number" id="quantidade" name="quantidade3" min="0">
+                                    <input type="number" id="quantidade" name="quantidade4" min="0">
                                 </div>
 
                                 <div class="valor">
@@ -160,6 +177,10 @@ if (!isset($_SESSION['turma'])) {
                                 <div class="juntar">
                                     <label for="">Placa do Caminhão:</label>
                                     <input type="text" name="placa" placeholder="Placa do Caminhão">
+                                </div>
+                                <div class="juntar">
+                                    <label for="">Temperatura:</label>
+                                    <input type="text" name="temperatura" placeholder="Temperatura">
                                 </div>
                                 <div class="juntar">
                                     <label for="">Nome do Motorista:</label>
@@ -234,3 +255,23 @@ if (!isset($_SESSION['turma'])) {
 </body>
 
 </html>
+
+<script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
