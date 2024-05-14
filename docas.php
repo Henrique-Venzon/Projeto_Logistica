@@ -47,8 +47,9 @@ if(!isset($_SESSION['turma'])){
   <div class="DivDireita">
             <div class="table-inputs">
                             <div class="txtCentro">
-                            <h1>Seleção de Pedido</h1>
+                            <h1>Escolher doca</h1>
                             </div>
+                            
                     <form action="processamento/processar_docas.php" method="post">
                         <label for="pedido">Selecione o Pedido:</label>
                         <select name="pedido" id="pedido">

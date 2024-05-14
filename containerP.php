@@ -43,6 +43,10 @@ if (!isset($_SESSION['turma'])) {
 
         <div class="DivDireita">
             <div class="table-inputs">
+            <span class="tooltip-container">
+            <i class="fa-regular fa-circle-question"></i>
+        <span class="tooltip">Insira os dados para criar o pedido!</span>
+    </span>
                 <div class="txtCont">
                     <h1>Criar pedido</h1>
                 </div>

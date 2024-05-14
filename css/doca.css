@@ -30,8 +30,12 @@
     
 }
 .txtCentro{
+  text-shadow: 0 0 8px black;
+  margin-top: 1%;
+  color: white;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 form{
     display: grid;
