@@ -302,7 +302,7 @@
                             <a style="margin-bottom: -1.25px;" href="produtos.php" class="sidebar-link">Criar pedidos</a>
                         </li>
                         <li class="sidebar-item">
-                            <a style="margin-top: -1.25px;" href="#" class="sidebar-link">Ver pedidos</a>
+                            <a style="margin-top: -1.25px;" href="verPedido.php" class="sidebar-link">Ver pedidos</a>
                         </li>
                     </ul>
                 </li>'

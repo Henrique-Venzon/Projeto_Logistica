@@ -110,7 +110,7 @@ if (isset($_SESSION['error'])) {
                     print "</div>";
 
                 } else {
-                    print "<p class='alert alert-danger'>Não encrontrou nenhum usuario</p>";
+                    print "<p class='alert alert-danger'>Não encrontrou nenhuma turma criada</p>";
                 }
 
                 ?>
