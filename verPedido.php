@@ -77,9 +77,12 @@ if($qtd > 0){
             print "<td >
             <button class=\"reset\" data-id=\"".$row->npedido."\"><span>Excluir</span></button>
                 </td>"; 
-            print "<td style=\"border-right:none;\">
-            <button id=\"ver\" class=\"reset\" data-id=\"".$row->npedido."\"><span>Ver</span></button>
-                </td>"; 
+                print "<td>";
+                print "<form action='nPedido.php' method='post'>";
+                print "<input type='hidden' name='turma' value='" . $row->npedido . "'>";
+                print "<button class=\"reset\" type='submit'><span>Editar</span> </button>";
+                print "</form>";
+                print"</td>"; 
             print "</tr>";
 
         }
