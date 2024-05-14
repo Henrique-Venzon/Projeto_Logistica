@@ -36,6 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ?>
         <div class="meio">
         <div class="DivDireita">
+        
+
             
         <h1 class="centroT">Lista de alunos</h1>
 
