@@ -80,7 +80,7 @@ if($qtd > 0){
                 print "<td>";
                 print "<form action='nPedido.php' method='post'>";
                 print "<input type='hidden' name='turma' value='" . $row->npedido . "'>";
-                print "<button class=\"reset\" type='submit'><span>Editar</span> </button>";
+                print "<button class=\"reset\" type='submit'><span>Ver</span> </button>";
                 print "</form>";
                 print"</td>"; 
             print "</tr>";

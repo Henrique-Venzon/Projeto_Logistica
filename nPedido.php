@@ -32,10 +32,80 @@ if (!isset($_SESSION['turma'])) {
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="css/verPedidos.css">
+    <link rel="stylesheet" href="css/nPedido.css">
 </head>
 
 <body>
+<?php
+$servername = "localhost";
+$username = "root.Att";
+$password = "root";
+$dbname = "logistica";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+$sql = "SELECT `placa`, `NomeMotorista`, `container`, `navio`, `tipo`, `lacre`, `LacreSif`, `IMD`, `NOnu`, `npedido`, `Empresa`, `cliente`, `telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`, `Temperatura`, `turma_id` FROM transporte where turma_id = '".$_SESSION['turma']."' and `npedido`='" . $npedido_ver . "'  ";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        $placa = $row['placa'];
+        $NomeMotorista = $row['NomeMotorista'];
+        $container = $row['container'];
+        $navio = $row['navio'];
+        $tipo = $row['tipo'];
+        $lacre = $row['lacre'];
+        $LacreSif = $row['LacreSif'];
+        $IMD = $row['IMD'];
+        $NOnu = $row['NOnu'];
+        $npedido = $row['npedido'];
+        $Empresa = $row['Empresa'];
+        $cliente = $row['cliente'];
+        $telefone = $row['telefone'];
+        $CEP = $row['CEP'];
+        $produto1 = $row['produto1'];
+        $produto2 = $row['produto2'];
+        $produto3 = $row['produto3'];
+        $produto4 = $row['produto4'];
+        $unidade1 = $row['unidade1'];
+        $unidade2 = $row['unidade2'];
+        $unidade3 = $row['unidade3'];
+        $unidade4 = $row['unidade4'];
+        $quantidade1 = $row['quantidade1'];
+        $quantidade2 = $row['quantidade2'];
+        $quantidade3 = $row['quantidade3'];
+        $quantidade4 = $row['quantidade4'];
+        $valor1 = $row['valor1'];
+        $valor2 = $row['valor2'];
+        $valor3 = $row['valor3'];
+        $valor4 = $row['valor4'];
+        $ncm1 = $row['ncm1'];
+        $ncm2 = $row['ncm2'];
+        $ncm3 = $row['ncm3'];
+        $ncm4 = $row['ncm4'];
+        $cst1 = $row['cst1'];
+        $cst2 = $row['cst2'];
+        $cst3 = $row['cst3'];
+        $cst4 = $row['cst4'];
+        $cfop1 = $row['cfop1'];
+        $cfop2 = $row['cfop2'];
+        $cfop3 = $row['cfop3'];
+        $cfop4 = $row['cfop4'];
+        $Temperatura = $row['Temperatura'];
+        $turma_id = $row['turma_id'];
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+
+
+
+
+?>
     <?php
     include 'include/header.php'
         ?>
@@ -50,78 +120,151 @@ if (!isset($_SESSION['turma'])) {
                 <div class="text">
                     <h1>Pedidos</h1>
                 </div>
+                <div class="tabela-scroll">
+                <Div class="nomet">   
+                <h1>Cliente</h1>
+                </Div>
+                <table class="table">
+                    <tr>
+                        <th>N° Pedido</th>
+                        <th>Cliente</th>
+                        <th>Empresa</th>
+                        <th>CEP</th>
+                        <th>Telefone</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo $CEP; ?></td>
+                        <td><?php echo $cliente; ?></td>
+                        <td><?php echo $Empresa; ?></td>
+                        <td><?php echo $CEP; ?></td>
+                        <td><?php echo $telefone; ?></td>
+                    </tr>
+                </table>
+                <Div class="nomet">   
+                <h1>Produto</h1>
+                </Div>
+                    <table class="table">
+                    <tr>
+                        <th>Produto 1</th>
+                        <th>Produto 2</th>
+                        <th>Produto 3</th>
+                        <th>Produto 4</th>
 
-                <?php
+                    </tr>
+                    <tr>
+                        <td><?php echo $produto1; ?></td>
+                        <td><?php echo $produto2; ?></td>
+                        <td><?php echo $produto3; ?></td>
+                        <td><?php echo $produto4; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Unidade 1</th>
+                        <th>Unidade 2</th>
+                        <th>Unidade 3</th>
+                        <th>Unidade 4</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo $unidade1; ?></td>
+                        <td><?php echo $unidade2; ?></td>
+                        <td><?php echo $unidade3; ?></td>
+                        <td><?php echo $unidade4; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Quantidade 1</th>
+                        <th>Quantidade 2</th>
+                        <th>Quantidade 3</th>
+                        <th>Quantidade 4</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo $quantidade1; ?></td>
+                        <td><?php echo $quantidade2; ?></td>
+                        <td><?php echo $quantidade3; ?></td>
+                        <td><?php echo $quantidade4; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Valor 1</th>
+                        <th>Valor 2</th>
+                        <th>Valor 3</th>
+                        <th>Valor 4</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo $valor1; ?></td>
+                        <td><?php echo $valor2; ?></td>
+                        <td><?php echo $valor3; ?></td>
+                        <td><?php echo $valor4; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Ncm 1</th>
+                        <th>Ncm 2</th>
+                        <th>Ncm 3</th>
+                        <th>Ncm 4</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo $ncm1; ?></td>
+                        <td><?php echo $ncm2; ?></td>
+                        <td><?php echo $ncm3; ?></td>
+                        <td><?php echo $ncm4; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Cfop 1</th>
+                        <th>Cfop 2</th>
+                        <th>Cfop 3</th>
+                        <th>Cfop 4</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo $cfop1; ?></td>
+                        <td><?php echo $cfop2; ?></td>
+                        <td><?php echo $cfop3; ?></td>
+                        <td><?php echo $cfop4; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Cst 1</th>
+                        <th>Cst 2</th>
+                        <th>Cst 3</th>
+                        <th>Cst 4</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo $cst1; ?></td>
+                        <td><?php echo $cst2; ?></td>
+                        <td><?php echo $cst3; ?></td>
+                        <td><?php echo $cst4; ?></td>
+                    </tr>
+                </table>
+                <Div class="nomet">   
+                <h1>Transporte</h1>
+                </Div>
+                <table class="table">
+                    <tr>
+                        <th>Motorista</th>
+                        <th>Placa</th>
+                        <th>Container</th>
+                        <th>Navio</th>
+                        <th>Tipo</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo $NomeMotorista; ?></td>
+                        <td><?php echo $placa; ?></td>
+                        <td><?php echo $container; ?></td>
+                        <td><?php echo $navio; ?></td>
+                        <td><?php echo $tipo; ?></td>
+                    </tr>
+                    <tr>
+                        <th>LacreSif</th>
+                        <th>Lacre</th>
+                        <th>temperatura</th>
+                        <th>NOnu</th>
+                        <th>IMD</th>
+                    </tr>
+                    <tr>
+                        <td><?php echo $LacreSif; ?></td>
+                        <td><?php echo $lacre; ?></td>
+                        <td><?php echo $Temperatura; ?></td>
+                        <td><?php echo $NOnu; ?></td>
+                        <td><?php echo $IMD; ?></td>
+                    </tr>
 
-                $servername = "localhost";
-                $username = "root.Att";
-                $password = "root";
-                $dbname = "logistica";
-
-                // Create connection
-                $conn = new mysqli($servername, $username, $password, $dbname);
-
-                $sql = "SELECT `placa`, `NomeMotorista`, `container`, `navio`, `tipo`, `lacre`, `LacreSif`, `IMD`, `NOnu`, `npedido`, `Empresa`, `cliente`, `telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`, `Temperatura`, `turma_id` FROM transporte where turma_id = '".$_SESSION['turma']."' and `npedido`='" . $npedido_ver . "'  ";
-
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    // output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        $placa = $row['placa'];
-                        $NomeMotorista = $row['NomeMotorista'];
-                        $container = $row['container'];
-                        $navio = $row['navio'];
-                        $tipo = $row['tipo'];
-                        $lacre = $row['lacre'];
-                        $LacreSif = $row['LacreSif'];
-                        $IMD = $row['IMD'];
-                        $NOnu = $row['NOnu'];
-                        $npedido = $row['npedido'];
-                        $Empresa = $row['Empresa'];
-                        $cliente = $row['cliente'];
-                        $telefone = $row['telefone'];
-                        $CEP = $row['CEP'];
-                        $produto1 = $row['produto1'];
-                        $produto2 = $row['produto2'];
-                        $produto3 = $row['produto3'];
-                        $produto4 = $row['produto4'];
-                        $unidade1 = $row['unidade1'];
-                        $unidade2 = $row['unidade2'];
-                        $unidade3 = $row['unidade3'];
-                        $unidade4 = $row['unidade4'];
-                        $quantidade1 = $row['quantidade1'];
-                        $quantidade2 = $row['quantidade2'];
-                        $quantidade3 = $row['quantidade3'];
-                        $quantidade4 = $row['quantidade4'];
-                        $valor1 = $row['valor1'];
-                        $valor2 = $row['valor2'];
-                        $valor3 = $row['valor3'];
-                        $valor4 = $row['valor4'];
-                        $ncm1 = $row['ncm1'];
-                        $ncm2 = $row['ncm2'];
-                        $ncm3 = $row['ncm3'];
-                        $ncm4 = $row['ncm4'];
-                        $cst1 = $row['cst1'];
-                        $cst2 = $row['cst2'];
-                        $cst3 = $row['cst3'];
-                        $cst4 = $row['cst4'];
-                        $cfop1 = $row['cfop1'];
-                        $cfop2 = $row['cfop2'];
-                        $cfop3 = $row['cfop3'];
-                        $cfop4 = $row['cfop4'];
-                        $Temperatura = $row['Temperatura'];
-                        $turma_id = $row['turma_id'];
-                    }
-                } else {
-                    echo "0 results";
-                }
-                $conn->close();
-
-
-
-
-                ?>
+                </table>
+            </div>                           
             </div>
         </div>
     </main>
