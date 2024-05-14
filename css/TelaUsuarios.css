@@ -145,6 +145,8 @@ main{
     height: 90%;
     background-color: #1c1c1c;
     border-radius: 40px; 
+      position: relative;
+
 }
 
 
@@ -153,4 +155,6 @@ main{
     color: white;
     text-shadow: 2px 2px 5px #000000;
 }
+
+
 

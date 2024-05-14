@@ -50,16 +50,7 @@ if (!isset($_SESSION['turma'])) {
                 <div class="txtCont">
                     <h1>Criar pedido</h1>
                 </div>
-                <div class="botaoAtt">
-                <button id="myBtn">Verificar Atividades Concluídas</button>
-                </div>
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <div class="close"><span class="close">&times;</span></div>
-                        <?php ?>
-                        <p>Atividades concluídas pelos alunos serão exibidas aqui.</p>
-                    </div>
-                </div>
+
                 <div class="form">
                     <div class="tabela-scroll">
                         <form action="processamento/processarcontainer.php" method="post">

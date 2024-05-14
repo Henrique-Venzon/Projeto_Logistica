@@ -260,7 +260,7 @@ $turma = $_SESSION['turma']
 
                                 echo '
                     <div class="enviar">
-                        <text>Nenhum Container Selecionado.</text>
+                        <text>Nenhum Container disponível</text>
                     </div>
                     </form>';
                             ?>
