@@ -12,7 +12,7 @@ if(!isset($_SESSION['turma'])){
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
-<link rel="shortcut icon" href="img/logo32.png" type="image/x-icon">
+<link rel="shortcut icon" href="img/amem.svg">
 
     <title><?php 
     $tituloPag = 'Docas';

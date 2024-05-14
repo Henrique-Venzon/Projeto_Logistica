@@ -96,7 +96,10 @@
   width: 0;
   
 }
-
+.img-logo{
+  height: 32px;
+  width: 32px;
+}
 .reset:hover:before {
   width: 100%;
 }

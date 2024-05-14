@@ -48,9 +48,9 @@
     text-shadow: 2px 2px 10px #000000; 
 }
 .logo img{
-    margin-left: 3%;
-    height: 5%;
-    width: 7%;
+    margin-left: 7.7%;
+    height: 60px;
+    width: 62px;
 }
 .sair{
     position: absolute;
@@ -69,7 +69,7 @@
 
 <header>
     <div class="logo">
-            <img src="img/logo.png" alt="">
+            <img src="img/amem.png" alt="">
             <h1>LogConnect</h1>
         </div>
          

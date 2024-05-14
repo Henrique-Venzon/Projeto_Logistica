@@ -23,7 +23,7 @@ if (isset($_SESSION['error'])) {
     <link rel="stylesheet" href="css/projetosCSS.css">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
-    <link rel="shortcut icon" href="img/logo32.png" type="image/x-icon">
+        <link rel="shortcut icon" href="img/amem.svg">
     <script src="https://kit.fontawesome.com/6934df05fc.js" crossorigin="anonymous"></script>
 
 
