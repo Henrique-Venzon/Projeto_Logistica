@@ -55,7 +55,7 @@ $dbname = "logistica";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);     
 
-$sql = "SELECT * FROM transporte ";
+$sql = "SELECT * FROM transporte ORDER BY `transporte`.`situacao` ASC";
 
 $res = $conn->query($sql);
 
@@ -67,29 +67,36 @@ if($qtd > 0){
 
     print "<tr>";
             print "<th>N° Pedido</th>";
-            print "<th>Excluir</th>";
+            print"<th>Situação</th>";
+            print "<th>Fechar Pedido</th>";
             print "<th>Ver pedido</th>";
             print "<th style=\"border-right:none;\">Criar Nota Fiscal</th>";
             print "</tr>";
     
         while($row = $res->fetch_object()){
             print "<tr>";
+            print "<form action='processamento/fechar_atividade.php' method='post'>";
+            print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id . "'>";
             print "<td>".$row->npedido."</td>";
-            print "<td >
-            <button class=\"reset\" data-id=\"".$row->npedido."\"><span>Excluir</span></button>
-                </td>"; 
-                print "<td>";
-                print "<form action='nPedido.php' method='post'>";
-                print "<input type='hidden' name='turma' value='" . $row->npedido . "'>";
-                print "<button class=\"reset\" type='submit'><span>Ver</span> </button>";
-                print "</form>";
-                print"</td>"; 
-                print "<td >";
-                print "<form action='nPedido.php' method='post'>";
-
-                print "<button onclick=\"nota()\" class=\"reset\" data-id=\"".$row->npedido."\"><span>Criar</span></button>";
-                print "</form>";
-                print "</td>";
+            print "<td>";
+            print $row->situacao;
+            print "</td>";
+            print "<td>
+            <button class=\"reset\" data-id=\"".$row->npedido."\"><span>Fechar Pedido</span></button>
+            </td>"; 
+            print "<td>";
+            print"</form>";
+            print "<form action='nPedido.php' method='post'>";
+            print "<input type='hidden' name='turma' value='" . $row->npedido . "'>";
+            print "<button class=\"reset\" type='submit'><span>Ver</span> </button>";
+            print "</form>";
+            print"</td>"; 
+            print "<td >";
+            print "<form action='criardanfe.php' method='post'>";
+            print "<input type='hidden' name='turma' value='" . $row->npedido . "'>";
+            print "<button type='submit' class=\"reset\"><span>Criar</span></button>";
+            print "</form>";
+            print "</td>";
             print "</tr>";
 
         }

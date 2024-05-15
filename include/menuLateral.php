@@ -279,16 +279,28 @@
                         <i class="fa-solid fa-hand-holding-hand"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Recebimentos</span>
                     </a>
+                    <?php if($_SESSION['tipo_login']=='aluno')
+                echo '
                     <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
                             <a id="linkContainer" style="margin-bottom: -1.4px;" href="container.php"
-                                class="sidebar-link">Container</a>
+                                class="sidebar-link">Pedido</a>
                         </li>
                         <li class="sidebar-item">
                             <a  href="#" style="margin-top: -1.4px;" class="sidebar-link">Carga</a>
                         </li>
                     </ul>
-                </li>
+                </li>';elseif ($_SESSION['tipo_login']=='professor')
+                // Remover esse comentario retirando o dropbutton, não será necessario.
+                echo '
+                <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a id="linkContainer" style="margin-bottom: -1.4px;" href="container.php"
+                            class="sidebar-link">Criar Pedido</a>
+                    </li>
+                </ul>
+            </li>';?>
+                
                 <?php if($_SESSION['tipo_login']=='professor')
                 echo '
                 <li class="sidebar-item">
@@ -298,9 +310,6 @@
                         <span class="sidebar-text" style="margin-left:10px;">Pedidos</span>
                     </a>
                     <ul id="pedido" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                        <li class="sidebar-item">
-                            <a style="margin-bottom: -1.25px;" href="produtos.php" class="sidebar-link">Criar pedidos</a>
-                        </li>
                         <li class="sidebar-item">
                             <a style="margin-top: -1.25px;" href="verPedido.php" class="sidebar-link">Ver pedidos</a>
                         </li>
