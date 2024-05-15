@@ -68,7 +68,8 @@ if($qtd > 0){
     print "<tr>";
             print "<th>N° Pedido</th>";
             print "<th>Excluir</th>";
-            print "<th style=\"border-right:none;\">Ver pedido</th>";
+            print "<th>Ver pedido</th>";
+            print "<th style=\"border-right:none;\">Criar Nota Fiscal</th>";
             print "</tr>";
     
         while($row = $res->fetch_object()){
@@ -83,6 +84,9 @@ if($qtd > 0){
                 print "<button class=\"reset\" type='submit'><span>Ver</span> </button>";
                 print "</form>";
                 print"</td>"; 
+                print "<td >
+                <button onclick=\"nota()\" class=\"reset\" data-id=\"".$row->npedido."\"><span>Criar</span></button>
+                    </td>";
             print "</tr>";
 
         }

@@ -317,20 +317,12 @@
                 <?php if($_SESSION['tipo_login']=='professor')
                 echo '
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                        data-bs-target="#Nota" aria-expanded="false" aria-controls="Nota">
-                        <i class="fa-solid fa-receipt"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
-                    </a>
-                    <ul id="Nota" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                        <li class="sidebar-item">
-                            <a style="margin-bottom: -1.25px;" href="#" class="sidebar-link">Criar Danfe</a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a style="margin-top: -1.25px;" href="#" class="sidebar-link">Minhas Danfe</a>
-                        </li>
-                    </ul>
-                </li>
+                <a href="notaf.php" class="sidebar-link">
+                <i class="fa-solid fa-receipt"></i>
+                    <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
+                </a>
+            </li>
+                
 
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
