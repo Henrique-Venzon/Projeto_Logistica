@@ -7,7 +7,7 @@
     <title>LOGIN</title>
     <link rel="stylesheet" href="css/estiloLogin.css">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="img/logo32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/amem.svg">
 
 </head>
 

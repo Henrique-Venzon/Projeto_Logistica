@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <head>
 <meta name="vierport" content="width=device-width, initial-scale=1.0" >
-<link rel="shortcut icon" href="img/logo32.png" type="image/x-icon">
+<link rel="shortcut icon" href="img/amem.svg">
 
     <meta charset="utf-8">
     <title><?php 
@@ -80,7 +80,7 @@ if($qtd > 0){
                 print "<td>";
                 print "<form action='nPedido.php' method='post'>";
                 print "<input type='hidden' name='turma' value='" . $row->npedido . "'>";
-                print "<button class=\"reset\" type='submit'><span>Editar</span> </button>";
+                print "<button class=\"reset\" type='submit'><span>Ver</span> </button>";
                 print "</form>";
                 print"</td>"; 
             print "</tr>";

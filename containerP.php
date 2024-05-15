@@ -13,7 +13,7 @@ if (!isset($_SESSION['turma'])) {
 
 <head>
     <meta name="vierport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/logo32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/amem.svg">
 
     <meta charset="utf-8">
     <title><?php
@@ -73,7 +73,7 @@ if (!isset($_SESSION['turma'])) {
                                 </div>
                                 <div class="cep">
                                     <label for="cep">CEP:</label>
-                                    <input id="cep" type="number" name="CEP">
+                                    <input id="cep" type="text" name="CEP">
                                 </div>
                             </div>
 
@@ -214,17 +214,14 @@ if (!isset($_SESSION['turma'])) {
                                 </div>
                                 <input type="text">
                             </div>
+                            
 
                             <div class="enviar">
                                 <input type="submit" onclick="exibirMensagem()">
                             </div>
 
                         </form>
-
                     </div>
-
-
-
 
                 </div>
 
@@ -246,23 +243,3 @@ if (!isset($_SESSION['turma'])) {
 </body>
 
 </html>
-
-<script>
-    var modal = document.getElementById("myModal");
-    var btn = document.getElementById("myBtn");
-    var span = document.getElementsByClassName("close")[0];
-
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
-
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>

@@ -50,64 +50,12 @@
     box-shadow: 0px 0px  10px black;
     border-radius: 40px; 
 }
-.reset,
-.reset *,
-.reset :after,
-.reset :before,
-.reset:after,
-.reset:before {
-  box-sizing: border-box;
-}
-.reset {
-  -webkit-tap-highlight-color: transparent;
-  background-color: #ffffff;
-  color: #fff;
-  background-image: none;
-  color: #fff;
-  line-height: 1.5;
-  margin: 0;
-  padding: 0;
-  text-transform: uppercase;
-  border: 0.8 solid black;
-}
 
-.reset {
-  overflow: hidden;
-  position: relative;
-}
-.reset:hover {
-  transform: scale(1);
-
-}
-.reset span {
-  font-weight: 80;
-  mix-blend-mode: difference;
-}
-.reset:before {
-  aspect-ratio: 1;
-  background: #000000;
-  border-radius: 50%;
-  content: "";
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 1s;
-  width: 0;
-  
-}
-.img-logo{
-  height: 32px;
-  width: 32px;
-}
-.reset:hover:before {
-  width: 100%;
-}
 
 
 .tabela-scroll {
-  max-height: 69vh; 
-  overflow-y: auto; 
+    max-height: 69vh; 
+    overflow-y: auto; 
     outline: 1px solid #000;
 
   }
@@ -117,6 +65,7 @@
     border-right: 1px solid black;
 
   }
+  
   
 
   .tabela-scroll::-webkit-scrollbar-track {
@@ -128,8 +77,16 @@
   }
 
 
-
-
+.nomet{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5%;
+    margin-top: 0.5%;
+}
+.nomet h1{
+    color: #fff;
+    text-shadow: 0 0 8px black;
+}
 
 *{
     padding: 0;

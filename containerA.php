@@ -14,7 +14,7 @@ $turma = $_SESSION['turma']
 
 <head>
     <meta name="vierport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/logo32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/amem.svg">
 
     <meta charset="utf-8">
     <title><?php
