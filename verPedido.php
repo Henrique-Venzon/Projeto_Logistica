@@ -84,9 +84,12 @@ if($qtd > 0){
                 print "<button class=\"reset\" type='submit'><span>Ver</span> </button>";
                 print "</form>";
                 print"</td>"; 
-                print "<td >
-                <button onclick=\"nota()\" class=\"reset\" data-id=\"".$row->npedido."\"><span>Criar</span></button>
-                    </td>";
+                print "<td >";
+                print "<form action='nPedido.php' method='post'>";
+
+                print "<button onclick=\"nota()\" class=\"reset\" data-id=\"".$row->npedido."\"><span>Criar</span></button>";
+                print "</form>";
+                print "</td>";
             print "</tr>";
 
         }
