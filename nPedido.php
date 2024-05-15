@@ -253,8 +253,8 @@ $conn->close();
                     </tr>
                     <tr>
                         <td><?php echo $cst1; ?></td>
-                        <?php if ($cst4!='0')echo '<td>'.$cst2.'</td>'; ?>
-                        <?php if ($cst4!='0')echo '<td>'.$cst3.'</td>'; ?>
+                        <?php if ($cst2!='0')echo '<td>'.$cst2.'</td>'; ?>
+                        <?php if ($cst3!='0')echo '<td>'.$cst3.'</td>'; ?>
                         <?php if ($cst4!='0')echo '<td>'.$cst4.'</td>'; ?>
                     </tr>
                 </table>
