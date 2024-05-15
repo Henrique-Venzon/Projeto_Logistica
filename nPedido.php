@@ -146,16 +146,20 @@ $conn->close();
                     <table class="table">
                     <tr>
                         <th>Produto 1</th>
-                        <th>Produto 2</th>
-                        <th>Produto 3</th>
-                        <th>Produto 4</th>
+                        <?php
+                        if ($produto2!='') print"
+                        <th>Produto 2</th>";
+                        if ($produto3!='') print"
+                        <th>Produto 3</th>";
+                        if ($produto4!='') print"
+                        <th>Produto 4</th>";?>
 
                     </tr>
                     <tr>
                         <td><?php echo $produto1; ?></td>
-                        <td><?php if ($produto2=' ')$produto2='Não Inserido';echo $produto2; ?></td>
-                        <td><?php if ($produto3=' ')$produto3='Não Inserido';echo $produto3; ?></td>
-                        <td><?php if ($produto4=' ')$produto4='Não Inserido';echo $produto4; ?></td>
+                        <td><?php if ($produto2=='')$produto2='Não Inserido';echo $produto2; ?></td>
+                        <td><?php if ($produto3=='')$produto3='Não Inserido';echo $produto3; ?></td>
+                        <td><?php if ($produto4=='')$produto4='Não Inserido';echo $produto4; ?></td>
                     </tr>
                     <tr>
                         <th>Unidade 1</th>
@@ -165,9 +169,9 @@ $conn->close();
                     </tr>
                     <tr>
                         <td><?php echo $unidade1; ?></td>
-                        <td><?php if ($unidade2=' ')$unidade2='Não Inserido';echo $unidade2; ?></td>
-                        <td><?php if ($unidade3=' ')$unidade3='Não Inserido';echo $unidade3; ?></td>
-                        <td><?php if ($unidade4=' ')$unidade4='Não Inserido';echo $unidade4; ?></td>
+                        <td><?php if ($unidade2==' ')$unidade2='Não Inserido';echo $unidade2; ?></td>
+                        <td><?php if ($unidade3==' ')$unidade3='Não Inserido';echo $unidade3; ?></td>
+                        <td><?php if ($unidade4==' ')$unidade4='Não Inserido';echo $unidade4; ?></td>
                     </tr>
                     <tr>
                         <th>Quantidade 1</th>
