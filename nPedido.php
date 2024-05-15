@@ -141,11 +141,11 @@ $conn->close();
                     </tr>
                 </table>
                 <Div class="nomet">   
-                <h1>Produto</h1>
+                <h1>Produtos cadastrados:</h1>
                 </Div>
                     <table class="table">
                     <tr>
-                        <th>Produto 1</th>
+                        <th>Produto </th>
                         <?php
                         if ($produto2!='') print"
                         <th>Produto 2</th>";
@@ -157,81 +157,105 @@ $conn->close();
                     </tr>
                     <tr>
                         <td><?php echo $produto1; ?></td>
-                        <td><?php if ($produto2=='')$produto2='Não Inserido';echo $produto2; ?></td>
-                        <td><?php if ($produto3=='')$produto3='Não Inserido';echo $produto3; ?></td>
-                        <td><?php if ($produto4=='')$produto4='Não Inserido';echo $produto4; ?></td>
+                        <?php if ($produto2!='')echo '<td>'.$produto2.'</td>'; ?>
+                        <?php if ($produto3!='')echo '<td>'.$produto3.'</td>'; ?>
+                        <?php if ($produto4!='')echo '<td>'.$produto4.'</td>'; ?>
                     </tr>
                     <tr>
-                        <th>Unidade 1</th>
-                        <th>Unidade 2</th>
-                        <th>Unidade 3</th>
-                        <th>Unidade 4</th>
+                        <th>Unidade </th>
+                        <?php
+                        if ($unidade2!=' ') print"
+                        <th>unidade 2</th>";
+                        if ($unidade3!=' ') print"
+                        <th>unidade 3 </th>";
+                        if ($unidade4!=' ') print"
+                        <th>unidade 4</th>";?>
                     </tr>
                     <tr>
                         <td><?php echo $unidade1; ?></td>
-                        <td><?php if ($unidade2==' ')$unidade2='Não Inserido';echo $unidade2; ?></td>
-                        <td><?php if ($unidade3==' ')$unidade3='Não Inserido';echo $unidade3; ?></td>
-                        <td><?php if ($unidade4==' ')$unidade4='Não Inserido';echo $unidade4; ?></td>
+                        <?php if ($unidade2!=' ')echo '<td>'.$unidade2.'</td>'; ?>
+                        <?php if ($unidade3!=' ')echo '<td>'.$unidade3.'</td>'; ?>
+                        <?php if ($unidade4!=' ')echo '<td>'.$unidade4.'</td>'; ?>
                     </tr>
                     <tr>
-                        <th>Quantidade 1</th>
-                        <th>Quantidade 2</th>
-                        <th>Quantidade 3</th>
-                        <th>Quantidade 4</th>
+                        <th>Quantidade </th>
+                        <?php
+                        if ($quantidade2!='0') print"
+                        <th>quantidade 2</th>";
+                        if ($quantidade3!='0') print"
+                        <th>qantidade 3</th>";
+                        if ($quantidade4!='0') print"
+                        <th>quantidade 4</th>";?>
                     </tr>
                     <tr>
                         <td><?php echo $quantidade1; ?></td>
-                        <td><?php echo $quantidade2; ?></td>
-                        <td><?php echo $quantidade3; ?></td>
-                        <td><?php echo $quantidade4; ?></td>
+                        <?php if ($quantidade2!='0')echo '<td>'.$quantidade2.'</td>'; ?>
+                        <?php if ($quantidade3!='0')echo '<td>'.$quantidade3.'</td>'; ?>
+                        <?php if ($quantidade4!='0')echo '<td>'.$quantidade4.'</td>'; ?>
                     </tr>
                     <tr>
-                        <th>Valor 1</th>
-                        <th>Valor 2</th>
-                        <th>Valor 3</th>
-                        <th>Valor 4</th>
+                        <th>Valor </th>
+                        <?php
+                        if ($valor2!='0.00') print"
+                        <th>valor 2</th>";
+                        if ($valor3!='0.00') print"
+                        <th>valor 3</th>";
+                        if ($valor4!='0.00') print"
+                        <th>valor 4</th>";?>
                     </tr>
                     <tr>
                         <td><?php echo $valor1; ?></td>
-                        <td><?php echo $valor2; ?></td>
-                        <td><?php echo $valor3; ?></td>
-                        <td><?php echo $valor4; ?></td>
+                        <?php if ($valor2!='0.00')echo '<td>'.$valor2.'</td>'; ?>
+                        <?php if ($valor3!='0.00')echo '<td>'.$valor3.'</td>'; ?>
+                        <?php if ($valor4!='0.00')echo '<td>'.$valor4.'</td>'; ?>
                     </tr>
                     <tr>
-                        <th>Ncm 1</th>
-                        <th>Ncm 2</th>
-                        <th>Ncm 3</th>
-                        <th>Ncm 4</th>
+                        <th>Ncm </th>
+                        <?php
+                        if ($ncm2!='0') print"
+                        <th>ncm 2</th>";
+                        if ($ncm3!='0') print"
+                        <th>ncm 3</th>";
+                        if ($ncm4!='0') print"
+                        <th>ncm 4</th>";?>
                     </tr>
                     <tr>
                         <td><?php echo $ncm1; ?></td>
-                        <td><?php echo $ncm2; ?></td>
-                        <td><?php echo $ncm3; ?></td>
-                        <td><?php echo $ncm4; ?></td>
+                        <?php if ($ncm2!='0')echo '<td>'.$ncm2.'</td>'; ?>
+                        <?php if ($ncm3!='0')echo '<td>'.$ncm3.'</td>'; ?>
+                        <?php if ($ncm4!='0')echo '<td>'.$ncm4.'</td>'; ?>
                     </tr>
                     <tr>
-                        <th>Cfop 1</th>
-                        <th>Cfop 2</th>
-                        <th>Cfop 3</th>
-                        <th>Cfop 4</th>
+                        <th>Cfop </th>
+                        <?php
+                        if ($cfop2!='0') print"
+                        <th>cfop 2</th>";
+                        if ($cfop3!='0') print"
+                        <th>cfop 3</th>";
+                        if ($cfop4!='0') print"
+                        <th>cfop 4</th>";?>
                     </tr>
                     <tr>
                         <td><?php echo $cfop1; ?></td>
-                        <td><?php echo $cfop2; ?></td>
-                        <td><?php echo $cfop3; ?></td>
-                        <td><?php echo $cfop4; ?></td>
+                        <?php if ($cfop2!='0')echo '<td>'.$cfop2.'</td>'; ?>
+                        <?php if ($cfop3!='0')echo '<td>'.$cfop3.'</td>'; ?>
+                        <?php if ($cfop4!='0')echo '<td>'.$cfop4.'</td>'; ?>
                     </tr>
                     <tr>
-                        <th>Cst 1</th>
-                        <th>Cst 2</th>
-                        <th>Cst 3</th>
-                        <th>Cst 4</th>
+                        <th>Cst </th>
+                        <?php
+                        if ($cst2!='0') print"
+                        <th>cst 2</th>";
+                        if ($cst3!='0') print"
+                        <th>cst 3</th>";
+                        if ($cst4!='0') print"
+                        <th>cst 4</th>";?>
                     </tr>
                     <tr>
                         <td><?php echo $cst1; ?></td>
-                        <td><?php echo $cst2; ?></td>
-                        <td><?php echo $cst3; ?></td>
-                        <td><?php echo $cst4; ?></td>
+                        <?php if ($cst4!='0')echo '<td>'.$cst2.'</td>'; ?>
+                        <?php if ($cst4!='0')echo '<td>'.$cst3.'</td>'; ?>
+                        <?php if ($cst4!='0')echo '<td>'.$cst4.'</td>'; ?>
                     </tr>
                 </table>
                 <Div class="nomet">   
