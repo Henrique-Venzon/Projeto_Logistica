@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <meta charset="utf-8">
     <title><?php 
-    $tituloPag = 'Ver Pedidos';
+    $tituloPag = 'Nota Fiscal';
     echo "$tituloPag"; 
     ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="table-inputs">
 
             <div class="text">
-                <h1>Ver Pedidos</h1>
+                <h1>Nota Fiscal</h1>
             </div>
                 
             <?php        
@@ -83,7 +83,7 @@ if($qtd > 0){
         print "</div>";
 
 }else{
-    print "<p class='alert alert-danger'>Não encrontrou nenhum pedido</p>";
+    print "<p class='alert alert-danger'>Não encrontrou nenhuma nota fiscal criada</p>";
 }
 
 ?>
