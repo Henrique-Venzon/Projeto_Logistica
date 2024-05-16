@@ -43,10 +43,15 @@ if (!isset($_SESSION['turma'])) {
 
         <div class="DivDireita">
             <div class="table-inputs">
-            <span class="tooltip-container">
-            <i class="fa-regular fa-circle-question"></i>
-        <span class="tooltip">Insira os dados para criar o pedido!</span>
-    </span>
+                <button
+                    onclick="setMultipleInputValues({'empresa': 'portonave', 'nomeCliente': 'Matheus Yan', 'telefone':'4739406838','cep':'88370904'})">Preset
+                    1</button>
+                <button>Preset 2</button>
+                <button>Preset 3</button>
+                <span class="tooltip-container">
+                    <i class="fa-regular fa-circle-question"></i>
+                    <span class="tooltip">Insira os dados para criar o pedido!</span>
+                </span>
                 <div class="txtCont">
                     <h1>Criar pedido</h1>
                 </div>
@@ -95,7 +100,7 @@ if (!isset($_SESSION['turma'])) {
                                         <option value="KG">KG</option>
                                     </select>
                                     <select id="unidade" name="unidade2">
-                                        <?php // <?php if ($produto2==' ') print "<option value=' '> </option>" ?> 
+                                        <?php // <?php if ($produto2==' ') print "<option value=' '> </option>" ?>
                                         <option value=" "> </option>
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
@@ -158,8 +163,12 @@ if (!isset($_SESSION['turma'])) {
                                     <input type="text" id="cfop" name="cfop4">
                                 </div>
                             </div>
+                        </form>
+                        <div class="enviar">
+                            <input type="submit" onclick="exibirMensagem()">
+                        </div>
 
-
+                        <form action="processamento/processarcontainer.php" method="post">
                             <div class="transportes">
                                 <h1>Cadastro de Transportes</h1>
                             </div>
@@ -215,7 +224,7 @@ if (!isset($_SESSION['turma'])) {
                                 </div>
                                 <input type="text">
                             </div>
-                            
+
 
                             <div class="enviar">
                                 <input type="submit" onclick="exibirMensagem()">
@@ -244,3 +253,17 @@ if (!isset($_SESSION['turma'])) {
 </body>
 
 </html>
+
+<script>
+    function setMultipleInputValues(values) {
+        for (var id in values) {
+            var inputElement = document.getElementById(id);
+            if (inputElement) {
+                inputElement.value = values[id];
+            } else {
+                console.log("Elemento com ID " + id + " não encontrado.");
+            }
+        }
+    }
+
+</script>

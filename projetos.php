@@ -55,7 +55,7 @@ if (isset($_SESSION['error'])) {
                 // Create connection
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
-                $sql = "SELECT * FROM turma";
+                $sql = "SELECT * FROM turma where id>=0";
 
 
                 $res = $conn->query($sql);
