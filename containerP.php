@@ -58,7 +58,7 @@ if (!isset($_SESSION['turma'])) {
 
                 <div class="form">
                     <div class="tabela-scroll">
-                        <form action="processamento/processarcontainer.php" method="post">
+                        <form action="processamento/carga.php.php" method="post">
                             <div class="colunas1">
                                 <div class="numeroPedido">
                                     <label for="num">N° pedido:</label>
