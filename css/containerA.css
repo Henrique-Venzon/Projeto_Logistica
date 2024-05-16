@@ -10,7 +10,7 @@ main{
 }
 .tabela-scroll {
     margin-top: 20px;
-    max-height: 69vh; 
+    max-height: 64.5vh; 
     overflow-y: auto; 
     outline: 1px solid black;
     background-color: #333333;
@@ -39,56 +39,7 @@ main{
     width: 30%;
     margin-top: 1.5%;
 }
-.colunas1{
 
-    margin-top: 1.2%;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: space-around;
-  }
-  .colunas1 label,.colunas label {
-    display: block;
-    margin-bottom: 3px;
-    color: rgb(255, 255, 255);
-    font-size: 22px;
-    text-shadow: 0 0 5px black;
-  }
-  
-  .colunas1 input,.colunas input{
-    height: 50px;
-    border: 1.5px solid #ffffff;
-    box-sizing: border-box;
-    width: 93%;
-    font-size: 18px;
-    background-color: #f6f6f6;
-    border-radius: 5px;
-    margin-bottom: 4px;
-    box-shadow: 0px 0px 4px rgb(0, 0, 0);
-    margin-top: 8px;
-  }
-  .colunas select{
-    height: 50px;
-    box-shadow: 0px 0px 4px rgb(0, 0, 0);
-    background-color: #f6f6f6;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-bottom: 4px;
-  
-    margin-top: 8px;
-  
-  
-  }
-  .colunas{
-    margin-left: 5px;
-    margin-right: 15px;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    margin-top: 1.2%;
-    justify-content: space-around;
-  
-  }
 
 .inputs{
     display: flex;
@@ -96,6 +47,15 @@ main{
     width:100%;
     justify-content: center;
     margin-top: -1.5%;
+}
+.juntar input{
+    display: grid;
+    width: 75%;
+    text-align: center;
+    padding: 2%;
+    border-radius: 20px;
+    border: solid 1px black;
+    margin-left: 12%;
     
 }
 .juntar input{
@@ -135,7 +95,7 @@ main{
 }
 
 .input-group input[type="checkbox"]:checked + label::before {
-    background-color: #174ede;
+    background-color: #000000;
     border: 1.5px solid #ffffff;
 }
 
@@ -239,100 +199,15 @@ form h1{
     color: #ffffff;
     text-shadow: 0px 0px 10px #000000;
 }
-.inputObs{
-    display: block;
-    margin-top: 2%;
-}
-.inputObs input{
-    height: 60px;
-    width: 240px;
-    text-align: center;
-}
-.inputObs label{
-    font-size: 24px;
-    color: white;
-    text-shadow: 0px 0px 5px black;
-}
-.transportes{
-    margin-top: 1%;
-    display: flex;
-    justify-content: center;
-}
-.transportes h1{
-    font-size: 36px;
-    color: #ffffff;
-    text-shadow: 0px 0px 7px #000000;
-}
-
-
-  .botaoAtt{
-    display: flex;
-    justify-content: center;
-    margin-top: 2%;
-  }
-  .botaoAtt button{
+.enviar text{
+    margin-top: 0.8%;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    border: 2px solid #000000;
     padding: 5px;
-    border-radius: 18px;
-    border: 2px solid black;
-  }
-  .botaoAtt button:hover{
-    background-color: green;
-    border: 2px solid #ffffff;
-    color: white;
-    transition: 1.5s ease-in-out;
-  }
-
-
-
-.tooltip-container {
-   cursor: pointer;
-   position: absolute;
-   width: 60px;
-   vertical-align: middle;
-   right: 10%;
-   margin-top: 2%;
-}
-.tooltip-container .fa-circle-question{
-  font-size: 60px;
-  height: 100%;
-  width: 100%;
-  color: white;
-}
-
-
-
-.tooltip {
-  opacity: 0;
-   z-index: 99;
-   color: #FFF;
-   width: 190px;
-   display: block;
-   font-size: 14px;
-   font-weight: 400;
-   line-height: 19px;
-   padding: 15px 20px;
-   border-radius: 8px;
-   text-align: center;
-   background: #4B5064;
-   transition: all .2s ease-in-out;
-   transform: scale(0);
-   position: absolute;
-   right: -65px;
-   bottom: 85px;
-   font-family: Sans-Serif;
-}
-
-.tooltip:before,.tooltip:after {
-   content: '';
-   border-left: 10px solid transparent;
-   border-right: 10px solid transparent;
-   border-top: 10px solid #4B5064;
-   position: absolute;
-   bottom: -10px;
-   left: 45%;
-}
-
-.tooltip-container:hover .tooltip {
-   opacity: 1;
-   transform: scale(1);
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    border-radius: 15px;
 }

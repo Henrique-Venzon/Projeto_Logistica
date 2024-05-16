@@ -1,10 +1,10 @@
 <style>
     header{
     width: 100%;
-    background-color: #64acff;
+    background-color: #1c1c1c;
     display: flex;
     align-items: center;
-    padding: 5.3px 0;
+    height:7.95vh;
 
 }
 
@@ -17,16 +17,16 @@
 }
 .nomeLogin h1{
     color: #FFF;
-    font-size: 35px;
+    font-size: 200%;
 }
 
 .senai{
-    height: 45px;
+    height: 5%;
     display: flex;
     left: 52%; 
     transform: translateX(-50%); 
     position: absolute;
-    filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
+    box-shadow: 0 0 5px #fff;
 
 }
 
@@ -39,18 +39,37 @@
 .logo{
     align-items: center;
     display: flex;
-    margin-left: 0.8%;
+    margin-left: 0.2%;
 }
 .logo h1{
     margin-left: 5.3%;
     color: #FFF;
-    font-size: 40px;
+    font-size: 200%;
     text-shadow: 2px 2px 10px #000000; 
 }
 .logo img{
-    margin-left: 3%;
-    height: 65px;
-    width: 65px; 
+    margin-left: 7.7%;
+    height: 60px;
+    width: 62px;
+}
+.sair{
+    position: absolute;
+    left: 96%; 
+    transform: translateX(-50%);
+}
+
+.sair i{
+    font-size: 45px;
+    color: white;
+    padding: 7px;
+}
+@media screen and (max-height: 800px){
+    .logo img{
+    margin-left: 7.9%;
+    height: 46px;
+    width: 48px;
+}
+
 }
 </style>
 
@@ -58,18 +77,21 @@
 
 <header>
     <div class="logo">
-            <img src="img/logo.png" alt="">
+            <img src="img/amem.png" alt="">
             <h1>LogConnect</h1>
         </div>
          
         <div class="senai">
-            <img src="img/senai-logo-1.png" alt="">
+            <img src="img/logo-senai03.png" alt="">
         </div>
         
         <div class="nomeLogin">  
         <?php
 				print '<h1>'.$_SESSION['username'].'</h1>';
                             ?>
+        </div>
+        <div class="sair">
+        <a href="processamento/sair.php"><i class="fa-solid fa-person-running"></i></a>
         </div> 
 
         

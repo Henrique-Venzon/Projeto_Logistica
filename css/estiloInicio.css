@@ -6,17 +6,33 @@
     font-family: 'Platypi';
 }
 
+
+
+
 main{
     width: 100%;
     display: flex;
+    background: linear-gradient(-60deg, #515151,#000000,#000000,#515151);
+    background-size: 500% 500%; /* Aumente o tamanho do gradiente */
+    animation: gradient 25s ease infinite;
 }
 
 .DivDireita{
     flex-grow: 1;
-    background-color: #ebebeb;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
 }
 .Imagem{
     justify-content: end;
@@ -25,9 +41,10 @@ main{
     height: 100%;
 }
 .imgLog{
-    height: 100%;
-    width: 190%;
-    filter: drop-shadow(-15px 0px 20px rgb(98, 179, 255));
+    right: 0;
+    height: 92.1%;
+    width: 84vw;
+    position: absolute;
 }
 .centT{
     display: block;
@@ -48,12 +65,11 @@ main{
     margin-bottom: -2.5%;
     margin-top: -2.5%;
 
-    
     }
 .bv{
-    height: 30%;
+    height: 35%;
     display: flex;
-    background-color: #64acff;
+    background-color: #5c5d5f;
     margin-left:5%;
     margin-right: 8%;
     width: 70%;
@@ -65,16 +81,16 @@ main{
     justify-content: center;
     overflow: hidden;
     position: relative;
-    box-shadow: 0px 0px 8px #000000; 
+    box-shadow: 0px 0px 7px #000000; 
 
     
 }
 .bv::before{
     content: "";
     width: 30%;
-    height: 300%;
+    height: 600%;
     position: absolute;
-    background: linear-gradient(180deg, #ffee00,#fc7216);
+    background: linear-gradient(180deg, #ffffff,#ffffff);
 
     animation: animate 5s linear infinite;
 }
@@ -86,8 +102,9 @@ main{
 }
 .bv::after{
     content: "";
-    background-color: #64acff;
+    background-color: #5c5d5f;
     inset: 5px;
     position: absolute;
     border-radius: inherit;
 }
+

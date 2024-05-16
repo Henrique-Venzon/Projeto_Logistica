@@ -1,0 +1,114 @@
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.8%;
+    margin-bottom: 0.8%;
+}
+.text h1{
+    color: white;
+    text-shadow: 0px 0px 9px #000000;
+    font-size: 48px;
+}
+.table{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 0 0 7px black;
+    border-right: #000000 1px solid
+}
+.table th,td{
+    border: solid 1.5px #000000;
+    border-left: none;
+    border-bottom: none;
+    font-size: 30px;
+}
+.table th{
+    height: 50px;
+    border-top: none;
+    background-color: #000000;
+}
+.table td{
+    height: 60px;
+    background-color: #333333;
+}
+.reset{
+    border-radius: 80px;
+    height: 50px;
+    width: 170px;
+    font-size: 25px;
+}
+
+.table-inputs{
+    border: 1.5px solid black;
+    width: 88%;
+    height: 95%;
+    background-color: #1c1c1c;
+    box-shadow: 0px 0px  10px black;
+    border-radius: 40px; 
+}
+
+
+
+.tabela-scroll {
+    max-height: 69vh; 
+    overflow-y: auto; 
+    outline: 1px solid #000;
+
+  }
+  .tabela-scroll::-webkit-scrollbar {
+    height: 5px; /* Altura da barra de rolagem */
+    width: 25px;
+    border-right: 1px solid black;
+
+  }
+  
+  
+
+  .tabela-scroll::-webkit-scrollbar-track {
+    background-color: #333333; /* Cor de fundo da barra de rolagem */
+  }
+  
+  .tabela-scroll::-webkit-scrollbar-thumb {
+    background-color: #000000; /* Cor do "ponteiro" da barra de rolagem */
+  }
+
+
+.nomet{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5%;
+    margin-top: 0.5%;
+}
+.nomet h1{
+    color: #fff;
+    text-shadow: 0 0 8px black;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Platypi';
+}
+
+
+main{
+  width: 100%;
+  display: flex;
+  
+}
+
+.DivDireita{
+    flex-grow: 1;
+    background-color: #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+

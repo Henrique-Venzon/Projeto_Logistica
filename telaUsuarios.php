@@ -4,10 +4,19 @@ if(!isset($_SESSION['id'])){
     header("Location: index.php");
     exit;
 }
+if (($_SESSION['tipo_login'] != 'professor')) {
+    header("Location: index.php");
+    exit;
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['turma'] = $_POST['turma'];}
 ?>
 <!DOCTYPE html>
 
 <head>
+<meta name="vierport" content="width=device-width, initial-scale=1.0" >
+<link rel="shortcut icon" href="img/amem.svg">
+
     <meta charset="utf-8">
     <title><?php 
     $tituloPag = 'Cadastros';
@@ -31,6 +40,8 @@ if(!isset($_SESSION['id'])){
         ?>
         <div class="meio">
         <div class="DivDireita">
+        
+
             
         <h1 class="centroT">Lista de alunos</h1>
 
@@ -44,7 +55,7 @@ if(!isset($_SESSION['id'])){
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);     
 
-        $sql = "SELECT * FROM aluno";
+        $sql = "SELECT * FROM aluno WHERE turma_id = '{$_SESSION['turma']}'";
 
         $res = $conn->query($sql);
 
@@ -65,9 +76,9 @@ if(!isset($_SESSION['id'])){
                     print "<tr>";
                     print "<td>".$row->username."</td>";
                     print "<td>".$row->password."</td>";
-                    print "<td >".$row->turma."</td>";
+                    print "<td >".$row->turma_id."</td>";
                     print "<td style=\"border-right:none;\">
-                    <button class=\"reset\" onclick=\"location.href='?page=editar&id=".$row->id."';\"><span>Resetar</span></button>
+                    <button class=\"reset\" data-id=\"".$row->id."\"><span>Resetar</span></button>
                         </td>"; 
                     print "</tr>";
 
@@ -85,7 +96,23 @@ if(!isset($_SESSION['id'])){
         </div>
     </main>
 
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".reset").click(function(){
+            var id = $(this).data('id'); 
+            $.ajax({
+                url: 'processamento/reset_password.php', 
+                type: 'post',
+                data: {id: id}, 
+                success: function(response){
+                    alert(response); 
+                location.reload()
+                }
+            });
+        });
+    });
+    </script>
 
     <script src="js/sidebar.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

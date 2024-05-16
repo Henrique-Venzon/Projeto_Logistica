@@ -6,16 +6,103 @@
     font-family: 'Platypi';
 
 }
-
-.imgSenai{
-    height: 50px;
+.sair{
     position: absolute;
     top: 2%;
-    left: 50%; 
-    transform: translateX(-50%); 
-    z-index: 10; 
-    background-color: black;
-} 
+    left: 1%;
+
+}
+.sair2{
+    position: absolute;
+    top: 2%;
+    right: 1%;
+}
+i{
+    cursor: pointer;
+    padding: 6px;
+    font-size: 40px;
+    color: white;
+}
+
+.tabela-scroll {
+    margin-top: 15px;
+    max-height: 400px; 
+    overflow-y: auto; 
+    outline: 2px solid black;
+    
+  }
+  .tabela-scroll::-webkit-scrollbar {
+    height: 5px; 
+  }
+  .acessar{
+    background-color: #000000;
+    padding: 15px;
+    border-radius: 15px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .acessar:hover{
+    background-color: #2fc900;
+    transition: 2s;
+  }
+  .editar{
+    background-color: #414141;
+    padding: 15px;
+    border-radius: 15px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .editar:hover{
+    background-color: #ff9900;
+    transition: 1.7s;
+  }
+  
+.excluir:hover{
+    background-color: #e70909;
+    transition: 2s;
+}
+.excluir{
+    background-color: #838383;
+    padding: 15px;
+    border-radius: 15px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+
+}
+
+  .tabela-scroll::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+  
+  .tabela-scroll::-webkit-scrollbar-thumb {
+    background-color: #045483; 
+  }
+  
+  
+  .table {
+    font-size: 24px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-collapse: collapse; 
+    border-right: 1px solid black;
+
+  }
+.table th, .table td {
+    margin-top: 0px;
+    box-sizing: border-box;
+    padding: 12px;
+    outline: 1px solid black;
+
+}
+
+
 .container {
     display: flex;
     justify-content: center;
@@ -25,9 +112,8 @@
 }
 .content {
     background-color: #fff;
-    border-radius: 50px;
-    width: 80%;
-    height:75%;
+    width: 100%;
+    height:100%;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -39,7 +125,6 @@
     background-color: #1c1c1c;
     width: 50%;
     height: 100%;
-    border-radius: 50px;
     left: 0;
 }
 .title {
@@ -139,7 +224,6 @@
     border: 1px solid black;
     background-color: #ecf0f1;
     text-align: center;
-    border-radius: 20px;
 }
 
 
@@ -213,14 +297,13 @@ input:-webkit-autofill {
 .sign-in-js .content::before {
     left: 50%;
 
-    border-radius: 50px;
-    animation: slidein 2s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+    animation: slidein 2s; 
 
     z-index: 12;
 }
 
 .sign-up-js .content::before {
-    animation: slideout 2s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+    animation: slideout 2s; 
 
     z-index: 12;
 }
@@ -239,7 +322,6 @@ input:-webkit-autofill {
 }
 
 
-/* DESLOCAMENTO CONTEÚDO ATRÁS DO CONTENT:BEFORE*/
 .sign-in-js .first-content .second-column {
 
     z-index: -1;
@@ -251,7 +333,6 @@ input:-webkit-autofill {
     z-index: -1;
 }
 
-/*ANIMAÇÃOO CSS PARA O CONTEÚDO*/
 
 @keyframes deslocamentoEsq {
 
@@ -430,3 +511,4 @@ input:-webkit-autofill {
         width: 100%;
     }
 }
+

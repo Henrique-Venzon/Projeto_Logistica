@@ -1,0 +1,76 @@
+<?php
+
+session_start();
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $hostname = '127.0.0.1';
+    $user = 'root.Att';
+    $password = 'root';
+    $database = 'logistica';
+
+    $conn = new mysqli($hostname, $user, $password, $database);
+
+    // Verifique a conexão
+    if ($conn->connect_error) {
+        die('Falha na conexão: ' . $conn->connect_error);
+    }
+
+    // Verifica se os valores POST existem e são numéricos
+    $placa = $_POST['placa'];
+    $NomeMotorista = $_POST['NomeMotorista'];
+    $container = $_POST['container'];
+    $navio = $_POST['navio'];
+    $tipo = $_POST['tipo'];
+    $lacre = $_POST['lacre'];
+    $LacreSif = is_numeric($_POST['LacreSif']) ? $_POST['LacreSif'] : 0;
+    $IMD = $_POST['IMD'];
+    $NOnu = is_numeric($_POST['NOnu']) ? $_POST['NOnu'] : 0;
+    $npedido = $_POST['npedido'];
+    $Empresa = $_POST['Empresa'];
+    $cliente = $_POST['Cliente'];
+    $telefone = $_POST['Telefone'];
+    $CEP = $_POST['CEP'];
+    $produto1 = $_POST['produto1'];
+    $produto2 = isset($_POST['produto2']) ? $_POST['produto2'] : '';
+    $produto3 = isset($_POST['produto3']) ? $_POST['produto3'] : '';
+    $produto4 = isset($_POST['produto4']) ? $_POST['produto4'] : '';
+    $unidade1 = $_POST['unidade1'];
+    $unidade2 = isset($_POST['unidade2']) ? $_POST['unidade2'] : 'NULL';
+    $unidade3 = isset($_POST['unidade3']) ? $_POST['unidade3'] : 'NULL';
+    $unidade4 = isset($_POST['unidade4']) ? $_POST['unidade4'] : 'NULL';
+    $quantidade1 = is_numeric($_POST['quantidade1']) ? $_POST['quantidade1'] : 0;
+    $quantidade2 = is_numeric($_POST['quantidade2']) ? $_POST['quantidade2'] : 0;
+    $quantidade3 = is_numeric($_POST['quantidade3']) ? $_POST['quantidade3'] : 0;
+    $quantidade4 = is_numeric($_POST['quantidade4']) ? $_POST['quantidade4'] : 0;
+    $valor1 = is_numeric($_POST['valor1']) ? $_POST['valor1'] : '0.00';
+    $valor2 = is_numeric($_POST['valor2']) ? $_POST['valor2'] : '0.00';
+    $valor3 = is_numeric($_POST['valor3']) ? $_POST['valor3'] : '0.00';
+    $valor4 = is_numeric($_POST['valor4']) ? $_POST['valor4'] : '0.00';
+    $ncm1 = is_numeric($_POST['ncm1']) ? $_POST['ncm1'] : 0;
+    $ncm2 = is_numeric($_POST['ncm2']) ? $_POST['ncm2'] : 0;
+    $ncm3 = is_numeric($_POST['ncm3']) ? $_POST['ncm3'] : 0;
+    $ncm4 = is_numeric($_POST['ncm4']) ? $_POST['ncm4'] : 0;
+    $cst1 = is_numeric($_POST['cst1']) ? $_POST['cst1'] : 0;
+    $cst2 = is_numeric($_POST['cst2']) ? $_POST['cst2'] : 0;
+    $cst3 = is_numeric($_POST['cst3']) ? $_POST['cst3'] : 0;
+    $cst4 = is_numeric($_POST['cst4']) ? $_POST['cst4'] : 0;
+    $cfop1 = is_numeric($_POST['cfop1']) ? $_POST['cfop1'] : 0;
+    $cfop2 = is_numeric($_POST['cfop2']) ? $_POST['cfop2'] : 0;
+    $cfop3 = is_numeric($_POST['cfop3']) ? $_POST['cfop3'] : 0;
+    $cfop4 = is_numeric($_POST['cfop4']) ? $_POST['cfop4'] : 0;
+    $Temperatura = is_numeric($_POST['temperatura']) ? $_POST['temperatura'] : NULL;
+    $turma_id=$_SESSION['turma'];
+
+    $sql = "INSERT INTO transporte (`placa`,`NomeMotorista`,`container`,`navio`,`tipo`,`lacre`,`LacreSif`,`IMD`,`NOnu`,`situacao`,`npedido`,`Empresa`,`cliente`,`Telefone`,`CEP`,`produto1`,`produto2`,`produto3`,`produto4`,`unidade1`,`unidade2`,`unidade3`,`unidade4`,`quantidade1`,`quantidade2`,`quantidade3`,`quantidade4`,`valor1`,`valor2`,`valor3`,`valor4`,`ncm1`,`ncm2`,`ncm3`,`ncm4`,`cst1`,`cst2`,`cst3`,`cst4`,`cfop1`,`cfop2`,`cfop3`,`cfop4`,`temperatura`,`turma_id`) VALUES ('".$placa."', '".$NomeMotorista."', '".$container."', '".$navio."', '".$tipo."', '".$lacre."', '".$LacreSif."', '".$IMD."', '".$NOnu."', 'enviado', '".$npedido."', '".$Empresa."', '".$cliente."', '".$telefone."', '".$CEP."', '".$produto1."', '".$produto2."', '".$produto3."', '".$produto4."', '".$unidade1."', '".$unidade2."', '".$unidade3."', '".$unidade4."', '".$quantidade1."', '".$quantidade2."', '".$quantidade3."', '".$quantidade4."', '".$valor1."', '".$valor2."', '".$valor3."', '".$valor4."', '".$ncm1."', '".$ncm2."', '".$ncm3."', '".$ncm4."', '".$cst1."', '".$cst2."', '".$cst3."','".$cst4."','".$cfop1."','".$cfop2."','".$cfop3."','".$cfop4."', '".$Temperatura."','".$turma_id."');";
+
+    if ($conn->query($sql) === TRUE) {
+        echo 'Dados inseridos com sucesso!';
+        header('location:../containerP.php');
+    } else {
+        echo 'Erro ao inserir dados: ' . $conn->error;
+    }
+
+    $conn->close();
+
+}
+
+
