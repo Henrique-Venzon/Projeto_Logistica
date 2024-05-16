@@ -63,6 +63,14 @@
     color: white;
     padding: 7px;
 }
+@media screen and (max-height: 800px){
+    .logo img{
+    margin-left: 7.9%;
+    height: 46px;
+    width: 48px;
+}
+
+}
 </style>
 
 
