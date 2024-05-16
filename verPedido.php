@@ -82,7 +82,7 @@ if($qtd > 0){
             print $row->situacao;
             print "</td>";
             print "<td>
-            <button class=\"reset\" data-id=\"".$row->npedido."\"><span>Fechar Pedido</span></button>
+            <button type=\"button\" class=\"reset\" data-id=\"".$row->npedido."\"><span>Fechar Pedido</span></button>
             </td>"; 
             print "<td>";
             print"</form>";
@@ -94,7 +94,7 @@ if($qtd > 0){
             print "<td >";
             print "<form action='criardanfe.php' method='post'>";
             print "<input type='hidden' name='turma' value='" . $row->npedido . "'>";
-            print "<button type='submit' class=\"reset\"><span>Criar</span></button>";
+            print "<button type='button' class=\"reset\"><span>Criar</span></button>";
             print "</form>";
             print "</td>";
             print "</tr>";
