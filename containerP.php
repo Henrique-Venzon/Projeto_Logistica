@@ -95,6 +95,7 @@ if (!isset($_SESSION['turma'])) {
                                         <option value="KG">KG</option>
                                     </select>
                                     <select id="unidade" name="unidade2">
+                                        <?php // <?php if ($produto2==' ') print "<option value=' '> </option>" ?> 
                                         <option value=" "> </option>
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
