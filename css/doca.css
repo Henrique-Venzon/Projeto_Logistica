@@ -1,14 +1,11 @@
-
     .table-inputs{
-        border: 1.5px solid black;
-        width: 88%;
-        height: 95%;
-        background-color: #919191;
-        box-shadow: 0px 0px  10px black;
-        border-radius: 40px; 
-       
-
-    }
+      border: 1.5px solid black;
+      width: 88%;
+      height: 95%;
+      background-color: #1c1c1c;
+      box-shadow: 0px 0px  10px black;
+      border-radius: 40px; 
+  }
   main{
     width: 100%;
     display: flex;

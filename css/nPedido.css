@@ -81,7 +81,7 @@
   
 
   .tabela-scroll::-webkit-scrollbar-track {
-    background-color: #333333; /* Cor de fundo da barra de rolagem */
+    background-color: #ffffff; /* Cor de fundo da barra de rolagem */
   }
   
   .tabela-scroll::-webkit-scrollbar-thumb {
