@@ -119,6 +119,7 @@ $conn->close();
 
                 <div class="text">
                     <h1>Pedidos</h1>
+                    <h1 id="v" class="voltar">Voltar</h1>
                 </div>
                 <div class="tabela-scroll">
                 <Div class="nomet">   

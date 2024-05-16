@@ -65,6 +65,18 @@
     border-right: 1px solid black;
 
   }
+  .voltar{
+    position: absolute;
+    margin-right: 70%;
+    padding: 8px;
+  }
+  .voltar:hover{
+    color: rgb(128, 128, 128);
+    transition: 0.7s;
+  }
+  #v{
+    cursor: pointer;
+  }
   
   
 
