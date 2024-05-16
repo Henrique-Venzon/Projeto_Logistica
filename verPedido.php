@@ -76,7 +76,6 @@ if($qtd > 0){
     
         while($row = $res->fetch_object()){
             print "<tr>";
-            print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id . "'>";
             print "<td>".$row->npedido."</td>";
             print "<td>";
             print $row->situacao;
@@ -84,15 +83,16 @@ if($qtd > 0){
             print "<td>";
             print "<form action='processamento/deletar_pedido.php' method='post'>";
             print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id . "'>";
-            print "<input type='hidden' name='turma' value='" . $row->npedido . "'>";
+            print "<input type='hidden' name='numero_pedido' value='" . $row->npedido . "'>";
             print "<button class=\"reset\" type='submit'><span>Excluir</span> </button>";
             print "</form>";
             print"</td>"; 
+            print "<td>";
             print "<form action='processamento/fechar_atividade.php' method='post'>";
-            print "<td>
-            <button type=\"button\" class=\"reset\" data-id=\"".$row->npedido."\"><span>Fechar Pedido</span></button>
-            </td>"; 
+            print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id . "'>";
+            print "<button type='submit' class=\"reset\" data-id=\"".$row->npedido."\"><span>Fechar Pedido</span></button>";
             print"</form>";
+            print "</td>"; 
             print "<td>";
             print "<form action='nPedido.php' method='post'>";
             print "<input type='hidden' name='turma' value='" . $row->npedido . "'>";
