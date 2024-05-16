@@ -55,7 +55,7 @@ $dbname = "logistica";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);     
 
-$sql = "SELECT * FROM transporte ORDER BY `transporte`.`situacao` ASC, `transporte`.`npedido` ASC";
+$sql = "SELECT * FROM transporte where turma_id = '".$_SESSION['turma']."' ORDER BY `transporte`.`situacao` ASC, `transporte`.`npedido` ASC";
 
 $res = $conn->query($sql);
 
