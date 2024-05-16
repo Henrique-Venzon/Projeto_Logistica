@@ -28,7 +28,6 @@ USE `logistica`;
 --
 -- Estrutura para tabela `aluno`
 --
-
 DROP TABLE IF EXISTS `aluno`;
 CREATE TABLE IF NOT EXISTS `aluno` (
   `id` int NOT NULL AUTO_INCREMENT,
