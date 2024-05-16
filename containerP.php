@@ -57,30 +57,30 @@ if (!isset($_SESSION['turma'])) {
                             <div class="colunas1">
                                 <div class="numeroPedido">
                                     <label for="num">N° pedido:</label>
-                                    <input id="num" type="number" name="npedido" min="0">
+                                    <input id="num" type="number" name="npedido" min="0" required>
                                 </div>
                                 <div class="NomeDaEmpresa">
                                     <label for="empresa">Empresa:</label>
-                                    <input id="empresa" type="text" name="Empresa">
+                                    <input id="empresa" type="text" name="Empresa" required>
                                 </div>
                                 <div class="cliente">
                                     <label for="nomeCliente">Cliente:</label>
-                                    <input id="nomeCliente" type="text" name="Cliente">
+                                    <input id="nomeCliente" type="text" name="Cliente" required>
                                 </div>
                                 <div class="telefone">
                                     <label for="telefone">Telefone:</label>
-                                    <input id="telefone" type="number" name="Telefone">
+                                    <input id="telefone" type="number" name="Telefone" required>
                                 </div>
                                 <div class="cep">
                                     <label for="cep">CEP:</label>
-                                    <input id="cep" type="text" name="CEP">
+                                    <input id="cep" type="text" name="CEP" required>
                                 </div>
                             </div>
 
                             <div class="colunas">
                                 <div class="produto">
                                     <label for="produto">Nome do Produto:</label>
-                                    <input type="text" id="produto" name="produto1">
+                                    <input type="text" id="produto" name="produto1" required>
                                     <input type="text" id="produto" name="produto2">
                                     <input type="text" id="produto" name="produto3">
                                     <input type="text" id="produto" name="produto4">
@@ -88,7 +88,7 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="unidade">
                                     <label for="unidade">Unidade:</label>
-                                    <select id="unidade" name="unidade1">
+                                    <select id="unidade" name="unidade1" required>
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
@@ -120,7 +120,7 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="quantidade">
                                     <label for="quantidade">Quantidade:</label>
-                                    <input type="number" id="quantidade" name="quantidade1" min="0">
+                                    <input type="number" id="quantidade" name="quantidade1" min="0" required>
                                     <input type="number" id="quantidade" name="quantidade2" min="0">
                                     <input type="number" id="quantidade" name="quantidade3" min="0">
                                     <input type="number" id="quantidade" name="quantidade4" min="0">
@@ -128,7 +128,7 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="valor">
                                     <label for="valor">Valor Unitário:</label>
-                                    <input type="number" id="valor" name="valor1" step="0.01">
+                                    <input type="number" id="valor" name="valor1" step="0.01" required>
                                     <input type="number" id="valor" name="valor2" step="0.01">
                                     <input type="number" id="valor" name="valor3" step="0.01">
                                     <input type="number" id="valor" name="valor4" step="0.01">
@@ -136,7 +136,7 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="ncm">
                                     <label for="ncm">NCM:</label>
-                                    <input type="text" id="ncm" name="ncm1">
+                                    <input type="text" id="ncm" name="ncm1" required>
                                     <input type="text" id="ncm" name="ncm2">
                                     <input type="text" id="ncm" name="ncm3">
                                     <input type="text" id="ncm" name="ncm4">
@@ -144,7 +144,7 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="cst">
                                     <label for="cst">CST:</label>
-                                    <input type="text" id="cst" name="cst1">
+                                    <input type="text" id="cst" name="cst1" required>
                                     <input type="text" id="cst" name="cst2">
                                     <input type="text" id="cst" name="cst3">
                                     <input type="text" id="cst" name="cst4">
@@ -152,7 +152,7 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="cfop">
                                     <label for="cfop">CFOP:</label>
-                                    <input type="text" id="cfop" name="cfop1">
+                                    <input type="text" id="cfop" name="cfop1" required>
                                     <input type="text" id="cfop" name="cfop2">
                                     <input type="text" id="cfop" name="cfop3">
                                     <input type="text" id="cfop" name="cfop4">
@@ -168,45 +168,45 @@ if (!isset($_SESSION['turma'])) {
                             <div class="inputs">
                                 <div class="juntar">
                                     <label for="">Placa do Caminhão:</label>
-                                    <input type="text" name="placa" placeholder="Placa do Caminhão">
+                                    <input type="text" name="placa" placeholder="Placa do Caminhão" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="">Temperatura:</label>
-                                    <input type="text" name="temperatura" placeholder="Temperatura">
+                                    <input type="text" name="temperatura" placeholder="Temperatura" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="">Nome do Motorista:</label>
-                                    <input type="text" name="NomeMotorista" placeholder="Nome do Motorista">
+                                    <input type="text" name="NomeMotorista" placeholder="Nome do Motorista" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="">Container:</label>
-                                    <input type="text" name="container" placeholder="Container">
+                                    <input type="text" name="container" placeholder="Container" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="">Navio:</label>
-                                    <input type="text" name="navio" placeholder="Navio">
+                                    <input type="text" name="navio" placeholder="Navio" required>
                                 </div>
 
                                 <div class="juntar">
                                     <label for="">Tipo:</label>
-                                    <input type="text" name="tipo" placeholder="Tipo">
+                                    <input type="text" name="tipo" placeholder="Tipo" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="">Lacre:</label>
-                                    <input type="text" name="lacre" placeholder="Lacre">
+                                    <input type="text" name="lacre" placeholder="Lacre" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="">Lacre SIF:</label>
-                                    <input type="text" name="LacreSif" placeholder="Lacre SIF">
+                                    <input type="text" name="LacreSif" placeholder="Lacre SIF" required>
                                 </div>
 
                                 <div class="juntar">
                                     <label for="">IMO:</label>
-                                    <input type="text" name="IMD" placeholder="IMO">
+                                    <input type="text" name="IMD" placeholder="IMO" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="">N° ONU:</label>
-                                    <input type="text" name="NOnu" placeholder="N° ONU">
+                                    <input type="text" name="NOnu" placeholder="N° ONU" required>
                                 </div>
                             </div>
                             <div class="inputObs">

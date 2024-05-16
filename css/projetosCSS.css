@@ -33,6 +33,8 @@ i{
   }
   .tabela-scroll::-webkit-scrollbar {
     height: 5px; 
+    width: 12px;
+
   }
   .acessar{
     background-color: #000000;
@@ -81,7 +83,7 @@ i{
   }
   
   .tabela-scroll::-webkit-scrollbar-thumb {
-    background-color: #045483; 
+    background-color: #000000; 
   }
   
   
