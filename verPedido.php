@@ -55,7 +55,7 @@ $dbname = "logistica";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);     
 
-$sql = "SELECT * FROM transporte ORDER BY `transporte`.`situacao` ASC";
+$sql = "SELECT * FROM transporte ORDER BY `transporte`.`situacao` ASC, `transporte`.`npedido` ASC";
 
 $res = $conn->query($sql);
 
@@ -68,6 +68,7 @@ if($qtd > 0){
     print "<tr>";
             print "<th>N° Pedido</th>";
             print"<th>Situação</th>";
+            print "<th>Excluir Pedido</th>";
             print "<th>Fechar Pedido</th>";
             print "<th>Ver pedido</th>";
             print "<th style=\"border-right:none;\">Criar Nota Fiscal</th>";
@@ -75,17 +76,24 @@ if($qtd > 0){
     
         while($row = $res->fetch_object()){
             print "<tr>";
-            print "<form action='processamento/fechar_atividade.php' method='post'>";
             print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id . "'>";
             print "<td>".$row->npedido."</td>";
             print "<td>";
             print $row->situacao;
             print "</td>";
+            print "<td>";
+            print "<form action='processamento/deletar_pedido.php' method='post'>";
+            print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id . "'>";
+            print "<input type='hidden' name='turma' value='" . $row->npedido . "'>";
+            print "<button class=\"reset\" type='submit'><span>Excluir</span> </button>";
+            print "</form>";
+            print"</td>"; 
+            print "<form action='processamento/fechar_atividade.php' method='post'>";
             print "<td>
             <button type=\"button\" class=\"reset\" data-id=\"".$row->npedido."\"><span>Fechar Pedido</span></button>
             </td>"; 
-            print "<td>";
             print"</form>";
+            print "<td>";
             print "<form action='nPedido.php' method='post'>";
             print "<input type='hidden' name='turma' value='" . $row->npedido . "'>";
             print "<button class=\"reset\" type='submit'><span>Ver</span> </button>";
