@@ -209,7 +209,9 @@ input{
     text-wrap: nowrap;
 }
 
-
+::-webkit-input-placeholder {
+  color: rgb(197, 197, 197); 
+}
 
 .table-inputs{
     border: 1.5px solid black;

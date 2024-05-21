@@ -260,12 +260,6 @@
                         <span class="sidebar-text" style="margin-left:10px;">Piking</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a href="armazem.php" class="sidebar-link">
-                    <i class="fa-solid fa-warehouse"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Estoque</span>
-                    </a>
-                </li>
 
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
@@ -325,15 +319,23 @@
                     <i class="fa-solid fa-clipboard"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Relatórios</span>
                     </a>
-                </li>
-
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                    <i class="fa-solid fa-gear"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Controle</span>
-                    </a>
                 </li>'
                 ?>
+                                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#controle" aria-expanded="false" aria-controls="Recebimentos">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Controle</span>
+                    </a>
+                    <ul id="controle" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                    <a style="margin-top: -1.25px;" href="docas.php" class="sidebar-link">Doca</a>
+                </li>
+                        <li class="sidebar-item">
+                            <a style="margin-top: -1.25px;" href="armazem.php" class="sidebar-link">Estoque</a>
+                        </li>
+                    </ul>
+                </li>
         </ul>
 
     </aside>
