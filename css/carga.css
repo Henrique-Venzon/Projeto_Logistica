@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Platypi';
+}
+main{
+    width: 100%;
+    display: flex;
+}
+.tabela-scroll {
+    margin-top: 0.8%;
+    max-height: 69vh; 
+    overflow-y: auto; 
+    outline: 1px solid black;
+    background-color: #333333;
+  }
+  .tabela-scroll::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+  
+  .tabela-scroll::-webkit-scrollbar-thumb {
+    background-color: #000000; 
+  }
+  .tabela-scroll::-webkit-scrollbar {
+    height: 1px;
+    width: 10px;
+  }
+.DivDireita{
+    flex-grow: 1;
+    background-color: #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.table-inputs{
+    border: 1.5px solid black;
+    width: 88%;
+    height: 95%;
+    background-color: #1c1c1c;
+    box-shadow: 0px 0px  10px black;
+    border-radius: 40px; 
+}
+
+.txtCont h1{
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #000000;
+    font-size: 48px;
+}
+.txtCont{
+    margin-top: 0.8%;
+    display: flex;
+    justify-content: center;
+}
+.inputPedido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    background-color: transparent;
+}
+.inputPedido label {
+    height: 60px;
+    width: 80px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #000000;
+    text-wrap: nowrap;
+    font-size: 22px;
+}
+.inputPedido select{
+    margin-bottom: 17px;
+    padding: 5px;
+    font-size: 17px;
+}
+.inputPedido button{
+    margin-bottom: 12px;
+}
+.inputPedido button{
+    width: 140px;
+    height: 45px;
+    border-radius: 30px;
+    border: solid 2px white;
+    background-color: #000000;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+.inputPedido button:hover{
+    transition: 1.5s linear;
+    border: solid 2px #000000;
+    background-color: #ffffff;
+    color: #000000;
+}
+.dados{
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+}
+.doca{
+    justify-content: center; 
+    align-items: center; 
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #ffffff;
+    font-size: 19px;
+    text-shadow: 0px 0px 10px #000000;
+    margin-bottom: 12px;
+}
+.doca label{
+    margin-bottom: 8px;
+}
+.tabelaComVistoria{
+    justify-content: center; 
+    align-items: center; 
+    display: flex;
+    text-align: center;
+}
+.tabelaComVistoria table{
+    width: 80%;
+}

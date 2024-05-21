@@ -146,7 +146,7 @@ $conn->close();
                 </Div>
                     <table class="table">
                     <tr>
-                        <th>Produto </th>
+                        <th>Produto</th>
                         <?php
                         if ($produto2!='') print"
                         <th>Produto 2</th>";

@@ -255,12 +255,6 @@
                 ?>
 
                 <li class="sidebar-item">
-                    <a href="docas.php" class="sidebar-link">
-                    <i class="fa-solid fa-route"></i>
-                    <span class="sidebar-text" style="margin-left:10px;">Movimentações</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
                     <i class="fa-solid fa-boxes-packing"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Piking</span>
@@ -272,8 +266,7 @@
                         <span class="sidebar-text" style="margin-left:10px;">Estoque</span>
                     </a>
                 </li>
-                <?php if($_SESSION['tipo_login']=='aluno')
-                echo '
+
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                         data-bs-target="#Recebimentos" aria-expanded="false" aria-controls="Recebimentos">
@@ -287,10 +280,10 @@
                                 class="sidebar-link">Container</a>
                         </li>
                         <li class="sidebar-item">
-                            <a  href="#" style="margin-top: -1.4px;" class="sidebar-link">Carga</a>
+                            <a  href="vistoriaCarga.php" style="margin-top: -1.4px;" class="sidebar-link">Carga</a>
                         </li>
                     </ul>
-                </li>';?>
+                </li>
                 
                 <?php if($_SESSION['tipo_login']=='professor')
                 echo '
