@@ -129,7 +129,7 @@ $conn->close();
                             }
 
                                 // Consulta para buscar os pedidos
-                                $sql = "SELECT npedido FROM carga";
+                                $sql = "SELECT npedido FROM carga where turma_id = '".$_SESSION['turma']."'";
                                 $result = $conn->query($sql);
                                 
                                 // Se houver resultados, criar as opções do select
