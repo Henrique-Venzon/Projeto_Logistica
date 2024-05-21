@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $Temperatura = is_numeric($_POST['temperatura']) ? $_POST['temperatura'] : NULL;
     $turma_id=$_SESSION['turma'];
 
-    $sql = "INSERT INTO container (`placa`,`NomeMotorista`,`container`,`navio`,`tipo`,`lacre`,`LacreSif`,`IMO`,`NOnu`,`situacao`,`temperatura`,`turma_id`) VALUES ('".$placa."', '".$NomeMotorista."', '".$container."', '".$navio."', '".$tipo."', '".$lacre."', '".$LacreSif."', '".$IMD."', '".$NOnu."', 'enviado','".$Temperatura."','".$turma_id."');";
+    $sql = "INSERT INTO container (`placa`,`nome_motorista`,`container`,`navio`,`tipo`,`lacre`,`Lacre Sif`,`IMO`,`NOnu`,`situacao`,`temperatura`,`turma_id`) VALUES ('".$placa."', '".$NomeMotorista."', '".$container."', '".$navio."', '".$tipo."', '".$lacre."', '".$LacreSif."', '".$IMO."', '".$NOnu."', 'enviado','".$Temperatura."','".$turma_id."');";
 
     if ($conn->query($sql) === TRUE) {
         echo 'Dados inseridos com sucesso!';
