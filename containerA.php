@@ -1,5 +1,5 @@
 <?php
-$id_aluno = 'Professor';
+$id_aluno = 1;
 session_start();
 if (!isset($_SESSION['id'])) {
     header("Location: index.php");
