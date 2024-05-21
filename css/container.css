@@ -276,7 +276,7 @@ form h1{
     text-shadow: 0px 0px 5px black;
 }
 .transportes{
-    margin-top: 1%;
+    margin-top: -3%;
     display: flex;
     justify-content: center;
 }
