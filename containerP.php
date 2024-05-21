@@ -180,7 +180,7 @@ if (!isset($_SESSION['turma'])) {
 
                             <div class="inputs">
                                 <div class="juntar">
-                                    <label for="">Placa do Caminhão:</label>
+                                    <label for="placa">Placa do Caminhão:</label>
                                     <input type="text" name="placa" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
@@ -188,24 +188,24 @@ if (!isset($_SESSION['turma'])) {
                                     <input type="text" name="temperatura" placeholder="Opcional" >
                                 </div>
                                 <div class="juntar">
-                                    <label for="">Nome do Motorista:</label>
+                                    <label for="nome">Nome do Motorista:</label>
                                     <input type="text" name="NomeMotorista" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
-                                    <label for="">Container:</label>
+                                    <label for="container">Container:</label>
                                     <input type="text" name="container" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
-                                    <label for="">Navio:</label>
+                                    <label for="navio">Navio:</label>
                                     <input type="text" name="navio" placeholder="Obrigatório" required>
                                 </div>
 
                                 <div class="juntar">
-                                    <label for="">Tipo:</label>
+                                    <label for="tipo">Tipo:</label>
                                     <input type="text" name="tipo" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
-                                    <label for="">Lacre:</label>
+                                    <label for="lacre">Lacre:</label>
                                     <input type="text" name="lacre" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
@@ -245,9 +245,7 @@ if (!isset($_SESSION['turma'])) {
 
 
     <script>
-        function exibirMensagem() {
-            alert('Dados enviados com sucesso!');
-        }
+
     </script>
     <script src="js/sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -266,12 +264,9 @@ if (!isset($_SESSION['turma'])) {
             const produto = document.getElementById('produto').value;
             const unidade = document.getElementById('unidade').value;
             const valor = document.getElementById('valor').value;
-            const ncm = document.getElementById('ncm').value;
-            const cst = document.getElementById('cst').value;
-            const cfop = document.getElementById('cfop').value;
-            const inputs = document.getElementById('inputs').value;
+          
 
-            if (numPedido && empresa && nomeCliente && telefone && cep && produto && unidade && ncm && cst && cfop && inputs) {
+            if (numPedido && empresa && nomeCliente && telefone && cep && produto && unidade && valor && nome && container && navio && tipo && lacre) {
                 alert('Dados enviados com sucesso!');
             } else {
                 alert('Erro no envio. Preencha todos os campos obrigatórios.');
@@ -279,7 +274,7 @@ if (!isset($_SESSION['turma'])) {
         }
 
 
-    </script>
+    </script>x
 <script>
     function setMultipleInputValues(values) {
         for (var id in values) {
