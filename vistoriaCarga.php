@@ -167,7 +167,9 @@ $conn->close();
                                             <th>Unidade</th>
                                             <th>Quantidade</th>
                                             <th>Valor</th>
-                                            <th>Faltando/Avariado</th>
+                                            <th>Faltando</th>
+                                            <th>Avariado</th>
+                                            <th>Total</th>
                                         </tr>
                                         <tr>
                                             <td><?php echo $produto1; ?></td>
@@ -178,13 +180,16 @@ $conn->close();
                                             </td>
                                             <td><?php echo $valor1; ?></td>
                                             <td><button id="editar1" onclick="editarQuantidade(1)">editar</button></td>
+                                            <td><input type="number"></td>
+                                            <td>Total</td>
                                         </tr>
                                         <tr>
                                             <?php if ($produto2!='')echo '<td>'.$produto2.'</td>'; ?>
                                             <?php if ($unidade2!=' ')echo '<td>'.$unidade2.'</td>'; ?>
                                             <?php if ($quantidade2!='0')echo '<td><span id="quantidade2">'.$quantidade2.'</span><input id="quantidadeInput2" type="text" value="'.$quantidade2.'" style="display:none;" /></td>'; ?>
                                             <?php if ($valor2!='0.00')echo '<td>'.$valor2.'</td>'; ?>
-                                            <td> <button id="editar2" onclick="editarQuantidade(2)">editar</button></td>
+                                            <td><button id="editar2" onclick="editarQuantidade(2)">editar</button></td>
+                                            <td><input type="number"></td>
                                         </tr>
                                         <tr>
                                             <?php if ($produto3!='')echo '<td>'.$produto3.'</td>'; ?>
@@ -192,6 +197,7 @@ $conn->close();
                                             <?php if ($quantidade3!='0')echo '<td><span id="quantidade3">'.$quantidade3.'</span><input id="quantidadeInput3" type="text" value="'.$quantidade3.'" style="display:none;" /></td>'; ?>
                                             <?php if ($valor3!='0.00')echo '<td>'.$valor3.'</td>'; ?>
                                             <td><button id="editar3" onclick="editarQuantidade(3)">editar</button></td>
+                                            <td><input type="number"></td>
                                         </tr>
                                         <tr>
                                             <?php if ($produto4!='')echo '<td>'.$produto4.'</td>'; ?>
@@ -199,6 +205,7 @@ $conn->close();
                                             <?php if ($quantidade4!='0')echo '<td><span id="quantidade4">'.$quantidade4.'</span><input id="quantidadeInput4" type="text" value="'.$quantidade4.'" style="display:none;" /></td>'; ?>
                                             <?php if ($valor4!='0.00')echo '<td>'.$valor4.'</td>'; ?>
                                             <td><button id="editar4" onclick="editarQuantidade(4)">editar</button></td>
+                                            <td><input type="number"></td>
                                         </tr>
 
                                     </table>

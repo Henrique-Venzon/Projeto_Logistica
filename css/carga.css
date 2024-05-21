@@ -15,6 +15,11 @@
     outline: 2px solid #000;
     margin-bottom: 20px;
 }
+.table input{
+    width: 140px;
+    text-align: center;
+    border-radius: 15px;
+}
 .table th,td{
     border: solid 1.5px #000000;
     border-left: none;
@@ -156,5 +161,5 @@ main{
     text-align: center;
 }
 .tabelaComVistoria table{
-    width: 80%;
+    width: 92%;
 }
