@@ -46,12 +46,12 @@ $sql = "SELECT * FROM carga where turma_id = '".$_SESSION['turma']."'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
+    
     while ($row = $result->fetch_assoc()) {
         $npedido = $row['npedido'];
         $Empresa = $row['Empresa'];
         $cliente = $row['cliente'];
-        $telefone = $row['telefone'];
+        $telefone = $row['Telefone'];
         $CEP = $row['CEP'];
         $produto1 = $row['produto1'];
         $produto2 = $row['produto2'];
@@ -129,7 +129,7 @@ $conn->close();
                             }
 
                                 // Consulta para buscar os pedidos
-                                $sql = "SELECT npedido FROM transporte";
+                                $sql = "SELECT npedido FROM carga";
                                 $result = $conn->query($sql);
                                 
                                 // Se houver resultados, criar as opções do select

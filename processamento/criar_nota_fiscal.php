@@ -1,29 +1,33 @@
 <?php
 
-session_start();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $hostname = '127.0.0.1';
-    $user = 'root.Att';
-    $password = 'root';
-    $database = 'logistica';
+$conexao = new mysqli('localhost', 'root.Att', 'root', 'logistica');
 
-    $conn = new mysqli($hostname, $user, $password, $database);
-
-    // Verifique a conexão
-    if ($conn->connect_error) {
-        die('Falha na conexão: ' . $conn->connect_error);
-    }
-    
-
-    if ($conn->query($sql) === TRUE) {
-        echo 'Dados inseridos com sucesso!';
-        header('location:../containerP.php');
-    } else {
-        echo 'Erro ao inserir dados: ' . $conn->error;
-    }
-
-    $conn->close();
-
+// Verificar conexão
+if ($conexao->connect_error) {
+    die("Conexão falhou: " . $conexao->connect_error);
 }
+
+// Buscar o último ID inserido
+$sql_busca = "SELECT `id` FROM `carga` ORDER BY `carga`.`id` DESC LIMIT 1;";
+$resultado = $conexao->query($sql_busca);
+
+if ($resultado->num_rows > 0) {
+    // Obter o último ID inserido
+    $ultimo_id_inserido = $resultado->fetch_assoc()['id'];
+} else {
+    echo "Nenhum resultado encontrado";
+}
+$npedido = $_GET['npedido'];
+$turma_id = $_GET['turma_id'];
+
+$sql = "INSERT INTO `nota_fiscal_criada`(`id_atividade`, `id_turma`) VALUES ('" . $ultimo_id_inserido . "','" . $turma_id . "');";
+if ($conexao->query($sql) === TRUE) {
+    header('Location: ../containerP.php', true, 301);
+} else {
+    echo "Erro: " . $sql . "<br>" . $conexao->error;
+}
+
+$conexao->close();
+
 
 
