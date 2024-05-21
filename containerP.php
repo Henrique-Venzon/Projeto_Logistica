@@ -54,113 +54,117 @@ if (!isset($_SESSION['turma'])) {
                 <div class="form">
                     <div class="tabela-scroll">
                         <div class="presets">
-                        <button onclick="setMultipleInputValues({'empresa': 'portonave', 'nomeCliente': 'Matheus Yan', 'telefone':'4739406838','cep':'88370904'})">Preset 1</button>
-                        <button>Preset 2</button>
-                        <button>Preset 3</button>
+                        <button onclick="setMultipleInputValues({'empresa': 'Portonave', 'nomeCliente': 'Matheus Yan', 'telefone':'4739406838','cep':'88370904','produto':'Teclado','produto2':'Mouse','unidade':'UN','unidade2':'UN','quantidade':'10','quantidade2':'15','valor':'15.00','valor2':'8.00'})">Preset 1</button>
+                        <button onclick="setMultipleInputValues({'empresa': 'MultiLog', 'nomeCliente': 'Luan Pereira', 'telefone':'4789426155','cep':'23812310','produto':'Motor','produto2':'Óleo Diesel','unidade':'UN','unidade2':'L','quantidade':'15','quantidade2':'30','valor':'2800.00','valor2':'2.40'})">Preset 2</button>
+                        <button onclick="setMultipleInputValues({'empresa': 'ARXO', 'nomeCliente': 'Henrique Venzon', 'telefone':'4791296865','cep':'88318481','produto':'Camisa','produto2':'Moletom','unidade':'UN','unidade2':'UN','quantidade':'30','quantidade2':'20','valor':'20.00','valor2':'24.00'})">Preset 3</button>
                         </div>
                         <form action="processamento/carga.php.php" method="post">
                             <div class="colunas1">
                                 <div class="numeroPedido">
                                     <label for="num">N° pedido:</label>
-                                    <input id="num" type="number" name="npedido" min="0" required>
+                                    <input id="num" type="number" name="npedido" min="0" required placeholder="Obrigatório">
                                 </div>
                                 <div class="NomeDaEmpresa">
                                     <label for="empresa">Empresa:</label>
-                                    <input id="empresa" type="text" name="Empresa" required>
+                                    <input id="empresa" type="text" name="Empresa" required placeholder="Obrigatório">
                                 </div>
                                 <div class="cliente">
                                     <label for="nomeCliente">Cliente:</label>
-                                    <input id="nomeCliente" type="text" name="Cliente" required>
+                                    <input id="nomeCliente" type="text" name="Cliente" required placeholder="Obrigatório">
                                 </div>
                                 <div class="telefone">
                                     <label for="telefone">Telefone:</label>
-                                    <input id="telefone" type="number" name="Telefone" required>
+                                    <input id="telefone" type="number" name="Telefone" required placeholder="Obrigatório">
                                 </div>
                                 <div class="cep">
                                     <label for="cep">CEP:</label>
-                                    <input id="cep" type="text" name="CEP" required>
+                                    <input id="cep" type="text" name="CEP" required placeholder="Obrigatório">
                                 </div>
                             </div>
 
                             <div class="colunas">
                                 <div class="produto">
                                     <label for="produto">Nome do Produto:</label>
-                                    <input type="text" id="produto" name="produto1" required>
-                                    <input type="text" id="produto" name="produto2">
-                                    <input type="text" id="produto" name="produto3">
-                                    <input type="text" id="produto" name="produto4">
+                                    <input type="text" id="produto" name="produto1" required placeholder="Obrigatório">
+                                    <input type="text" id="produto2" name="produto2" placeholder="Opcional">
+                                    <input type="text" id="produto3" name="produto3" placeholder="Opcional">
+                                    <input type="text" id="produto4" name="produto4" placeholder="Opcional">
                                 </div>
 
                                 <div class="unidade">
                                     <label for="unidade">Unidade:</label>
-                                    <select id="unidade" name="unidade1" required>
+                                    <select id="unidade" name="unidade1" required >
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
                                         <option value="KG">KG</option>
+                                        <option value="L">L</option>
                                     </select>
-                                    <select id="unidade" name="unidade2">
+                                    <select id="unidade2" name="unidade2" >
                                         <?php // <?php if ($produto2==' ') print "<option value=' '> </option>" ?>
                                         <option value=" "> </option>
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
                                         <option value="KG">KG</option>
+                                        <option value="L">L</option>
                                     </select>
-                                    <select id="unidade" name="unidade3">
+                                    <select id="unidade3" name="unidade3" >
                                         <option value=" "> </option>
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
                                         <option value="KG">KG</option>
+                                        <option value="L">L</option>
                                     </select>
-                                    <select id="unidade" name="unidade4">
+                                    <select id="unidade4" name="unidade4" >
                                         <option value=" "> </option>
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
                                         <option value="KG">KG</option>
+                                        <option value="L">L</option>
                                     </select>
                                 </div>
 
                                 <div class="quantidade">
                                     <label for="quantidade">Quantidade:</label>
-                                    <input type="number" id="quantidade" name="quantidade1" min="0" required>
-                                    <input type="number" id="quantidade" name="quantidade2" min="0">
-                                    <input type="number" id="quantidade" name="quantidade3" min="0">
-                                    <input type="number" id="quantidade" name="quantidade4" min="0">
+                                    <input type="number" id="quantidade" name="quantidade1" min="0" required placeholder="Obrigatório">
+                                    <input type="number" id="quantidade2" name="quantidade2" min="0" placeholder="Opcional">
+                                    <input type="number" id="quantidade3" name="quantidade3" min="0" placeholder="Opcional">
+                                    <input type="number" id="quantidade4" name="quantidade4" min="0" placeholder="Opcional">
                                 </div>
 
                                 <div class="valor">
                                     <label for="valor">Valor Unitário:</label>
-                                    <input type="number" id="valor" name="valor1" step="0.01" required>
-                                    <input type="number" id="valor" name="valor2" step="0.01">
-                                    <input type="number" id="valor" name="valor3" step="0.01">
-                                    <input type="number" id="valor" name="valor4" step="0.01">
+                                    <input type="number" id="valor" name="valor1" step="0.01" required placeholder="Obrigatório">
+                                    <input type="number" id="valor2" name="valor2" step="0.01" placeholder="Opcional">
+                                    <input type="number" id="valor3" name="valor3" step="0.01" placeholder="Opcional">
+                                    <input type="number" id="valor4" name="valor4" step="0.01" placeholder="Opcional">
                                 </div>
 
                                 <div class="ncm">
                                     <label for="ncm">NCM:</label>
-                                    <input type="text" id="ncm" name="ncm1" required>
-                                    <input type="text" id="ncm" name="ncm2">
-                                    <input type="text" id="ncm" name="ncm3">
-                                    <input type="text" id="ncm" name="ncm4">
+                                    <input type="text" id="ncm" name="ncm1" placeholder="Opcional">
+                                    <input type="text" id="ncm2" name="ncm2" placeholder="Opcional">
+                                    <input type="text" id="ncm3" name="ncm3" placeholder="Opcional">
+                                    <input type="text" id="ncm4" name="ncm4" placeholder="Opcional">
                                 </div>
 
                                 <div class="cst">
                                     <label for="cst">CST:</label>
-                                    <input type="text" id="cst" name="cst1" required>
-                                    <input type="text" id="cst" name="cst2">
-                                    <input type="text" id="cst" name="cst3">
-                                    <input type="text" id="cst" name="cst4">
+                                    <input type="text" id="cst" name="cst1" placeholder="Opcional">
+                                    <input type="text" id="cst2" name="cst2" placeholder="Opcional">
+                                    <input type="text" id="cst3" name="cst3" placeholder="Opcional">
+                                    <input type="text" id="cst4" name="cst4" placeholder="Opcional">
                                 </div>
 
                                 <div class="cfop">
                                     <label for="cfop">CFOP:</label>
-                                    <input type="text" id="cfop" name="cfop1" required>
-                                    <input type="text" id="cfop" name="cfop2">
-                                    <input type="text" id="cfop" name="cfop3">
-                                    <input type="text" id="cfop" name="cfop4">
+                                    <input type="text" id="cfop" name="cfop1" placeholder="Opcional">
+                                    <input type="text" id="cfop2" name="cfop2" placeholder="Opcional">
+                                    <input type="text" id="cfop3" name="cfop3" placeholder="Opcional">
+                                    <input type="text" id="cfop4" name="cfop4" placeholder="Opcional">
                                 </div>
                             </div>
                         </form>
@@ -177,54 +181,53 @@ if (!isset($_SESSION['turma'])) {
                             <div class="inputs">
                                 <div class="juntar">
                                     <label for="">Placa do Caminhão:</label>
-                                    <input type="text" name="placa" placeholder="Placa do Caminhão" required>
+                                    <input type="text" name="placa" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="">Temperatura:</label>
-                                    <input type="text" name="temperatura" placeholder="Temperatura" required>
+                                    <input type="text" name="temperatura" placeholder="Opcional" >
                                 </div>
                                 <div class="juntar">
                                     <label for="">Nome do Motorista:</label>
-                                    <input type="text" name="NomeMotorista" placeholder="Nome do Motorista" required>
+                                    <input type="text" name="NomeMotorista" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="">Container:</label>
-                                    <input type="text" name="container" placeholder="Container" required>
+                                    <input type="text" name="container" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="">Navio:</label>
-                                    <input type="text" name="navio" placeholder="Navio" required>
+                                    <input type="text" name="navio" placeholder="Obrigatório" required>
                                 </div>
 
                                 <div class="juntar">
                                     <label for="">Tipo:</label>
-                                    <input type="text" name="tipo" placeholder="Tipo" required>
+                                    <input type="text" name="tipo" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="">Lacre:</label>
-                                    <input type="text" name="lacre" placeholder="Lacre" required>
+                                    <input type="text" name="lacre" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="">Lacre SIF:</label>
-                                    <input type="text" name="LacreSif" placeholder="Lacre SIF" required>
+                                    <input type="text" name="LacreSif" placeholder="Opciona" >
                                 </div>
 
                                 <div class="juntar">
                                     <label for="">IMO:</label>
-                                    <input type="text" name="IMD" placeholder="IMO" required>
+                                    <input type="text" name="IMD" placeholder="Opcional" >
                                 </div>
                                 <div class="juntar">
                                     <label for="">N° ONU:</label>
-                                    <input type="text" name="NOnu" placeholder="N° ONU" required>
+                                    <input type="text" name="NOnu" placeholder="Opcional" >
                                 </div>
                             </div>
                             <div class="inputObs">
                                 <div>
-                                    <label for="">Observação</label>
+                                    <label for="Observacao">Observação</label>
                                 </div>
-                                <input type="text">
+                                <input id="Observacao" type="text" placeholder="Opcional">
                             </div>
-
 
                             <div class="enviar">
                                 <input type="submit" onclick="exibirMensagem()">
