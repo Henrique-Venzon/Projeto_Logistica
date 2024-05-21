@@ -43,11 +43,6 @@ if (!isset($_SESSION['turma'])) {
 
         <div class="DivDireita">
             <div class="table-inputs">
-                <button
-                    onclick="setMultipleInputValues({'empresa': 'portonave', 'nomeCliente': 'Matheus Yan', 'telefone':'4739406838','cep':'88370904'})">Preset
-                    1</button>
-                <button>Preset 2</button>
-                <button>Preset 3</button>
                 <span class="tooltip-container">
                     <i class="fa-regular fa-circle-question"></i>
                     <span class="tooltip">Insira os dados para criar o pedido!</span>
@@ -58,6 +53,11 @@ if (!isset($_SESSION['turma'])) {
 
                 <div class="form">
                     <div class="tabela-scroll">
+                        <div class="presets">
+                        <button onclick="setMultipleInputValues({'empresa': 'portonave', 'nomeCliente': 'Matheus Yan', 'telefone':'4739406838','cep':'88370904'})">Preset 1</button>
+                        <button>Preset 2</button>
+                        <button>Preset 3</button>
+                        </div>
                         <form action="processamento/carga.php.php" method="post">
                             <div class="colunas1">
                                 <div class="numeroPedido">
