@@ -1,4 +1,5 @@
 <?php
+$id_aluno = 'Professor';
 session_start();
 if (!isset($_SESSION['id'])) {
     header("Location: index.php");
@@ -51,8 +52,12 @@ $turma = $_SESSION['turma']
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-
-        $id_aluno = $_SESSION['id_aluno'];
+        if ($_SESSION['tipo_login'] != 'professor'){
+            if(isset($_SESSION['id_aluno'])){
+                $id_aluno = $_SESSION['id_aluno'];
+            } else {
+            }
+        }
         $sql = "SELECT id_container, placa, nome_motorista, container, navio, Cliente, tipo, lacre, `Lacre Sif`, Temperatura, IMO, NOnu, situacao FROM container WHERE turma_id='" . $_SESSION['turma'] . "' AND situacao = 'enviado' AND id_container NOT IN (SELECT id_transporte FROM atividade_concluida WHERE id_aluno = '" . $id_aluno . "');";
         $result = $conn->query($sql);
 
