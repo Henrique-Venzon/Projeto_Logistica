@@ -265,7 +265,12 @@ if (!isset($_SESSION['turma'])) {
 </body>
 
 </html>
+<script>
 
+
+
+
+</script>x
 <script>
     function setMultipleInputValues(values) {
         for (var id in values) {

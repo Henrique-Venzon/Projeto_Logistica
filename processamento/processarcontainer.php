@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Verifica se os valores POST existem e são numéricos
     $placa = $_POST['placa'];
     $NomeMotorista = $_POST['NomeMotorista'];
+    $cliente = $_POST['cliente'];
     $container = $_POST['container'];
     $navio = $_POST['navio'];
     $tipo = $_POST['tipo'];
@@ -27,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $Temperatura = is_numeric($_POST['temperatura']) ? $_POST['temperatura'] : NULL;
     $turma_id=$_SESSION['turma'];
 
-    $sql = "INSERT INTO container (`placa`,`nome_motorista`,`container`,`navio`,`tipo`,`lacre`,`Lacre Sif`,`IMO`,`NOnu`,`situacao`,`temperatura`,`turma_id`) VALUES ('".$placa."', '".$NomeMotorista."', '".$container."', '".$navio."', '".$tipo."', '".$lacre."', '".$LacreSif."', '".$IMO."', '".$NOnu."', 'enviado','".$Temperatura."','".$turma_id."');";
+    $sql = "INSERT INTO container (`placa`,`cliente`,`nome_motorista`,`container`,`navio`,`tipo`,`lacre`,`Lacre Sif`,`IMO`,`NOnu`,`situacao`,`temperatura`,`turma_id`) VALUES ('".$placa."','".$cliente."', '".$NomeMotorista."', '".$container."', '".$navio."', '".$tipo."', '".$lacre."', '".$LacreSif."', '".$IMO."', '".$NOnu."', 'enviado','".$Temperatura."','".$turma_id."');";
 
     if ($conn->query($sql) === TRUE) {
         echo 'Dados inseridos com sucesso!';

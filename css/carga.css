@@ -4,6 +4,45 @@
     box-sizing: border-box;
     font-family: 'Platypi';
 }
+.table{
+    margin-top: 10px;
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 0 0 7px black;
+    outline: 2px solid #000;
+    margin-bottom: 20px;
+}
+.table input{
+    width: 140px;
+    text-align: center;
+    border-radius: 15px;
+}
+.table th,td{
+    border: solid 1.5px #000000;
+    border-left: none;
+    border-bottom: none;
+    font-size: 30px;
+}
+.table th{
+    height: 50px;
+    border-top: none;
+    background-color: #000000;
+}
+.table td{
+    height: 60px;
+    background-color: #333333;
+}
+.table button{
+    padding: 4px;
+    width: 120px;
+    border-radius: 15px;
+    font-size: 22px;
+    text-transform: uppercase;
+    border: 1.5px solid black;
+}
 main{
     width: 100%;
     display: flex;
@@ -122,5 +161,5 @@ main{
     text-align: center;
 }
 .tabelaComVistoria table{
-    width: 80%;
+    width: 92%;
 }

@@ -53,22 +53,22 @@ $turma = $_SESSION['turma']
         }
 
         $id_aluno = $_SESSION['id_aluno'];
-        $sql = "SELECT id, placa, NomeMotorista, container, navio, cliente, tipo, lacre, LacreSif, Temperatura, IMD, NOnu, situacao FROM transporte WHERE turma_id='" . $_SESSION['turma'] . "' AND situacao = 'enviado' AND id NOT IN (SELECT id_transporte FROM atividade_concluida WHERE id_aluno = '" . $id_aluno . "');";
+        $sql = "SELECT id_container, placa, nome_motorista, container, navio, Cliente, tipo, lacre, `Lacre Sif`, Temperatura, IMO, NOnu, situacao FROM container WHERE turma_id='" . $_SESSION['turma'] . "' AND situacao = 'enviado' AND id_container NOT IN (SELECT id_transporte FROM atividade_concluida WHERE id_aluno = '" . $id_aluno . "');";
         $result = $conn->query($sql);
 
         if ($result && $result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $id = $row["id"];
+                $id_container = $row["id_container"];
                 $placa = $row["placa"];
-                $NomeMotorista = $row["NomeMotorista"];
+                $NomeMotorista = $row["nome_motorista"];
                 $container = $row["container"];
                 $navio = $row["navio"];
-                $cliente = $row["cliente"];
+                $cliente = $row["Cliente"];
                 $tipo = $row["tipo"];
                 $lacre = $row["lacre"];
-                $LacreSif = $row["LacreSif"];
+                $LacreSif = $row["Lacre Sif"];
                 $Temperatura = $row["Temperatura"];
-                $IMD = $row["IMD"];
+                $IMO = $row["IMO"];
                 $NOnu = $row["NOnu"];
                 $situacao = $row["situacao"];
                 $resultado_de_container = 'True';
@@ -97,9 +97,9 @@ $turma = $_SESSION['turma']
                                     ($placa = '');
                                 echo ($placa); ?>" readonly>
                                 <!-- Tags escondidas para o form! NÂO EXCLUIR VENZON! -->
-                                <input type="hidden" name="id_atividade" value="<?php if (!isset($id))
-                                    ($id = '');
-                                echo $id; ?>">
+                                <input type="hidden" name="id_atividade" value="<?php if (!isset($id_container))
+                                    ($id_container = '');
+                                echo $id_container; ?>">
                             </div>
                             <div class="juntar">
                                 <label for="">Nome do Motorista:</label>
@@ -151,9 +151,9 @@ $turma = $_SESSION['turma']
                             </div>
                             <div class="juntar">
                                 <label for="">IMO:</label>
-                                <input type="text" name="IMD" value="<?php if (!isset($IMD))
-                                    ($IMD = '');
-                                echo ($IMD) ?>" readonly>
+                                <input type="text" name="IMD" value="<?php if (!isset($IMO))
+                                    ($IMO = '');
+                                echo ($IMO) ?>" readonly>
                             </div>
                             <div class="juntar">
                                 <label for="">N° ONU:</label>

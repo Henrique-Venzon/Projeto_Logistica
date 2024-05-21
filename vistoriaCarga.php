@@ -129,7 +129,7 @@ $conn->close();
                             }
 
                                 // Consulta para buscar os pedidos
-                                $sql = "SELECT npedido FROM carga";
+                                $sql = "SELECT npedido FROM carga where turma_id = '".$_SESSION['turma']."'";
                                 $result = $conn->query($sql);
                                 
                                 // Se houver resultados, criar as opções do select
@@ -162,37 +162,50 @@ $conn->close();
 
                                     <div class="tabelaComVistoria">
                                     <table class='table'>
-                                        <tr>
+                                    <tr>
                                             <th>Produto</th>
                                             <th>Unidade</th>
                                             <th>Quantidade</th>
                                             <th>Valor</th>
-                                            <th>Faltando/Avariado</th>
+                                            <th>Faltando</th>
+                                            <th>Avariado</th>
+                                            <th>Total</th>
                                         </tr>
                                         <tr>
-                                        <td><?php echo $produto1; ?></td>
-                                            <td><td><?php echo $unidade1; ?></td></td>
-                                            <td><td><?php echo $quantidade1; ?></td></td>
-                                            <td><td><?php echo $valor1; ?></td></td>
-                                            <td><button>editar</button></td>
+                                            <td><?php echo $produto1; ?></td>
+                                            <td><?php echo $unidade1; ?></td>
+                                            <td>
+                                                <span id="quantidade1"><?php echo $quantidade1; ?></span>
+                                                <input id="quantidadeInput1" type="text" value="<?php echo $quantidade1; ?>" style="display:none;" />
+                                            </td>
+                                            <td><?php echo $valor1; ?></td>
+                                            <td><button id="editar1" onclick="editarQuantidade(1)">editar</button></td>
+                                            <td><input type="number"></td>
+                                            <td>Total</td>
                                         </tr>
                                         <tr>
-                                        <?php if ($produto2!='')echo '<td>'.$produto2.'</td>'; ?>
-                                        <?php if ($unidade2!=' ')echo '<td>'.$unidade2.'</td>'; ?>
-                                        <?php if ($quantidade2!='0')echo '<td>'.$quantidade2.'</td>'; ?>
-                                        <?php if ($valor2!='0.00')echo '<td>'.$valor2.'</td>'; ?>
+                                            <?php if ($produto2!='')echo '<td>'.$produto2.'</td>'; ?>
+                                            <?php if ($unidade2!=' ')echo '<td>'.$unidade2.'</td>'; ?>
+                                            <?php if ($quantidade2!='0')echo '<td><span id="quantidade2">'.$quantidade2.'</span><input id="quantidadeInput2" type="text" value="'.$quantidade2.'" style="display:none;" /></td>'; ?>
+                                            <?php if ($valor2!='0.00')echo '<td>'.$valor2.'</td>'; ?>
+                                            <td><button id="editar2" onclick="editarQuantidade(2)">editar</button></td>
+                                            <td><input type="number"></td>
                                         </tr>
                                         <tr>
-                                        <?php if ($produto3!='')echo '<td>'.$produto3.'</td>'; ?>
-                                        <?php if ($unidade3!=' ')echo '<td>'.$unidade3.'</td>'; ?>
-                                        <?php if ($quantidade3!='0')echo '<td>'.$quantidade3.'</td>'; ?>
-                                        <?php if ($valor3!='0.00')echo '<td>'.$valor3.'</td>'; ?>
+                                            <?php if ($produto3!='')echo '<td>'.$produto3.'</td>'; ?>
+                                            <?php if ($unidade3!=' ')echo '<td>'.$unidade3.'</td>'; ?>
+                                            <?php if ($quantidade3!='0')echo '<td><span id="quantidade3">'.$quantidade3.'</span><input id="quantidadeInput3" type="text" value="'.$quantidade3.'" style="display:none;" /></td>'; ?>
+                                            <?php if ($valor3!='0.00')echo '<td>'.$valor3.'</td>'; ?>
+                                            <td><button id="editar3" onclick="editarQuantidade(3)">editar</button></td>
+                                            <td><input type="number"></td>
                                         </tr>
                                         <tr>
-                                        <?php if ($produto4!='')echo '<td>'.$produto4.'</td>'; ?>
-                                        <?php if ($unidade4!=' ')echo '<td>'.$unidade4.'</td>'; ?>
-                                        <?php if ($quantidade4!='0')echo '<td>'.$quantidade4.'</td>'; ?>
-                                        <?php if ($valor4!='0.00')echo '<td>'.$valor4.'</td>'; ?>
+                                            <?php if ($produto4!='')echo '<td>'.$produto4.'</td>'; ?>
+                                            <?php if ($unidade4!=' ')echo '<td>'.$unidade4.'</td>'; ?>
+                                            <?php if ($quantidade4!='0')echo '<td><span id="quantidade4">'.$quantidade4.'</span><input id="quantidadeInput4" type="text" value="'.$quantidade4.'" style="display:none;" /></td>'; ?>
+                                            <?php if ($valor4!='0.00')echo '<td>'.$valor4.'</td>'; ?>
+                                            <td><button id="editar4" onclick="editarQuantidade(4)">editar</button></td>
+                                            <td><input type="number"></td>
                                         </tr>
 
                                     </table>
@@ -207,7 +220,33 @@ $conn->close();
 
     </main>
 
+    <script>
+        function editarQuantidade(row) {
+            var quantidadeSpan = document.getElementById('quantidade' + row);
+            var quantidadeInput = document.getElementById('quantidadeInput' + row);
+            var editButton = document.getElementById('editar' + row);
 
+            if (quantidadeSpan.style.display === 'none') {
+                quantidadeSpan.style.display = 'inline';
+                quantidadeInput.style.display = 'none';
+                editButton.textContent = 'editar';
+            } else {
+                quantidadeSpan.style.display = 'none';
+                quantidadeInput.style.display = 'inline';
+                editButton.textContent = 'salvar';
+            }
+        }
+
+        function salvarQuantidade(row) {
+            var quantidadeSpan = document.getElementById('quantidade' + row);
+            var quantidadeInput = document.getElementById('quantidadeInput' + row);
+            quantidadeSpan.textContent = quantidadeInput.value;
+
+            quantidadeSpan.style.display = 'inline';
+            quantidadeInput.style.display = 'none';
+            document.getElementById('editar' + row).textContent = 'editar';
+        }
+    </script>
     <script src="js/vistoriaCarga.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

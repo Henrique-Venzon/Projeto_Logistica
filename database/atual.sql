@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 21/05/2024 às 11:30
+-- Tempo de geração: 21/05/2024 às 13:40
 -- Versão do servidor: 8.0.36
 -- Versão do PHP: 8.2.13
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `aluno` (
 --
 
 INSERT INTO `aluno` (`id`, `username`, `password`, `turma_id`) VALUES
-(1, 'root.Att', 'root', 1),
+(1, 'root.Att', '6nUJ', 1),
 (12, 'teste', 'teste', 1),
 (94, 'Aluno 1', 'xSTt', 2),
 (95, 'Aluno 2', 'blFm', 2);
@@ -156,8 +156,20 @@ CREATE TABLE IF NOT EXISTS `carga` (
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
+--
+-- Despejando dados para a tabela `carga`
+--
+
+INSERT INTO `carga` (`id`, `situacao`, `npedido`, `Empresa`, `cliente`, `Telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`, `turma_id`) VALUES
+(18, 'enviado', '332', 'Portonave', 'Matheus Yan', '4739406838', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(19, 'enviado', '4123', 'Portonave', 'Matheus Yan', '4739406838', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(20, 'enviado', '6123', 'Portonave', 'Matheus Yan', '4739406838', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(21, 'enviado', '2231', 'Portonave', 'Matheus Yan', '4739406838', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(22, 'enviado', '33124', 'Portonave', 'Matheus Yan', '4739406838', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `container`
@@ -180,7 +192,14 @@ CREATE TABLE IF NOT EXISTS `container` (
   `situacao` char(20) NOT NULL,
   PRIMARY KEY (`id_container`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `container`
+--
+
+INSERT INTO `container` (`id_container`, `placa`, `container`, `navio`, `tipo`, `lacre`, `lacre SIF`, `nome_motorista`, `NOnu`, `Temperatura`, `IMO`, `turma_id`, `situacao`) VALUES
+(1, '231QAC', '2231', 'KL2332', '22G1', 'ty223At', '41231', 'Matheus Yan dos Reis', '2546', 23, '1', 1, 'enviado');
 
 -- --------------------------------------------------------
 
@@ -197,14 +216,16 @@ CREATE TABLE IF NOT EXISTS `nota_fiscal_criada` (
   PRIMARY KEY (`id_notafiscal`),
   KEY `id_atividade` (`id_atividade`),
   KEY `id_turma` (`id_turma`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `nota_fiscal_criada`
 --
 
 INSERT INTO `nota_fiscal_criada` (`id_notafiscal`, `id_atividade`, `id_turma`, `data_hora_envio`) VALUES
-(8, 13, 1, '2024-05-16 10:51:11');
+(11, 21, 1, '2024-05-21 10:30:15'),
+(12, 21, 1, '2024-05-21 10:30:41'),
+(13, 22, 1, '2024-05-21 10:32:15');
 
 -- --------------------------------------------------------
 
