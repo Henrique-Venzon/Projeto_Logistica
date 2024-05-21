@@ -41,22 +41,13 @@ $dbname = "logistica";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-$sql = "SELECT `placa`, `NomeMotorista`, `container`, `navio`, `tipo`, `lacre`, `LacreSif`, `IMD`, `NOnu`, `npedido`, `Empresa`, `cliente`, `telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`, `Temperatura`, `turma_id` FROM transporte where turma_id = '".$_SESSION['turma']."' and `npedido`='" . $npedido_ver . "'  ";
+$sql = "SELECT * FROM carga where turma_id = '".$_SESSION['turma']."' and `npedido`='" . $npedido_ver . "'  ";
 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
-        $placa = $row['placa'];
-        $NomeMotorista = $row['NomeMotorista'];
-        $container = $row['container'];
-        $navio = $row['navio'];
-        $tipo = $row['tipo'];
-        $lacre = $row['lacre'];
-        $LacreSif = $row['LacreSif'];
-        $IMD = $row['IMD'];
-        $NOnu = $row['NOnu'];
         $npedido = $row['npedido'];
         $Empresa = $row['Empresa'];
         $cliente = $row['cliente'];
@@ -90,7 +81,6 @@ if ($result->num_rows > 0) {
         $cfop2 = $row['cfop2'];
         $cfop3 = $row['cfop3'];
         $cfop4 = $row['cfop4'];
-        $Temperatura = $row['Temperatura'];
         $turma_id = $row['turma_id'];
     }
 } else {

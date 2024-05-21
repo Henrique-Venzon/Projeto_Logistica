@@ -58,7 +58,7 @@ if (!isset($_SESSION['turma'])) {
                         <button onclick="setMultipleInputValues({'empresa': 'MultiLog', 'nomeCliente': 'Luan Pereira', 'telefone':'4789426155','cep':'23812310','produto':'Motor','produto2':'Óleo Diesel','unidade':'UN','unidade2':'L','quantidade':'15','quantidade2':'30','valor':'2800.00','valor2':'2.40'})">Preset 2</button>
                         <button onclick="setMultipleInputValues({'empresa': 'ARXO', 'nomeCliente': 'Henrique Venzon', 'telefone':'4791296865','cep':'88318481','produto':'Camisa','produto2':'Moletom','unidade':'UN','unidade2':'UN','quantidade':'30','quantidade2':'20','valor':'20.00','valor2':'24.00'})">Preset 3</button>
                         </div>
-                        <form action="processamento/carga.php.php" method="post">
+                        <form action="processamento/carga.php" method="post">
                             <div class="colunas1">
                                 <div class="numeroPedido">
                                     <label for="num">N° pedido:</label>
@@ -167,10 +167,10 @@ if (!isset($_SESSION['turma'])) {
                                     <input type="text" id="cfop4" name="cfop4" placeholder="Opcional">
                                 </div>
                             </div>
+                            <div class="enviar">
+                                <input type="submit" onclick="exibirMensagem()">
+                            </div>
                         </form>
-                        <div class="enviar">
-                            <input type="submit" onclick="exibirMensagem()">
-                        </div>
 
                         <form action="processamento/processarcontainer.php" method="post">
                             <div class="transportes">
