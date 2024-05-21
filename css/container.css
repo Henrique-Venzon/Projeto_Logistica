@@ -61,8 +61,10 @@ main{
     width: 30%;
     margin-top: 1.5%;
 }
+input{
+  text-align: center;
+}
 .colunas1{
-
     margin-top: 1.2%;
     display: flex;
     flex-direction: row;
