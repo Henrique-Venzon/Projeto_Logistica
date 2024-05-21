@@ -256,7 +256,30 @@ if (!isset($_SESSION['turma'])) {
 </body>
 
 </html>
+<script>
+        function exibirMensagem() {
+            const numPedido = document.getElementById('num').value;
+            const empresa = document.getElementById('empresa').value;
+            const nomeCliente = document.getElementById('nomeCliente').value;
+            const telefone = document.getElementById('telefone').value;
+            const cep = document.getElementById('cep').value;
+            const produto = document.getElementById('produto').value;
+            const unidade = document.getElementById('unidade').value;
+            const valor = document.getElementById('valor').value;
+            const ncm = document.getElementById('ncm').value;
+            const cst = document.getElementById('cst').value;
+            const cfop = document.getElementById('cfop').value;
+            const inputs = document.getElementById('inputs').value;
 
+            if (numPedido && empresa && nomeCliente && telefone && cep && produto && unidade && ncm && cst && cfop && inputs) {
+                alert('Dados enviados com sucesso!');
+            } else {
+                alert('Erro no envio. Preencha todos os campos obrigatórios.');
+            }
+        }
+
+
+    </script>
 <script>
     function setMultipleInputValues(values) {
         for (var id in values) {
