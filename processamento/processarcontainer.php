@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $tipo = $_POST['tipo'];
     $lacre = $_POST['lacre'];
     $LacreSif = is_numeric($_POST['LacreSif']) ? $_POST['LacreSif'] : 0;
-    $IMO = isset($_POST['IMD']) ? $_POST['IMD'] : 'NULL';
+    $IMO = isset($_POST['IMO']) ? $_POST['IMO'] : 'NULL';
     $NOnu = is_numeric($_POST['NOnu']) ? $_POST['NOnu'] : 0;
     $Temperatura = is_numeric($_POST['temperatura']) ? $_POST['temperatura'] : NULL;
     $turma_id=$_SESSION['turma'];

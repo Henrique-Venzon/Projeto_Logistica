@@ -41,7 +41,7 @@ $dbname = "logistica";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-$sql = "SELECT * FROM carga where turma_id = '".$_SESSION['turma']."' and `npedido`='" . $npedido_ver . "'  ";
+$sql = "SELECT * FROM carga where turma_id = '".$_SESSION['turma']."'";
 
 $result = $conn->query($sql);
 

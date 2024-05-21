@@ -215,7 +215,7 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="juntar">
                                     <label for="">IMO:</label>
-                                    <input type="text" name="IMD" placeholder="Opcional" >
+                                    <input type="text" name="IMO" placeholder="Opcional" >
                                 </div>
                                 <div class="juntar">
                                     <label for="">N° ONU:</label>
