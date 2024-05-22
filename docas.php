@@ -55,7 +55,7 @@ $dbname = "logistica";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);     
 
-$sql = "SELECT * FROM nota_fiscal_criada";
+$sql = "SELECT * FROM docas";
 
 $res = $conn->query($sql);
 
@@ -72,7 +72,7 @@ if($qtd > 0){
     
         while($row = $res->fetch_object()){
             print "<tr>";
-            print "<td>".$row->pedidoFromDoca."</td>";
+            print "<td>".$row->id_carga."</td>";
             print "<td><button>Abrir</button></td>"; 
             print "</tr>";
 

@@ -4,10 +4,6 @@ if (!isset($_SESSION['id'])) {
     header("Location: index.php");
     exit;
 }
-if (($_SESSION['tipo_login'] != 'professor')) {
-    header("Location: index.php");
-    exit;
-}
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $npedido_ver = $_POST['npedido'];
 }
@@ -107,10 +103,6 @@ if (!isset($_SESSION['turma'])) {
         <div class="DivDireita">
             <div class="table-inputs">
 
-                <div class="text">
-                    <h1>Pedidos</h1>
-                    <h1 id="v" class="voltar">Voltar</h1>
-                </div>
                 <div class="tabela-scroll">
                     <Div class="nomet">
                         <h1>Cliente</h1>

@@ -304,23 +304,19 @@
                         <span class="sidebar-text" style="margin-left:10px;">Expedição</span>
                     </a>
                 </li>
-                <?php if($_SESSION['tipo_login']=='professor')
-                echo '
                 <li class="sidebar-item">
                 <a href="notaf.php" class="sidebar-link">
                 <i class="fa-solid fa-receipt"></i>
                     <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
                 </a>
             </li>
-                
-
+            
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
                     <i class="fa-solid fa-clipboard"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Relatórios</span>
                     </a>
-                </li>'
-                ?>
+                </li>
                                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                         data-bs-target="#controle" aria-expanded="false" aria-controls="Recebimentos">
