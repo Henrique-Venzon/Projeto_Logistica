@@ -243,7 +243,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                     <td><?php if (!isset($valor1))
                                         ($valor1 = 0);
                                     echo $valor1; ?></td>
-                                    <td><button id="editar1" onclick="editarQuantidade(1)">editar</button></td>
+                                    <td><button  type="button" id="editar1" onclick="editarQuantidade(1)">editar</button></td>
                                     <td><input type="number"></td>
                                     <?php echo "<td>" . $quantidade1 * $valor1 . " Reais"; ?>
                                 </tr>
@@ -264,7 +264,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                     if ($valor2 != '0.00') {
                                         echo "<td>" . $valor2 . "</td>";
                                     }
-                                    echo "<td><button id='editar2' onclick='editarQuantidade(2)'>editar</button></td>";
+                                    echo "<td><button  type=\"button\" id='editar2' onclick='editarQuantidade(2)'>editar</button></td>";
                                     echo "<td><input type='number'></td>";
                                     echo "<td>" . $quantidade2 * $valor2 . " Reais";
                                     echo "</tr>";
@@ -287,7 +287,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                     if ($valor3 != '0.00') {
                                         echo "<td>" . $valor3 . "</td>";
                                     }
-                                    echo "<td><button id='editar3' onclick='editarQuantidade(3)'>editar</button></td>";
+                                    echo "<td><button type=\"button\" id='editar3' onclick='editarQuantidade(3)'>editar</button></td>";
                                     echo "<td><input type='number'></td>";
                                     echo "<td>" . $quantidade3 * $valor3 . " Reais";
                                     echo "</tr>";
@@ -310,7 +310,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                     if ($valor4 != '0.00') {
                                         echo "<td>" . $valor4 . "</td>";
                                     }
-                                    echo "<td><button id='editar4' onclick='editarQuantidade(4)'>editar</button></td>";
+                                    echo "<td><button  type=\"button\" id='editar4' onclick='editarQuantidade(4)'>editar</button></td>";
                                     echo "<td><input type='number'></td>";
                                     echo "<td>" . $quantidade4 * $valor4 . " Reais";
                                     echo "</tr>";
