@@ -53,6 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
     if ($result->num_rows > 0) {
 
         while ($row = $result->fetch_assoc()) {
+            $id=$row['id'];
             $npedido = $row['npedido'];
             $Empresa = $row['Empresa'];
             $cliente = $row['cliente'];
@@ -115,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                         <div class="select">
                             <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                                 <select name="pedido_selecionado" id="pedido">
-                                    <option value=' '></option>
+                                    <option value="0">0</option>
                                     <?php
                                     // Conexão com o banco de dados
                                     $servername = "localhost";
@@ -150,16 +151,56 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                         </div>
                         </form>
                     </div>
+                    <form method="post" action="processamento/atualizar_quantidade.php">
                     <div>
                         <div class="informacoes">
                             <div class="inf">
                                 <div class="npedido">
                                     <h1>N° Pedido</h1>
-                                    <h1>26</h1>
+                                    <h1><?php echo $npedido_selecionado; ?></h1>
                                 </div>
                                 <div class="nFiscal">
                                     <h1>Nota Fiscal</h1>
-                                    <h1>6545</h1>
+                                    <h1>
+                                        <?php
+                                        // Conexão com o banco de dados
+                                        $servername = "localhost";
+                                        $username = "root.Att";
+                                        $password = "root";
+                                        $dbname = "logistica";
+
+                                        // Verifique se $npedido_selecionado é nulo ou zero
+                                        if ($npedido_selecionado == null || $npedido_selecionado == 0) {
+                                            // Se for, não execute o resto do código
+                                            return;
+                                        }
+
+                                        // Create connection
+                                        $conn = new mysqli($servername, $username, $password, $dbname);
+                                        if ($conn->connect_error) {
+                                            die("Erro de conexão: " . $conn->connect_error);
+                                        }
+                                        $sql_atividade = "SELECT id FROM carga WHERE npedido='" . $npedido_selecionado . "' AND turma_id = '" . $_SESSION['turma'] . "'";
+                                        $resultado = $conn->query($sql_atividade);
+
+                                        // Primeiro, busque uma linha de resultados como uma matriz associativa
+                                        $row_atividade = $resultado->fetch_assoc();
+                                        $id_atividade = $row_atividade['id'];  // substitua 'id' pelo nome da coluna que você quer acessar
+                                        
+                                        // Agora, use $id_atividade na sua consulta SQL
+                                        $sql = "SELECT id_notafiscal FROM nota_fiscal_criada WHERE id_atividade = $id_atividade and id_turma = '" . $_SESSION['turma'] . "'";
+                                        $result = $conn->query($sql);
+
+                                        // Se houver resultados, criar as opções do select
+                                        if ($result->num_rows > 0) {
+                                            while ($row = $result->fetch_assoc()) {
+                                                $notafiscal = $row['id_notafiscal'];
+                                            }
+                                            echo $notafiscal;
+                                        }
+                                        ?>
+                                    </h1>
+
                                 </div>
 
                                 <div class="doca">
@@ -186,19 +227,29 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                     <th>Total</th>
                                 </tr>
                                 <tr>
-                                    <td><?php if (!isset($produto1)) ($produto1 = ''); echo $produto1; ?></td>
-                                    <td><?php if (!isset($unidade1)) ($unidade1 = ''); echo $unidade1; ?></td>
+                                    <td><?php if (!isset($produto1))
+                                        ($produto1 = '');
+                                    echo $produto1; ?></td>
+                                    <td><?php if (!isset($unidade1))
+                                        ($unidade1 = '');
+                                    echo $unidade1; ?></td>
                                     <td>
-                                        <span id="quantidade1"><?php if (!isset($quantidade1)) ($quantidade1 = 0); echo $quantidade1; ?></span>
-                                        <input id="quantidadeInput1" type="text" value="<?php echo $quantidade1; ?>" style="display:none;" />
+                                        <span id="quantidade1"><?php if (!isset($quantidade1))
+                                            ($quantidade1 = 0);
+                                        echo $quantidade1; ?></span>
+                                        <input id="quantidadeInput1" type="text" value="<?php echo $quantidade1; ?>"
+                                            style="display:none;" />
                                     </td>
-                                    <td><?php if (!isset($valor1)) ($valor1 = 0); echo $valor1; ?></td>
+                                    <td><?php if (!isset($valor1))
+                                        ($valor1 = 0);
+                                    echo $valor1; ?></td>
                                     <td><button id="editar1" onclick="editarQuantidade(1)">editar</button></td>
                                     <td><input type="number"></td>
                                     <?php echo "<td>" . $quantidade1 * $valor1 . " Reais"; ?>
                                 </tr>
                                 <?php
-                                if (!isset($produto2)) ($produto2 = '');
+                                if (!isset($produto2))
+                                    ($produto2 = '');
                                 if ($produto2 != '') {
                                     echo "<tr>";
                                     if ($produto2 != '') {
@@ -220,7 +271,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                 }
                                 ?>
                                 <?php
-                                if (!isset($produto3)) ($produto3 = '');
+                                if (!isset($produto3))
+                                    ($produto3 = '');
                                 if ($produto3 != '') {
                                     echo "<tr>";
                                     if ($produto3 != '') {
@@ -242,7 +294,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                 }
                                 ?>
                                 <?php
-                                if (!isset($produto4)) ($produto4 = '');
+                                if (!isset($produto4))
+                                    ($produto4 = '');
                                 if ($produto4 != '') {
                                     echo "<tr>";
                                     if ($produto4 != '') {
@@ -265,6 +318,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                 ?>
                             </table>
                         </div>
+                        <div class="enviar">
+                            <button type="submit">Enviar</button>
+                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -119,7 +119,12 @@ main{
 .inputPedido button{
     margin-bottom: 12px;
 }
-.inputPedido button{
+.enviar{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1%;
+}
+.inputPedido button,.enviar button{
     width: 140px;
     height: 45px;
     border-radius: 30px;
