@@ -1,4 +1,5 @@
 <?php
+$npedido_selecionado=0;
 session_start();
 if (!isset($_SESSION['id'])) {
     header("Location: index.php");
@@ -7,6 +8,12 @@ if (!isset($_SESSION['id'])) {
 if (!isset($_SESSION['turma'])) {
     header("Location: index.php");
     exit;
+}
+?>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
+    // pegar o valor do select
+    $npedido_selecionado = $_GET['pedido_selecionado'];
 }
 ?>
 <!DOCTYPE html>
@@ -41,7 +48,7 @@ if (!isset($_SESSION['turma'])) {
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    $sql = "SELECT * FROM carga where turma_id = '" . $_SESSION['turma'] . "'";
+    $sql = "SELECT * FROM carga where npedido = '" . $npedido_selecionado . "' and turma_id = '" . $_SESSION['turma'] . "'";
 
     $result = $conn->query($sql);
 
@@ -84,7 +91,6 @@ if (!isset($_SESSION['turma'])) {
             $turma_id = $row['turma_id'];
         }
     } else {
-        echo "0 results";
     }
     $conn->close();
 
@@ -114,44 +120,44 @@ if (!isset($_SESSION['turma'])) {
                             <label for="pedido">Selecione o Pedido:</label>
                         </div>
                         <div class="select">
-                            <form action="" method="post">
-                            <select name="pedido" id="pedido">
-                                <option value=' '>
-                                <?php
-                                // Conexão com o banco de dados
-                                $servername = "localhost";
-                                $username = "root.Att";
-                                $password = "root";
-                                $dbname = "logistica";
+                            <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                <select name="pedido_selecionado" id="pedido">
+                                    <option value=' '>
+                                        <?php
+                                        // Conexão com o banco de dados
+                                        $servername = "localhost";
+                                        $username = "root.Att";
+                                        $password = "root";
+                                        $dbname = "logistica";
 
-                                // Create connection
-                                $conn = new mysqli($servername, $username, $password, $dbname);
-                                if ($conn->connect_error) {
-                                    die("Erro de conexão: " . $conn->connect_error);
-                                }
+                                        // Create connection
+                                        $conn = new mysqli($servername, $username, $password, $dbname);
+                                        if ($conn->connect_error) {
+                                            die("Erro de conexão: " . $conn->connect_error);
+                                        }
 
-                                // Consulta para buscar os pedidos
-                                $sql = "SELECT * FROM carga where turma_id = '" . $_SESSION['turma'] . "'";
-                                $result = $conn->query($sql);
+                                        // Consulta para buscar os pedidos
+                                        $sql = "SELECT * FROM carga where turma_id = '" . $_SESSION['turma'] . "'";
+                                        $result = $conn->query($sql);
 
-                                // Se houver resultados, criar as opções do select
-                                if ($result->num_rows > 0) {
-                                    while ($row = $result->fetch_assoc()) {
-                                        echo "<option value=\"{$row['npedido']}\">{$row['npedido']}</option>";
-                                    }
-                                }
+                                        // Se houver resultados, criar as opções do select
+                                        if ($result->num_rows > 0) {
+                                            while ($row = $result->fetch_assoc()) {
+                                                echo "<option value=\"{$row['npedido']}\">{$row['npedido']}</option>";
+                                            }
+                                        }
 
-                                // Fechar conexão
-                                $conn->close();
-                                ?>
-                            </select>
+                                        // Fechar conexão
+                                        $conn->close();
+                                        ?>
+                                </select>
                         </div>
                         <div class="selicionar">
-                            <button id="Button">Selecionar</button>
+                            <input type="submit" value="Enviar">
                         </div>
+                        </form>
                     </div>
-                    </form>
-                    <div id="aparecer" class="dados">
+                    <div>
 
                         <div class="doca">
                             <label for="doca">Doca:</label>
@@ -175,19 +181,29 @@ if (!isset($_SESSION['turma'])) {
                                     <th>Total</th>
                                 </tr>
                                 <tr>
-                                    <td><?php echo $produto1; ?></td>
-                                    <td><?php echo $unidade1; ?></td>
+                                    <td><?php if (!isset($produto1))
+                                        ($produto1 = '');
+                                    echo $produto1; ?></td>
+                                    <td><?php if (!isset($unidade1))
+                                        ($unidade1 = '');
+                                    echo $unidade1; ?></td>
                                     <td>
-                                        <span id="quantidade1"><?php echo $quantidade1; ?></span>
+                                        <span id="quantidade1"><?php if (!isset($quantidade1))
+                                            ($quantidade1 = 0);
+                                        echo $quantidade1; ?></span>
                                         <input id="quantidadeInput1" type="text" value="<?php echo $quantidade1; ?>"
                                             style="display:none;" />
                                     </td>
-                                    <td><?php echo $valor1; ?></td>
+                                    <td><?php if (!isset($valor1))
+                                        ($valor1 = 0);
+                                    echo $valor1; ?></td>
                                     <td><button id="editar1" onclick="editarQuantidade(1)">editar</button></td>
                                     <td><input type="number"></td>
                                     <?php echo "<td>" . $quantidade1 * $valor1 . " Reais"; ?>
                                 </tr>
                                 <?php
+                                if (!isset($produto2))
+                                    ($produto2 = '');
                                 if ($produto2 != '') {
                                     echo "<tr>";
                                     if ($produto2 != '') {
@@ -209,6 +225,8 @@ if (!isset($_SESSION['turma'])) {
                                 }
                                 ?>
                                 <?php
+                                if (!isset($produto3))
+                                    ($produto3 = '');
                                 if ($produto3 != '') {
                                     echo "<tr>";
                                     if ($produto3 != '') {
@@ -230,6 +248,8 @@ if (!isset($_SESSION['turma'])) {
                                 }
                                 ?>
                                 <?php
+                                if (!isset($produto4))
+                                    ($produto4 = '');
                                 if ($produto4 != '') {
                                     echo "<tr>";
                                     if ($produto4 != '') {
@@ -239,7 +259,7 @@ if (!isset($_SESSION['turma'])) {
                                         echo "<td>" . $unidade4 . "</td>";
                                     }
                                     if ($quantidade4 != '0') {
-                                        echo "<td><span id='quantidade4'>" . $quantidade4 . "</span><input id='quantidadeInput4' type='text' value='" . $quantidade3 . "' style='display:none;' /></td>";
+                                        echo "<td><span id='quantidade4'>" . $quantidade4 . "</span><input id='quantidadeInput4' type='text' value='" . $quantidade4 . "' style='display:none;' /></td>";
                                     }
                                     if ($valor4 != '0.00') {
                                         echo "<td>" . $valor4 . "</td>";

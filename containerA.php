@@ -10,7 +10,7 @@ if (!isset($_SESSION['turma'])) {
     exit;
 }
 $turma = $_SESSION['turma']
-        ?>
+    ?>
 <!DOCTYPE html>
 
 <head>
@@ -52,8 +52,8 @@ $turma = $_SESSION['turma']
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        if ($_SESSION['tipo_login'] != 'professor'){
-            if(isset($_SESSION['id_aluno'])){
+        if ($_SESSION['tipo_login'] != 'professor') {
+            if (isset($_SESSION['id_aluno'])) {
                 $id_aluno = $_SESSION['id_aluno'];
             } else {
             }
@@ -77,7 +77,7 @@ $turma = $_SESSION['turma']
                 $NOnu = $row["NOnu"];
                 $situacao = $row["situacao"];
                 $resultado_de_container = 'True';
-            
+
             }
 
         } else {
@@ -93,184 +93,184 @@ $turma = $_SESSION['turma']
                 </div>
 
                 <div class="tabela-scroll">
-                <div class="form">
-                    <form action="processamento/processarcontaineraluno.php" method="POST">
-                        <div class="inputs">
-                            <div class="juntar">
-                                <label for="">Placa do Caminhão:</label>
-                                <input type="text" id="placa" name="placa" value="<?php if (!isset($placa))
-                                    ($placa = '');
-                                echo ($placa); ?>" readonly>
-                                <!-- Tags escondidas para o form! NÂO EXCLUIR VENZON! -->
-                                <input type="hidden" name="id_atividade" value="<?php if (!isset($id_container))
-                                    ($id_container = '');
-                                echo $id_container; ?>">
-                            </div>
-                            <div class="juntar">
-                                <label for="">Nome do Motorista:</label>
-                                <input type="text" name="NomeMotorista" value="<?php if (!isset($NomeMotorista))
-                                    ($NomeMotorista = '');
-                                echo $NomeMotorista ?>" readonly>
-                            </div>
-                            <div class="juntar">
-                                <label for="">Container:</label>
-                                <input type="text" name="container" value="<?php if (!isset($container))
-                                    ($container = '');
-                                echo ($container) ?>" readonly>
-                            </div>
-                            <div class="juntar">
-                                <label for="">Navio:</label>
-                                <input type="text" name="navio" value="<?php if (!isset($navio))
-                                    ($navio = '');
-                                echo ($navio) ?>" readonly>
-                            </div>
-                            <div class="juntar">
-                                <label for="">Cliente:</label>
-                                <input type="text" name="cliente" value="<?php if (!isset($cliente))
-                                    ($cliente = '');
-                                echo ($cliente) ?>" readonly>
-                            </div>
-                            <div class="juntar">
-                                <label for="">Tipo:</label>
-                                <input type="text" name="tipo" value="<?php if (!isset($tipo))
-                                    ($tipo = '');
-                                echo ($tipo) ?>" readonly>
-                            </div>
-                            <div class="juntar">
-                                <label for="">Lacre:</label>
-                                <input type="text" name="lacre" value="<?php if (!isset($lacre))
-                                    ($lacre = '');
-                                echo ($lacre) ?>" readonly>
-                            </div>
-                            <div class="juntar">
-                                <label for="">Lacre SIF:</label>
-                                <input type="text" name="LacreSif" value="<?php if (!isset($LacreSif))
-                                    ($LacreSif = '');
-                                echo ($LacreSif) ?>" readonly>
-                            </div>
-                            <div class="juntar">
-                                <label for="">Temperatura:</label>
-                                <input type="text" name="Temperatura" value="<?php if (!isset($Temperatura))
-                                    ($Temperatura = '');
-                                echo ($Temperatura) ?>" readonly>
-                            </div>
-                            <div class="juntar">
-                                <label for="">IMO:</label>
-                                <input type="text" name="IMD" value="<?php if (!isset($IMO))
-                                    ($IMO = '');
-                                echo ($IMO) ?>" readonly>
-                            </div>
-                            <div class="juntar">
-                                <label for="">N° ONU:</label>
-                                <input type="text" name="NOnu" value="<?php if (!isset($NOnu))
-                                    ($NOnu = '');
-                                echo ($NOnu) ?>" readonly>
-                            </div>
-                            <h1>Assinale se tiver algum problema</h1>
-                            <div class="problema">
-                                <div class="juntar2">
-                                    <div class="input-group">
-                                        <input id="1" type="checkbox" name="sem_lona">
-                                        <label for="1">Sem lona</label>
+                    <div class="form">
+                        <form action="processamento/processarcontaineraluno.php" method="POST">
+                            <div class="inputs">
+                                <div class="juntar">
+                                    <label for="">Placa do Caminhão:</label>
+                                    <input type="text" id="placa" name="placa" value="<?php if (!isset($placa))
+                                        ($placa = '');
+                                    echo ($placa); ?>" readonly>
+                                    <!-- Tags escondidas para o form! NÂO EXCLUIR VENZON! -->
+                                    <input type="hidden" name="id_atividade" value="<?php if (!isset($id_container))
+                                        ($id_container = '');
+                                    echo $id_container; ?>">
+                                </div>
+                                <div class="juntar">
+                                    <label for="">Nome do Motorista:</label>
+                                    <input type="text" name="NomeMotorista" value="<?php if (!isset($NomeMotorista))
+                                        ($NomeMotorista = '');
+                                    echo $NomeMotorista ?>" readonly>
+                                </div>
+                                <div class="juntar">
+                                    <label for="">Container:</label>
+                                    <input type="text" name="container" value="<?php if (!isset($container))
+                                        ($container = '');
+                                    echo ($container) ?>" readonly>
+                                </div>
+                                <div class="juntar">
+                                    <label for="">Navio:</label>
+                                    <input type="text" name="navio" value="<?php if (!isset($navio))
+                                        ($navio = '');
+                                    echo ($navio) ?>" readonly>
+                                </div>
+                                <div class="juntar">
+                                    <label for="">Cliente:</label>
+                                    <input type="text" name="cliente" value="<?php if (!isset($cliente))
+                                        ($cliente = '');
+                                    echo ($cliente) ?>" readonly>
+                                </div>
+                                <div class="juntar">
+                                    <label for="">Tipo:</label>
+                                    <input type="text" name="tipo" value="<?php if (!isset($tipo))
+                                        ($tipo = '');
+                                    echo ($tipo) ?>" readonly>
+                                </div>
+                                <div class="juntar">
+                                    <label for="">Lacre:</label>
+                                    <input type="text" name="lacre" value="<?php if (!isset($lacre))
+                                        ($lacre = '');
+                                    echo ($lacre) ?>" readonly>
+                                </div>
+                                <div class="juntar">
+                                    <label for="">Lacre SIF:</label>
+                                    <input type="text" name="LacreSif" value="<?php if (!isset($LacreSif))
+                                        ($LacreSif = '');
+                                    echo ($LacreSif) ?>" readonly>
+                                </div>
+                                <div class="juntar">
+                                    <label for="">Temperatura:</label>
+                                    <input type="text" name="Temperatura" value="<?php if (!isset($Temperatura))
+                                        ($Temperatura = '');
+                                    echo ($Temperatura) ?>" readonly>
+                                </div>
+                                <div class="juntar">
+                                    <label for="">IMO:</label>
+                                    <input type="text" name="IMD" value="<?php if (!isset($IMO))
+                                        ($IMO = '');
+                                    echo ($IMO) ?>" readonly>
+                                </div>
+                                <div class="juntar">
+                                    <label for="">N° ONU:</label>
+                                    <input type="text" name="NOnu" value="<?php if (!isset($NOnu))
+                                        ($NOnu = '');
+                                    echo ($NOnu) ?>" readonly>
+                                </div>
+                                <h1>Assinale se tiver algum problema</h1>
+                                <div class="problema">
+                                    <div class="juntar2">
+                                        <div class="input-group">
+                                            <input id="1" type="checkbox" name="sem_lona">
+                                            <label for="1">Sem lona</label>
+                                        </div>
+                                    </div>
+                                    <div class="juntar2">
+                                        <div class="input-group">
+                                            <input id="2" type="checkbox" name="avariana_lateral_direita">
+                                            <label for="2">Avariana lateral direita</label>
+                                        </div>
+                                    </div>
+                                    <div class="juntar2">
+                                        <div class="input-group">
+                                            <input id="3" type="checkbox" name="sem_cabo_de_energia">
+                                            <label for="3">Sem cabo de energia</label>
+                                        </div>
+                                    </div>
+                                    <div class="juntar2">
+                                        <div class="input-group">
+                                            <input id="4" type="checkbox" name="avaria_no_teto">
+                                            <label for="4">Avaria no teto</label>
+                                        </div>
+                                    </div>
+                                    <div class="juntar2">
+                                        <div class="input-group">
+                                            <input id="5" type="checkbox" name="avaria_na_frente">
+                                            <label for="5">Avaria na frente</label>
+                                        </div>
+                                    </div>
+                                    <div class="juntar2">
+                                        <div class="input-group">
+                                            <input id="6" type="checkbox" name="sem_lacre">
+                                            <label for="6">Sem lacre</label>
+                                        </div>
+                                    </div>
+                                    <div class="juntar2">
+                                        <div class="input-group">
+                                            <input id="7" type="checkbox" name="adesivos_avariados">
+                                            <label for="7">Adesivos avariados</label>
+                                        </div>
+                                    </div>
+                                    <div class="juntar2">
+                                        <div class="input-group">
+                                            <input id="8" type="checkbox" name="excesso_de_altura">
+                                            <label for="8">Excesso de altura</label>
+                                        </div>
+                                    </div>
+                                    <div class="juntar2">
+                                        <div class="input-group">
+                                            <input id="9" type="checkbox" name="excesso_na_direita">
+                                            <label for="9">Excesso na direita</label>
+                                        </div>
+                                    </div>
+                                    <div class="juntar2">
+                                        <div class="input-group">
+                                            <input id="10" type="checkbox" name="excesso_na_esquerda">
+                                            <label for="10">Excesso na esquerda</label>
+                                        </div>
+                                    </div>
+                                    <div class="juntar2">
+                                        <div class="input-group">
+                                            <input id="11" type="checkbox" name="excesso_na_frente">
+                                            <label for="11">Excesso frontal</label>
+                                        </div>
+                                    </div>
+                                    <div class="juntar2">
+                                        <div class="input-group">
+                                            <input id="12" type="checkbox" name="painel_avariado">
+                                            <label for="12">Painel avariado</label>
+                                        </div>
+                                    </div>
+                                    <div class="juntar2">
+                                        <div class="input-group">
+                                            <input id="13" type="checkbox" name="avariana_na_lateral_esquerda">
+                                            <label class="ajeitarTxt" for="13">Avariana na lateral esquerda</label>
+                                        </div>
+                                    </div>
+                                    <div class="juntar2">
+                                        <div class="input-group">
+                                            <input id="14" type="checkbox" name="container_bem_desgastado">
+                                            <label for="14">Container bem desgastado</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="juntar2">
-                                    <div class="input-group">
-                                        <input id="2" type="checkbox" name="avariana_lateral_direita">
-                                        <label for="2">Avariana lateral direita</label>
-                                    </div>
-                                </div>
-                                <div class="juntar2">
-                                    <div class="input-group">
-                                        <input id="3" type="checkbox" name="sem_cabo_de_energia">
-                                        <label for="3">Sem cabo de energia</label>
-                                    </div>
-                                </div>
-                                <div class="juntar2">
-                                    <div class="input-group">
-                                        <input id="4" type="checkbox" name="avaria_no_teto">
-                                        <label for="4">Avaria no teto</label>
-                                    </div>
-                                </div>
-                                <div class="juntar2">
-                                    <div class="input-group">
-                                        <input id="5" type="checkbox" name="avaria_na_frente">
-                                        <label for="5">Avaria na frente</label>
-                                    </div>
-                                </div>
-                                <div class="juntar2">
-                                    <div class="input-group">
-                                        <input id="6" type="checkbox" name="sem_lacre">
-                                        <label for="6">Sem lacre</label>
-                                    </div>
-                                </div>
-                                <div class="juntar2">
-                                    <div class="input-group">
-                                        <input id="7" type="checkbox" name="adesivos_avariados">
-                                        <label for="7">Adesivos avariados</label>
-                                    </div>
-                                </div>
-                                <div class="juntar2">
-                                    <div class="input-group">
-                                        <input id="8" type="checkbox" name="excesso_de_altura">
-                                        <label for="8">Excesso de altura</label>
-                                    </div>
-                                </div>
-                                <div class="juntar2">
-                                    <div class="input-group">
-                                        <input id="9" type="checkbox" name="excesso_na_direita">
-                                        <label for="9">Excesso na direita</label>
-                                    </div>
-                                </div>
-                                <div class="juntar2">
-                                    <div class="input-group">
-                                        <input id="10" type="checkbox" name="excesso_na_esquerda">
-                                        <label for="10">Excesso na esquerda</label>
-                                    </div>
-                                </div>
-                                <div class="juntar2">
-                                    <div class="input-group">
-                                        <input id="11" type="checkbox" name="excesso_na_frente">
-                                        <label for="11">Excesso frontal</label>
-                                    </div>
-                                </div>
-                                <div class="juntar2">
-                                    <div class="input-group">
-                                        <input id="12" type="checkbox" name="painel_avariado">
-                                        <label for="12">Painel avariado</label>
-                                    </div>
-                                </div>
-                                <div class="juntar2">
-                                    <div class="input-group">
-                                        <input id="13" type="checkbox" name="avariana_na_lateral_esquerda">
-                                        <label class="ajeitarTxt" for="13">Avariana na lateral esquerda</label>
-                                    </div>
-                                </div>
-                                <div class="juntar2">
-                                    <div class="input-group">
-                                        <input id="14" type="checkbox" name="container_bem_desgastado">
-                                        <label for="14">Container bem desgastado</label>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <?php
-                            if ($resultado_de_container != 'false')
-                                echo '
+                                <?php
+                                if ($resultado_de_container != 'false')
+                                    echo '
                     <div class="enviar">
                         <input type="submit">
                     </div>
                     </form>';
-                            elseif ($resultado_de_container == 'false')
+                                elseif ($resultado_de_container == 'false')
 
-                                echo '
+                                    echo '
                     <div class="enviar">
                         <text>Nenhum Container disponível</text>
                     </div>
                     </form>';
-                            ?>
-                        </div>
-                </div>
+                                ?>
+                            </div>
+                    </div>
                 </div>
             </div>
         </div>
