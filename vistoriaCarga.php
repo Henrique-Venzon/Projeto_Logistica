@@ -151,7 +151,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                         </div>
                         </form>
                     </div>
-                    <form method="post" action="processamento/atualizar_quantidade.php">
+                    <form method="post" action="processamento/confirmar_carga.php">
                     <div>
                         <div class="informacoes">
                             <div class="inf">
@@ -237,8 +237,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                         <span id="quantidade1"><?php if (!isset($quantidade1))
                                             ($quantidade1 = 0);
                                         echo $quantidade1; ?></span>
-                                        <input id="quantidadeInput1" type="text" value="<?php echo $quantidade1; ?>"
-                                            style="display:none;" />
+                                        <input name=quantidade1 id="quantidadeInput1" type="text" value="<?php echo $quantidade1; ?>" style="display:none;" />
+                                        <input name=id id="id" type="hidden" value="<?php echo $id; ?>" style="display:none;" />
                                     </td>
                                     <td><?php if (!isset($valor1))
                                         ($valor1 = 0);
@@ -259,7 +259,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                         echo "<td>" . $unidade2 . "</td>";
                                     }
                                     if ($quantidade2 != '0') {
-                                        echo "<td><span id='quantidade2'>" . $quantidade2 . "</span><input id='quantidadeInput2' type='text' value='" . $quantidade2 . "' style='display:none;' /></td>";
+                                        echo "<td><span id='quantidade2'>" . $quantidade2 . "</span><input name='quantidade2' id='quantidadeInput2' type='text' value='" . $quantidade2 . "' style='display:none;' /></td>";
                                     }
                                     if ($valor2 != '0.00') {
                                         echo "<td>" . $valor2 . "</td>";
@@ -282,7 +282,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                         echo "<td>" . $unidade3 . "</td>";
                                     }
                                     if ($quantidade3 != '0') {
-                                        echo "<td><span id='quantidade3'>" . $quantidade3 . "</span><input id='quantidadeInput3' type='text' value='" . $quantidade3 . "' style='display:none;' /></td>";
+                                        echo "<td><span id='quantidade3'>" . $quantidade3 . "</span><input name='quantidade3' id='quantidadeInput3' type='text' value='" . $quantidade3 . "' style='display:none;' /></td>";
                                     }
                                     if ($valor3 != '0.00') {
                                         echo "<td>" . $valor3 . "</td>";
@@ -305,7 +305,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                         echo "<td>" . $unidade4 . "</td>";
                                     }
                                     if ($quantidade4 != '0') {
-                                        echo "<td><span id='quantidade4'>" . $quantidade4 . "</span><input id='quantidadeInput4' type='text' value='" . $quantidade4 . "' style='display:none;' /></td>";
+                                        echo "<td><span id='quantidade4'>" . $quantidade4 . "</span><input name='quantidade4' id='quantidadeInput4' type='text' value='" . $quantidade4 . "' style='display:none;' /></td>";
                                     }
                                     if ($valor4 != '0.00') {
                                         echo "<td>" . $valor4 . "</td>";
