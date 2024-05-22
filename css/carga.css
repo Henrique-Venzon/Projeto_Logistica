@@ -135,14 +135,8 @@ main{
     background-color: #ffffff;
     color: #000000;
 }
-.dados{
-    display: none;
-    justify-content: center;
-    flex-direction: column;
-}
+
 .doca{
-    justify-content: center; 
-    align-items: center; 
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -151,8 +145,19 @@ main{
     text-shadow: 0px 0px 10px #000000;
     margin-bottom: 12px;
 }
+.doca select{
+    width: 120px;
+    text-align: center;
+    margin-top: 5px;
+}
 .doca label{
     margin-bottom: 8px;
+    font-size: 25px;
+    color: white;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    width: inherit;
 }
 .tabelaComVistoria{
     justify-content: center; 
@@ -163,3 +168,46 @@ main{
 .tabelaComVistoria table{
     width: 92%;
 }
+.informacoes{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5%;
+}
+.inf{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+.npedido,.nFiscal,.doca{
+    display: flex;
+    height: 110px;
+    width: 180px;
+    padding: 10px;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    outline: 2px solid #ffffff;
+    border-radius: 15px;
+    background-color: #0f0f0f;
+    padding-bottom: 0;
+}
+
+.inf h1{
+    font-size: 25px;
+    color: white;
+
+}
+.npedido h1, .nFiscal h1 {
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    width: inherit;
+  }
+  
+  .npedido h1:last-child, .nFiscal h1:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
