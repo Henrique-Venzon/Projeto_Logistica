@@ -4,10 +4,6 @@ if(!isset($_SESSION['id'])){
     header("Location: index.php");
     exit;
 }
-if (($_SESSION['tipo_login'] != 'professor')) {
-    header("Location: index.php");
-    exit;
-}
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['turma'] = $_POST['turma'];}
 ?>
