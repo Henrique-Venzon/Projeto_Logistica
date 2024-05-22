@@ -131,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                     }
 
                                     // Consulta para buscar os pedidos
-                                    $sql = "SELECT * FROM carga WHERE turma_id = '" . $_SESSION['turma'] . "'";
+                                    $sql = "SELECT * FROM carga WHERE situacao='enviado' and turma_id = '" . $_SESSION['turma'] . "'";
                                     $result = $conn->query($sql);
 
                                     // Se houver resultados, criar as opções do select
@@ -205,11 +205,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
 
                                 <div class="doca">
                                     <label for="doca">Doca:</label>
-                                    <select id="doca">
-                                        <option value=" "></option>
-                                        <option value="dc1">Doca 1</option>
-                                        <option value="dc2">Doca 2</option>
-                                        <option value="dc3">Doca 3</option>
+                                    <select name='doca'id="doca">
+                                        <option value="1">Doca 1</option>
+                                        <option value="2">Doca 2</option>
+                                        <option value="3">Doca 3</option>
+                                        <option value="4">Doca 4</option>
                                     </select>
                                 </div>
                             </div>

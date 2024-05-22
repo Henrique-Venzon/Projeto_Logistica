@@ -198,8 +198,8 @@ if (!isset($_SESSION['turma'])) {
                                     <input type="text" name="placa" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
-                                    <label for="">Temperatura:</label>
-                                    <input type="text" name="temperatura" placeholder="Opcional">
+                                    <label for="">Cliente:</label>
+                                    <input type="text" name="cliente" placeholder="Obirgatório">
                                 </div>
                                 <div class="juntar">
                                     <label for="nome">Nome do Motorista:</label>
@@ -221,6 +221,10 @@ if (!isset($_SESSION['turma'])) {
                                 <div class="juntar">
                                     <label for="lacre">Lacre:</label>
                                     <input type="text" name="lacre" placeholder="Obrigatório" required>
+                                </div>
+                                <div class="juntar">
+                                    <label for="">Temperatura:</label>
+                                    <input type="text" name="temperatura" placeholder="Opcional">
                                 </div>
                                 <div class="juntar">
                                     <label for="">Lacre SIF:</label>

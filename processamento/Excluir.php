@@ -14,7 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $turma_id = $conexao->real_escape_string($_POST['turma']);
         $sql_notasfiscais = "DELETE FROM nota_fiscal_criada WHERE id_turma = " . $turma_id;
+        $sql_docas = "DELETE FROM docas WHERE id_turma = " . $turma_id;
+        $sql_carga = "DELETE FROM carga WHERE turma_id = " . $turma_id;
+        $sql_container = "DELETE FROM container WHERE turma_id = " . $turma_id;
         $conexao->query($sql_notasfiscais);
+        $conexao->query($sql_docas);
+        $conexao->query($sql_carga);
+        $conexao->query($sql_container);
         // Excluir todos os alunos da turma
         $sql_alunos = "DELETE FROM aluno WHERE turma_id = " . $turma_id;
         $conexao->query($sql_alunos);

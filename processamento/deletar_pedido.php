@@ -13,7 +13,7 @@ if ($conexao->connect_errno) {
     $id_atividade = $_POST['id_atividade_ver_perdido'];
     $antes="DELETE FROM nota_fiscal_criada WHERE id_atividade=". $id_atividade."";
     $resultado = $conexao->query($antes);
-    $sql = "DELETE FROM transporte WHERE id=". $id_atividade."";
+    $sql = "DELETE FROM carga WHERE id=". $id_atividade."";
 
     $resultado = $conexao->query($sql);
     $conexao->close();

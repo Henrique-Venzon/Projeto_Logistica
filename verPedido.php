@@ -55,7 +55,7 @@ $dbname = "logistica";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);     
 
-$sql = "SELECT * FROM container where turma_id = '".$_SESSION['turma']."' ORDER BY situacao ASC";
+$sql = "SELECT * FROM carga where turma_id = '".$_SESSION['turma']."' ORDER BY situacao ASC";
 
 $res = $conn->query($sql);
 
@@ -70,41 +70,35 @@ if($qtd > 0){
             print"<th>Situação</th>";
             print "<th>Excluir Pedido</th>";
             print "<th>Fechar Pedido</th>";
-            print "<th>Ver pedido</th>";
-            print "<th style=\"border-right:none;\">Criar Nota Fiscal</th>";
+            print "<th>Ver Pedido</th>";
             print "</tr>";
     
         while($row = $res->fetch_object()){
             print "<tr>";
-            print "<td>".$row->id_container."</td>";
+            print "<td>".$row->id."</td>";
             print "<td>";
             print $row->situacao;
             print "</td>";
             print "<td>";
             print "<form action='processamento/deletar_pedido.php' method='post'>";
-            print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id_container . "'>";
-            print "<input type='hidden' name='numero_pedido' value='" . $row->id_container . "'>";
+            print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id . "'>";
+            print "<input type='hidden' name='numero_pedido' value='" . $row->id . "'>";
             print "<button class=\"reset\" type='submit'><span>Excluir</span> </button>";
             print "</form>";
             print"</td>"; 
             print "<td>";
             print "<form action='processamento/fechar_atividade.php' method='post'>";
-            print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id_container . "'>";
-            print "<button type='submit' class=\"reset\" data-id=\"".$row->id_container."\"><span>Fechar Pedido</span></button>";
+            print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id . "'>";
+            print "<button type='submit' class=\"reset\" data-id=\"".$row->id."\"><span>Fechar Pedido</span></button>";
             print"</form>";
             print "</td>"; 
             print "<td>";
             print "<form action='nPedido.php' method='post'>";
-            print "<input type='hidden' name='turma' value='" . $row->id_container . "'>";
+            print "<input type='hidden' name='npedido' value='" . $row->npedido . "'>";
             print "<button class=\"reset\" type='submit'><span>Ver</span> </button>";
             print "</form>";
             print"</td>"; 
-            print "<td >";
-            print "<form action='criardanfe.php' method='post'>";
-            print "<input type='hidden' name='turma' value='" . $row->id_container . "'>";
-            print "<button type='button' class=\"reset\"><span>Criar</span></button>";
-            print "</form>";
-            print "</td>";
+
             print "</tr>";
 
         }

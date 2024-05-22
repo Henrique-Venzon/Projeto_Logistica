@@ -12,7 +12,7 @@ if ($conexao->connect_errno) {
 } else {
     $id_atividade = $_POST['id_atividade_ver_perdido'];
 
-    $sql = "UPDATE transporte
+    $sql = "UPDATE carga
             SET situacao = 'fechado'
             WHERE id=" . $id_atividade . ";"; 
 
