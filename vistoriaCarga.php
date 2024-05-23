@@ -163,7 +163,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                     <h1>Nota Fiscal</h1>
                                     <h1>
                                         <?php
-                                        // Conexão com o banco de dados
                                         $servername = "localhost";
                                         $username = "root.Att";
                                         $password = "root";
@@ -183,15 +182,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                         $sql_atividade = "SELECT id FROM carga WHERE npedido='" . $npedido_selecionado . "' AND turma_id = '" . $_SESSION['turma'] . "'";
                                         $resultado = $conn->query($sql_atividade);
 
-                                        // Primeiro, busque uma linha de resultados como uma matriz associativa
+            
                                         $row_atividade = $resultado->fetch_assoc();
-                                        $id_atividade = $row_atividade['id'];  // substitua 'id' pelo nome da coluna que você quer acessar
-                                        
-                                        // Agora, use $id_atividade na sua consulta SQL
+                                        $id_atividade = $row_atividade['id'];  
                                         $sql = "SELECT id_notafiscal FROM nota_fiscal_criada WHERE id_atividade = $id_atividade and id_turma = '" . $_SESSION['turma'] . "'";
                                         $result = $conn->query($sql);
-
-                                        // Se houver resultados, criar as opções do select
                                         if ($result->num_rows > 0) {
                                             while ($row = $result->fetch_assoc()) {
                                                 $notafiscal = $row['id_notafiscal'];

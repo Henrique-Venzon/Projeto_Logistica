@@ -34,17 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <main>
         <?php
         include 'include/menuLateral.php';
-
         ?>
         <div class="DivDireita">
             <div class="table-inputs">
-
                 <div class="text">
                     <h1>Nota Fiscal</h1>
                 </div>
-
                 <?php
-
                 $servername = "localhost";
                 $username = "root.Att";
                 $password = "root";
@@ -53,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Create connection
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
-                $sql_after = "SELECT * FROM nota_fiscal_criada";
+                $sql_after = "SELECT * FROM nota_fiscal_criada where id_turma = '".$_SESSION['turma']."'";
                 $res = $conn->query($sql_after);
                 $qtd = $res->num_rows;
 
@@ -70,13 +66,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $id_atividade = $row->id_atividade;
                         $sql_npedido = "SELECT npedido FROM carga where id='" . $id_atividade . "'";
                         $resultado = $conn->query($sql_npedido);
-                        
                         if ($resultado->num_rows > 0) {
                             while($row_npedido = $resultado->fetch_assoc()) {
                                 $npedido = $row_npedido["npedido"];
                             }
                         }
-
                         print "<form method='post' action='nPedido.php'";
                         print "<tr>";
                         print "<td>" . $row->id_notafiscal . "</td>";
