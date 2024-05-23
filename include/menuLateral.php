@@ -289,10 +289,10 @@
                     </a>
                     <ul id="pedido" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                     <li class="sidebar-item">
-                    <a style="margin-top: -1.25px;" href="containerP.php" class="sidebar-link">Criar pedidos</a>
+                    <a style="margin-top: -1px;" href="containerP.php" class="sidebar-link">Criar pedidos</a>
                 </li>
                         <li class="sidebar-item">
-                            <a style="margin-top: -1.25px;" href="verPedido.php" class="sidebar-link">Ver pedidos</a>
+                            <a style="margin-top: -1px;" href="verPedido.php" class="sidebar-link">Ver pedidos</a>
                         </li>
                     </ul>
                 </li>'

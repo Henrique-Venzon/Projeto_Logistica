@@ -35,7 +35,12 @@
     height: 60px;
     background-color: #333333;
 }
-
+.reset{
+    border-radius: 80px;
+    height: 50px;
+    width: 170px;
+    font-size: 25px;
+}
 
 .table-inputs{
     border: 1.5px solid black;
@@ -47,9 +52,10 @@
 }
 
 
+
 .tabela-scroll {
-  max-height: 69vh; 
-  overflow-y: auto; 
+    max-height: 69vh; 
+    overflow-y: auto; 
     outline: 1px solid #000;
 
   }
@@ -59,6 +65,19 @@
     border-right: 1px solid black;
 
   }
+  .voltar{
+    position: absolute;
+    margin-right: 70%;
+    padding: 8px;
+  }
+  .voltar:hover{
+    color: rgb(128, 128, 128);
+    transition: 0.7s;
+  }
+  #v{
+    cursor: pointer;
+  }
+  
   
 
   .tabela-scroll::-webkit-scrollbar-track {
@@ -66,12 +85,20 @@
   }
   
   .tabela-scroll::-webkit-scrollbar-thumb {
-    background-color: #000000;
+    background-color: #000000; /* Cor do "ponteiro" da barra de rolagem */
   }
 
 
-
-
+.nomet{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5%;
+    margin-top: 0.5%;
+}
+.nomet h1{
+    color: #fff;
+    text-shadow: 0 0 8px black;
+}
 
 *{
     padding: 0;
@@ -95,18 +122,31 @@ main{
     justify-content: center;
     
 }
+.table input{
+    width: 180px;
+    border-radius: 14px;
+    text-align: center;
+    font-size: 24px;
+    padding: 5px;
+}
+.table select{
+    font-size: 22px;
+    padding: 5px;
+}
+
 .table button{
-  color: white;
-  width: 120px;
-  height: 50px;
-  padding: 4px;
-  font-size: 22px;
-  background-color: #101010;
-  border-radius: 15PX;
-  text-transform: uppercase;
-  border: 0.5px solid rgb(140, 140, 140);
-  transition: 0.5s ease-in-out;
+    padding: 6px;
+    text-transform: uppercase;
+    width: 120px;
+    font-size: 20px;
+    background-color: #171717;
+    color: #fff;
+    border: 0.5px solid white;
+    border-radius: 15px;
+    transition: 0.7s ease-in-out;
 }
 .table button:hover{
-  transform: scale(1.05);
+    background-color: #fff;
+    color:#000000;
+    border: 0.5px solid rgb(0, 0, 0);
 }
