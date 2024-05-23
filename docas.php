@@ -36,13 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ?>
         <div class="DivDireita">
             <div class="table-inputs">
-
             <div class="text">
                 <h1>Docas</h1>
             </div>
-                
             <?php        
-
 $servername = "localhost";
 $username = "root.Att";
 $password = "root";
@@ -69,15 +66,19 @@ if($qtd > 0){
         while($row = $res->fetch_object()){
             print "<tr>";
             print "<td>".$row->id_carga."</td>";
-            print "<td><button>Abrir</button></td>"; 
+            print "<td>";
+            print "<form action='pedidoDoca.php' method='post'>";
+            print "<input type='hidden' name='idCarga' value='" . $row->id_doca . "'>";
+            print "<button type='submit'><span>Ver</span> </button>";
+            print "</form>";
+            print"</td>"; 
             print "</tr>";
-
         }
         print "</table>";
         print "</div>";
 
 }else{
-    print "<p class='alert alert-danger'>Não encrontrou nenhuma pedido nas docas.</p>";
+    print "<p class='alert alert-danger'>Não encrontrou nenhum pedido nas docas.</p>";
 }
 
 ?>

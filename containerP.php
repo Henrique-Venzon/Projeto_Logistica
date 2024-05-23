@@ -199,7 +199,7 @@ if (!isset($_SESSION['turma'])) {
                                 </div>
                                 <div class="juntar">
                                     <label for="">Cliente:</label>
-                                    <input type="text" name="cliente" placeholder="Obirgatório">
+                                    <input type="text" name="cliente" placeholder="Obrigatório">
                                 </div>
                                 <div class="juntar">
                                     <label for="nome">Nome do Motorista:</label>

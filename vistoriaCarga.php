@@ -195,9 +195,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                                         }
                                         ?>
                                     </h1>
-
                                 </div>
-
                                 <div class="doca">
                                     <label for="doca">Doca:</label>
                                     <select name='doca'id="doca">
@@ -314,7 +312,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
                             </table>
                         </div>
                         <div class="enviar">
-                            <button type="submit">Enviar</button>
+                            <button  type="submit">Enviar</button>
                         </div>
                         </form>
                     </div>
@@ -359,6 +357,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
             }
             xhr.send("quantidade=" + row + "&valor=" + novaQuantidade);
         }
+    
+
+
     </script>
     <script src="js/vistoriaCarga.js"></script>
     <script src="js/sidebar.js"></script>
