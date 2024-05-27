@@ -48,7 +48,7 @@ $dbname = "logistica";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);     
 
-$sql = "SELECT * FROM docas";
+$sql = "SELECT * FROM movimentacao";
 
 $res = $conn->query($sql);
 
@@ -59,19 +59,18 @@ if($qtd > 0){
     print "<table class='table' >";
 
     print "<tr>";
-            print "<th>N° Pedido</th>";
+            print "<th>Produto</th>";
+            print "<th>Quantidade</th>";
+            print "<th>Posição</th>";
             print "<th style=\"border-right:none;\">Ver Pedido</th>";
             print "</tr>";
     
         while($row = $res->fetch_object()){
             print "<tr>";
-            print "<td>".$row->id_carga."</td>";
-            print "<td>";
-            print "<form action='pedidoDoca.php' method='post'>";
-            print "<input type='hidden' name='id_carga' value='" . $row->id_carga . "'>";
-            print "<input type='hidden' name='id_doca' value='" . $row->id_doca . "'>";
+            print "<td>".$row->nome_produto."</td>";
+            print "<td>".$row->quantidade_enviada."</td>";
+            print "<td>".$row->posicao."</td>";
             print "<button type='submit'><span>Ver</span> </button>";
-            print "</form>";
             print"</td>"; 
             print "</tr>";
         }

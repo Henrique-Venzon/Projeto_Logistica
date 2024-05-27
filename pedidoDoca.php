@@ -5,8 +5,12 @@ if (!isset($_SESSION['id'])) {
     exit;
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $npedido_ver = $_POST['idCarga'];
+    $id_carga = $_POST['id_carga'];
 }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $id_doca = $_POST['id_doca'];
+}
+
 if (!isset($_SESSION['turma'])) {
     header("Location: index.php");
     exit;
@@ -41,13 +45,14 @@ if (!isset($_SESSION['turma'])) {
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    $sql = "SELECT`npedido`,  `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`,`turma_id` FROM carga where turma_id = '" . $_SESSION['turma'] . "' and `npedido`='" . $npedido_ver . "'  ";
+    $sql = "SELECT `id`,`produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`,`turma_id` FROM vistoriado where turma_id = '" . $_SESSION['turma'] . "' and `id`='" . $id_carga . "'  ";
 
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
+            $id_carga_select = $row['id'];
             $produto1 = $row['produto1'];
             $produto2 = $row['produto2'];
             $produto3 = $row['produto3'];
@@ -89,149 +94,138 @@ if (!isset($_SESSION['turma'])) {
                         <tr>
                             <th>Produto</th>
                             <th>Unidade</th>
-                            <th>Quantidade
-                                em
-                                Espera
-                            </th>
-                            <th>Quantidade para movimentar</th>
+                            <th>Quantidade Em Espera</th>
+                            <th>Quantidade Por Posição</th>
                             <th>Posição</th>
-                            <th>Enviar</th>
                         </tr>
                         <form method="post" action="processamento/movimentacao.php">
                             <td><?php echo $produto1; ?></td>
+                            <input name="produto1" type="hidden" value="<?php echo $produto1 ?>">
                             <td><?php echo $unidade1; ?></td>
                             <td><?php echo $quantidade1; ?></td>
-                            <input type="hidden" value="<?php $npedido_ver ?>">
-                            <td><input  name="id_doca" name='quantidade' type="text"></td>
-                            <td><select name='posicao'>
-                                    <option value="a1">A1</option>
-                                    <option value="a2">A2</option>
-                                    <option value="a3">A3</option>
-                                    <option value="a4">A4</option>
-                                    <option value="b1">B1</option>
-                                    <option value="b2">B2</option>
-                                    <option value="b3">B3</option>
-                                    <option value="b4">B4</option>
-                                    <option value="c1">C1</option>
-                                    <option value="c2">C2</option>
-                                    <option value="c3">C3</option>
-                                    <option value="c4">C4</option>
-                                    <option value="d1">D1</option>
-                                    <option value="d2">D2</option>
-                                    <option value="d3">D3</option>
-                                    <option value="d4">D4</option>
+                            <input name="id_doca" type="hidden" value="<?php echo $id_doca ?>">
+                            <input name="id_carga_select" type="hidden" value="<?php echo $id_carga_select ?>">
+                            <td> <input type="number" name="quantidade_enviada1"></td>
+                            <td><select name='posicao1'>
+                                    <option value="A1">A1</option>
+                                    <option value="A2">A2</option>
+                                    <option value="A3">A3</option>
+                                    <option value="A4">A4</option>
+                                    <option value="B1">B1</option>
+                                    <option value="B2">B2</option>
+                                    <option value="B3">B3</option>
+                                    <option value="B4">B4</option>
+                                    <option value="C1">C1</option>
+                                    <option value="C2">C2</option>
+                                    <option value="C3">C3</option>
+                                    <option value="C4">C4</option>
+                                    <option value="D1">D1</option>
+                                    <option value="D2">D2</option>
+                                    <option value="D3">D3</option>
+                                    <option value="D4">D4</option>
                                 </select></td>
-                            <td><button>Enviar</button></td>
                             </tr>
-                        </form>
-                        <form method="post" action="processamento/movimentacao.php">
                             <tr>
                                 <?php if ($produto2 != '')
-                                    echo '<td>' . $produto2 . '</td>'; ?>
+                                    echo '<td>' . $produto2 . '</td>';
+                                echo '<input  name="produto2" type="hidden" value=' . $produto2 . '>' . ''; ?>
                                 <?php if ($unidade2 != ' ')
-                                    echo '<td> <input  name="id_doca" type="hidden" value='.$npedido_ver.'>' . $unidade2 . '</td>'; ?>
+                                    echo '<td> <input  name="id_doca2" type="hidden" value=' . $id_doca . '>' . $unidade2 . '</td>'; ?>
                                 <?php if ($quantidade2 != '0')
                                     echo '<td> ' . $quantidade2 . '</td>'; ?>
                                 <?php if ($quantidade2 != '0')
-                                    echo "<td><input name='quantidade' type='text'></td>"; ?>
+                                    echo '<td> <input type="number" name="quantidade_enviada2"></td>'; ?>
                                 <?php if ($quantidade2 != '0')
-                                    echo '<td> <select name="posicao">;
-                                <option value="a1">A1</option>
-                                <option value="a2">A2</option>
-                                <option value="a3">A3</option>
-                                <option value="a4">A4</option>
-                                <option value="b1">B1</option>
-                                <option value="b2">B2</option>
-                                <option value="b3">B3</option>
-                                <option value="b4">B4</option>
-                                <option value="c1">C1</option>
-                                <option value="c2">C2</option>
-                                <option value="c3">C3</option>
-                                <option value="c4">C4</option>
-                                <option value="d1">D1</option>
-                                <option value="d2">D2</option>
-                                <option value="d3">D3</option>
-                                <option value="d4">D4</option>
-                            </select> </td>'; ?>
-                                <?php if ($quantidade2 != '0')
-                                    echo '<td><button>Enviar</button></td>'; ?>
+                                    echo '<td> <select name="posicao2">;
+                                                    <option value="A1">A1</option>
+                                                    <option value="A2">A2</option>
+                                                    <option value="A3">A3</option>
+                                                    <option value="A4">A4</option>
+                                                    <option value="B1">B1</option>
+                                                    <option value="B2">B2</option>
+                                                    <option value="B3">B3</option>
+                                                    <option value="B4">B4</option>
+                                                    <option value="C1">C1</option>
+                                                    <option value="C2">C2</option>
+                                                    <option value="C3">C3</option>
+                                                    <option value="C4">C4</option>
+                                                    <option value="D1">D1</option>
+                                                    <option value="D2">D2</option>
+                                                    <option value="D3">D3</option>
+                                                    <option value="D4">D4</option>
+                                                </select> </td>'; ?>
                             </tr>
-                        </form>
-                        <form method="post" action="processamento/movimentacao.php">
                             <tr>
 
                                 <?php if ($produto3 != '')
-                                    echo '<td>' . $produto3 . '</td>'; ?>
+                                    echo '<td>' . $produto3 . '</td>';
+                                echo '<input  name="produto3" type="hidden" value=' . $produto3 . '>' . ''; ?>
                                 <?php if ($unidade3 != ' ')
-                                    echo '<td> <input  name="id_doca" type="hidden" value='.$npedido_ver.'>' . $unidade3 . '</td>'; ?>
+                                    echo '<td> <input  name="id_doca3" type="hidden" value=' . $id_doca . '>' . $unidade3 . '</td>'; ?>
                                 <?php if ($quantidade3 != '0')
                                     echo '<td>' . $quantidade3 . '</td>'; ?>
+                                <?php if ($quantidade3 != ' ')
+                                    echo '<td> <input type="number" name="quantidade_enviada3"></td>'; ?>
                                 <?php if ($quantidade3 != '0')
-                                    echo "<td><input name='quantidade' type='text'></td>"; ?>
-                                <?php if ($quantidade3 != '0')
-                                    echo '<td> <select name="posicao">;
-                                <option value="a1">A1</option>
-                                <option value="a2">A2</option>
-                                <option value="a3">A3</option>
-                                <option value="a4">A4</option>
-                                <option value="b1">B1</option>
-                                <option value="b2">B2</option>
-                                <option value="b3">B3</option>
-                                <option value="b4">B4</option>
-                                <option value="c1">C1</option>
-                                <option value="c2">C2</option>
-                                <option value="c3">C3</option>
-                                <option value="c4">C4</option>
-                                <option value="d1">D1</option>
-                                <option value="d2">D2</option>
-                                <option value="d3">D3</option>
-                                <option value="d4">D4</option>
-                            </select> </td>'; ?>
-                                <?php if ($quantidade3 != '0')
-                                    echo '<td><button>Enviar</button></td>'; ?>
+                                    echo '<td> <select name="posicao3">;
+                                                    <option value="A1">A1</option>
+                                                    <option value="A2">A2</option>
+                                                    <option value="A3">A3</option>
+                                                    <option value="A4">A4</option>
+                                                    <option value="B1">B1</option>
+                                                    <option value="B2">B2</option>
+                                                    <option value="B3">B3</option>
+                                                    <option value="B4">B4</option>
+                                                    <option value="C1">C1</option>
+                                                    <option value="C2">C2</option>
+                                                    <option value="C3">C3</option>
+                                                    <option value="C4">C4</option>
+                                                    <option value="D1">D1</option>
+                                                    <option value="D2">D2</option>
+                                                    <option value="D3">D3</option>
+                                                    <option value="D4">D4</option>
+                                                </select> </td>'; ?>
 
                             </tr>
-                        </form>
-                        <form method="post" action="processamento/movimentacao.php">
+
+
                             <tr>
                                 <?php if ($produto4 != '')
-                                    echo '<td>' . $produto4 . '</td>'; ?>
+                                    echo '<td>' . $produto4 . '</td>';
+                                echo '<input  name="produto4" type="hidden" value=' . $produto4 . '>' . ''; ?>
                                 <?php if ($unidade4 != ' ')
-                                    echo '<td> <input name="id_doca" type="hidden" value='.$npedido_ver.'>' . $unidade4 . '</td>'; ?>
+                                    echo '<td> <input name="id_doca4" type="hidden" value=' . $id_doca . '>' . $unidade4 . '</td>'; ?>
                                 <?php if ($quantidade4 != '0')
                                     echo '<td>' . $quantidade4 . '</td>'; ?>
                                 <?php if ($quantidade4 != '0')
-                                    echo "<td><input name='quantidade' type='text'></td>"; ?>
+                                    echo '<td> <input type="number" name="quantidade_enviada4"></td>'; ?>
                                 <?php if ($quantidade4 != '0')
-                                    echo '<td> <select name="posicao">;
-                                <option value="a1">A1</option>
-                                <option value="a2">A2</option>
-                                <option value="a3">A3</option>
-                                <option value="a4">A4</option>
-                                <option value="b1">B1</option>
-                                <option value="b2">B2</option>
-                                <option value="b3">B3</option>
-                                <option value="b4">B4</option>
-                                <option value="c1">C1</option>
-                                <option value="c2">C2</option>
-                                <option value="c3">C3</option>
-                                <option value="c4">C4</option>
-                                <option value="d1">D1</option>
-                                <option value="d2">D2</option>
-                                <option value="d3">D3</option>
-                                <option value="d4">D4</option>
-                            </select> </td>'; ?>
-                                <?php if ($quantidade4 != '0')
-                                    echo '<td><button>Enviar</button></td>'; ?>
+                                    echo '<td> <select name="posicao4">;
+                                                    <option value="A1">A1</option>
+                                                    <option value="A2">A2</option>
+                                                    <option value="A3">A3</option>
+                                                    <option value="A4">A4</option>
+                                                    <option value="B1">B1</option>
+                                                    <option value="B2">B2</option>
+                                                    <option value="B3">B3</option>
+                                                    <option value="B4">B4</option>
+                                                    <option value="C1">C1</option>
+                                                    <option value="C2">C2</option>
+                                                    <option value="C3">C3</option>
+                                                    <option value="C4">C4</option>
+                                                    <option value="D1">D1</option>
+                                                    <option value="D2">D2</option>
+                                                    <option value="D3">D3</option>
+                                                    <option value="D4">D4</option>
+                                                </select> </td>'; ?>
                             </tr>
+                            <button>Enviar</button>
                         </form>
                     </table>
                 </div>
             </div>
         </div>
     </main>
-
-
     <script src="js/ver.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
