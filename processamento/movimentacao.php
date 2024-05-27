@@ -64,7 +64,6 @@ $posicao4 = $_POST['posicao4'];
 if ($nome_produto4 != ' ') {
     $sql = "INSERT INTO `movimentacao`(`id_doca`, `nome_produto`,`quantidade_enviada`,`posicao`,`id_carga`, `id_aluno`, `id_turma`) VALUES ('$id_doca', '$nome_produto4', '$quantidade_enviada4', '$posicao4', '$id_carga_select', '$id_aluno', '$_SESSION[turma]');";
     if ($conexao->query($sql) === TRUE) {
-        
         $sql = "UPDATE vistoriado SET quantidade4 = quantidade4 - $quantidade_enviada4 WHERE id = $id_carga_select";
         if ($conexao->query($sql) !== TRUE) {
             echo "Erro ao atualizar quantidade de $nome_produto4: " . $conexao->error;
@@ -73,6 +72,6 @@ if ($nome_produto4 != ' ') {
         echo "Erro ao inserir dados: " . $conexao->error;
     }
 }
-header('location:pedidoDoca.php',301,true);
+header('location:../docas.php',true,301);
 $conexao->close();
 
