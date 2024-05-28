@@ -84,16 +84,120 @@ $turma = $_SESSION['turma']
                                         print "<p class='alert alert-danger'>Não encrontrou nenhum pedido nas docas.</p>";
                                     }
                                     ?>
-
                                 </div>
                                 <div class="cardsDocas" id="doca2">
                                 <h1>Doca 2</h1>
+                                <?php        
+                                    $servername = "localhost";
+                                    $username = "root.Att";
+                                    $password = "root";
+                                    $dbname = "logistica";
+
+                                    // Create connection
+                                    $conn = new mysqli($servername, $username, $password, $dbname);     
+
+                                    $sql = "SELECT * FROM docas";
+
+                                    $res = $conn->query($sql);
+
+                                    $qtd = $res->num_rows;
+
+                                    if($qtd > 0){
+                                        print "<div class=\"tabela-scroll\">";
+                                        print "<table class='table' >";
+
+                                        print "<tr>";
+                                                print "<th style=\"border-left:none;\">N° Pedido</th>";
+                                                print "</tr>";
+                                        
+                                            while($row = $res->fetch_object()){
+                                                print "<tr>";
+                                                print "<td style=\"border-right:1px solid black;\">".$row->id_carga."</td>";
+                                                print "</tr>";
+                                            }
+                                            print "</table>";
+                                            print "</div>";
+
+                                    }else{
+                                        print "<p class='alert alert-danger'>Não encrontrou nenhum pedido nas docas.</p>";
+                                    }
+                                    ?>
                                 </div>
                                 <div class="cardsDocas" id="doca3">
                                 <h1>Doca 3</h1>
+                                <?php        
+                                    $servername = "localhost";
+                                    $username = "root.Att";
+                                    $password = "root";
+                                    $dbname = "logistica";
+
+                                    // Create connection
+                                    $conn = new mysqli($servername, $username, $password, $dbname);     
+
+                                    $sql = "SELECT * FROM docas";
+
+                                    $res = $conn->query($sql);
+
+                                    $qtd = $res->num_rows;
+
+                                    if($qtd > 0){
+                                        print "<div class=\"tabela-scroll\">";
+                                        print "<table class='table' >";
+
+                                        print "<tr>";
+                                                print "<th style=\"border-left:none;\">N° Pedido</th>";
+                                                print "</tr>";
+                                        
+                                            while($row = $res->fetch_object()){
+                                                print "<tr>";
+                                                print "<td style=\"border-right:1px solid black;\">".$row->id_carga."</td>";
+                                                print "</tr>";
+                                            }
+                                            print "</table>";
+                                            print "</div>";
+
+                                    }else{
+                                        print "<p class='alert alert-danger'>Não encrontrou nenhum pedido nas docas.</p>";
+                                    }
+                                    ?>
                                 </div>
                                 <div class="cardsDocas" id="doca4">
                                 <h1>Doca 4</h1>
+                                <?php        
+                                    $servername = "localhost";
+                                    $username = "root.Att";
+                                    $password = "root";
+                                    $dbname = "logistica";
+
+                                    // Create connection
+                                    $conn = new mysqli($servername, $username, $password, $dbname);     
+
+                                    $sql = "SELECT * FROM docas";
+
+                                    $res = $conn->query($sql);
+
+                                    $qtd = $res->num_rows;
+
+                                    if($qtd > 0){
+                                        print "<div class=\"tabela-scroll\">";
+                                        print "<table class='table' >";
+
+                                        print "<tr>";
+                                                print "<th style=\"border-left:none;\">N° Pedido</th>";
+                                                print "</tr>";
+                                        
+                                            while($row = $res->fetch_object()){
+                                                print "<tr>";
+                                                print "<td style=\"border-right:1px solid black;\">".$row->id_carga."</td>";
+                                                print "</tr>";
+                                            }
+                                            print "</table>";
+                                            print "</div>";
+
+                                    }else{
+                                        print "<p class='alert alert-danger'>Não encrontrou nenhum pedido nas docas.</p>";
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
