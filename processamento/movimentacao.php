@@ -10,9 +10,9 @@ $id_aluno = $_SESSION['id'];
 $id_doca = $_POST['id_doca'];
 $id_carga_select = $_POST['id_carga_select'];
 
-$nome_produto1 = $_POST['produto1'];
+$nome_produto1 = $_POST['produto1'] ?? '';
 $quantidade_enviada1 = $_POST['quantidade_enviada1'] ?? 0;
-$posicao1 = $_POST['posicao1'];
+$posicao1 = $_POST['posicao1'] ?? '';
 
 if (!empty($nome_produto1) && $quantidade_enviada1 > 0) {
     $sql = "INSERT INTO movimentacao (id_doca, nome_produto, quantidade_enviada, posicao, id_carga, id_aluno, id_turma) VALUES ('$id_doca', '$nome_produto1', '$quantidade_enviada1', '$posicao1', '$id_carga_select', '$id_aluno', '$_SESSION[turma]')";

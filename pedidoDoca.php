@@ -80,6 +80,8 @@ if (!isset($_SESSION['turma'])) {
                 if ($quantidade1 != 0 || $quantidade2 != 0 || $quantidade3 != 0 || $quantidade4 != 0) {
                 ?>
                 <form method="post" action="processamento/movimentacao.php">
+                    <input name="id_doca" type="hidden" value="<?php echo $id_doca ?>">
+                    <input name="id_carga_select" type="hidden" value="<?php echo $id_carga_select ?>">
                     <table class="table">
                         <tr>
                             <th>Produto</th>
