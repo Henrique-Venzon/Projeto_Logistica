@@ -19,7 +19,7 @@ if (!isset($_SESSION['turma'])) {
 <!DOCTYPE html>
 
 <head>
-    <meta name="vierport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/amem.svg">
 
     <meta charset="utf-8">
@@ -90,6 +90,7 @@ if (!isset($_SESSION['turma'])) {
                     <h1>Doca</h1>
                 </Div>
                 <div class="tabela-scroll">
+                <form method="post" action="processamento/movimentacao.php">
                     <table class="table">
                         <tr>
                             <th>Produto</th>
@@ -98,7 +99,7 @@ if (!isset($_SESSION['turma'])) {
                             <th>Quantidade Por Posição</th>
                             <th>Posição</th>
                         </tr>
-                        <form method="post" action="processamento/movimentacao.php">
+                        
                             <td><?php echo $produto1; ?></td>
                             <input name="produto1" type="hidden" value="<?php echo $produto1 ?>">
                             <td><?php echo $unidade1; ?></td>
@@ -167,7 +168,7 @@ if (!isset($_SESSION['turma'])) {
                                 <?php if ($quantidade3 != ' ')
                                     echo '<td> <input type="number" name="quantidade_enviada3"></td>'; ?>
                                 <?php if ($quantidade3 != '0')
-                                    echo '<td> <select name="posicao3">;
+                                    echo '<td> <select name="posicao2">;
                                                     <option value="A1">A1</option>
                                                     <option value="A2">A2</option>
                                                     <option value="A3">A3</option>
@@ -219,9 +220,12 @@ if (!isset($_SESSION['turma'])) {
                                                     <option value="D4">D4</option>
                                                 </select> </td>'; ?>
                             </tr>
-                            <button>Enviar</button>
-                        </form>
+                            
                     </table>
+                    <div class="buttonEnviar">
+                            <button>Enviar</button>
+                            </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -231,6 +235,7 @@ if (!isset($_SESSION['turma'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
+        
 </body>
 
 </html>
