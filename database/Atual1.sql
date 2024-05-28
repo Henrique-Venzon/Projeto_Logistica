@@ -243,7 +243,7 @@ CREATE TABLE IF NOT EXISTS `movimentacao` (
   `id_aluno` int NOT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=168 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `movimentacao`

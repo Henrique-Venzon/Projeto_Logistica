@@ -88,6 +88,7 @@ if (!isset($_SESSION['turma'])) {
                             <th>Quantidade Por Posição</th>
                             <th>Posição</th>
                         </tr>
+                        <?php if ($quantidade1 > 0) { ?>
                         <tr>
                             <td><?php echo $produto1; ?></td>
                             <input name="produto1" type="hidden" value="<?php echo $produto1 ?>">
@@ -95,7 +96,7 @@ if (!isset($_SESSION['turma'])) {
                             <td><?php echo $quantidade1; ?></td>
                             <input name="id_doca" type="hidden" value="<?php echo $id_doca ?>">
                             <input name="id_carga_select" type="hidden" value="<?php echo $id_carga_select ?>">
-                            <td><input type="number" name="quantidade_enviada1"></td>
+                            <td><input type="number" name="quantidade_enviada1" max="<?php echo $quantidade1; ?>"></td>
                             <td><select name='posicao1'>
                                     <option value="A1">A1</option>
                                     <option value="A2">A2</option>
@@ -115,13 +116,15 @@ if (!isset($_SESSION['turma'])) {
                                     <option value="D4">D4</option>
                                 </select></td>
                         </tr>
+                        <?php } ?>
+                        <?php if ($quantidade2 > 0) { ?>
                         <tr>
-                            <?php if ($produto2 != '') echo '<td>' . $produto2 . '</td>'; ?>
+                            <td><?php echo $produto2; ?></td>
                             <input name="produto2" type="hidden" value="<?php echo $produto2; ?>">
-                            <?php if ($unidade2 != ' ') echo '<td>' . $unidade2 . '</td>'; ?>
-                            <?php if ($quantidade2 != '0') echo '<td>' . $quantidade2 . '</td>'; ?>
-                            <?php if ($quantidade2 != '0') echo '<td><input type="number" name="quantidade_enviada2"></td>'; ?>
-                            <?php if ($quantidade2 != '0') echo '<td><select name="posicao2">
+                            <td><?php echo $unidade2; ?></td>
+                            <td><?php echo $quantidade2; ?></td>
+                            <td><input type="number" name="quantidade_enviada2" max="<?php echo $quantidade2; ?>"></td>
+                            <td><select name="posicao2">
                                     <option value="A1">A1</option>
                                     <option value="A2">A2</option>
                                     <option value="A3">A3</option>
@@ -138,15 +141,17 @@ if (!isset($_SESSION['turma'])) {
                                     <option value="D2">D2</option>
                                     <option value="D3">D3</option>
                                     <option value="D4">D4</option>
-                                </select></td>'; ?>
+                                </select></td>
                         </tr>
+                        <?php } ?>
+                        <?php if ($quantidade3 > 0) { ?>
                         <tr>
-                            <?php if ($produto3 != '') echo '<td>' . $produto3 . '</td>'; ?>
+                            <td><?php echo $produto3; ?></td>
                             <input name="produto3" type="hidden" value="<?php echo $produto3; ?>">
-                            <?php if ($unidade3 != ' ') echo '<td>' . $unidade3 . '</td>'; ?>
-                            <?php if ($quantidade3 != '0') echo '<td>' . $quantidade3 . '</td>'; ?>
-                            <?php if ($quantidade3 != '0') echo '<td><input type="number" name="quantidade_enviada3"></td>'; ?>
-                            <?php if ($quantidade3 != '0') echo '<td><select name="posicao3">
+                            <td><?php echo $unidade3; ?></td>
+                            <td><?php echo $quantidade3; ?></td>
+                            <td><input type="number" name="quantidade_enviada3" max="<?php echo $quantidade3; ?>"></td>
+                            <td><select name="posicao3">
                                     <option value="A1">A1</option>
                                     <option value="A2">A2</option>
                                     <option value="A3">A3</option>
@@ -163,15 +168,17 @@ if (!isset($_SESSION['turma'])) {
                                     <option value="D2">D2</option>
                                     <option value="D3">D3</option>
                                     <option value="D4">D4</option>
-                                </select></td>'; ?>
+                                </select></td>
                         </tr>
+                        <?php } ?>
+                        <?php if ($quantidade4 > 0) { ?>
                         <tr>
-                            <?php if ($produto4 != '') echo '<td>' . $produto4 . '</td>'; ?>
+                            <td><?php echo $produto4; ?></td>
                             <input name="produto4" type="hidden" value="<?php echo $produto4; ?>">
-                            <?php if ($unidade4 != ' ') echo '<td>' . $unidade4 . '</td>'; ?>
-                            <?php if ($quantidade4 != '0') echo '<td>' . $quantidade4 . '</td>'; ?>
-                            <?php if ($quantidade4 != '0') echo '<td><input type="number" name="quantidade_enviada4"></td>'; ?>
-                            <?php if ($quantidade4 != '0') echo '<td><select name="posicao4">
+                            <td><?php echo $unidade4; ?></td>
+                            <td><?php echo $quantidade4; ?></td>
+                            <td><input type="number" name="quantidade_enviada4" max="<?php echo $quantidade4; ?>"></td>
+                            <td><select name="posicao4">
                                     <option value="A1">A1</option>
                                     <option value="A2">A2</option>
                                     <option value="A3">A3</option>
@@ -188,8 +195,9 @@ if (!isset($_SESSION['turma'])) {
                                     <option value="D2">D2</option>
                                     <option value="D3">D3</option>
                                     <option value="D4">D4</option>
-                                </select></td>'; ?>
+                                </select></td>
                         </tr>
+                        <?php } ?>
                     </table>
                     <div class="buttonEnviar">
                         <button type="submit">Enviar</button>
@@ -204,6 +212,17 @@ if (!isset($_SESSION['turma'])) {
             </div>
         </div>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('input[type="number"]').forEach((input) => {
+                input.addEventListener('input', (event) => {
+                    if (event.target.value > parseInt(event.target.max)) {
+                        event.target.value = event.target.max;
+                    }
+                });
+            });
+        });
+    </script>
     <script src="js/ver.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -211,3 +230,4 @@ if (!isset($_SESSION['turma'])) {
         crossorigin="anonymous"></script>
 </body>
 </html>
+
