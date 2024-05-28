@@ -310,7 +310,12 @@
                     <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
                 </a>
             </li>
-            
+            <li class="sidebar-item">
+                    <a href="movimentacaoDoca.php" class="sidebar-link">
+                    <i class="fa-solid fa-clipboard"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Movimentação</span>
+                    </a>
+                </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
                     <i class="fa-solid fa-clipboard"></i>

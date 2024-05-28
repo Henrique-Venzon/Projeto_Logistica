@@ -54,7 +54,7 @@
 
   }
   .tabela-scroll::-webkit-scrollbar {
-    height: 5px; /* Altura da barra de rolagem */
+    height: 5px;
     width: 15px;
     border-right: 1px solid black;
 
@@ -62,7 +62,7 @@
   
 
   .tabela-scroll::-webkit-scrollbar-track {
-    background-color: #ffffff; /* Cor de fundo da barra de rolagem */
+    background-color: #ffffff; 
   }
   
   .tabela-scroll::-webkit-scrollbar-thumb {
