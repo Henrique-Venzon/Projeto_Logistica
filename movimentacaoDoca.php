@@ -58,7 +58,7 @@ $turma = $_SESSION['turma']
                                     // Create connection
                                     $conn = new mysqli($servername, $username, $password, $dbname);     
 
-                                    $sql = "SELECT * FROM docas";
+                                    $sql = "SELECT * FROM docas where id_doca='1'";
 
                                     $res = $conn->query($sql);
 
@@ -96,7 +96,7 @@ $turma = $_SESSION['turma']
                                     // Create connection
                                     $conn = new mysqli($servername, $username, $password, $dbname);     
 
-                                    $sql = "SELECT * FROM docas";
+                                    $sql = "SELECT * FROM docas where id_doca='2'";
 
                                     $res = $conn->query($sql);
 
@@ -134,7 +134,7 @@ $turma = $_SESSION['turma']
                                     // Create connection
                                     $conn = new mysqli($servername, $username, $password, $dbname);     
 
-                                    $sql = "SELECT * FROM docas";
+                                    $sql = "SELECT * FROM docas where id_doca='3'";
 
                                     $res = $conn->query($sql);
 
@@ -172,7 +172,7 @@ $turma = $_SESSION['turma']
                                     // Create connection
                                     $conn = new mysqli($servername, $username, $password, $dbname);     
 
-                                    $sql = "SELECT * FROM docas";
+                                    $sql = "SELECT * FROM docas where id_doca='4'";
 
                                     $res = $conn->query($sql);
 
