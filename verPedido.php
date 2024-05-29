@@ -66,6 +66,7 @@ if($qtd > 0){
     print "<table class='table' >";
 
     print "<tr>";
+            print "<th>ID pedido</th>";
             print "<th>N° Pedido</th>";
             print"<th>Situação</th>";
             print "<th>Excluir Pedido</th>";
@@ -76,6 +77,7 @@ if($qtd > 0){
         while($row = $res->fetch_object()){
             print "<tr>";
             print "<td>".$row->id."</td>";
+            print "<td>".$row->npedido."</td>";
             print "<td>";
             print $row->situacao;
             print "</td>";
