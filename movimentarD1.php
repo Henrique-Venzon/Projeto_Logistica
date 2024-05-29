@@ -73,13 +73,13 @@ $turma = $_SESSION['turma'];
                             }
                             print "</table>";
                             print "</div>";
+                            print '                        <DIV class="buttonEnviar">
+                            <button>Enviar</button>
+                        </DIV>';
                         } else {
                             print "<p class='alert alert-danger'>Não encontrou nenhum pedido nas docas.</p>";
                         }
                         ?>
-                        <DIV class="buttonEnviar">
-                            <button>Enviar</button>
-                        </DIV>
                     </form>
                     </div>
                     <div class="divpegar">
