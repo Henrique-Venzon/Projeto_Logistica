@@ -72,6 +72,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt_delete_doca->bind_param("i", $id_carga);
                 $stmt_delete_doca->execute();
             }
+
+            // Atualiza a situação da carga para 'Finalizada'
+            $sql_update_carga = "UPDATE carga SET situacao = 'Finalizada' WHERE id = ?";
+            $stmt_update_carga = $conn->prepare($sql_update_carga);
+            $stmt_update_carga->bind_param("i", $id_carga);
+            $stmt_update_carga->execute();
         }
     }
 }
