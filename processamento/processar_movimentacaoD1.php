@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['finalizar'])) {
         $id = $_POST['produto_id'];
 
+        // Seleciona o produto na tabela 'pegado'
         $sql = "SELECT * FROM pegado WHERE id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $id);
@@ -36,29 +37,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $existing_product = $result_check->fetch_assoc();
 
             if ($existing_product) {
-                // Se o produto já existe na mesma posição e possui o mesmo nome, atualiza a quantidade
+                // Atualiza a quantidade se o produto já existir
                 $nova_quantidade = $existing_product['quantidade_enviada'] + $produto['quantidade_enviada'];
                 $sql_update = "UPDATE estoque SET quantidade_enviada = ? WHERE posicao = ? AND nome_produto = ?";
                 $stmt_update = $conn->prepare($sql_update);
                 $stmt_update->bind_param("iss", $nova_quantidade, $produto['posicao'], $produto['nome_produto']);
                 $stmt_update->execute();
             } else {
-                // Caso contrário, insere um novo registro no estoque
+                // Insere um novo registro no estoque
                 $sql_insert = "INSERT INTO estoque (id_doca, nome_produto, quantidade_enviada, posicao) VALUES (?, ?, ?, ?)";
                 $stmt_insert = $conn->prepare($sql_insert);
                 $stmt_insert->bind_param("isss", $produto['id_doca'], $produto['nome_produto'], $produto['quantidade_enviada'], $produto['posicao']);
                 $stmt_insert->execute();
             }
 
-            // Remove o registro da tabela "pegado"
+            // Remove o registro da tabela 'pegado'
             $sql_delete = "DELETE FROM pegado WHERE id = ?";
             $stmt_delete = $conn->prepare($sql_delete);
             $stmt_delete->bind_param("i", $id);
             $stmt_delete->execute();
+
+            // Seleciona todos os produtos relacionados ao mesmo id_carga do produto processado
+            $id_carga = $produto['id_carga'];
+            $sql_check_carga = "SELECT * FROM pegado WHERE id_carga = ?";
+            $stmt_check_carga = $conn->prepare($sql_check_carga);
+            $stmt_check_carga->bind_param("i", $id_carga);
+            $stmt_check_carga->execute();
+            $result_check_carga = $stmt_check_carga->get_result();
+
+            // Se não houver mais produtos relacionados ao id_carga, remove a entrada da tabela 'docas'
+            if ($result_check_carga->num_rows === 0) {
+                $sql_delete_doca = "DELETE FROM docas WHERE id_carga = ?";
+                $stmt_delete_doca = $conn->prepare($sql_delete_doca);
+                $stmt_delete_doca->bind_param("i", $id_carga);
+                $stmt_delete_doca->execute();
+            }
         }
     }
 }
 
 header('Location: ../movimentarD1.php');
 exit;
-?>
+
