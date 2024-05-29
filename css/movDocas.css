@@ -96,7 +96,11 @@ main{
 
   .flex{
     display: flex;
-    justify-content: space-around;
+  }
+  .divpegar{
+    width: 40%;
+    flex-direction: column;
+    margin-inline: 4%;
   }
 input{
     width: 30px;
