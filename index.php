@@ -33,7 +33,7 @@
                         <input type="password" placeholder="Senha" name='Senha'>
                     
                     <label class="label-input" for=""></label>
-                        <input type="text" placeholder="Turma" name='turma'>
+                        <input min=1 type="number" placeholder="Turma" name='turma'>
                     
 
                     <button class="btn btn-second" value="aluno" type='submit' name='action'>

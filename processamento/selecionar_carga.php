@@ -10,7 +10,7 @@ if (!isset($_SESSION['turma'])) {
     exit;
 }
 $turma = $_SESSION['turma'];
-
+$doca = $_POST['doca'];
 
 $servername = "localhost";
 $username = "root.Att";
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $produto_info = $info_result->fetch_assoc();
 
 
-                $id_doca = 1; 
+                $id_doca = $_POST['doca_id_real']; 
                 $nome_produto = $produto_info['nome_produto'];
                 $quantidade_enviada = $produto_info['quantidade_enviada'];
                 $posicao = $produto_info['posicao'];
@@ -74,5 +74,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $delete_stmt->close();
     }
 }
-header('location:../movimentarD1.php',true,301);
+header('location:../movimentar'. $doca .'.php',true,301);
 

@@ -217,8 +217,10 @@ if (!isset($_SESSION['turma'])) {
                                 echo '<td>' . $valor4 . '</td>'; ?>
                         </tr>
                         <tr>
-                            <th>Ncm </th>
                             <?php
+                            if ($ncm1 != '0')
+                            print "
+                    <th>ncm </th>";
                             if ($ncm2 != '0')
                                 print "
                         <th>ncm 2</th>";
@@ -230,7 +232,8 @@ if (!isset($_SESSION['turma'])) {
                         <th>ncm 4</th>"; ?>
                         </tr>
                         <tr>
-                            <td><?php echo $ncm1; ?></td>
+                            <?php if ($ncm1 != '0')
+                                echo '<td>' . $ncm1 . '</td>'; ?>
                             <?php if ($ncm2 != '0')
                                 echo '<td>' . $ncm2 . '</td>'; ?>
                             <?php if ($ncm3 != '0')
@@ -239,11 +242,13 @@ if (!isset($_SESSION['turma'])) {
                                 echo '<td>' . $ncm4 . '</td>'; ?>
                         </tr>
                         <tr>
-                            <th>Cfop </th>
                             <?php
-                            if ($cfop2 != '0')
+                            if ($cfop1 != '0')
                                 print "
-                        <th>cfop 2</th>";
+                        <th>cfop </th>";
+                        if ($cfop2 != '0')
+                        print "
+                <th>cfop 2</th>";
                             if ($cfop3 != '0')
                                 print "
                         <th>cfop 3</th>";
@@ -252,7 +257,8 @@ if (!isset($_SESSION['turma'])) {
                         <th>cfop 4</th>"; ?>
                         </tr>
                         <tr>
-                            <td><?php echo $cfop1; ?></td>
+                            <?php if ($cfop1 != '0')
+                                echo '<td>' . $cfop1 . '</td>'; ?>
                             <?php if ($cfop2 != '0')
                                 echo '<td>' . $cfop2 . '</td>'; ?>
                             <?php if ($cfop3 != '0')
@@ -261,11 +267,13 @@ if (!isset($_SESSION['turma'])) {
                                 echo '<td>' . $cfop4 . '</td>'; ?>
                         </tr>
                         <tr>
-                            <th>Cst </th>
                             <?php
-                            if ($cst2 != '0')
+                            if ($cst1 != '0')
                                 print "
-                        <th>cst 2</th>";
+                        <th>cst </th>";
+                        if ($cst2 != '0')
+                        print "
+                <th>cst 2</th>";
                             if ($cst3 != '0')
                                 print "
                         <th>cst 3</th>";
@@ -274,7 +282,8 @@ if (!isset($_SESSION['turma'])) {
                         <th>cst 4</th>"; ?>
                         </tr>
                         <tr>
-                            <td><?php echo $cst1; ?></td>
+                            <?php if ($cst1 != '0')
+                                echo '<td>' . $cst1 . '</td>'; ?>
                             <?php if ($cst2 != '0')
                                 echo '<td>' . $cst2 . '</td>'; ?>
                             <?php if ($cst3 != '0')

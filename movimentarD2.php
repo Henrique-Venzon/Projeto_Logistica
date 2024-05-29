@@ -69,6 +69,8 @@ $turma = $_SESSION['turma'];
                                 echo "<td style=\"border-right:1px solid black;\">" . $row->posicao . "</td>";
                                 echo "<input class=\"custom-checkbox\" type=\"hidden\" name=\"id_carga\" value=\"" . $row->id_carga . "\">";
                                 echo "<td><input class=\"custom-checkbox\" type=\"checkbox\" name=\"produtos_selecionados[]\" value=\"" . $row->id . "\"></td>";
+                                echo"<input type='hidden' name='doca' value='D2'>";
+                                echo"<input type='hidden' name='doca_id_real' value='2'>";
                                 echo "</tr>";
                             }
                             print "</table>";

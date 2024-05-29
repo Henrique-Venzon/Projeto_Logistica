@@ -15,6 +15,8 @@ if ($conexao->connect_errno) {
     $resultado = $conexao->query($antes);
     $antes="DELETE FROM docas WHERE id_carga=". $id_atividade."";
     $resultado = $conexao->query($antes);
+    $antes="DELETE FROM vistoriado WHERE id=". $id_atividade."";
+    $resultado = $conexao->query($antes);
     $sql = "DELETE FROM carga WHERE id=". $id_atividade."";
 
     $resultado = $conexao->query($sql);
