@@ -153,3 +153,11 @@ input{
     margin-bottom: 1.3%;
     margin-top: 1.3%;
 }
+.finalizar{
+    padding: 7px;
+    padding-inline: 9px;
+    background-color: #fff;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 20px;
+}

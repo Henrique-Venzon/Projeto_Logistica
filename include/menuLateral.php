@@ -253,32 +253,6 @@
                     </a>
                 </li>'
                 ?>
-
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                    <i class="fa-solid fa-boxes-packing"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Piking</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                        data-bs-target="#Recebimentos" aria-expanded="false" aria-controls="Recebimentos">
-                        <i class="fa-solid fa-hand-holding-hand"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Recebimentos</span>
-                    </a>
-                    
-                    <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                        <li class="sidebar-item">
-                            <a id="linkContainer" style="margin-bottom: -1.4px;" href="container.php"
-                                class="sidebar-link">Container</a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a  href="vistoriaCarga.php" style="margin-top: -1.4px;" class="sidebar-link">Carga</a>
-                        </li>
-                    </ul>
-                </li>
-                
                 <?php if($_SESSION['tipo_login']=='professor')
                 echo '
                 <li class="sidebar-item">
@@ -298,31 +272,28 @@
                 </li>'
                 ?>
 
+
+
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                    <i class="fa-solid fa-truck-front"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Expedição</span>
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#Recebimentos" aria-expanded="false" aria-controls="Recebimentos">
+                        <i class="fa-solid fa-hand-holding-hand"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Vistoria</span>
                     </a>
+                    
+                    <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a id="linkContainer" style="margin-bottom: -1.4px;" href="container.php"
+                                class="sidebar-link">Container</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a  href="vistoriaCarga.php" style="margin-top: -1.4px;" class="sidebar-link">Carga</a>
+                        </li>
+                    </ul>
                 </li>
+                
+                
                 <li class="sidebar-item">
-                <a href="notaf.php" class="sidebar-link">
-                <i class="fa-solid fa-receipt"></i>
-                    <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
-                </a>
-            </li>
-            <li class="sidebar-item">
-                    <a href="movimentacaoDoca.php" class="sidebar-link">
-                    <i class="fa-solid fa-clipboard"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Movimentação</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                    <i class="fa-solid fa-clipboard"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Relatórios</span>
-                    </a>
-                </li>
-                                <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                         data-bs-target="#controle" aria-expanded="false" aria-controls="Recebimentos">
                         <i class="fa-solid fa-gear"></i>
@@ -336,6 +307,38 @@
                             <a style="margin-top: -1.25px;" href="armazem.php" class="sidebar-link">Estoque</a>
                         </li>
                     </ul>
+                </li>
+                <li class="sidebar-item">
+                <a href="notaf.php" class="sidebar-link">
+                <i class="fa-solid fa-receipt"></i>
+                    <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                    <a href="movimentacaoDoca.php" class="sidebar-link">
+                    <i class="fa-solid fa-people-carry-box"></i>  
+                        <span class="sidebar-text" style="margin-left:10px;">Movimentação</span>
+                    </a>
+                </li>
+                
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                    <i class="fa-solid fa-truck-front"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Expedição</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                    <i class="fa-solid fa-boxes-packing"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Piking</span>
+                    </a>
+                </li>
+                
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                    <i class="fa-solid fa-clipboard"></i>     
+                    <span class="sidebar-text" style="margin-left:10px;">Relatórios</span>
+                    </a>
                 </li>
         </ul>
 

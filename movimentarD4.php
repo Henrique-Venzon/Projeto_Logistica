@@ -110,7 +110,7 @@ $turma = $_SESSION['turma'];
                             print "<td>
                                     <form method='post' action='processamento/processar_movimentacaoD4.php' style='display:inline-block'>
                                         <input type='hidden' name='produto_id' value='" . $row->id . "'>
-                                        <button type='submit' name='finalizar'>Finalizar</button>
+                                        <button class=\"finalizar\" type='submit' name='finalizar'>Finalizar</button>
                                     </form>
                                   </td>";
                             print "</tr>";
