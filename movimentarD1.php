@@ -37,6 +37,7 @@ $turma = $_SESSION['turma'];
                     <h1>Doca 1</h1>
                 </div>
                 <div class="flex">
+                    <div class="divpegar">
                     <form method='post' action="processamento/selecionar_carga.php">
                         <h1 class="pegar">Pegar</h1>
                         <?php
@@ -80,7 +81,8 @@ $turma = $_SESSION['turma'];
                             <button>Enviar</button>
                         </DIV>
                     </form>
-
+                    </div>
+                    <div class="divpegar">
                     <h1 class="pegar">Finalizar</h1>
                     <?php
                     $sql = "SELECT * FROM pegado where id_doca=1";
@@ -113,9 +115,12 @@ $turma = $_SESSION['turma'];
                         print "</table>";
                         print "</div>";
                     } else {
+                        print"<div class=\"paragrafo\">";
                         print "<p class='alert alert-danger'>Nenhum produto selecionado.</p>";
+                        print"</div>";
                     }
                     ?>
+                </div>
                 </div>
             </div>
         </div>
