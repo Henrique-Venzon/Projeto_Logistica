@@ -12,7 +12,7 @@ if (!isset($_SESSION['turma'])) {
 <!DOCTYPE html>
 
 <head>
-    <meta name="vierport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/amem.svg">
 
     <meta charset="utf-8">
@@ -25,7 +25,7 @@ if (!isset($_SESSION['turma'])) {
 
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
-    <meta name="vierport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/container.css">
 </head>
