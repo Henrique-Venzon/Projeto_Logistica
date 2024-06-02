@@ -115,7 +115,7 @@
                     </div>
                     </form>
                 </div>
-
+              
                 <!-- Resultados da seleção do pedido -->
                 <?php if (!empty($_GET['pedido_selecionado']) && $_GET['pedido_selecionado'] != '0') { ?>
                     <div class="tabela-scroll">
@@ -248,6 +248,10 @@
                                 </div>
                         </form>
                     </div>
+                <?php }else{ ?>
+                    <DIV class="IMAGEM" id="imagemContainer">
+                    <img src="img/este.png" alt="">
+                </DIV>
                 <?php } ?>
             </div>
         </div>
@@ -298,6 +302,8 @@
             xhr.send("quantidade=" + novaQuantidade + "&row=" + row);
         }
     </script>
+        
+
     <script src="js/vistoriaCarga.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

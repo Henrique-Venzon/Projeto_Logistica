@@ -5,15 +5,11 @@
     box-sizing: border-box;
     font-family: 'Platypi';
 }
-
-
-
-
 main{
     width: 100%;
     display: flex;
     background: linear-gradient(-60deg, #515151,#000000,#000000,#515151);
-    background-size: 500% 500%; /* Aumente o tamanho do gradiente */
+    background-size: 500% 500%;
     animation: gradient 25s ease infinite;
 }
 
@@ -75,7 +71,6 @@ main{
     width: 70%;
     padding: 3%;
     border-radius: 110px;
-
     display: flex;
     align-items: center;
     justify-content: center;

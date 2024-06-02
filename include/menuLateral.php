@@ -55,7 +55,7 @@
         color: white;
     }
     i{
-        font-size: 36px;
+        font-size: 22px;
     }
 
 
@@ -127,55 +127,6 @@
         transform: rotate(45deg);
         transition: all .1s ease-out;
     }
-
-
-
-
-
-    @media  screen and (max-height: 768px) {
-        .toggle-btn i {
-        margin-left:12px ;
-        font-size: 28px;
-        color: white;
-    }
-        i{
-        font-size: 24.5px;
-    }
-    #sidebar.expand {
-        width: 220px;
-    }
-    #sidebar {
-        width: 90px;
-    }
-    #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
-        left: 90px;
-    }
-}
-@media only screen and( min-height:769px) and (max-height:859px) {
-
-    #sidebar.expand {
-        width: 220px;
-    }
-    #sidebar {
-        width: 90px;
-    }
-    #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
-        left: 90px;
-    }
-}
-@media  screen and (min-height: 860px) {
-
-    .sidebar-item{
-        margin-top: 0.7%;
-        margin-bottom: 0.8%;
-    }
-    a.sidebar-link {
-
-        font-size: 1.2rem;
-
-    }
-
-}
 .fa-house{
     margin-left: 5px;
     margin-right: 5px;
@@ -220,6 +171,58 @@
     margin-left: 6px;
     margin-right: 5px;
 }
+@media only screen and (max-width: 600px) {
+    i{
+        font-size: 20px;
+    }
+    #sidebar.expand {
+        width: 150px;
+    }
+    #sidebar {
+        width: 80px;
+    }
+    #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+        left: 80px;
+    }
+  }
+    .toggle-btn i {
+        margin-left:14px ;
+        font-size: 22px;
+    }
+    a.sidebar-link {
+        font-size: 0.64rem;
+    }
+  
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    
+  }
+  
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+   
+  }
+  
+  
+  @media only screen and (min-width: 1441px) {
+    .toggle-btn {
+        background-color: transparent;
+        cursor: pointer;
+        border: 0;
+        padding: 0.9rem 1.3rem;
+        align-items: center;
+    }
+    .toggle-btn i {
+        margin-left:17px ;
+        font-size: 37px;
+        color: white;
+    }
+    i{
+        font-size: 32px;
+    }
+    a.sidebar-link {
+        font-size: 0.9rem;
+    }
+  }
+
 </style>
 
 <div class="menuL">
