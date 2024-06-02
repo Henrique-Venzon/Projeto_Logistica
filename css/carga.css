@@ -228,23 +228,11 @@ main{
   }
   @media only screen and (max-width: 600px) {
     .IMAGEM img{
-        width: 230px;
+        width: 180px;
         height: 260px;
         filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 1));
   }
   .IMAGEM{
     height: 50%;
   }
-  
-  @media only screen and (min-width: 601px) and (max-width: 1024px) {
-    
-  }
-  
-  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
-   
-  }
-  
-  
-  @media only screen and (min-width: 1441px) {
-
-  }
+}

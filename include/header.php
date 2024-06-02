@@ -27,7 +27,6 @@
     transform: translateX(-50%); 
     position: absolute;
     box-shadow: 0 0 5px #fff;
-
 }
 
 .imagemDec{
@@ -63,14 +62,53 @@
     color: white;
     padding: 7px;
 }
-@media screen and (max-height: 800px){
-    .logo img{
-    margin-left: 7.9%;
-    height: 46px;
-    width: 48px;
+@media only screen and (max-width: 600px) {
+    .sair{
+    position: absolute;
+    left: 90%; 
+    transform: translateX(-50%);
 }
+    .logo h1{
+    margin-left: 5.3%;
+    font-size: 90%;
 
 }
+.logo img{
+    margin-left: 7.7%;
+    height: 40px;
+    width: 42px;
+}
+
+.sair i{
+    font-size: 20px;
+    color: white;
+    padding: 7px;
+}
+.senai{
+    height: 3%;
+    display: flex;
+    left: 52%; 
+    transform: translateX(-50%); 
+    position: absolute;
+    box-shadow: 0 0 5px #fff;
+}
+.nomeLogin{
+    left: 70%;
+}
+.nomeLogin h1{
+    font-size: 100%;
+}
+}
+  
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    
+  }
+  
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+   
+  }
+  
+  
 </style>
 
 

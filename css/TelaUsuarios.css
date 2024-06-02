@@ -34,7 +34,6 @@
     width: 170px;
     font-size: 25px;
 }
-
 .table-inputs{
   border: 1.5px solid black;
   width: 88%;
@@ -42,8 +41,6 @@
   background-color: #919191;
   box-shadow: 0px 0px  10px black;
   border-radius: 40px; 
-
-
 }
 
 .reset,
@@ -97,10 +94,6 @@
   width: 100%;
 }
 
-
-
-
-
 .tabela-scroll {
     max-height: 610px; 
     overflow-y: auto; 
@@ -108,26 +101,18 @@
 
   }
   .tabela-scroll::-webkit-scrollbar {
-    height: 5px; /* Altura da barra de rolagem */
+    height: 5px;
     width: 25px;
     border-right: 1px solid black;
 
   }
-  
-  
-
   .tabela-scroll::-webkit-scrollbar-track {
-    background-color: #333333; /* Cor de fundo da barra de rolagem */
+    background-color: #333333; 
   }
   
   .tabela-scroll::-webkit-scrollbar-thumb {
-    background-color: #000000; /* Cor do "ponteiro" da barra de rolagem */
+    background-color: #000000; 
   }
-
-
-
-
-
 *{
     padding: 0;
     margin: 0;
@@ -155,16 +140,10 @@ main{
     height: 90%;
     background-color: #1c1c1c;
     border-radius: 40px; 
-      position: relative;
+    position: relative;
 
 }
-
-
-
 .DivDireita h1{
     color: white;
     text-shadow: 0px 0px 5px #000000;
 }
-
-
-

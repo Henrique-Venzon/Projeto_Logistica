@@ -35,14 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ?>
     <main>
         <?php
-        include 'include/menuLateral.php';
-        
+        include 'include/menuLateral.php'; 
         ?>
         <div class="meio">
-        <div class="DivDireita">
-        
-
-            
+        <div class="DivDireita">      
         <h1 class="centroT">Lista de alunos</h1>
 
         <?php        

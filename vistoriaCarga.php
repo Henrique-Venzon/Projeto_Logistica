@@ -77,7 +77,9 @@
     <?php include 'include/header.php'; ?>
 
     <main>
-        <?php include 'include/menuLateral.php'; ?>
+        <?php 
+        include 'include/menuLateral.php'; 
+        ?>
 
         <div class="DivDireita">
             <div class="table-inputs">
