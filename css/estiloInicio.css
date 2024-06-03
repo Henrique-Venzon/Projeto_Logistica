@@ -71,14 +71,11 @@ main{
     width: 70%;
     padding: 3%;
     border-radius: 110px;
-    display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     position: relative;
-    box-shadow: 0px 0px 7px #000000; 
-
-    
+    box-shadow: 0px 0px 7px #000000;  
 }
 .bv::before{
     content: "";
@@ -103,3 +100,22 @@ main{
     border-radius: inherit;
 }
 
+@media only screen and (max-width: 600px) {
+    .Imagem{
+        display: none;
+    }
+    .bv h1{
+        font-size: 28px;
+        }
+    .bv{
+        margin-top: -100%;
+    }
+    
+  
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    
+  }
+  
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+   
+  }
