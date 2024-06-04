@@ -307,7 +307,7 @@
                     <a style="margin-top: -1.25px;" href="docas.php" class="sidebar-link">Doca</a>
                 </li>
                         <li class="sidebar-item">
-                            <a style="margin-top: -1.25px;" href="armazem.php" class="sidebar-link">Estoque</a>
+                            <a style="margin-top: -1.25px;" href="telaEstoque.php" class="sidebar-link">Estoque</a>
                         </li>
                     </ul>
                 </li>
