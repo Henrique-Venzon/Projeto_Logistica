@@ -4,7 +4,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/amem.svg">
-
     <meta charset="utf-8">
     <title><?php
     $tituloPag = 'Carga';
@@ -30,47 +29,24 @@
     $username = "root.Att";
     $password = "root";
     $dbname = "logistica";
-    $npedido_selecionado = 0;
+    $pedido_id_selecionado = 0;
 
-    if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado'])) {
-        $npedido_selecionado = $_GET['pedido_selecionado'];
-    }
+    if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado']) && $_GET['pedido_selecionado'] != '0') {
+        $pedido_id_selecionado = $_GET['pedido_selecionado'];
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Erro de conexão: " . $conn->connect_error);
-    }
-
-    $sql = "SELECT * FROM carga WHERE npedido = '" . $npedido_selecionado . "' AND turma_id = '" . $_SESSION['turma'] . "'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $id = $row['id'];
-            $npedido = $row['npedido'];
-            $Empresa = $row['Empresa'];
-            $cliente = $row['cliente'];
-            $telefone = $row['Telefone'];
-            $CEP = $row['CEP'];
-            $produto1 = $row['produto1'];
-            $produto2 = $row['produto2'];
-            $produto3 = $row['produto3'];
-            $produto4 = $row['produto4'];
-            $unidade1 = $row['unidade1'];
-            $unidade2 = $row['unidade2'];
-            $unidade3 = $row['unidade3'];
-            $unidade4 = $row['unidade4'];
-            $quantidade1 = $row['quantidade1'];
-            $quantidade2 = $row['quantidade2'];
-            $quantidade3 = $row['quantidade3'];
-            $quantidade4 = $row['quantidade4'];
-            $valor1 = $row['valor1'];
-            $valor2 = $row['valor2'];
-            $valor3 = $row['valor3'];
-            $valor4 = $row['valor4'];
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            die("Erro de conexão: " . $conn->connect_error);
         }
+
+        $sql = "SELECT * FROM carga WHERE id = '" . $pedido_id_selecionado . "' AND turma_id = '" . $_SESSION['turma'] . "'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $pedido = $result->fetch_assoc();
+        }
+        $conn->close();
     }
-    $conn->close();
     ?>
 
     <?php include 'include/header.php'; ?>
@@ -99,12 +75,12 @@
                                     die("Erro de conexão: " . $conn->connect_error);
                                 }
 
-                                $sql = "SELECT * FROM carga WHERE situacao='enviado' and turma_id = '" . $_SESSION['turma'] . "'";
+                                $sql = "SELECT id, npedido FROM carga WHERE situacao='enviado' and turma_id = '" . $_SESSION['turma'] . "'";
                                 $result = $conn->query($sql);
 
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
-                                        echo "<option value=\"{$row['npedido']}\">{$row['npedido']}</option>";
+                                        echo "<option value=\"{$row['id']}\">{$row['npedido']}</option>";
                                     }
                                 }
                                 $conn->close();
@@ -118,7 +94,7 @@
                 </div>
               
                 <!-- Resultados da seleção do pedido -->
-                <?php if (!empty($_GET['pedido_selecionado']) && $_GET['pedido_selecionado'] != '0') { ?>
+                <?php if (!empty($pedido)) { ?>
                     <div class="tabela-scroll">
                         <form method="post" action="processamento/confirmar_carga.php">
                             <div class="centroDiv">
@@ -126,18 +102,18 @@
                                     <div class="inf">
                                         <div class="npedido">
                                             <h1>N° Pedido</h1>
-                                            <h1><?php echo $npedido_selecionado; ?></h1>
+                                            <h1><?php echo $pedido['npedido']; ?></h1>
                                         </div>
                                         <div class="nFiscal">
                                             <h1>Nota Fiscal</h1>
                                             <h1>
                                                 <?php
-                                                if ($npedido_selecionado != 0) {
+                                                if ($pedido_id_selecionado != 0) {
                                                     $conn = new mysqli($servername, $username, $password, $dbname);
                                                     if ($conn->connect_error) {
                                                         die("Erro de conexão: " . $conn->connect_error);
                                                     }
-                                                    $sql_atividade = "SELECT id FROM carga WHERE npedido='" . $npedido_selecionado . "' AND turma_id = '" . $_SESSION['turma'] . "'";
+                                                    $sql_atividade = "SELECT id FROM carga WHERE id='" . $pedido_id_selecionado . "' AND turma_id = '" . $_SESSION['turma'] . "'";
                                                     $resultado = $conn->query($sql_atividade);
 
                                                     $row_atividade = $resultado->fetch_assoc();
@@ -179,67 +155,67 @@
                                             <th>Total</th>
                                         </tr>
                                         <tr>
-                                            <td><?php echo $produto1 ?? ''; ?></td>
-                                            <td><?php echo $unidade1 ?? ''; ?></td>
+                                            <td><?php echo $pedido['produto1']; ?></td>
+                                            <td><?php echo $pedido['unidade1']; ?></td>
                                             <td>
-                                                <span id="quantidade1"><?php echo $quantidade1 ?? 0; ?></span>
+                                                <span id="quantidade1"><?php echo $pedido['quantidade1']; ?></span>
                                                 <input name="quantidade1" id="quantidadeInput1" type="text"
-                                                    value="<?php echo $quantidade1 ?? 0; ?>" style="display:none;" />
-                                                <input name="id" id="id" type="hidden" value="<?php echo $id; ?>"
+                                                    value="<?php echo $pedido['quantidade1']; ?>" style="display:none;" />
+                                                <input name="id" id="id" type="hidden" value="<?php echo $pedido['id']; ?>"
                                                     style="display:none;" />
                                             </td>
-                                            <td><span id="valor1"><?php echo $valor1 ?? 0; ?></span></td>
+                                            <td><span id="valor1"><?php echo $pedido['valor1']; ?></span></td>
                                             <td><button type="button" id="editar1"
                                                     onclick="editarQuantidade(1)">editar</button></td>
                                             <td><input type="number" name="avariado1" /></td>
-                                            <td id="total1"><?php echo ($quantidade1 * $valor1) ?? 0; ?> Reais</td>
+                                            <td id="total1"><?php echo $pedido['quantidade1'] * $pedido['valor1']; ?> Reais</td>
                                         </tr>
-                                        <?php if (!empty($produto2)) { ?>
+                                        <?php if (!empty($pedido['produto2'])) { ?>
                                             <tr>
-                                                <td><?php echo $produto2; ?></td>
-                                                <td><?php echo $unidade2; ?></td>
+                                                <td><?php echo $pedido['produto2']; ?></td>
+                                                <td><?php echo $pedido['unidade2']; ?></td>
                                                 <td>
-                                                    <span id="quantidade2"><?php echo $quantidade2; ?></span>
+                                                    <span id="quantidade2"><?php echo $pedido['quantidade2']; ?></span>
                                                     <input name="quantidade2" id="quantidadeInput2" type="text"
-                                                        value="<?php echo $quantidade2; ?>" style="display:none;" />
+                                                        value="<?php echo $pedido['quantidade2']; ?>" style="display:none;" />
                                                 </td>
-                                                <td><span id="valor2"><?php echo $valor2; ?></span></td>
+                                                <td><span id="valor2"><?php echo $pedido['valor2']; ?></span></td>
                                                 <td><button type="button" id="editar2"
                                                         onclick="editarQuantidade(2)">editar</button></td>
                                                 <td><input type="number" name="avariado2" /></td>
-                                                <td id="total2"><?php echo $quantidade2 * $valor2; ?> Reais</td>
+                                                <td id="total2"><?php echo $pedido['quantidade2'] * $pedido['valor2']; ?> Reais</td>
                                             </tr>
                                         <?php } ?>
-                                        <?php if (!empty($produto3)) { ?>
+                                        <?php if (!empty($pedido['produto3'])) { ?>
                                             <tr>
-                                                <td><?php echo $produto3; ?></td>
-                                                <td><?php echo $unidade3; ?></td>
+                                                <td><?php echo $pedido['produto3']; ?></td>
+                                                <td><?php echo $pedido['unidade3']; ?></td>
                                                 <td>
-                                                    <span id="quantidade3"><?php echo $quantidade3; ?></span>
+                                                    <span id="quantidade3"><?php echo $pedido['quantidade3']; ?></span>
                                                     <input name="quantidade3" id="quantidadeInput3" type="text"
-                                                        value="<?php echo $quantidade3; ?>" style="display:none;" />
+                                                        value="<?php echo $pedido['quantidade3']; ?>" style="display:none;" />
                                                 </td>
-                                                <td><span id="valor3"><?php echo $valor3; ?></span></td>
+                                                <td><span id="valor3"><?php echo $pedido['valor3']; ?></span></td>
                                                 <td><button type="button" id="editar3"
                                                         onclick="editarQuantidade(3)">editar</button></td>
                                                 <td><input type="number" name="avariado3" /></td>
-                                                <td id="total3"><?php echo $quantidade3 * $valor3; ?> Reais</td>
+                                                <td id="total3"><?php echo $pedido['quantidade3'] * $pedido['valor3']; ?> Reais</td>
                                             </tr>
                                         <?php } ?>
-                                        <?php if (!empty($produto4)) { ?>
+                                        <?php if (!empty($pedido['produto4'])) { ?>
                                             <tr>
-                                                <td><?php echo $produto4; ?></td>
-                                                <td><?php echo $unidade4; ?></td>
+                                                <td><?php echo $pedido['produto4']; ?></td>
+                                                <td><?php echo $pedido['unidade4']; ?></td>
                                                 <td>
-                                                    <span id="quantidade4"><?php echo $quantidade4; ?></span>
+                                                    <span id="quantidade4"><?php echo $pedido['quantidade4']; ?></span>
                                                     <input name="quantidade4" id="quantidadeInput4" type="text"
-                                                        value="<?php echo $quantidade4; ?>" style="display:none;" />
+                                                        value="<?php echo $pedido['quantidade4']; ?>" style="display:none;" />
                                                 </td>
-                                                <td><span id="valor4"><?php echo $valor4; ?></span></td>
+                                                <td><span id="valor4"><?php echo $pedido['valor4']; ?></span></td>
                                                 <td><button type="button" id="editar4"
                                                         onclick="editarQuantidade(4)">editar</button></td>
                                                 <td><input type="number" name="avariado4" /></td>
-                                                <td id="total4"><?php echo $quantidade4 * $valor4; ?> Reais</td>
+                                                <td id="total4"><?php echo $pedido['quantidade4'] * $pedido['valor4']; ?> Reais</td>
                                             </tr>
                                         <?php } ?>
                                     </table>
@@ -249,10 +225,10 @@
                                 </div>
                         </form>
                     </div>
-                <?php }else{ ?>
-                    <DIV class="IMAGEM" id="imagemContainer">
-                    <img src="img/este.png" alt="" draggable="false" oncontextmenu="return false">
-                </DIV>
+                <?php } else { ?>
+                    <div class="IMAGEM" id="imagemContainer">
+                        <img src="img/este.png" alt="" draggable="false" oncontextmenu="return false">
+                    </div>
                 <?php } ?>
             </div>
         </div>
@@ -313,3 +289,5 @@
 </body>
 
 </html>
+
+

@@ -9,28 +9,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 <!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/amem.svg">
-
     <meta charset="utf-8">
-    <title><?php
-    $tituloPag = 'Nota Fiscal';
-    echo "$tituloPag";
-    ?></title>
+    <title>
+        <?php
+        $tituloPag = 'Nota Fiscal';
+        echo "$tituloPag";
+        ?>
+    </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
-
     <link rel="stylesheet" href="css/verPedidos.css">
 </head>
 
 <body>
     <?php
     include 'include/header.php'
-        ?>
+    ?>
     <main>
         <?php
         include 'include/menuLateral.php';
@@ -59,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     print "<tr>";
                     print "<th>N° Nota Fiscal</th>";
+                    print "<th>Data de Criação</th>";
                     print "<th style=\"border-right:none;\">Ver Nota Fiscal</th>";
                     print "</tr>";
 
@@ -71,13 +73,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 $npedido = $row_npedido["npedido"];
                             }
                         }
+                        $data_formatada = date("d/m/Y H:i:s", strtotime($row->data_hora_envio));
                         print "<form method='post' action='nPedido.php'";
                         print "<tr>";
                         print "<td>" . $row->id_notafiscal . "</td>";
-                        print "<td >
-                        <button class=\"reset\" data-id=\"" . $npedido . "\"><span>ver</span></button>
-                        <input name='npedido' type='hidden' value='" . $npedido . "'>
-                        </td>";
+                        print "<td>" . $data_formatada . "</td>";
+                        print "<td>
+                            <button class=\"reset\" data-id=\"" . $npedido . "\"><span>ver</span></button>
+                            <input name='npedido' type='hidden' value='" . $npedido . "'>
+                            </td>";
                         print "</tr>";
                         print "</form>";
                     }
@@ -85,14 +89,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     print "</div>";
 
                 } else {
-                    print "<p class='alert alert-danger'>Não encrontrou nenhuma nota fiscal criada</p>";
+                    print "<p class='alert alert-danger'>Não encontrou nenhuma nota fiscal criada</p>";
                 }
 
                 ?>
             </div>
         </div>
     </main>
-
 
     <script src="js/ver.js"></script>
     <script src="js/sidebar.js"></script>

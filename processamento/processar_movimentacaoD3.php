@@ -83,6 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-header('Location: ../movimentarD3.php');
+header('Location: ../movimentarD3.php',true,301);
 exit;
 

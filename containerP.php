@@ -39,8 +39,6 @@ if (!isset($_SESSION['turma'])) {
         include 'include/menuLateral.php'
             ?>
 
-
-
         <div class="DivDireita">
             <div class="table-inputs">
                 <span class="tooltip-container">
@@ -110,7 +108,6 @@ if (!isset($_SESSION['turma'])) {
                                         <option value="L">L</option>
                                     </select>
                                     <select id="unidade2" name="unidade2">
-                                        <?php // <?php if ($produto2==' ') print "<option value=' '> </option>" ?>
                                         <option value=" "> </option>
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
@@ -191,7 +188,6 @@ if (!isset($_SESSION['turma'])) {
                                 <h1>Cadastro de Transportes</h1>
                             </div>
 
-
                             <div class="inputs">
                                 <div class="juntar">
                                     <label for="placa">Placa do Caminhão:</label>
@@ -261,30 +257,43 @@ if (!isset($_SESSION['turma'])) {
 
     </main>
 
-
     <script src="js/sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
+    <script>
+        function setMultipleInputValues(values) {
+            for (var id in values) {
+                var inputElement = document.getElementById(id);
+                if (inputElement) {
+                    inputElement.value = values[id];
+                } else {
+                    console.log("Elemento com ID " + id + " não encontrado.");
+                }
+            }
+        }
+
+        function checkAndUpdateUnitSelect(productId, unitId) {
+            var productInput = document.getElementById(productId);
+            var unitSelect = document.getElementById(unitId);
+            if (productInput && unitSelect) {
+                productInput.addEventListener('input', function () {
+                    if (productInput.value.trim() !== '') {
+                        if (unitSelect.value.trim() === '') {
+                            unitSelect.value = 'UN';
+                        }
+                    }
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            checkAndUpdateUnitSelect('produto', 'unidade');
+            checkAndUpdateUnitSelect('produto2', 'unidade2');
+            checkAndUpdateUnitSelect('produto3', 'unidade3');
+            checkAndUpdateUnitSelect('produto4', 'unidade4');
+        });
+    </script>
 </body>
 
 </html>
-<script>
-
-
-
-
-</script>x
-<script>
-    function setMultipleInputValues(values) {
-        for (var id in values) {
-            var inputElement = document.getElementById(id);
-            if (inputElement) {
-                inputElement.value = values[id];
-            } else {
-                console.log("Elemento com ID " + id + " não encontrado.");
-            }
-        }
-    }
-
-</script>
