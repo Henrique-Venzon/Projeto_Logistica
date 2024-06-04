@@ -89,19 +89,20 @@ main{
 }
 .pesquisa input{
     font-size: 22px;
+    
 }
 .input1{
     margin-top: 8px;
     padding:4px 8px;
     text-align: center;
-    border-radius: 20px 0 20px 0;
+    border-radius: 20px 20px 0px 0px;
     border: 1.5px solid #187ec2;
 }
 .input2{
     margin-top: 8px;
     padding:4px 8px;
     text-align: center;
-    border-radius: 0 20px 0 20px ;
+    border-radius: 0px 0px 20px 20px ;
     border: 1.5px solid #187ec2;
 }
 .buttonPesquisa{
