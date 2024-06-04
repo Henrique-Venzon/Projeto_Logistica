@@ -176,7 +176,7 @@
         font-size: 20px;
     }
     #sidebar.expand {
-        width: 150px;
+        width: 160px;
     }
     #sidebar {
         width: 80px;

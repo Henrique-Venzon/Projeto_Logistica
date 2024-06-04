@@ -121,7 +121,7 @@
                 <?php if (!empty($_GET['pedido_selecionado']) && $_GET['pedido_selecionado'] != '0') { ?>
                     <div class="tabela-scroll">
                         <form method="post" action="processamento/confirmar_carga.php">
-                            <div>
+                            <div class="centroDiv">
                                 <div class="informacoes">
                                     <div class="inf">
                                         <div class="npedido">

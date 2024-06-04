@@ -34,14 +34,7 @@
     width: 170px;
     font-size: 25px;
 }
-.table-inputs{
-  border: 1.5px solid black;
-  width: 88%;
-  height: 95%;
-  background-color: #919191;
-  box-shadow: 0px 0px  10px black;
-  border-radius: 40px; 
-}
+
 
 .reset,
 .reset *,
@@ -95,10 +88,10 @@
 }
 
 .tabela-scroll {
-    max-height: 610px; 
+    margin-top: 20px;
+    max-height: 69vh; 
     overflow-y: auto; 
     outline: 1px solid #ffffff;
-
   }
   .tabela-scroll::-webkit-scrollbar {
     height: 5px;
@@ -120,30 +113,57 @@
     font-family: 'Platypi';
 }
 
-
 main{
   width: 100%;
   display: flex;
-  
 }
-.meio{
+.table-inputs{
+    border: 1.5px solid black;
+    width: 88%;
+    height: 95%;
+    background-color: #1c1c1c;
+    box-shadow: 0px 0px  10px black;
+    border-radius: 40px; 
+}
+.DivDireita{
   flex-grow: 1;
+  background-color: #ebebeb;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-
-}
-.DivDireita{
-    border: 1.5px solid #ffffff;
-    width: 90%;
-    height: 90%;
-    background-color: #1c1c1c;
-    border-radius: 40px; 
-    position: relative;
-
 }
 .DivDireita h1{
     color: white;
     text-shadow: 0px 0px 5px #000000;
+}
+@media only screen and (max-width: 600px) {
+  .centroT{
+    font-size: 32px;
+}
+.DivDireita{
+  width: 60%;
+}
+.tabela-scroll {
+  max-height: 600px; 
+}
+.table{
+  font-size: 17px;
+  
+}
+.table th,td{
+  font-size: 17px;
+}
+.table th{
+  height: 40px;
+}
+.table td{
+  height: 50px;
+  background-color: #333333;
+}
+.reset{
+  border-radius: 50px;
+  height: 40px;
+  width: 100px;
+  font-size: 15px;
+}
 }
