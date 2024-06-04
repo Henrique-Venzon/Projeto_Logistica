@@ -102,7 +102,9 @@ if (!isset($_SESSION['turma'])) {
         ?>
         <div class="DivDireita">
             <div class="table-inputs">
-
+                <div class="txt">
+                    <h1>Pedido</h1>
+                </div>
                 <div class="tabela-scroll">
                     <Div class="nomet">
                         <h1>Cliente</h1>

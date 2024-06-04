@@ -514,3 +514,45 @@ input:-webkit-autofill {
     }
 }
 
+@media only screen and (max-width: 600px) {
+.table{
+    font-size: 14px;
+}
+    .form {
+        width: 100%;
+    }
+    .first-column {
+        text-align: center;
+        width: 50%;
+        z-index: 10;
+    }
+    .second-column {
+        width: 50%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .title {
+        font-size: 18px;
+
+    }
+    .title-primary {
+        font-size: 60px;
+        margin-bottom: 3%;
+    }
+    .title-second {
+        font-size: 40px;
+    }
+    .description {
+        font-size: 12px;
+
+    }
+    .description-primary {
+        font-size: 21px;
+    }
+    .description-second {
+        font-size: 21px;
+    
+    }
+}

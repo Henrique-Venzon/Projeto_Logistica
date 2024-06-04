@@ -77,18 +77,22 @@
   #v{
     cursor: pointer;
   }
-  
-  
-
+  .txt{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: center;
+  }
+  .txt h1{
+    font-size: 58px;
+    color: white;
+  }
   .tabela-scroll::-webkit-scrollbar-track {
-    background-color: #ffffff; /* Cor de fundo da barra de rolagem */
+    background-color: #ffffff; 
   }
-  
   .tabela-scroll::-webkit-scrollbar-thumb {
-    background-color: #000000; /* Cor do "ponteiro" da barra de rolagem */
+    background-color: #000000; 
   }
-
-
 .nomet{
     display: flex;
     justify-content: center;

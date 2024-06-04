@@ -217,11 +217,11 @@ main{
     margin-bottom: 0;
   }
   .IMAGEM img{
-    width: 900px;
-    height: 350px;
+    width: 650px;
     filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 1));
 }
   .IMAGEM{
+    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -249,8 +249,6 @@ main{
 }
 .tabela-scroll {
     overflow-x: auto;
-    padding-left: 30px;
-
   }
   .centroDiv{
     display: flex;
@@ -305,7 +303,7 @@ main{
     margin-bottom: 10px;
 }
 .doca select{
-    width:70px;
+    width:60px;
 }
 .doca label{
     margin-bottom: 6px;
@@ -316,9 +314,10 @@ main{
 .inputPedido button,.enviar button{
     width: 90px;
     height: 35px;
-    border-radius: 20px;
+    border-radius: 16px;
     border: solid 1px white;
-    font-size: 14px;
+    font-size: 12px;
+    text-align: center;
 }
 .inputPedido button:hover{
     border: solid 1px #000000;
