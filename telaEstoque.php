@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ?>
         <div class="DivDireita">
             <div class="table-inputs">
+                <h1 id="voltar">voltar</h1>
             <div class="text">
                 <h1>Estoque</h1>
             </div>
@@ -72,6 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div class="posicoes">
                             <div class="card a1">
                                 <h1>a1</h1>
+                                
                             </div>
                             <div class="card a2">
                             <h1>a2</h1>
@@ -125,8 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </main>
 
-
-    <script src="js/ver.js"></script>
+    <script src="js/stock.js"></script>
     <script src="js/sidebar.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
