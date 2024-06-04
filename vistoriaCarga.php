@@ -251,7 +251,7 @@
                     </div>
                 <?php }else{ ?>
                     <DIV class="IMAGEM" id="imagemContainer">
-                    <img src="img/este.png" alt="">
+                    <img src="img/este.png" alt="" draggable="false" oncontextmenu="return false">
                 </DIV>
                 <?php } ?>
             </div>
