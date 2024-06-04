@@ -12,7 +12,6 @@
     ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/carga.css">
@@ -77,7 +76,9 @@
     <?php include 'include/header.php'; ?>
 
     <main>
-        <?php include 'include/menuLateral.php'; ?>
+        <?php 
+        include 'include/menuLateral.php'; 
+        ?>
 
         <div class="DivDireita">
             <div class="table-inputs">
@@ -115,12 +116,12 @@
                     </div>
                     </form>
                 </div>
-
+              
                 <!-- Resultados da seleção do pedido -->
                 <?php if (!empty($_GET['pedido_selecionado']) && $_GET['pedido_selecionado'] != '0') { ?>
                     <div class="tabela-scroll">
                         <form method="post" action="processamento/confirmar_carga.php">
-                            <div>
+                            <div class="centroDiv">
                                 <div class="informacoes">
                                     <div class="inf">
                                         <div class="npedido">
@@ -248,6 +249,10 @@
                                 </div>
                         </form>
                     </div>
+                <?php }else{ ?>
+                    <DIV class="IMAGEM" id="imagemContainer">
+                    <img src="img/este.png" alt="">
+                </DIV>
                 <?php } ?>
             </div>
         </div>
@@ -298,6 +303,8 @@
             xhr.send("quantidade=" + novaQuantidade + "&row=" + row);
         }
     </script>
+        
+
     <script src="js/vistoriaCarga.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

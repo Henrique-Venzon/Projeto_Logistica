@@ -14,12 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 
 <head>
-<meta name="vierport" content="width=device-width, initial-scale=1.0" >
+<meta name="viewrport" content="width=device-width, initial-scale=1.0" >
 <link rel="shortcut icon" href="img/amem.svg">
 
     <meta charset="utf-8">
     <title><?php 
-    $tituloPag = 'Cadastros';
+    $tituloPag = 'Alunos';
     echo "$tituloPag"; 
     ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -35,14 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ?>
     <main>
         <?php
-        include 'include/menuLateral.php';
-        
+        include 'include/menuLateral.php'; 
         ?>
-        <div class="meio">
         <div class="DivDireita">
-        
-
-            
+            <div class="table-inputs">
         <h1 class="centroT">Lista de alunos</h1>
 
         <?php        
@@ -91,8 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         ?>
-
-        </div>
+            </div>   
         </div>
     </main>
 
