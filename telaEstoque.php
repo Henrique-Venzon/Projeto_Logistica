@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/doca.css">
+    <link rel="stylesheet" href="css/estoque.css">
 </head>
 
 <body>
@@ -39,7 +39,88 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="text">
                 <h1>Estoque</h1>
             </div>
-            
+            <div class="stock">
+                <div class="tabelaPesquisa">
+                    <div class="pesquisa">
+                    <h1>Pesquisa</h1>
+                    <input class="input1" type="text" required placeholder="Produto">
+                    <input class="input2" type="text" required placeholder="Quantidade">
+                    <label for="pos">Posição</label>
+                    <select name="" id="pos">
+                        <option value=""></option>
+                        <option value="">a1</option>
+                        <option value="">a2</option>
+                        <option value="">a3</option>
+                        <option value="">a4</option>
+                        <option value="">b1</option>
+                        <option value="">b2</option>
+                        <option value="">b3</option>
+                        <option value="">b4</option>
+                        <option value="">c1</option>
+                        <option value="">c2</option>
+                        <option value="">c3</option>
+                        <option value="">c4</option>
+                        <option value="">d1</option>
+                        <option value="">d2</option>
+                        <option value="">d3</option>
+                        <option value="">d4</option>
+                    </select>
+                    <button class="buttonPesquisa" type="submit">Pesquisar</button>
+                    </div>
+                </div>
+                <div class="tabelaPosicoes">
+                        <div class="posicoes">
+                            <div class="card a1">
+                                <h1>a1</h1>
+                            </div>
+                            <div class="card a2">
+                            <h1>a2</h1>
+                            </div>
+                            <div class="card a3">
+                            <h1>a3</h1>
+                            </div>
+                            <div class="card a4">
+                            <h1>a4</h1>
+                            </div>
+                            <div class="card b1">
+                            <h1>b1</h1>
+                            </div>
+                            <div class="card b2">
+                                <h1>b2</h1>
+                            </div>
+                            <div class="card b3">
+                                <h1>b3</h1>
+                            </div>
+                            <div class="card b4">
+                                <h1>b4</h1>
+                            </div>
+                            <div class="card c1">
+                                <h1>c1</h1>
+                            </div>
+                            <div class="card c2">
+                                <h1>c2</h1>
+                            </div>
+                            <div class="card c3">
+                                <h1>c3</h1>
+                            </div>
+                            <div class="card c4">
+                                <h1>c4</h1>
+                            </div>
+                            <div class="card d1">
+                                <h1>d1</h1>
+                            </div>
+                            <div class="card d2">
+                                <h1>d2</h1>
+                            </div>
+                            <div class="card d3">
+                                <h1>d3</h1>
+                            </div>
+                            <div class="card d4">
+                                <h1>d4</h1>
+                            </div>
+                        </div>
+                </div>
+            </div>
             </div>
         </div>
     </main>

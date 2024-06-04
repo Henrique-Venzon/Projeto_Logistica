@@ -314,13 +314,13 @@
                 <li class="sidebar-item">
                 <a href="notaf.php" class="sidebar-link">
                 <i class="fa-solid fa-receipt"></i>
-                    <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
+                <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
                 </a>
             </li>
             <li class="sidebar-item">
                     <a href="movimentacaoDoca.php" class="sidebar-link">
                     <i class="fa-solid fa-people-carry-box"></i>  
-                        <span class="sidebar-text" style="margin-left:10px;">Movimentação</span>
+                    <span class="sidebar-text" style="margin-left:10px;">Movimentação</span>
                     </a>
                 </li>
                 
