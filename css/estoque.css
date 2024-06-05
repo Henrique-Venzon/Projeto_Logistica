@@ -54,7 +54,7 @@ main{
 .tabelaPesquisa{
     width: 30%;
     margin-left: 5%;
-    height: 80%;
+    height: 75%;
     align-items: center;
 }
 .pesquisa{
@@ -150,3 +150,31 @@ main{
 .card:hover{
     transform: scale(1.08);
 }
+.table{
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0;   
+    vertical-align: middle; 
+}
+.tableScroll{ 
+    max-height: 580px;
+    overflow-y: auto;
+}
+.table th,.table td{
+    border: 1px solid black;
+    font-size: 36px;
+}
+.tableScroll::-webkit-scrollbar {
+    height: 5px;
+    width: 12px;
+    border-right: 1px solid black;
+    outline: 1px black solid;
+
+  }
+  .tableScroll::-webkit-scrollbar-track {
+    background-color: #bdbdbd; 
+  }
+  
+  .tableScroll::-webkit-scrollbar-thumb {
+    background-color: #000000; 
+  }

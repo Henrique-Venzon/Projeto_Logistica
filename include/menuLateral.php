@@ -296,25 +296,10 @@
                 </li>
                 
                 
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                        data-bs-target="#controle" aria-expanded="false" aria-controls="Recebimentos">
-                        <i class="fa-solid fa-gear"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Controle</span>
-                    </a>
-                    <ul id="controle" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                    <li class="sidebar-item">
-                    <a style="margin-top: -1.25px;" href="docas.php" class="sidebar-link">Doca</a>
-                </li>
-                        <li class="sidebar-item">
-                            <a style="margin-top: -1.25px;" href="telaEstoque.php" class="sidebar-link">Estoque</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-item">
-                <a href="notaf.php" class="sidebar-link">
-                <i class="fa-solid fa-receipt"></i>
-                <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
+            <li class="sidebar-item">
+                <a href="docas.php" class="sidebar-link">
+                <i class="fa-solid fa-boxes-packing"></i>
+                <span class="sidebar-text" style="margin-left:10px;">Doca</span>
                 </a>
             </li>
             <li class="sidebar-item">
@@ -323,17 +308,18 @@
                     <span class="sidebar-text" style="margin-left:10px;">Movimentação</span>
                     </a>
                 </li>
+            <li class="sidebar-item">
+                <a href="telaEstoque.php" class="sidebar-link">
+                <i class="fa-solid fa-warehouse"></i>
+                <span class="sidebar-text" style="margin-left:10px;">Estoque</span>
+                </a>
+            </li>
+            
                 
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
                     <i class="fa-solid fa-truck-front"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Expedição</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                    <i class="fa-solid fa-boxes-packing"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Piking</span>
                     </a>
                 </li>
                 
@@ -343,8 +329,12 @@
                     <span class="sidebar-text" style="margin-left:10px;">Relatórios</span>
                     </a>
                 </li>
-        </ul>
-
+                <li class="sidebar-item">
+                <a href="notaf.php" class="sidebar-link">
+                <i class="fa-solid fa-receipt"></i>
+                <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
+                </a>
+            </li>
     </aside>
 </div>
         <script>
