@@ -297,9 +297,6 @@ form h1{
     color: white;
     transition: 1.5s ease-in-out;
   }
-
-
-
 .tooltip-container {
    cursor: pointer;
    position: absolute;
@@ -314,9 +311,6 @@ form h1{
   width: 100%;
   color: white;
 }
-
-
-
 .tooltip {
   opacity: 0;
    z-index: 99;

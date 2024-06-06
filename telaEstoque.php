@@ -65,6 +65,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php include 'include/menuLateral.php'; ?>
         <div class="DivDireita">
             <div class="table-inputs">
+            <span class="tooltip-container">
+                    <i class="fa-regular fa-circle-question"></i>
+                    <span class="tooltip">Cor Preta:Não tem o produto pesquisado.<br>
+                                          Cor Vermelha:Quantidade insuficiente.<br>
+                                          Cor Ciano:Quantidade exata.<br>
+                                          Cor Verde:Quantidade a mais.<br>
+
+                </span>
+                </span>
                 <h1 id="voltar">voltar</h1>
                 <div class="text">
                     <h1>Estoque</h1>
