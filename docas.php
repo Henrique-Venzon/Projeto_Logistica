@@ -66,8 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     print "<table class='table'>";
 
                     print "<tr>";
-                    print "<th>N° Pedido</th>";
-                    print "<th style=\"border-right:none;\">Ver Pedido</th>";
+                    print "<th>ID do Pedido</th>";
+                    print "<th style=\"border-right:none;\">Confirmar Pedido</th>";
                     print "</tr>";
 
                     while ($row = $res->fetch_object()) {

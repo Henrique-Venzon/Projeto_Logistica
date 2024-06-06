@@ -98,7 +98,7 @@ if (!isset($_SESSION['turma'])) {
                             <td><?php echo $quantidade1; ?></td>
                             <input name="id_doca" type="hidden" value="<?php echo $id_doca ?>">
                             <input name="id_carga_select" type="hidden" value="<?php echo $id_carga_select ?>">
-                            <td><input type="number" name="quantidade_enviada1" max="<?php echo $quantidade1; ?>"></td>
+                            <td><input type="number" name="quantidade_enviada1" min=0 max="<?php echo $quantidade1; ?>"></td>
                             <td><select name='posicao1'>
                                     <option value="A1">A1</option>
                                     <option value="A2">A2</option>
@@ -125,7 +125,7 @@ if (!isset($_SESSION['turma'])) {
                             <input name="produto2" type="hidden" value="<?php echo $produto2; ?>">
                             <td><?php echo $unidade2; ?></td>
                             <td><?php echo $quantidade2; ?></td>
-                            <td><input type="number" name="quantidade_enviada2" max="<?php echo $quantidade2; ?>"></td>
+                            <td><input type="number" name="quantidade_enviada2" min=0 max="<?php echo $quantidade2; ?>"></td>
                             <td><select name="posicao2">
                                     <option value="A1">A1</option>
                                     <option value="A2">A2</option>
@@ -152,7 +152,7 @@ if (!isset($_SESSION['turma'])) {
                             <input name="produto3" type="hidden" value="<?php echo $produto3; ?>">
                             <td><?php echo $unidade3; ?></td>
                             <td><?php echo $quantidade3; ?></td>
-                            <td><input type="number" name="quantidade_enviada3" max="<?php echo $quantidade3; ?>"></td>
+                            <td><input type="number" name="quantidade_enviada3" min=0 max="<?php echo $quantidade3; ?>"></td>
                             <td><select name="posicao3">
                                     <option value="A1">A1</option>
                                     <option value="A2">A2</option>
@@ -179,7 +179,7 @@ if (!isset($_SESSION['turma'])) {
                             <input name="produto4" type="hidden" value="<?php echo $produto4; ?>">
                             <td><?php echo $unidade4; ?></td>
                             <td><?php echo $quantidade4; ?></td>
-                            <td><input type="number" name="quantidade_enviada4" max="<?php echo $quantidade4; ?>"></td>
+                            <td><input type="number" name="quantidade_enviada4" min=0 max="<?php echo $quantidade4; ?>"></td>
                             <td><select name="posicao4">
                                     <option value="A1">A1</option>
                                     <option value="A2">A2</option>
