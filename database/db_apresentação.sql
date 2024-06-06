@@ -276,7 +276,7 @@ CREATE TABLE IF NOT EXISTS `nota_fiscal_criada` (
   PRIMARY KEY (`id_notafiscal`),
   KEY `id_atividade` (`id_atividade`),
   KEY `id_turma` (`id_turma`)
-) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
