@@ -53,7 +53,7 @@ if (!isset($_SESSION['turma'])) {
                     <div class="tabela-scroll">
                         <div class="presets">
                             <button
-                                onclick="setMultipleInputValues({'empresa': 'Portonave', 'nomeCliente': 'Matheus Yan', 'telefone':'4739406838','cep':'88370904','produto':'Teclado','produto2':'Mouse','unidade':'UN','unidade2':'UN','quantidade':'10','quantidade2':'15','valor':'15.00','valor2':'8.00'})">Preset
+                                onclick="setMultipleInputValues({'empresa': 'Portonave', 'nomeCliente': 'Matheus Yan', 'telefone':'4740028922','cep':'88370904','produto':'Teclado','produto2':'Mouse','unidade':'UN','unidade2':'UN','quantidade':'10','quantidade2':'15','valor':'15.00','valor2':'8.00'})">Preset
                                 1</button>
                             <button
                                 onclick="setMultipleInputValues({'empresa': 'MultiLog', 'nomeCliente': 'Luan Pereira', 'telefone':'4789426155','cep':'23812310','produto':'Motor','produto2':'Óleo Diesel','unidade':'UN','unidade2':'L','quantidade':'15','quantidade2':'30','valor':'2800.00','valor2':'2.40'})">Preset
@@ -66,8 +66,7 @@ if (!isset($_SESSION['turma'])) {
                             <div class="colunas1">
                                 <div class="numeroPedido">
                                     <label for="num">N° pedido:</label>
-                                    <input id="num" type="number" name="npedido" min="0" required
-                                        placeholder="Obrigatório">
+                                    <input id="num" type="number" name="npedido" min="0" required placeholder="Obrigatório">
                                 </div>
                                 <div class="NomeDaEmpresa">
                                     <label for="empresa">Empresa:</label>
@@ -75,13 +74,11 @@ if (!isset($_SESSION['turma'])) {
                                 </div>
                                 <div class="cliente">
                                     <label for="nomeCliente">Cliente:</label>
-                                    <input id="nomeCliente" type="text" name="Cliente" required
-                                        placeholder="Obrigatório">
+                                    <input id="nomeCliente" type="text" name="Cliente" required placeholder="Obrigatório">
                                 </div>
                                 <div class="telefone">
                                     <label for="telefone">Telefone:</label>
-                                    <input id="telefone" type="number" name="Telefone" required
-                                        placeholder="Obrigatório">
+                                    <input id="telefone" type="number" name="Telefone" required placeholder="Obrigatório">
                                 </div>
                                 <div class="cep">
                                     <label for="cep">CEP:</label>
