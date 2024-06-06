@@ -58,6 +58,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt_delete->bind_param("ii", $id, $turma);
             $stmt_delete->execute();
 
+            // Seleciona todos os produtos relacionados ao mesmo id_doca do produto processado
+            $id_doca = $produto['id_doca'];
+            $sql_check_movimentacao = "SELECT * FROM movimentacao WHERE id_doca = ? AND id_turma = ?";
+            $stmt_check_movimentacao = $conn->prepare($sql_check_movimentacao);
+            $stmt_check_movimentacao->bind_param("ii", $id_doca, $turma);
+            $stmt_check_movimentacao->execute();
+            $result_check_movimentacao = $stmt_check_movimentacao->get_result();
+
+            // Se não houver mais produtos relacionados ao id_doca na tabela 'movimentacao', remove a entrada da tabela 'docas'
+            if ($result_check_movimentacao->num_rows === 0) {
+                $sql_delete_doca = "DELETE FROM docas WHERE id_doca = ? AND id_turma = ?";
+                $stmt_delete_doca = $conn->prepare($sql_delete_doca);
+                $stmt_delete_doca->bind_param("ii", $id_doca, $turma);
+                $stmt_delete_doca->execute();
+            }
+
             // Seleciona todos os produtos relacionados ao mesmo id_carga do produto processado
             $id_carga = $produto['id_carga'];
             $sql_check_carga = "SELECT * FROM pegado WHERE id_carga = ? AND id_turma = ?";
@@ -66,23 +82,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt_check_carga->execute();
             $result_check_carga = $stmt_check_carga->get_result();
 
-            // Se não houver mais produtos relacionados ao id_carga, remove a entrada da tabela 'docas'
+            // Se não houver mais produtos relacionados ao id_carga, atualiza a situação da carga para 'Finalizada'
             if ($result_check_carga->num_rows === 0) {
-                $sql_delete_doca = "DELETE FROM docas WHERE id_carga = ? AND id_turma = ?";
-                $stmt_delete_doca = $conn->prepare($sql_delete_doca);
-                $stmt_delete_doca->bind_param("ii", $id_carga, $turma);
-                $stmt_delete_doca->execute();
+                $sql_update_carga = "UPDATE carga SET situacao = 'Finalizada' WHERE id = ? AND turma_id = ?";
+                $stmt_update_carga = $conn->prepare($sql_update_carga);
+                $stmt_update_carga->bind_param("ii", $id_carga, $turma);
+                $stmt_update_carga->execute();
             }
-
-            // Atualiza a situação da carga para 'Finalizada'
-            $sql_update_carga = "UPDATE carga SET situacao = 'Finalizada' WHERE id = ? AND turma_id = ?";
-            $stmt_update_carga = $conn->prepare($sql_update_carga);
-            $stmt_update_carga->bind_param("ii", $id_carga, $turma);
-            $stmt_update_carga->execute();
         }
     }
 }
 
-header('Location: ../movimentarD4.php',true,301);
+header('Location: ../movimentarD4.php', true, 301);
 exit;
-
