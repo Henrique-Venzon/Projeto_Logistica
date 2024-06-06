@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 06/06/2024 às 01:23
+-- Tempo de geração: 06/06/2024 às 01:26
 -- Versão do servidor: 8.2.0
 -- Versão do PHP: 8.2.13
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `aluno` (
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=432 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=473 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `aluno`
@@ -45,47 +45,47 @@ CREATE TABLE IF NOT EXISTS `aluno` (
 
 INSERT INTO `aluno` (`id`, `username`, `password`, `turma_id`) VALUES
 (1, 'PROFESSOR', 'PROFESSOR@SESISENAI2024', -1),
-(391, 'Aluno 1', 'UZoP', 1),
-(392, 'Aluno 2', 'u30V', 1),
-(393, 'Aluno 3', 'RKmn', 1),
-(394, 'Aluno 4', 'fuCv', 1),
-(395, 'Aluno 5', 'w6Ne', 1),
-(396, 'Aluno 6', 'p1PK', 1),
-(397, 'Aluno 7', 'plEm', 1),
-(398, 'Aluno 8', 'LhHg', 1),
-(399, 'Aluno 9', 'NF7f', 1),
-(400, 'Aluno 10', 'PMCI', 1),
-(401, 'Aluno 11', 'Q0J2', 1),
-(402, 'Aluno 12', 'tm65', 1),
-(403, 'Aluno 13', 'atu6', 1),
-(404, 'Aluno 14', 'oDgf', 1),
-(405, 'Aluno 15', 'DhFX', 1),
-(406, 'Aluno 16', 'crTB', 1),
-(407, 'Aluno 17', '0gQm', 1),
-(408, 'Aluno 18', '9P6L', 1),
-(409, 'Aluno 19', 'xRY2', 1),
-(410, 'Aluno 20', 'Am9H', 1),
-(411, 'Aluno 21', 'PkAR', 1),
-(412, 'Aluno 22', 'GXHD', 1),
-(413, 'Aluno 23', 'f48Y', 1),
-(414, 'Aluno 24', '6J9K', 1),
-(415, 'Aluno 25', 'BTq0', 1),
-(416, 'Aluno 26', 'l30i', 1),
-(417, 'Aluno 27', '4KXq', 1),
-(418, 'Aluno 28', '8E3Q', 1),
-(419, 'Aluno 29', 'Flzb', 1),
-(420, 'Aluno 30', 'w1T9', 1),
-(421, 'Aluno 31', '8cnQ', 1),
-(422, 'Aluno 32', 'YoFq', 1),
-(423, 'Aluno 33', 'XT5I', 1),
-(424, 'Aluno 34', '0uHT', 1),
-(425, 'Aluno 35', 'qXRU', 1),
-(426, 'Aluno 36', 'st90', 1),
-(427, 'Aluno 37', '9man', 1),
-(428, 'Aluno 38', 'radm', 1),
-(429, 'Aluno 39', '08mB', 1),
-(430, 'Aluno 40', '3aWJ', 1),
-(431, 'teste', 'teste', 1);
+(432, 'Aluno 1', 'z0s8', 1),
+(433, 'Aluno 2', 'idAy', 1),
+(434, 'Aluno 3', '6BPI', 1),
+(435, 'Aluno 4', 'l3LI', 1),
+(436, 'Aluno 5', 'qGti', 1),
+(437, 'Aluno 6', 'oUpS', 1),
+(438, 'Aluno 7', 'J0Ot', 1),
+(439, 'Aluno 8', 'K2vD', 1),
+(440, 'Aluno 9', 'IkfN', 1),
+(441, 'Aluno 10', 'eDUR', 1),
+(442, 'Aluno 11', 'oJlO', 1),
+(443, 'Aluno 12', 'o5sn', 1),
+(444, 'Aluno 13', 'YyTH', 1),
+(445, 'Aluno 14', 'Dyqj', 1),
+(446, 'Aluno 15', 'IYUp', 1),
+(447, 'Aluno 16', 'zRSj', 1),
+(448, 'Aluno 17', 'awks', 1),
+(449, 'Aluno 18', 'kbYz', 1),
+(450, 'Aluno 19', 'e9yb', 1),
+(451, 'Aluno 20', 'dJa2', 1),
+(452, 'Aluno 21', 'rNhO', 1),
+(453, 'Aluno 22', 'aMmp', 1),
+(454, 'Aluno 23', 'Ls4e', 1),
+(455, 'Aluno 24', '1KSL', 1),
+(456, 'Aluno 25', 'uQl3', 1),
+(457, 'Aluno 26', 'wNb5', 1),
+(458, 'Aluno 27', 'd1tq', 1),
+(459, 'Aluno 28', 't3m2', 1),
+(460, 'Aluno 29', '9QpN', 1),
+(461, 'Aluno 30', 'BFAU', 1),
+(462, 'Aluno 31', 'iHBM', 1),
+(463, 'Aluno 32', '6yYh', 1),
+(464, 'Aluno 33', '0v6c', 1),
+(465, 'Aluno 34', 'Mpgo', 1),
+(466, 'Aluno 35', 'h2JQ', 1),
+(467, 'Aluno 36', 'vqgc', 1),
+(468, 'Aluno 37', 'pRbO', 1),
+(469, 'Aluno 38', 'tp3l', 1),
+(470, 'Aluno 39', 'UzKT', 1),
+(471, 'Aluno 40', 'ThM3', 1),
+(472, 'teste', 'teste', 1);
 
 -- --------------------------------------------------------
 
@@ -241,18 +241,6 @@ CREATE TABLE IF NOT EXISTS `estoque` (
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `estoque`
---
-
-INSERT INTO `estoque` (`id`, `id_doca`, `nome_produto`, `quantidade_enviada`, `posicao`, `id_turma`) VALUES
-(33, 1, 'Teclado', 180, 'A1', 1),
-(34, 1, 'Mouse', 270, 'A1', 1),
-(35, 1, 'Motor', 195, 'A1', 1),
-(36, 1, 'Óleo Diesel', 360, 'A1', 1),
-(37, 1, 'Camisa', 60, 'A1', 1),
-(38, 1, 'Moletom', 40, 'A1', 1);
 
 -- --------------------------------------------------------
 
