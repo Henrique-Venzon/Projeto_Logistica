@@ -67,10 +67,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="table-inputs">
             <span class="tooltip-container">
                     <i class="fa-regular fa-circle-question"></i>
-                    <span class="tooltip">Cor Preta:Não tem o produto pesquisado.<br>
-                                          Cor Vermelha:Quantidade insuficiente.<br>
-                                          Cor Ciano:Quantidade exata.<br>
-                                          Cor Verde:Quantidade a mais.<br>
+                    <span class="tooltip">Cor Preta: Não tem o produto pesquisado.<br>
+                                          Cor Vermelha: Quantidade insuficiente.<br>
+                                          Cor Ciano: Quantidade exata.<br>
+                                          Cor Verde: Quantidade a mais.<br>
 
                 </span>
                 </span>
