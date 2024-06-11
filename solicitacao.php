@@ -48,7 +48,7 @@ if (!isset($_SESSION['turma'])) {
                 <div class="form">
                     <div class="tabela-scroll">
                         
-                        <form action="processamento/processosolicitacao.php" method="post">
+                        <form action="processamento/processosolicitacao.php" method="POST">
                         <div class="colunas">
                                 <div class="numeroPedido">
                                     <label for="num">N° pedido:</label>
@@ -58,7 +58,7 @@ if (!isset($_SESSION['turma'])) {
                             <div class="colunas">
                                 <div class="produto">
                                     <label for="produto">Nome do Produto:</label>
-                                    <input type="text" id="produto" name="produto1" required placeholder="Obrigatório">
+                                    <input type="text" id="produto" name="produto" required placeholder="Obrigatório">
                                     <input type="text" id="produto2" name="produto2" placeholder="Opcional">
                                     <input type="text" id="produto3" name="produto3" placeholder="Opcional">
                                     <input type="text" id="produto4" name="produto4" placeholder="Opcional">
@@ -101,7 +101,7 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="quantidade">
                                     <label for="quantidade">Quantidade:</label>
-                                    <input type="number" id="quantidade" name="quantidade1" min="0" required
+                                    <input type="number" id="quantidade" name="quantidade" min="0" required
                                         placeholder="Obrigatório">
                                     <input type="number" id="quantidade2" name="quantidade2" min="0"
                                         placeholder="Opcional">
