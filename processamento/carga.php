@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $sql = "INSERT INTO carga (`npedido`,`Empresa`,`cliente`,`Telefone`,`CEP`,`produto1`,`produto2`,`produto3`,`produto4`,`unidade1`,`unidade2`,`unidade3`,`unidade4`,`quantidade1`,`quantidade2`,`quantidade3`,`quantidade4`,`valor1`,`valor2`,`valor3`,`valor4`,`ncm1`,`ncm2`,`ncm3`,`ncm4`,`cst1`,`cst2`,`cst3`,`cst4`,`cfop1`,`cfop2`,`cfop3`,`cfop4`,`turma_id`,`situacao`) VALUES 
     ('".$npedido."', '".$Empresa."', '".$cliente."', '".$telefone."', '".$CEP."', '".$produto1."', '".$produto2."', '".$produto3."', '".$produto4."', '".$unidade1."', '".$unidade2."', '".$unidade3."', '".$unidade4."', '".$quantidade1."', '".$quantidade2."', '".$quantidade3."', '".$quantidade4."', '".$valor1."', '".$valor2."', '".$valor3."', '".$valor4."', '".$ncm1."', '".$ncm2."', '".$ncm3."', '".$ncm4."', '".$cst1."', '".$cst2."', '".$cst3."','".$cst4."','".$cfop1."','".$cfop2."','".$cfop3."','".$cfop4."','".$turma_id."','enviado');";
-
+    $sql="INSERT INTO produto ('')";
     if ($conn->query($sql) === TRUE) {
         echo 'Dados inseridos com sucesso!';
         header('Location: criar_nota_fiscal.php?npedido=' . urlencode($npedido) . '&turma_id=' . urlencode($turma_id));
