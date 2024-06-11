@@ -8,13 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $conexao = new mysqli($hostname, $user, $password, $database);
 
-
-
-
-
-
-
-
     if ($conexao->connect_errno) {
         echo "Failed to connect to MySQL: " . $conexao->connect_error;
         exit();
@@ -72,3 +65,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+}
