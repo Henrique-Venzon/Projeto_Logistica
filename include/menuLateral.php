@@ -318,14 +318,24 @@
                 <i class="fa-solid fa-warehouse"></i>
                 <span class="sidebar-text" style="margin-left:10px;">Estoque</span>
                 </a>
-            </li>
-            
+            </li>   
                 
                 <li class="sidebar-item">
-                    <a href="solicitacao.php" class="sidebar-link">
-                    <i class="fa-solid fa-bell"></i>
-                    <span class="sidebar-text" style="margin-left:10px;">Solicitação</span>
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#solicitacao" aria-expanded="false" aria-controls="solicitacao">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Solicitação</span>
                     </a>
+                    
+                    <ul id="solicitacao" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a id="solicitacao" style="margin-bottom: -1.4px;" href="solicitacao.php"
+                                class="sidebar-link">Criar solicitação</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a  href="#" style="margin-top: -1.4px;" class="sidebar-link">Ver solicitação</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
