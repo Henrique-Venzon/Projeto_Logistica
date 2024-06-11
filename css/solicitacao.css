@@ -1,0 +1,164 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Platypi';
+}
+main{
+    width: 100%;
+    display: flex;
+}
+.tabela-scroll {
+    margin-top: 20px;
+    max-height: 69vh; 
+    overflow-y: auto; 
+    outline: 1px solid black;
+    background-color: #333333;
+  }
+  .tabela-scroll::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+  
+
+  .tabela-scroll::-webkit-scrollbar-thumb {
+    background-color: #000000; 
+  }
+  .tabela-scroll::-webkit-scrollbar {
+    height: 1px;
+    width: 10px;
+  }
+.DivDireita{
+    flex-grow: 1;
+    background-color: #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+input{
+  text-align: center;
+}
+.colunas1{
+    margin-top: 1.2%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  .colunas1 input,.colunas label {
+    display: block;
+    margin-bottom: 3px;
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    text-shadow: 0 0 5px black;
+  }
+  
+  .colunas1 input,.colunas input{
+    height: 50px;
+    border: 1.5px solid #ffffff;
+    box-sizing: border-box;
+    width: 50%;
+    font-size: 18px;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    margin-bottom: 4px;
+    box-shadow: 0px 0px 4px rgb(0, 0, 0);
+    margin-top: 8px;
+  }
+  .colunas select{
+    padding: 8px;
+    margin-left: 13px;
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    height: 50px;
+    box-shadow: 0px 0px 4px rgb(0, 0, 0);
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 13px; 
+    margin-top: 8px;
+  }
+  .colunas{
+    margin-left: 5px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 1.2%;
+    justify-content: space-around;
+  
+  }
+
+::-webkit-input-placeholder {
+  color: rgb(197, 197, 197); 
+}
+
+.table-inputs{
+    border: 1.5px solid black;
+    width: 88%;
+    height: 95%;
+    background-color: #1c1c1c;
+    box-shadow: 0px 0px  10px black;
+    border-radius: 40px; 
+}
+.enviar{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+    width: 100%;
+    margin-bottom: 1.5%;
+}
+.enviar input{
+    width: 140px;
+    height: 45px;
+    border-radius: 30px;
+    border: solid 2px white;
+    background-color: #000000;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.enviar input:hover{
+    transition: 1.5s;
+    border: solid 2px #000000;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.txtCont{
+    text-align: center;
+    margin-top: 1%;
+}
+.txtCont h1{
+    font-size: 60px;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #000000;
+}
+.numeroPedido{
+    width: 55%;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+form h1{
+    margin-top: 3%;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #000000;
+}
+.inputObs{
+    display: block;
+    margin-top: 2%;
+}
+.inputObs input{
+    height: 60px;
+    width: 240px;
+    text-align: center;
+}
+.inputObs label{
+    font-size: 24px;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+}
