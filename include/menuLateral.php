@@ -135,21 +135,18 @@
     margin-left: 10px;
     margin-right: 5px;
 }
-.fa-route{
-    margin-left: 6px;
-    margin-right: 5px;
-}
+
 .fa-boxes-packing{
     margin-left: 2px;
-    margin-right: 5px;
+    margin-right: 0px;
 }
 .fa-warehouse{
     margin-left: 3px;
-    margin-right: 5px;
+    margin-right: 0px;
 }
 .fa-hand-holding-hand{
     margin-left: 4px;
-    margin-right: 5px;
+    margin-right: 2px;
 }
 .fa-box{
     margin-left: 8px;
@@ -170,6 +167,14 @@
 .fa-gear{
     margin-left: 6px;
     margin-right: 5px;
+}
+.fa-bell{
+    margin-left: 8px;
+    margin-right: 5px;
+}
+.fa-people-carry-box{
+    margin-left: 2px;
+    margin-right: 1px;
 }
 @media only screen and (max-width: 600px) {
     i{
@@ -318,8 +323,8 @@
                 
                 <li class="sidebar-item">
                     <a href="solicitacao.php" class="sidebar-link">
-                    <i class="fa-solid fa-truck-front"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Solicitação</span>
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="sidebar-text" style="margin-left:10px;">Solicitação</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
