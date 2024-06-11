@@ -1,19 +1,21 @@
 <?php
-session_start();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $servername = "127.0.0.1";
-    $username = "root";
-    $password = "root";
-    $database = "logistica";
-
+    session_start();
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $hostname = "127.0.0.1";
+        $user = "root.Att";
+        $password = "root";
+        $database = "logistica";
+    
+        $conexao = new mysqli($hostname, $user, $password, $database);
     
  // Conexão com o banco de dados
-$mysqli = new mysqli('severname', 'username', 'password', 'database');
+
 
 // Verifique a conexão
-if ($mysqli->connect_error) {
+if ($conexao->connect_error) {
     die("Falha na conexão: " . $mysqli->connect_error);
 }
+
 
 // Informações do produto
 $nome_produto = 'Nome do Produto';
@@ -23,7 +25,7 @@ $posicao = 'Posição do Produto';
 // Consulta SQL
 $sql = "SELECT * FROM estoque WHERE nome_produto = '$nome_produto'";
 
-$resultado = $mysqli->query($sql);
+$resultado = $conexao->query($sql);
 
 if ($resultado->num_rows > 0) {
     // O produto existe no estoque
@@ -39,6 +41,6 @@ if ($resultado->num_rows > 0) {
     echo "O produto $nome_produto não existe no estoque.";
 }
 
-$mysqli->close();
-}
+$conexao->close();
+    }
 ?>
