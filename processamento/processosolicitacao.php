@@ -2,13 +2,13 @@
 session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $servername = "127.0.0.1";
-    $username = "root.Att";
+    $username = "root";
     $password = "root";
     $database = "logistica";
 
     
  // Conexão com o banco de dados
-$mysqli = new mysqli('localhost', 'usuario', 'senha', 'banco_de_dados');
+$mysqli = new mysqli('severname', 'username', 'password', 'database');
 
 // Verifique a conexão
 if ($mysqli->connect_error) {
@@ -17,7 +17,7 @@ if ($mysqli->connect_error) {
 
 // Informações do produto
 $nome_produto = 'Nome do Produto';
-$quantidade_enviada = ;
+$quantidade_enviada = '';
 $posicao = 'Posição do Produto';
 
 // Consulta SQL
