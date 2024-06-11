@@ -135,21 +135,18 @@
     margin-left: 10px;
     margin-right: 5px;
 }
-.fa-route{
-    margin-left: 6px;
-    margin-right: 5px;
-}
+
 .fa-boxes-packing{
     margin-left: 2px;
-    margin-right: 5px;
+    margin-right: 0px;
 }
 .fa-warehouse{
     margin-left: 3px;
-    margin-right: 5px;
+    margin-right: 0px;
 }
 .fa-hand-holding-hand{
     margin-left: 4px;
-    margin-right: 5px;
+    margin-right: 2px;
 }
 .fa-box{
     margin-left: 8px;
@@ -170,6 +167,14 @@
 .fa-gear{
     margin-left: 6px;
     margin-right: 5px;
+}
+.fa-bell{
+    margin-left: 8px;
+    margin-right: 5px;
+}
+.fa-people-carry-box{
+    margin-left: 2px;
+    margin-right: 1px;
 }
 @media only screen and (max-width: 600px) {
     i{
@@ -313,14 +318,24 @@
                 <i class="fa-solid fa-warehouse"></i>
                 <span class="sidebar-text" style="margin-left:10px;">Estoque</span>
                 </a>
-            </li>
-            
+            </li>   
                 
                 <li class="sidebar-item">
-                    <a href="solicitacao.php" class="sidebar-link">
-                    <i class="fa-solid fa-truck-front"></i>
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#solicitacao" aria-expanded="false" aria-controls="solicitacao">
+                        <i class="fa-solid fa-bell"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Solicitação</span>
                     </a>
+                    
+                    <ul id="solicitacao" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a id="solicitacao" style="margin-bottom: -1.4px;" href="solicitacao.php"
+                                class="sidebar-link">Criar solicitação</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a  href="#" style="margin-top: -1.4px;" class="sidebar-link">Ver solicitação</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">

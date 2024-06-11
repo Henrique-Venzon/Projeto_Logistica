@@ -1,4 +1,10 @@
 <style>
+    img {
+    -webkit-user-select: none; 
+    -moz-user-select: none;   
+    -ms-user-select: none;    
+    user-select: none;        
+  }
     header{
     width: 100%;
     background-color: #1c1c1c;
