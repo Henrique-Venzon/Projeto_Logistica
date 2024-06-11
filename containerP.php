@@ -63,11 +63,21 @@ if (!isset($_SESSION['turma'])) {
                                 3</button>
                         </div>
                         <form action="processamento/carga.php" method="post">
-                            <div class="colunas1">
+                        <div class="colunas1 colunadata">
                                 <div class="numeroPedido">
                                     <label for="num">N° pedido:</label>
                                     <input id="num" type="number" name="npedido" min="0" required placeholder="Obrigatório">
                                 </div>
+                                <div class="inicio">
+                                    <label for="inicio">Data do Pedido:</label>
+                                    <input id="inicio" type="date" name="inicio" required placeholder="Obrigatório">
+                                </div>
+                                <div class="entrega">
+                                    <label for="entrega">Data de entrega:</label>
+                                    <input id="entrega" type="date" name="entrega"  required placeholder="Obrigatório">
+                                </div>
+                            </div>
+                            <div class="colunas1">
                                 <div class="NomeDaEmpresa">
                                     <label for="empresa">Empresa:</label>
                                     <input id="empresa" type="text" name="Empresa" required placeholder="Obrigatório">
@@ -87,6 +97,13 @@ if (!isset($_SESSION['turma'])) {
                             </div>
 
                             <div class="colunas">
+                            <div class="sku">
+                                    <label for="sku">Sku:</label>
+                                    <input class="sku" type="text" id="sku" name="sku" required placeholder="Opcional">
+                                    <input class="sku" type="text" id="sku2" name="sku2" placeholder="Opcional">
+                                    <input class="sku" type="text" id="sku3" name="sku3" placeholder="Opcional">
+                                    <input class="sku" type="text" id="sku4" name="sku4" placeholder="Opcional">
+                                </div>
                                 <div class="produto">
                                     <label for="produto">Nome do Produto:</label>
                                     <input type="text" id="produto" name="produto1" required placeholder="Obrigatório">
