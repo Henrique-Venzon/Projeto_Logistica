@@ -317,6 +317,12 @@
             
                 
                 <li class="sidebar-item">
+                    <a href="solicitacao.php" class="sidebar-link">
+                    <i class="fa-solid fa-truck-front"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Solicitação</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
                     <i class="fa-solid fa-truck-front"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Expedição</span>
