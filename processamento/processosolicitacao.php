@@ -31,7 +31,7 @@ if ($resultado->num_rows > 0) {
     // O produto existe no estoque
     while($row = $resultado->fetch_assoc()) {
         if ($row['quantidade'] >= $quantidade_enviada) {
-            echo "enviaf"; // Enviar normalmente
+            echo "envia"; // Enviar normalmente
         } else {
             echo "Quantidade insuficiente no estoque para o produto: $nome_produto";
         }
