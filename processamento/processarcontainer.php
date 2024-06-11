@@ -22,10 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $navio = $_POST['navio'];
     $tipo = $_POST['tipo'];
     $lacre = $_POST['lacre'];
-    $LacreSif = is_numeric($_POST['LacreSif']) ? $_POST['LacreSif'] : 0;
+    $LacreSif = is_numeric($_POST['LacreSif']) ? $_POST['LacreSif'] : '0';
     $IMO = is_numeric($_POST['IMD']) ? $_POST['IMD'] : '0';
-    $NOnu = is_numeric($_POST['NOnu']) ? $_POST['NOnu'] : 0;
-    $Temperatura = is_numeric($_POST['temperatura']) ? $_POST['temperatura'] : NULL;
+    $NOnu = is_numeric($_POST['NOnu']) ? $_POST['NOnu'] : '0';
+    $Temperatura = is_numeric($_POST['temperatura']) ? $_POST['temperatura'] : '26';
     $turma_id=$_SESSION['turma'];
 
     $sql = "INSERT INTO container (`placa`,`cliente`,`nome_motorista`,`container`,`navio`,`tipo`,`lacre`,`Lacre Sif`,`IMO`,`NOnu`,`situacao`,`temperatura`,`turma_id`) VALUES ('".$placa."','".$cliente."', '".$NomeMotorista."', '".$container."', '".$navio."', '".$tipo."', '".$lacre."', '".$LacreSif."', '".$IMO."', '".$NOnu."', 'enviado','".$Temperatura."','".$turma_id."');";
