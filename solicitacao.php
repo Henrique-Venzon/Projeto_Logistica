@@ -70,7 +70,7 @@ if (!isset($_SESSION['turma'])) {
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
-                                        <option value="KG">KG</option>
+                                        <option value="KG">KG</option>    
                                         <option value="L">L</option>
                                     </select>
                                     <select id="unidade2" name="unidade2">
