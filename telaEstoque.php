@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $produto = $_POST['produto'];
     $quantidade = $_POST['quantidade'];
 
-    $sql = "SELECT * FROM estoque WHERE nome_produto = '$produto'";
+    $sql = "SELECT * FROM estoque WHERE nome_produto = '$produto' AND quantidade_enviada > 0";
     $result = $conn->query($sql);
 
     $posicoes = array();
