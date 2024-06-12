@@ -16,7 +16,7 @@
     }
 
 
-
+$id_pedido= $_POST['npedido'];
 $produto= $_POST['produto'];
 $quantidade = $_POST['quantidade'];
 $sql = "SELECT * FROM `estoque` WHERE nome_produto = '$produto'";
@@ -28,7 +28,7 @@ if ($resultado->num_rows > 0) {
     while($row = $resultado->fetch_assoc()) {
         if ($row['quantidade_enviada'] >= $quantidade) {
             // Cria um novo pedido
-            $sql_pedido = "INSERT INTO `pedidos` (nome_produto, quantidade) VALUES ('$produto', '$quantidade')";
+            $sql_pedido = "INSERT INTO `pedidos` (id_pedido, nome_produto, quantidade) VALUES ('$id_pedido', '$produto', '$quantidade')";
             if ($conexao->query($sql_pedido) === TRUE) {
                 echo "Pedido criado com sucesso para o produto: $produto";
                 
