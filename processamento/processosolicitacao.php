@@ -32,7 +32,6 @@ $resultado = $conexao->query($sql);
 if ($resultado->num_rows > 0) {
             $sql_pedido = "INSERT INTO `pedidos` (id_pedido, produto, quantidade, produto2, quantidade2, produto3, quantidade3, produto4, quantidade4) VALUES ('".$id_pedido."', '".$produto."', '".$quantidade."','".$produto2."', '".$quantidade2."','".$produto3."', '".$quantidade3."','".$produto4."', '".$quantidade4."')";
             if ($conexao->query($sql_pedido) === TRUE) {
-                echo "Pedido criado com sucesso para o produto: $produto ";
                 header ('location:../solicitacao.php');
             } else {
                 echo "Erro ao criar o pedido: " . $conexao->error;
