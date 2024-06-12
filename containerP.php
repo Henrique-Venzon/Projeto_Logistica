@@ -45,31 +45,65 @@ if (!isset($_SESSION['turma'])) {
                     <i class="fa-regular fa-circle-question"></i>
                     <span class="tooltip">Insira os dados para criar o pedido!</span>
                 </span>
-                    
+
                 <h1 id="verSku">SKUS</h1>
 
                 <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <table>
-                    <thead>
-                        <tr>
-                        <th>SKU</th>
-                        <th>Produto:</th>
-                        <th>Preço</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <td>Dado 1</td>
-                        <td>Dado 2</td>
-                        <td>Dado 3</td>
-                        </tr>
-                    </tbody>
-                    </table>
+                    <div class="modal-content">
+                        <?php
+
+                        $hostname = "127.0.0.1";
+                        $user = "root.Att";
+                        $password = "root";
+                        $database = "logistica";
+
+                        // Estabelece a conexão
+                        $conexao = new mysqli($hostname, $user, $password, $database);
+
+                        // Verifica se houve um erro na conexão
+                        if ($conexao->connect_error) {
+                            die("Conexão falhou: " . $conexao->connect_error);
+                        }
+
+                        // Consulta SQL para buscar os dados da tabela produto
+                        $sql = "SELECT id, nome_produto, preco FROM produto";
+                        $resultado = $conexao->query($sql);
+
+                        // Verifica se há resultados e, se houver, preenche a tabela
+                        if ($resultado->num_rows > 0) {
+                            echo '<span class="close">&times;</span>';
+                            echo '<table>';
+                            echo '<thead>';
+                            echo '<tr>';
+                            echo '<th>ID</th>';
+                            echo '<th>Produto</th>';
+                            echo '<th>Preço</th>';
+                            echo '</tr>';
+                            echo '</thead>';
+                            echo '<tbody>';
+
+                            // Preenche a tabela com os dados
+                            while ($row = $resultado->fetch_assoc()) {
+                                echo '<tr>';
+                                echo '<td>' . $row["id"] . '</td>';
+                                echo '<td>' . $row["nome_produto"] . '</td>';
+                                echo '<td>' . $row["preco"] . '</td>';
+                                echo '</tr>';
+                            }
+
+                            echo '</tbody>';
+                            echo '</table>';
+                        } else {
+                            echo "0 resultados";
+                        }
+
+                        // Fecha a conexão
+                        $conexao->close();
+
+                        ?>
+                    </div>
                 </div>
-                </div>
-                
+
                 <div class="txtCont">
                     <h1>Criar pedido</h1>
                 </div>
@@ -101,7 +135,8 @@ if (!isset($_SESSION['turma'])) {
                                 </div>
                                 <div class="entrega">
                                     <label for="entrega">Data de entrega:</label>
-                                    <input id="entrega" type="date" name="data_entrega" required placeholder="Obrigatório">
+                                    <input id="entrega" type="date" name="data_entrega" required
+                                        placeholder="Obrigatório">
                                 </div>
                             </div>
                             <div class="colunas1">

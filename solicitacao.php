@@ -168,6 +168,7 @@ if (!isset($_SESSION['turma'])) {
             checkAndUpdateUnitSelect('produto3', 'unidade3');
             checkAndUpdateUnitSelect('produto4', 'unidade4');
         });
+        <?php // OQUE CARALHOS ESSE JAVASCRIPT FAZ????? ?>
     </script>
 </body>
 
