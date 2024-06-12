@@ -45,6 +45,31 @@ if (!isset($_SESSION['turma'])) {
                     <i class="fa-regular fa-circle-question"></i>
                     <span class="tooltip">Insira os dados para criar o pedido!</span>
                 </span>
+                    
+                <h1 id="verSku">SKUS</h1>
+
+                <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <table>
+                    <thead>
+                        <tr>
+                        <th>SKU</th>
+                        <th>Produto:</th>
+                        <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Dado 1</td>
+                        <td>Dado 2</td>
+                        <td>Dado 3</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+                
                 <div class="txtCont">
                     <h1>Criar pedido</h1>
                 </div>
@@ -272,6 +297,7 @@ if (!isset($_SESSION['turma'])) {
     </main>
 
     <script src="js/sidebar.js"></script>
+    <script src="js/modal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
