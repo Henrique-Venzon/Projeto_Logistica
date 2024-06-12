@@ -63,18 +63,20 @@ if (!isset($_SESSION['turma'])) {
                                 3</button>
                         </div>
                         <form action="processamento/carga.php" method="post">
-                        <div class="colunas1 colunadata">
+                            <div class="colunas1 colunadata">
                                 <div class="numeroPedido">
                                     <label for="num">N° pedido:</label>
-                                    <input id="num" type="number" name="npedido" min="0" required placeholder="Obrigatório">
+                                    <input id="num" type="number" name="npedido" min="0" required
+                                        placeholder="Obrigatório">
                                 </div>
                                 <div class="inicio">
                                     <label for="inicio">Data do Pedido:</label>
-                                    <input id="inicio" type="date" name="inicio" required placeholder="Obrigatório">
+                                    <input id="inicio" type="date" name="data_pedido" required
+                                        placeholder="Obrigatório">
                                 </div>
                                 <div class="entrega">
                                     <label for="entrega">Data de entrega:</label>
-                                    <input id="entrega" type="date" name="entrega"  required placeholder="Obrigatório">
+                                    <input id="entrega" type="date" name="data_entrega" required placeholder="Obrigatório">
                                 </div>
                             </div>
                             <div class="colunas1">
@@ -84,11 +86,13 @@ if (!isset($_SESSION['turma'])) {
                                 </div>
                                 <div class="cliente">
                                     <label for="nomeCliente">Cliente:</label>
-                                    <input id="nomeCliente" type="text" name="Cliente" required placeholder="Obrigatório">
+                                    <input id="nomeCliente" type="text" name="Cliente" required
+                                        placeholder="Obrigatório">
                                 </div>
                                 <div class="telefone">
                                     <label for="telefone">Telefone:</label>
-                                    <input id="telefone" type="number" name="Telefone" required placeholder="Obrigatório">
+                                    <input id="telefone" type="number" name="Telefone" required
+                                        placeholder="Obrigatório">
                                 </div>
                                 <div class="cep">
                                     <label for="cep">CEP:</label>
@@ -97,9 +101,9 @@ if (!isset($_SESSION['turma'])) {
                             </div>
 
                             <div class="colunas">
-                            <div class="sku">
+                                <div class="sku">
                                     <label for="sku">Sku:</label>
-                                    <input class="sku" type="text" id="sku" name="sku" required placeholder="Opcional">
+                                    <input class="sku" type="text" id="sku" name="sku" placeholder="Opcional">
                                     <input class="sku" type="text" id="sku2" name="sku2" placeholder="Opcional">
                                     <input class="sku" type="text" id="sku3" name="sku3" placeholder="Opcional">
                                     <input class="sku" type="text" id="sku4" name="sku4" placeholder="Opcional">
