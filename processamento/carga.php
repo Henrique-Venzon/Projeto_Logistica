@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cliente = $_POST['Cliente'];
     $telefone = $_POST['Telefone'];
     $CEP = $_POST['CEP'];
-    $produto1 = $_POST['produto1'];
+    $produto1 = $_POST['produto1'] ? $_POST['produto1'] : '';
     $produto2 = isset($_POST['produto2']) ? $_POST['produto2'] : '';
     $produto3 = isset($_POST['produto3']) ? $_POST['produto3'] : '';
     $produto4 = isset($_POST['produto4']) ? $_POST['produto4'] : '';
@@ -47,11 +47,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cfop2 = is_numeric($_POST['cfop2']) ? $_POST['cfop2'] : 0;
     $cfop3 = is_numeric($_POST['cfop3']) ? $_POST['cfop3'] : 0;
     $cfop4 = is_numeric($_POST['cfop4']) ? $_POST['cfop4'] : 0;
-    $turma_id=$_SESSION['turma'];
+    $turma_id = $_SESSION['turma'];
 
     $sql = "INSERT INTO carga (`npedido`,`Empresa`,`cliente`,`Telefone`,`CEP`,`produto1`,`produto2`,`produto3`,`produto4`,`unidade1`,`unidade2`,`unidade3`,`unidade4`,`quantidade1`,`quantidade2`,`quantidade3`,`quantidade4`,`valor1`,`valor2`,`valor3`,`valor4`,`ncm1`,`ncm2`,`ncm3`,`ncm4`,`cst1`,`cst2`,`cst3`,`cst4`,`cfop1`,`cfop2`,`cfop3`,`cfop4`,`turma_id`,`situacao`) VALUES 
-    ('".$npedido."', '".$Empresa."', '".$cliente."', '".$telefone."', '".$CEP."', '".$produto1."', '".$produto2."', '".$produto3."', '".$produto4."', '".$unidade1."', '".$unidade2."', '".$unidade3."', '".$unidade4."', '".$quantidade1."', '".$quantidade2."', '".$quantidade3."', '".$quantidade4."', '".$valor1."', '".$valor2."', '".$valor3."', '".$valor4."', '".$ncm1."', '".$ncm2."', '".$ncm3."', '".$ncm4."', '".$cst1."', '".$cst2."', '".$cst3."','".$cst4."','".$cfop1."','".$cfop2."','".$cfop3."','".$cfop4."','".$turma_id."','enviado');";
-    // trabalho mais tarde// insert dos produtos na nova tabela:   $sql="INSERT INTO produto ('')";
+    ('$npedido', '$Empresa', '$cliente', '$telefone', '$CEP', '$produto1', '$produto2', '$produto3', '$produto4', '$unidade1', '$unidade2', '$unidade3', '$unidade4', '$quantidade1', '$quantidade2', '$quantidade3', '$quantidade4', '$valor1', '$valor2', '$valor3', '$valor4', '$ncm1', '$ncm2', '$ncm3', '$ncm4', '$cst1', '$cst2', '$cst3', '$cst4', '$cfop1', '$cfop2', '$cfop3', '$cfop4', '$turma_id', 'espera_fiscal');";
+
+    function insertIfNotExists($conn, $produto, $valor, $turma_id) {
+        if ($produto != '') {
+            $check_sql = "SELECT * FROM produto WHERE nome_produto='$produto' AND id_turma='$turma_id'";
+            $result = $conn->query($check_sql);
+            if ($result->num_rows == 0) {
+                $insert_sql = "INSERT INTO produto (`nome_produto`, `preco`, `id_turma`) VALUES ('$produto', '$valor', '$turma_id')";
+                $conn->query($insert_sql);
+            }
+        }
+    }
+
+    insertIfNotExists($conn, $produto1, $valor1, $turma_id);
+    insertIfNotExists($conn, $produto2, $valor2, $turma_id);
+    insertIfNotExists($conn, $produto3, $valor3, $turma_id);
+    insertIfNotExists($conn, $produto4, $valor4, $turma_id);
+
     if ($conn->query($sql) === TRUE) {
         echo 'Dados inseridos com sucesso!';
         header('Location: criar_nota_fiscal.php?npedido=' . urlencode($npedido) . '&turma_id=' . urlencode($turma_id));
@@ -60,7 +76,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     $conn->close();
-
 }
-
-
+?>

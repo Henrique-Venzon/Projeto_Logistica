@@ -64,6 +64,9 @@ main{
 input{
   text-align: center;
 }
+.sku{
+  width: 35%;
+}
 .colunas1{
     margin-top: 1.2%;
     display: flex;
@@ -78,7 +81,9 @@ input{
     font-size: 22px;
     text-shadow: 0 0 5px black;
   }
-  
+  .colunadata{
+    margin-left: -3.7%;
+  }
   .colunas1 input,.colunas input{
     height: 50px;
     border: 1.5px solid #ffffff;
