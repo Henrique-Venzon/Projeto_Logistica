@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $turma_id = $_SESSION['turma'];
 
     $sql = "INSERT INTO carga (`npedido`,`Empresa`,`cliente`,`Telefone`,`CEP`,`produto1`,`produto2`,`produto3`,`produto4`,`unidade1`,`unidade2`,`unidade3`,`unidade4`,`quantidade1`,`quantidade2`,`quantidade3`,`quantidade4`,`valor1`,`valor2`,`valor3`,`valor4`,`ncm1`,`ncm2`,`ncm3`,`ncm4`,`cst1`,`cst2`,`cst3`,`cst4`,`cfop1`,`cfop2`,`cfop3`,`cfop4`,`data_pedido`,`data_entrega`,`turma_id`,`situacao`) VALUES 
-    ('$npedido', '$Empresa', '$cliente', '$telefone', '$CEP', '$produto1', '$produto2', '$produto3', '$produto4', '$unidade1', '$unidade2', '$unidade3', '$unidade4', '$quantidade1', '$quantidade2', '$quantidade3', '$quantidade4', '$valor1', '$valor2', '$valor3', '$valor4', '$ncm1', '$ncm2', '$ncm3', '$ncm4', '$cst1', '$cst2', '$cst3', '$cst4', '$cfop1', '$cfop2', '$cfop3', '$cfop4', '$data_pedido', '$data_entrega', '$turma_id', 'Esperando a nota fiscal');";
+    ('$npedido', '$Empresa', '$cliente', '$telefone', '$CEP', '$produto1', '$produto2', '$produto3', '$produto4', '$unidade1', '$unidade2', '$unidade3', '$unidade4', '$quantidade1', '$quantidade2', '$quantidade3', '$quantidade4', '$valor1', '$valor2', '$valor3', '$valor4', '$ncm1', '$ncm2', '$ncm3', '$ncm4', '$cst1', '$cst2', '$cst3', '$cst4', '$cfop1', '$cfop2', '$cfop3', '$cfop4', '$data_pedido', '$data_entrega', '$turma_id', 'enviado');";
 
     function normalizeString($str) {
         $unwanted_array = array(
