@@ -60,7 +60,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     print "<tr>";
                     print "<th>N° Nota Fiscal</th>";
-                    print "<th>Data de Criação</th>";
                     print "<th style=\"border-right:none;\">Ver Nota Fiscal</th>";
                     print "</tr>";
 
@@ -77,7 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         print "<form method='post' action='nPedido.php'";
                         print "<tr>";
                         print "<td>" . $row->id_notafiscal . "</td>";
-                        print "<td>" . $data_formatada . "</td>";
                         print "<td>
                             <button class=\"reset\" data-id=\"" . $npedido . "\"><span>ver</span></button>
                             <input name='npedido' type='hidden' value='" . $npedido . "'>
