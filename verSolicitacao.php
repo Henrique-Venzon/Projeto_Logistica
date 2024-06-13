@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Create connection
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
-                $sql_after = "SELECT * FROM nota_fiscal_criada where id_turma = '".$_SESSION['turma']."'";
+                $sql_after = "SELECT * FROM solicitacao where id_turma = '".$_SESSION['turma']."'";
                 $res = $conn->query($sql_after);
                 $qtd = $res->num_rows;
 

@@ -1,37 +1,43 @@
 <?php
 session_start();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $hostname = "127.0.0.1";
-    $user = "root.Att";
-    $password = "root";
-    $database = "logistica";
-
-    $conexao = new mysqli($hostname, $user, $password, $database);
-
-
-
-}
-if ($conexao->connect_error) {
-    die("Falha na conexão: " . $mysqli->connect_error);
+if (!isset($_SESSION['id']) || !isset($_SESSION['turma'])) {
+    header("Location: index.php");
+    exit;
 }
 
+// Conexão com o banco de dados
+$servername = "localhost";
+$username = "root.Att";
+$password = "root";
+$dbname = "logistica";
 
-$id_pedido = $_POST['npedido'] ? $_POST['npedido'] : 1;
-$produto = $_POST['produto'];
-$quantidade = $_POST['quantidade'];
-$produto2 = $_POST['produto2'] ? $_POST['produto2'] : '';
-$quantidade2 = $_POST['quantidade2'] ? $_POST['quantidade2'] : 0;
-$produto3 = $_POST['produto3'] ? $_POST['produto3'] : '';
-$quantidade3 = $_POST['quantidade3'] ? $_POST['quantidade3'] : 0;
-$produto4 = $_POST['produto4'] ? $_POST['produto4'] : '';
-$quantidade4 = $_POST['quantidade4'] ? $_POST['quantidade4'] : 0;
+$conn = new mysqli($servername, $username, $password, $dbname);
 
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
+}
 
-$sql_pedido = "INSERT INTO `solicitacao` (id_pedido, produto, quantidade, produto2, quantidade2, produto3, quantidade3, produto4, quantidade4) VALUES ('" . $id_pedido . "', '" . $produto . "', '" . $quantidade . "','" . $produto2 . "', '" . $quantidade2 . "','" . $produto3 . "', '" . $quantidade3 . "','" . $produto4 . "', '" . $quantidade4 . "')";
-if ($conexao->query($sql_pedido) === TRUE) {
-    header('location:../solicitacao.php');
+$id_pedido = isset($_POST['npedido']) ? $_POST['npedido'] : 1;
+$produto = isset($_POST['produto']) ? $_POST['produto'] : '';
+$quantidade = isset($_POST['quantidade']) ? $_POST['quantidade'] : 0;
+$produto2 = isset($_POST['produto2']) ? $_POST['produto2'] : '';
+$quantidade2 = isset($_POST['quantidade2']) ? $_POST['quantidade2'] : 0;
+$produto3 = isset($_POST['produto3']) ? $_POST['produto3'] : '';
+$quantidade3 = isset($_POST['quantidade3']) ? $_POST['quantidade3'] : 0;
+$produto4 = isset($_POST['produto4']) ? $_POST['produto4'] : '';
+$quantidade4 = isset($_POST['quantidade4']) ? $_POST['quantidade4'] : 0;
+$turma = $_SESSION['turma'];
+
+// Usar prepared statements para evitar SQL Injection
+$stmt = $conn->prepare("INSERT INTO solicitacao (id_pedido, produto, quantidade, produto2, quantidade2, produto3, quantidade3, produto4, quantidade4, id_turma) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("isisisisii", $id_pedido, $produto, $quantidade, $produto2, $quantidade2, $produto3, $quantidade3, $produto4, $quantidade4, $turma);
+
+if ($stmt->execute()) {
+    header('location:../solicitacao.php', true,301 );
 } else {
-    echo "Erro ao criar o pedido: " . $conexao->error;
+    echo "Erro: " . $stmt->error;
 }
 
-$conexao->close();
+$stmt->close();
+$conn->close();
+
