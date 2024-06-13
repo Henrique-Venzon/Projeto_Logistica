@@ -1,14 +1,14 @@
 <?php
-
+session_start();
 $conn = new mysqli('localhost', 'root.Att', 'root', 'logistica');
 
 if ($conn->connect_error) {
     die("Erro na conexão: " . $conn->connect_error);
 }
-
+$turma=$_SESSION['turma'];
 $posicao = $_POST['posicao'];
 
-$sql = "SELECT * FROM estoque WHERE posicao = '$posicao'";
+$sql = "SELECT * FROM estoque WHERE posicao = '$posicao' and id_turma = ".$turma."";
 
 $result = $conn->query($sql);
 

@@ -17,15 +17,19 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+$turma = $_SESSION['turma'];
 ?>
-
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $produto = $_POST['produto'];
     $quantidade = $_POST['quantidade'];
 
-    $sql = "SELECT * FROM estoque WHERE nome_produto = '$produto' AND quantidade_enviada > 0";
-    $result = $conn->query($sql);
+    $stmt = $conn->prepare("SELECT * FROM estoque WHERE nome_produto = ? AND id_turma = ? AND quantidade_enviada > 0");
+    $stmt->bind_param("si", $produto, $turma);
+
+    $stmt->execute();
+
+    $result = $stmt->get_result();
 
     $posicoes = array();
 
@@ -40,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<script>var posicoes = " . json_encode($posicoes) . ";</script>";
     echo "<script>var quantidade_pesquisada = $quantidade;</script>";
 }
+
 ?>
 
 <!DOCTYPE html>

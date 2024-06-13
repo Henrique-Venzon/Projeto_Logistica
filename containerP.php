@@ -115,13 +115,13 @@ if (!isset($_SESSION['turma'])) {
                     <div class="tabela-scroll">
                         <div class="presets">
                             <button
-                                onclick="setMultipleInputValues({'empresa': 'Portonave', 'nomeCliente': 'Matheus Yan', 'telefone':'4740028922','cep':'88370904','produto1':'Teclado','produto2':'Mouse','unidade1':'UN','unidade2':'UN','quantidade1':'10','quantidade2':'15','valor1':'15.00','valor2':'8.00'})">Preset
+                                onclick="setMultipleInputValues({'empresa': 'Portonave', 'nomeCliente': 'Matheus Yan', 'telefone':'4740028922','cep':'88370904'})">Preset
                                 1</button>
                             <button
-                                onclick="setMultipleInputValues({'empresa': 'MultiLog', 'nomeCliente': 'Luan Pereira', 'telefone':'4789426155','cep':'23812310','produto1':'Motor','produto2':'Óleo Diesel','unidade1':'UN','unidade2':'L','quantidade1':'15','quantidade2':'30','valor1':'2800.00','valor2':'2.40'})">Preset
+                                onclick="setMultipleInputValues({'empresa': 'MultiLog', 'nomeCliente': 'Luan Pereira', 'telefone':'4789426155','cep':'23812310'})">Preset
                                 2</button>
                             <button
-                                onclick="setMultipleInputValues({'empresa': 'ARXO', 'nomeCliente': 'Henrique Venzon', 'telefone':'4791296865','cep':'88318481','produto1':'Camisa','produto2':'Moletom','unidade1':'UN','unidade2':'UN','quantidade1':'30','quantidade2':'20','valor1':'20.00','valor2':'24.00'})">Preset
+                                onclick="setMultipleInputValues({'empresa': 'ARXO', 'nomeCliente': 'Henrique Venzon', 'telefone':'4791296865','cep':'88318481'})">Preset
                                 3</button>
                         </div>
                         <form action="processamento/carga.php" method="post">
