@@ -163,14 +163,14 @@ if (!isset($_SESSION['turma'])) {
                             <div class="colunas">
                                 <div class="sku">
                                     <label for="sku">Sku:</label>
-                                    <input class="sku" type="text" id="sku" name="sku" placeholder="Opcional">
+                                    <input class="sku" type="text" id="sku1" name="sku1" placeholder="Opcional">
                                     <input class="sku" type="text" id="sku2" name="sku2" placeholder="Opcional">
                                     <input class="sku" type="text" id="sku3" name="sku3" placeholder="Opcional">
                                     <input class="sku" type="text" id="sku4" name="sku4" placeholder="Opcional">
                                 </div>
                                 <div class="produto">
                                     <label for="produto">Nome do Produto:</label>
-                                    <input type="text" id="produto" name="produto1" required placeholder="Obrigatório">
+                                    <input type="text" id="produto1" name="produto1" required placeholder="Obrigatório">
                                     <input type="text" id="produto2" name="produto2" placeholder="Opcional">
                                     <input type="text" id="produto3" name="produto3" placeholder="Opcional">
                                     <input type="text" id="produto4" name="produto4" placeholder="Opcional">
@@ -178,7 +178,7 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="unidade">
                                     <label for="unidade">Unidade:</label>
-                                    <select id="unidade" name="unidade1" required>
+                                    <select id="unidade1" name="unidade1" required>
                                         <option value="UN">UN</option>
                                         <option value="RL">RL</option>
                                         <option value="FD">FD</option>
@@ -213,7 +213,7 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="quantidade">
                                     <label for="quantidade">Quantidade:</label>
-                                    <input type="number" id="quantidade" name="quantidade1" min="0" required
+                                    <input type="number" id="quantidade1" name="quantidade1" min="0" required
                                         placeholder="Obrigatório">
                                     <input type="number" id="quantidade2" name="quantidade2" min="0"
                                         placeholder="Opcional">
@@ -225,7 +225,7 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="valor">
                                     <label for="valor">Valor Unitário:</label>
-                                    <input type="number" id="valor" name="valor1" step="0.01" required
+                                    <input type="number" id="valor1" name="valor1" step="0.01" required
                                         placeholder="Obrigatório">
                                     <input type="number" id="valor2" name="valor2" step="0.01" placeholder="Opcional">
                                     <input type="number" id="valor3" name="valor3" step="0.01" placeholder="Opcional">
@@ -371,6 +371,34 @@ if (!isset($_SESSION['turma'])) {
             checkAndUpdateUnitSelect('produto2', 'unidade2');
             checkAndUpdateUnitSelect('produto3', 'unidade3');
             checkAndUpdateUnitSelect('produto4', 'unidade4');
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var skuInputs = document.querySelectorAll('input[id^="sku"]');
+
+            skuInputs.forEach(function (input) {
+                input.addEventListener('input', function () {
+                    var sku = this.value;
+
+                    if (sku) {
+                        fetch('processamento/buscar_produto.php', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded'
+                            },
+                            body: 'sku=' + sku
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                var produtoIndex = this.id.match(/\d+/)[0];
+                                document.getElementById('produto' + produtoIndex).value = data.nome_produto;
+                                document.getElementById('valor' + produtoIndex).value = data.preco;
+                            })
+                            .catch(error => console.error('Erro:', error));
+                    }
+                });
+            });
         });
     </script>
 </body>
