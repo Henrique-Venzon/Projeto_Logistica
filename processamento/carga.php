@@ -54,21 +54,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO carga (`npedido`,`Empresa`,`cliente`,`Telefone`,`CEP`,`produto1`,`produto2`,`produto3`,`produto4`,`unidade1`,`unidade2`,`unidade3`,`unidade4`,`quantidade1`,`quantidade2`,`quantidade3`,`quantidade4`,`valor1`,`valor2`,`valor3`,`valor4`,`ncm1`,`ncm2`,`ncm3`,`ncm4`,`cst1`,`cst2`,`cst3`,`cst4`,`cfop1`,`cfop2`,`cfop3`,`cfop4`,`data_pedido`,`data_entrega`,`turma_id`,`situacao`) VALUES 
     ('$npedido', '$Empresa', '$cliente', '$telefone', '$CEP', '$produto1', '$produto2', '$produto3', '$produto4', '$unidade1', '$unidade2', '$unidade3', '$unidade4', '$quantidade1', '$quantidade2', '$quantidade3', '$quantidade4', '$valor1', '$valor2', '$valor3', '$valor4', '$ncm1', '$ncm2', '$ncm3', '$ncm4', '$cst1', '$cst2', '$cst3', '$cst4', '$cfop1', '$cfop2', '$cfop3', '$cfop4', '$data_pedido', '$data_entrega', '$turma_id', 'Esperando a nota fiscal');";
 
-    function insertIfNotExists($conn, $produto, $valor, $turma_id) {
+    function normalizeString($str) {
+        $unwanted_array = array(
+            'á' => 'a', 'à' => 'a', 'ã' => 'a', 'â' => 'a', 'ä' => 'a',
+            'é' => 'e', 'è' => 'e', 'ê' => 'e', 'ë' => 'e',
+            'í' => 'i', 'ì' => 'i', 'î' => 'i', 'ï' => 'i',
+            'ó' => 'o', 'ò' => 'o', 'õ' => 'o', 'ô' => 'o', 'ö' => 'o',
+            'ú' => 'u', 'ù' => 'u', 'û' => 'u', 'ü' => 'u',
+            'ç' => 'c',
+            'Á' => 'A', 'À' => 'A', 'Ã' => 'A', 'Â' => 'A', 'Ä' => 'A',
+            'É' => 'E', 'È' => 'E', 'Ê' => 'E', 'Ë' => 'E',
+            'Í' => 'I', 'Ì' => 'I', 'Î' => 'I', 'Ï' => 'I',
+            'Ó' => 'O', 'Ò' => 'O', 'Õ' => 'O', 'Ô' => 'O', 'Ö' => 'O',
+            'Ú' => 'U', 'Ù' => 'U', 'Û' => 'U', 'Ü' => 'U',
+            'Ç' => 'C'
+        );
+        return strtr($str, $unwanted_array);
+    }
+
+    function insertIfNotExists($conn, $produto, $valor) {
         if ($produto != '') {
-            $check_sql = "SELECT * FROM produto WHERE nome_produto='$produto' AND id_turma='$turma_id'";
+            $produto_normalizado = normalizeString($produto);
+            $check_sql = "SELECT * FROM produto WHERE nome_produto_normalizado='$produto_normalizado'";
             $result = $conn->query($check_sql);
             if ($result->num_rows == 0) {
-                $insert_sql = "INSERT INTO produto (`nome_produto`, `preco`, `id_turma`) VALUES ('$produto', '$valor', '$turma_id')";
+                $insert_sql = "INSERT INTO produto (`nome_produto`, `nome_produto_normalizado`, `preco`) VALUES ('$produto', '$produto_normalizado', '$valor')";
                 $conn->query($insert_sql);
             }
         }
     }
 
-    insertIfNotExists($conn, $produto1, $valor1, $turma_id);
-    insertIfNotExists($conn, $produto2, $valor2, $turma_id);
-    insertIfNotExists($conn, $produto3, $valor3, $turma_id);
-    insertIfNotExists($conn, $produto4, $valor4, $turma_id);
+    insertIfNotExists($conn, $produto1, $valor1);
+    insertIfNotExists($conn, $produto2, $valor2);
+    insertIfNotExists($conn, $produto3, $valor3);
+    insertIfNotExists($conn, $produto4, $valor4);
 
     if ($conn->query($sql) === TRUE) {
         echo 'Dados inseridos com sucesso!';
