@@ -9,8 +9,8 @@ if (!isset($_SESSION['turma'])) {
     header("Location: index.php");
     exit;
 }
-$turma = $_SESSION['turma']
-    ?>
+$turma = $_SESSION['turma'];
+?>
 <!DOCTYPE html>
 
 <head>
@@ -67,7 +67,7 @@ $turma = $_SESSION['turma']
                                     SELECT docas.id_carga 
                                     FROM docas 
                                     JOIN vistoriado ON docas.id_carga = vistoriado.id 
-                                    WHERE docas.id_doca = '1' AND vistoriado.situacao = 'Vistoriado'
+                                    WHERE docas.id_doca = '1' AND vistoriado.situacao = 'Vistoriado' AND vistoriado.turma_id = '$turma'
                                     ";
 
                             $res = $conn->query($sql);
@@ -105,7 +105,12 @@ $turma = $_SESSION['turma']
                             // Create connection
                             $conn = new mysqli($servername, $username, $password, $dbname);
 
-                            $sql = "SELECT * FROM docas where id_doca='2'";
+                            $sql = "
+                                    SELECT docas.id_carga 
+                                    FROM docas 
+                                    JOIN vistoriado ON docas.id_carga = vistoriado.id 
+                                    WHERE docas.id_doca = '2' AND vistoriado.situacao = 'Vistoriado' AND vistoriado.turma_id = '$turma'
+                                    ";
 
                             $res = $conn->query($sql);
 
@@ -114,7 +119,6 @@ $turma = $_SESSION['turma']
                             if ($qtd > 0) {
                                 print "<div class=\"tabela-scroll\">";
                                 print "<table class='table' >";
-
                                 print "<tr>";
                                 print "<th style=\"border-left:none;\">N° Pedido</th>";
                                 print "</tr>";
@@ -128,7 +132,7 @@ $turma = $_SESSION['turma']
                                 print "</div>";
 
                             } else {
-                                print "<p class='alert alert-danger'>Não encrontrou nenhum pedido nas docas.</p>";
+                                print "<p class='alert alert-danger'>Não encontrou nenhum pedido nas docas.</p>";
                             }
                             ?>
                         </div>
@@ -143,7 +147,12 @@ $turma = $_SESSION['turma']
                             // Create connection
                             $conn = new mysqli($servername, $username, $password, $dbname);
 
-                            $sql = "SELECT * FROM docas where id_doca='3'";
+                            $sql = "
+                                    SELECT docas.id_carga 
+                                    FROM docas 
+                                    JOIN vistoriado ON docas.id_carga = vistoriado.id 
+                                    WHERE docas.id_doca = '3' AND vistoriado.situacao = 'Vistoriado' AND vistoriado.turma_id = '$turma'
+                                    ";
 
                             $res = $conn->query($sql);
 
@@ -152,7 +161,6 @@ $turma = $_SESSION['turma']
                             if ($qtd > 0) {
                                 print "<div class=\"tabela-scroll\">";
                                 print "<table class='table' >";
-
                                 print "<tr>";
                                 print "<th style=\"border-left:none;\">N° Pedido</th>";
                                 print "</tr>";
@@ -166,7 +174,7 @@ $turma = $_SESSION['turma']
                                 print "</div>";
 
                             } else {
-                                print "<p class='alert alert-danger'>Não encrontrou nenhum pedido nas docas.</p>";
+                                print "<p class='alert alert-danger'>Não encontrou nenhum pedido nas docas.</p>";
                             }
                             ?>
                         </div>
@@ -181,7 +189,12 @@ $turma = $_SESSION['turma']
                             // Create connection
                             $conn = new mysqli($servername, $username, $password, $dbname);
 
-                            $sql = "SELECT * FROM docas where id_doca='4'";
+                            $sql = "
+                                    SELECT docas.id_carga 
+                                    FROM docas 
+                                    JOIN vistoriado ON docas.id_carga = vistoriado.id 
+                                    WHERE docas.id_doca = '4' AND vistoriado.situacao = 'Vistoriado' AND vistoriado.turma_id = '$turma'
+                                    ";
 
                             $res = $conn->query($sql);
 
@@ -190,7 +203,6 @@ $turma = $_SESSION['turma']
                             if ($qtd > 0) {
                                 print "<div class=\"tabela-scroll\">";
                                 print "<table class='table' >";
-
                                 print "<tr>";
                                 print "<th style=\"border-left:none;\">N° Pedido</th>";
                                 print "</tr>";
@@ -204,7 +216,7 @@ $turma = $_SESSION['turma']
                                 print "</div>";
 
                             } else {
-                                print "<p class='alert alert-danger'>Não encrontrou nenhum pedido nas docas.</p>";
+                                print "<p class='alert alert-danger'>Não encontrou nenhum pedido nas docas.</p>";
                             }
                             ?>
                         </div>

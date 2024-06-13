@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $username = "root.Att";
                 $password = "root";
                 $dbname = "logistica";
+                $turma_id = $_SESSION['turma'];
 
                 // Create connection
                 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -57,7 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // SQL para selecionar docas e juntar com a tabela de vistoriados para obter as quantidades
                 $sql = "SELECT d.id_carga, d.id_doca, v.quantidade1, v.quantidade2, v.quantidade3, v.quantidade4 
                         FROM docas d
-                        JOIN vistoriado v ON d.id_carga = v.id";
+                        JOIN vistoriado v ON d.id_carga = v.id
+                        WHERE v.turma_id = '$turma_id'"; // Filtra pela turma_id
 
                 $res = $conn->query($sql);
 
