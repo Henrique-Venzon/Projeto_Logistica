@@ -176,6 +176,10 @@
     margin-left: 2px;
     margin-right: 1px;
 }
+.fa-briefcase{
+    margin-left: 6px;
+    margin-right: 3px;
+}
 @media only screen and (max-width: 600px) {
     i{
         font-size: 20px;
@@ -354,6 +358,12 @@
                 <a href="notaf.php" class="sidebar-link">
                 <i class="fa-solid fa-receipt"></i>
                 <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="projetos.php" class="sidebar-link">
+                <i class="fa-solid fa-briefcase"></i>
+                <span class="sidebar-text" style="margin-left:10px;">Projetos</span>
                 </a>
             </li>
     </aside>
