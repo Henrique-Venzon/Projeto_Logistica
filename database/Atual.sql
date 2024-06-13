@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 13/06/2024 às 12:10
+-- Tempo de geração: 13/06/2024 às 14:24
 -- Versão do servidor: 8.0.36
 -- Versão do PHP: 8.2.13
 
@@ -171,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `carga` (
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `carga`
@@ -193,9 +193,7 @@ INSERT INTO `carga` (`id`, `situacao`, `npedido`, `Empresa`, `cliente`, `Telefon
 (116, 'Esperando a nota fiscal', '4', 'MultiLog', 'Luan Pereira', '4789426155', '23812310', 'Motor', 'Óleo Diesel', '', '', 'UN', 'L', ' ', ' ', 15, 30, 0, 0, 21800.00, 2.40, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-13', '2024-06-13', 1),
 (117, 'Esperando a nota fiscal', '2', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-12', '2024-06-13', 1),
 (118, 'Esperando a nota fiscal', '2', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-13', '2024-06-13', 1),
-(119, 'Esperando a nota fiscal', '2', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-20', '2024-06-27', 2),
-(120, 'Esperando a nota fiscal', '23', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 11, 12, 0, 0, 16.00, 7.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-13', '2024-06-13', 2),
-(121, 'Esperando a nota fiscal', '23', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 4, 3, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-13', '2024-06-07', 2);
+(122, 'Finalizada', '2', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-13', '2024-06-13', 2);
 
 -- --------------------------------------------------------
 
@@ -246,7 +244,7 @@ CREATE TABLE IF NOT EXISTS `docas` (
   PRIMARY KEY (`id`),
   KEY `FK_docas_aluno` (`id_aluno`),
   KEY `FK_docas_turma` (`id_turma`)
-) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -263,7 +261,7 @@ CREATE TABLE IF NOT EXISTS `estoque` (
   `posicao` varchar(2) NOT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `estoque`
@@ -275,7 +273,9 @@ INSERT INTO `estoque` (`id`, `id_doca`, `nome_produto`, `quantidade_enviada`, `p
 (35, 1, 'Motor', 15, 'A1', 1),
 (36, 1, 'Óleo Diesel', 30, 'A1', 1),
 (37, 1, 'Teclado', 5, 'A1', 3),
-(38, 1, 'Mouse', 5, 'A1', 3);
+(38, 1, 'Mouse', 5, 'A1', 3),
+(39, 1, 'Teclado', 10, 'A1', 2),
+(40, 1, 'Mouse', 15, 'A1', 2);
 
 -- --------------------------------------------------------
 
@@ -294,7 +294,7 @@ CREATE TABLE IF NOT EXISTS `movimentacao` (
   `id_aluno` int NOT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=290 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=292 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -311,7 +311,7 @@ CREATE TABLE IF NOT EXISTS `nota_fiscal_criada` (
   PRIMARY KEY (`id_notafiscal`),
   KEY `id_atividade` (`id_atividade`),
   KEY `id_turma` (`id_turma`)
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `nota_fiscal_criada`
@@ -333,9 +333,7 @@ INSERT INTO `nota_fiscal_criada` (`id_notafiscal`, `id_atividade`, `id_turma`, `
 (107, 116, 1, '2024-06-13 09:03:03'),
 (108, 117, 1, '2024-06-13 09:07:55'),
 (109, 118, 1, '2024-06-13 09:09:15'),
-(110, 119, 2, '2024-06-13 09:09:36'),
-(111, 120, 2, '2024-06-13 09:09:58'),
-(112, 121, 2, '2024-06-13 09:10:14');
+(113, 122, 2, '2024-06-13 11:21:58');
 
 -- --------------------------------------------------------
 
@@ -354,7 +352,7 @@ CREATE TABLE IF NOT EXISTS `pegado` (
   `id_aluno` int NOT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=255 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=257 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -496,10 +494,19 @@ CREATE TABLE IF NOT EXISTS `vistoriado` (
   `cfop2` int DEFAULT '0',
   `cfop3` int DEFAULT '0',
   `cfop4` int DEFAULT '0',
+  `data_pedido` date NOT NULL,
+  `data_entrega` date NOT NULL,
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `vistoriado`
+--
+
+INSERT INTO `vistoriado` (`id`, `situacao`, `npedido`, `Empresa`, `cliente`, `Telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`, `data_pedido`, `data_entrega`, `turma_id`) VALUES
+(122, 'Vistoriado', '2', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 0, 0, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-13', '2024-06-13', 2);
 
 --
 -- Restrições para tabelas despejadas
