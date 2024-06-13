@@ -2,6 +2,7 @@ var modal = document.getElementById("myModal");
 
 var span = document.getElementsByClassName("close")[0];
 
+
 document.getElementById("verSku").addEventListener("click", function() {
   modal.style.display = "block";
 });

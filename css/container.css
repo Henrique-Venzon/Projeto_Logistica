@@ -369,7 +369,7 @@ form h1{
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 999999;
   left: 0;
   top: 0;
   width: 100%;
@@ -408,4 +408,23 @@ form h1{
   border: 1px solid #000000;
   text-align: center;
   padding: 8px;
+}
+.resultado{
+  font-size: 26px;
+}
+.flexresult{
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+.close1{
+  margin-top: -0.3%;
+  font-size: 30px;
+  position: absolute;
+  margin-left: 95%;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.close1:hover{
+  color: red;
 }

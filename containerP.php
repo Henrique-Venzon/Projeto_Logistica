@@ -94,7 +94,10 @@ if (!isset($_SESSION['turma'])) {
                             echo '</tbody>';
                             echo '</table>';
                         } else {
-                            echo "0 resultados";
+                            echo '<div class="flexresult">';
+                            echo '<span class="close close1">&times;</span>';
+                            echo "<h1 class=\"resultado\">Nenhuma sku cadastrada</h1>";
+                            echo '</div>';
                         }
 
                         // Fecha a conexão

@@ -333,7 +333,7 @@
                                 class="sidebar-link">Criar solicitação</a>
                         </li>
                         <li class="sidebar-item">
-                            <a  href="#" style="margin-top: -1.4px;" class="sidebar-link">Ver solicitação</a>
+                            <a  href="verSolicitacao.php" style="margin-top: -1.4px;" class="sidebar-link">Ver solicitação</a>
                         </li>
                     </ul>
                 </li>
