@@ -59,26 +59,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     print "<table class='table' >";
 
                     print "<tr>";
-                    print "<th>N° Nota Fiscal</th>";
+                    print "<th>Nº Solicitação</th>";
                     print "<th style=\"border-right:none;\">Ver Nota Fiscal</th>";
                     print "</tr>";
 
                     while ($row = $res->fetch_object()) {
-                        $id_atividade = $row->id_atividade;
-                        $sql_npedido = "SELECT npedido FROM carga where id='" . $id_atividade . "'";
+                        $id_pedido = $row->id_pedido;
+                        $sql_npedido = "SELECT id, id_pedido FROM solicitacao where id_turma='" . $_SESSION['turma'] . "'";
                         $resultado = $conn->query($sql_npedido);
                         if ($resultado->num_rows > 0) {
-                            while($row_npedido = $resultado->fetch_assoc()) {
-                                $npedido = $row_npedido["npedido"];
+                            while($row_id = $resultado->fetch_assoc()) {
+                                $id_pedido = $row_id["id_pedido"];
                             }
                         }
-                        $data_formatada = date("d/m/Y H:i:s", strtotime($row->data_hora_envio));
-                        print "<form method='post' action='nPedido.php'";
+                        print "<td>". $id_pedido . "</td>";
+                        print "<form method='post' action='verSolicitacao2.php'";
                         print "<tr>";
-                        print "<td>" . $row->id_notafiscal . "</td>";
                         print "<td>
-                            <button class=\"reset\" data-id=\"" . $npedido . "\"><span>ver</span></button>
-                            <input name='npedido' type='hidden' value='" . $npedido . "'>
+                            <button class=\"reset\" data-id=\"\"><span>ver</span></button>
+                            <input name='id_pedido' type='hidden' value='";  echo $id_pedido . "'>
                             </td>";
                         print "</tr>";
                         print "</form>";

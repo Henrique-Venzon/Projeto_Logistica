@@ -28,7 +28,7 @@ $produto4 = isset($_POST['produto4']) ? $_POST['produto4'] : '';
 $quantidade4 = isset($_POST['quantidade4']) ? $_POST['quantidade4'] : 0;
 $turma = $_SESSION['turma'];
 
-// Usar prepared statements para evitar SQL Injection
+
 $stmt = $conn->prepare("INSERT INTO solicitacao (id_pedido, produto, quantidade, produto2, quantidade2, produto3, quantidade3, produto4, quantidade4, id_turma) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("isisisisii", $id_pedido, $produto, $quantidade, $produto2, $quantidade2, $produto3, $quantidade3, $produto4, $quantidade4, $turma);
 
