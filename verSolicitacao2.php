@@ -41,7 +41,7 @@ if (!isset($_SESSION['turma'])) {
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    $sql = "SELECT `id_pedido`, `produto`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade`, `quantidade2`, `quantidade3`, `quantidade4`,`turma_id` FROM solicitacao where turma_id = '" . $_SESSION['turma'] . "' and `id_pedido`='" . $id_pedido . "'  ";
+    $sql = "SELECT `id_pedido`, `produto`, `produto2`, `produto3`, `produto4`,`quantidade`, `quantidade2`, `quantidade3`, `quantidade4`,`id_turma` FROM solicitacao where id_turma = '" . $_SESSION['turma'] . "' and `id_pedido`='" . $id_pedido . "'  ";
 
     $result = $conn->query($sql);
 
@@ -52,15 +52,10 @@ if (!isset($_SESSION['turma'])) {
             $produto2 = $row['produto2'];
             $produto3 = $row['produto3'];
             $produto4 = $row['produto4'];
-            $unidade1 = $row['unidade1'];
-            $unidade2 = $row['unidade2'];
-            $unidade3 = $row['unidade3'];
-            $unidade4 = $row['unidade4'];
             $quantidade1 = $row['quantidade'];
             $quantidade2 = $row['quantidade2'];
             $quantidade3 = $row['quantidade3'];
             $quantidade4 = $row['quantidade4'];
-            $turma_id = $row['turma_id'];
         }
     } else {
         echo "0 results";
@@ -112,28 +107,7 @@ if (!isset($_SESSION['turma'])) {
                             <?php if ($produto4 != '')
                                 echo '<td>' . $produto4 . '</td>'; ?>
                         </tr>
-                        <tr>
-                            <th>Unidade </th>
-                            <?php
-                            if ($unidade2 != ' ')
-                                print "
-                        <th>unidade 2</th>";
-                            if ($unidade3 != ' ')
-                                print "
-                        <th>unidade 3 </th>";
-                            if ($unidade4 != ' ')
-                                print "
-                        <th>unidade 4</th>"; ?>
-                        </tr>
-                        <tr>
-                            <td><?php echo $unidade1; ?></td>
-                            <?php if ($unidade2 != ' ')
-                                echo '<td>' . $unidade2 . '</td>'; ?>
-                            <?php if ($unidade3 != ' ')
-                                echo '<td>' . $unidade3 . '</td>'; ?>
-                            <?php if ($unidade4 != ' ')
-                                echo '<td>' . $unidade4 . '</td>'; ?>
-                        </tr>
+
                         <tr>
                             <th>Quantidade </th>
                             <?php
@@ -155,19 +129,6 @@ if (!isset($_SESSION['turma'])) {
                                 echo '<td>' . $quantidade3 . '</td>'; ?>
                             <?php if ($quantidade4 != '0')
                                 echo '<td>' . $quantidade4 . '</td>'; ?>
-                        </tr>
-                        <tr>
-                            <th>Valor </th>
-                            <?php
-                            if ($valor2 != '0.00')
-                                print "
-                        <th>valor 2</th>";
-                            if ($valor3 != '0.00')
-                                print "
-                        <th>valor 3</th>";
-                            if ($valor4 != '0.00')
-                                print "
-                        <th>valor 4</th>"; ?>
                         </tr>
                 </div>
             </div>
