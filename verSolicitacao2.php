@@ -4,11 +4,6 @@ if (!isset($_SESSION['id'])) {
     header("Location: index.php");
     exit;
 }
-if (!isset($_SESSION['turma'])) {
-    header("Location: index.php");
-    exit;
-}
-$turma = $_SESSION['turma'];
 
 $servername = "localhost";
 $username = "root.Att";
@@ -17,6 +12,14 @@ $dbname = "logistica";
 
 // Criar conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
+
+// Checar conexão
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$turma = $_SESSION['turma'];
+?>
+<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $produto = $_POST['produto'];
     $quantidade = $_POST['quantidade'];
@@ -50,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/amem.svg">
     <meta charset="utf-8">
-    <title><?php $tituloPag = 'Movimentação';
+    <title><?php $tituloPag = 'Solicitações';
     echo "$tituloPag"; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -93,7 +96,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     echo "<tr>";
                                     echo "<td style=\"border-right:1px solid black;\">" . $row->produto . "</td>";
                                     echo "<td style=\"border-right:1px solid black;\">" . $row->quantidade . "</td>";
-                                    //echo "<td style=\"border-right:1px solid black;\">" . $row->posicao . "</td>";
                                     echo "<td style=\"border-right:1px solid black;\"><select name='posicao_pegar'> 
                                         <option></option>
                                         <option>A1</option>
@@ -113,8 +115,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <option>D3</option>
                                         <option>D4</option>
                                     </select>";
-                                    //echo "<input class=\"custom-checkbox\" type=\"hidden\" name=\"id_carga\" value=\"" . $row->id_carga . "\">";
-                                    //echo "<td><input class=\"custom-checkbox\" type=\"checkbox\" name=\"produtos_selecionados[]\" value=\"" . $row->id . "\"></td>";
                                     echo "<td style=\"border-right:1px solid black;\"><input type='number' name='quantidade_enviada' value='0' min=1 max=". $row->quantidade . ">";
                                     echo "</tr>";
                                 }
@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <input class="input1" type="text" name="produto" required placeholder="Produto">
                                         <input class="input2" type="text" name="quantidade" required
                                             placeholder="Quantidade">
-                                        <button class="buttonPesquisa">Pesquisar</button>
+                                        <button class="buttonPesquisa" type="submit">Pesquisar</button>
                                     </form>
                                 </div>
                             </div>

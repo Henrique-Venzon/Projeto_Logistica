@@ -1,6 +1,3 @@
-document.getElementById('voltar').addEventListener('click', function() {
-    window.location.href = '../verSolicitavao2.php'; 
-});
 document.addEventListener("DOMContentLoaded", function() {
     var cards = document.querySelectorAll('.card');
 
@@ -37,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         };
 
-        xhr.open('POST', '../processamento/consultar_estoque.php'); 
+        xhr.open('POST', 'processamento/consultar_estoque.php'); 
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send('posicao=' + encodeURIComponent(posicao));
     }
