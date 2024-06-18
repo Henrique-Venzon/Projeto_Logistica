@@ -84,9 +84,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 print "<table class='table' >";
                                 print "<tr>";
                                 print "<th>Produto</th>";
-                                print "<th>Quantidade</th>";
+                                print "<th>Quantidade Solicitada</th>";
                                 print "<th>Posição</th>";
-                                print "<th>Pegar</th>";
+                                print "<th>Quantidade</th>";
                                 print "</tr>";
 
                                 while ($row = $res->fetch_object()) {
@@ -94,10 +94,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     echo "<td style=\"border-right:1px solid black;\">" . $row->produto . "</td>";
                                     echo "<td style=\"border-right:1px solid black;\">" . $row->quantidade . "</td>";
                                     //echo "<td style=\"border-right:1px solid black;\">" . $row->posicao . "</td>";
+                                    echo "<td style=\"border-right:1px solid black;\"><select name='posicao_pegar'> 
+                                        <option></option>
+                                        <option>A1</option>
+                                        <option>A2</option>
+                                        <option>A3</option>
+                                        <option>A4</option>
+                                        <option>B1</option>
+                                        <option>B2</option>
+                                        <option>B3</option>
+                                        <option>B4</option>
+                                        <option>C1</option>
+                                        <option>C2</option>
+                                        <option>C3</option>
+                                        <option>C4</option>
+                                        <option>D1</option>
+                                        <option>D2</option>
+                                        <option>D3</option>
+                                        <option>D4</option>
+                                    </select>";
                                     //echo "<input class=\"custom-checkbox\" type=\"hidden\" name=\"id_carga\" value=\"" . $row->id_carga . "\">";
                                     //echo "<td><input class=\"custom-checkbox\" type=\"checkbox\" name=\"produtos_selecionados[]\" value=\"" . $row->id . "\"></td>";
-                                    echo "<input type='hidden' name='doca' value='D1'>";
-                                    echo "<input type='hidden' name='doca_id_real' value='1'>";
+                                    echo "<td style=\"border-right:1px solid black;\"><input type='number' name='quantidade_enviada' value='0' min=1 max=". $row->quantidade . ">";
                                     echo "</tr>";
                                 }
                                 print "</table>";
