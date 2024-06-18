@@ -39,13 +39,8 @@ main{
 input{
   text-align: center;
 }
-.colunas1{
-    margin-top: 1.2%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-  }
-  .colunas1 input,.colunas label {
+
+  .colunas label {
     display: block;
     margin-bottom: 3px;
     color: rgb(255, 255, 255);
@@ -53,7 +48,7 @@ input{
     text-shadow: 0 0 5px black;
   }
   
-  .colunas1 input,.colunas input{
+  .colunas input{
     height: 50px;
     border: 1.5px solid #ffffff;
     box-sizing: border-box;
@@ -65,20 +60,28 @@ input{
     box-shadow: 0px 0px 4px rgb(0, 0, 0);
     margin-top: 8px;
   }
-  .colunas select{
-    padding: 8px;
-    margin-left: 13px;
+  .produto {
+    margin-left: 22%;
     display: flex;
-    font-size: 18px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .produto select{
+    text-align: center;
+    width: 340px;
+    padding: 8px;
+    display: flex;
+    font-size: 22px;
     flex-direction: column;
     height: 50px;
     box-shadow: 0px 0px 4px rgb(0, 0, 0);
     background-color: #f6f6f6;
     border-radius: 5px;
     box-sizing: border-box;
-    margin-bottom: 13px; 
-    margin-top: 8px;
+    margin-bottom: 8px; 
+    margin-top: 5px;
   }
+
   .colunas{
     margin-left: 5px;
     margin-right: 15px;
@@ -149,8 +152,11 @@ form h1{
     text-shadow: 0px 0px 10px #000000;
 }
 .inputObs{
-    display: block;
+    display: flex;
     margin-top: 2%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .inputObs input{
     height: 60px;

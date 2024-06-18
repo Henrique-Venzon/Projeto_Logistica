@@ -53,7 +53,6 @@ if ($result->num_rows > 0) {
                 <div class="txtCont">
                     <h1>Solicitação</h1>
                 </div>
-                <div class="form">
                     <div class="tabela-scroll">
                         <form id="solicitacaoForm" action="processamento/processosolicitacao.php" method="POST">
                             <div class="colunas">
@@ -82,41 +81,6 @@ if ($result->num_rows > 0) {
                                     </select>
                                 </div>
 
-                                <div class="unidade">
-                                    <label for="unidade">Unidade:</label>
-                                    <select id="unidade" name="unidade1" required>
-                                        <option value="UN">UN</option>
-                                        <option value="RL">RL</option>
-                                        <option value="FD">FD</option>
-                                        <option value="KG">KG</option>
-                                        <option value="L">L</option>
-                                    </select>
-                                    <select id="unidade2" name="unidade2">
-                                        <option value=""> </option>
-                                        <option value="UN">UN</option>
-                                        <option value="RL">RL</option>
-                                        <option value="FD">FD</option>
-                                        <option value="KG">KG</option>
-                                        <option value="L">L</option>
-                                    </select>
-                                    <select id="unidade3" name="unidade3">
-                                        <option value=""> </option>
-                                        <option value="UN">UN</option>
-                                        <option value="RL">RL</option>
-                                        <option value="FD">FD</option>
-                                        <option value="KG">KG</option>
-                                        <option value="L">L</option>
-                                    </select>
-                                    <select id="unidade4" name="unidade4">
-                                        <option value=""> </option>
-                                        <option value="UN">UN</option>
-                                        <option value="RL">RL</option>
-                                        <option value="FD">FD</option>
-                                        <option value="KG">KG</option>
-                                        <option value="L">L</option>
-                                    </select>
-                                </div>
-
                                 <div class="quantidade">
                                     <label for="quantidade">Quantidade:</label>
                                     <input type="number" id="quantidade" name="quantidade" min="0" required placeholder="Obrigatório">
@@ -138,7 +102,6 @@ if ($result->num_rows > 0) {
                         </form>
                     </div>
                 </div>
-            </div>
         </div>
     </main>
 

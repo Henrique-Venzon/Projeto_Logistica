@@ -241,7 +241,7 @@
             <i class="fa-solid fa-bars"></i>
             </button>
             <div class="sidebar-logo">
-                <h1 class="sidebar-text" style="text-shadow: 0px 0px 4px #002753 ;color:white;">
+                <h1 class="sidebar-text" style="text-shadow: 0px 0px 4px #002753 ;color:white;text-wrap:nowrap;">
                     <?php
                     print $tituloPag;
                     ?>
