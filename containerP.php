@@ -309,7 +309,7 @@ if (!isset($_SESSION['turma'])) {
                                 </div>
                                 <div class="juntar">
                                     <label for="">Lacre SIF:</label>
-                                    <input type="text" name="LacreSif" placeholder="Opciona">
+                                    <input type="text" name="LacreSif" placeholder="Opcional">
                                 </div>
 
                                 <div class="juntar">
