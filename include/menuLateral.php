@@ -1,4 +1,5 @@
-<link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
 <script src="https://kit.fontawesome.com/6934df05fc.js" crossorigin="anonymous"></script>
 
 <style>
@@ -32,7 +33,7 @@
     #sidebar {
         width: 100px;
         z-index: 13;
-        transition:  .05s ease-out;
+        transition: .05s ease-out;
         background-color: #1c1c1c;
         display: flex;
         flex-direction: column;
@@ -49,12 +50,14 @@
         padding: 0.9rem 1.3rem;
         align-items: center;
     }
+
     .toggle-btn i {
-        margin-left:17px ;
+        margin-left: 17px;
         font-size: 37px;
         color: white;
     }
-    i{
+
+    i {
         font-size: 22px;
     }
 
@@ -127,118 +130,134 @@
         transform: rotate(45deg);
         transition: all .1s ease-out;
     }
-.fa-house{
-    margin-left: 5px;
-    margin-right: 5px;
-}
-.fa-user{
-    margin-left: 10px;
-    margin-right: 5px;
-}
 
-.fa-boxes-packing{
-    margin-left: 2px;
-    margin-right: 0px;
-}
-.fa-warehouse{
-    margin-left: 3px;
-    margin-right: 0px;
-}
-.fa-hand-holding-hand{
-    margin-left: 4px;
-    margin-right: 2px;
-}
-.fa-box{
-    margin-left: 8px;
-    margin-right: 5px;
-}
-.fa-truck-front{
-    margin-left: 6px;
-    margin-right: 5px;
-}
-.fa-receipt{
-    margin-left: 10px;
-    margin-right: 5px;
-}
-.fa-clipboard{
-    margin-left: 10px;
-    margin-right: 5px;
-}
-.fa-gear{
-    margin-left: 6px;
-    margin-right: 5px;
-}
-.fa-bell{
-    margin-left: 8px;
-    margin-right: 5px;
-}
-.fa-people-carry-box{
-    margin-left: 2px;
-    margin-right: 1px;
-}
-.fa-briefcase{
-    margin-left: 6px;
-    margin-right: 3px;
-}
-@media only screen and (max-width: 600px) {
-    i{
-        font-size: 20px;
+    .fa-house {
+        margin-left: 5px;
+        margin-right: 5px;
     }
-    #sidebar.expand {
-        width: 160px;
+
+    .fa-user {
+        margin-left: 10px;
+        margin-right: 5px;
     }
-    #sidebar {
-        width: 80px;
+
+    .fa-boxes-packing {
+        margin-left: 2px;
+        margin-right: 0px;
     }
-    #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
-        left: 80px;
+
+    .fa-warehouse {
+        margin-left: 3px;
+        margin-right: 0px;
     }
-  }
+
+    .fa-hand-holding-hand {
+        margin-left: 4px;
+        margin-right: 2px;
+    }
+
+    .fa-box {
+        margin-left: 8px;
+        margin-right: 5px;
+    }
+
+    .fa-truck-front {
+        margin-left: 6px;
+        margin-right: 5px;
+    }
+
+    .fa-receipt {
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+
+    .fa-clipboard {
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+
+    .fa-gear {
+        margin-left: 6px;
+        margin-right: 5px;
+    }
+
+    .fa-bell {
+        margin-left: 8px;
+        margin-right: 5px;
+    }
+
+    .fa-people-carry-box {
+        margin-left: 2px;
+        margin-right: 1px;
+    }
+
+    .fa-briefcase {
+        margin-left: 6px;
+        margin-right: 3px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        i {
+            font-size: 20px;
+        }
+
+        #sidebar.expand {
+            width: 160px;
+        }
+
+        #sidebar {
+            width: 80px;
+        }
+
+        #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+            left: 80px;
+        }
+    }
+
     .toggle-btn i {
-        margin-left:14px ;
+        margin-left: 14px;
         font-size: 22px;
     }
+
     a.sidebar-link {
         font-size: 0.64rem;
     }
-  
-  @media only screen and (min-width: 601px) and (max-width: 1024px) {
-    
-  }
-  
-  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
-   
-  }
-  
-  
-  @media only screen and (min-width: 1441px) {
-    .toggle-btn {
-        background-color: transparent;
-        cursor: pointer;
-        border: 0;
-        padding: 0.9rem 1.3rem;
-        align-items: center;
-    }
-    .toggle-btn i {
-        margin-left:17px ;
-        font-size: 37px;
-        color: white;
-    }
-    i{
-        font-size: 32px;
-    }
-    a.sidebar-link {
-        font-size: 0.9rem;
-    }
-  }
 
+    @media only screen and (min-width: 601px) and (max-width: 1024px) {}
+
+    @media only screen and (min-width: 1025px) and (max-width: 1440px) {}
+
+
+    @media only screen and (min-width: 1441px) {
+        .toggle-btn {
+            background-color: transparent;
+            cursor: pointer;
+            border: 0;
+            padding: 0.9rem 1.3rem;
+            align-items: center;
+        }
+
+        .toggle-btn i {
+            margin-left: 17px;
+            font-size: 37px;
+            color: white;
+        }
+
+        i {
+            font-size: 32px;
+        }
+
+        a.sidebar-link {
+            font-size: 0.9rem;
+        }
+    }
 </style>
 
 <div class="menuL">
     <aside id="sidebar" class="sidebar-transition">
         <div class="d-flex">
             <button class="toggle-btn" type="button">
-            <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-bars"></i>
             </button>
             <div class="sidebar-logo">
                 <h1 class="sidebar-text" style="text-shadow: 0px 0px 4px #002753 ;color:white;text-wrap:nowrap;">
@@ -251,12 +270,12 @@
         <ul class="sidebar-nav">
             <li class="sidebar-item" id="sidebarItem">
                 <a href="telaInicio.php" class="sidebar-link">
-                <i class="fa-solid fa-house"></i>
-                <span class="sidebar-text" style="margin-left:10px;">Home</span>
+                    <i class="fa-solid fa-house"></i>
+                    <span class="sidebar-text" style="margin-left:10px;">Home</span>
                 </a>
-                
+
             </li>
-            <?php if($_SESSION['tipo_login']=='professor')
+            <?php if ($_SESSION['tipo_login'] == 'professor')
                 echo '
                 <li class="sidebar-item">
                     <a href="telaUsuarios.php" class="sidebar-link">
@@ -264,8 +283,8 @@
                         <span class="sidebar-text" style="margin-left:10px;">Alunos</span>
                     </a>
                 </li>'
-                ?>
-                <?php if($_SESSION['tipo_login']=='professor')
+                    ?>
+            <?php if ($_SESSION['tipo_login'] == 'professor')
                 echo '
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
@@ -282,7 +301,7 @@
                         </li>
                     </ul>
                 </li>'
-                ?>
+                    ?>
 
 
 
@@ -292,90 +311,93 @@
                         <i class="fa-solid fa-hand-holding-hand"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Vistoria</span>
                     </a>
-                    
+
                     <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
                             <a id="linkContainer" style="margin-bottom: -1.4px;" href="container.php"
                                 class="sidebar-link">Container</a>
                         </li>
                         <li class="sidebar-item">
-                            <a  href="vistoriaCarga.php" style="margin-top: -1.4px;" class="sidebar-link">Carga</a>
+                            <a href="vistoriaCarga.php" style="margin-top: -1.4px;" class="sidebar-link">Carga</a>
                         </li>
                     </ul>
                 </li>
-                
-                
-            <li class="sidebar-item">
-                <a href="docas.php" class="sidebar-link">
-                <i class="fa-solid fa-boxes-packing"></i>
-                <span class="sidebar-text" style="margin-left:10px;">Doca</span>
-                </a>
-            </li>
-            <li class="sidebar-item">
-                    <a href="movimentacaoDoca.php" class="sidebar-link">
-                    <i class="fa-solid fa-people-carry-box"></i>  
-                    <span class="sidebar-text" style="margin-left:10px;">Movimentação</span>
+
+
+                <li class="sidebar-item">
+                    <a href="docas.php" class="sidebar-link">
+                        <i class="fa-solid fa-boxes-packing"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Doca</span>
                     </a>
                 </li>
-            <li class="sidebar-item">
-                <a href="telaEstoque.php" class="sidebar-link">
-                <i class="fa-solid fa-warehouse"></i>
-                <span class="sidebar-text" style="margin-left:10px;">Estoque</span>
-                </a>
-            </li>   
-                
+                <li class="sidebar-item">
+                    <a href="movimentacaoDoca.php" class="sidebar-link">
+                        <i class="fa-solid fa-people-carry-box"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Movimentação</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="telaEstoque.php" class="sidebar-link">
+                        <i class="fa-solid fa-warehouse"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Estoque</span>
+                    </a>
+                </li>
+
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                         data-bs-target="#solicitacao" aria-expanded="false" aria-controls="solicitacao">
                         <i class="fa-solid fa-bell"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Solicitação</span>
                     </a>
-                    
+
                     <ul id="solicitacao" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
                             <a id="solicitacao" style="margin-bottom: -1.4px;" href="solicitacao.php"
                                 class="sidebar-link">Criar solicitação</a>
                         </li>
                         <li class="sidebar-item">
-                            <a  href="verSolicitacao.php" style="margin-top: -1.4px;" class="sidebar-link">Ver solicitação</a>
+                            <a href="verSolicitacao.php" style="margin-top: -1.4px;" class="sidebar-link">Ver
+                                solicitação</a>
                         </li>
                     </ul>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
-                    <i class="fa-solid fa-truck-front"></i>
+                        <i class="fa-solid fa-truck-front"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Expedição</span>
                     </a>
                 </li>
-                
+
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
-                    <i class="fa-solid fa-clipboard"></i>     
-                    <span class="sidebar-text" style="margin-left:10px;">Relatórios</span>
+                        <i class="fa-solid fa-clipboard"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Relatórios</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                <a href="notaf.php" class="sidebar-link">
-                <i class="fa-solid fa-receipt"></i>
-                <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
-                </a>
-            </li>
+                    <a href="notaf.php" class="sidebar-link">
+                        <i class="fa-solid fa-receipt"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
+                    </a>
+                </li>
+            <?php if ($_SESSION['tipo_login'] == 'professor')
+                echo '
             <li class="sidebar-item">
                 <a href="projetos.php" class="sidebar-link">
                 <i class="fa-solid fa-briefcase"></i>
                 <span class="sidebar-text" style="margin-left:10px;">Projetos</span>
                 </a>
-            </li>
-    </aside>
-</div>
-        <script>
-            
-            if (<?php echo json_encode($_SESSION['tipo_login']); ?> == 'professor') {
-                document.getElementById('linkContainer').setAttribute('href', 'containerA.php');
-                //Control c + control v a linha de cima colocar um id no texto e mudar o nome do arquivo aqui.
-            } else if (<?php echo json_encode($_SESSION['tipo_login']); ?> == 'aluno') {
-                document.getElementById('linkContainer').setAttribute('href', 'containerA.php');
-                //Control c + control v a linha de cima colocar um id no texto e mudar o nome do arquivo aqui.
-            }
-        </script>
+            </li>'
+                    ?>
+        </aside>
+    </div>
+    <script>
 
+        if (<?php echo json_encode($_SESSION['tipo_login']); ?> == 'professor') {
+        document.getElementById('linkContainer').setAttribute('href', 'containerA.php');
+        //Control c + control v a linha de cima colocar um id no texto e mudar o nome do arquivo aqui.
+    } else if (<?php echo json_encode($_SESSION['tipo_login']); ?> == 'aluno') {
+        document.getElementById('linkContainer').setAttribute('href', 'containerA.php');
+        //Control c + control v a linha de cima colocar um id no texto e mudar o nome do arquivo aqui.
+    }
+</script>
