@@ -26,8 +26,9 @@ if (!isset($_SESSION['turma'])) {
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="css/container.css">
+    <link rel="stylesheet" href="css/responsividade/criarpedidoResponsivo.css">
+
 </head>
 
 <body>
@@ -125,7 +126,7 @@ if (!isset($_SESSION['turma'])) {
                                 3</button>
                         </div>
                         <form action="processamento/carga.php" method="post">
-                            <div class="colunas1 colunadata">
+                            <div class="colunas1 colunadata coluna1cell">
                                 <div class="numeroPedido">
                                     <label for="num">N° pedido:</label>
                                     <input id="num" type="number" name="npedido" min="0" required
@@ -164,6 +165,7 @@ if (!isset($_SESSION['turma'])) {
                             </div>
 
                             <div class="colunas">
+                                <div class="divisaoPhone">
                                 <div class="sku">
                                     <label for="sku">Sku:</label>
                                     <input class="sku" type="text" id="sku1" name="sku1" placeholder="Opcional">
@@ -225,7 +227,8 @@ if (!isset($_SESSION['turma'])) {
                                     <input type="number" id="quantidade4" name="quantidade4" min="0"
                                         placeholder="Opcional">
                                 </div>
-
+                                </div>                                
+                                <div class="divisaoPhone">
                                 <div class="valor">
                                     <label for="valor">Valor Unitário:</label>
                                     <input type="number" id="valor1" name="valor1" step="0.01" required
@@ -258,6 +261,7 @@ if (!isset($_SESSION['turma'])) {
                                     <input type="text" id="cfop3" name="cfop3" placeholder="Opcional">
                                     <input type="text" id="cfop4" name="cfop4" placeholder="Opcional">
                                 </div>
+                            </div>
                             </div>
                             <div class="enviar">
                                 <input type="submit" onclick="exibirMensagem()">

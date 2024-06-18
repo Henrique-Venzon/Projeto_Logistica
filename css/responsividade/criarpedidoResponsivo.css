@@ -1,0 +1,73 @@
+@media only screen and (max-width: 600px) {
+    .txtCont h1{
+        margin-top: 3%;
+        font-size: 20px;
+    }
+      #verSku{
+        border-radius: 25px;
+        background-color: #ffffff;
+        padding: 7px 11px;
+        cursor: pointer;
+        margin-top: 3%;
+        margin-left: 5%;
+        position: absolute;
+        font-size: 13px;
+        color: #000000;
+        text-shadow: 0px 0px 10px #ffffff;
+      }
+      .tooltip-container {
+        right: 5%;
+     }
+     .tooltip-container .fa-circle-question{
+       font-size: 34px;
+
+     }
+     .colunas1 label,.colunas label {
+        font-size: 15px;
+      }
+      .colunas1 input,.colunas input{
+        height: 40px;
+        width: 85%;
+        font-size: 18px;
+        background-color: #f6f6f6;
+      }
+      .juntar label{
+        font-size: 90%;
+    }
+    .presets{
+        display: none;
+    }
+    .divisaoPhone{
+        display: flex;
+        flex-direction: column;
+      }
+      .coluna1cell input{
+        height: 50px;
+        box-sizing: border-box;
+        width: 62%;
+        font-size: 12.8px;
+      }
+      .coluna1cell label{
+        font-size: 12px;
+      }
+      .inicio input,.entrega input{
+        font-size: 11px;
+      }
+      .sku{
+        width: 100%;
+      }
+      .unidade{
+        display: flex;
+        flex-direction: column;
+      }
+      .colunas select{
+        height: 40px;
+        width: 85%;
+        margin-left: 7%;
+      }
+      .juntar{
+        display: block;
+        width: 50%;
+        margin-top: 2%;
+    }
+}

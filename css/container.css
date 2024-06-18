@@ -103,10 +103,7 @@ input{
     border-radius: 5px;
     box-sizing: border-box;
     margin-bottom: 4px;
-  
     margin-top: 8px;
-  
-  
   }
   .colunas{
     margin-left: 5px;
@@ -118,7 +115,6 @@ input{
     justify-content: space-around;
   
   }
-
 .inputs{
     display: flex;
     flex-wrap: wrap;
@@ -142,33 +138,8 @@ input{
     text-shadow: 0px 0px 8px black;
     margin-bottom: 2%;
     margin-top: 2%;
-    
-}
-.input-group input[type="checkbox"] {
-    display: none;
-}
-.input-group label::before {
-    content: '';
-    position: absolute;
-    left: 1px;
-    width: 28px; 
-    height: 27px; 
-    border: 1px solid #000000;
-    background-color: #fff; 
 }
 
-.input-group input[type="checkbox"]:checked + label::before {
-    background-color: #174ede;
-    border: 1.5px solid #ffffff;
-}
-
-.input-group input[type="checkbox"]:checked + label::before {
-    content: '\2713';
-    color: #fff; 
-    font-size: 19px; 
-    text-align: center;
-    line-height: 24px; 
-}
 .problema {
     width: 100%;
     display: flex;
@@ -427,4 +398,7 @@ form h1{
 }
 .close1:hover{
   color: red;
+}
+.divisaoPhone{
+  display: flex;
 }

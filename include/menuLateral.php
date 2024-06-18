@@ -151,6 +151,7 @@
         margin-right: 0px;
     }
 
+
     .fa-hand-holding-hand {
         margin-left: 4px;
         margin-right: 2px;
@@ -214,6 +215,11 @@
         }
     }
 
+    .sidebar-logo h1{
+        font-size: 15px;
+    }
+
+
     .toggle-btn i {
         margin-left: 14px;
         font-size: 22px;
@@ -260,7 +266,7 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
             <div class="sidebar-logo">
-                <h1 class="sidebar-text" style="text-shadow: 0px 0px 4px #002753 ;color:white;text-wrap:nowrap;">
+                <h1 class="sidebar-text titulo" style="text-shadow: 0px 0px 4px #002753 ;color:white;text-wrap:nowrap;">
                     <?php
                     print $tituloPag;
                     ?>
