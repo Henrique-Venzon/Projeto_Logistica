@@ -275,14 +275,14 @@ if (!isset($_SESSION['turma'])) {
                         </div>
                         <div class="presets">
                         <button
-                        onclick="setMultipleInputValues({'placa': '5568', 'cliente': 'Matheus Yan', 'NomeMotorista':'4740028922','container':'88370904','navio': 'trivia', 'tipo': 'agua', 'lacre' : 'acido', 'temperatura' : '0 kelvin ', 'LacreSif' : '079', 'IMD': '341242', 'NOnu' : '12312' , 'Observacao': 'Veio manchado'})">Preset
+                        onclick="setMultipleInputValues({'placa': '5568', 'cliente': 'Matheus Yan', 'NomeMotorista':'Luan','container':'88370904','navio': 'trivia', 'tipo': 'agua', 'lacre' : 'acido', 'temperatura' : '0 kelvin ', 'LacreSif' : '079', 'IMD': '341242', 'NOnu' : '12312' , 'Observacao': 'Veio manchado'})">Preset
                         1</button>
                         <button
-                        onclick="setMultipleInputValues({'placa': '5568', 'cliente': 'Matheus Yan', 'NomeMotorista':'4740028922','container':'88370904','navio': 'trivia', 'tipo': 'agua', 'lacre' : 'acido', 'temperatura' : '0 kelvin ', 'LacreSif' : '079', 'IMD': '341242', 'NOnu' : '12312' , 'Observacao': 'Veio manchado'})">Preset
-                        1</button>
+                        onclick="setMultipleInputValues({'placa': '34O53B', 'cliente': 'Henrique Benzao', 'NomeMotorista':'Luan','container':'1434235702','navio': 'trivia alpha', 'tipo': 'sólido', 'lacre' : '9984', 'temperatura' : '22', 'LacreSif' : '5353', 'IMD': '33441', 'NOnu' : '12312' , 'Observacao': ''})">Preset
+                        2</button>
                         <button
-                        onclick="setMultipleInputValues({'placa': '5568', 'cliente': 'Matheus Yan', 'NomeMotorista':'4740028922','container':'88370904','navio': 'trivia', 'tipo': 'agua', 'lacre' : 'acido', 'temperatura' : '0 kelvin ', 'LacreSif' : '079', 'IMD': '341242', 'NOnu' : '12312' , 'Observacao': 'Veio manchado'})">Preset
-                        1</button>
+                        onclick="setMultipleInputValues({'placa': '5568', 'cliente': 'Matheus Yan', 'NomeMotorista':'Luan','container':'5235542','navio': 'trivia Omega', 'tipo': 'quimico', 'lacre' : '325253', 'temperatura' : '33 ', 'LacreSif' : '4332', 'IMD': '341242', 'NOnu' : '12312' , 'Observacao': ''})">Preset
+                        3</button>
                         
                         
                         
