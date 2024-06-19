@@ -274,7 +274,7 @@ if (!isset($_SESSION['turma'])) {
                             </div>
                             <div class="presets">
                             <button
-                                onclick="setMultipleInputValues({'empresa': 'Portonave', 'nomeCliente': 'Matheus Yan', 'telefone':'4740028922','cep':'88370904'})">Preset
+                                onclick="setMultipleInputValues({'placa': '5568', 'cliente': 'Matheus Yan', 'NomeMotorista':'4740028922','container':'88370904','navio': 'trivia', 'tipo': 'agua', 'lacre' : 'acido', 'temperatura' : '0 kelvin ', 'LacreSif' : '079', 'IMD': '341242', 'NOnu' : '12312' , 'Observacao': 'Veio manchado'})">Preset
                                 1</button>
                             <button
                                 onclick="setMultipleInputValues({'empresa': 'MultiLog', 'nomeCliente': 'Luan Pereira', 'telefone':'4789426155','cep':'23812310'})">Preset
@@ -287,49 +287,49 @@ if (!isset($_SESSION['turma'])) {
                             <div class="inputs">
                                 <div class="juntar">
                                     <label for="placa">Placa do Caminhão:</label>
-                                    <input type="text" name="placa" placeholder="Obrigatório" required>
+                                    <input type="text" name="placa" id="placa" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="">Cliente:</label>
-                                    <input type="text" name="cliente" placeholder="Obrigatório">
+                                    <input type="text" name="cliente" id="cliente" placeholder="Obrigatório">
                                 </div>
                                 <div class="juntar">
                                     <label for="nome">Nome do Motorista:</label>
-                                    <input type="text" name="NomeMotorista" placeholder="Obrigatório" required>
+                                    <input type="text" name="NomeMotorista" id="NomeMotorista" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="container">Container:</label>
-                                    <input type="text" name="container" placeholder="Obrigatório" required>
+                                    <input type="text" name="container"  id="container" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="navio">Navio:</label>
-                                    <input type="text" name="navio" placeholder="Obrigatório" required>
+                                    <input type="text" name="navio" id="navio" placeholder="Obrigatório" required>
                                 </div>
 
                                 <div class="juntar">
                                     <label for="tipo">Tipo:</label>
-                                    <input type="text" name="tipo" placeholder="Obrigatório" required>
+                                    <input type="text" name="tipo" id="tipo" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="lacre">Lacre:</label>
-                                    <input type="text" name="lacre" placeholder="Obrigatório" required>
+                                    <input type="text" name="lacre" id="lacre" placeholder="Obrigatório" required>
                                 </div>
                                 <div class="juntar">
                                     <label for="">Temperatura:</label>
-                                    <input type="text" name="temperatura" placeholder="Opcional">
+                                    <input type="text" name="temperatura" id="temperatura" placeholder="Opcional">
                                 </div>
                                 <div class="juntar">
                                     <label for="">Lacre SIF:</label>
-                                    <input type="text" name="LacreSif" placeholder="Opcional">
+                                    <input type="text" name="LacreSif" id="LacreSif" placeholder="Opcional">
                                 </div>
 
                                 <div class="juntar">
                                     <label for="">IMO:</label>
-                                    <input type="text" name="IMD" placeholder="Opcional">
+                                    <input type="text" name="IMD" id="IMD" placeholder="Opcional">
                                 </div>
                                 <div class="juntar">
                                     <label for="">N° ONU:</label>
-                                    <input type="text" name="NOnu" placeholder="Opcional">
+                                    <input type="text" name="NOnu" id="NOnu" placeholder="Opcional">
                                 </div>
                             </div>
                             <div class="inputObs">
