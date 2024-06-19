@@ -1,0 +1,12 @@
+ <h2>Retirar Produto do Estoque</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        ID do Produto: <input type="number" name="id_produto_retirado" min="1"><br><br>
+        Quantidade: <input type="number" name="quantidade_retirada" min="1"><br><br>
+        <input type="submit" name="retirar_produto" value="Retirar do Estoque">
+    </form>
+
+    <h2>Adicionar Produto ao Estoque</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        Nome do Produto: <input type="text" name="nome_produto_adicionado"><br><br>
+        Quantidade: <input type="number" name="quantidade_adicionada" min="1"><br><br>
+        <input type="submit" name="adicionar_pro

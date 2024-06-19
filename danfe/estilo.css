@@ -1,0 +1,142 @@
+/* Reset de estilos para garantir consistência */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo básico para o corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+/* Estilo para o container do formulário */
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilo para o cabeçalho do formulário */
+.container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Estilo para o botão AutoDanfe */
+#autoDanfe {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  float: right;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+#autoDanfe:hover {
+  background-color: #4caf50; /* Verde escuro */
+}
+#clearForm:hover {
+  background-color: #4caf50; /* Verde escuro */
+}
+
+#verDanfe:hover {
+  background-color: #4caf50; /* Verde escuro */
+}
+
+#enviar:hover {
+  background-color: #4caf50; /* Verde escuro */
+}
+
+/* Estilo para os botões secundários */
+button[type="submit"],
+button[type="button"] {
+  background-color: #030303; /* Verde escuro */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+  background-color: #45a049; /* Verde mais claro */
+}
+
+/* Estilo para os rótulos dos campos */
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Estilo para os campos de entrada */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus {
+  outline: none;
+  border-color: #4caf50; /* Verde escuro */
+}
+
+/* Estilo para as seções do formulário */
+.section {
+  margin-bottom: 20px;
+}
+
+/* Estilo para os títulos das seções */
+.section h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Estilo para o grupo de botões no final do formulário */
+.button-group {
+  text-align: right;
+}
+
+/* Estilo para o rodapé do formulário */
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #888;
+}
+#preset2{
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  float: left;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+#preset2:hover {
+  background-color: #4caf50; /* Verde escuro */
+}
