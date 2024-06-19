@@ -267,22 +267,30 @@ if (!isset($_SESSION['turma'])) {
                                 <input type="submit" onclick="exibirMensagem()">
                             </div>
                         </form>
-
-                        <form action="processamento/processarcontainer.php" method="post">
-                            <div class="transportes">
-                                <h1>Cadastro de Transportes</h1>
-                            </div>
-                            <div class="presets">
-                            <button
-                                onclick="setMultipleInputValues({'placa': '5568', 'cliente': 'Matheus Yan', 'NomeMotorista':'4740028922','container':'88370904','navio': 'trivia', 'tipo': 'agua', 'lacre' : 'acido', 'temperatura' : '0 kelvin ', 'LacreSif' : '079', 'IMD': '341242', 'NOnu' : '12312' , 'Observacao': 'Veio manchado'})">Preset
-                                1</button>
-                            <button
-                                onclick="setMultipleInputValues({'empresa': 'MultiLog', 'nomeCliente': 'Luan Pereira', 'telefone':'4789426155','cep':'23812310'})">Preset
-                                2</button>
-                            <button
-                                onclick="setMultipleInputValues({'empresa': 'ARXO', 'nomeCliente': 'Henrique Venzon', 'telefone':'4791296865','cep':'88318481'})">Preset
-                                3</button>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="transportes">
+                        <h1>Cadastro de Transportes</h1>
                         </div>
+                        <div class="presets">
+                        <button
+                        onclick="setMultipleInputValues({'placa': '5568', 'cliente': 'Matheus Yan', 'NomeMotorista':'4740028922','container':'88370904','navio': 'trivia', 'tipo': 'agua', 'lacre' : 'acido', 'temperatura' : '0 kelvin ', 'LacreSif' : '079', 'IMD': '341242', 'NOnu' : '12312' , 'Observacao': 'Veio manchado'})">Preset
+                        1</button>
+                        <button
+                        onclick="setMultipleInputValues({'placa': '5568', 'cliente': 'Matheus Yan', 'NomeMotorista':'4740028922','container':'88370904','navio': 'trivia', 'tipo': 'agua', 'lacre' : 'acido', 'temperatura' : '0 kelvin ', 'LacreSif' : '079', 'IMD': '341242', 'NOnu' : '12312' , 'Observacao': 'Veio manchado'})">Preset
+                        1</button>
+                        <button
+                        onclick="setMultipleInputValues({'placa': '5568', 'cliente': 'Matheus Yan', 'NomeMotorista':'4740028922','container':'88370904','navio': 'trivia', 'tipo': 'agua', 'lacre' : 'acido', 'temperatura' : '0 kelvin ', 'LacreSif' : '079', 'IMD': '341242', 'NOnu' : '12312' , 'Observacao': 'Veio manchado'})">Preset
+                        1</button>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                        <form action="processamento/processarcontainer.php" method="post">
+                    
 
                             <div class="inputs">
                                 <div class="juntar">
