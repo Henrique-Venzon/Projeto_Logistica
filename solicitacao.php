@@ -17,7 +17,7 @@ if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
-$sql = "SELECT nome_produto, quantidade_enviada FROM estoque where id_turma=".$_SESSION['turma']."";
+$sql = "SELECT DISTINCT nome_produto FROM estoque WHERE id_turma=".$_SESSION['turma']."";
 $result = $conn->query($sql);
 $options = "";
 

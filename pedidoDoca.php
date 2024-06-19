@@ -72,11 +72,10 @@ if (!isset($_SESSION['turma'])) {
         <div class="DivDireita">
             <div class="table-inputs">
                 <div class="nomet">
-                    <h1>Doca</h1>
+                    <h1>Endereçamento</h1>
                 </div>
                 <div class="tabela-scroll">
                 <?php
-                // Check if all quantities are zero
                 if ($quantidade1 != 0 || $quantidade2 != 0 || $quantidade3 != 0 || $quantidade4 != 0) {
                 ?>
                 <form method="post" action="processamento/movimentacao.php">
