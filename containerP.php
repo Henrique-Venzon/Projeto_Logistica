@@ -272,6 +272,17 @@ if (!isset($_SESSION['turma'])) {
                             <div class="transportes">
                                 <h1>Cadastro de Transportes</h1>
                             </div>
+                            <div class="presets">
+                            <button
+                                onclick="setMultipleInputValues({'empresa': 'Portonave', 'nomeCliente': 'Matheus Yan', 'telefone':'4740028922','cep':'88370904'})">Preset
+                                1</button>
+                            <button
+                                onclick="setMultipleInputValues({'empresa': 'MultiLog', 'nomeCliente': 'Luan Pereira', 'telefone':'4789426155','cep':'23812310'})">Preset
+                                2</button>
+                            <button
+                                onclick="setMultipleInputValues({'empresa': 'ARXO', 'nomeCliente': 'Henrique Venzon', 'telefone':'4791296865','cep':'88318481'})">Preset
+                                3</button>
+                        </div>
 
                             <div class="inputs">
                                 <div class="juntar">
