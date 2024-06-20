@@ -20,8 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql_container = "DELETE FROM container WHERE turma_id = " . $turma_id;
         $sql_vistoriado = "DELETE FROM vistoriado WHERE turma_id = " . $turma_id;
         $sql_concluido = "DELETE FROM atividade_concluida WHERE id_turma = " . $turma_id;
+        $sql_solicitacao = "DELETE FROM solicitacao WHERE id_turma = " . $turma_id;
+        $sql_pegado = "DELETE FROM pegado WHERE id_turma = " . $turma_id;
         $conexao->query($sql_notasfiscais);
         $conexao->query($sql_estoque);
+        $conexao->query($sql_pegado);
+        $conexao->query($sql_solicitacao);
         $conexao->query($sql_docas);
         $conexao->query($sql_carga);
         $conexao->query($sql_container);

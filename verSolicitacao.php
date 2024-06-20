@@ -50,13 +50,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Create connection
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
-                $sql_after = "SELECT * FROM solicitacao where id_turma = '".$_SESSION['turma']."'";
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                $sql_after = "SELECT * FROM solicitacao WHERE id_turma = '" . $_SESSION['turma'] . "'";
                 $res = $conn->query($sql_after);
                 $qtd = $res->num_rows;
 
                 if ($qtd > 0) {
-                    print "<div class=\"tabela-scroll\">";
-                    print "<table class='table' >";
+                    echo "<div class=\"tabela-scroll\">";
+                    echo "<table class='table'>";
 
                     print "<tr>";
                     print "<th>Nº Solicitação</th>";
@@ -65,30 +69,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     while ($row = $res->fetch_object()) {
                         $id_pedido = $row->id_pedido;
-                        $sql_npedido = "SELECT id, id_pedido FROM solicitacao where id_turma='" . $_SESSION['turma'] . "'";
-                        $resultado = $conn->query($sql_npedido);
-                        if ($resultado->num_rows > 0) {
-                            while($row_id = $resultado->fetch_assoc()) {
-                                $id_pedido = $row_id["id_pedido"];
-                            }
-                        }
-                        print "<td>". $id_pedido . "</td>";
-                        print "<form method='post' action='verSolicitacao2.php'";
-                        print "<tr>";
-                        print "<td>
-                            <button class=\"reset\" data-id=\"\"><span>ver</span></button>
-                            <input name='id_pedido' type='hidden' value='";  echo $id_pedido . "'>
-                            </td>";
-                        print "</tr>";
-                        print "</form>";
+                        $id = $row->id;
+                        echo "<tr>";
+                        echo "<td>" . $id_pedido . "</td>";
+                        echo "<td>";
+                        echo "<form method='get' action='verSolicitacao2.php'>";
+                        echo "<button class=\"reset\" type=\"submit\"><span>ver</span></button>";
+                        echo "<input name='id_pedido' type='hidden' value='" . $id . "'>";
+                        echo "</form>";
+                        echo "</td>";
+                        echo "</tr>";
                     }
-                    print "</table>";
-                    print "</div>";
 
+                    echo "</table>";
+                    echo "</div>";
                 } else {
                     print "<p class='alert alert-danger'>Não encontrou nenhuma solicitação feita.</p>";
                 }
 
+                $conn->close();
                 ?>
             </div>
         </div>
