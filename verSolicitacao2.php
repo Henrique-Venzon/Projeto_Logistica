@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="flex">
                     <div class="divpegar">
-                        <form method='post' action="processamento/processosociltacao2.php">
+                        <form method='post' action="processamento/socilt.php">
                             <h1 class="pegar">Pegar</h1>
                             <?php
                             $conn = new mysqli($servername, $username, $password, $dbname);
@@ -90,18 +90,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 echo "<th id='posicao' name='posicao'>Posição</th>";
                                 echo "<th id='quantidade' name='quantidade'>Quantidade</th>";
                                 echo "</tr>";
-                                
-                                
+                                echo"<tr>";
                                 while ($row = $res->fetch_object()) {
                                     for ($i = 1; $i <= 4; $i++) {
                                         $produto = "produto" . ($i == 1 ? "" : $i);
                                         $quantidade = "quantidade" . ($i == 1 ? "" : $i);
 
                                         if (!empty($row->$produto) && !empty($row->$quantidade)) {
-                                            echo "<tr>";
+                                            
                                             echo "<td style=\"border-right:1px solid black;\">" . $row->$produto . "</td>";
                                             echo "<td style=\"border-right:1px solid black;\">" . $row->$quantidade . "</td>";
-                                            echo "<td style=\"border-right:1px solid black;\"><select name='posicao_pegar_$i'> 
+                                            echo "<input type='hidden' value".$row->$produto."name='id_produto' id='id_produto' required>";
+                                            echo "<input type='hidden' value". $row->   $quantidade. " name='quantidadeS' id='quantidadeS' required>";
+                                            
+                                            echo "<td style=\"border-right:1px solid black;\"><select name='posicao_pegar_$i'>
                                                 <option></option>
                                                 <option>A1</option>
                                                 <option>A2</option>
@@ -125,6 +127,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         }
                                     }
                                 }
+                    
+                                    
                                 echo "</table>";
                                 echo "</div>";
                                 echo '<div class="buttonEnviar"><button type="submit">Enviar</button></div>';
