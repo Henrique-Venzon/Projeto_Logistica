@@ -70,7 +70,7 @@ if (!isset($_SESSION['id'])) {
                             }
                         }
                         print "<td>" . $id_pedido . "</td>";
-                        print "<form method='post' action='#'";
+                        print "<form method='get' action='picking2.php";
                         print "<tr>";
                         print "<td>
                             <button class=\"reset\" data-id=\"\"><span>ver</span></button>
