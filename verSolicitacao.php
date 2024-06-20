@@ -62,10 +62,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     echo "<div class=\"tabela-scroll\">";
                     echo "<table class='table'>";
 
-                    echo "<tr>";
-                    echo "<th>Nº Solicitação</th>";
-                    echo "<th style=\"border-right:none;\">Ver Nota Fiscal</th>";
-                    echo "</tr>";
+                    print "<tr>";
+                    print "<th>Nº Solicitação</th>";
+                    print "<th style=\"border-right:none;\">Ver Solicitação</th>";
+                    print "</tr>";
 
                     while ($row = $res->fetch_object()) {
                         $id_pedido = $row->id_pedido;
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     echo "</table>";
                     echo "</div>";
                 } else {
-                    echo "<p class='alert alert-danger'>Não encontrou nenhuma nota fiscal criada</p>";
+                    print "<p class='alert alert-danger'>Não encontrou nenhuma solicitação feita.</p>";
                 }
 
                 $conn->close();
