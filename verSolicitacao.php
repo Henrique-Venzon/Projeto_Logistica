@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     print "<tr>";
                     print "<th>Nº Solicitação</th>";
-                    print "<th style=\"border-right:none;\">Ver Nota Fiscal</th>";
+                    print "<th style=\"border-right:none;\">Ver Solicitação</th>";
                     print "</tr>";
 
                     while ($row = $res->fetch_object()) {
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     print "</div>";
 
                 } else {
-                    print "<p class='alert alert-danger'>Não encontrou nenhuma nota fiscal criada</p>";
+                    print "<p class='alert alert-danger'>Não encontrou nenhuma solicitação feita.</p>";
                 }
 
                 ?>

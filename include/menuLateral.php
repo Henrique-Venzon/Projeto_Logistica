@@ -196,6 +196,9 @@
         margin-left: 6px;
         margin-right: 3px;
     }
+    .fa-hands-holding{
+        margin-left: 3px;
+    }
 
     @media only screen and (max-width: 600px) {
         i {
@@ -213,10 +216,10 @@
         #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
             left: 80px;
         }
+        .sidebar-logo h1{
+        font-size: 15px;
     }
 
-    .sidebar-logo h1{
-        font-size: 15px;
     }
 
 
@@ -254,7 +257,7 @@
         }
 
         a.sidebar-link {
-            font-size: 0.9rem;
+            font-size: 1.1rem;
         }
     }
 </style>
@@ -366,6 +369,12 @@
                                 solicitação</a>
                         </li>
                     </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="picking.php" class="sidebar-link">
+                        <i class="fa-solid fa-hands-holding"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Picking</span>
+                    </a>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
