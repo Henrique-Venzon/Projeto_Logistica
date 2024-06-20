@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <?php
                             $conn = new mysqli($servername, $username, $password, $dbname);
 
-                            $sql = "SELECT * FROM `solicitacao` where id_turma='1' ORDER BY `solicitacao`.`id` ASC";
+                            $sql = "SELECT * FROM `solicitacao` where id_turma='1' and `id`=" . $_GET['id_pedido'] . " ORDER BY `solicitacao`.`id` ASC";
                             $res = $conn->query($sql);
                             $qtd = $res->num_rows;
 
@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="stock">
                             <div class="tabelaPesquisa">
                                 <div class="pesquisa">
-                                    <form id="formPesquisa" method="POST" action="#">
+                                    <form id="formPesquisa" method="POST" action="">
                                         <h1>Pesquisa</h1>
                                         <input class="input1" type="text" name="produto" required placeholder="Produto">
                                         <input class="input2" type="text" name="quantidade" required
