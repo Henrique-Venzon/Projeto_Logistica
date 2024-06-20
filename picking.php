@@ -28,7 +28,7 @@ if (!isset($_SESSION['id'])) {
 <body>
     <?php
     include 'include/header.php'
-    ?>
+        ?>
     <main>
         <?php
         include 'include/menuLateral.php';
@@ -47,7 +47,7 @@ if (!isset($_SESSION['id'])) {
                 // Create connection
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
-                $sql_after = "SELECT * FROM solicitacao where id_turma = '".$_SESSION['turma']."'";
+                $sql_after = "SELECT * FROM solicitacao where id_turma = '" . $_SESSION['turma'] . "'";
                 $res = $conn->query($sql_after);
                 $qtd = $res->num_rows;
 
@@ -65,16 +65,17 @@ if (!isset($_SESSION['id'])) {
                         $sql_npedido = "SELECT id, id_pedido FROM solicitacao where id_turma='" . $_SESSION['turma'] . "'";
                         $resultado = $conn->query($sql_npedido);
                         if ($resultado->num_rows > 0) {
-                            while($row_id = $resultado->fetch_assoc()) {
+                            while ($row_id = $resultado->fetch_assoc()) {
                                 $id_pedido = $row_id["id_pedido"];
                             }
                         }
-                        print "<td>". $id_pedido . "</td>";
-                        print "<form method='post' action='#'";
+                        print "<td>" . $id_pedido . "</td>";
+                        print "<form method='get' action='picking2.php";
                         print "<tr>";
                         print "<td>
                             <button class=\"reset\" data-id=\"\"><span>ver</span></button>
-                            <input name='id_pedido' type='hidden' value='";  echo $id_pedido . "'>
+                            <input name='id_pedido' type='hidden' value='";
+                        echo $id_pedido . "'>
                             </td>";
                         print "</tr>";
                         print "</form>";
