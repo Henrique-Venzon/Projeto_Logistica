@@ -235,7 +235,25 @@
                 <label for="base_calculo_issqn">Base de Cálculo do ISSQN</label>
                 <input type="number" step="0.01" id="base_calculo_issqn" name="base_calculo_issqn">
             </div>
+                <div class="desconto">
+                    <script>
 
+                        var a = getElementById("base_calculo_icms");
+                        var a = getElementById("valor_icms");
+                        var a = getElementById("base_calculo_icms_st");
+                        var a = getElementById("valor_icms_substituicao");
+                        var a = getElementById("total_produtos");
+                        var a = getElementById("valor_frete");
+                        var a = getElementById("valor_seguro");
+                        var a = getElementById("outras_despesas");
+                        var a = getElementById("valor_total_nota");
+                        var a = getElementById("valor_ipi");
+                        var a = getElementById("valor_ipi");
+                        var a = getElementById("valor_ipi");
+
+                    </script>
+
+                </div>
             <div class="button-group">
                 <button type="submit" id="enviar">Enviar</button>
                 <button type="button" id="clearForm">Apagar e Fazer Nova</button>
