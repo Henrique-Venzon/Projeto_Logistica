@@ -129,18 +129,15 @@ if (!isset($_SESSION['turma'])) {
                             <div class="colunas1 colunadata coluna1cell">
                                 <div class="numeroPedido">
                                     <label for="num">N° pedido:</label>
-                                    <input id="num" type="number" name="npedido" min="0" required
-                                        placeholder="Obrigatório">
+                                    <input class="nPedido" id="num" type="number" name="npedido" min="0" required placeholder="Obrigatório">
                                 </div>
                                 <div class="inicio">
-                                    <label for="inicio">Data do Pedido:</label>
-                                    <input id="inicio" type="date" name="data_pedido" required
-                                        placeholder="Obrigatório">
+                                    <label for="data_pedido">Data do Pedido:</label>
+                                    <input class="data_pedido" id="data_pedido" type="date" name="data_pedido" required placeholder="Obrigatório">
                                 </div>
                                 <div class="entrega">
-                                    <label for="entrega">Data de entrega:</label>
-                                    <input id="entrega" type="date" name="data_entrega" required
-                                        placeholder="Obrigatório">
+                                    <label for="data_entrega">Data de entrega:</label>
+                                    <input class="data_entrega" id="data_entrega" type="date" name="data_entrega" required placeholder="Obrigatório">
                                 </div>
                             </div>
                             <div class="colunas1">
@@ -360,7 +357,7 @@ if (!isset($_SESSION['turma'])) {
         </div>
 
     </main>
-
+    <script src="js/date.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="js/modal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
