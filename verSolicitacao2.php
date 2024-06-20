@@ -44,7 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<script>var posicoes = " . json_encode($posicoes) . ";</script>";
     echo "<script>var quantidade_pesquisada = $quantidade;</script>";
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -78,54 +77,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <?php
                             $conn = new mysqli($servername, $username, $password, $dbname);
 
-                            $sql = "SELECT * FROM `solicitacao` where id_turma='1' and `id`=" . $_GET['id_pedido'] . " ORDER BY `solicitacao`.`id` ASC";
+                            $sql = "SELECT * FROM `solicitacao` WHERE id_turma='$turma' AND `id`=" . $_GET['id_pedido'] . " ORDER BY `solicitacao`.`id` ASC";
                             $res = $conn->query($sql);
                             $qtd = $res->num_rows;
 
                             if ($qtd > 0) {
-                                print "<div class=\"tabela-scroll\">";
-                                print "<table class='table' >";
-                                print "<tr>";
-                                print "<th>Produto</th>";
-                                print "<th>Quantidade Solicitada</th>";
-                                print "<th>Posição</th>";
-                                print "<th>Quantidade</th>";
-                                print "</tr>";
+                                echo "<div class=\"tabela-scroll\">";
+                                echo "<table class='table'>";
+                                echo "<tr>";
+                                echo "<th>Produto</th>";
+                                echo "<th>Quantidade Solicitada</th>";
+                                echo "<th>Posição</th>";
+                                echo "<th>Quantidade</th>";
+                                echo "</tr>";
 
                                 while ($row = $res->fetch_object()) {
-                                    echo "<tr>";
-                                    echo "<td style=\"border-right:1px solid black;\">" . $row->produto . "</td>";
-                                    echo "<td style=\"border-right:1px solid black;\">" . $row->quantidade . "</td>";
-                                    echo "<td style=\"border-right:1px solid black;\"><select name='posicao_pegar'> 
-                                        <option></option>
-                                        <option>A1</option>
-                                        <option>A2</option>
-                                        <option>A3</option>
-                                        <option>A4</option>
-                                        <option>B1</option>
-                                        <option>B2</option>
-                                        <option>B3</option>
-                                        <option>B4</option>
-                                        <option>C1</option>
-                                        <option>C2</option>
-                                        <option>C3</option>
-                                        <option>C4</option>
-                                        <option>D1</option>
-                                        <option>D2</option>
-                                        <option>D3</option>
-                                        <option>D4</option>
-                                    </select>";
-                                    echo "<td style=\"border-right:1px solid black;\"><input type='number' name='quantidade_enviada' value='0' min=1 max=". $row->quantidade . ">";
-                                    echo "</tr>";
+                                    for ($i = 1; $i <= 4; $i++) {
+                                        $produto = "produto" . ($i == 1 ? "" : $i);
+                                        $quantidade = "quantidade" . ($i == 1 ? "" : $i);
+
+                                        if (!empty($row->$produto) && !empty($row->$quantidade)) {
+                                            echo "<tr>";
+                                            echo "<td style=\"border-right:1px solid black;\">" . $row->$produto . "</td>";
+                                            echo "<td style=\"border-right:1px solid black;\">" . $row->$quantidade . "</td>";
+                                            echo "<td style=\"border-right:1px solid black;\"><select name='posicao_pegar_$i'> 
+                                                <option></option>
+                                                <option>A1</option>
+                                                <option>A2</option>
+                                                <option>A3</option>
+                                                <option>A4</option>
+                                                <option>B1</option>
+                                                <option>B2</option>
+                                                <option>B3</option>
+                                                <option>B4</option>
+                                                <option>C1</option>
+                                                <option>C2</option>
+                                                <option>C3</option>
+                                                <option>C4</option>
+                                                <option>D1</option>
+                                                <option>D2</option>
+                                                <option>D3</option>
+                                                <option>D4</option>
+                                            </select></td>";
+                                            echo "<td style=\"border-right:1px solid black;\"><input type='number' name='quantidade_enviada_$i' value='0' min='1' max='" . $row->$quantidade . "'></td>";
+                                            echo "</tr>";
+                                        }
+                                    }
                                 }
-                                print "</table>";
-                                print "</div>";
-                                print '<DIV class="buttonEnviar">
-                            <button>Enviar</button>
-                        </DIV>';
+                                echo "</table>";
+                                echo "</div>";
+                                echo '<div class="buttonEnviar"><button type="submit">Enviar</button></div>';
                             } else {
-                                print "<p class='alert alert-danger'>Não encontrou nenhum pedido nas docas.</p>";
+                                echo "<p class='alert alert-danger'>Não encontrou nenhum pedido nas docas.</p>";
                             }
+                            $conn->close();
                             ?>
                         </form>
                     </div>

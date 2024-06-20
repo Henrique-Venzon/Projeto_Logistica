@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                $sql_after = "SELECT * FROM solicitacao WHERE id_turma = '" . $_SESSION['turma'] . "'";
+                $sql_after = "SELECT * FROM solicitacao WHERE id_turma = '" . $_SESSION['turma'] . "' ORDER BY id_pedido ASC";
                 $res = $conn->query($sql_after);
                 $qtd = $res->num_rows;
 
