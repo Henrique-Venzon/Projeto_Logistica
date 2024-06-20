@@ -129,15 +129,15 @@ if (!isset($_SESSION['turma'])) {
                             <div class="colunas1 colunadata coluna1cell">
                                 <div class="numeroPedido">
                                     <label for="num">N° pedido:</label>
-                                    <input id="num" type="number" name="npedido" min="0" required placeholder="Obrigatório">
+                                    <input class="nPedido" id="num" type="number" name="npedido" min="0" required placeholder="Obrigatório">
                                 </div>
                                 <div class="inicio">
                                     <label for="data_pedido">Data do Pedido:</label>
-                                    <input id="data_pedido" type="date" name="data_pedido" required placeholder="Obrigatório">
+                                    <input class="data_pedido" id="data_pedido" type="date" name="data_pedido" required placeholder="Obrigatório">
                                 </div>
                                 <div class="entrega">
                                     <label for="data_entrega">Data de entrega:</label>
-                                    <input id="data_entrega" type="date" name="data_entrega" required placeholder="Obrigatório">
+                                    <input class="data_entrega" id="data_entrega" type="date" name="data_entrega" required placeholder="Obrigatório">
                                 </div>
                             </div>
                             <div class="colunas1">
