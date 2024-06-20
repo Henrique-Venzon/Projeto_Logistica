@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="flex">
                     <div class="divpegar">
-                        <form method='post' action="processamento/selecionar_carga.php">
+                        <form method='post' action="processamento/processosociltacao2.php">
                             <h1 class="pegar">Pegar</h1>
                             <?php
                             $conn = new mysqli($servername, $username, $password, $dbname);
@@ -82,15 +82,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $qtd = $res->num_rows;
 
                             if ($qtd > 0) {
-                                echo "<div class=\"tabela-scroll\">";
-                                echo "<table class='table'>";
+                                echo "<div id=\"tabelaScroll\" class=\"tabela-scroll\">";
+                                echo "<table id='table' class='table'>";
                                 echo "<tr>";
-                                echo "<th>Produto</th>";
-                                echo "<th>Quantidade Solicitada</th>";
-                                echo "<th>Posição</th>";
-                                echo "<th>Quantidade</th>";
+                                echo "<th id='produto' name='id_produto'>Produto</th>";
+                                echo "<th id='quantidadeS' name='quantidadeS'>Quantidade Solicitada</th>";
+                                echo "<th id='posicao' name='posicao'>Posição</th>";
+                                echo "<th id='quantidade' name='quantidade'>Quantidade</th>";
                                 echo "</tr>";
-
+                                
+                                
                                 while ($row = $res->fetch_object()) {
                                     for ($i = 1; $i <= 4; $i++) {
                                         $produto = "produto" . ($i == 1 ? "" : $i);
