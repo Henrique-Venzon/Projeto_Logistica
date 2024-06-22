@@ -37,7 +37,7 @@ document.getElementById("autoDanfe").addEventListener("click", function () {
   document.getElementById("desconto").value = "30.00";
   document.getElementById("outras_despesas").value = "15.00";
   document.getElementById("valor_ipi").value = "50.00";
-  document.getElementById("valor_total_nota").value = "1230.00";
+  document.getElementById("valor_total_nota").value = "3814.00";
   document.getElementById("nome_razao_social_transportador").value =
     "Transportadora ABC";
   document.getElementById("frete_por_conta").value = "Destinatário";
@@ -71,6 +71,22 @@ document.getElementById("autoDanfe").addEventListener("click", function () {
   document.getElementById("valor_total_servicos").value = "200.00";
   document.getElementById("base_calculo_issqn").value = "200.00";
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.getElementById("autoDanfe0").addEventListener("click", function () {
   document.getElementById("danfeForm").reset();
   document.getElementById("numero").value = "123456";

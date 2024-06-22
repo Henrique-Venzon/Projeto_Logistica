@@ -246,7 +246,6 @@
                         var a = getElementById("valor_frete");
                         var a = getElementById("valor_seguro");
                         var a = getElementById("outras_despesas");
-                        var a = getElementById("valor_total_nota");
                         var a = getElementById("valor_ipi");
                         var a = getElementById("valor_ipi");
                         var a = getElementById("valor_ipi");
