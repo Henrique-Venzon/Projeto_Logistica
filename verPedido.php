@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/verPedidos.css">
+    <link rel="stylesheet" href="css/responsividade/verpedidoResponsivo.css">
 </head>
 
 <body>
@@ -70,7 +71,7 @@ if($qtd > 0){
             print "<th>N° Pedido</th>";
             print"<th>Situação</th>";
             print "<th>Excluir Pedido</th>";
-            print "<th>Fechar Pedido</th>";
+            print "<th class=\"fechar\">Fechar Pedido</th>";
             print "<th>Ver Pedido</th>";
             print "</tr>";
     
@@ -88,7 +89,7 @@ if($qtd > 0){
             print "<button class=\"reset\" type='submit'><span>Excluir</span> </button>";
             print "</form>";
             print"</td>"; 
-            print "<td>";
+            print "<td class=\"fechar\">";
             print "<form action='processamento/fechar_atividade.php' method='post'>";
             print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id . "'>";
             print "<button type='submit' class=\"reset\" data-id=\"".$row->id."\"><span>Fechar Pedido</span></button>";

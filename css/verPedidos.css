@@ -112,24 +112,18 @@
 
   }
   .tabela-scroll::-webkit-scrollbar {
-    height: 5px; /* Altura da barra de rolagem */
+    height: 5px; 
     width: 15px;
     border-right: 1px solid black;
-
   }
   
-
   .tabela-scroll::-webkit-scrollbar-track {
-    background-color: #ffffff; /* Cor de fundo da barra de rolagem */
+    background-color: #ffffff; 
   }
   
   .tabela-scroll::-webkit-scrollbar-thumb {
     background-color: #000000;
   }
-
-
-
-
 
 *{
     padding: 0;
@@ -138,11 +132,9 @@
     font-family: 'Platypi';
 }
 
-
 main{
   width: 100%;
   display: flex;
-  
 }
 
 .DivDireita{
@@ -150,8 +142,6 @@ main{
     background-color: #ebebeb;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;  
 }
-
 
