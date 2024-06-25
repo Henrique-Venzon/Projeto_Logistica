@@ -239,7 +239,7 @@
                     <script>
 
                         var a = getElementById("base_calculo_icms");
-                        var a = getElementById("valor_icms");
+                        var a = getElementById("valor_icms");   
                         var a = getElementById("base_calculo_icms_st");
                         var a = getElementById("valor_icms_substituicao");
                         var a = getElementById("total_produtos");
