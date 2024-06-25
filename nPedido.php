@@ -29,6 +29,7 @@ if (!isset($_SESSION['turma'])) {
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/nPedido.css">
+    <link rel="stylesheet" href="css/responsividade/nPedidoResponsivo.css">
 </head>
 
 <body>
