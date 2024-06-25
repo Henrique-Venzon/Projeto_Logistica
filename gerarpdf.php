@@ -236,8 +236,18 @@
                 <input type="number" step="0.01" id="base_calculo_issqn" name="base_calculo_issqn">
             </div>
                 <div class="desconto">
+                    <H1>Valor Total</H1>
+                    <button onclick="desconto()">Valor total</button>
                     <script>
+                      function desconto (){  
+                        var totalProdutos = parseFloat(document.getElementById("total_produtos").value);
+                      var valorFrete = parseFloat(document.getElementById("valor_frete").value);
+                      var valorSeguro = parseFloat(document.getElementById("valor_seguro").value);
+                      var desconto = parseFloat(document.getElementById("desconto").value);
+                      var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value);
+                      var valorIpi = parseFloat(document.getElementById("valor_ipi").value);
 
+<<<<<<< HEAD
                         var a = getElementById("base_calculo_icms");
                         var a = getElementById("valor_icms");   
                         var a = getElementById("base_calculo_icms_st");
@@ -250,8 +260,14 @@
                         var a = getElementById("valor_ipi");
                         var a = getElementById("valor_ipi");
 
+=======
+                      var valorTotalNota = totalProdutos + valorFrete + valorSeguro + outrasDespesas + valorIpi - desconto;
+                        console.log(valorTotalNota);
+                      }
+                        
+>>>>>>> 428784f5a031255bda91a8f87b7d21fe863b6bf
                     </script>
-
+                        <label>
                 </div>
             <div class="button-group">
                 <button type="submit" id="enviar">Enviar</button>
