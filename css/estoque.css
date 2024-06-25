@@ -47,17 +47,19 @@ main{
 }
 .stock{
     width: 100%;
-    height: 80%;
+    height: 85%;
+    align-items: center;
     display: flex;
 }
 .tabelaPesquisa{
+    margin-top: 3%;
     width: 30%;
     margin-left: 5%;
-    height: 65%;
+    height: 100%;
 }
 .descricao{
-    margin-top: 8%;
-    height: 18%;
+    margin-top: 5%;
+    height: 20%;
 }
 .caixa{
     background-color: #f0f0f0;
@@ -71,7 +73,7 @@ main{
 }
 .pesquisa{
     border-radius: 20%;
-    height: 100%;
+    height: 60%;
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
@@ -130,8 +132,6 @@ main{
 }
 
 .tabelaPosicoes{
-    display: flex;
-    align-items: center;
     width: 68%;
     margin-left: 5%;
     margin-right: 5%;
@@ -169,6 +169,7 @@ main{
     padding: 0;
     margin-bottom: 0;   
     vertical-align: middle; 
+    
 }
 .tableScroll{ 
     max-height: 580px;
