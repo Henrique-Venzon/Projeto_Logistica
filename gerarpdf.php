@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="danfe/estilo.css">
     <title>Formulário DANFE</title>
 
 
@@ -263,7 +263,7 @@
         </form>
     </div>
 
-    <script src="autodanfe.js"></script>
+    <script src="danfe/autodanfe.js"></script>
 
 </body>
 

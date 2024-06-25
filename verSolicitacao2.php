@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="flex">
                     <div class="divpegar">
-                        <form method='post' action="processamento/socilt.php">
+                        <form method='post' action="processamento/processosolicitacao2.php">
                             <h1 class="pegar">Pegar</h1>
                             <?php
                             $conn = new mysqli($servername, $username, $password, $dbname);
@@ -85,50 +85,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 echo "<div id=\"tabelaScroll\" class=\"tabela-scroll\">";
                                 echo "<table id='table' class='table'>";
                                 echo "<tr>";
-                                echo "<th id='produto' name='id_produto'>Produto</th>";
-                                echo "<th id='quantidadeS' name='quantidadeS'>Quantidade Solicitada</th>";
-                                echo "<th id='posicao' name='posicao'>Posição</th>";
-                                echo "<th id='quantidade' name='quantidade'>Quantidade</th>";
+                                echo "<th>Produto</th>";
+                                echo "<th>Quantidade Solicitada</th>";
+                                echo "<th>Posição</th>";
+                                echo "<th>Quantidade</th>";
                                 echo "</tr>";
-                                echo"<tr>";
+
                                 while ($row = $res->fetch_object()) {
                                     for ($i = 1; $i <= 4; $i++) {
                                         $produto = "produto" . ($i == 1 ? "" : $i);
                                         $quantidade = "quantidade" . ($i == 1 ? "" : $i);
 
                                         if (!empty($row->$produto) && !empty($row->$quantidade)) {
-                                            
+                                            echo "<tr>";
                                             echo "<td style=\"border-right:1px solid black;\">" . $row->$produto . "</td>";
                                             echo "<td style=\"border-right:1px solid black;\">" . $row->$quantidade . "</td>";
-                                            echo "<input type='hidden' value".$row->$produto."name='id_produto' id='id_produto' required>";
-                                            echo "<input type='hidden' value". $row->   $quantidade. " name='quantidadeS' id='quantidadeS' required>";
-                                            
-                                            echo "<td style=\"border-right:1px solid black;\"><select name='posicao_pegar_$i'>
-                                                <option></option>
-                                                <option>A1</option>
-                                                <option>A2</option>
-                                                <option>A3</option>
-                                                <option>A4</option>
-                                                <option>B1</option>
-                                                <option>B2</option>
-                                                <option>B3</option>
-                                                <option>B4</option>
-                                                <option>C1</option>
-                                                <option>C2</option>
-                                                <option>C3</option>
-                                                <option>C4</option>
-                                                <option>D1</option>
-                                                <option>D2</option>
-                                                <option>D3</option>
-                                                <option>D4</option>
-                                            </select></td>";
-                                            echo "<td style=\"border-right:1px solid black;\"><input type='number' name='quantidade_enviada_$i' value='0' min='1' max='" . $row->$quantidade . "'></td>";
+                                            echo "<input type='hidden' value='" . $row->$produto . "' name='produto[]'>";
+                                            echo "<input type='hidden' value='" . $row->$quantidade . "' name='quantidadeS[]'>";
+                                            echo "<input type='hidden' value='" . $_GET['id_pedido'] . "' name='id_produto[]'>";
+
+                                            echo "<td style=\"border-right:1px solid black;\">
+                                                    <select name='posicao[]'>
+                                                        <option></option>
+                                                        <option>A1</option>
+                                                        <option>A2</option>
+                                                        <option>A3</option>
+                                                        <option>A4</option>
+                                                        <option>B1</option>
+                                                        <option>B2</option>
+                                                        <option>B3</option>
+                                                        <option>B4</option>
+                                                        <option>C1</option>
+                                                        <option>C2</option>
+                                                        <option>C3</option>
+                                                        <option>C4</option>
+                                                        <option>D1</option>
+                                                        <option>D2</option>
+                                                        <option>D3</option>
+                                                        <option>D4</option>
+                                                    </select></td>";
+                                            echo "<td style=\"border-right:1px solid black;\"><input type='number' name='quantidade[]' value='0' min='1' max='" . $row->$quantidade . "'></td>";
                                             echo "</tr>";
                                         }
                                     }
                                 }
-                    
-                                    
+
                                 echo "</table>";
                                 echo "</div>";
                                 echo '<div class="buttonEnviar"><button type="submit">Enviar</button></div>';
@@ -138,6 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $conn->close();
                             ?>
                         </form>
+
                     </div>
                     <div class="divpegar">
                         <h1 class="pegar">Estoque</h1>
