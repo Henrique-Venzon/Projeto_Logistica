@@ -58,19 +58,14 @@ if (!isset($_SESSION['turma'])) {
                         $password = "root";
                         $database = "logistica";
 
-                        // Estabelece a conexão
                         $conexao = new mysqli($hostname, $user, $password, $database);
 
-                        // Verifica se houve um erro na conexão
                         if ($conexao->connect_error) {
                             die("Conexão falhou: " . $conexao->connect_error);
                         }
-
-                        // Consulta SQL para buscar os dados da tabela produto
                         $sql = "SELECT id, nome_produto, preco FROM produto";
                         $resultado = $conexao->query($sql);
 
-                        // Verifica se há resultados e, se houver, preenche a tabela
                         if ($resultado->num_rows > 0) {
                             echo '<span class="close">&times;</span>';
                             echo '<table>';
@@ -83,7 +78,6 @@ if (!isset($_SESSION['turma'])) {
                             echo '</thead>';
                             echo '<tbody>';
 
-                            // Preenche a tabela com os dados
                             while ($row = $resultado->fetch_assoc()) {
                                 echo '<tr>';
                                 echo '<td>' . $row["id"] . '</td>';
@@ -157,7 +151,7 @@ if (!isset($_SESSION['turma'])) {
                                 </div>
                                 <div class="cep">
                                     <label for="cep">CEP:</label>
-                                    <input id="cep" type="text" name="CEP" required placeholder="Obrigatório">
+                                    <input id="cep" type="number" name="CEP" required placeholder="Obrigatório">
                                 </div>
                             </div>
 

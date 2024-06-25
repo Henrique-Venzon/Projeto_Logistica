@@ -5,7 +5,7 @@
     margin-top: 0.8%;
     margin-bottom: 0.8%;
 }
-.text h1{
+.nota{
     color: white;
     text-shadow: 0px 0px 9px #000000;
     font-size: 48px;
@@ -60,19 +60,21 @@
 
   }
   .tabela-scroll::-webkit-scrollbar {
-    height: 5px; /* Altura da barra de rolagem */
+    height: 5px; 
     width: 15px;
     border-right: 1px solid black;
 
   }
   .voltar{
     position: absolute;
-    margin-right: 70%;
+    left: 80%;
     padding: 8px;
+    font-size: 36px;
+    color: #fff;
   }
   .voltar:hover{
-    color: rgb(128, 128, 128);
-    transition: 0.7s;
+    transition: 0.5s ease-in-out;
+    color: red;
   }
   #v{
     cursor: pointer;
@@ -83,10 +85,7 @@
     display: flex;
     justify-content: center;
   }
-  .txt h1{
-    font-size: 58px;
-    color: white;
-  }
+
   .tabela-scroll::-webkit-scrollbar-track {
     background-color: #ffffff; 
   }
