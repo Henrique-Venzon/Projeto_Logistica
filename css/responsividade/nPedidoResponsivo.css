@@ -1,7 +1,5 @@
 @media only screen and (max-width: 600px) {
-    .text h1{
-        font-size: 22px;
-    }
+
     .table th,td{
         font-size: 11px;
     }
@@ -12,7 +10,14 @@
     .table td{
         height: 50px;
     }
-    .txt h1{
-        font-size: 28px;
-    }
+
+    .voltar{
+        font-size: 12px;
+      }
+      .nota{
+        font-size: 20px;
+      }
+      .p{
+        font-size: 26px;
+      }
 }

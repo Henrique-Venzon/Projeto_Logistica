@@ -10,10 +10,8 @@ $username = "root.Att";
 $password = "root";
 $dbname = "logistica";
 
-// Criar conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Checar conexão
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -71,15 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php include 'include/menuLateral.php'; ?>
         <div class="DivDireita">
             <div class="table-inputs">
-                <span class="tooltip-container">
-                    <i class="fa-regular fa-circle-question"></i>
-                    <span class="tooltip">Cor Preta: Não tem o produto pesquisado.<br>
-                        Cor Vermelha: Quantidade insuficiente.<br>
-                        Cor Ciano: Quantidade exata.<br>
-                        Cor Verde: Quantidade a mais.<br>
-
-                    </span>
-                </span>
+                
                 <h1 id="voltar">voltar</h1>
                 <div class="text">
                     <h1>Estoque</h1>
@@ -93,6 +83,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <input class="input2" type="text" name="quantidade" required placeholder="Quantidade">
                                 <button class="buttonPesquisa">Pesquisar</button>
                             </form>
+                        </div>
+                        <div class="descricao">
+                            <div class="caixa">
+                                <p class="preto">Cor Preta: Não tem o produto pesquisado.</p>
+                                <p class="vermelho">Cor Vermelha: Quantidade insuficiente.</p>
+                                <p class="ciano">Cor Ciano: Quantidade exata.</p>
+                                <p class="verde">Cor Verde: Quantidade a mais.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="tabelaPosicoes">

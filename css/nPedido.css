@@ -122,8 +122,11 @@ main{
     background-color: #ebebeb;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;   
 }
-
+.p{
+  color: #fff;
+  font-size: 36px;
+  text-align: center;
+}
 

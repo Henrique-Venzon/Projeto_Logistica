@@ -296,7 +296,7 @@ if (!isset($_SESSION['turma'])) {
                                 echo '<td>' . $cst4 . '</td>'; ?>
                         </tr>
                     </table>
-                    <t>Total: <?php $total = ($quantidade1*$valor1) + ($quantidade2*$valor2) + ($quantidade3*$valor3) + ($quantidade4*$valor4); echo $total . ' Reais '?> </t>
+                    <p class="p">Total: <?php $total = ($quantidade1*$valor1) + ($quantidade2*$valor2) + ($quantidade3*$valor3) + ($quantidade4*$valor4); echo $total . ' Reais '?> </p>
                 </div>
             </div>
         </div>
