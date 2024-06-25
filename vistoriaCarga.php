@@ -167,7 +167,7 @@
                                             <td><span id="valor1"><?php echo $pedido['valor1']; ?></span></td>
                                             <td><button type="button" id="editar1"
                                                     onclick="editarQuantidade(1)">editar</button></td>
-                                            <td><input type="number" name="avariado1" /></td>
+                                            <td><input type="number" name="avariado1" id="avariado1" min="0" max="<?php echo $pedido['quantidade1']; ?>"></td>
                                             <td id="total1"><?php echo $pedido['quantidade1'] * $pedido['valor1']; ?> Reais</td>
                                         </tr>
                                         <?php if (!empty($pedido['produto2'])) { ?>
@@ -182,7 +182,7 @@
                                                 <td><span id="valor2"><?php echo $pedido['valor2']; ?></span></td>
                                                 <td><button type="button" id="editar2"
                                                         onclick="editarQuantidade(2)">editar</button></td>
-                                                <td><input type="number" name="avariado2" /></td>
+                                                <td><input type="number" name="avariado2" id="avariado2" min="0" max="<?php echo $pedido['quantidade2'];?>"/></td>
                                                 <td id="total2"><?php echo $pedido['quantidade2'] * $pedido['valor2']; ?> Reais</td>
                                             </tr>
                                         <?php } ?>
@@ -198,7 +198,7 @@
                                                 <td><span id="valor3"><?php echo $pedido['valor3']; ?></span></td>
                                                 <td><button type="button" id="editar3"
                                                         onclick="editarQuantidade(3)">editar</button></td>
-                                                <td><input type="number" name="avariado3" /></td>
+                                                <td><input type="number" name="avariado3" id="avariado3" min="0" max="<?php echo $pedido['quantidade3'];?>"/></td>
                                                 <td id="total3"><?php echo $pedido['quantidade3'] * $pedido['valor3']; ?> Reais</td>
                                             </tr>
                                         <?php } ?>
@@ -214,7 +214,7 @@
                                                 <td><span id="valor4"><?php echo $pedido['valor4']; ?></span></td>
                                                 <td><button type="button" id="editar4"
                                                         onclick="editarQuantidade(4)">editar</button></td>
-                                                <td><input type="number" name="avariado4" /></td>
+                                                <td><input type="number" name="avariado4" id="avariado4" min="0" max="<?php echo $pedido['quantidade4'];?>"/></td>
                                                 <td id="total4"><?php echo $pedido['quantidade4'] * $pedido['valor4']; ?> Reais</td>
                                             </tr>
                                         <?php } ?>
@@ -241,6 +241,7 @@
             var editButton = document.getElementById('editar' + row);
             var totalCell = document.getElementById('total' + row);
             var valorSpan = document.getElementById('valor' + row);
+            var avariadoInput = document.getElementById('avariado' + row);
 
             if (quantidadeSpan.style.display === 'none') {
                 salvarQuantidade(row);
@@ -257,6 +258,7 @@
             var novaQuantidade = quantidadeInput.value;
             var totalCell = document.getElementById('total' + row);
             var valorSpan = document.getElementById('valor' + row);
+            var avariadoInput = document.getElementById('avariado' + row);
 
             quantidadeSpan.textContent = novaQuantidade;
             quantidadeSpan.style.display = 'inline';
@@ -266,6 +268,9 @@
             // Atualiza o total
             var valor = parseFloat(valorSpan.textContent);
             totalCell.textContent = (novaQuantidade * valor).toFixed(2) + " Reais";
+
+            // Atualiza o max do campo avariado
+            avariadoInput.max = novaQuantidade;
 
             // Fazendo a requisição AJAX
             var xhr = new XMLHttpRequest();
@@ -289,5 +294,3 @@
 </body>
 
 </html>
-
-

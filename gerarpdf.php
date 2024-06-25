@@ -16,8 +16,12 @@
     <div id="container-formulario" class="container">
         <h1>Nota Fiscal</h1>
         <button id="autoDanfe">Preset</button>
+        <button id="autoDanfe1">Preset</button>
+        <button id="autoDanfe2">Preset</button>
+        <button id="autoDanfe3">Preset</button>
+        <button id="autoDanfe4">Preset</button>
+        <button id="autoDanfe5">Preset</button>
         <button id="preset2">Preset 2</button>
-
         <form action="processodanfe.php" method="post" id="danfeForm">
 
             <div class="section">
@@ -133,7 +137,7 @@
                 <label for="valor_ipi">Valor do IPI</label>
                 <input type="number" step="0.01" id="valor_ipi" name="valor_ipi">
 
-                <label for="valor_total_nota">Valor Total da Nota</label>
+                <label for="valor_total_nota">Valor Total da Nota sem desconto</label>
                 <input type="number" step="0.01" id="valor_total_nota" name="valor_total_nota" required>
             </div>
 
@@ -235,6 +239,7 @@
                 <label for="base_calculo_issqn">Base de Cálculo do ISSQN</label>
                 <input type="number" step="0.01" id="base_calculo_issqn" name="base_calculo_issqn">
             </div>
+
                 <div class="desconto">
                     <H1>Valor Total</H1>
                     <button onclick="desconto()">Valor total</button>
@@ -247,7 +252,7 @@
                       var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value);
                       var valorIpi = parseFloat(document.getElementById("valor_ipi").value);
 
-<<<<<<< HEAD
+
                         var a = getElementById("base_calculo_icms");
                         var a = getElementById("valor_icms");   
                         var a = getElementById("base_calculo_icms_st");
@@ -260,15 +265,20 @@
                         var a = getElementById("valor_ipi");
                         var a = getElementById("valor_ipi");
 
-=======
+
                       var valorTotalNota = totalProdutos + valorFrete + valorSeguro + outrasDespesas + valorIpi - desconto;
                         console.log(valorTotalNota);
                       }
                         
->>>>>>> 428784f5a031255bda91a8f87b7d21fe863b6bf
+
                     </script>
                         <label>
                 </div>
+      
+                
+                
+                
+
             <div class="button-group">
                 <button type="submit" id="enviar">Enviar</button>
                 <button type="button" id="clearForm">Apagar e Fazer Nova</button>
@@ -277,6 +287,14 @@
 
             </div>
         </form>
+
+
+                    <div class="desconto">
+                <H1>Valor Final Total</H1>
+                <label>O valor total com desconto é:</label>
+                <button id="caldesco" onclick="desconto()" >Valor total</button>
+                <label id="deconto"></label>
+    </div>
     </div>
 
     <script src="danfe/autodanfe.js"></script>
