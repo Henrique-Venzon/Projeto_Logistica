@@ -540,3 +540,15 @@ document.getElementById("preset2").addEventListener("click", function () {
     2
   );
 });
+
+
+function desconto (){  
+  var totalProdutos = parseFloat(document.getElementById("total_produtos").value);
+var valorFrete = parseFloat(document.getElementById("valor_frete").value);
+var valorSeguro = parseFloat(document.getElementById("valor_seguro").value);
+var desconto = parseFloat(document.getElementById("desconto").value);
+var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value);
+var valorIpi = parseFloat(document.getElementById("valor_ipi").value);
+var valorTotalNota = totalProdutos + valorFrete + valorSeguro + outrasDespesas + valorIpi - desconto;
+  document.getElementById('deconto').innerHTML = valorTotalNota;
+}

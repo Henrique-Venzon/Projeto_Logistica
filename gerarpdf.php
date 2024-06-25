@@ -133,7 +133,7 @@
                 <label for="valor_ipi">Valor do IPI</label>
                 <input type="number" step="0.01" id="valor_ipi" name="valor_ipi">
 
-                <label for="valor_total_nota">Valor Total da Nota</label>
+                <label for="valor_total_nota">Valor Total da Nota sem desconto</label>
                 <input type="number" step="0.01" id="valor_total_nota" name="valor_total_nota" required>
             </div>
 
@@ -235,25 +235,11 @@
                 <label for="base_calculo_issqn">Base de Cálculo do ISSQN</label>
                 <input type="number" step="0.01" id="base_calculo_issqn" name="base_calculo_issqn">
             </div>
-                <div class="desconto">
-                    <H1>Valor Total</H1>
-                    <button onclick="desconto()">Valor total</button>
-                    <script>
-                      function desconto (){  
-                        var totalProdutos = parseFloat(document.getElementById("total_produtos").value);
-                      var valorFrete = parseFloat(document.getElementById("valor_frete").value);
-                      var valorSeguro = parseFloat(document.getElementById("valor_seguro").value);
-                      var desconto = parseFloat(document.getElementById("desconto").value);
-                      var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value);
-                      var valorIpi = parseFloat(document.getElementById("valor_ipi").value);
-
-                      var valorTotalNota = totalProdutos + valorFrete + valorSeguro + outrasDespesas + valorIpi - desconto;
-                        console.log(valorTotalNota);
-                      }
-                        
-                    </script>
-                        <label>
-                </div>
+                
+                
+                
+                
+                
             <div class="button-group">
                 <button type="submit" id="enviar">Enviar</button>
                 <button type="button" id="clearForm">Apagar e Fazer Nova</button>
@@ -262,6 +248,13 @@
 
             </div>
         </form>
+
+
+                    <div class="desconto">
+                <H1>Valor Total</H1>
+                <button id="caldesco" onclick="desconto()" >Valor total</button>
+                <label id="deconto"></label>
+    </div>
     </div>
 
     <script src="danfe/autodanfe.js"></script>
