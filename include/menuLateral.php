@@ -218,6 +218,7 @@
         }
         .sidebar-logo h1{
         font-size: 15px;
+        margin-left: -10%;
     }
 
     }

@@ -75,12 +75,13 @@
     transform: translateX(-50%);
 }
     .logo h1{
+    margin-top: 3%;
     margin-left: 5.3%;
-    font-size: 90%;
+    font-size: 100%;
 
 }
 .logo img{
-    margin-left: 7.7%;
+    margin-left: 18%;
     height: 40px;
     width: 42px;
 }

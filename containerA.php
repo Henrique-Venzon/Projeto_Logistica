@@ -29,6 +29,7 @@ $turma = $_SESSION['turma']
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/containerA.css">
+    <link rel="stylesheet" href="css/responsividade/containerResponsivo.css">
 </head>
 
 <body>
