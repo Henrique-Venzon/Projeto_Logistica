@@ -50,57 +50,59 @@ if (!isset($_SESSION['turma'])) {
                 <h1 id="verSku">SKUS</h1>
 
                 <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <?php
+  <div class="modal-content">
+    <?php
+    $hostname = "127.0.0.1";
+    $user = "root.Att";
+    $password = "root";
+    $database = "logistica";
 
-                        $hostname = "127.0.0.1";
-                        $user = "root.Att";
-                        $password = "root";
-                        $database = "logistica";
+    $conexao = new mysqli($hostname, $user, $password, $database);
 
-                        $conexao = new mysqli($hostname, $user, $password, $database);
+    if ($conexao->connect_error) {
+        die("Conexão falhou: " . $conexao->connect_error);
+    }
 
-                        if ($conexao->connect_error) {
-                            die("Conexão falhou: " . $conexao->connect_error);
-                        }
-                        $sql = "SELECT id, nome_produto, preco FROM produto";
-                        $resultado = $conexao->query($sql);
+    $sql = "SELECT id, nome_produto, preco FROM produto";
+    $resultado = $conexao->query($sql);
 
-                        if ($resultado->num_rows > 0) {
-                            echo '<span class="close">&times;</span>';
-                            echo '<table>';
-                            echo '<thead>';
-                            echo '<tr>';
-                            echo '<th>ID</th>';
-                            echo '<th>Produto</th>';
-                            echo '<th>Preço</th>';
-                            echo '</tr>';
-                            echo '</thead>';
-                            echo '<tbody>';
+    if ($resultado->num_rows > 0) {
+        echo '<span class="close">&times;</span>';
+        echo '<div class="scrollSku">'; // Aplique a classe scrollSku aqui
+        echo '<table>';
+        echo '<thead>';
+        echo '<tr>';
+        echo '<th>ID</th>';
+        echo '<th>Produto</th>';
+        echo '<th>Preço</th>';
+        echo '</tr>';
+        echo '</thead>';
+        echo '<tbody>';
 
-                            while ($row = $resultado->fetch_assoc()) {
-                                echo '<tr>';
-                                echo '<td>' . $row["id"] . '</td>';
-                                echo '<td>' . $row["nome_produto"] . '</td>';
-                                echo '<td>' . $row["preco"] . '</td>';
-                                echo '</tr>';
-                            }
+        while ($row = $resultado->fetch_assoc()) {
+            echo '<tr>';
+            echo '<td>' . $row["id"] . '</td>';
+            echo '<td>' . $row["nome_produto"] . '</td>';
+            echo '<td>' . $row["preco"] . '</td>';
+            echo '</tr>';
+        }
 
-                            echo '</tbody>';
-                            echo '</table>';
-                        } else {
-                            echo '<div class="flexresult">';
-                            echo '<span class="close close1">&times;</span>';
-                            echo "<h1 class=\"resultado\">Nenhuma sku cadastrada</h1>";
-                            echo '</div>';
-                        }
+        echo '</tbody>';
+        echo '</table>';
+        echo '</div>'; // Feche a div scrollSku
+    } else {
+        echo '<div class="flexresult">';
+        echo '<span class="close close1">&times;</span>';
+        echo '<h1 class="resultado">Nenhuma sku cadastrada</h1>';
+        echo '</div>';
+    }
 
-                        // Fecha a conexão
-                        $conexao->close();
+    // Fecha a conexão
+    $conexao->close();
+    ?>
+  </div>
+</div>
 
-                        ?>
-                    </div>
-                </div>
 
                 <div class="txtCont">
                     <h1>Criar pedido</h1>
