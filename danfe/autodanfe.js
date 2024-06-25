@@ -72,153 +72,78 @@ document.getElementById("autoDanfe").addEventListener("click", function () {
   document.getElementById("base_calculo_issqn").value = "200.00";
 });
 
-
-document.getElementById("autoDanfe0").addEventListener("click", function () {
-  document.getElementById("danfeForm").reset();
-  document.getElementById("numero").value = "123456";
-  document.getElementById("serie").value = "1";
-  document.getElementById("entrada_saida").value = "Saída";
-  document.getElementById("chave_acesso").value =
-    "00112233445566778899001122334";
-  document.getElementById("informacao_interna").value =
-    "Informação interna ABC";
-  document.getElementById("nome_razao_social").value = "Empresa ABC";
-  document.getElementById("sede").value = "Avenida XYZ, 123";
-  document.getElementById("telefone").value = "(11) 91234-5678";
-  document.getElementById("cep").value = "87654-321";
-  document.getElementById("protocolo_autorizacao").value = "123456";
-  document.getElementById("cnpj").value = "98.765.432/0001-98";
-  document.getElementById("inscricao_estadual_subs_tributaria").value =
-    "1234567890";
-  document.getElementById("natureza_operacao").value = "Venda";
-  document.getElementById("inscricao_estadual").value = "1234567890";
-  document.getElementById("nome_razao_social_remetente").value = "Empresa XYZ";
-  document.getElementById("cnpj_cpf_remetente").value = "12.345.678/0001-99";
-  document.getElementById("cep_remetente").value = "12345-678";
-  document.getElementById("telefone_remetente").value = "(21) 99876-5432";
-  document.getElementById("inscricao_estadual_remetente").value = "987654321";
-  document.getElementById("data_emissao").value = "2024-06-20";
-  document.getElementById("data_entrada_saida").value = "2024-06-21";
-  document.getElementById("hora_saida").value = "14:00";
-  document.getElementById("fatura_duplicata").value = "Fatura 5678";
-  document.getElementById("forma_pagamento").value = "Cartão de Crédito";
-  document.getElementById("base_calculo_icms").value = "5000.00";
-  document.getElementById("valor_icms").value = "450.00";
-  document.getElementById("base_calculo_icms_st").value = "4000.00";
-  document.getElementById("valor_icms_substituicao").value = "600.00";
-  document.getElementById("total_produtos").value = "150000.00";
-  document.getElementById("valor_frete").value = "2000.00";
-  document.getElementById("valor_seguro").value = "250000.00";
-  document.getElementById("desconto").value = "100.00";
-  document.getElementById("outras_despesas").value = "2000.00";
-  document.getElementById("valor_ipi").value = "700.00";
-  document.getElementById("valor_total_nota").value = "258550.00";
-  document.getElementById("nome_razao_social_transportador").value =
-    "Transportadora XYZ";
-  document.getElementById("frete_por_conta").value = "Remetente";
-  document.getElementById("codigo_antt").value = "7654321";
-  document.getElementById("placa_veiculo").value = "XYZ-9876";
-  document.getElementById("cnpj_cpf_transportador").value =
-    "98.765.432/0001-98";
-  document.getElementById("inscricao_estadual_transportador").value =
-    "9876543210";
-  document.getElementById("quantidade").value = "500";
-  document.getElementById("especie").value = "Palete";
-  document.getElementById("marca").value = "Marca XYZ";
-  document.getElementById("numeracao").value = "123456";
-  document.getElementById("peso_bruto").value = "1.000";
-  document.getElementById("peso_liquido").value = "1.000";
-  document.getElementById("cod_prod").value = "022";
-  document.getElementById("descricao_prod").value = "Processadores XYZ";
-  document.getElementById("ncm_sh").value = "5678.12.34";
-  document.getElementById("cst").value = "202";
-  document.getElementById("cfop").value = "5102";
-  document.getElementById("unid").value = "PC";
-  document.getElementById("quantidade_prod").value = "500.00";
-  document.getElementById("valor_unitario").value = "300.00";
-  document.getElementById("valor_total_prod").value = "150000.00";
-  document.getElementById("base_calculo_icms_prod").value = "3000.00";
-  document.getElementById("valor_icms_prod").value = "540.00";
-  document.getElementById("valor_ipi_prod").value = "100.00";
-  document.getElementById("icms").value = "18.00";
-  document.getElementById("ipi").value = "6.67";
-  document.getElementById("inscricao_municipal").value = "9876543210";
-  document.getElementById("valor_total_servicos").value = "300.00";
-  document.getElementById("base_calculo_issqn").value = "300.00";
-});
-
 document.getElementById("autoDanfe1").addEventListener("click", function () {
   document.getElementById("danfeForm").reset();
-  document.getElementById("numero").value = "987654";
-  document.getElementById("serie").value = "3";
+  document.getElementById("numero").value = "654321";
+  document.getElementById("serie").value = "2";
   document.getElementById("entrada_saida").value = "Entrada";
   document.getElementById("chave_acesso").value =
-    "44556677889900112233445566778";
+    "998877665544332211009988776655";
   document.getElementById("informacao_interna").value =
     "Informação interna DEF";
   document.getElementById("nome_razao_social").value = "Empresa DEF";
   document.getElementById("sede").value = "Rua DEF, 456";
-  document.getElementById("telefone").value = "(31) 99876-5432";
-  document.getElementById("cep").value = "23456-789";
-  document.getElementById("protocolo_autorizacao").value = "789456";
-  document.getElementById("cnpj").value = "32.165.498/0001-87";
+  document.getElementById("telefone").value = "(21) 91234-5678";
+  document.getElementById("cep").value = "12345-000";
+  document.getElementById("protocolo_autorizacao").value = "654321";
+  document.getElementById("cnpj").value = "87.654.321/0001-87";
   document.getElementById("inscricao_estadual_subs_tributaria").value =
-    "8765432109";
-  document.getElementById("natureza_operacao").value = "Devolução";
-  document.getElementById("inscricao_estadual").value = "8765432109";
+    "0987654321";
+  document.getElementById("natureza_operacao").value = "Compra";
+  document.getElementById("inscricao_estadual").value = "0987654321";
   document.getElementById("nome_razao_social_remetente").value = "Empresa DEF";
-  document.getElementById("cnpj_cpf_remetente").value = "11.223.344/0001-00";
-  document.getElementById("cep_remetente").value = "67890-123";
-  document.getElementById("telefone_remetente").value = "(41) 98765-4321";
-  document.getElementById("inscricao_estadual_remetente").value = "123456789";
-  document.getElementById("data_emissao").value = "2024-08-01";
-  document.getElementById("data_entrada_saida").value = "2024-08-02";
-  document.getElementById("hora_saida").value = "15:00";
-  document.getElementById("fatura_duplicata").value = "Fatura 7890";
-  document.getElementById("forma_pagamento").value = "Boleto";
+  document.getElementById("cnpj_cpf_remetente").value = "98.765.432/0001-87";
+  document.getElementById("cep_remetente").value = "87654-321";
+  document.getElementById("telefone_remetente").value = "(31) 99876-5432";
+  document.getElementById("inscricao_estadual_remetente").value = "876543210";
+  document.getElementById("data_emissao").value = "2024-07-01";
+  document.getElementById("data_entrada_saida").value = "2024-07-02";
+  document.getElementById("hora_saida").value = "10:00";
+  document.getElementById("fatura_duplicata").value = "Fatura 1234";
+  document.getElementById("forma_pagamento").value = "Dinheiro";
   document.getElementById("base_calculo_icms").value = "6000.00";
   document.getElementById("valor_icms").value = "540.00";
   document.getElementById("base_calculo_icms_st").value = "5000.00";
   document.getElementById("valor_icms_substituicao").value = "750.00";
-  document.getElementById("total_produtos").value = "200000.00";
-  document.getElementById("valor_frete").value = "2500.00";
-  document.getElementById("valor_seguro").value = "300000.00";
-  document.getElementById("desconto").value = "200.00";
+  document.getElementById("total_produtos").value = "180000.00";
+  document.getElementById("valor_frete").value = "3500.00";
+  document.getElementById("valor_seguro").value = "280000.00";
+  document.getElementById("desconto").value = "5.00";
   document.getElementById("outras_despesas").value = "2500.00";
-  document.getElementById("valor_ipi").value = "800.00";
-  document.getElementById("valor_total_nota").value = "308540.00";
+  document.getElementById("valor_ipi").value = "900.00";
+  document.getElementById("valor_total_nota").value = "466900.00";
   document.getElementById("nome_razao_social_transportador").value =
     "Transportadora DEF";
-  document.getElementById("frete_por_conta").value = "Remetente";
+  document.getElementById("frete_por_conta").value = "Destinatário";
   document.getElementById("codigo_antt").value = "8765432";
-  document.getElementById("placa_veiculo").value = "DEF-5678";
+  document.getElementById("placa_veiculo").value = "DEF-9876";
   document.getElementById("cnpj_cpf_transportador").value =
-    "32.165.498/0001-87";
+    "87.654.321/0001-87";
   document.getElementById("inscricao_estadual_transportador").value =
-    "8765432109";
-  document.getElementById("quantidade").value = "1500";
-  document.getElementById("especie").value = "Pacote";
+    "8765432100";
+  document.getElementById("quantidade").value = "700";
+  document.getElementById("especie").value = "Caixa";
   document.getElementById("marca").value = "Marca DEF";
-  document.getElementById("numeracao").value = "789456";
-  document.getElementById("peso_bruto").value = "2.000";
-  document.getElementById("peso_liquido").value = "2.000";
+  document.getElementById("numeracao").value = "654321";
+  document.getElementById("peso_bruto").value = "1.600";
+  document.getElementById("peso_liquido").value = "1.500";
   document.getElementById("cod_prod").value = "033";
-  document.getElementById("descricao_prod").value = "Memórias RAM DEF 16GB";
-  document.getElementById("ncm_sh").value = "6789.45.67";
+  document.getElementById("descricao_prod").value = "Processadores DEF";
+  document.getElementById("ncm_sh").value = "6789.12.34";
   document.getElementById("cst").value = "303";
-  document.getElementById("cfop").value = "5202";
-  document.getElementById("unid").value = "UN";
-  document.getElementById("quantidade_prod").value = "1500.00";
-  document.getElementById("valor_unitario").value = "200.00";
-  document.getElementById("valor_total_prod").value = "300000.00";
-  document.getElementById("base_calculo_icms_prod").value = "6000.00";
-  document.getElementById("valor_icms_prod").value = "1080.00";
+  document.getElementById("cfop").value = "6102";
+  document.getElementById("unid").value = "PC";
+  document.getElementById("quantidade_prod").value = "700.00";
+  document.getElementById("valor_unitario").value = "400.00";
+  document.getElementById("valor_total_prod").value = "280000.00";
+  document.getElementById("base_calculo_icms_prod").value = "4000.00";
+  document.getElementById("valor_icms_prod").value = "720.00";
   document.getElementById("valor_ipi_prod").value = "150.00";
   document.getElementById("icms").value = "18.00";
-  document.getElementById("ipi").value = "7.50";
-  document.getElementById("inscricao_municipal").value = "8765432109";
-  document.getElementById("valor_total_servicos").value = "400.00";
-  document.getElementById("base_calculo_issqn").value = "400.00";
+  document.getElementById("ipi").value = "5.00";
+  document.getElementById("inscricao_municipal").value = "8765432100";
+  document.getElementById("valor_total_servicos").value = "500.00";
+  document.getElementById("base_calculo_issqn").value = "500.00";
 });
 
 document.getElementById("autoDanfe2").addEventListener("click", function () {
@@ -257,10 +182,10 @@ document.getElementById("autoDanfe2").addEventListener("click", function () {
   document.getElementById("total_produtos").value = "250000.00";
   document.getElementById("valor_frete").value = "3000.00";
   document.getElementById("valor_seguro").value = "350000.00";
-  document.getElementById("desconto").value = "300.00";
+  document.getElementById("desconto").value = "10.00";
   document.getElementById("outras_despesas").value = "3000.00";
   document.getElementById("valor_ipi").value = "900.00";
-  document.getElementById("valor_total_nota").value = "408600.00";
+  document.getElementById("valor_total_nota").value = "606900.00";
   document.getElementById("nome_razao_social_transportador").value =
     "Transportadora GHI";
   document.getElementById("frete_por_conta").value = "Destinatário";
@@ -331,10 +256,10 @@ document.getElementById("autoDanfe3").addEventListener("click", function () {
   document.getElementById("total_produtos").value = "300000.00";
   document.getElementById("valor_frete").value = "3500.00";
   document.getElementById("valor_seguro").value = "400000.00";
-  document.getElementById("desconto").value = "40.00";
+  document.getElementById("desconto").value = "3.00";
   document.getElementById("outras_despesas").value = "3500.00";
   document.getElementById("valor_ipi").value = "1000.00";
-  document.getElementById("valor_total_nota").value = "508600.00";
+  document.getElementById("valor_total_nota").value = "707000.00";
   document.getElementById("nome_razao_social_transportador").value =
     "Transportadora JKL";
   document.getElementById("frete_por_conta").value = "Destinatário";
@@ -368,6 +293,155 @@ document.getElementById("autoDanfe3").addEventListener("click", function () {
   document.getElementById("valor_total_servicos").value = "600.00";
   document.getElementById("base_calculo_issqn").value = "600.00";
 });
+document.getElementById("autoDanfe4").addEventListener("click", function () {
+  document.getElementById("danfeForm").reset();
+  document.getElementById("numero").value = "654321";
+  document.getElementById("serie").value = "2";
+  document.getElementById("entrada_saida").value = "Entrada";
+  document.getElementById("chave_acesso").value =
+    "998877665544332211009988776655";
+  document.getElementById("informacao_interna").value =
+    "Informação interna DEF";
+  document.getElementById("nome_razao_social").value = "Empresa DEF";
+  document.getElementById("sede").value = "Rua DEF, 456";
+  document.getElementById("telefone").value = "(21) 91234-5678";
+  document.getElementById("cep").value = "12345-000";
+  document.getElementById("protocolo_autorizacao").value = "654321";
+  document.getElementById("cnpj").value = "87.654.321/0001-87";
+  document.getElementById("inscricao_estadual_subs_tributaria").value =
+    "0987654321";
+  document.getElementById("natureza_operacao").value = "Compra";
+  document.getElementById("inscricao_estadual").value = "0987654321";
+  document.getElementById("nome_razao_social_remetente").value = "Empresa DEF";
+  document.getElementById("cnpj_cpf_remetente").value = "98.765.432/0001-87";
+  document.getElementById("cep_remetente").value = "87654-321";
+  document.getElementById("telefone_remetente").value = "(31) 99876-5432";
+  document.getElementById("inscricao_estadual_remetente").value = "876543210";
+  document.getElementById("data_emissao").value = "2024-07-01";
+  document.getElementById("data_entrada_saida").value = "2024-07-02";
+  document.getElementById("hora_saida").value = "10:00";
+  document.getElementById("fatura_duplicata").value = "Fatura 1234";
+  document.getElementById("forma_pagamento").value = "Dinheiro";
+  document.getElementById("base_calculo_icms").value = "6000.00";
+  document.getElementById("valor_icms").value = "540.00";
+  document.getElementById("base_calculo_icms_st").value = "5000.00";
+  document.getElementById("valor_icms_substituicao").value = "750.00";
+  document.getElementById("total_produtos").value = "200000.00";
+  document.getElementById("valor_frete").value = "4000.00";
+  document.getElementById("valor_seguro").value = "300000.00";
+  document.getElementById("desconto").value = "23.00";
+  document.getElementById("outras_despesas").value = "3500.00";
+  document.getElementById("valor_ipi").value = "1000.00";
+  document.getElementById("valor_total_nota").value = "511500.00";
+  document.getElementById("nome_razao_social_transportador").value =
+    "Transportadora DEF";
+  document.getElementById("frete_por_conta").value = "Destinatário";
+  document.getElementById("codigo_antt").value = "8765432";
+  document.getElementById("placa_veiculo").value = "DEF-9876";
+  document.getElementById("cnpj_cpf_transportador").value =
+    "87.654.321/0001-87";
+  document.getElementById("inscricao_estadual_transportador").value =
+    "8765432100";
+  document.getElementById("quantidade").value = "800";
+  document.getElementById("especie").value = "Caixa";
+  document.getElementById("marca").value = "Marca DEF";
+  document.getElementById("numeracao").value = "654321";
+  document.getElementById("peso_bruto").value = "2.000";
+  document.getElementById("peso_liquido").value = "1.800";
+  document.getElementById("cod_prod").value = "044";
+  document.getElementById("descricao_prod").value = "Processadores DEF";
+  document.getElementById("ncm_sh").value = "7890.12.34";
+  document.getElementById("cst").value = "404";
+  document.getElementById("cfop").value = "7102";
+  document.getElementById("unid").value = "PC";
+  document.getElementById("quantidade_prod").value = "800.00";
+  document.getElementById("valor_unitario").value = "400.00";
+  document.getElementById("valor_total_prod").value = "320000.00";
+  document.getElementById("base_calculo_icms_prod").value = "4000.00";
+  document.getElementById("valor_icms_prod").value = "720.00";
+  document.getElementById("valor_ipi_prod").value = "150.00";
+  document.getElementById("icms").value = "18.00";
+  document.getElementById("ipi").value = "5.00";
+  document.getElementById("inscricao_municipal").value = "8765432100";
+  document.getElementById("valor_total_servicos").value = "600.00";
+  document.getElementById("base_calculo_issqn").value = "600.00";
+});
+
+
+document.getElementById("autoDanfe5").addEventListener("click", function () {
+  document.getElementById("danfeForm").reset();
+  document.getElementById("numero").value = "987654";
+  document.getElementById("serie").value = "3";
+  document.getElementById("entrada_saida").value = "Saída";
+  document.getElementById("chave_acesso").value =
+    "112233445566778899001122334455";
+  document.getElementById("informacao_interna").value =
+    "Informação interna GHI";
+  document.getElementById("nome_razao_social").value = "Empresa GHI";
+  document.getElementById("sede").value = "Av. GHI, 789";
+  document.getElementById("telefone").value = "(41) 98765-4321";
+  document.getElementById("cep").value = "54321-000";
+  document.getElementById("protocolo_autorizacao").value = "987654";
+  document.getElementById("cnpj").value = "76.543.210/0001-76";
+  document.getElementById("inscricao_estadual_subs_tributaria").value =
+    "6543210987";
+  document.getElementById("natureza_operacao").value = "Venda";
+  document.getElementById("inscricao_estadual").value = "6543210987";
+  document.getElementById("nome_razao_social_remetente").value = "Empresa GHI";
+  document.getElementById("cnpj_cpf_remetente").value = "76.543.210/0001-76";
+  document.getElementById("cep_remetente").value = "54321-000";
+  document.getElementById("telefone_remetente").value = "(41) 99876-5432";
+  document.getElementById("inscricao_estadual_remetente").value = "7654321098";
+  document.getElementById("data_emissao").value = "2024-07-10";
+  document.getElementById("data_entrada_saida").value = "2024-07-10";
+  document.getElementById("hora_saida").value = "08:30";
+  document.getElementById("fatura_duplicata").value = "Fatura 9876";
+  document.getElementById("forma_pagamento").value = "Boleto Bancário";
+  document.getElementById("base_calculo_icms").value = "7500.00";
+  document.getElementById("valor_icms").value = "675.00";
+  document.getElementById("base_calculo_icms_st").value = "6000.00";
+  document.getElementById("valor_icms_substituicao").value = "900.00";
+  document.getElementById("total_produtos").value = "180000.00";
+  document.getElementById("valor_frete").value = "5000.00";
+  document.getElementById("valor_seguro").value = "350000.00";
+  document.getElementById("desconto").value = "17.00";
+  document.getElementById("outras_despesas").value = "4000.00";
+  document.getElementById("valor_ipi").value = "1200.00";
+  document.getElementById("valor_total_nota").value = "554200.00";
+  document.getElementById("nome_razao_social_transportador").value =
+    "Transportadora GHI";
+  document.getElementById("frete_por_conta").value = "Destinatário";
+  document.getElementById("codigo_antt").value = "7654321";
+  document.getElementById("placa_veiculo").value = "GHI-5432";
+  document.getElementById("cnpj_cpf_transportador").value =
+    "76.543.210/0001-76";
+  document.getElementById("inscricao_estadual_transportador").value =
+    "7654321098";
+  document.getElementById("quantidade").value = "700";
+  document.getElementById("especie").value = "Pallet";
+  document.getElementById("marca").value = "Marca GHI";
+  document.getElementById("numeracao").value = "987654";
+  document.getElementById("peso_bruto").value = "2.500";
+  document.getElementById("peso_liquido").value = "2.200";
+  document.getElementById("cod_prod").value = "055";
+  document.getElementById("descricao_prod").value = "Processadores GHI";
+  document.getElementById("ncm_sh").value = "8901.23.45";
+  document.getElementById("cst").value = "505";
+  document.getElementById("cfop").value = "7102";
+  document.getElementById("unid").value = "UN";
+  document.getElementById("quantidade_prod").value = "700.00";
+  document.getElementById("valor_unitario").value = "400.00";
+  document.getElementById("valor_total_prod").value = "280000.00";
+  document.getElementById("base_calculo_icms_prod").value = "4500.00";
+  document.getElementById("valor_icms_prod").value = "810.00";
+  document.getElementById("valor_ipi_prod").value = "180.00";
+  document.getElementById("icms").value = "18.00";
+  document.getElementById("ipi").value = "8.00";
+  document.getElementById("inscricao_municipal").value = "7654321098";
+  document.getElementById("valor_total_servicos").value = "800.00";
+  document.getElementById("base_calculo_issqn").value = "800.00";
+});
+
 
 
 document.getElementById("clearForm").addEventListener("click", function () {
