@@ -263,7 +263,7 @@
         </form>
     </div>
 
-    <script src="autodanfe.js"></script>
+    <script src="danfe/autodanfe.js"></script>
 
 </body>
 
