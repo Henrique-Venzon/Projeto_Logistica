@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $sql = "SELECT d.id_carga, d.id_doca, v.quantidade1, v.quantidade2, v.quantidade3, v.quantidade4 
                         FROM docas d
                         JOIN vistoriado v ON d.id_carga = v.id
-                        WHERE v.turma_id = '$turma_id'"; // Filtra pela turma_id
+                        WHERE v.turma_id = '$turma_id'"; 
 
                 $res = $conn->query($sql);
 
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     print "</tr>";
 
                     while ($row = $res->fetch_object()) {
-                        // Verifica se as propriedades existem e se pelo menos uma das quantidades é maior que zero
+
                         if (
                             (isset($row->quantidade1) && $row->quantidade1 > 0) ||
                             (isset($row->quantidade2) && $row->quantidade2 > 0) ||
