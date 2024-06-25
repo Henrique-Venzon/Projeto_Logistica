@@ -27,7 +27,7 @@ document.getElementById("autoDanfe").addEventListener("click", function () {
   document.getElementById("hora_saida").value = "12:00";
   document.getElementById("fatura_duplicata").value = "Fatura 123";
   document.getElementById("forma_pagamento").value = "Boleto";
-  document.getElementById("base_calculo_icms").value = "1000.00";
+  document.getElementById("base_calculo_icms").value = "17.00";
   document.getElementById("valor_icms").value = "180.00";
   document.getElementById("base_calculo_icms_st").value = "1200.00";
   document.getElementById("valor_icms_substituicao").value = "216.00";
@@ -37,7 +37,7 @@ document.getElementById("autoDanfe").addEventListener("click", function () {
   document.getElementById("desconto").value = "30.00";
   document.getElementById("outras_despesas").value = "15.00";
   document.getElementById("valor_ipi").value = "50.00";
-  document.getElementById("valor_total_nota").value = "3814.00";
+  document.getElementById("valor_total_nota").value = "1135.00";
   document.getElementById("nome_razao_social_transportador").value =
     "Transportadora ABC";
   document.getElementById("frete_por_conta").value = "Destinatário";
@@ -550,5 +550,9 @@ var desconto = parseFloat(document.getElementById("desconto").value);
 var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value);
 var valorIpi = parseFloat(document.getElementById("valor_ipi").value);
 var valorTotalNota = totalProdutos + valorFrete + valorSeguro + outrasDespesas + valorIpi - desconto;
-  document.getElementById('deconto').innerHTML = valorTotalNota;
+var descot= valorTotalNota * (desconto/100);
+
+var totalliquido= valorTotalNota - descot;
+
+  document.getElementById('deconto').innerHTML = totalliquido;
 }

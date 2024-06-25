@@ -251,7 +251,8 @@
 
 
                     <div class="desconto">
-                <H1>Valor Total</H1>
+                <H1>Valor Final Total</H1>
+                <label>O valor total com desconto é:</label>
                 <button id="caldesco" onclick="desconto()" >Valor total</button>
                 <label id="deconto"></label>
     </div>
