@@ -73,20 +73,6 @@ document.getElementById("autoDanfe").addEventListener("click", function () {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.getElementById("autoDanfe0").addEventListener("click", function () {
   document.getElementById("danfeForm").reset();
   document.getElementById("numero").value = "123456";
