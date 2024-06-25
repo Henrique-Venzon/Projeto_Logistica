@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="utf-8">
     <title>
         <?php
-        $tituloPag = 'Ver Solicitação';
+        $tituloPag = 'Verificar Solicitação';
         echo "$tituloPag";
         ?>
     </title>

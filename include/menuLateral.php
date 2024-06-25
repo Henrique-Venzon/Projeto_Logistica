@@ -104,7 +104,7 @@
         top: 0;
         left: 100px;
         padding: 0;
-        min-width: 11rem;
+        min-width: 13rem;
         display: none;
     }
 
@@ -270,7 +270,7 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
             <div class="sidebar-logo">
-                <h1 class="sidebar-text titulo" style="text-shadow: 0px 0px 4px #002753 ;color:white;text-wrap:nowrap;">
+                <h1 class="sidebar-text titulo" style="text-shadow: 0px 0px 4px #002753 ;color:white;text-wrap:wrap;">
                     <?php
                     print $tituloPag;
                     ?>
@@ -366,8 +366,7 @@
                                 class="sidebar-link">Criar solicitação</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="verSolicitacao.php" style="margin-top: -1.4px;" class="sidebar-link">Ver
-                                solicitação</a>
+                            <a href="verSolicitacao.php" style="margin-top: -1.4px;" class="sidebar-link">Verificar solicitação</a>
                         </li>
                     </ul>
                 </li>

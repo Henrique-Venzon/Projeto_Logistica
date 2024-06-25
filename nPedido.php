@@ -29,6 +29,7 @@ if (!isset($_SESSION['turma'])) {
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/nPedido.css">
+    <link rel="stylesheet" href="css/responsividade/nPedidoResponsivo.css">
 </head>
 
 <body>
@@ -103,7 +104,8 @@ if (!isset($_SESSION['turma'])) {
         <div class="DivDireita">
             <div class="table-inputs">
                 <div class="txt">
-                    <h1>Nota Fiscal Do Pedido</h1>
+                    <h1 class="nota">Nota Fiscal Do Pedido</h1>
+                    <h1 id="v" class="voltar">Voltar</h1>
                 </div>
                 <div class="tabela-scroll">
                     <Div class="nomet">
@@ -294,7 +296,7 @@ if (!isset($_SESSION['turma'])) {
                                 echo '<td>' . $cst4 . '</td>'; ?>
                         </tr>
                     </table>
-                    <t>Total: <?php $total = ($quantidade1*$valor1) + ($quantidade2*$valor2) + ($quantidade3*$valor3) + ($quantidade4*$valor4); echo $total . ' Reais '?> </t>
+                    <p class="p">Total: <?php $total = ($quantidade1*$valor1) + ($quantidade2*$valor2) + ($quantidade3*$valor3) + ($quantidade4*$valor4); echo $total . ' Reais '?> </p>
                 </div>
             </div>
         </div>

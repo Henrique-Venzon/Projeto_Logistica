@@ -17,7 +17,7 @@ if (!isset($_SESSION['turma'])) {
 
     <meta charset="utf-8">
     <title><?php
-    $tituloPag = 'Container';
+    $tituloPag = 'Criar Pedido';
     echo "$tituloPag";
     ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -50,63 +50,59 @@ if (!isset($_SESSION['turma'])) {
                 <h1 id="verSku">SKUS</h1>
 
                 <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <?php
+  <div class="modal-content">
+    <?php
+    $hostname = "127.0.0.1";
+    $user = "root.Att";
+    $password = "root";
+    $database = "logistica";
 
-                        $hostname = "127.0.0.1";
-                        $user = "root.Att";
-                        $password = "root";
-                        $database = "logistica";
+    $conexao = new mysqli($hostname, $user, $password, $database);
 
-                        // Estabelece a conexão
-                        $conexao = new mysqli($hostname, $user, $password, $database);
+    if ($conexao->connect_error) {
+        die("Conexão falhou: " . $conexao->connect_error);
+    }
 
-                        // Verifica se houve um erro na conexão
-                        if ($conexao->connect_error) {
-                            die("Conexão falhou: " . $conexao->connect_error);
-                        }
+    $sql = "SELECT id, nome_produto, preco FROM produto";
+    $resultado = $conexao->query($sql);
 
-                        // Consulta SQL para buscar os dados da tabela produto
-                        $sql = "SELECT id, nome_produto, preco FROM produto";
-                        $resultado = $conexao->query($sql);
+    if ($resultado->num_rows > 0) {
+        echo '<span class="close">&times;</span>';
+        echo '<div class="scrollSku">'; // Aplique a classe scrollSku aqui
+        echo '<table>';
+        echo '<thead>';
+        echo '<tr>';
+        echo '<th>ID</th>';
+        echo '<th>Produto</th>';
+        echo '<th>Preço</th>';
+        echo '</tr>';
+        echo '</thead>';
+        echo '<tbody>';
 
-                        // Verifica se há resultados e, se houver, preenche a tabela
-                        if ($resultado->num_rows > 0) {
-                            echo '<span class="close">&times;</span>';
-                            echo '<table>';
-                            echo '<thead>';
-                            echo '<tr>';
-                            echo '<th>ID</th>';
-                            echo '<th>Produto</th>';
-                            echo '<th>Preço</th>';
-                            echo '</tr>';
-                            echo '</thead>';
-                            echo '<tbody>';
+        while ($row = $resultado->fetch_assoc()) {
+            echo '<tr>';
+            echo '<td>' . $row["id"] . '</td>';
+            echo '<td>' . $row["nome_produto"] . '</td>';
+            echo '<td>' . $row["preco"] . '</td>';
+            echo '</tr>';
+        }
 
-                            // Preenche a tabela com os dados
-                            while ($row = $resultado->fetch_assoc()) {
-                                echo '<tr>';
-                                echo '<td>' . $row["id"] . '</td>';
-                                echo '<td>' . $row["nome_produto"] . '</td>';
-                                echo '<td>' . $row["preco"] . '</td>';
-                                echo '</tr>';
-                            }
+        echo '</tbody>';
+        echo '</table>';
+        echo '</div>'; // Feche a div scrollSku
+    } else {
+        echo '<div class="flexresult">';
+        echo '<span class="close close1">&times;</span>';
+        echo '<h1 class="resultado">Nenhuma sku cadastrada</h1>';
+        echo '</div>';
+    }
 
-                            echo '</tbody>';
-                            echo '</table>';
-                        } else {
-                            echo '<div class="flexresult">';
-                            echo '<span class="close close1">&times;</span>';
-                            echo "<h1 class=\"resultado\">Nenhuma sku cadastrada</h1>";
-                            echo '</div>';
-                        }
+    // Fecha a conexão
+    $conexao->close();
+    ?>
+  </div>
+</div>
 
-                        // Fecha a conexão
-                        $conexao->close();
-
-                        ?>
-                    </div>
-                </div>
 
                 <div class="txtCont">
                     <h1>Criar pedido</h1>
@@ -157,7 +153,7 @@ if (!isset($_SESSION['turma'])) {
                                 </div>
                                 <div class="cep">
                                     <label for="cep">CEP:</label>
-                                    <input id="cep" type="text" name="CEP" required placeholder="Obrigatório">
+                                    <input id="cep" type="number" name="CEP" required placeholder="Obrigatório">
                                 </div>
                             </div>
 
