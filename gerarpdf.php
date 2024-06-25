@@ -16,8 +16,12 @@
     <div id="container-formulario" class="container">
         <h1>Nota Fiscal</h1>
         <button id="autoDanfe">Preset</button>
+        <button id="autoDanfe1">Preset</button>
+        <button id="autoDanfe2">Preset</button>
+        <button id="autoDanfe3">Preset</button>
+        <button id="autoDanfe4">Preset</button>
+        <button id="autoDanfe5">Preset</button>
         <button id="preset2">Preset 2</button>
-
         <form action="processodanfe.php" method="post" id="danfeForm">
 
             <div class="section">
@@ -251,7 +255,8 @@
 
 
                     <div class="desconto">
-                <H1>Valor Total</H1>
+                <H1>Valor Final Total</H1>
+                <label>O valor total com desconto é:</label>
                 <button id="caldesco" onclick="desconto()" >Valor total</button>
                 <label id="deconto"></label>
     </div>
