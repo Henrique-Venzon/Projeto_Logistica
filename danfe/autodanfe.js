@@ -754,7 +754,7 @@ document.getElementById("preset3").addEventListener("click", function () {
   
     // Calculando o valor total
     var valorTotal = totalProdutos + valorFrete + valorSeguro + valorIpi + valorDespesas;
-    document.getElementById("valor_total_nota").value = calcularTotal().toFixed(2);
+    document.getElementById("valor_total_nota").value = valorTotal.toFixed(2);
     // Atribuindo o valor total ao campo de entrada
      // Arredondando para 2 casas decimais
   }
