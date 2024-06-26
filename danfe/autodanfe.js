@@ -748,7 +748,7 @@ document.getElementById("preset3").addEventListener("click", function () {
   
   function ramdom (){
     Math.random()
-   var valorramdon = totalramdom + ramdomFrete + ramdomSeguro + ramdomsDespesas + valorIpi;
+   var valorramdon = totalramdom + ramdomFrete + ramdomSeguro +  valorIpi;
    }
   document.getElementById("valor_total_nota").value = document.getElementById(valorramdom);
   document.getElementById("codigo_antt").value = getRandomString(10);
