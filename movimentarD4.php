@@ -88,7 +88,7 @@ $turma = $_SESSION['turma'];
                     <div class="divpegar">
                     <h1 class="pegar">Finalizar</h1>
                     <?php
-                    $sql = "SELECT * FROM pegado where id_doca=4";
+                    $sql = "SELECT * FROM pegado where id_doca=4 and id_turma='".$_SESSION['turma']."' ";
                     $res = $conn->query($sql);
                     $qtd = $res->num_rows;
 

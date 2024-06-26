@@ -48,7 +48,7 @@ $turma = $_SESSION['turma'];
 
                         $conn = new mysqli($servername, $username, $password, $dbname);
 
-                        $sql = "SELECT * FROM `movimentacao` where id_doca='1' ORDER BY `movimentacao`.`id` ASC";
+                        $sql = "SELECT * FROM `movimentacao` where id_doca='1' and id_turma='".$_SESSION['turma']."' ORDER BY `movimentacao`.`id` ASC";
                         $res = $conn->query($sql);
                         $qtd = $res->num_rows;
 
@@ -87,7 +87,7 @@ $turma = $_SESSION['turma'];
                     <div class="divpegar">
                     <h1 class="pegar">Finalizar</h1>
                     <?php
-                    $sql = "SELECT * FROM pegado where id_doca=1";
+                    $sql = "SELECT * FROM pegado where id_doca=1 and id_turma='".$_SESSION['turma']."'";
                     $res = $conn->query($sql);
                     $qtd = $res->num_rows;
 
