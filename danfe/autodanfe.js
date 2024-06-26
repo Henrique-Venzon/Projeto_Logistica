@@ -743,18 +743,22 @@ document.getElementById("preset3").addEventListener("click", function () {
   
   document.getElementById("desconto").value = getRandomDecimal(10, 100, 2);
   document.getElementById("valor_ipi").value = getRandomDecimal(10, 100, 2);
+
+  function calcularTotal() {
+    // Pegando os valores dos campos de entrada
+    var totalProdutos = parseFloat(document.getElementById("total_produtos").value) || 0;
+    var valorFrete = parseFloat(document.getElementById("valor_frete").value) || 0;
+    var valorSeguro = parseFloat(document.getElementById("valor_seguro").value) || 0;
+    var valorIpi = parseFloat(document.getElementById("valor_ipi").value) || 0;
+    var valorDespesas = parseFloat(document.getElementById("valor_despesas").value) || 0; // Adicionado para valor das despesas
   
-  //var ramdomsDespesas = parseFloat(document.getElementById("outras_despesas").value);
+    // Calculando o valor total
+    var valorTotal = totalProdutos + valorFrete + valorSeguro + valorIpi + valorDespesas;
+    document.getElementById("valor_total_nota").value = calcularTotal().toFixed(2);
+    // Atribuindo o valor total ao campo de entrada
+     // Arredondando para 2 casas decimais
+  }
   
-  function ramdom (){
-    Math.random()
-    var totalramdom = parseFloat(document.getElementById("total_produtos").value);
-    var ramdomFrete = parseFloat(document.getElementById("valor_frete").value);
-    var ramdomSeguro = parseFloat(document.getElementById("valor_seguro").value);
-    var valorIpi = parseFloat(document.getElementById("valor_ipi").value);
-    var valorramdon = totalramdom + ramdomFrete + ramdomSeguro +  valorIpi;
-    document.getElementById("valor_total_nota").value = parseFloat(document.getElementById(valorramdom));
-   }
   
   document.getElementById("codigo_antt").value = getRandomString(10);
   document.getElementById("placa_veiculo").value =
