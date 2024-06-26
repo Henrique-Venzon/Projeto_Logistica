@@ -736,15 +736,15 @@ document.getElementById("preset3").addEventListener("click", function () {
     1000,
     2
   );
-  var totalramdom = document.getElementById("total_produtos").value;
+  var totalramdom = parseFloat(document.getElementById("total_produtos").value);
   document.getElementById("valor_frete").value = getRandomDecimal(10, 100, 2);
-  var ramdomFrete = document.getElementById("valor_frete").value;
+  var ramdomFrete = parseFloat(document.getElementById("valor_frete").value);
   document.getElementById("valor_seguro").value = getRandomDecimal(10, 100, 2);
-  var ramdomSeguro = document.getElementById("valor_seguro").value;
+  var ramdomSeguro = parseFloat(document.getElementById("valor_seguro").value);
   document.getElementById("desconto").value = getRandomDecimal(10, 100, 2);
   document.getElementById("valor_ipi").value = getRandomDecimal(10, 100, 2);
-  var valorIpi = document.getElementById("valor_ipi").value;
-  var ramdomsDespesas = parseFloat(document.getElementById("outras_despesas").value);
+  var valorIpi = parseFloat(document.getElementById("valor_ipi").value);
+  //var ramdomsDespesas = parseFloat(document.getElementById("outras_despesas").value);
   
   function ramdom (){
     Math.random()
