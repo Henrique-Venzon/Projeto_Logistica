@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             echo "<td style=\"border-right:1px solid black;\">" . $row->$quantidade . "</td>";
                                             echo "<input type='hidden' value='" . $row->$produto . "' name='produto[]'>";
                                             echo "<input type='hidden' value='" . $row->$quantidade . "' name='quantidadeS[]'>";
-                                            echo "<input type='hidden' value='" . $_GET['id_pedido'] . "' name='id_produto[]'>";
+                                            echo "<input type='hidden' value='" . $_GET['id_pedido'] . "' name='id_pedido[]'>";
 
                                             echo "<td style=\"border-right:1px solid black;\">
                                                     <select name='posicao[]'>
@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                         <option>D3</option>
                                                         <option>D4</option>
                                                     </select></td>";
-                                            echo "<td style=\"border-right:1px solid black;\"><input type='number' name='quantidade[]' value='0' min='1' max='" . $row->$quantidade . "'></td>";
+                                            echo "<td style=\"border-right:1px solid black;\"><input type='number' name='quantidade[]' value='0' min='0' max='" . $row->$quantidade . "'></td>";
                                             echo "</tr>";
                                         }
                                     }

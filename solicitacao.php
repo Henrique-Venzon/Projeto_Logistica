@@ -83,7 +83,7 @@ if ($result->num_rows > 0) {
 
                                 <div class="quantidade">
                                     <label for="quantidade">Quantidade:</label>
-                                    <input type="number" id="quantidade" name="quantidade" min="0" required placeholder="Obrigatório">
+                                    <input type="number" id="quantidade" name="quantidade" min="1" required placeholder="Obrigatório">
                                     <input type="number" id="quantidade2" name="quantidade2" min="0" placeholder="Opcional">
                                     <input type="number" id="quantidade3" name="quantidade3" min="0" placeholder="Opcional">
                                     <input type="number" id="quantidade4" name="quantidade4" min="0" placeholder="Opcional">
