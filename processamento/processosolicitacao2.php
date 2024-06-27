@@ -12,16 +12,16 @@ if ($conn->connect_error) {
 
 $turma = $_SESSION['turma'];
 
-if (isset($_POST['id_produto'], $_POST['quantidadeS'], $_POST['produto'], $_POST['posicao'], $_POST['quantidade'])) {
-    $id_produto = $_POST['id_produto'];
+if (isset($_POST['id_pedido'], $_POST['quantidadeS'], $_POST['produto'], $_POST['posicao'], $_POST['quantidade'])) {
+    $id_pedido = $_POST['id_pedido'];
     $quantidadeS = $_POST['quantidadeS'];
     $produto = $_POST['produto'];
     $posicao = $_POST['posicao'];
     $quantidade = $_POST['quantidade'];
 
-    $stmt = $conn->prepare("INSERT INTO picking (id_produto, quantidade_solicitada, produto, posicao, quantidade, id_turma) VALUES (?, ?, ?, ?, ?, ?)");
-    foreach ($id_produto as $key => $value) {
-        $stmt->bind_param("sisssi", $id_produto[$key], $quantidadeS[$key], $produto[$key], $posicao[$key], $quantidade[$key], $turma);
+    $stmt = $conn->prepare("INSERT INTO picking (id_pedido, quantidade_solicitada, produto, posicao, quantidade, id_turma) VALUES (?, ?, ?, ?, ?, ?)");
+    foreach ($id_pedido as $key => $value) {
+        $stmt->bind_param("sisssi", $id_pedido[$key], $quantidadeS[$key], $produto[$key], $posicao[$key], $quantidade[$key], $turma);
         $stmt->execute();
 
         
@@ -39,7 +39,7 @@ if (isset($_POST['id_produto'], $_POST['quantidadeS'], $_POST['produto'], $_POST
 
 
             $update_stmt = $conn->prepare("UPDATE solicitacao SET $quantidade_field = $quantidade_field - ? WHERE id = ? AND $produto_field = ?");
-            $update_stmt->bind_param("iis", $quantidade[$key], $id_produto[$key], $produto[$key]);
+            $update_stmt->bind_param("iis", $quantidade[$key], $id_pedido[$key], $produto[$key]);
             $update_stmt->execute();
             $update_stmt->close();
         }
@@ -48,7 +48,7 @@ if (isset($_POST['id_produto'], $_POST['quantidadeS'], $_POST['produto'], $_POST
 
 
     $check_stmt = $conn->prepare("SELECT id, quantidade, quantidade2, quantidade3, quantidade4 FROM solicitacao WHERE id = ?");
-    $check_stmt->bind_param("i", $id_produto[0]);
+    $check_stmt->bind_param("i", $id_pedido[0]);
     $check_stmt->execute();
     $result = $check_stmt->get_result();
     if ($result->num_rows > 0) {
@@ -58,7 +58,7 @@ if (isset($_POST['id_produto'], $_POST['quantidadeS'], $_POST['produto'], $_POST
             ($row['quantidade3'] <= 0 || $row['quantidade3'] === null) &&
             ($row['quantidade4'] <= 0 || $row['quantidade4'] === null)) {
             $delete_stmt = $conn->prepare("DELETE FROM solicitacao WHERE id = ?");
-            $delete_stmt->bind_param("i", $id_produto[0]);
+            $delete_stmt->bind_param("i", $id_pedido[0]);
             $delete_stmt->execute();
             $delete_stmt->close();
         }
