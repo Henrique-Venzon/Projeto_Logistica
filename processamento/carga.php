@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($conn->query($sql) === TRUE) {
         echo 'Dados inseridos com sucesso!';
-        header('Location: ../criandoNotaFiscal?npedido=' . urlencode($npedido) . '&turma_id=' . urlencode($turma_id));
+        header('Location: ../criandoNotaFiscal.php?npedido=' . urlencode($npedido) . '&turma_id=' . urlencode($turma_id));
     } else {
         echo 'Erro ao inserir dados: ' . $conn->error;
     }
