@@ -116,7 +116,7 @@ $conn->close();
                         <form action="processodanfe.php" method="post" id="danfeForm">
                             <div class="section">
                                 <label for="numero">Número</label>
-                                <input type="text" id="numero" name="numero"
+                                <input type="text" id="numerodef" name="numero"
                                     value="<?php echo $npedido ?>" required>
 
                                 <label for="serie">Série</label>
@@ -438,7 +438,10 @@ $conn->close();
                             <button id="caldesco" onclick="desconto()">Valor total</button>
                             <script>
                                 function desconto() {
-                                    var totalProdutos = parseFloat(document.getElementById("total_produtos").value);
+                                    var totalProdutos1 = parseFloat(document.getElementById("valor_total_prod1").value);
+                                    var totalProdutos2 = parseFloat(document.getElementById("valor_total_prod2").value);
+                                    var totalProdutos3 = parseFloat(document.getElementById("valor_total_prod3").value);
+                                    var totalProdutos4 = parseFloat(document.getElementById("valor_total_prod4").value);
                                     var valorFrete = parseFloat(document.getElementById("valor_frete").value);
                                     var valorSeguro = parseFloat(document.getElementById("valor_seguro").value);
                                     var desconto = parseFloat(document.getElementById("desconto").value);
@@ -446,21 +449,11 @@ $conn->close();
                                     var valorIpi = parseFloat(document.getElementById("valor_ipi").value);
 
 
-                                    var a = getElementById("base_calculo_icms");
-                                    var a = getElementById("valor_icms");
-                                    var a = getElementById("base_calculo_icms_st");
-                                    var a = getElementById("valor_icms_substituicao");
-                                    var a = getElementById("total_produtos");
-                                    var a = getElementById("valor_frete");
-                                    var a = getElementById("valor_seguro");
-                                    var a = getElementById("outras_despesas");
-                                    var a = getElementById("valor_ipi");
-                                    var a = getElementById("valor_ipi");
-                                    var a = getElementById("valor_ipi");
 
 
-                                    var valorTotalNota = totalProdutos + valorFrete + valorSeguro + outrasDespesas + valorIpi - desconto;
-                                    console.log(valorTotalNota);
+
+                                    var valorTotalNota = totalProdutos1 + totalProdutos2 + totalProdutos3 + totalProdutos4 + valorFrete + valorSeguro + outrasDespesas + valorIpi - desconto;
+                                    console.log("R$". valorTotalNota);
                                 }
                             </script>
                         </div>

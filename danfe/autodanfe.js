@@ -1,6 +1,6 @@
 document.getElementById("autoDanfe").addEventListener("click", function () {
   document.getElementById("danfeForm").reset();
-  document.getElementById("numero").value = "123456";
+  //document.getElementById("numero").value = "123456";
   document.getElementById("serie").value = "1";
   document.getElementById("entrada_saida").value = "Saída";
   document.getElementById("chave_acesso").value =
@@ -74,7 +74,7 @@ document.getElementById("autoDanfe").addEventListener("click", function () {
 
 document.getElementById("autoDanfe1").addEventListener("click", function () {
   document.getElementById("danfeForm").reset();
-  document.getElementById("numero").value = "654321";
+  //document.getElementById("numero").value = "654321";
   document.getElementById("serie").value = "2";
   document.getElementById("entrada_saida").value = "Entrada";
   document.getElementById("chave_acesso").value =
@@ -148,7 +148,7 @@ document.getElementById("autoDanfe1").addEventListener("click", function () {
 
 document.getElementById("autoDanfe2").addEventListener("click", function () {
   document.getElementById("danfeForm").reset();
-  document.getElementById("numero").value = "456789";
+ // document.getElementById("numero").value = "456789";
   document.getElementById("serie").value = "2";
   document.getElementById("entrada_saida").value = "Entrada";
   document.getElementById("chave_acesso").value =
@@ -222,7 +222,7 @@ document.getElementById("autoDanfe2").addEventListener("click", function () {
 
 document.getElementById("autoDanfe3").addEventListener("click", function () {
   document.getElementById("danfeForm").reset();
-  document.getElementById("numero").value = "321654";
+  //document.getElementById("numero").value = "321654";
   document.getElementById("serie").value = "4";
   document.getElementById("entrada_saida").value = "Saída";
   document.getElementById("chave_acesso").value =
@@ -295,7 +295,7 @@ document.getElementById("autoDanfe3").addEventListener("click", function () {
 });
 document.getElementById("autoDanfe4").addEventListener("click", function () {
   document.getElementById("danfeForm").reset();
-  document.getElementById("numero").value = "654321";
+  //document.getElementById("numero").value = "654321";
   document.getElementById("serie").value = "2";
   document.getElementById("entrada_saida").value = "Entrada";
   document.getElementById("chave_acesso").value =
@@ -370,7 +370,7 @@ document.getElementById("autoDanfe4").addEventListener("click", function () {
 
 document.getElementById("autoDanfe5").addEventListener("click", function () {
   document.getElementById("danfeForm").reset();
-  document.getElementById("numero").value = "987654";
+  //document.getElementById("numero").value = "987654";
   document.getElementById("serie").value = "3";
   document.getElementById("entrada_saida").value = "Saída";
   document.getElementById("chave_acesso").value =
@@ -499,7 +499,7 @@ document.getElementById("preset2").addEventListener("click", function () {
   }
 
   // Preencher os campos com valores aleatórios
-  document.getElementById("numero").value = getRandomNumber(1000, 9999);
+  //document.getElementById("numero").value = getRandomNumber(1000, 9999);
   document.getElementById("serie").value = getRandomNumberString(3);
   document.getElementById("entrada_saida").value = getRandomDate(
     new Date(2020, 0, 1),
@@ -693,7 +693,7 @@ document.getElementById("preset3").addEventListener("click", function () {
   }
 
   // Preencher os campos com valores aleatórios
-  document.getElementById("numero").value = getRandomNumber(1000, 9999);
+  //document.getElementById("numero").value = getRandomNumber(1000, 9999);
   document.getElementById("serie").value = getRandomNumberString(3);
   document.getElementById("entrada_saida").value = getRandomDate(
     new Date(2020, 0, 1),
