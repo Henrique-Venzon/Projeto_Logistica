@@ -52,7 +52,7 @@ if (!isset($_SESSION['turma'])) {
                 <div id="myModal" class="modal">
   <div class="modal-content">
     <?php
-  include_once('../include/conexao.php');
+  include_once('include/conexao.php');
 
     if ($conexao->connect_error) {
         die("Conexão falhou: " . $conexao->connect_error);

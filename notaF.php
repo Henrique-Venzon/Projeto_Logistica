@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <h1>Nota Fiscal</h1>
                 </div>
                 <?php
-           include_once('../include/conexao.php');
+           include_once('include/conexao.php');
 
                 $sql_after = "SELECT * FROM nota_fiscal_criada where id_turma = '".$_SESSION['turma']."'";
                 $res = $conn->query($sql_after);

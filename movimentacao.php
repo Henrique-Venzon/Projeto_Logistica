@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <h1>Docas</h1>
             </div>
             <?php        
-  include_once('../include/conexao.php'); 
+  include_once('include/conexao.php'); 
 
 $sql = "SELECT * FROM movimentacao";
 

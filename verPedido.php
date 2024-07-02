@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
             <?php        
 
-include_once('../include/conexao.php');
+include_once('include/conexao.php');
 $sql = "SELECT * FROM carga where turma_id = '".$_SESSION['turma']."' ORDER BY situacao ASC";
 
 $res = $conn->query($sql);

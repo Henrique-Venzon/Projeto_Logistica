@@ -25,7 +25,7 @@
         exit;
     }
 
-    include_once('../include/conexao.php');
+    include_once('include/conexao.php');
     $pedido_id_selecionado = 0;
 
     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado']) && $_GET['pedido_selecionado'] != '0') {
@@ -106,7 +106,6 @@
                                             <h1>
                                                 <?php
                                                 if ($pedido_id_selecionado != 0) {
-                                                    $conn = new mysqli($servername, $username, $password, $dbname);
                                                     if ($conn->connect_error) {
                                                         die("Erro de conexão: " . $conn->connect_error);
                                                     }

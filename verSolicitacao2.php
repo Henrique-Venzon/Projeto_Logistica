@@ -5,7 +5,7 @@ if (!isset($_SESSION['id'])) {
     exit;
 }
 
-include_once('../include/conexao.php');
+include_once('include/conexao.php');
 
 // Checar conexão
 if ($conn->connect_error) {
@@ -69,7 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <form method='post' action="processamento/processosolicitacao2.php">
                             <h1 class="pegar">Pegar</h1>
                             <?php
-                            $conn = new mysqli($servername, $username, $password, $dbname);
 
                             $sql = "SELECT * FROM `solicitacao` WHERE id_turma='$turma' AND `id`=" . $_GET['id_pedido'] . " ORDER BY `solicitacao`.`id` ASC";
                             $res = $conn->query($sql);

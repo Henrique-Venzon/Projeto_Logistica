@@ -50,7 +50,7 @@ $turma = $_SESSION['turma'];
                         <div class="cardsDocas" id="doca1">
                             <h1>Doca 1</h1>
                             <?php
-                         include_once('../include/conexao.php');
+                         include_once('include/conexao.php');
 
                             if ($conn->connect_error) {
                                 die("Connection failed: " . $conn->connect_error);

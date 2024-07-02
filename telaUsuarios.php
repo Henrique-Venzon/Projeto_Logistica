@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h1 class="centroT">Lista de alunos</h1>
 
         <?php        
-  include_once('../include/conexao.php');
+  include_once('include/conexao.php');
         $sql = "SELECT * FROM aluno WHERE turma_id = '{$_SESSION['turma']}'";
 
         $res = $conn->query($sql);

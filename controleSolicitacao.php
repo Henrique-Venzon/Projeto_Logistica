@@ -32,7 +32,7 @@ if (!isset($_SESSION['turma'])) {
 </head>
 <body>
     <?php
-  include_once('../include/conexao.php');
+  include_once('include/conexao.php');
 
     $sql = "SELECT `id`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `turma_id` FROM vistoriado WHERE turma_id = '" . $_SESSION['turma'] . "' AND `id`='" . $id_carga . "'";
 

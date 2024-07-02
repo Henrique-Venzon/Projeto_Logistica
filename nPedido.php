@@ -34,7 +34,7 @@ if (!isset($_SESSION['turma'])) {
 
 <body>
     <?php
-  include_once('../include/conexao.php');
+  include_once('include/conexao.php');
 
     $sql = "SELECT`npedido`, `Empresa`, `cliente`, `telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`,`turma_id` FROM carga where turma_id = '" . $_SESSION['turma'] . "' and `npedido`='" . $npedido_ver . "'  ";
 

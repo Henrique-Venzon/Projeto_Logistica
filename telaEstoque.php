@@ -5,7 +5,7 @@ if (!isset($_SESSION['id'])) {
     exit;
 }
 
-include_once('../include/conexao.php');
+include_once('include/conexao.php');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

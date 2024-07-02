@@ -41,7 +41,7 @@ $turma = $_SESSION['turma']
         include 'include/menuLateral.php'
             ?>
         <?php
-     include_once('../include/conexao.php');
+        include_once('include/conexao.php');
         // Verifica a conexão
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);

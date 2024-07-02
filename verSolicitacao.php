@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <h1>Solicitações</h1>
                 </div>
                 <?php
-                 include_once('../include/conexao.php');
+                 include_once('include/conexao.php');
 
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);

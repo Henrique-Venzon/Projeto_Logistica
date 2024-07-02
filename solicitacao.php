@@ -6,7 +6,7 @@ if (!isset($_SESSION['id']) || !isset($_SESSION['turma'])) {
 }
 
 // Conexão com o banco de dados
-include_once('../include/conexao.php');
+include_once('include/conexao.php');
 
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);

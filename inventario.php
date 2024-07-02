@@ -1,6 +1,6 @@
 <?php
 // Configurações de conexão ao banco de dados
-include_once('../include/conexao.php');
+include_once('include/conexao.php');
 
 // Verificar conexão
 if ($conn->connect_error) {

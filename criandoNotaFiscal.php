@@ -2,7 +2,7 @@
 session_start();
 $turma = $_SESSION['turma'];
 // Parâmetros de conexão com o banco de dados
- include_once('../include/conexao.php');
+ include_once('include/conexao.php');
 
 // Checando a conexão
 if ($conn->connect_error) {
