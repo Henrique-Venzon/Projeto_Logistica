@@ -41,12 +41,7 @@ $turma = $_SESSION['turma'];
                     <form method='post' action="processamento/selecionar_carga.php">
                         <h1 class="pegar">Pegar</h1>
                         <?php
-                        $servername = "localhost";
-                        $username = "root.Att";
-                        $password = "root";
-                        $dbname = "logistica";
-
-                        $conn = new mysqli($servername, $username, $password, $dbname);
+                       include_once('../include/conexao.php');
 
                         $sql = "SELECT * FROM `movimentacao` where id_doca='1' and id_turma='".$_SESSION['turma']."' ORDER BY `movimentacao`.`id` ASC";
                         $res = $conn->query($sql);

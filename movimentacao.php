@@ -40,13 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <h1>Docas</h1>
             </div>
             <?php        
-$servername = "localhost";
-$username = "root.Att";
-$password = "root";
-$dbname = "logistica";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);     
+  include_once('../include/conexao.php'); 
 
 $sql = "SELECT * FROM movimentacao";
 

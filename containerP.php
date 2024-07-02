@@ -52,12 +52,7 @@ if (!isset($_SESSION['turma'])) {
                 <div id="myModal" class="modal">
   <div class="modal-content">
     <?php
-    $hostname = "127.0.0.1";
-    $user = "root.Att";
-    $password = "root";
-    $database = "logistica";
-
-    $conexao = new mysqli($hostname, $user, $password, $database);
+  include_once('../include/conexao.php');
 
     if ($conexao->connect_error) {
         die("Conexão falhou: " . $conexao->connect_error);

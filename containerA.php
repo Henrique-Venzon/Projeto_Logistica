@@ -41,14 +41,7 @@ $turma = $_SESSION['turma']
         include 'include/menuLateral.php'
             ?>
         <?php
-        $servername = "localhost";
-        $username = "root.Att";
-        $password = "root";
-        $dbname = "logistica";
-
-        // Cria a conexão
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
+     include_once('../include/conexao.php');
         // Verifica a conexão
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);

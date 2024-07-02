@@ -48,14 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
             <?php        
 
-$servername = "localhost";
-$username = "root.Att";
-$password = "root";
-$dbname = "logistica";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);     
-
+include_once('../include/conexao.php');
 $sql = "SELECT * FROM carga where turma_id = '".$_SESSION['turma']."' ORDER BY situacao ASC";
 
 $res = $conn->query($sql);

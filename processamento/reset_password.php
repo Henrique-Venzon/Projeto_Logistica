@@ -2,8 +2,7 @@
 if(isset($_POST['id'])){
     $id = $_POST['id'];
 
-    // Conexão com o banco de dados
-    $conn = new mysqli('localhost', 'root.Att', 'root', 'logistica');
+    include_once('../include/conexao.php');
 
     // Gera uma nova senha com 6 caracteres e números diferentes
     $new_password = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 4);

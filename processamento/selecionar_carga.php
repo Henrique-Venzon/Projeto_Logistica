@@ -12,11 +12,7 @@ if (!isset($_SESSION['turma'])) {
 $turma = $_SESSION['turma'];
 $doca = $_POST['doca'];
 
-$servername = "localhost";
-$username = "root.Att";
-$password = "root";
-$dbname = "logistica";
-$conn = new mysqli($servername, $username, $password, $dbname);
+include_once('../include/conexao.php');
 
 // Verifica se houve uma requisição POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

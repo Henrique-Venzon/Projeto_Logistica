@@ -1,11 +1,6 @@
 <?php
 // Configurações de conexão ao banco de dados
-$servername = "localhost";
-$username = "root.Att";
-$password = "root";
-$dbname = "logistica";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+include_once('../include/conexao.php');
 
 // Verificar conexão
 if ($conn->connect_error) {

@@ -1,12 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root.Att";
-$password = "root";
-$dbname = "logistica";
-
 session_start();
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+include_once('../include/conexao.php');
 
 // Check connection
 if ($conn->connect_error) {

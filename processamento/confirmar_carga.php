@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$conexao = new mysqli('localhost', 'root.Att', 'root', 'logistica');
+include_once('../include/conexao.php');
 
 if ($conexao->connect_error) {
     die("Conexão falhou: " . $conexao->connect_error);

@@ -2,13 +2,7 @@
 session_start();
 $turma = $_SESSION['turma'];
 // Parâmetros de conexão com o banco de dados
-$servername = "localhost";
-$username = "root.Att";
-$password = "root";
-$dbname = "logistica";
-
-// Criando a conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
+ include_once('../include/conexao.php');
 
 // Checando a conexão
 if ($conn->connect_error) {
