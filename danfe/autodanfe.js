@@ -641,9 +641,9 @@ function desconto (){
 }
 function issqn(){
 
-    var servico = parseFloat(document.getElementById("valor_total_servicos"));
+    var servico = parseFloat(document.getElementById("valor_total_servicos").values);
 
-    var base = parseFloat(document.getElementById("base_calculo_issqn"));
+    var base = parseFloat(document.getElementById("base_calculo_issqn").values);
 
     var issqnto = servico * (base/100);
     alert(issqnto);
