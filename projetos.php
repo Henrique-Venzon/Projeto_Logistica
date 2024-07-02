@@ -78,7 +78,7 @@ if (isset($_SESSION['error'])) {
                         print "<td>" . $row->id . "</td>";
                         print "<td>" . $row_alunos->num_alunos . "</td>";
                         print "<td>";
-                        print "<form action='telainicio.php' method='POST'>";
+                        print "<form action='telaInicio.php' method='POST'>";
                         print "<input type='hidden' name='turma' value='" . $row->id . "'>";
                         print "<button class=\"acessar\" type='submit' ><span>Acessar</span></button>";
                         print "</form>";
