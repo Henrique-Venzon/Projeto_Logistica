@@ -97,7 +97,6 @@ $turma = $_SESSION['turma'];
                             $dbname = "logistica";
 
                             // Create connection
-                            $conn = new mysqli($servername, $username, $password, $dbname);
 
                             $sql = "
                                     SELECT docas.id_carga 
@@ -139,7 +138,6 @@ $turma = $_SESSION['turma'];
                             $dbname = "logistica";
 
                             // Create connection
-                            $conn = new mysqli($servername, $username, $password, $dbname);
 
                             $sql = "
                                     SELECT docas.id_carga 
@@ -181,7 +179,6 @@ $turma = $_SESSION['turma'];
                             $dbname = "logistica";
 
                             // Create connection
-                            $conn = new mysqli($servername, $username, $password, $dbname);
 
                             $sql = "
                                     SELECT docas.id_carga 
