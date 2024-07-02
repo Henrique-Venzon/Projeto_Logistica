@@ -47,7 +47,7 @@ if (isset($_SESSION['error'])) {
                 <p class="description description-second">Exclua, edite ou continue o projeto</p>
                 <?php
 
-include_once('../include/conexao.php');
+                include_once('include/conexao.php');
 
                 $sql = "SELECT * FROM turma where id>=0";
 
