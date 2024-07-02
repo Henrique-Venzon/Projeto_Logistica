@@ -42,19 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <h1>Solicitações</h1>
                 </div>
                 <?php
-                $servername = "localhost";
-                $username = "root.Att";
-                $password = "root";
-                $dbname = "logistica";
-
-                // Create connection
-                $conn = new mysqli($servername, $username, $password, $dbname);
+                 include_once('../include/conexao.php');
 
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                $sql_after = "SELECT * FROM solicitacao WHERE id_turma = '" . $_SESSION['turma'] . "' ORDER BY id_pedido ASC";
+                $sql_after = "SELECT id FROM solicitacao WHERE id_turma = '" . $_SESSION['turma'] . "' ORDER BY id ASC";
                 $res = $conn->query($sql_after);
                 $qtd = $res->num_rows;
 
@@ -68,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     print "</tr>";
 
                     while ($row = $res->fetch_object()) {
-                        $id_pedido = $row->id_pedido;
+                        $id_pedido = $row->id;
                         $id = $row->id;
                         echo "<tr>";
                         echo "<td>" . $id_pedido . "</td>";

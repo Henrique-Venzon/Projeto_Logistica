@@ -1,12 +1,7 @@
 <?php
 session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $hostname = "127.0.0.1";
-    $user = "root.Att";
-    $password = "root";
-    $database = "logistica";
-
-    $conexao = new mysqli($hostname, $user, $password, $database);
+    include_once('../include/conexao.php');
 
     if ($conexao->connect_errno) {
         echo "Failed to connect to MySQL: " . $conexao->connect_error;

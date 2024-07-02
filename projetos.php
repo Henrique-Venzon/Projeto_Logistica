@@ -47,13 +47,7 @@ if (isset($_SESSION['error'])) {
                 <p class="description description-second">Exclua, edite ou continue o projeto</p>
                 <?php
 
-                $servername = "localhost";
-                $username = "root.Att";
-                $password = "root";
-                $dbname = "logistica";
-
-                // Create connection
-                $conn = new mysqli($servername, $username, $password, $dbname);
+include_once('../include/conexao.php');
 
                 $sql = "SELECT * FROM turma where id>=0";
 

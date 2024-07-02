@@ -27,8 +27,8 @@ if (!isset($_SESSION['id'])) {
 
 <body>
     <?php
-    include 'include/header.php'
-        ?>
+    include 'include/header.php';
+    ?>
     <main>
         <?php
         include 'include/menuLateral.php';
@@ -39,54 +39,45 @@ if (!isset($_SESSION['id'])) {
                     <h1>Picking</h1>
                 </div>
                 <?php
-                $servername = "localhost";
-                $username = "root.Att";
-                $password = "root";
-                $dbname = "logistica";
+              include_once('../include/conexao.php');
 
-                // Create connection
-                $conn = new mysqli($servername, $username, $password, $dbname);
-
-                $sql_after = "SELECT * FROM solicitacao where id_turma = '" . $_SESSION['turma'] . "'";
-                $res = $conn->query($sql_after);
-                $qtd = $res->num_rows;
-
-                if ($qtd > 0) {
-                    print "<div class=\"tabela-scroll\">";
-                    print "<table class='table' >";
-
-                    print "<tr>";
-                    print "<th>Nº Solicitação</th>";
-                    print "<th style=\"border-right:none;\">Ver Picking</th>";
-                    print "</tr>";
-
-                    while ($row = $res->fetch_object()) {
-                        $id_pedido = $row->id_pedido;
-                        $sql_npedido = "SELECT id, id_pedido FROM solicitacao where id_turma='" . $_SESSION['turma'] . "'";
-                        $resultado = $conn->query($sql_npedido);
-                        if ($resultado->num_rows > 0) {
-                            while ($row_id = $resultado->fetch_assoc()) {
-                                $id_pedido = $row_id["id_pedido"];
-                            }
-                        }
-                        print "<td>" . $id_pedido . "</td>";
-                        print "<form method='get' action='picking2.php";
-                        print "<tr>";
-                        print "<td>
-                            <button class=\"reset\" data-id=\"\"><span>ver</span></button>
-                            <input name='id_pedido' type='hidden' value='";
-                        echo $id_pedido . "'>
-                            </td>";
-                        print "</tr>";
-                        print "</form>";
-                    }
-                    print "</table>";
-                    print "</div>";
-
-                } else {
-                    print "<p class='alert alert-danger'>Não encontrou nenhuma solicitação feita.</p>";
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
                 }
 
+                $sql_after = "SELECT id,id_pedido FROM picking WHERE id_turma = '" . $_SESSION['turma'] . "'";
+                $res = $conn->query($sql_after);
+
+                if ($res->num_rows > 0) {
+                    echo "<div class=\"tabela-scroll\">";
+                    echo "<table class='table'>";
+                    echo "<tr>";
+                    echo "<th>Nº Solicitação</th>";
+                    echo "<th style=\"border-right:none;\">Ver Picking</th>";
+                    echo "</tr>";
+
+                    while ($row = $res->fetch_assoc()) {
+                        $id = $row['id'];
+                        $id_pedido = $row['id_pedido'];
+
+                        echo "<tr>";
+                        echo "<td>" . $id . "</td>";
+                        echo "<td>";
+                        echo "<form method='get' action='picking2.php'>";
+                        echo "<button class=\"reset\" type=\"submit\"><span>ver</span></button>";
+                        echo "<input name='id' type='hidden' value='" . $id_pedido . "'>";
+                        echo "</form>";
+                        echo "</td>";
+                        echo "</tr>";
+                    }
+
+                    echo "</table>";
+                    echo "</div>";
+                } else {
+                    echo "<p class='alert alert-danger'>Não encontrou nenhuma solicitação feita.</p>";
+                }
+
+                $conn->close();
                 ?>
             </div>
         </div>

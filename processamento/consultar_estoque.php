@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli('localhost', 'root.Att', 'root', 'logistica');
+include_once('../include/conexao.php');
 
 if ($conn->connect_error) {
     die("Erro na conexão: " . $conn->connect_error);

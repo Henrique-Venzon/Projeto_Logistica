@@ -25,10 +25,7 @@
         exit;
     }
 
-    $servername = "localhost";
-    $username = "root.Att";
-    $password = "root";
-    $dbname = "logistica";
+    include_once('../include/conexao.php');
     $pedido_id_selecionado = 0;
 
     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado']) && $_GET['pedido_selecionado'] != '0') {

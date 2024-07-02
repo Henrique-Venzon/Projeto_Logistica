@@ -6,12 +6,7 @@ if (!isset($_SESSION['id']) || !isset($_SESSION['turma'])) {
 }
 
 // Conexão com o banco de dados
-$servername = "localhost";
-$username = "root.Att";
-$password = "root";
-$dbname = "logistica";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+include_once('../include/conexao.php');
 
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);

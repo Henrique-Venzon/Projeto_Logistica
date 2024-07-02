@@ -1,6 +1,6 @@
 <?php
 
-$conexao = new mysqli('localhost', 'root.Att', 'root', 'logistica');
+include_once('../include/conexao.php');
 
 // Verificar conexão
 if ($conexao->connect_error) {

@@ -32,13 +32,7 @@ if (!isset($_SESSION['turma'])) {
 </head>
 <body>
     <?php
-    $servername = "localhost";
-    $username = "root.Att";
-    $password = "root";
-    $dbname = "logistica";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    include_once('../include/conexao.php');
 
     $sql = "SELECT `id`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `turma_id` FROM vistoriado WHERE turma_id = '" . $_SESSION['turma'] . "' AND `id`='" . $id_carga . "'";
 

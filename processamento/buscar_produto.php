@@ -1,11 +1,7 @@
 <?php
-$hostname = "127.0.0.1";
-$user = "root.Att";
-$password = "root";
-$database = "logistica";
-
+  include_once('../include/conexao.php');
 // Estabelece a conexão
-$conexao = new mysqli($hostname, $user, $password, $database);
+
 
 // Verifica se houve um erro na conexão
 if ($conexao->connect_error) {
