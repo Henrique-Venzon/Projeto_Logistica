@@ -84,7 +84,12 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/amem.svg">
     <meta charset="utf-8">
-    <title>Nota Fiscal</title>
+    <title>
+    <?php
+    $tituloPag = 'Nota Fiscal';
+    echo"$tituloPag";
+    ?>
+    </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
@@ -116,7 +121,7 @@ $conn->close();
                         <form action="processodanfe.php" method="post" id="danfeForm">
                             <div class="section">
                                 <label for="numero">Número</label>
-                                <input type="text" id="numero" name="numero"
+                                <input type="text" id="numerodef" name="numero"
                                     value="<?php echo $npedido ?>" required>
 
                                 <label for="serie">Série</label>
@@ -438,7 +443,10 @@ $conn->close();
                             <button id="caldesco" onclick="desconto()">Valor total</button>
                             <script>
                                 function desconto() {
-                                    var totalProdutos = parseFloat(document.getElementById("total_produtos").value);
+                                    var totalProdutos1 = parseFloat(document.getElementById("valor_total_prod1").value);
+                                    var totalProdutos2 = parseFloat(document.getElementById("valor_total_prod2").value);
+                                    var totalProdutos3 = parseFloat(document.getElementById("valor_total_prod3").value);
+                                    var totalProdutos4 = parseFloat(document.getElementById("valor_total_prod4").value);
                                     var valorFrete = parseFloat(document.getElementById("valor_frete").value);
                                     var valorSeguro = parseFloat(document.getElementById("valor_seguro").value);
                                     var desconto = parseFloat(document.getElementById("desconto").value);
@@ -446,21 +454,11 @@ $conn->close();
                                     var valorIpi = parseFloat(document.getElementById("valor_ipi").value);
 
 
-                                    var a = getElementById("base_calculo_icms");
-                                    var a = getElementById("valor_icms");
-                                    var a = getElementById("base_calculo_icms_st");
-                                    var a = getElementById("valor_icms_substituicao");
-                                    var a = getElementById("total_produtos");
-                                    var a = getElementById("valor_frete");
-                                    var a = getElementById("valor_seguro");
-                                    var a = getElementById("outras_despesas");
-                                    var a = getElementById("valor_ipi");
-                                    var a = getElementById("valor_ipi");
-                                    var a = getElementById("valor_ipi");
 
 
-                                    var valorTotalNota = totalProdutos + valorFrete + valorSeguro + outrasDespesas + valorIpi - desconto;
-                                    console.log(valorTotalNota);
+
+                                    var valorTotalNota = totalProdutos1 + totalProdutos2 + totalProdutos3 + totalProdutos4 + valorFrete + valorSeguro + outrasDespesas + valorIpi - desconto;
+                                    console.log("R$". valorTotalNota);
                                 }
                             </script>
                         </div>
