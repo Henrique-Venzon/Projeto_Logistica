@@ -420,7 +420,7 @@ $conn->close();
                                 <label for="valor_total_servicos">Valor Total dos Serviços</label>
                                 <input type="number" step="0.01" id="valor_total_servicos" name="valor_total_servicos">
 
-                                <label for="base_calculo_issqn">Base de Cálculo do ISSQN</label>
+                                <label for="base_calculo_issqn">Base de Cálculo do ISSQN (%)</label>
                                 <input type="number" step="0.01" id="base_calculo_issqn" name="base_calculo_issqn">
                             </div>
 
@@ -429,32 +429,17 @@ $conn->close();
                                 <button type="submit" id="enviar">Enviar</button>
                             </div>
 
-                        </form>
+                        </form><label id="resultado" style="border: solid red 1px;"></label>
                         <div class="desconto">
                             <H1>Valor Final Total</H1>
                             <label>O valor total com desconto é:</label>
                             <label id="deconto"></label>
                             <button id="caldesco" onclick="desconto()">Valor total</button>
-                            <script>
-                                function desconto() {
-                                    var totalProdutos1 = parseFloat(document.getElementById("valor_total_prod1").value);
-                                    var totalProdutos2 = parseFloat(document.getElementById("valor_total_prod2").value);
-                                    var totalProdutos3 = parseFloat(document.getElementById("valor_total_prod3").value);
-                                    var totalProdutos4 = parseFloat(document.getElementById("valor_total_prod4").value);
-                                    var valorFrete = parseFloat(document.getElementById("valor_frete").value);
-                                    var valorSeguro = parseFloat(document.getElementById("valor_seguro").value);
-                                    var desconto = parseFloat(document.getElementById("desconto").value);
-                                    var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value);
-                                    var valorIpi = parseFloat(document.getElementById("valor_ipi").value);
+                            <H1>Valor Final Total</H1>
+                                <label>O valor do ISSQN:</label>
+                                <label id="issqn"></label>
+                                <button id="calissqn" onclick="issqn()">Valor ISSQN</button>
 
-
-
-
-
-                                    var valorTotalNota = totalProdutos1 + totalProdutos2 + totalProdutos3 + totalProdutos4 + valorFrete + valorSeguro + outrasDespesas + valorIpi - desconto;
-                                    console.log("R$". valorTotalNota);
-                                }
-                            </script>
                         </div>
                     </div>
                 </div>

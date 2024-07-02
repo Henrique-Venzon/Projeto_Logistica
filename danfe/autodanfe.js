@@ -69,7 +69,7 @@ document.getElementById("autoDanfe").addEventListener("click", function () {
   document.getElementById("ipi").value = "5.00";
   document.getElementById("inscricao_municipal").value = "1234567890";
   document.getElementById("valor_total_servicos").value = "200.00";
-  document.getElementById("base_calculo_issqn").value = "200.00";
+  document.getElementById("base_calculo_issqn").value = "";
 });
 
 document.getElementById("autoDanfe1").addEventListener("click", function () {
@@ -143,7 +143,7 @@ document.getElementById("autoDanfe1").addEventListener("click", function () {
   document.getElementById("ipi").value = "5.00";
   document.getElementById("inscricao_municipal").value = "8765432100";
   document.getElementById("valor_total_servicos").value = "500.00";
-  document.getElementById("base_calculo_issqn").value = "500.00";
+  document.getElementById("base_calculo_issqn").value = "";
 });
 
 document.getElementById("autoDanfe2").addEventListener("click", function () {
@@ -217,7 +217,7 @@ document.getElementById("autoDanfe2").addEventListener("click", function () {
   document.getElementById("ipi").value = "10.00";
   document.getElementById("inscricao_municipal").value = "5432109876";
   document.getElementById("valor_total_servicos").value = "500.00";
-  document.getElementById("base_calculo_issqn").value = "500.00";
+  document.getElementById("base_calculo_issqn").value = "";
 });
 
 document.getElementById("autoDanfe3").addEventListener("click", function () {
@@ -291,7 +291,7 @@ document.getElementById("autoDanfe3").addEventListener("click", function () {
   document.getElementById("ipi").value = "10.00";
   document.getElementById("inscricao_municipal").value = "6543210987";
   document.getElementById("valor_total_servicos").value = "600.00";
-  document.getElementById("base_calculo_issqn").value = "600.00";
+  document.getElementById("base_calculo_issqn").value = "";
 });
 document.getElementById("autoDanfe4").addEventListener("click", function () {
   document.getElementById("danfeForm").reset();
@@ -364,7 +364,7 @@ document.getElementById("autoDanfe4").addEventListener("click", function () {
   document.getElementById("ipi").value = "5.00";
   document.getElementById("inscricao_municipal").value = "8765432100";
   document.getElementById("valor_total_servicos").value = "600.00";
-  document.getElementById("base_calculo_issqn").value = "600.00";
+  document.getElementById("base_calculo_issqn").value = "";
 });
 
 
@@ -439,7 +439,7 @@ document.getElementById("autoDanfe5").addEventListener("click", function () {
   document.getElementById("ipi").value = "8.00";
   document.getElementById("inscricao_municipal").value = "7654321098";
   document.getElementById("valor_total_servicos").value = "800.00";
-  document.getElementById("base_calculo_issqn").value = "800.00";
+  document.getElementById("base_calculo_issqn").value = "";
 });
 
 
@@ -623,19 +623,32 @@ document.getElementById("preset2").addEventListener("click", function () {
 
 
 function desconto (){  
-  var totalProdutos = parseFloat(document.getElementById("total_produtos").value);
+  var totalProdutos1 = parseFloat(document.getElementById("valor_total_prod1").value)||0;
+  var totalProdutos2 = parseFloat(document.getElementById("valor_total_prod2").value)||0;
+  var totalProdutos3 = parseFloat(document.getElementById("valor_total_prod3").value)||0;
+  var totalProdutos4 = parseFloat(document.getElementById("valor_total_prod4").value)||0;
   var valorFrete = parseFloat(document.getElementById("valor_frete").value);
   var valorSeguro = parseFloat(document.getElementById("valor_seguro").value);
   var desconto = parseFloat(document.getElementById("desconto").value);
   var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value);
   var valorIpi = parseFloat(document.getElementById("valor_ipi").value);
-  var valorTotalNota = totalProdutos + valorFrete + valorSeguro + outrasDespesas + valorIpi - desconto;
-  var descot= valorTotalNota * (desconto/100);
+  var valorTotalNota = totalProdutos1 + totalProdutos2 + totalProdutos3 + totalProdutos4 + valorFrete + valorSeguro + outrasDespesas + valorIpi;
+  var descot = valorTotalNota * (desconto/100);
   
   var totalliquido= valorTotalNota - descot;
   
     document.getElementById('deconto').innerHTML = totalliquido;
 }
+function issqn(){
+
+    var servico = parseFloat(document.getElementById("valor_total_servicos"));
+
+    var base = parseFloat(document.getElementById("base_calculo_issqn"));
+
+    var issqnto = servico * (base/100);
+    alert(issqnto);
+        //document.getElementById('issqn').innerHTML = issqnto;
+  }
 
 //Pré set randomizado 2
 document.getElementById("clearForm").addEventListener("click", function () {
@@ -815,16 +828,7 @@ document.getElementById("preset3").addEventListener("click", function () {
 
   
  
-  
-  var totalProdutos = parseFloat(document.getElementById("total_produtos").value) || 0;
-  var valorFrete = parseFloat(document.getElementById("valor_frete").value) || 0;
-  var valorSeguro = parseFloat(document.getElementById("valor_seguro").value) || 0;
-  var valorIpi = parseFloat(document.getElementById("valor_ipi").value) || 0;
-  var valorDespesas = parseFloat(document.getElementById("outras_despesas").value) || 0; 
-  
-  
-  var valorTotal = totalProdutos + valorFrete + valorSeguro + valorDespesas + valorIpi ;
-  document.getElementById("valor_total_nota").value = valorTotal.toFixed(2);
+
 
  
 });
