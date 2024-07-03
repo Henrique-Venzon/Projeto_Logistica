@@ -16,5 +16,6 @@ if ($conexao->connect_errno) {
     $resultado = $conexao->query($sql);
     $conexao->close();
     header('Location: ../verPedido.php', true, 301);
+    exit();
 }
 

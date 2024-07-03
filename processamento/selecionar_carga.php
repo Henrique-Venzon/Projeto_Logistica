@@ -71,4 +71,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 header('location:../movimentar'. $doca .'.php',true,301);
+exit();
 

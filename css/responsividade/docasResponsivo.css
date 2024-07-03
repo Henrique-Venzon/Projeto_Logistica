@@ -1,0 +1,16 @@
+@media only screen and (max-width: 600px) {
+    .table th,td{
+        font-size: 15px;
+    }
+    .text h1{
+        font-size: 32px;
+    }
+    .table th{
+        height: 40px;
+    
+    }
+    .table td{
+        height: 50px;
+    }
+    
+}

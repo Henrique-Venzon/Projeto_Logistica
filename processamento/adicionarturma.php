@@ -37,6 +37,7 @@ include_once('../include/conexao.php');
         } else {
             $conexao->close();
             header('Location: ../index.php', true, 301);
+            exit();
         }
 
     }
