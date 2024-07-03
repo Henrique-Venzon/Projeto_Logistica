@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 16/06/2024 às 18:02
+-- Tempo de geração: 02/07/2024 às 15:02
 -- Versão do servidor: 8.0.36
 -- Versão do PHP: 8.2.13
 
@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `logistica`
+-- Banco de dados: `matrei89_logistica`
 --
-CREATE DATABASE IF NOT EXISTS `logistica` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `logistica`;
+CREATE DATABASE IF NOT EXISTS `matrei89_logistica` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `matrei89_logistica`;
 
 -- --------------------------------------------------------
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `aluno` (
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=411 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=663 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `aluno`
@@ -45,30 +45,10 @@ CREATE TABLE IF NOT EXISTS `aluno` (
 
 INSERT INTO `aluno` (`id`, `username`, `password`, `turma_id`) VALUES
 (1, 'PROFESSOR', 'PROFESSOR@SESISENAI2024', -1),
-(2, 'root.Att', '6nUJ', 1),
-(12, 'teste', 'teste', 1),
+(2, 'root.Att', 'Hu97', 1),
+(12, 'HelloWorldJuniorteste', '4RTZ', 1),
 (94, 'Aluno 1', 'xSTt', 2),
-(95, 'Aluno 2', 'blFm', 2),
-(391, 'Aluno 1', 'GZtv', 3),
-(392, 'Aluno 2', 'gtmQ', 3),
-(393, 'Aluno 3', 'fmi8', 3),
-(394, 'Aluno 4', '7Oom', 3),
-(395, 'Aluno 5', 'hN87', 3),
-(396, 'Aluno 6', 'Fbgu', 3),
-(397, 'Aluno 7', 'dvmi', 3),
-(398, 'Aluno 8', '8mGq', 3),
-(399, 'Aluno 9', 'FqL7', 3),
-(400, 'Aluno 10', 'gKoM', 3),
-(401, 'Aluno 11', '7Ojm', 3),
-(402, 'Aluno 12', 'xN7Y', 3),
-(403, 'Aluno 13', 'w27R', 3),
-(404, 'Aluno 14', 'qsCu', 3),
-(405, 'Aluno 15', 'Ef7e', 3),
-(406, 'Aluno 16', 'GEt9', 3),
-(407, 'Aluno 17', 'emfd', 3),
-(408, 'Aluno 18', '9Eqz', 3),
-(409, 'Aluno 19', 'W6wr', 3),
-(410, 'Aluno 20', 'h7E3', 3);
+(95, 'Aluno 2', 'blFm', 2);
 
 -- --------------------------------------------------------
 
@@ -114,14 +94,7 @@ CREATE TABLE IF NOT EXISTS `atividade_concluida` (
   KEY `id_turma` (`id_turma`),
   KEY `id_aluno` (`id_aluno`),
   KEY `id_transporte` (`id_transporte`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `atividade_concluida`
---
-
-INSERT INTO `atividade_concluida` (`id`, `id_transporte`, `id_turma`, `id_aluno`, `sem_lona`, `avariana_lateral_direita`, `sem_cabo_de_energia`, `avaria_no_teto`, `avaria_na_frente`, `sem_lacre`, `adesivos_avariados`, `excesso_de_altura`, `excesso_na_direita`, `excesso_na_esquerda`, `excesso_na_frente`, `painel_avariado`, `avariana_na_lateral_esquerda`, `container_bem_desgastado`) VALUES
-(43, 15, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -171,21 +144,28 @@ CREATE TABLE IF NOT EXISTS `carga` (
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=209 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `carga`
 --
 
 INSERT INTO `carga` (`id`, `situacao`, `npedido`, `Empresa`, `cliente`, `Telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`, `data_pedido`, `data_entrega`, `turma_id`) VALUES
-(104, 'esperando a nota fiscal', '2', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-12', '2024-06-12', 3),
-(122, 'Finalizada', '2', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-13', '2024-06-13', 2),
-(123, 'Vistoriado', '2', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-12', '2024-06-06', 2),
-(124, 'Vistoriado', '3', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-13', '2024-06-13', 2),
-(125, 'enviado', '5', 'MultiLog', 'Luan Pereira', '4789426155', '23812310', 'Motor', 'Óleo Diesel', '', '', 'UN', 'L', ' ', ' ', 15, 30, 0, 0, 2800.00, 2.40, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-25', '2024-06-05', 1),
-(126, 'enviado', '2', 'ARXO', 'Henrique Venzon', '4791296865', '88318481', 'Camisa', 'Moletom', '', '', 'UN', 'UN', ' ', ' ', 30, 20, 0, 0, 20.00, 24.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-13', '2024-06-13', 1),
-(127, 'Finalizada', '2', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', 'Motor', 'Óleo Diesel', 'UN', 'UN', 'UN', 'L', 25, 25, 2, 800, 15.00, 8.00, 2800.00, 2.40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-13', '2024-06-13', 3),
-(128, 'Finalizada', '56', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Camisa', 'Moletom', '', '', 'UN', 'UN', ' ', ' ', 3, 4, 0, 0, 20.00, 24.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-06', '2024-07-02', 3);
+(193, 'Finalizada', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-26', '2024-06-27', 2),
+(194, 'Finalizada', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-26', '2024-06-27', 2),
+(195, 'Finalizada', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-26', '2024-06-27', 2),
+(196, 'Finalizada', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-26', '2024-06-27', 2),
+(197, 'Finalizada', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-26', '2024-06-27', 2),
+(198, 'Finalizada', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-26', '2024-06-27', 2),
+(200, 'enviado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-27', '2024-06-28', 1),
+(201, 'enviado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-07-02', '2024-07-03', 1),
+(202, 'enviado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-07-02', '2024-07-03', 1),
+(203, 'enviado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-07-02', '2024-07-03', 1),
+(204, 'enviado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-07-02', '2024-07-03', 1),
+(205, 'enviado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-07-02', '2024-07-03', 1),
+(206, 'enviado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-07-02', '2024-07-03', 2),
+(207, 'enviado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-07-02', '2024-07-03', 2),
+(208, 'enviado', '345644', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Mouse', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 8.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-07-02', '2024-07-03', 1);
 
 -- --------------------------------------------------------
 
@@ -211,14 +191,7 @@ CREATE TABLE IF NOT EXISTS `container` (
   `situacao` char(20) NOT NULL,
   PRIMARY KEY (`id_container`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `container`
---
-
-INSERT INTO `container` (`id_container`, `cliente`, `placa`, `container`, `navio`, `tipo`, `lacre`, `lacre SIF`, `nome_motorista`, `NOnu`, `Temperatura`, `IMO`, `turma_id`, `situacao`) VALUES
-(15, 'Hnerique', '3423', '3443', '34', '34', '3432', '0', 'Luan', '0', 26, '0', 3, 'enviado');
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -236,15 +209,7 @@ CREATE TABLE IF NOT EXISTS `docas` (
   PRIMARY KEY (`id`),
   KEY `FK_docas_aluno` (`id_aluno`),
   KEY `FK_docas_turma` (`id_turma`)
-) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `docas`
---
-
-INSERT INTO `docas` (`id`, `id_doca`, `id_carga`, `id_aluno`, `id_turma`) VALUES
-(81, 1, 123, 1, 2),
-(82, 1, 124, 1, 2);
+) ENGINE=InnoDB AUTO_INCREMENT=157 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -255,31 +220,25 @@ INSERT INTO `docas` (`id`, `id_doca`, `id_carga`, `id_aluno`, `id_turma`) VALUES
 DROP TABLE IF EXISTS `estoque`;
 CREATE TABLE IF NOT EXISTS `estoque` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `id_doca` int NOT NULL,
   `nome_produto` varchar(255) NOT NULL,
   `quantidade_enviada` int NOT NULL,
   `posicao` varchar(2) NOT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `estoque`
 --
 
-INSERT INTO `estoque` (`id`, `id_doca`, `nome_produto`, `quantidade_enviada`, `posicao`, `id_turma`) VALUES
-(33, 1, 'Teclado', 20, 'A1', 1),
-(34, 1, 'Mouse', 30, 'A1', 1),
-(35, 1, 'Motor', 15, 'A1', 1),
-(36, 1, 'Óleo Diesel', 30, 'A1', 1),
-(37, 1, 'Teclado', 30, 'A1', 3),
-(38, 1, 'Mouse', 30, 'A1', 3),
-(39, 1, 'Teclado', 10, 'A1', 2),
-(40, 1, 'Mouse', 15, 'A1', 2),
-(41, 1, 'Motor', 2, 'A1', 3),
-(42, 1, 'Óleo Diesel', 800, 'A1', 3),
-(43, 1, 'Camisa', 3, 'A1', 3),
-(44, 1, 'Moletom', 4, 'A1', 3);
+INSERT INTO `estoque` (`id`, `nome_produto`, `quantidade_enviada`, `posicao`, `id_turma`) VALUES
+(69, 'Teclado', 17, 'A1', 2),
+(70, 'Teclado', 2, 'A2', 2),
+(71, 'Teclado', 1, 'A3', 2),
+(72, 'Teclado', 51, 'A1', 1),
+(73, 'Mouse', 50, 'A1', 1),
+(74, 'Óleo Diesel', 600, 'A1', 1),
+(75, 'Camisa', 50, 'A1', 1);
 
 -- --------------------------------------------------------
 
@@ -298,7 +257,7 @@ CREATE TABLE IF NOT EXISTS `movimentacao` (
   `id_aluno` int NOT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=299 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=382 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -315,21 +274,20 @@ CREATE TABLE IF NOT EXISTS `nota_fiscal_criada` (
   PRIMARY KEY (`id_notafiscal`),
   KEY `id_atividade` (`id_atividade`),
   KEY `id_turma` (`id_turma`)
-) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=192 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `nota_fiscal_criada`
 --
 
 INSERT INTO `nota_fiscal_criada` (`id_notafiscal`, `id_atividade`, `id_turma`, `data_hora_envio`) VALUES
-(95, 104, 3, '2024-06-12 08:48:37'),
-(113, 122, 2, '2024-06-13 11:21:58'),
-(114, 123, 2, '2024-06-13 11:26:33'),
-(115, 124, 2, '2024-06-13 11:26:52'),
-(116, 125, 1, '2024-06-13 11:51:19'),
-(117, 126, 1, '2024-06-13 11:52:02'),
-(118, 127, 3, '2024-06-13 12:06:58'),
-(119, 128, 3, '2024-06-13 12:17:48');
+(184, 193, 2, '2024-06-26 11:13:47'),
+(185, 194, 2, '2024-06-26 11:14:10'),
+(186, 195, 2, '2024-06-26 11:18:49'),
+(187, 196, 2, '2024-06-26 11:18:57'),
+(188, 197, 2, '2024-06-26 11:19:13'),
+(189, 198, 2, '2024-06-26 11:19:38'),
+(191, 200, 1, '2024-06-27 10:22:22');
 
 -- --------------------------------------------------------
 
@@ -348,7 +306,38 @@ CREATE TABLE IF NOT EXISTS `pegado` (
   `id_aluno` int NOT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=264 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=347 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `picking`
+--
+
+DROP TABLE IF EXISTS `picking`;
+CREATE TABLE IF NOT EXISTS `picking` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_pedido` int NOT NULL,
+  `quantidade_solicitada` int NOT NULL,
+  `produto` varchar(255) NOT NULL,
+  `posicao` varchar(255) NOT NULL,
+  `quantidade` int NOT NULL,
+  `id_turma` int NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_picking` (`id_pedido`,`produto`,`posicao`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `picking`
+--
+
+INSERT INTO `picking` (`id`, `id_pedido`, `quantidade_solicitada`, `produto`, `posicao`, `quantidade`, `id_turma`) VALUES
+(1, 11, 2, 'Teclado', 'A1', 2, 1),
+(2, 15, 1, 'Teclado', 'A1', 1, 1),
+(3, 15, 1, 'Mouse', 'A2', 1, 1),
+(4, 15, 1, 'Óleo Diesel', 'A3', 1, 1),
+(5, 15, 1, 'Camisa', 'A4', 1, 1),
+(6, 17, 1, 'Teclado', 'D4', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -363,7 +352,7 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `preco` float NOT NULL,
   `nome_produto_normalizado` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `produto`
@@ -375,7 +364,11 @@ INSERT INTO `produto` (`id`, `nome_produto`, `preco`, `nome_produto_normalizado`
 (3, 'Motor', 2800, 'Motor'),
 (4, 'Óleo Diesel', 2.4, 'Oleo Diesel'),
 (5, 'Camisa', 20, 'Camisa'),
-(6, 'Moletom', 24, 'Moletom');
+(6, 'Moletom', 24, 'Moletom'),
+(7, 'Brinquedo', 24.99, 'Brinquedo'),
+(8, 'Novelo de lã', 15, 'Novelo de la'),
+(9, 'carrinho', 7, 'carrinho'),
+(10, 'Carrinho de controle remoto.', 50, 'Carrinho de controle remoto.');
 
 -- --------------------------------------------------------
 
@@ -386,8 +379,8 @@ INSERT INTO `produto` (`id`, `nome_produto`, `preco`, `nome_produto_normalizado`
 DROP TABLE IF EXISTS `professor`;
 CREATE TABLE IF NOT EXISTS `professor` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL,
-  `password` varchar(65) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL,
+  `username` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `password` varchar(65) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
@@ -420,17 +413,14 @@ CREATE TABLE IF NOT EXISTS `solicitacao` (
   `quantidade4` int DEFAULT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `solicitacao`
 --
 
 INSERT INTO `solicitacao` (`id`, `id_pedido`, `produto`, `quantidade`, `produto2`, `quantidade2`, `produto3`, `quantidade3`, `produto4`, `quantidade4`, `id_turma`) VALUES
-(1, 3, 'tesoura', 5, '', 0, '', 0, '', 0, 0),
-(2, 6, 'tesoura', 5, 'Mouse', 5, '', 0, '', 0, 0),
-(3, 5, 'Teclado', 2, 'Teclado', 2, 'Motor', 2, '', 0, 0),
-(4, 2, 'Teclado', 24, '', 0, '', 0, '', 0, 3);
+(18, 213, 'Teclado', 1, '', 0, '', 0, '', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -451,8 +441,7 @@ CREATE TABLE IF NOT EXISTS `turma` (
 INSERT INTO `turma` (`id`) VALUES
 (-1),
 (1),
-(2),
-(3);
+(2);
 
 -- --------------------------------------------------------
 
@@ -502,18 +491,19 @@ CREATE TABLE IF NOT EXISTS `vistoriado` (
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=200 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `vistoriado`
 --
 
 INSERT INTO `vistoriado` (`id`, `situacao`, `npedido`, `Empresa`, `cliente`, `Telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`, `data_pedido`, `data_entrega`, `turma_id`) VALUES
-(122, 'Vistoriado', '2', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 0, 0, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-13', '2024-06-13', 2),
-(123, 'Vistoriado', '2', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-12', '2024-06-06', 2),
-(124, 'Vistoriado', '3', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', '', '', 'UN', 'UN', ' ', ' ', 10, 15, 0, 0, 15.00, 8.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-13', '2024-06-13', 2),
-(127, 'Vistoriado', '2', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', 'Motor', 'Óleo Diesel', 'UN', 'UN', 'UN', 'L', 0, 0, 0, 0, 15.00, 8.00, 2800.00, 2.40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-13', '2024-06-13', 3),
-(128, 'Vistoriado', '56', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Camisa', 'Moletom', '', '', 'UN', 'UN', ' ', ' ', 0, 0, 0, 0, 20.00, 24.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-06', '2024-07-02', 3);
+(193, 'Vistoriado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 0, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-26', '2024-06-27', 2),
+(194, 'Vistoriado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 0, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-26', '2024-06-27', 2),
+(195, 'Vistoriado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 0, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-26', '2024-06-27', 2),
+(196, 'Vistoriado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 0, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-26', '2024-06-27', 2),
+(197, 'Vistoriado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 0, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-26', '2024-06-27', 2),
+(198, 'Vistoriado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', '', '', '', 'UN', ' ', ' ', ' ', 0, 0, 0, 0, 15.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-06-26', '2024-06-27', 2);
 
 --
 -- Restrições para tabelas despejadas
