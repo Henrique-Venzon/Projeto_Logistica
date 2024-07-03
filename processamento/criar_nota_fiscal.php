@@ -23,6 +23,7 @@ $turma_id = $_GET['turma_id'];
 $sql = "INSERT INTO `nota_fiscal_criada`(`id_atividade`, `id_turma`) VALUES ('" . $ultimo_id_inserido . "','" . $turma_id . "');";
 if ($conexao->query($sql) === TRUE) {
     header('Location: ../containerP.php', true, 301);
+    exit();
 } else {
     echo "Erro: " . $sql . "<br>" . $conexao->error;
 }

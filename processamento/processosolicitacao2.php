@@ -77,6 +77,7 @@ if (isset($_POST['id_pedido'], $_POST['quantidadeS'], $_POST['produto'], $_POST[
     $check_stmt->close();
 
     header('Location: ../verSolicitacao.php', true, 301);
+    exit();
 } else {
     echo "Erro: Dados não recebidos corretamente.";
 }

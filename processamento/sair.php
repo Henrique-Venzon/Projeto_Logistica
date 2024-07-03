@@ -7,3 +7,4 @@
  
     // redirecionar o utilizador para outra página, login.php por exemplo
     header('location:../index.php');
+    exit();

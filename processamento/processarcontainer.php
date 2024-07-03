@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($conn->query($sql) === TRUE) {
         echo 'Dados inseridos com sucesso!';
         header('location:../containerP.php');
+        exit();
     } else {
         echo 'Erro ao inserir dados: ' . $conn->error;
     }

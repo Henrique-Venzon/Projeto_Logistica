@@ -107,4 +107,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Se chegou até aqui, significa que não houve processamento adequado para redirecionar
 header('Location: ../movimentarD1.php', true, 301);
 exit;
-?>
+

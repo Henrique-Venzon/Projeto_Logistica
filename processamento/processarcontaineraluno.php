@@ -35,6 +35,7 @@ $container_bem_desgastado = isset($_POST['container_bem_desgastado']) ? 1 : 0;
 if ($stmt->execute() === TRUE) {
     echo "Atividade Enviada com sucesso";
     header('location:../containerA.php');
+    exit();
 } else {
     echo 'Erro ao inserir dados: ' . $stmt->error;
 }

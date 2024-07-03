@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     $conexao->close();
                     header('Location: ../index.php', true, 301);
+                    exit();
                 }
             }
         } elseif ($_POST['action'] == 'aluno') {
@@ -51,10 +52,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
                     header('Location: ../telaInicio.php', true, 301);
+                    exit();
                 } else {
 
                     $conexao->close();
                     header('Location: ../index.php', true, 301);
+                    exit();
                 }
             }
         }
