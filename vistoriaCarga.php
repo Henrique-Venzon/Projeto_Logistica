@@ -31,7 +31,6 @@
     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado']) && $_GET['pedido_selecionado'] != '0') {
         $pedido_id_selecionado = $_GET['pedido_selecionado'];
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
             die("Erro de conexão: " . $conn->connect_error);
         }
@@ -67,7 +66,7 @@
                             <select name="pedido_selecionado" id="pedido">
                                 <option value="0">0</option>
                                 <?php
-                                $conn = new mysqli($servername, $username, $password, $dbname);
+
                                 if ($conn->connect_error) {
                                     die("Erro de conexão: " . $conn->connect_error);
                                 }
