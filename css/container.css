@@ -48,6 +48,9 @@ main{
     height: 1px;
     width: 10px;
   }
+  .numeroPedido-cell{
+    display: none;
+  }
 .DivDireita{
     flex-grow: 1;
     background-color: #ebebeb;
