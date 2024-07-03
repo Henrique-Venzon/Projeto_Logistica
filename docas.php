@@ -7,6 +7,7 @@ if (!isset($_SESSION['id'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['turma'] = $_POST['turma'];
 }
+$turma_id=$_SESSION['turma'];
 ?>
 <!DOCTYPE html>
 <html lang="en">

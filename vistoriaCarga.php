@@ -28,13 +28,13 @@
     include_once('include/conexao.php');
     $pedido_id_selecionado = 0;
 
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Erro de conexão: " . $conn->connect_error);
+    }
+
     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['pedido_selecionado']) && $_GET['pedido_selecionado'] != '0') {
         $pedido_id_selecionado = $_GET['pedido_selecionado'];
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        if ($conn->connect_error) {
-            die("Erro de conexão: " . $conn->connect_error);
-        }
 
         $sql = "SELECT * FROM carga WHERE id = '" . $pedido_id_selecionado . "' AND turma_id = '" . $_SESSION['turma'] . "'";
         $result = $conn->query($sql);
@@ -42,7 +42,6 @@
         if ($result->num_rows > 0) {
             $pedido = $result->fetch_assoc();
         }
-        $conn->close();
     }
     ?>
 
@@ -67,11 +66,6 @@
                             <select name="pedido_selecionado" id="pedido">
                                 <option value="0">0</option>
                                 <?php
-                                $conn = new mysqli($servername, $username, $password, $dbname);
-                                if ($conn->connect_error) {
-                                    die("Erro de conexão: " . $conn->connect_error);
-                                }
-
                                 $sql = "SELECT id, npedido FROM carga WHERE situacao='enviado' and turma_id = '" . $_SESSION['turma'] . "'";
                                 $result = $conn->query($sql);
 
@@ -80,7 +74,6 @@
                                         echo "<option value=\"{$row['id']}\">{$row['npedido']}</option>";
                                     }
                                 }
-                                $conn->close();
                                 ?>
                             </select>
                     </div>
@@ -106,23 +99,21 @@
                                             <h1>
                                                 <?php
                                                 if ($pedido_id_selecionado != 0) {
-                                                    if ($conn->connect_error) {
-                                                        die("Erro de conexão: " . $conn->connect_error);
-                                                    }
                                                     $sql_atividade = "SELECT id FROM carga WHERE id='" . $pedido_id_selecionado . "' AND turma_id = '" . $_SESSION['turma'] . "'";
                                                     $resultado = $conn->query($sql_atividade);
 
-                                                    $row_atividade = $resultado->fetch_assoc();
-                                                    $id_atividade = $row_atividade['id'];
-                                                    $sql = "SELECT id_notafiscal FROM nota_fiscal_criada WHERE id_atividade = $id_atividade and id_turma = '" . $_SESSION['turma'] . "'";
-                                                    $result = $conn->query($sql);
-                                                    if ($result->num_rows > 0) {
-                                                        while ($row = $result->fetch_assoc()) {
-                                                            $notafiscal = $row['id_notafiscal'];
+                                                    if ($resultado->num_rows > 0) {
+                                                        $row_atividade = $resultado->fetch_assoc();
+                                                        $id_atividade = $row_atividade['id'];
+                                                        $sql = "SELECT id FROM nota_fiscal WHERE id_atividade = $id_atividade and id_turma = '" . $_SESSION['turma'] . "'";
+                                                        $result = $conn->query($sql);
+                                                        if ($result->num_rows > 0) {
+                                                            while ($row = $result->fetch_assoc()) {
+                                                                $notafiscal = $row['id'];
+                                                            }
+                                                            echo $notafiscal;
                                                         }
-                                                        echo $notafiscal;
                                                     }
-                                                    $conn->close();
                                                 }
                                                 ?>
                                             </h1>
@@ -138,7 +129,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="tabelaComVistoria">
                                     <table class='table'>
                                         <tr>
@@ -219,6 +209,7 @@
                                 <div class="enviar">
                                     <button type="submit">Enviar</button>
                                 </div>
+                            </div>
                         </form>
                     </div>
                 <?php } else { ?>
@@ -290,3 +281,8 @@
 </body>
 
 </html>
+
+<?php
+$conn->close(); // Fechar conexão no final do script
+?>
+
