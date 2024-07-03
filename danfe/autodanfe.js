@@ -641,13 +641,13 @@ function desconto (){
 }
 function issqn(){
 
-    var servico = parseFloat(document.getElementById("valor_total_servicos").values);
+    var servico = parseFloat(document.getElementById("valor_total_servicos").value)|| 0;
 
-    var base = parseFloat(document.getElementById("base_calculo_issqn").values);
+    var base = parseFloat(document.getElementById("base_calculo_issqn").value)|| 0;
 
     var issqnto = servico * (base/100);
-    alert(issqnto);
-        //document.getElementById('issqn').innerHTML = issqnto;
+    
+        document.getElementById('issqnto').innerHTML = issqnto;
   }
 
 //Pré set randomizado 2

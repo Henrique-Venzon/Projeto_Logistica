@@ -29,6 +29,7 @@ if ($conexao->query($sql) === TRUE) {
             $sql = "UPDATE vistoriado SET quantidade1 = quantidade1 - $avariado1, quantidade2 = quantidade2 - $avariado2, quantidade3 = quantidade3 - $avariado3, quantidade4 = quantidade4 - $avariado4 WHERE id = '$id'";
             if ($conexao->query($sql) === TRUE) {
                 header('location:../vistoriaCarga.php', true, 301);
+                exit();
             } else {
                 echo "Erro ao atualizar dados na tabela vistoriado: " . $conexao->error;
             }

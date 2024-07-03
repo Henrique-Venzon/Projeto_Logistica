@@ -420,14 +420,16 @@ $conn->close();
                         <div class='desconto'>
                             <H1>Valor Final Total</H1>
                             <label>O valor total com desconto é:</label>
-                            <label id='deconto'></label>
-                            <button id='caldesco' type='button' onclick='desconto()'>Valor total</button>
-                            <H1>Valor Final Total</H1>
-                            <label>O valor do ISSQN:</label>
-                            <label id='issqn'></label>
-                            <button id='calissqn' onclick='issqn()'>Valor ISSQN</button>
+                            <label id="deconto"></label>
+                            <button id="caldesco" onclick="desconto()">Valor total</button>
+                             
+                             <H1>Valor Final Total</H1>
+                                <label>O valor do ISSQN:</label>
+                                <label id="issqnto"></label>
+                                <button id="calissqn" onclick="issqn()">Valor ISSQN</button>
+                            
 
-                        </div>
+                        </di>
                     </div>
                 </div>
             </div>

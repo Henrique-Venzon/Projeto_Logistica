@@ -85,9 +85,9 @@ include_once('../include/conexao.php');
     insertIfNotExists($conn, $produto4, $valor4);
 
     if ($conn->query($sql) === TRUE) {
-        echo 'Dados inseridos com sucesso!';
         header('Location: ../criandoNotaFiscal.php?npedido=' . urlencode($npedido) . '&turma_id=' . urlencode($turma_id));
-    } else {
+        exit();
+        } else {
         echo 'Erro ao inserir dados: ' . $conn->error;
     }
 

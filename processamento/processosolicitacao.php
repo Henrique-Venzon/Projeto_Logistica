@@ -29,6 +29,7 @@ $stmt->bind_param("isisisisii", $id_pedido, $produto, $quantidade, $produto2, $q
 
 if ($stmt->execute()) {
     header('location:../solicitacao.php', true,301 );
+    exit();
 } else {
     echo "Erro: " . $stmt->error;
 }

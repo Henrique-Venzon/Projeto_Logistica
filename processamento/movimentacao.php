@@ -76,4 +76,5 @@ if (!empty($nome_produto4) && $quantidade_enviada4 > 0) {
 
 header('Location: ../docas.php', true, 301);
 $conexao->close();
+exit();
 

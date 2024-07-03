@@ -235,8 +235,8 @@ main{
   
   @media only screen and (max-width: 600px) {
     .IMAGEM img{
-        width: 320px;
-        height: 260px;
+        width:52vw;
+        height: 200px;
         filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 1));
   }
   .DivDireita{

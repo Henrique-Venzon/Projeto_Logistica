@@ -140,18 +140,11 @@ main{
   .centroT{
     font-size: 32px;
 }
-.DivDireita{
-  width: 60%;
-}
 .tabela-scroll {
   max-height: 600px; 
 }
-.table{
-  font-size: 17px;
-  
-}
 .table th,td{
-  font-size: 17px;
+  font-size: 16px;
 }
 .table th{
   height: 40px;
@@ -163,7 +156,7 @@ main{
 .reset{
   border-radius: 50px;
   height: 40px;
-  width: 100px;
-  font-size: 15px;
+  width: 90px;
+  font-size: 12px;
 }
 }
