@@ -92,12 +92,7 @@
     padding: 7px;
 }
 .senai{
-    height: 3%;
-    display: flex;
-    left: 52%; 
-    transform: translateX(-50%); 
-    position: absolute;
-    box-shadow: 0 0 5px #fff;
+    display: none;
 }
 .nomeLogin{
     left: 70%;

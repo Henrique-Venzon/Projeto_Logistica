@@ -29,6 +29,8 @@ if (!isset($_SESSION['turma'])) {
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/estiloInicio.css">
+    <script src="js/reveal.js" defer></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
