@@ -11,7 +11,7 @@
     ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/carga.css">
 </head>
@@ -96,7 +96,7 @@
                                         </div>
                                         <div class="nFiscal">
                                             <h1>Nota Fiscal</h1>
-                                            <h1>
+                                            <button type="button" id="nota-ver">
                                                 <?php
                                                 if ($pedido_id_selecionado != 0) {
                                                     $sql_atividade = "SELECT id FROM carga WHERE id='" . $pedido_id_selecionado . "' AND turma_id = '" . $_SESSION['turma'] . "'";
@@ -111,12 +111,103 @@
                                                             while ($row = $result->fetch_assoc()) {
                                                                 $notafiscal = $row['id'];
                                                             }
-                                                            echo $notafiscal;
+                                                            echo 'VER';
                                                         }
                                                     }
                                                 }
                                                 ?>
-                                            </h1>
+                                            </button>
+                                        </div>
+                                        <div id="myModal" class="modal">
+                                            <div class="modal-content">
+                                                <?php
+                                                include_once('include/conexao.php');
+
+                                                if ($conexao->connect_error) {
+                                                    die("Conexão falhou: " . $conexao->connect_error);
+                                                }
+
+                                                if (isset($notafiscal)) {
+                                                    $sql = "SELECT *  FROM nota_fiscal WHERE id = $notafiscal";
+                                                    $resultado = $conexao->query($sql);
+
+                                                    echo '<span class="close">&times;</span>';
+                                                    echo '<div class="scrollSku">';
+                                                    echo '<table>';
+                                                    echo '<thead>';
+                                                    echo '<tr>';
+                                                    echo '<th>ID</th>';
+                                                    echo '<th>NUMERO</th>';
+                                                    echo '<th>SERIE</th>';
+                                                    echo '<th>ENTRADA/SAÍDA</th>';
+                                                    echo '<th>CHAVE DE ACESSO</th>';
+                                                    echo '<th>INFROMAÇÃO INTERNA</th>';
+                                                    echo '<th>NOME RAZÃO SOCIAL</th>';
+                                                    echo '<th>sede</th>';
+                                                    echo '</tr>';
+                                                    echo '</thead>';
+                                                    echo '<tbody>';
+
+                                                    if ($resultado->num_rows > 0) {
+                                                        while ($row = $resultado->fetch_assoc()) {
+                                                            $id = $row["id"];
+                                                            $numero = $row["numero"];
+                                                            $serie = $row["serie"];
+                                                            $entrada_saida = $row["entrada_saida"];
+                                                            $chave_acesso = $row["chave_acesso"];
+                                                            $informacao_interna = $row["informacao_interna"];
+                                                            $nome_razao_social = $row["nome_razao_social"];
+                                                            $sede = $row["sede"];
+                                                            $telefone = $row["telefone"];
+                                                            $cep = $row["cep"];
+                                                            $protocolo_autorizacao = $row["protocolo_autorizacao"];
+                                                            $cnpj = $row["cnpj"];
+                                                            $inscricao_estadual = $row["inscricao_estadual"];
+                                                            $inscricao_estadual_subs_tributaria = $row["inscricao_estadual_subs_tributaria"];
+                                                            $natureza_operacao = $row["natureza_operacao"];
+                                                            $nome_razao_social_remetente = $row["nome_razao_social_remetente"];
+                                                            echo '<tr>';
+                                                            echo '<td>' . $id . '</td>';
+                                                            echo '<td>' . $numero . '</td>';
+                                                            echo '<td>' . $serie . '</td>';
+                                                            echo '<td>' . $entrada_saida . '</td>';
+                                                            echo '<td>' . $chave_acesso . '</td>';
+                                                            echo '<td>' . $informacao_interna . '</td>';
+                                                            echo '<td>' . $nome_razao_social . '</td>';
+                                                            echo '<td>' . $sede . '</td>';
+                                                            echo '</tr>';
+                                                            echo '<tr>';
+                                                            echo '<th>telefone</th>';
+                                                            echo '<th>cep</th>';
+                                                            echo '<th>protocolo autorização</th>';
+                                                            echo '<th>Cnpj</th>';
+                                                            echo '<th>inscricao estadual</th>';
+                                                            echo '<th>inscricao estadual subs tributaria</th>';
+                                                            echo '<th>natureza operacao</th>';
+                                                            echo '<th>nome razao social remetente</th>';
+                                                            echo '</tr>';
+                                                            echo '<tr>';
+                                                            echo '<td>' . $telefone . '</td>';
+                                                            echo '<td>' . $cep . '</td>';
+                                                            echo '<td>' . $protocolo_autorizacao . '</td>';
+                                                            echo '<td>' . $cnpj . '</td>';
+                                                            echo '<td>' . $inscricao_estadual . '</td>';
+                                                            echo '<td>' . $inscricao_estadual_subs_tributaria . '</td>';
+                                                            echo '<td>' . $natureza_operacao . '</td>';
+                                                            echo '<td>' . $nome_razao_social_remetente . '</td>';
+                                                            echo '</tr>';
+                                                        }
+                                                    }
+
+                                                    echo '</tbody>';
+                                                    echo '</table>';
+                                                    echo '</div>';
+                                                }
+
+                                                // Fecha a conexão
+                                                $conexao->close();
+                                                ?>
+                                            </div>
                                         </div>
                                         <div class="doca">
                                             <label for="doca">Doca:</label>
@@ -163,126 +254,76 @@
                                                 <td>
                                                     <span id="quantidade2"><?php echo $pedido['quantidade2']; ?></span>
                                                     <input name="quantidade2" id="quantidadeInput2" type="text"
-                                                        value="<?php echo $pedido['quantidade2']; ?>" style="display:none;" />
+                                                        value="<?php echo $pedido['quantidade2']; ?>"
+                                                        style="display:none;" />
+                                                    <input name="id" id="id" type="hidden"
+                                                        value="<?php echo $pedido['id']; ?>" style="display:none;" />
                                                 </td>
                                                 <td><span id="valor2"><?php echo $pedido['valor2']; ?></span></td>
                                                 <td><button type="button" id="editar2"
                                                         onclick="editarQuantidade(2)">editar</button></td>
-                                                <td><input type="number" name="avariado2" id="avariado2" min="0" max="<?php echo $pedido['quantidade2'];?>"/></td>
+                                                <td><input type="number" name="avariado2" id="avariado2" min="0" max="<?php echo $pedido['quantidade2']; ?>"></td>
                                                 <td id="total2"><?php echo $pedido['quantidade2'] * $pedido['valor2']; ?> Reais</td>
-                                            </tr>
-                                        <?php } ?>
-                                        <?php if (!empty($pedido['produto3'])) { ?>
-                                            <tr>
-                                                <td><?php echo $pedido['produto3']; ?></td>
-                                                <td><?php echo $pedido['unidade3']; ?></td>
-                                                <td>
-                                                    <span id="quantidade3"><?php echo $pedido['quantidade3']; ?></span>
-                                                    <input name="quantidade3" id="quantidadeInput3" type="text"
-                                                        value="<?php echo $pedido['quantidade3']; ?>" style="display:none;" />
-                                                </td>
-                                                <td><span id="valor3"><?php echo $pedido['valor3']; ?></span></td>
-                                                <td><button type="button" id="editar3"
-                                                        onclick="editarQuantidade(3)">editar</button></td>
-                                                <td><input type="number" name="avariado3" id="avariado3" min="0" max="<?php echo $pedido['quantidade3'];?>"/></td>
-                                                <td id="total3"><?php echo $pedido['quantidade3'] * $pedido['valor3']; ?> Reais</td>
-                                            </tr>
-                                        <?php } ?>
-                                        <?php if (!empty($pedido['produto4'])) { ?>
-                                            <tr>
-                                                <td><?php echo $pedido['produto4']; ?></td>
-                                                <td><?php echo $pedido['unidade4']; ?></td>
-                                                <td>
-                                                    <span id="quantidade4"><?php echo $pedido['quantidade4']; ?></span>
-                                                    <input name="quantidade4" id="quantidadeInput4" type="text"
-                                                        value="<?php echo $pedido['quantidade4']; ?>" style="display:none;" />
-                                                </td>
-                                                <td><span id="valor4"><?php echo $pedido['valor4']; ?></span></td>
-                                                <td><button type="button" id="editar4"
-                                                        onclick="editarQuantidade(4)">editar</button></td>
-                                                <td><input type="number" name="avariado4" id="avariado4" min="0" max="<?php echo $pedido['quantidade4'];?>"/></td>
-                                                <td id="total4"><?php echo $pedido['quantidade4'] * $pedido['valor4']; ?> Reais</td>
                                             </tr>
                                         <?php } ?>
                                     </table>
                                 </div>
                                 <div class="enviar">
-                                    <button type="submit">Enviar</button>
+                                    <button type="submit">Envivar</button>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                <?php } else { ?>
-                    <div class="IMAGEM" id="imagemContainer">
-                        <img src="img/este.png" alt="" draggable="false" oncontextmenu="return false">
                     </div>
                 <?php } ?>
             </div>
         </div>
     </main>
-
     <script>
-        function editarQuantidade(row) {
-            var quantidadeSpan = document.getElementById('quantidade' + row);
-            var quantidadeInput = document.getElementById('quantidadeInput' + row);
-            var editButton = document.getElementById('editar' + row);
-            var totalCell = document.getElementById('total' + row);
-            var valorSpan = document.getElementById('valor' + row);
-            var avariadoInput = document.getElementById('avariado' + row);
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the modal
+            var modal = document.getElementById("myModal");
 
-            if (quantidadeSpan.style.display === 'none') {
-                salvarQuantidade(row);
-            } else {
-                quantidadeSpan.style.display = 'none';
-                quantidadeInput.style.display = 'inline';
-                editButton.textContent = 'salvar';
+            // Get the button that opens the modal
+            var btn = document.getElementById("nota-ver");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+                modal.style.display = "block";
             }
-        }
 
-        function salvarQuantidade(row) {
-            var quantidadeSpan = document.getElementById('quantidade' + row);
-            var quantidadeInput = document.getElementById('quantidadeInput' + row);
-            var novaQuantidade = quantidadeInput.value;
-            var totalCell = document.getElementById('total' + row);
-            var valorSpan = document.getElementById('valor' + row);
-            var avariadoInput = document.getElementById('avariado' + row);
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
 
-            quantidadeSpan.textContent = novaQuantidade;
-            quantidadeSpan.style.display = 'inline';
-            quantidadeInput.style.display = 'none';
-            document.getElementById('editar' + row).textContent = 'editar';
-
-            // Atualiza o total
-            var valor = parseFloat(valorSpan.textContent);
-            totalCell.textContent = (novaQuantidade * valor).toFixed(2) + " Reais";
-
-            // Atualiza o max do campo avariado
-            avariadoInput.max = novaQuantidade;
-
-            // Fazendo a requisição AJAX
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "processamento/atualizar_quantidade.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                    console.log("Quantidade atualizada com sucesso!");
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
                 }
             }
-            xhr.send("quantidade=" + novaQuantidade + "&row=" + row);
+        });
+
+        function editarQuantidade(id) {
+            var quantidadeSpan = document.getElementById("quantidade" + id);
+            var quantidadeInput = document.getElementById("quantidadeInput" + id);
+            var editarButton = document.getElementById("editar" + id);
+
+            if (quantidadeInput.style.display === "none") {
+                quantidadeSpan.style.display = "none";
+                quantidadeInput.style.display = "block";
+                editarButton.innerText = "Salvar";
+            } else {
+                quantidadeSpan.innerText = quantidadeInput.value;
+                quantidadeSpan.style.display = "block";
+                quantidadeInput.style.display = "none";
+                editarButton.innerText = "editar";
+            }
         }
     </script>
-        
-
-    <script src="js/vistoriaCarga.js"></script>
-    <script src="js/sidebar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
-
-<?php
-$conn->close(); // Fechar conexão no final do script
-?>
-
