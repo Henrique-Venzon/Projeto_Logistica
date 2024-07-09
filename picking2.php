@@ -63,6 +63,7 @@ $id=$_GET['id']
                                 echo "<td style=\"border-right:1px solid black;\">" . $row->produto . "</td>";
                                 echo "<td style=\"border-right:1px solid black;\">" . $row->quantidade_solicitada . "</td>";
                                 echo "<td style=\"border-right:1px solid black;\">" . $row->posicao . "</td>";
+                                echo "<td><input class=\"custom-checkbox\" type=\"checkbox\" name=\"produtos_selecionados[]\" value=\"" . $row->id . "\"></td>";
                             }
                             print "</table>";
                             print "</div>";

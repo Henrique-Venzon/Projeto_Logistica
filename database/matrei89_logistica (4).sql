@@ -588,7 +588,7 @@ INSERT INTO `vistoriado` (`id`, `situacao`, `npedido`, `Empresa`, `cliente`, `Te
 --
 
 --
--- Restrições para tabelas `aluno`
+-- Restrições para tabelas `aluno`F
 --
 ALTER TABLE `aluno`
   ADD CONSTRAINT `aluno_ibfk_1` FOREIGN KEY (`turma_id`) REFERENCES `turma` (`id`);
