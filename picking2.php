@@ -10,8 +10,8 @@ if (!isset($_SESSION['turma'])) {
     exit;
 }
 $turma = $_SESSION['turma'];
-$id=$_GET['id']
-?>
+$id = $_GET['id']
+    ?>
 <!DOCTYPE html>
 <html>
 
@@ -39,82 +39,97 @@ $id=$_GET['id']
                 </div>
                 <div class="flex">
                     <div class="divpegar">
-                    <form method='post' action="processamento/selecionar_carga.php">
-                        <h1 class="pegar">Pegar</h1>
-                        <?php
-                       include_once('include/conexao.php');
+                        <form method='post' action="processamento/selecionar_carga_picking.php">
+                            <h1 class="pegar">Pegar</h1>
+                            <?php
+                            include_once ('include/conexao.php');
 
-                        $sql = "SELECT * FROM `picking` where  id_pedido= " . $id . " and id_turma='".$_SESSION['turma']."' ORDER BY `picking`.`id` ASC";
-                        $res = $conn->query($sql);
+                            // Consulta para obter os produtos
+                            $sql = "SELECT id, produto, quantidade_solicitada, posicao FROM picking where id_pedido=$id and id_turma='" . $_SESSION['turma'] . "'";
+                            $res = $conn->query($sql);
+
+                            // Verifique se há erro na consulta
+                            if (!$res) {
+                                die("Erro na consulta: " . $conn->error);
+                            }
+                            ?>
+
+                            <!-- Formulário HTML -->
+                            <form method="POST" action="processamento/selecionar_carga_picking">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Produto</th>
+                                            <th>Quantidade Solicitada</th>
+                                            <th>Posição</th>
+                                            <th>Selecionar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php while ($row = $res->fetch_object()): ?>
+                                            <tr>
+                                                <td><?php echo $row->produto; ?></td>
+                                                <td><?php echo $row->quantidade_solicitada; ?></td>
+                                                <td><?php echo $row->posicao; ?></td>
+                                                <!-- Campos ocultos com os dados dos produtos -->
+                                                <input type="hidden" name="nome_produto[<?php echo $row->id; ?>]"
+                                                    value="<?php echo $row->produto; ?>">
+                                                <input type="hidden" name="quantidade_solicitada[<?php echo $row->id; ?>]"
+                                                    value="<?php echo $row->quantidade_solicitada; ?>">
+                                                <input type="hidden" name="posicao[<?php echo $row->id; ?>]"
+                                                    value="<?php echo $row->posicao; ?>">
+                                                <input type="hidden" name="id_carga[<?php echo $row->id; ?>]"
+                                                    value="<?php echo $id; ?>">
+                                                <td><input type="checkbox" name="produtos_selecionados[]"
+                                                        value="<?php echo $row->id; ?>"></td>
+                                            </tr>
+                                        <?php endwhile; ?>
+                                    </tbody>
+                                </table>
+                                <button type="submit">Enviar</button>
+                            </form>
+
+
+                    </div>
+                    <div class="divpegar">
+                        <h1 class="pegar">Finalizar</h1>
+                        <?php
+                        $sql_a = "SELECT * FROM picking_pegado where id_carga=$id and id_turma='" . $_SESSION['turma'] . "'";
+                        $res = $conn->query($sql_a);
                         $qtd = $res->num_rows;
 
                         if ($qtd > 0) {
-                            print "<div class=\"tabela-scroll\">";
+                            print "<div class='tabela-scroll'>";
                             print "<table class='table' >";
                             print "<tr>";
                             print "<th>Produto</th>";
                             print "<th>Quantidade</th>";
                             print "<th>Posição</th>";
-                            print "<th>Pegar</th>";
+                            print "<th>Finalizar</th>";
                             print "</tr>";
 
                             while ($row = $res->fetch_object()) {
-                                echo "<tr>";
-                                echo "<td style=\"border-right:1px solid black;\">" . $row->produto . "</td>";
-                                echo "<td style=\"border-right:1px solid black;\">" . $row->quantidade_solicitada . "</td>";
-                                echo "<td style=\"border-right:1px solid black;\">" . $row->posicao . "</td>";
-                                echo "<td><input class=\"custom-checkbox\" type=\"checkbox\" name=\"produtos_selecionados[]\" value=\"" . $row->id . "\"></td>";
+                                print "<tr>";
+                                print "<td style='border-right:1px solid black;'>" . $row->nome_produto . "</td>";
+                                print "<td style='border-right:1px solid black;'>" . $row->quantidade_enviada . "</td>";
+                                print "<td style='border-right:1px solid black;'>" . $row->posicao . "</td>";
+                                print "<td>
+                                    <form method='post' action='processamento/processar_movimentacaoD1.php' style='display:inline-block'>
+                                        <input type='hidden' name='produto_id' value='" . $row->id . "'>
+                                        <button class='finalizar' type='submit' name='finalizar'>Finalizar</button>
+                                    </form>
+                                  </td>";
+                                print "</tr>";
                             }
                             print "</table>";
                             print "</div>";
-                            print '<DIV class="buttonEnviar">
-                            <button>Enviar</button>
-                        </DIV>';
                         } else {
-                            print "<p class='alert alert-danger'>Não encontrou nenhum pedido nas docas.</p>";
+                            print "<div class='paragrafo'>";
+                            print "<p class='alert alert-danger'>Nenhum produto selecionado.</p>";
+                            print "</div>";
                         }
                         ?>
-                    </form>
                     </div>
-                    <div class="divpegar">
-                    <h1 class="pegar">Finalizar</h1>
-                    <?php
-                    $sql = "SELECT * FROM pegado where id_doca=1 and id_turma='".$_SESSION['turma']."'";
-                    $res = $conn->query($sql);
-                    $qtd = $res->num_rows;
-
-                    if ($qtd > 0) {
-                        print "<div class=\"tabela-scroll\">";
-                        print "<table class='table' >";
-                        print "<tr>";
-                        print "<th>Produto</th>";
-                        print "<th>Quantidade</th>";
-                        print "<th>Posição</th>";
-                        print "<th>Finalizar</th>";
-                        print "</tr>";
-
-                        while ($row = $res->fetch_object()) {
-                            print "<tr>";
-                            print "<td style=\"border-right:1px solid black;\">" . $row->nome_produto . "</td>";
-                            print "<td style=\"border-right:1px solid black;\">" . $row->quantidade_enviada . "</td>";
-                            print "<td style=\"border-right:1px solid black;\">" . $row->posicao . "</td>";
-                            print "<td>
-                                    <form method='post' action='processamento/processar_movimentacaoD1.php' style='display:inline-block'>
-                                        <input type='hidden' name='produto_id' value='" . $row->id . "'>
-                                        <button class=\"finalizar\" type='submit' name='finalizar'>Finalizar</button>
-                                    </form>
-                                  </td>";
-                            print "</tr>";
-                        }
-                        print "</table>";
-                        print "</div>";
-                    } else {
-                        print"<div class=\"paragrafo\">";
-                        print "<p class='alert alert-danger'>Nenhum produto selecionado.</p>";
-                        print"</div>";
-                    }
-                    ?>
-                </div>
                 </div>
             </div>
         </div>
@@ -124,7 +139,7 @@ $id=$_GET['id']
     <script src="js/sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
-    </script>
+        </script>
 </body>
 
 </html>
