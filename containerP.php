@@ -63,11 +63,11 @@ if (!isset($_SESSION['turma'])) {
 
     if ($resultado->num_rows > 0) {
         echo '<span class="close">&times;</span>';
-        echo '<div class="scrollSku">'; // Aplique a classe scrollSku aqui
+        echo '<div class="scrollSku">'; 
         echo '<table>';
         echo '<thead>';
         echo '<tr>';
-        echo '<th>SKU/th>';
+        echo '<th>SKU</th>';
         echo '<th>Produto</th>';
         echo '<th>Preço</th>';
         echo '</tr>';
@@ -84,7 +84,7 @@ if (!isset($_SESSION['turma'])) {
 
         echo '</tbody>';
         echo '</table>';
-        echo '</div>'; // Feche a div scrollSku
+        echo '</div>';
     } else {
         echo '<div class="flexresult">';
         echo '<span class="close close1">&times;</span>';
