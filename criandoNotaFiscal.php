@@ -232,6 +232,11 @@ $conn->close();
 
                                 <label for='valor_total_nota'>Valor Total da Nota sem desconto</label>
                                 <input type='number' step='0.01' id='valor_total_nota' name='valor_total_nota' required>
+                                <p id="deconto"></p>
+
+                                
+                                
+                                
                             </div>
 
                             <!-- Transportador/Volumes Transportados Section -->
@@ -415,13 +420,19 @@ $conn->close();
                                 <button type='button' id='clearForm'>Apagar tudo</button>
                                 <button type='submit' id='enviar'>Enviar</button>
                             </div>
+                            
+                            
+                            
+                            
 
                         </form><label id='resultado' style='border: solid red 1px;'></label>
-                        <div class='desconto'>
-                            <H1>Valor Final Total</H1>
-                            <label>O valor total com desconto é:</label>
-                            <label id="deconto"></label>
-                            <button id="caldesco" onclick="desconto()">Valor total</button>
+                        <div class='peakmeVenzom'>
+
+                        <H1>Valor Final Total</H1>
+                        <label>O valor total com desconto é:</label>
+                        <button type="button" id="caldesco" onclick="desconto()">Valor total</button>
+                            
+                            
                              
                              <H1>Valor Final Total</H1>
                                 <label>O valor do ISSQN:</label>
