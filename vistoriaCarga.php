@@ -269,7 +269,7 @@
                                     </table>
                                 </div>
                                 <div class="enviar">
-                                    <button type="submit">Envivar</button>
+                                    <button type="submit">Enviar</button>
                                 </div>
                             </div>
                         </form>

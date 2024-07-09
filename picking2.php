@@ -56,7 +56,7 @@ $id = $_GET['id']
 
                             <!-- Formulário HTML -->
                             <form method="POST" action="processamento/selecionar_carga_picking">
-                                <table>
+                                <table class="table">
                                     <thead>
                                         <tr>
                                             <th>Produto</th>
@@ -80,13 +80,15 @@ $id = $_GET['id']
                                                     value="<?php echo $row->posicao; ?>">
                                                 <input type="hidden" name="id_carga[<?php echo $row->id; ?>]"
                                                     value="<?php echo $id; ?>">
-                                                <td><input type="checkbox" name="produtos_selecionados[]"
+                                                <td><input class="custom-checkbox" type="checkbox" name="produtos_selecionados[]"
                                                         value="<?php echo $row->id; ?>"></td>
                                             </tr>
                                         <?php endwhile; ?>
                                     </tbody>
                                 </table>
-                                <button type="submit">Enviar</button>
+                                <div class="buttonEnviar">
+                                <button  type="submit">Enviar</button>
+                                </div>
                             </form>
 
 
