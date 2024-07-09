@@ -1,5 +1,6 @@
+<!--Corpo -->
+
 <?php
-// Configurações de conexão ao banco de dados
 $servername = "localhost";
 $username = "root.Att";
 $password = "root";
@@ -51,19 +52,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 }
 $conn->close();
-?>
 
+
+?>
 <!DOCTYPE html>
-<html>
+
 <head>
-    <title>Pesquisa no Estoque</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php
+    $tituloPag = 'Home';
+    echo "$tituloPag";
+    ?></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link rel="shortcut icon" href="img/amem.svg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estiloInicio.css">
+    <script src="js/reveal.js" defer></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
+
 <body>
-    <h2>Pesquisa no Estoque</h2>
+    <?php
+    include 'include/header.php'
+        ?>
+    <main>
+        <?php
+        include 'include/menuLateral.php'
+            ?>
+
+       </main<h2>Pesquisa no Estoque</h2>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <label for="search">Pesquisar (ID, ID Doca, Nome, Quantidade Enviada, Posição):</label>
-        <input type="text" id="search" name="search">
-        <input type="submit" value="Pesquisar">
-    </form>
+    <label for="search">Pesquisar (ID, ID Doca, Nome, Quantidade Enviada, Posição):</label>
+    <input type="text" id="search" name="search">
+    <input type="submit" value="Pesquisar">
+
+
+    </main>
+
+
+
+    <script src="js/sidebar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
