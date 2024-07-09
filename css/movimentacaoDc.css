@@ -42,6 +42,7 @@ main{
     margin-bottom: 10px;
     transition: 2s ease-in-out;
     cursor: pointer;
+    box-shadow: 0 0 7px #fff;
 }
 .container{
     height: 60vh;

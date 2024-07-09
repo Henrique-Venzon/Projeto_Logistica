@@ -29,6 +29,7 @@ $turma = $_SESSION['turma'];
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/movimentacaoDc.css">
+    <link rel="stylesheet" href="css/responsividade/movimentacaoDcResponsividade.css">
 </head>
 
 <body>

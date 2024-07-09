@@ -1,0 +1,171 @@
+@media only screen and (max-width: 600px) {
+
+.text h1{
+    font-size: 25px;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #000000;
+}
+
+.table{
+    text-align: center;
+    margin-bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 0 0 7px black;
+    border-right: #000000 1px solid;
+}
+.table th,td{
+    border: solid 1.5px #000000;
+    border-left: none;
+    border-bottom: none;
+    font-size: 12px;
+}
+.table th{
+    height: 30px;
+    border-top: none;
+    background-color: #000000;
+}
+.table td{
+    font-size: 12px;
+    height: 25px;
+    background-color: #333333;
+}
+#voltar{
+    display: none;
+}
+.descricao{
+    display: none;
+}
+.tabela-scroll {
+  margin-top: 1%;
+  max-height: 64vh; 
+  overflow-y: auto; 
+  outline: 1px solid #747474;
+  width: 700px;
+
+  }
+  .tabela-scroll::-webkit-scrollbar {
+    height: 5px;
+    width: 10px;
+    border-right: 1px solid black;
+
+  }
+  .pegar{
+    margin-top: 0.3%;
+    margin-bottom: 1%;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .tabela-scroll::-webkit-scrollbar-track {
+    background-color: #ffffff; 
+  }
+  
+  .tabela-scroll::-webkit-scrollbar-thumb {
+    background-color: #000000;
+  }
+
+.flex{
+    display: flex;
+}
+
+.buttonEnviar{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.3%;
+    margin-top: 1.3%;
+}
+
+.stock{
+    width: 100%;
+    height: 88%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+
+}
+.tabelaPesquisa{
+    width: 90%;
+    align-items: center;
+    height: 37%;
+}
+.pesquisa{
+    border-radius: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.pesquisa h1{
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #187ec2;
+    text-shadow: 0 0 8px #ffffff;
+}
+.pesquisa label{
+    margin-top: 6px;
+    margin-bottom: 3px;
+    color: #055286;
+    font-size: 13px;
+}
+
+.pesquisa input{
+    font-size: 12px;
+}
+.input1{
+    margin-top: 5px;
+    padding:2px 4px;
+    text-align: center;
+    border-radius: 20px 20px 0px 0px;
+    border: 1.5px solid #187ec2;
+}
+.input2{
+    margin-top: 5px;
+    padding:2px 4px;
+    text-align: center;
+    border-radius: 0px 0px 20px 20px ;
+    border: 1.5px solid #187ec2;
+}
+
+
+.tabelaPosicoes{
+    height: 63%;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 0px;
+    border-radius: 30px;
+}
+.posicoes{
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    margin: 7px;
+    width: 20%;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #1c1c1c;
+}
+.card{
+    text-align: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    transition: 0.8s ease-in-out;
+}
+.card:hover{
+    transform: scale(1.08);
+}
+.card h1{
+    font-size: 15px;
+}
+}

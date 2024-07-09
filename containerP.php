@@ -67,7 +67,7 @@ if (!isset($_SESSION['turma'])) {
         echo '<table>';
         echo '<thead>';
         echo '<tr>';
-        echo '<th>ID</th>';
+        echo '<th>SKU/th>';
         echo '<th>Produto</th>';
         echo '<th>Preço</th>';
         echo '</tr>';
