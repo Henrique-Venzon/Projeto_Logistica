@@ -11,6 +11,7 @@ if (!isset($_SESSION['turma'])) {
     header("Location: index.php");
     exit;
 }
+include_once("include/conexao.php");
 ?>
 <!DOCTYPE html>
 
