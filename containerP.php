@@ -117,12 +117,6 @@ if (!isset($_SESSION['turma'])) {
                                 3</button>
                         </div>
                         <form action="processamento/carga.php" method="post">
-                    <div class="n-pedido">
-                        <div class="numeroPedido-cell">
-                                    <label for="num">N° pedido:</label>
-                                    <input class="nPedido" id="num" type="number" name="npedido" min="0" required placeholder="Obrigatório">
-                                </div>
-                        </div>
                             <div class="colunas1 colunadata coluna1cell">
                                 <div class="numeroPedido">
                                     <label for="num">N° pedido:</label>
