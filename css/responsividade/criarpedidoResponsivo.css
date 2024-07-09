@@ -41,16 +41,23 @@
         display: flex;
         flex-direction: column;
       }
-      .numeroPedido input{
-        text-align: center;
-        width: 60%;
+      .numeroPedido-cell{
+        display: flex;
+        flex-direction: column;
       }
-      .entrega{
-        margin-left: 10px;
-        margin-right: 12px;
+
+      .n-pedido{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+
       }
-      .data_entrega,.data_pedido{
-        width: 100%;
+
+
+      .coluna1cell{
+        display: flex;
+        flex-direction: column;
       }
       .coluna1cell label{
         font-size: 12px;

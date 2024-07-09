@@ -137,26 +137,29 @@ main{
     text-shadow: 0px 0px 5px #000000;
 }
 @media only screen and (max-width: 600px) {
+  main{
+    overflow: hidden;
+  }
   .centroT{
     font-size: 32px;
-}
-.tabela-scroll {
-  max-height: 600px; 
-}
-.table th,td{
-  font-size: 16px;
-}
-.table th{
-  height: 40px;
-}
-.table td{
-  height: 50px;
-  background-color: #333333;
-}
-.reset{
-  border-radius: 50px;
-  height: 40px;
-  width: 90px;
-  font-size: 12px;
-}
+  }
+  .tabela-scroll {
+    max-height: 600px; 
+  }
+  .table th,td{
+    font-size: 16px;
+  }
+  .table th{
+    height: 40px;
+  }
+  .table td{
+    height: 50px;
+    background-color: #333333;
+  }
+  .reset{
+    border-radius: 50px;
+    height: 40px;
+    width: 90px;
+    font-size: 12px;
+  }
 }

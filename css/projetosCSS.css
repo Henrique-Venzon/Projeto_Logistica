@@ -434,6 +434,67 @@ input:-webkit-autofill {
     .form {
         width: 90%;
     }
+    .table{
+        font-size: 20px;
+    }
+        .form {
+            width: 100%;
+        }
+        .first-column {
+            text-align: center;
+            width: 50%;
+            z-index: 10;
+        }
+        .second-column {
+            width: 50%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .title {
+            font-size: 28px;
+    
+        }
+        .title-primary {
+            font-size: 110px;
+            margin-bottom: 3%;
+        }
+        .title-second {
+            font-size: 75px;
+        }
+        .description {
+            font-size: 20px;
+    
+        }
+        .description-primary {
+            font-size: 46px;
+        }
+        .description-second {
+            font-size: 46px;
+            margin-bottom:3vh;
+        
+        }
+        .btn {
+    font-size: 30px;
+    width: 300px;
+
+}
+        .acessar{
+            font-size: 22px;
+          }
+
+          .editar{
+            font-size: 22px;
+          }
+
+        .excluir{
+            font-size: 22px;
+        }
+ 
+          .table {
+            font-size: 38px;
+          }      
     
     /* ANIMAÇÃO MOBILE CSS*/
 
@@ -500,59 +561,4 @@ input:-webkit-autofill {
         }
     }
    
-}
-
-@media screen and (max-width: 740px) {
-    .form {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .form {
-        width: 100%;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-.table{
-    font-size: 14px;
-}
-    .form {
-        width: 100%;
-    }
-    .first-column {
-        text-align: center;
-        width: 50%;
-        z-index: 10;
-    }
-    .second-column {
-        width: 50%;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .title {
-        font-size: 18px;
-
-    }
-    .title-primary {
-        font-size: 60px;
-        margin-bottom: 3%;
-    }
-    .title-second {
-        font-size: 40px;
-    }
-    .description {
-        font-size: 12px;
-
-    }
-    .description-primary {
-        font-size: 21px;
-    }
-    .description-second {
-        font-size: 21px;
-    
-    }
 }

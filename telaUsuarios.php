@@ -12,12 +12,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['turma'] = $_POST['turma'];}
 ?>
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-<meta name="viewrport" content="width=device-width, initial-scale=1.0" >
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" href="img/amem.svg">
 
-    <meta charset="utf-8">
     <title><?php 
     $tituloPag = 'Alunos';
     echo "$tituloPag"; 

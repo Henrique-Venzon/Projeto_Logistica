@@ -1,7 +1,7 @@
 @media only screen and (max-width: 600px) {
 
 .text h1{
-    font-size: 32px;
+    font-size: 25px;
     color: #ffffff;
     text-shadow: 0px 0px 10px #000000;
 }
@@ -19,22 +19,20 @@
     border: solid 1.5px #000000;
     border-left: none;
     border-bottom: none;
-    font-size: 17px;
+    font-size: 12px;
 }
 .table th{
-    height: 40px;
+    height: 30px;
     border-top: none;
     background-color: #000000;
 }
 .table td{
-    height: 40px;
+    font-size: 12px;
+    height: 25px;
     background-color: #333333;
 }
 #voltar{
-    font-size:16px;
-    margin-top: 1.6%;
-    left: 80%;
-
+    display: none;
 }
 .descricao{
     display: none;
@@ -92,6 +90,7 @@
 .tabelaPesquisa{
     width: 90%;
     align-items: center;
+    height: 37%;
 }
 .pesquisa{
     border-radius: 20%;
@@ -103,31 +102,31 @@
     justify-content: center;
 }
 .pesquisa h1{
-    font-size: 40px;
+    font-size: 26px;
     margin-bottom: 10px;
     color: #187ec2;
     text-shadow: 0 0 8px #ffffff;
 }
 .pesquisa label{
-    margin-top: 8px;
-    margin-bottom: 4px;
+    margin-top: 6px;
+    margin-bottom: 3px;
     color: #055286;
-    font-size: 17px;
+    font-size: 13px;
 }
 
 .pesquisa input{
-    font-size: 22px;
+    font-size: 12px;
 }
 .input1{
-    margin-top: 8px;
-    padding:4px 8px;
+    margin-top: 5px;
+    padding:2px 4px;
     text-align: center;
     border-radius: 20px 20px 0px 0px;
     border: 1.5px solid #187ec2;
 }
 .input2{
-    margin-top: 8px;
-    padding:4px 8px;
+    margin-top: 5px;
+    padding:2px 4px;
     text-align: center;
     border-radius: 0px 0px 20px 20px ;
     border: 1.5px solid #187ec2;
@@ -135,9 +134,10 @@
 
 
 .tabelaPosicoes{
+    height: 63%;
     width: 100%;
     background-color: #f0f0f0;
-    padding: 17px;
+    padding: 0px;
     border-radius: 30px;
 }
 .posicoes{
@@ -149,7 +149,7 @@
 .card{
     margin: 7px;
     width: 20%;
-    height: 80px;
+    height: 40px;
     border-radius: 30px;
     background-color: #1c1c1c;
 }
@@ -166,6 +166,6 @@
     transform: scale(1.08);
 }
 .card h1{
-    font-size: 27px;
+    font-size: 15px;
 }
 }
