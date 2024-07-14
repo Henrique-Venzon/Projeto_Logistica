@@ -109,7 +109,7 @@ $conn->close();
                         <button id='autoDanfe4'>Preset 5</button>
                         <button id='autoDanfe5'>Preset 6</button>
                         <button id='preset2'>Preset 2 random</button>
-                        <button id='preset3'>Preset 3 ramdom</button>
+                        <button id='preset3'>Preset 3 random</button>
                     </div>
                     <div class='inputDanfe'>
                         <form action='processamento/ProcessoDanfe.php' method='post' id='danfeForm'>

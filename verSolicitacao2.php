@@ -5,7 +5,7 @@ if (!isset($_SESSION['id'])) {
     exit;
 }
 
-include_once('include/conexao.php');
+include_once ('include/conexao.php');
 
 // Checar conexão
 if ($conn->connect_error) {
@@ -150,53 +150,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                             <div class="tabelaPosicoes">
                                 <div class="posicoes">
-                                    <div class="card a1" id="a1">
-                                        <h1>A1</h1>
-                                    </div>
-                                    <div class="card a2" id="a2">
-                                        <h1>A2</h1>
-                                    </div>
-                                    <div class="card a3" id="a3">
-                                        <h1>A3</h1>
-                                    </div>
-                                    <div class="card a4" id="a4">
+                                    <div class="card a1" id="a4">
                                         <h1>A4</h1>
                                     </div>
-                                    <div class="card b1" id="b1">
-                                        <h1>B1</h1>
-                                    </div>
-                                    <div class="card b2" id="b2">
-                                        <h1>B2</h1>
-                                    </div>
-                                    <div class="card b3" id="b3">
-                                        <h1>B3</h1>
-                                    </div>
-                                    <div class="card b4" id="b4">
+                                    <div class="card a2" id="b4">
                                         <h1>B4</h1>
                                     </div>
-                                    <div class="card c1" id="c1">
-                                        <h1>C1</h1>
-                                    </div>
-                                    <div class="card c2" id="c2">
-                                        <h1>C2</h1>
-                                    </div>
-                                    <div class="card c3" id="c3">
-                                        <h1>C3</h1>
-                                    </div>
-                                    <div class="card c4" id="c4">
+                                    <div class="card a3" id="c4">
                                         <h1>C4</h1>
                                     </div>
-                                    <div class="card d1" id="d1">
-                                        <h1>D1</h1>
+                                    <div class="card a4" id="d4">
+                                        <h1>D4</h1>
                                     </div>
-                                    <div class="card d2" id="d2">
-                                        <h1>D2</h1>
+                                    <div class="card b1" id="a3">
+                                        <h1>A3</h1>
                                     </div>
-                                    <div class="card d3" id="d3">
+                                    <div class="card b2" id="b3">
+                                        <h1>B3</h1>
+                                    </div>
+                                    <div class="card b3" id="c3">
+                                        <h1>C3</h1>
+                                    </div>
+                                    <div class="card b4" id="d3">
                                         <h1>D3</h1>
                                     </div>
+                                    <div class="card c1" id="a2">
+                                        <h1>A2</h1>
+                                    </div>
+                                    <div class="card c2" id="b2">
+                                        <h1>B2</h1>
+                                    </div>
+                                    <div class="card c3" id="c2">
+                                        <h1>C2</h1>
+                                    </div>
+                                    <div class="card c4" id="d2">
+                                        <h1>D2</h1>
+                                    </div>
+                                    <div class="card d1" id="a1">
+                                        <h1>A1</h1>
+                                    </div>
+                                    <div class="card d2" id="b1">
+                                        <h1>B1</h1>
+                                    </div>
+                                    <div class="card d3" id="c1">
+                                        <h1>C1</h1>
+                                    </div>
                                     <div class="card d4" id="d4">
-                                        <h1>D4</h1>
+                                        <h1>D1</h1>
                                     </div>
                                 </div>
                             </div>

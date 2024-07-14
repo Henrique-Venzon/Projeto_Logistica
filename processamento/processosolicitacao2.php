@@ -24,7 +24,7 @@ if (isset($_POST['id_pedido'], $_POST['quantidadeS'], $_POST['produto'], $_POST[
 
         // Verifica se já existe uma linha com o mesmo id_pedido, produto e posicao
         $check_stmt = $conn->prepare("SELECT id, quantidade FROM picking WHERE id_pedido = ? AND produto = ? AND posicao = ?");
-        $check_stmt->bind_param("iss", $current_id_pedido, $current_produto, $current_posicao);
+        $check_stmt->bind_param("iss", $current_id_pedido, $current_produto, $current_posicao); // "iss" -> id_pedido é int, produto é string, posicao é string
         $check_stmt->execute();
         $result = $check_stmt->get_result();
 
@@ -33,8 +33,9 @@ if (isset($_POST['id_pedido'], $_POST['quantidadeS'], $_POST['produto'], $_POST[
             $row = $result->fetch_assoc();
             $new_quantidade = $row['quantidade'] + $current_quantidade;
 
+
             $update_stmt = $conn->prepare("UPDATE picking SET quantidade_solicitada = ?, quantidade = ?, id_turma = ? WHERE id_pedido = ? AND produto = ? AND posicao = ?");
-            $update_stmt->bind_param("iiisis", $current_quantidadeS, $new_quantidade, $turma, $current_id_pedido, $current_produto, $current_posicao);
+            $update_stmt->bind_param("iiisss", $current_quantidadeS, $new_quantidade, $turma, $current_id_pedido, $current_produto, $current_posicao);
             $update_stmt->execute();
             $update_stmt->close();
         } else {
@@ -51,7 +52,7 @@ if (isset($_POST['id_pedido'], $_POST['quantidadeS'], $_POST['produto'], $_POST[
             $quantidade_field = ($j == 1) ? "quantidade" : "quantidade" . $j;
 
             $update_solicitacao_stmt = $conn->prepare("UPDATE solicitacao SET $quantidade_field = $quantidade_field - ? WHERE id = ? AND $produto_field = ?");
-            $update_solicitacao_stmt->bind_param("iis", $current_quantidade, $current_id_pedido, $current_produto);
+            $update_solicitacao_stmt->bind_param("iis", $current_quantidade, $current_id_pedido, $current_produto); // "iis" -> current_quantidade é int, current_id_pedido é int, current_produto é string
             $update_solicitacao_stmt->execute();
             $update_solicitacao_stmt->close();
         }
@@ -83,4 +84,3 @@ if (isset($_POST['id_pedido'], $_POST['quantidadeS'], $_POST['produto'], $_POST[
 }
 
 $conn->close();
-?>
