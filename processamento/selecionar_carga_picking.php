@@ -42,4 +42,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['produtos_selecionados
     header('Location: ../picking.php', true, 301);
     exit();
 }
-?>
+

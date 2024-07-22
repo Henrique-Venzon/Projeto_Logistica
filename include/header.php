@@ -103,11 +103,22 @@
 }
   
   @media only screen and (min-width: 601px) and (max-width: 1024px) {
-    
+    .logo img{
+    margin-left: 10%;
+    height: 45px;
+    width: 45px;
+}
   }
   
   @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    .logo img{
+    margin-left: 10%;
+    height: 45px;
+    width: 45px;
+}
    
+  }
+  @media only screen and (min-width: 1441px) {
   }
   
   

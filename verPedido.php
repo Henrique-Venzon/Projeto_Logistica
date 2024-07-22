@@ -66,6 +66,7 @@ if($qtd > 0){
             print "<th>Excluir Pedido</th>";
             print "<th class=\"fechar\">Fechar Pedido</th>";
             print "<th>Ver Pedido</th>";
+            print "<th>Arrumar Nota Fiscal</th>";
             print "</tr>";
     
         while($row = $res->fetch_object()){
@@ -92,6 +93,12 @@ if($qtd > 0){
             print "<form action='nPedido.php' method='post'>";
             print "<input type='hidden' name='npedido' value='" . $row->npedido . "'>";
             print "<button class=\"reset\" type='submit'><span>Ver</span> </button>";
+            print "</form>";
+            print"</td>"; 
+            print "<td>";
+            print "<form action='criandoNotaFiscal.php' method='get'>";
+            print "<input type='hidden' name='npedido' value='" . $row->npedido . "'>";
+            print "<button class=\"reset\" type='submit'><span>Nota Fiscal</span> </button>";
             print "</form>";
             print"</td>"; 
 
