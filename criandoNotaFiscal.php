@@ -111,7 +111,7 @@ $conn->close();
                         <button id='preset2'>Preset 2 random</button>
                         <button id='preset3'>Preset 3 ramdom</button>
                     </div>
-                    <div class='inputDanfe'>
+                    < class='inputDanfe'>
                         <form action='processamento/ProcessoDanfe.php' method='post' id='danfeForm'>
                             <div class='section'>
                                 <label for='numero'>Número</label>
@@ -161,7 +161,7 @@ $conn->close();
 
                             <!-- Identificação do Remetente/Destinatário Section -->
                             <div class='section'>
-                                <h2>Identificação do Remetente/Destinatário</h2>
+                                <h2>Identificação do Remetente</h2>
                                 <label for='nome_razao_social_remetente'>Nome/Razão Social</label>
                                 <input type='text' id='nome_razao_social_remetente' name='nome_razao_social_remetente'
                                     required>
@@ -233,10 +233,35 @@ $conn->close();
                                 <label for='valor_total_nota'>Valor Total da Nota sem desconto</label>
                                 <input type='number' step='0.01' id='valor_total_nota' name='valor_total_nota' required>
                                 <p id="deconto"></p>
-
-                                
-                                
-                                
+                            </div>
+                            <!-- Cálculo do Imposto Section -->
+                            <div class='section'>
+                                    <h2>Cálculo do Imposto</h2>
+                                    <label for='base_calculo_icms'>Base de Cálculo de ICMS</label>
+                                    <input type='number' step='0.01' id='base_calculo_icms' name='base_calculo_icms'
+                                        required>
+                                    <label for='valor_icms'>Valor do ICMS</label>
+                                    <input type='number' step='0.01' id='valor_icms' name='valor_icms' required>
+                                    <label for='base_calculo_icms_st'>Base de Cálculo de ICMS ST</label>
+                                    <input type='number' step='0.01' id='base_calculo_icms_st' name='base_calculo_icms_st'>
+                                    <label for='valor_icms_substituicao'>Valor do ICMS Substituição</label>
+                                    <input type='number' step='0.01' id='valor_icms_substituicao'
+                                        name='valor_icms_substituicao'>
+                                    <label for='total_produtos'>Total dos Produtos</label>
+                                    <input type='number' step='0.01' id='total_produtos' name='total_produtos' required>
+                                    <label for='valor_frete'>Valor do Frete</label>
+                                    <input type='number' step='0.01' id='valor_frete' name='valor_frete'>
+                                    <label for='valor_seguro'>Valor do Seguro</label>
+                                    <input type='number' step='0.01' id='valor_seguro' name='valor_seguro'>
+                                    <label for='desconto'>Desconto</label>
+                                    <input type='number' step='0.01' id='desconto' name='desconto'>
+                                    <label for='outras_despesas'>Outras Despesas Acessórias</label>
+                                    <input type='number' step='0.01' id='outras_despesas' name='outras_despesas'>
+                                    <label for='valor_ipi'>Valor do IPI</label>
+                                    <input type='number' step='0.01' id='valor_ipi' name='valor_ipi'>
+                                    <label for='valor_total_nota'>Valor Total da Nota sem desconto</label>
+                                    <input type='number' step='0.01' id='valor_total_nota' name='valor_total_nota' required>
+                                    <p id="deconto"></p>
                             </div>
 
                             <!-- Transportador/Volumes Transportados Section -->
