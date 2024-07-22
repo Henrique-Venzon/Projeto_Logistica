@@ -425,24 +425,38 @@ $conn->close();
                             
                             
 
-                        </form><label id='resultado' style='border: solid red 1px;'></label>
-                        <div class='peakmeVenzom'>
+                        </form>
+                        <label id='resultado' ></label>
+                        <div class='desconto'>
 
                         <H1>Valor Final Total</H1>
                         <label>O valor total com desconto é:</label>
                         <button type="button" id="caldesco" onclick="desconto()">Valor total</button>
-                            
-                            
-                             
+     
                              <H1>Valor Final Total</H1>
                                 <label>O valor do ISSQN:</label>
                                 <label id="issqnto"></label>
                                 <button id="calissqn" onclick="issqn()">Valor ISSQN</button>
-                            
-
-                        </di>
+                        
+                        </div>
+                        <div class="container-amostra-wrapper">
+                            <div class="container-amostra">
+                            <p>Item 1</p>
+                            <p>Item 2</p>
+                            <p>Item 3</p>
+                            <p>Item 4</p>
+                            <p>Item 5</p>
+                            <p>Item 6</p>
+                            <p>Item 7</p>
+                            <p>Item 8</p>
+                            <p>Item 9</p>
+                            <p>Item 10</p>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
+                
             </div>
         </div>
     </main>
