@@ -11,7 +11,7 @@ if (!isset($_SESSION['turma'])) {
 }
 $turma = $_SESSION['turma'];
 $id = $_GET['id']
-    ?>
+?>
 <!DOCTYPE html>
 <html>
 
