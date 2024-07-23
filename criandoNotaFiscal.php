@@ -441,7 +441,8 @@ $conn->close();
                         </div>
                         <div class="container-amostra-wrapper">
                             <div class="container-amostra">
-                            <p>Item 1</p>
+                            <label>O valor total com desconto é</label>
+                            <button type="button" id="caldesco" onclick="desconto()">Valor total</button>
                             <p>Item 2</p>
                             <p>Item 3</p>
                             <p>Item 4</p>
