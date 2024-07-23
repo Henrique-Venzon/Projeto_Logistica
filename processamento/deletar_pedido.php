@@ -5,7 +5,7 @@ if ($conexao->connect_errno) {
     exit();
 } else {
     $id_atividade = $_POST['id_atividade_ver_perdido'];
-    $antes="DELETE FROM nota_fiscal_criada WHERE id_atividade=". $id_atividade."";
+    $antes="DELETE FROM nota_fiscal WHERE id_atividade=". $id_atividade."";
     $resultado = $conexao->query($antes);
     $antes="DELETE FROM docas WHERE id_carga=". $id_atividade."";
     $resultado = $conexao->query($antes);

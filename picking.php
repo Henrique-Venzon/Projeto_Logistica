@@ -45,38 +45,43 @@ if (!isset($_SESSION['id'])) {
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                $sql_after = "SELECT id,id_pedido FROM picking WHERE id_turma = '" . $_SESSION['turma'] . "'";
-                $res = $conn->query($sql_after);
-
-                if ($res->num_rows > 0) {
-                    echo "<div class=\"tabela-scroll\">";
-                    echo "<table class='table'>";
-                    echo "<tr>";
-                    echo "<th>Nº Solicitação</th>";
-                    echo "<th style=\"border-right:none;\">Ver Picking</th>";
-                    echo "</tr>";
-
-                    while ($row = $res->fetch_assoc()) {
-                        $id = $row['id'];
-                        $id_pedido = $row['id_pedido'];
-
+                    // Selecionando apenas o ID do picking
+                    $sql_after = "SELECT id FROM picking where id_turma='".$_SESSION['turma'] ."'";
+                    $res = $conn->query($sql_after);
+                
+                    $sql_after2 = "SELECT id FROM picking_pegado where id_turma='".$_SESSION['turma'] ."'";
+                    $res2 = $conn->query($sql_after2);
+                
+                    // Buscar todos os resultados como arrays associativos
+                    $resultados = array_merge($res->fetch_all(MYSQLI_ASSOC), $res2->fetch_all(MYSQLI_ASSOC));
+                
+                    if (!empty($resultados)) { // Verificar se o array combinado está vazio
+                        echo "<div class=\"tabela-scroll\">";
+                        echo "<table class='table'>";
                         echo "<tr>";
-                        echo "<td>" . $id . "</td>";
-                        echo "<td>";
-                        echo "<form method='get' action='picking2.php'>";
-                        echo "<button class=\"reset\" type=\"submit\"><span>ver</span></button>";
-                        echo "<input name='id' type='hidden' value='" . $id_pedido . "'>";
-                        echo "</form>";
-                        echo "</td>";
+                        echo "<th>Nº Solicitação</th>";
+                        echo "<th style=\"border-right:none;\">Ver Picking</th>";
                         echo "</tr>";
+                
+                        // Iterar sobre o array combinado
+                        foreach ($resultados as $row) {
+                            $id = $row['id'];
+                            echo "<tr>";
+                            echo "<td>" . $id . "</td>";
+                            echo "<td>";
+                            echo "<form method='get' action='picking2.php'>";
+                            echo "<button class=\"reset\" type=\"submit\"><span>ver</span></button>";
+                            echo "<input name='id' type='hidden' value='" . $id . "'>"; 
+                            echo "</form>";
+                            echo "</td>";
+                            echo "</tr>";
+                        }
+                
+                        echo "</table>";
+                        echo "</div>";
+                    } else {
+                        echo "<p class='alert alert-danger'>Não encontrou nenhuma solicitação feita.</p>";
                     }
-
-                    echo "</table>";
-                    echo "</div>";
-                } else {
-                    echo "<p class='alert alert-danger'>Não encontrou nenhuma solicitação feita.</p>";
-                }
-
                 $conn->close();
                 ?>
             </div>

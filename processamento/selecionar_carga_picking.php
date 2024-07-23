@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['produtos_selecionados
     $stmtDelete->close();
     $conn->close();
 
-    header('Location: ../picking.php', true, 301);
+    header('Location: ../picking2.php?id=' . urldecode($idCarga), true, 301);
     exit();
 }
 
