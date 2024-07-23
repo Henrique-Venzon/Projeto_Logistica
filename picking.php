@@ -46,10 +46,10 @@ if (!isset($_SESSION['id'])) {
                 }
 
                     // Selecionando apenas o ID do picking
-                    $sql_after = "SELECT id FROM picking where id_turma='".$_SESSION['turma'] ."'";
+                    $sql_after = "SELECT id,id_pedido FROM picking where id_turma='".$_SESSION['turma'] ."'";
                     $res = $conn->query($sql_after);
                 
-                    $sql_after2 = "SELECT id FROM picking_pegado where id_turma='".$_SESSION['turma'] ."'";
+                    $sql_after2 = "SELECT id,id_pedido FROM picking_pegado where id_turma='".$_SESSION['turma'] ."'";
                     $res2 = $conn->query($sql_after2);
                 
                     // Buscar todos os resultados como arrays associativos
@@ -66,12 +66,13 @@ if (!isset($_SESSION['id'])) {
                         // Iterar sobre o array combinado
                         foreach ($resultados as $row) {
                             $id = $row['id'];
+                            $id_pedido = $row['id_pedido'];
                             echo "<tr>";
                             echo "<td>" . $id . "</td>";
                             echo "<td>";
                             echo "<form method='get' action='picking2.php'>";
                             echo "<button class=\"reset\" type=\"submit\"><span>ver</span></button>";
-                            echo "<input name='id' type='hidden' value='" . $id . "'>"; 
+                            echo "<input name='id' type='hidden' value='" . $id_pedido . "'>"; 
                             echo "</form>";
                             echo "</td>";
                             echo "</tr>";

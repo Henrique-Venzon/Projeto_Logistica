@@ -8,8 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['produtos_selecionados
     $produtosSelecionados = $_POST['produtos_selecionados'];
 
     // Prepare a instrução SQL de inserção
-    $sqlInsert = "INSERT INTO picking_pegado (nome_produto, quantidade_enviada, posicao, id_carga, id_aluno, id_turma) 
-                  VALUES (?, ?, ?, ?, ?, ?)";
+    $sqlInsert = "INSERT INTO picking_pegado (nome_produto, quantidade_enviada, posicao, id_carga, id_aluno, id_turma,id_pedido) 
+                  VALUES (?, ?, ?, ?, ?, ?,?)";
     $stmtInsert = $conn->prepare($sqlInsert);
 
     // Prepare a instrução SQL de exclusão
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['produtos_selecionados
         $idTurma = $_SESSION['turma'];
 
         // Vincule os parâmetros e execute a instrução SQL de inserção
-        $stmtInsert->bind_param("sisiii", $nomeProduto, $quantidadeEnviada, $posicao, $idCarga, $idAluno, $idTurma);
+        $stmtInsert->bind_param("sisiiii", $nomeProduto, $quantidadeEnviada, $posicao, $idCarga, $idAluno, $idTurma,$idCarga);
         $stmtInsert->execute();
 
         // Vincule os parâmetros e execute a instrução SQL de exclusão
