@@ -1,7 +1,10 @@
 <?php
 session_start();
 $turma = $_SESSION['turma'];
-// Parâmetros de conexão com o banco de dados
+if (!isset($_SESSION['id'])) {
+    header("Location: index.php");
+    exit;
+}
 include_once ('include/conexao.php');
 
 // Checando a conexão
