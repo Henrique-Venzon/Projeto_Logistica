@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 03/07/2024 às 12:16
+-- Tempo de geração: 23/07/2024 às 04:13
 -- Versão do servidor: 8.0.36
 -- Versão do PHP: 8.2.13
 
@@ -45,8 +45,8 @@ CREATE TABLE IF NOT EXISTS `aluno` (
 
 INSERT INTO `aluno` (`id`, `username`, `password`, `turma_id`) VALUES
 (1, 'PROFESSOR', 'PROFESSOR@SESISENAI2024', -1),
-(2, 'root.Att', 'Hu97', 1),
-(12, 'HelloWorldJuniorteste', '4RTZ', 1),
+(2, 'root.Att', 'teste', 1),
+(12, 'Matheus', 'Teste', 1),
 (94, 'Aluno 1', 'xSTt', 2),
 (95, 'Aluno 2', 'blFm', 2);
 
@@ -94,7 +94,33 @@ CREATE TABLE IF NOT EXISTS `atividade_concluida` (
   KEY `id_turma` (`id_turma`),
   KEY `id_aluno` (`id_aluno`),
   KEY `id_transporte` (`id_transporte`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `cancelamentos_solicitacao`
+--
+
+DROP TABLE IF EXISTS `cancelamentos_solicitacao`;
+CREATE TABLE IF NOT EXISTS `cancelamentos_solicitacao` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_solicitacao` int DEFAULT NULL,
+  `produto` varchar(255) DEFAULT NULL,
+  `quantidade_cancelada` int DEFAULT NULL,
+  `motivo` varchar(255) DEFAULT NULL,
+  `data_cancelamento` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `cancelamentos_solicitacao`
+--
+
+INSERT INTO `cancelamentos_solicitacao` (`id`, `id_solicitacao`, `produto`, `quantidade_cancelada`, `motivo`, `data_cancelamento`) VALUES
+(1, 2, 'Leitor De Código De Barra', 1, 'Sem Estoque.', '2024-07-23 03:54:29'),
+(2, 4, 'Leitor De Código De Barra', 1, 'Sem Estoque.', '2024-07-23 04:07:19'),
+(3, 7, 'Leitor De Código De Barra', 213, 'Sem Estoque.', '2024-07-23 04:11:45');
 
 -- --------------------------------------------------------
 
@@ -144,12 +170,7 @@ CREATE TABLE IF NOT EXISTS `carga` (
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=212 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `carga`
---
-
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -175,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `container` (
   `situacao` char(20) NOT NULL,
   PRIMARY KEY (`id_container`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -193,7 +214,7 @@ CREATE TABLE IF NOT EXISTS `docas` (
   PRIMARY KEY (`id`),
   KEY `FK_docas_aluno` (`id_aluno`),
   KEY `FK_docas_turma` (`id_turma`)
-) ENGINE=InnoDB AUTO_INCREMENT=157 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -209,20 +230,15 @@ CREATE TABLE IF NOT EXISTS `estoque` (
   `posicao` varchar(2) NOT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `estoque`
 --
 
 INSERT INTO `estoque` (`id`, `nome_produto`, `quantidade_enviada`, `posicao`, `id_turma`) VALUES
-(69, 'Teclado', 17, 'A1', 2),
-(70, 'Teclado', 2, 'A2', 2),
-(71, 'Teclado', 1, 'A3', 2),
-(72, 'Teclado', 51, 'A1', 1),
-(73, 'Mouse', 50, 'A1', 1),
-(74, 'Óleo Diesel', 600, 'A1', 1),
-(75, 'Camisa', 50, 'A1', 1);
+(1, 'Leitor De Código De Barra', 6, 'A1', 1),
+(2, 'Teclado', 5, 'A1', 1);
 
 -- --------------------------------------------------------
 
@@ -241,7 +257,7 @@ CREATE TABLE IF NOT EXISTS `movimentacao` (
   `id_aluno` int NOT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=382 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -252,30 +268,30 @@ CREATE TABLE IF NOT EXISTS `movimentacao` (
 DROP TABLE IF EXISTS `nota_fiscal`;
 CREATE TABLE IF NOT EXISTS `nota_fiscal` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `numero` varchar(255) NOT NULL,
-  `serie` varchar(255) NOT NULL,
+  `numero` varchar(100) NOT NULL,
+  `serie` varchar(100) NOT NULL,
   `entrada_saida` date NOT NULL,
-  `chave_acesso` varchar(255) NOT NULL,
-  `informacao_interna` varchar(255) DEFAULT NULL,
-  `nome_razao_social` varchar(255) NOT NULL,
-  `sede` varchar(255) NOT NULL,
-  `telefone` varchar(255) NOT NULL,
-  `cep` varchar(255) NOT NULL,
-  `protocolo_autorizacao` varchar(255) NOT NULL,
-  `cnpj` varchar(255) NOT NULL,
-  `inscricao_estadual_subs_tributaria` varchar(255) DEFAULT NULL,
-  `natureza_operacao` varchar(255) NOT NULL,
-  `inscricao_estadual` varchar(255) DEFAULT NULL,
-  `nome_razao_social_remetente` varchar(255) NOT NULL,
-  `cnpj_cpf_remetente` varchar(255) NOT NULL,
-  `cep_remetente` varchar(255) NOT NULL,
-  `telefone_remetente` varchar(255) NOT NULL,
-  `inscricao_estadual_remetente` varchar(255) DEFAULT NULL,
+  `chave_acesso` varchar(100) NOT NULL,
+  `informacao_interna` text,
+  `nome_razao_social` varchar(150) NOT NULL,
+  `sede` varchar(150) NOT NULL,
+  `telefone` varchar(50) NOT NULL,
+  `cep` varchar(20) NOT NULL,
+  `protocolo_autorizacao` varchar(100) NOT NULL,
+  `cnpj` varchar(20) NOT NULL,
+  `inscricao_estadual_subs_tributaria` varchar(50) DEFAULT NULL,
+  `natureza_operacao` varchar(150) NOT NULL,
+  `inscricao_estadual` varchar(50) DEFAULT NULL,
+  `nome_razao_social_remetente` varchar(150) NOT NULL,
+  `cnpj_cpf_remetente` varchar(20) NOT NULL,
+  `cep_remetente` varchar(20) NOT NULL,
+  `telefone_remetente` varchar(50) NOT NULL,
+  `inscricao_estadual_remetente` varchar(50) DEFAULT NULL,
   `data_emissao` date NOT NULL,
   `data_entrada_saida` date NOT NULL,
   `hora_saida` time NOT NULL,
-  `fatura_duplicata` varchar(255) NOT NULL,
-  `forma_pagamento` varchar(255) NOT NULL,
+  `fatura_duplicata` varchar(100) NOT NULL,
+  `forma_pagamento` varchar(100) NOT NULL,
   `base_calculo_icms` decimal(10,2) NOT NULL,
   `valor_icms` decimal(10,2) NOT NULL,
   `base_calculo_icms_st` decimal(10,2) DEFAULT NULL,
@@ -287,92 +303,57 @@ CREATE TABLE IF NOT EXISTS `nota_fiscal` (
   `outras_despesas` decimal(10,2) DEFAULT NULL,
   `valor_ipi` decimal(10,2) DEFAULT NULL,
   `valor_total_nota` decimal(10,2) NOT NULL,
-  `nome_razao_social_transportador` varchar(255) DEFAULT NULL,
-  `frete_por_conta` varchar(255) DEFAULT NULL,
-  `codigo_antt` varchar(255) DEFAULT NULL,
-  `placa_veiculo` varchar(255) DEFAULT NULL,
-  `cnpj_cpf_transportador` varchar(255) DEFAULT NULL,
-  `inscricao_estadual_transportador` varchar(255) DEFAULT NULL,
+  `nome_razao_social_transportador` varchar(150) DEFAULT NULL,
+  `frete_por_conta` varchar(100) DEFAULT NULL,
+  `codigo_antt` varchar(100) DEFAULT NULL,
+  `placa_veiculo` varchar(100) DEFAULT NULL,
+  `cnpj_cpf_transportador` varchar(20) DEFAULT NULL,
+  `inscricao_estadual_transportador` varchar(50) DEFAULT NULL,
   `quantidade` int DEFAULT NULL,
-  `especie` varchar(255) DEFAULT NULL,
-  `marca` varchar(255) DEFAULT NULL,
-  `numeracao` varchar(255) DEFAULT NULL,
+  `especie` varchar(100) DEFAULT NULL,
+  `marca` varchar(100) DEFAULT NULL,
+  `numeracao` varchar(100) DEFAULT NULL,
   `peso_bruto` decimal(10,2) DEFAULT NULL,
   `peso_liquido` decimal(10,2) DEFAULT NULL,
-  `nome_produto1` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `ncm_sh1` varchar(255) NOT NULL,
-  `cst1` varchar(255) NOT NULL,
-  `cfop1` varchar(255) NOT NULL,
-  `unid1` varchar(255) NOT NULL,
+  `nome_produto1` text NOT NULL,
+  `ncm_sh1` varchar(100) NOT NULL,
+  `cst1` varchar(100) NOT NULL,
+  `cfop1` varchar(100) NOT NULL,
+  `unid1` varchar(100) NOT NULL,
   `quantidade_prod1` decimal(10,2) NOT NULL,
   `valor_unitario1` decimal(10,2) NOT NULL,
   `valor_total_prod1` decimal(10,2) NOT NULL,
-  `nome_produto2` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-  `ncm_sh2` varchar(255) DEFAULT NULL,
-  `cst2` varchar(255) DEFAULT NULL,
-  `cfop2` varchar(255) DEFAULT NULL,
-  `unid2` varchar(255) DEFAULT NULL,
+  `nome_produto2` text,
+  `ncm_sh2` varchar(100) DEFAULT NULL,
+  `cst2` varchar(100) DEFAULT NULL,
+  `cfop2` varchar(100) DEFAULT NULL,
+  `unid2` varchar(100) DEFAULT NULL,
   `quantidade_prod2` decimal(10,2) DEFAULT NULL,
   `valor_unitario2` decimal(10,2) DEFAULT NULL,
   `valor_total_prod2` decimal(10,2) DEFAULT NULL,
-  `nome_produto3` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-  `ncm_sh3` varchar(255) DEFAULT NULL,
-  `cst3` varchar(255) DEFAULT NULL,
-  `cfop3` varchar(255) DEFAULT NULL,
-  `unid3` varchar(255) DEFAULT NULL,
+  `nome_produto3` text,
+  `ncm_sh3` varchar(100) DEFAULT NULL,
+  `cst3` varchar(100) DEFAULT NULL,
+  `cfop3` varchar(100) DEFAULT NULL,
+  `unid3` varchar(100) DEFAULT NULL,
   `quantidade_prod3` decimal(10,2) DEFAULT NULL,
   `valor_unitario3` decimal(10,2) DEFAULT NULL,
   `valor_total_prod3` decimal(10,2) DEFAULT NULL,
-  `nome_produto4` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-  `ncm_sh4` varchar(255) DEFAULT NULL,
-  `cst4` varchar(255) DEFAULT NULL,
-  `cfop4` varchar(255) DEFAULT NULL,
-  `unid4` varchar(255) DEFAULT NULL,
+  `nome_produto4` text,
+  `ncm_sh4` varchar(100) DEFAULT NULL,
+  `cst4` varchar(100) DEFAULT NULL,
+  `cfop4` varchar(100) DEFAULT NULL,
+  `unid4` varchar(100) DEFAULT NULL,
   `quantidade_prod4` decimal(10,2) DEFAULT NULL,
   `valor_unitario4` decimal(10,2) DEFAULT NULL,
   `valor_total_prod4` decimal(10,2) DEFAULT NULL,
-  `inscricao_municipal` varchar(255) DEFAULT NULL,
+  `inscricao_municipal` varchar(100) DEFAULT NULL,
   `valor_total_servicos` decimal(10,2) DEFAULT NULL,
   `base_calculo_issqn` decimal(10,2) DEFAULT NULL,
   `id_turma` int NOT NULL,
   `id_atividade` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `nota_fiscal`
---
-
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `nota_fiscal_criada`
---
-
-DROP TABLE IF EXISTS `nota_fiscal_criada`;
-CREATE TABLE IF NOT EXISTS `nota_fiscal_criada` (
-  `id_notafiscal` int NOT NULL AUTO_INCREMENT,
-  `id_atividade` int NOT NULL,
-  `id_turma` int NOT NULL,
-  `data_hora_envio` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_notafiscal`),
-  KEY `id_atividade` (`id_atividade`),
-  KEY `id_turma` (`id_turma`)
-) ENGINE=InnoDB AUTO_INCREMENT=192 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `nota_fiscal_criada`
---
-
-INSERT INTO `nota_fiscal_criada` (`id_notafiscal`, `id_atividade`, `id_turma`, `data_hora_envio`) VALUES
-(184, 193, 2, '2024-06-26 11:13:47'),
-(185, 194, 2, '2024-06-26 11:14:10'),
-(186, 195, 2, '2024-06-26 11:18:49'),
-(187, 196, 2, '2024-06-26 11:18:57'),
-(188, 197, 2, '2024-06-26 11:19:13'),
-(189, 198, 2, '2024-06-26 11:19:38'),
-(191, 200, 1, '2024-06-27 10:22:22');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -391,7 +372,7 @@ CREATE TABLE IF NOT EXISTS `pegado` (
   `id_aluno` int NOT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=347 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -406,23 +387,38 @@ CREATE TABLE IF NOT EXISTS `picking` (
   `quantidade_solicitada` int NOT NULL,
   `produto` varchar(255) NOT NULL,
   `posicao` varchar(255) NOT NULL,
-  `quantidade` int NOT NULL,
+  `quantidade` float NOT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_picking` (`id_pedido`,`produto`,`posicao`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `picking`
 --
 
 INSERT INTO `picking` (`id`, `id_pedido`, `quantidade_solicitada`, `produto`, `posicao`, `quantidade`, `id_turma`) VALUES
-(1, 11, 2, 'Teclado', 'A1', 2, 1),
-(2, 15, 1, 'Teclado', 'A1', 1, 1),
-(3, 15, 1, 'Mouse', 'A2', 1, 1),
-(4, 15, 1, 'Óleo Diesel', 'A3', 1, 1),
-(5, 15, 1, 'Camisa', 'A4', 1, 1),
-(6, 17, 1, 'Teclado', 'D4', 1, 1);
+(1, 6, 5, 'Leitor De Código De Barra', 'A1', 5, 1),
+(2, 8, 5, 'Leitor De Código De Barra', 'A1', 5, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `picking_pegado`
+--
+
+DROP TABLE IF EXISTS `picking_pegado`;
+CREATE TABLE IF NOT EXISTS `picking_pegado` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_pedido` int NOT NULL,
+  `nome_produto` varchar(255) NOT NULL,
+  `quantidade_enviada` int NOT NULL,
+  `posicao` varchar(2) NOT NULL,
+  `id_carga` int NOT NULL,
+  `id_aluno` int NOT NULL,
+  `id_turma` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -437,7 +433,7 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `preco` float NOT NULL,
   `nome_produto_normalizado` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `produto`
@@ -453,7 +449,8 @@ INSERT INTO `produto` (`id`, `nome_produto`, `preco`, `nome_produto_normalizado`
 (7, 'Brinquedo', 24.99, 'Brinquedo'),
 (8, 'Novelo de lã', 15, 'Novelo de la'),
 (9, 'carrinho', 7, 'carrinho'),
-(10, 'Carrinho de controle remoto.', 50, 'Carrinho de controle remoto.');
+(10, 'Carrinho de controle remoto', 50, 'Carrinho de controle remoto'),
+(11, 'Leitor De Código De Barra', 25, 'Leitor De Codigo De Barra');
 
 -- --------------------------------------------------------
 
@@ -464,19 +461,20 @@ INSERT INTO `produto` (`id`, `nome_produto`, `preco`, `nome_produto_normalizado`
 DROP TABLE IF EXISTS `professor`;
 CREATE TABLE IF NOT EXISTS `professor` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `password` varchar(65) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(65) NOT NULL,
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `professor`
 --
 
 INSERT INTO `professor` (`id`, `username`, `password`, `turma_id`) VALUES
-(1, 'teste', 'teste', -1);
+(1, 'teste', 'teste', -1),
+(2, 'Matheus', 'teste', -1);
 
 -- --------------------------------------------------------
 
@@ -498,14 +496,7 @@ CREATE TABLE IF NOT EXISTS `solicitacao` (
   `quantidade4` int DEFAULT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `solicitacao`
---
-
-INSERT INTO `solicitacao` (`id`, `id_pedido`, `produto`, `quantidade`, `produto2`, `quantidade2`, `produto3`, `quantidade3`, `produto4`, `quantidade4`, `id_turma`) VALUES
-
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -576,54 +567,7 @@ CREATE TABLE IF NOT EXISTS `vistoriado` (
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=200 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `vistoriado`
---
-
-
---
--- Restrições para tabelas despejadas
---
-
---
--- Restrições para tabelas `aluno`
---
-ALTER TABLE `aluno`
-  ADD CONSTRAINT `aluno_ibfk_1` FOREIGN KEY (`turma_id`) REFERENCES `turma` (`id`);
-
---
--- Restrições para tabelas `carga`
---
-ALTER TABLE `carga`
-  ADD CONSTRAINT `FK_carga_turma` FOREIGN KEY (`turma_id`) REFERENCES `turma` (`id`);
-
---
--- Restrições para tabelas `container`
---
-ALTER TABLE `container`
-  ADD CONSTRAINT `container_ibfk_1` FOREIGN KEY (`turma_id`) REFERENCES `turma` (`id`);
-
---
--- Restrições para tabelas `docas`
---
-ALTER TABLE `docas`
-  ADD CONSTRAINT `FK_docas_aluno` FOREIGN KEY (`id_aluno`) REFERENCES `aluno` (`id`),
-  ADD CONSTRAINT `FK_docas_turma` FOREIGN KEY (`id_turma`) REFERENCES `turma` (`id`);
-
---
--- Restrições para tabelas `nota_fiscal_criada`
---
-ALTER TABLE `nota_fiscal_criada`
-  ADD CONSTRAINT `nota_fiscal_criada_ibfk_1` FOREIGN KEY (`id_atividade`) REFERENCES `carga` (`id`),
-  ADD CONSTRAINT `nota_fiscal_criada_ibfk_2` FOREIGN KEY (`id_turma`) REFERENCES `turma` (`id`);
-
---
--- Restrições para tabelas `professor`
---
-ALTER TABLE `professor`
-  ADD CONSTRAINT `professor_ibfk_1` FOREIGN KEY (`turma_id`) REFERENCES `turma` (`id`);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -53,6 +53,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/solicitacaoestoque.css">
+    <style>
+        /* Estilos para o modal */
+        #meuModal .modal-dialog {
+            width: 80%;
+            /* Ajuste a largura conforme necessário */
+            max-width: 800px;
+            /* Largura máxima do modal */
+        }
+
+        /* Estilos para a tabela dentro do modal */
+        #meuModal .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #meuModal .table th,
+        #meuModal .table td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
 </head>
 
 <body>
@@ -129,9 +150,84 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             } else {
                                 echo "<p class='alert alert-danger'>Não encontrou nenhum pedido nas docas.</p>";
                             }
-                            $conn->close();
                             ?>
                         </form>
+
+                        <!-- Botão para abrir o Modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#meuModal">
+                            Cancelar Algum Pedido
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="meuModal" tabindex="-1" aria-labelledby="meuModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="meuModalLabel">Conteúdo da Solicitação</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Fechar"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="POST" action="processamento/processar_cancelamento_solicitacao.php" id="formCancelamento">
+                                            <?php
+                                            $sql = "SELECT * FROM `solicitacao` WHERE id_turma='$turma' AND `id`=" . $_GET['id_pedido'] . " ORDER BY `solicitacao`.`id` ASC";
+                                            $res = $conn->query($sql);
+                                            $qtd = $res->num_rows;
+
+                                            if ($qtd > 0) {
+                                                echo "<div id=\"tabelaScroll\" class=\"tabela-scroll\">";
+                                                echo "<table class='table'>";
+                                                echo "<tr>";
+                                                echo "<th>Produto</th>";
+                                                echo "<th>Quantidade Solicitada</th>";
+                                                echo "<th>Cancelar</th>";
+                                                echo "</tr>";
+
+                                                while ($row = $res->fetch_object()) {
+                                                    for ($i = 1; $i <= 4; $i++) {
+                                                        $produto = "produto" . ($i == 1 ? "" : $i);
+                                                        $quantidade = "quantidade" . ($i == 1 ? "" : $i);
+
+                                                        if (!empty($row->$produto) && !empty($row->$quantidade)) {
+                                                            echo "<tr>";
+                                                            echo "<td style=\"border-right:1px solid black;\">" . $row->$produto . "</td>";
+                                                            echo "<td style=\"border-right:1px solid black;\">" . $row->$quantidade . "</td>";
+                                                            echo "<td style=\"border-right:1px solid black;\">";
+                                                            echo "<input type='hidden' name='produto[]' value='" . $row->$produto . "'>";
+                                                            echo "<input type='hidden' name='quantidade_cancelada[]' value='" . $row->$quantidade . "'>";
+                                                            echo "<input type='hidden' name='id_pedido' value='" . $_GET['id_pedido'] . "'>"; 
+                                                            echo "<input type='checkbox' name='cancelar_produto[]' value='" . $i . "'>"; // Enviar o índice $i
+                                                            echo "</td>";
+                                                            echo "</tr>";
+                                                        }
+                                                    }
+                                                }
+
+                                                echo "</table>";
+                                                echo "</div>";
+                                                echo "<div id='motivoCancelamento' style='display: none;'>
+                                                <label for='motivo'>Motivo do Cancelamento:</label><br>
+                                                <input type='text' id='motivo' name='motivo' class='form-control'>
+                                                </div>";
+                                                echo "<div class='buttonEnviar'> <button type='submit' name='cancelar_item'>Enviar</button></div>";
+                                            } else {
+                                                echo "<p class='alert alert-danger'>Não encontrou nenhum pedido nas docas.</p>";
+                                            }
+                                            $conn->close();
+                                            ?>
+
+
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                     <div class="divpegar">
@@ -212,6 +308,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
         </script>
+    <script>
+        // Código JavaScript para mostrar/esconder o input
+        const checkboxes = document.querySelectorAll('input[name="cancelar_produto[]"]');
+        const motivoCancelamento = document.getElementById('motivoCancelamento');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                // Verifica se pelo menos uma checkbox está marcada
+                const peloMenosUmaMarcada = Array.from(checkboxes).some(cb => cb.checked);
+
+                // Mostra/esconde o input de acordo com o estado das checkboxes
+                motivoCancelamento.style.display = peloMenosUmaMarcada ? 'block' : 'none';
+            });
+        });
+    </script>
 </body>
 
 </html>

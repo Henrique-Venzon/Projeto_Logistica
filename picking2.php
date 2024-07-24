@@ -11,7 +11,7 @@ if (!isset($_SESSION['turma'])) {
 }
 $turma = $_SESSION['turma'];
 $id = $_GET['id']
-?>
+    ?>
 <!DOCTYPE html>
 <html>
 
@@ -45,7 +45,7 @@ $id = $_GET['id']
                             include_once ('include/conexao.php');
 
                             // Consulta para obter os produtos
-                            $sql = "SELECT id, produto, quantidade_solicitada, posicao FROM picking where id_pedido=$id and id_turma='" . $_SESSION['turma'] . "'";
+                            $sql = "SELECT id,id_pedido, produto, quantidade_solicitada, posicao FROM picking where id_pedido=$id and id_turma='" . $_SESSION['turma'] . "'";
                             $res = $conn->query($sql);
 
                             // Verifique se há erro na consulta
