@@ -111,8 +111,8 @@ $conn->close();
                         <button id='autoDanfe3'>Preset 4</button>
                         <button id='autoDanfe4'>Preset 5</button>
                         <button id='autoDanfe5'>Preset 6</button>
-                        <button id='preset2'>Preset 2 random</button>
-                        <button id='preset3'>Preset 3 random</button>
+                        <button id='preset2'>Desconto Errado</button>
+                        <button id='preset3'>Desconto Certo</button> <!-- sempre confundia essa merda -->
                     </div>
                     <div class='inputDanfe'>
                         <form action='processamento/ProcessoDanfe.php' method='post' id='danfeForm'>
