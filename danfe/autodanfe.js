@@ -367,7 +367,6 @@ document.getElementById("autoDanfe4").addEventListener("click", function () {
   document.getElementById("base_calculo_issqn").value = "";
 });
 
-
 document.getElementById("autoDanfe5").addEventListener("click", function () {
   document.getElementById("danfeForm").reset();
   //document.getElementById("numero").value = "987654";

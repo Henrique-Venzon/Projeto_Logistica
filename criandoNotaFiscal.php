@@ -215,8 +215,7 @@ $conn->close();
                                 <input type='number' step='0.01' id='valor_icms_substituicao'
                                     name='valor_icms_substituicao'>
 
-                                <label for='total_produtos'>Total dos Produtos</label>
-                                <input type='number' step='0.01' id='total_produtos' name='total_produtos' required>
+
 
                                 <label for='valor_frete'>Valor do Frete</label>
                                 <input type='number' step='0.01' id='valor_frete' name='valor_frete'>
@@ -418,7 +417,8 @@ $conn->close();
                                 <label for='base_calculo_issqn'>Base de Cálculo do ISSQN (%)</label>
                                 <input type='number' step='0.01' id='base_calculo_issqn' name='base_calculo_issqn'>
                             </div>
-
+                            <label for='total_produtos'>Total dos Produtos</label>
+                            <input type='number' step='0.01' id='total_produtos' name='total_produtos' value= '<?php $total_tudo=$total1+$total2+$total3+$total4; echo $total_tudo;?>'required>
                             <div class='button-group'>
                                 <button type='button' id='clearForm'>Apagar tudo</button>
                                 <button type='submit' id='enviar'>Enviar</button>
