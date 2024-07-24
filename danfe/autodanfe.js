@@ -630,14 +630,15 @@ function desconto (){
   var valorFrete = parseFloat(document.getElementById("valor_frete").value);
   var valorSeguro = parseFloat(document.getElementById("valor_seguro").value);
   var desconto = parseFloat(document.getElementById("desconto").value);
-  var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value);
+  var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value)||0;
   var valorIpi = parseFloat(document.getElementById("valor_ipi").value);
   var valorTotalNota = totalProdutos1 + totalProdutos2 + totalProdutos3 + totalProdutos4 + valorFrete + valorSeguro + outrasDespesas + valorIpi;
   var descot = valorTotalNota * (desconto/100);
   
   var totalliquido= valorTotalNota - descot;
+  var paratoFixed = totalliquido.toFixed(2);
   
-    document.getElementById('deconto').innerHTML = totalliquido;
+    document.getElementById('deconto').innerHTML = paratoFixed;
 }
 function issqn(){
 
@@ -827,7 +828,17 @@ document.getElementById("preset3").addEventListener("click", function () {
 
 
   
- 
+ function valor_totalpro() {
+  var vale1 = parseFloat(document.getElementById("valor_total_prod1").valure)||0;
+  var vale2 = parseFloat(document.getElementById("valor_total_prod1").valure)||0;
+  var vale3= parseFloat(document.getElementById("valor_total_prod1").valure)||0;
+  var vale4 = parseFloat(document.getElementById("valor_total_prod1").valure)||0;
+
+    total = vale1 + vale2 + vale3 + vale4;
+
+    document.getElementById("valor_total_nota").innerHTML= total ;
+    
+ }
 
 
  

@@ -232,7 +232,7 @@ $conn->close();
 
                                 <label for='valor_total_nota'>Valor Total da Nota sem desconto</label>
                                 <input type='number' step='0.01' id='valor_total_nota' name='valor_total_nota' required>
-                                <p id="deconto"></p>
+                                
 
                                 
                                 
@@ -442,6 +442,7 @@ $conn->close();
                         <div class="container-amostra-wrapper">
                             <div class="container-amostra">
                             <label>O valor total com desconto é</label>
+                            <p id="deconto"></p>
                             <button type="button" id="caldesco" onclick="desconto()">Valor total</button>
                             <p>Item 2</p>
                             <p>Item 3</p>
