@@ -232,8 +232,7 @@ $conn->close();
                                 <label for='valor_ipi'>Valor do IPI</label>
                                 <input type='number' step='0.01' id='valor_ipi' name='valor_ipi'>
 
-                                <label for='valor_total_nota'>Valor Total da Nota sem desconto</label>
-                                <input type='number' step='0.01' id='valor_total_nota' name='valor_total_nota' required>
+                                
                                 
 
                                 
@@ -417,8 +416,8 @@ $conn->close();
                                 <label for='base_calculo_issqn'>Base de Cálculo do ISSQN (%)</label>
                                 <input type='number' step='0.01' id='base_calculo_issqn' name='base_calculo_issqn'>
                             </div>
-                            <label for='total_produtos'>Total dos Produtos</label>
-                            <input type='number' step='0.01' id='total_produtos' name='total_produtos' value= '<?php $total_tudo=$total1+$total2+$total3+$total4; echo $total_tudo;?>'required>
+                            
+                            
                             <div class='button-group'>
                                 <button type='button' id='clearForm'>Apagar tudo</button>
                                 <button type='submit' id='enviar'>Enviar</button>
@@ -436,27 +435,30 @@ $conn->close();
                         <label>O valor total com desconto é:</label>
                         <button type="button" id="caldesco" onclick="desconto()">Valor total</button>
      
-                             <H1>Valor Final Total</H1>
-                                <label>O valor do ISSQN:</label>
-                                <label id="issqnto"></label>
-                                <button id="calissqn" onclick="issqn()">Valor ISSQN</button>
+                             
+                                
+                                
+                                
                         
                         </div>
                         <div class="container-amostra-wrapper">
                             <div class="container-amostra">
+                            <label for='valor_total_nota'>Valor Total da Nota sem desconto</label>
+                            <input type='number' step='0.01' id='valor_total_nota' name='valor_total_nota' value="<?php  $totalsem = $total1 + $total2 + $total3 + $total4 + $valor_ipi + $outras_despesas + $valor_seguro + $valor_frete;  echo $totalsem;  ?>" required>
+                                
                             <label>O valor total com desconto é</label>
                             <p id="deconto"></p>
                             <button type="button" id="caldesco" onclick="desconto()">Valor total</button>
-                            <p>Item 2</p>
-                            <p>Item 3</p>
-                            <p>Item 4</p>
-                            <p>Item 5</p>
-                            <p>Item 6</p>
-                            <p>Item 7</p>
-                            <p>Item 8</p>
-                            <p>Item 9</p>
-                            <p>Item 10</p>
-                            </div>
+                            <br>
+                            <label for='total_produtos'>Total dos Produtos</label>
+                            <input type='number' step='0.01' id='total_produtos' name='total_produtos' value= '<?php $total_tudo=$total1+$total2+$total3+$total4; echo $total_tudo;?>'required>
+                            <br>
+                            <label>O valor do ISSQN</label>
+                            <label id="issqnto"></label>
+                            <br>
+                            <button id="calissqn" onclick="issqn()">Valor ISSQN</button>
+                            <br>
+                        </div>
                         </div>
                     </div>
                     
