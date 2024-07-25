@@ -76,7 +76,7 @@ $conn->close();
 
 <!DOCTYPE html>
 <html lang='pt-BR'>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <head>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='shortcut icon' href='img/amem.svg'>
@@ -215,8 +215,6 @@ $conn->close();
                                 <input type='number' step='0.01' id='valor_icms_substituicao'
                                     name='valor_icms_substituicao'>
 
-
-
                                 <label for='valor_frete'>Valor do Frete</label>
                                 <input type='number' step='0.01' id='valor_frete' name='valor_frete'>
 
@@ -231,12 +229,6 @@ $conn->close();
 
                                 <label for='valor_ipi'>Valor do IPI</label>
                                 <input type='number' step='0.01' id='valor_ipi' name='valor_ipi'>
-
-                                
-                                
-
-                                
-                                
                                 
                             </div>
 
@@ -444,11 +436,10 @@ $conn->close();
                         <div class="container-amostra-wrapper">
                             <div class="container-amostra">
                             <label for='valor_total_nota'>Valor Total da Nota sem desconto</label>
-                            <input type='number' step='0.01' id='valor_total_nota' name='valor_total_nota' value="<?php  $totalsem = $total1 + $total2 + $total3 + $total4 + $valor_ipi + $outras_despesas + $valor_seguro + $valor_frete;  echo $totalsem;  ?>" required>
+                            <input type='number' step='0.01' id='valor_total_nota' name='valor_total_nota'  required>
                                 
                             <label>O valor total com desconto é</label>
                             <p id="deconto"></p>
-                            <button type="button" id="caldesco" onclick="desconto()">Valor total</button>
                             <br>
                             <label for='total_produtos'>Total dos Produtos</label>
                             <input type='number' step='0.01' id='total_produtos' name='total_produtos' value= '<?php $total_tudo=$total1+$total2+$total3+$total4; echo $total_tudo;?>'required>

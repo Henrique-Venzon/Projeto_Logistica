@@ -620,17 +620,31 @@ document.getElementById("preset2").addEventListener("click", function () {
 
 });
 
+setInterval( function semdesco(){
 
-function desconto (){  
   var totalProdutos1 = parseFloat(document.getElementById("valor_total_prod1").value)||0;
   var totalProdutos2 = parseFloat(document.getElementById("valor_total_prod2").value)||0;
   var totalProdutos3 = parseFloat(document.getElementById("valor_total_prod3").value)||0;
   var totalProdutos4 = parseFloat(document.getElementById("valor_total_prod4").value)||0;
-  var valorFrete = parseFloat(document.getElementById("valor_frete").value);
-  var valorSeguro = parseFloat(document.getElementById("valor_seguro").value);
-  var desconto = parseFloat(document.getElementById("desconto").value);
+  var valorFrete = parseFloat(document.getElementById("valor_frete").value) ||0;
+  var valorSeguro = parseFloat(document.getElementById("valor_seguro").value) ||0;
+  
   var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value)||0;
-  var valorIpi = parseFloat(document.getElementById("valor_ipi").value);
+  var valorIpi = parseFloat(document.getElementById("valor_ipi").value)||0;
+  var valorTotalNotasemdesc = totalProdutos1 + totalProdutos2 + totalProdutos3 + totalProdutos4 + valorFrete + valorSeguro + outrasDespesas + valorIpi;
+  document.getElementById('valor_total_nota').innerHTML= valorTotalNotasemdesc;
+
+},1000)
+setInterval(function desconto (){  
+  var totalProdutos1 = parseFloat(document.getElementById("valor_total_prod1").value)||0;
+  var totalProdutos2 = parseFloat(document.getElementById("valor_total_prod2").value)||0;
+  var totalProdutos3 = parseFloat(document.getElementById("valor_total_prod3").value)||0;
+  var totalProdutos4 = parseFloat(document.getElementById("valor_total_prod4").value)||0;
+  var valorFrete = parseFloat(document.getElementById("valor_frete").value) ||0;
+  var valorSeguro = parseFloat(document.getElementById("valor_seguro").value) ||0;
+  var desconto = parseFloat(document.getElementById("desconto").value) ||0;
+  var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value)||0;
+  var valorIpi = parseFloat(document.getElementById("valor_ipi").value)||0;
   var valorTotalNota = totalProdutos1 + totalProdutos2 + totalProdutos3 + totalProdutos4 + valorFrete + valorSeguro + outrasDespesas + valorIpi;
   var descot = valorTotalNota * (desconto/100);
   
@@ -638,8 +652,8 @@ function desconto (){
   var paratoFixed = totalliquido.toFixed(2);
   
     document.getElementById('deconto').innerHTML = paratoFixed;
-}
-function issqn(){
+}, 1000)
+setInterval(function issqn(){
 
     var servico = parseFloat(document.getElementById("valor_total_servicos").value)|| 0;
 
@@ -649,7 +663,7 @@ function issqn(){
     
         document.getElementById('issqnto').innerHTML = issqnto;
   }
-
+, 3000)
 //Pré set randomizado 2
 document.getElementById("clearForm").addEventListener("click", function () {
   document.getElementById("danfeForm").reset();
