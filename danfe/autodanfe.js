@@ -764,11 +764,6 @@ document.getElementById("preset3").addEventListener("click", function () {
     100,
     2
   );
-  //document.getElementById("total_produtos").value = getRandomDecimal(
-   // 100,
-   // 1000,
-   // 2
- // );
   
   document.getElementById("valor_frete").value = getRandomDecimal(10, 100, 2);
  
@@ -801,11 +796,6 @@ document.getElementById("preset3").addEventListener("click", function () {
   document.getElementById("valor_unitario").value = getRandomDecimal(
     1,
     1000,
-    2
-  );
-  document.getElementById("valor_total_prod").value = getRandomDecimal(
-    1,
-    10000,
     2
   );
   document.getElementById("base_calculo_icms_prod").value = getRandomDecimal(
@@ -841,7 +831,7 @@ document.getElementById("preset3").addEventListener("click", function () {
 
 
   
- function valor_totalpro() {
+ setInterval(function valor_totalpro() {
   var vale1 = parseFloat(document.getElementById("valor_total_prod1").valure)||0;
   var vale2 = parseFloat(document.getElementById("valor_total_prod1").valure)||0;
   var vale3= parseFloat(document.getElementById("valor_total_prod1").valure)||0;
@@ -849,10 +839,10 @@ document.getElementById("preset3").addEventListener("click", function () {
 
     total = vale1 + vale2 + vale3 + vale4;
 
-    document.getElementById("valor_total_nota").innerHTML= total ;
+   total_produtos.setAtribute(document.getElementById("total_produtos").innerHTML= total) ;
     
  }
-
+ )
 
  
 });
