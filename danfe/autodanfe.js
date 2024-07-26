@@ -829,21 +829,16 @@ document.getElementById("preset3").addEventListener("click", function () {
     2
   );
 
-
-  
- setInterval(function valor_totalpro() {
-  var vale1 = parseFloat(document.getElementById("valor_total_prod1").valure)||0;
-  var vale2 = parseFloat(document.getElementById("valor_total_prod1").valure)||0;
-  var vale3= parseFloat(document.getElementById("valor_total_prod1").valure)||0;
-  var vale4 = parseFloat(document.getElementById("valor_total_prod1").valure)||0;
-
-    total = vale1 + vale2 + vale3 + vale4;
-
-   total_produtos.setAtribute(document.getElementById("total_produtos").innerHTML= total) ;
-    
- }
- )
+            
+          setInterval(function valor_totalpro() {
+            var vale1 = parseFloat(document.getElementById("valor_total_prod1").valure)||0;
+            var vale2 = parseFloat(document.getElementById("valor_total_prod2").valure)||0;
+            var vale3= parseFloat(document.getElementById("valor_total_prod3").valure)||0;
+            var vale4 = parseFloat(document.getElementById("valor_total_prod4").valure)||0;
+              total = vale1 + vale2 + vale3 + vale4;
+              document.getElementById("total_produtos").innerHTML = total;
+          },1000)
 
  
-});
 
+})

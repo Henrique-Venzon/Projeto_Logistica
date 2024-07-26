@@ -426,12 +426,11 @@ $conn->close();
                         <H1>Valor Final Total</H1>
                         <label>O valor total com desconto é:</label>
                         <button type="button" id="caldesco" onclick="desconto()">Valor total</button>
-     
-                             
-                                
-                                
-                                
-                        
+
+  
+  
+  
+
                         </div>
                         <div class="container-amostra-wrapper">
                             <div class="container-amostra">
@@ -442,7 +441,7 @@ $conn->close();
                             <p id="deconto"></p>
                             <br>
                             <label for='total_produtos'>Total dos Produtos</label>
-                            <input type='number' step='0.01' id='total_produtos' name='total_produtos' required>
+                            <label for="total_produtos" type='number' step='0.01' id='total_produtos' name='total_produtos' required></label>
                             <br>
                             <label>O valor do ISSQN</label>
                             <label id="issqnto"></label>
