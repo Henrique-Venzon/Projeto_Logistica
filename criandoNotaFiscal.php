@@ -442,7 +442,7 @@ $conn->close();
                             <p id="deconto"></p>
                             <br>
                             <label for='total_produtos'>Total dos Produtos</label>
-                            <input type='number' step='0.01' id='total_produtos' name='total_produtos' value= '<?php $total_tudo=$total1+$total2+$total3+$total4; echo $total_tudo;?>'required>
+                            <input type='number' step='0.01' id='total_produtos' name='total_produtos' required>
                             <br>
                             <label>O valor do ISSQN</label>
                             <label id="issqnto"></label>
