@@ -31,7 +31,7 @@ document.getElementById("autoDanfe").addEventListener("click", function () {
   document.getElementById("valor_icms").value = "180.00";
   document.getElementById("base_calculo_icms_st").value = "1200.00";
   document.getElementById("valor_icms_substituicao").value = "216.00";
-  document.getElementById("total_produtos").value = "1000.00";
+  // document.getElementById("total_produtos").value = "1000.00";
   document.getElementById("valor_frete").value = "50.00";
   document.getElementById("valor_seguro").value = "20.00";
   document.getElementById("desconto").value = "30.00";
@@ -105,7 +105,7 @@ document.getElementById("autoDanfe1").addEventListener("click", function () {
   document.getElementById("valor_icms").value = "540.00";
   document.getElementById("base_calculo_icms_st").value = "5000.00";
   document.getElementById("valor_icms_substituicao").value = "750.00";
-  document.getElementById("total_produtos").value = "180000.00";
+  // document.getElementById("total_produtos").value = "180000.00";
   document.getElementById("valor_frete").value = "3500.00";
   document.getElementById("valor_seguro").value = "280000.00";
   document.getElementById("desconto").value = "5.00";
@@ -179,7 +179,7 @@ document.getElementById("autoDanfe2").addEventListener("click", function () {
   document.getElementById("valor_icms").value = "630.00";
   document.getElementById("base_calculo_icms_st").value = "6000.00";
   document.getElementById("valor_icms_substituicao").value = "900.00";
-  document.getElementById("total_produtos").value = "250000.00";
+  //document.getElementById("total_produtos").value = "250000.00";
   document.getElementById("valor_frete").value = "3000.00";
   document.getElementById("valor_seguro").value = "350000.00";
   document.getElementById("desconto").value = "10.00";
@@ -253,7 +253,7 @@ document.getElementById("autoDanfe3").addEventListener("click", function () {
   document.getElementById("valor_icms").value = "720.00";
   document.getElementById("base_calculo_icms_st").value = "7000.00";
   document.getElementById("valor_icms_substituicao").value = "1050.00";
-  document.getElementById("total_produtos").value = "300000.00";
+  //document.getElementById("total_produtos").value = "300000.00";
   document.getElementById("valor_frete").value = "3500.00";
   document.getElementById("valor_seguro").value = "400000.00";
   document.getElementById("desconto").value = "3.00";
@@ -326,7 +326,7 @@ document.getElementById("autoDanfe4").addEventListener("click", function () {
   document.getElementById("valor_icms").value = "540.00";
   document.getElementById("base_calculo_icms_st").value = "5000.00";
   document.getElementById("valor_icms_substituicao").value = "750.00";
-  document.getElementById("total_produtos").value = "200000.00";
+  //document.getElementById("total_produtos").value = "200000.00";
   document.getElementById("valor_frete").value = "4000.00";
   document.getElementById("valor_seguro").value = "300000.00";
   document.getElementById("desconto").value = "23.00";
@@ -400,7 +400,7 @@ document.getElementById("autoDanfe5").addEventListener("click", function () {
   document.getElementById("valor_icms").value = "675.00";
   document.getElementById("base_calculo_icms_st").value = "6000.00";
   document.getElementById("valor_icms_substituicao").value = "900.00";
-  document.getElementById("total_produtos").value = "180000.00";
+  //document.getElementById("total_produtos").value = "180000.00";
   document.getElementById("valor_frete").value = "5000.00";
   document.getElementById("valor_seguro").value = "350000.00";
   document.getElementById("desconto").value = "17.00";
@@ -542,11 +542,11 @@ document.getElementById("preset2").addEventListener("click", function () {
     100,
     2
   );
-  document.getElementById("total_produtos").value = getRandomDecimal(
-    100,
-    1000,
-    2
-  );
+  //document.getElementById("total_produtos").value = getRandomDecimal(
+    //100,
+   // 1000,
+   // 2
+ // );
   document.getElementById("valor_frete").value = getRandomDecimal(10, 100, 2);
   document.getElementById("valor_seguro").value = getRandomDecimal(10, 100, 2);
   document.getElementById("desconto").value = getRandomDecimal(10, 100, 2);
