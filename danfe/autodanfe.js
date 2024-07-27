@@ -663,7 +663,20 @@ setInterval(function issqn(){
     
         document.getElementById('issqnto').innerHTML = issqnto;
   }
-, 3000)
+, 1000)
+
+
+setInterval(function valor_totalpro() {
+  var vale1 = parseFloat(document.getElementById("valor_total_prod1").valure)||0;
+  var vale2 = parseFloat(document.getElementById("valor_total_prod2").valure)||0;
+  var vale3= parseFloat(document.getElementById("valor_total_prod3").valure)||0;
+  var vale4 = parseFloat(document.getElementById("valor_total_prod4").valure)||0;
+    var total = vale1 + vale2 + vale3 + vale4;
+    document.getElementById("total_produtos").innerHTML = total;
+},1000)
+
+
+
 //Pré set randomizado 2
 document.getElementById("clearForm").addEventListener("click", function () {
   document.getElementById("danfeForm").reset();
@@ -830,14 +843,14 @@ document.getElementById("preset3").addEventListener("click", function () {
   );
 
             
-          setInterval(function valor_totalpro() {
-            var vale1 = parseFloat(document.getElementById("valor_total_prod1").valure)||0;
-            var vale2 = parseFloat(document.getElementById("valor_total_prod2").valure)||0;
-            var vale3= parseFloat(document.getElementById("valor_total_prod3").valure)||0;
-            var vale4 = parseFloat(document.getElementById("valor_total_prod4").valure)||0;
-              total = vale1 + vale2 + vale3 + vale4;
-              document.getElementById("total_produtos").innerHTML = total;
-          },1000)
+         
+         
+         
+         
+         
+         
+         
+         
 
  
 

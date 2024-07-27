@@ -435,13 +435,13 @@ $conn->close();
                         <div class="container-amostra-wrapper">
                             <div class="container-amostra">
                             <label for='valor_total_nota'>Valor Total da Nota sem desconto</label>
-                            <input type='number' step='0.01' id='valor_total_nota' name='valor_total_nota'  required>
+                            <p id='valor_total_nota' name='valor_total_nota'  ></p>
                                 
                             <label>O valor total com desconto é</label>
                             <p id="deconto"></p>
-                            <br>
+                            
                             <label for='total_produtos'>Total dos Produtos</label>
-                            <label for="total_produtos" type='number' step='0.01' id='total_produtos' name='total_produtos' required></label>
+                            <label for='total_produtos' id='total_produtos' name='total_produtos'></label>
                             <br>
                             <label>O valor do ISSQN</label>
                             <label id="issqnto"></label>
