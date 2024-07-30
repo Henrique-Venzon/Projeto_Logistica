@@ -191,7 +191,7 @@ main{
     justify-content: space-around;
     width: 50%;
 }
-.npedido,.nFiscal,.doca{
+.npedido,.nFiscal,.doca,.cancelar{
     display: flex;
     height: 110px;
     width: 180px;
@@ -210,14 +210,14 @@ main{
     color: white;
 
 }
-.npedido h1, .nFiscal h1 {
+.npedido h1, .nFiscal h1 ,.cancelar h1{
     border-bottom: 1px solid #ffffff;
     padding-bottom: 10px;
     margin-bottom: 10px;
     width: inherit;
   }
   
-  .npedido h1:last-child, .nFiscal h1:last-child {
+  .npedido h1:last-child, .nFiscal h1:last-child ,.cancelar h1:last-child{
     border-bottom: none;
     padding-bottom: 0;
     margin-bottom: 0;
@@ -315,7 +315,29 @@ main{
   .scrollSku::-webkit-scrollbar {
     width: 18px;
   }
-  
+  #abrircancelar .modal-dialog {
+    width: 80%;
+    /* Ajuste a largura conforme necessário */
+    max-width: 800px;
+    /* Largura máxima do modal */
+}
+
+/* Estilos para a tabela dentro do modal */
+#abrircancelar .table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#abrircancelar .table th,
+#abrircancelar .table td {
+    border: 1px solid black;
+    padding: 8px;
+}
+.cancelar button,.nFiscal button{
+  font-size: 18px;
+  padding: 4px 12px;
+  border-radius: 10px;
+}
   
   @media only screen and (max-width: 600px) {
     .IMAGEM img{
@@ -369,7 +391,7 @@ main{
     border-radius: 10px;
     font-size: 8px;
 }
-.npedido,.nFiscal,.doca{
+.npedido,.nFiscal,.doca,.cancelar{
     height: 60px;
     width: 80px;
     padding: 4px;
@@ -382,7 +404,7 @@ main{
     color: white;
 
 }
-.npedido h1, .nFiscal h1 {
+.npedido h1, .nFiscal h1,.cancelar h1 {
     border-bottom: 1px solid #ffffff;
     padding-bottom: 8px;
     margin-bottom: 8px;
