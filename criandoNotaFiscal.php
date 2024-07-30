@@ -130,7 +130,7 @@ $conn->close();
                                 <input type='text' id='chave_acesso' name='chave_acesso' required>
 
                                 <label for='informacao_interna'>Fornecedor</label>
-                                <input type='text' id='informacao_interna' name='informacao_interna' required>
+                                <input type='text' id='informacao_interna' name='informacao_interna'>
 
                                 <label for='nome_razao_social'>Nome/Razão Social</label>
                                 <input type='text' id='nome_razao_social' name='nome_razao_social' required>
@@ -180,7 +180,7 @@ $conn->close();
 
                                 <label for='inscricao_estadual_remetente'>Inscrição Estadual</label>
                                 <input type='text' id='inscricao_estadual_remetente'
-                                    name='inscricao_estadual_remetente' required>
+                                    name='inscricao_estadual_remetente'>
 
                                 <label for='data_emissao'>Data de Emissão</label>
                                 <input type='date' id='data_emissao' name='data_emissao' required>
@@ -213,7 +213,7 @@ $conn->close();
 
                                 <label for='valor_icms_substituicao'>Valor do ICMS Substituição</label>
                                 <input type='number' step='0.01' id='valor_icms_substituicao'
-                                    name='valor_icms_substituicao' required>
+                                    name='valor_icms_substituicao'>
 
                                 <label for='valor_frete'>Valor do Frete</label>
                                 <input type='number' step='0.01' id='valor_frete' name='valor_frete'>
@@ -415,9 +415,9 @@ $conn->close();
                                 <button type='submit' id='enviar'>Enviar</button>
                             </div>
                             
-                            <!-- ESSES DOIS INPUTS DEVEM MIUDAR O VALOR PARA ENVIAR CORRETAMENTE, APENAS MUDE O TYPE PARA HIDDEN DEPOIS -->
-                            <input type='text' for='total_produtos' id='total_produtos' name='total_produtos' >
-                            <input type='text' for='total_produtos' id='valor_total_nota' name='valor_total_nota' >
+                            
+                            
+                            
 
                         </form>
                         <label id='resultado' ></label>
