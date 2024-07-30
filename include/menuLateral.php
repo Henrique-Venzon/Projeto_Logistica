@@ -312,6 +312,7 @@
                         <li class="sidebar-item">
                             <a style="margin-top: -1px;" href="verPedido.php" class="sidebar-link">Ver pedidos</a>
                         </li>
+                        
                     </ul>
                 </li>'
                     ?>
@@ -370,6 +371,9 @@
                         </li>
                         <li class="sidebar-item">
                             <a href="verSolicitacao.php" style="margin-top: -1.4px;" class="sidebar-link">Verificar solicitação</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a style="margin-top: -1px;" href="cancelamentos-Solicitacao.php" class="sidebar-link">Cancelamentos</a>
                         </li>
                     </ul>
                 </li>
