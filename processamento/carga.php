@@ -83,7 +83,7 @@ include_once('../include/conexao.php');
     insertIfNotExists($conn, $produto2, $valor2);
     insertIfNotExists($conn, $produto3, $valor3);
     insertIfNotExists($conn, $produto4, $valor4);
-
+    
     if ($conn->query($sql) === TRUE) {
         header('Location: ../criandoNotaFiscal.php?npedido=' . urlencode($npedido) . '&turma_id=' . urlencode($turma_id));
         exit();
