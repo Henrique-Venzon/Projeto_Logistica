@@ -620,6 +620,54 @@ document.getElementById("preset2").addEventListener("click", function () {
 
 });
 
+function semdesco(){
+  
+  var totalProdutos1 = parseFloat(document.getElementById("valor_total_prod1").value)||0;
+  var totalProdutos2 = parseFloat(document.getElementById("valor_total_prod2").value)||0;
+  var totalProdutos3 = parseFloat(document.getElementById("valor_total_prod3").value)||0;
+  var totalProdutos4 = parseFloat(document.getElementById("valor_total_prod4").value)||0;
+  var valorFrete = parseFloat(document.getElementById("valor_frete").value) ||0;
+  var valorSeguro = parseFloat(document.getElementById("valor_seguro").value) ||0;
+  
+  var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value)||0;
+  var valorIpi = parseFloat(document.getElementById("valor_ipi").value)||0;
+  var valorTotalNotasemdesc = totalProdutos1 + totalProdutos2 + totalProdutos3 + totalProdutos4 + valorFrete + valorSeguro + outrasDespesas + valorIpi;
+   
+  
+   document.getElementById('valor_total_nota').innerText= valorTotalNotasemdesc;
+
+}
+
+function desconto (){  
+  var totalProdutos1 = parseFloat(document.getElementById("valor_total_prod1").value)||0;
+  var totalProdutos2 = parseFloat(document.getElementById("valor_total_prod2").value)||0;
+  var totalProdutos3 = parseFloat(document.getElementById("valor_total_prod3").value)||0;
+  var totalProdutos4 = parseFloat(document.getElementById("valor_total_prod4").value)||0;
+  var valorFrete = parseFloat(document.getElementById("valor_frete").value) ||0;
+  var valorSeguro = parseFloat(document.getElementById("valor_seguro").value) ||0;
+  var desconto = parseFloat(document.getElementById("desconto").value) ||0;
+  var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value)||0;
+  var valorIpi = parseFloat(document.getElementById("valor_ipi").value)||0;
+  var valorTotalNota = totalProdutos1 + totalProdutos2 + totalProdutos3 + totalProdutos4 + valorFrete + valorSeguro + outrasDespesas + valorIpi;
+  var descot = valorTotalNota * (desconto/100);
+  
+  var totalliquido= valorTotalNota - descot;
+  var paratoFixed = totalliquido.toFixed(2);
+  
+    document.getElementById('deconto').innerHTML = paratoFixed;
+}
+setInterval(function issqn(){
+
+    var servico = parseFloat(document.getElementById("valor_total_servicos").value)|| 0;
+
+    var base = parseFloat(document.getElementById("base_calculo_issqn").value)|| 0;
+
+    var issqnto = servico * (base/100);
+    
+        document.getElementById('issqnto').innerHTML = issqnto;
+  }
+, 1000)
+
 
 
 
