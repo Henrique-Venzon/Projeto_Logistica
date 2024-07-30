@@ -415,9 +415,9 @@ $conn->close();
                                 <button type='submit' id='enviar'>Enviar</button>
                             </div>
                             
-                            <!-- ESSES DOIS INPUTS DEVEM MIUDAR O VALOR PARA ENVIAR CORRETAMENTE, APENAS MUDE O TYPE PARA HIDDEN DEPOIS -->
-                            <input type='text' for='total_produtos' id='total_produtos' name='total_produtos' value="">
-                            <input type='text' for='total_produtos' id='valor_total_nota' name='valor_total_nota' value="">
+                            
+                            <input type='hidden' for='total_produtos' id='total_produtos' name='total_produtos' value="">
+                            
 
                         </form>
                         <label id='resultado' ></label>
