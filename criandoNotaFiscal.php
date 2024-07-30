@@ -416,7 +416,7 @@ $conn->close();
                             </div>
                             
                             
-                            
+                            <input type='hidden' for='total_produtos' id='total_produtos' name='total_produtos' value="">
                             
 
                         </form>
