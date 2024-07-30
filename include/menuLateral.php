@@ -304,7 +304,10 @@
                     </a>
                     <ul id="pedido" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                     <li class="sidebar-item">
-                    <a style="margin-top: -1px;" href="containerP.php" class="sidebar-link">Criar pedidos</a>
+                    <a style="margin-top: -1px;" href="containerP.php" class="sidebar-link">Criar carga</a>
+                </li>
+                    <li class="sidebar-item">
+                    <a style="margin-top: -1px;" href="criarContainer.php" class="sidebar-link">Criar container</a>
                 </li>
                         <li class="sidebar-item">
                             <a style="margin-top: -1px;" href="verPedido.php" class="sidebar-link">Ver pedidos</a>

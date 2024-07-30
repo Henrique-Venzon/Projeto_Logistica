@@ -1,9 +1,9 @@
 @media only screen and (max-width: 600px) {
-    .txtCont h1{
+    .txtCont h1 {
         margin-top: 3%;
         font-size: 20px;
     }
-      #verSku{
+    #verSku {
         border-radius: 25px;
         background-color: #ffffff;
         padding: 7px 11px;
@@ -14,79 +14,96 @@
         font-size: 13px;
         color: #000000;
         text-shadow: 0px 0px 10px #ffffff;
-      }
-      .tooltip-container {
+    }
+    .transportes h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+    .juntar label {
+        font-size: 100%;
+    }
+    .tooltip-container {
         right: 5%;
-     }
-     .tooltip-container .fa-circle-question{
-       font-size: 34px;
-
-     }
-     .colunas1 label,.colunas label {
+    }
+    .tooltip-container .fa-circle-question {
+        font-size: 34px;
+    }
+    .colunas1 label,
+    .colunas label {
         font-size: 15px;
-      }
-      .colunas1 input,.colunas input{
+    }
+    .colunas1 input,
+    .colunas input {
         height: 40px;
         width: 85%;
         font-size: 18px;
         background-color: #f6f6f6;
-      }
-      .juntar label{
-        font-size: 90%;
     }
-    .presets{
+    .juntar label {
+      text-wrap: nowrap;
+      font-size: 70%;
+    }
+    .juntar input {
+        display: grid;
+        margin-bottom: 5%;
+        margin-top: 1%;
+        width: 70%;
+        text-align: center;
+        height: 55%;
+        border-radius: 20px;
+        border: solid 1px black;
+        margin-left: 14%;
+    }
+    .presets {
         display: none;
     }
-    .divisaoPhone{
+    .divisaoPhone {
         display: flex;
         flex-direction: column;
-      }
-      .numeroPedido-cell{
+    }
+    .numeroPedido-cell {
         display: flex;
         flex-direction: column;
-      }
-
-      .n-pedido{
+    }
+    .n-pedido {
         display: flex;
         justify-content: center;
         flex-direction: column;
         color: #fff;
-
-      }
-
-
-      .coluna1cell{
+    }
+    .coluna1cell {
         display: flex;
         flex-direction: column;
-      }
-      .coluna1cell label{
+    }
+    .coluna1cell label {
         font-size: 12px;
-      }
-      .inicio input,.entrega input{
+    }
+    .inicio input,
+    .entrega input {
         font-size: 11px;
-      }
-      .sku{
+    }
+    .sku {
         width: 100%;
-      }
-      .unidade{
+    }
+    .unidade {
         display: flex;
         flex-direction: column;
-      }
-      .colunas select{
+    }
+    .colunas select {
         height: 40px;
         width: 85%;
         margin-left: 7%;
-      }
-      .juntar{
+    }
+    .juntar {
         display: block;
         width: 50%;
         margin-top: 2%;
     }
-    ::-webkit-input-placeholder {
-      color: rgb(197, 197, 197); 
-      font-size: 11px;
+     ::-webkit-input-placeholder {
+        color: rgb(197, 197, 197);
+        font-size: 11px;
     }
-    .tooltip-container{
-      display: none;
+    .tooltip-container {
+        display: none;
     }
 }
