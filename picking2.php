@@ -9,6 +9,7 @@ if (!isset($_SESSION['turma'])) {
     header("Location: index.php");
     exit;
 }
+include_once ('include/conexao.php');
 $turma = $_SESSION['turma'];
 $id = $_GET['id']
     ?>
@@ -39,23 +40,18 @@ $id = $_GET['id']
                 </div>
                 <div class="flex">
                     <div class="divpegar">
-                        <form method='post' action="processamento/selecionar_carga_picking.php">
-                            <h1 class="pegar">Pegar</h1>
-                            <?php
-                            include_once ('include/conexao.php');
+                        <h1 class="pegar">Pegar</h1>
 
-                            // Consulta para obter os produtos
-                            $sql = "SELECT id,id_pedido, produto, quantidade_solicitada, posicao FROM picking where id_pedido=$id and id_turma='" . $_SESSION['turma'] . "'";
-                            $res = $conn->query($sql);
+                        <?php
+                        // Consulta para obter os produtos
+                        $sql = "SELECT id, id_pedido, produto, quantidade_solicitada, posicao FROM picking WHERE id_pedido=$id AND id_turma='" . $_SESSION['turma'] . "'";
+                        $res = $conn->query($sql);
 
-                            // Verifique se há erro na consulta
-                            if (!$res) {
-                                die("Erro na consulta: " . $conn->error);
-                            }
+                        // Verifique se há resultados
+                        if ($res->num_rows > 0) {
                             ?>
 
-                            <!-- Formulário HTML -->
-                            <form method="POST" action="processamento/selecionar_carga_picking">
+                            <form method='post' action="processamento/selecionar_carga_picking.php">
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -80,18 +76,23 @@ $id = $_GET['id']
                                                     value="<?php echo $row->posicao; ?>">
                                                 <input type="hidden" name="id_carga[<?php echo $row->id; ?>]"
                                                     value="<?php echo $id; ?>">
-                                                <td><input class="custom-checkbox" type="checkbox" name="produtos_selecionados[]"
-                                                        value="<?php echo $row->id; ?>"></td>
+                                                <td><input class="custom-checkbox" type="checkbox"
+                                                        name="produtos_selecionados[]" value="<?php echo $row->id; ?>"></td>
                                             </tr>
                                         <?php endwhile; ?>
                                     </tbody>
                                 </table>
+                                <!-- Botão Enviar dentro do formulário, mas fora da tabela -->
                                 <div class="buttonEnviar">
-                                <button  type="submit">Enviar</button>
+                                    <button type="submit">Enviar</button>
                                 </div>
                             </form>
 
-
+                            <?php
+                        } else {
+                            print "<p class='alert alert-danger'>Nenhum produto para pegar.</p>";
+                        }
+                        ?>
                     </div>
                     <div class="divpegar">
                         <h1 class="pegar">Finalizar</h1>
