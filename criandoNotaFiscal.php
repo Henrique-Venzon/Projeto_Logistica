@@ -416,35 +416,24 @@ $conn->close();
                             </div>
                             
                             
-                            
-                            
+                            <input  type="hidden" id='total_produtos2' name='total_produtos'>
+                            <input  type="hidden" id='valor_total_nota2' name='valor_total_nota' >
 
                         </form>
-                        <label id='resultado' ></label>
-                        <div class='desconto'>
-
-                        <H1>Valor Final Total</H1>
-                        <label>O valor total com desconto é:</label>
-                        <button type="button" id="caldesco" onclick="desconto()">Valor total</button>
-
-  
-  
-  
-
-                        </div>
+                        
                         <div class="container-amostra-wrapper">
                             <div class="container-amostra">
                             <label for='valor_total_nota'>Valor Total da Nota sem desconto</label>
-                            <p id='valor_total_nota' name='valor_total_nota'  ></p>
+                            <input  type="text" id='valor_total_nota' name='valor_total_nota'>
                                 
                             <label>O valor total com desconto é</label>
-                            <p id="deconto"></p>
+                            <input type="text" id="deconto" name="deconto">
                             
                             <label for='total_produtos'>Total dos Produtos</label>
-                            <label for='total_produtos' id='total_produtos' name='total_produtos'></label>
+                            <input type="text" id='total_produtos' name='total_produtos'>
                             <br>
                             <label>O valor do ISSQN</label>
-                            <label id="issqnto"></label>
+                            <input type="text" id="issqnto" name="issqnto">
                             <br>
                             <button id="calissqn" onclick="issqn()">Valor ISSQN</button>
                             <br>

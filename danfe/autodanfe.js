@@ -620,60 +620,8 @@ document.getElementById("preset2").addEventListener("click", function () {
 
 });
 
-setInterval( function semdesco(){
-
-  var totalProdutos1 = parseFloat(document.getElementById("valor_total_prod1").value)||0;
-  var totalProdutos2 = parseFloat(document.getElementById("valor_total_prod2").value)||0;
-  var totalProdutos3 = parseFloat(document.getElementById("valor_total_prod3").value)||0;
-  var totalProdutos4 = parseFloat(document.getElementById("valor_total_prod4").value)||0;
-  var valorFrete = parseFloat(document.getElementById("valor_frete").value) ||0;
-  var valorSeguro = parseFloat(document.getElementById("valor_seguro").value) ||0;
-  
-  var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value)||0;
-  var valorIpi = parseFloat(document.getElementById("valor_ipi").value)||0;
-  var valorTotalNotasemdesc = totalProdutos1 + totalProdutos2 + totalProdutos3 + totalProdutos4 + valorFrete + valorSeguro + outrasDespesas + valorIpi;
-  document.getElementById('valor_total_nota').innerHTML= valorTotalNotasemdesc;
-
-},1000)
-setInterval(function desconto (){  
-  var totalProdutos1 = parseFloat(document.getElementById("valor_total_prod1").value)||0;
-  var totalProdutos2 = parseFloat(document.getElementById("valor_total_prod2").value)||0;
-  var totalProdutos3 = parseFloat(document.getElementById("valor_total_prod3").value)||0;
-  var totalProdutos4 = parseFloat(document.getElementById("valor_total_prod4").value)||0;
-  var valorFrete = parseFloat(document.getElementById("valor_frete").value) ||0;
-  var valorSeguro = parseFloat(document.getElementById("valor_seguro").value) ||0;
-  var desconto = parseFloat(document.getElementById("desconto").value) ||0;
-  var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value)||0;
-  var valorIpi = parseFloat(document.getElementById("valor_ipi").value)||0;
-  var valorTotalNota = totalProdutos1 + totalProdutos2 + totalProdutos3 + totalProdutos4 + valorFrete + valorSeguro + outrasDespesas + valorIpi;
-  var descot = valorTotalNota * (desconto/100);
-  
-  var totalliquido= valorTotalNota - descot;
-  var paratoFixed = totalliquido.toFixed(2);
-  
-    document.getElementById('deconto').innerHTML = paratoFixed;
-}, 1000)
-setInterval(function issqn(){
-
-    var servico = parseFloat(document.getElementById("valor_total_servicos").value)|| 0;
-
-    var base = parseFloat(document.getElementById("base_calculo_issqn").value)|| 0;
-
-    var issqnto = servico * (base/100);
-    
-        document.getElementById('issqnto').innerHTML = issqnto;
-  }
-, 1000)
 
 
-setInterval(function valor_totalpro() {
-  var vale1 = parseFloat(document.getElementById("valor_total_prod1").valure)||0;
-  var vale2 = parseFloat(document.getElementById("valor_total_prod2").valure)||0;
-  var vale3= parseFloat(document.getElementById("valor_total_prod3").valure)||0;
-  var vale4 = parseFloat(document.getElementById("valor_total_prod4").valure)||0;
-    var total = vale1 + vale2 + vale3 + vale4;
-    document.getElementById("total_produtos").innerHTML = total;
-},1000)
 
 
 
@@ -841,5 +789,72 @@ document.getElementById("preset3").addEventListener("click", function () {
     1000,
     2
   );
-
+  
 })
+
+setInterval( function semdesco(){
+
+  var totalProdutos1 = parseFloat(document.getElementById("valor_total_prod1").value)||0;
+  var totalProdutos2 = parseFloat(document.getElementById("valor_total_prod2").value)||0;
+  var totalProdutos3 = parseFloat(document.getElementById("valor_total_prod3").value)||0;
+  var totalProdutos4 = parseFloat(document.getElementById("valor_total_prod4").value)||0;
+  var valorFrete = parseFloat(document.getElementById("valor_frete").value) ||0;
+  var valorSeguro = parseFloat(document.getElementById("valor_seguro").value) ||0;
+  
+  var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value)||0;
+  var valorIpi = parseFloat(document.getElementById("valor_ipi").value)||0;
+  var valorTotalNotasemdesc = totalProdutos1 + totalProdutos2 + totalProdutos3 + totalProdutos4 + valorFrete + valorSeguro + outrasDespesas + valorIpi;
+  
+  let campo = document.getElementById('valor_total_nota');
+      campo.value = valorTotalNotasemdesc;
+  let campo4 = document.getElementById('valor_total_nota2');
+      campo4.value = valorTotalNotasemdesc;
+
+},1000)
+setInterval(function desconto (){  
+  var totalProdutos1 = parseFloat(document.getElementById("valor_total_prod1").value)||0;
+  var totalProdutos2 = parseFloat(document.getElementById("valor_total_prod2").value)||0;
+  var totalProdutos3 = parseFloat(document.getElementById("valor_total_prod3").value)||0;
+  var totalProdutos4 = parseFloat(document.getElementById("valor_total_prod4").value)||0;
+  var valorFrete = parseFloat(document.getElementById("valor_frete").value) ||0;
+  var valorSeguro = parseFloat(document.getElementById("valor_seguro").value) ||0;
+  var desconto = parseFloat(document.getElementById("desconto").value) ||0;
+  var outrasDespesas = parseFloat(document.getElementById("outras_despesas").value)||0;
+  var valorIpi = parseFloat(document.getElementById("valor_ipi").value)||0;
+  var valorTotalNota = totalProdutos1 + totalProdutos2 + totalProdutos3 + totalProdutos4 + valorFrete + valorSeguro + outrasDespesas + valorIpi;
+  var descot = valorTotalNota * (desconto/100);
+  
+  var totalliquido= valorTotalNota - descot;
+  var paratoFixed = totalliquido.toFixed(2);
+  let campo = document.getElementById('deconto');
+      campo.value = paratoFixed;
+    
+}, 1000)
+setInterval(function issqn(){
+
+    var servico = parseFloat(document.getElementById("valor_total_servicos").value)||0   ;
+
+    var base = parseFloat(document.getElementById("base_calculo_issqn").value)||0;
+
+    var issqnto = servico * (base/100);
+    
+    let campo = document.getElementById('issqnto');
+      campo.value = issqnto;
+       
+  }, 1000)
+
+  
+  setInterval(function valor_totalpro() {
+    var vale1 = parseFloat(document.getElementById("valor_total_prod1").value)||0.00;
+    var vale2 = parseFloat(document.getElementById("valor_total_prod2").value)||0.00;
+    var vale3 = parseFloat(document.getElementById("valor_total_prod3").value)||0.00;
+    var vale4 = parseFloat(document.getElementById("valor_total_prod4").value)||0.00;
+    var total = vale1 + vale2 + vale3 + vale4;
+    let campo = document.getElementById('total_produtos');
+    campo.value = total;
+    let campo3 = document.getElementById('total_produtos2');
+      campo3.value = total;
+  },1000)
+  
+  
+
