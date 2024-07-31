@@ -6,7 +6,7 @@ if (!isset($_SESSION['id']) || !isset($_SESSION['turma'])) {
 }
 
 // Conexão com o banco de dados
-include_once('../include/conexao.php');
+include_once ('../include/conexao.php');
 
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
@@ -28,12 +28,14 @@ $stmt = $conn->prepare("INSERT INTO solicitacao (id_pedido, produto, quantidade,
 $stmt->bind_param("isisisisii", $id_pedido, $produto, $quantidade, $produto2, $quantidade2, $produto3, $quantidade3, $produto4, $quantidade4, $turma);
 
 if ($stmt->execute()) {
-    header('location:../solicitacao.php', true,301 );
+    $ultimo_id = $conn->insert_id;
+    header('Location: ../criandoNotaFiscal_expedicao.php?id=' . urlencode($ultimo_id) . '&turma_id=' . urlencode($turma));
     exit();
 } else {
-    echo "Erro: " . $stmt->error;
+    echo 'Erro ao inserir dados: ' . $conn->error;
 }
+
+
 
 $stmt->close();
 $conn->close();
-
