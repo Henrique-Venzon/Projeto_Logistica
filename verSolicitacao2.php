@@ -53,23 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/solicitacaoestoque.css">
-    <style>
-        #meuModal .modal-dialog {
-            width: 80%;
-            max-width: 800px;
-        }
 
-        #meuModal .table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        #meuModal .table th,
-        #meuModal .table td {
-            border: 1px solid black;
-            padding: 8px;
-        }
-    </style>
 </head>
 
 <body>
@@ -162,8 +146,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h1 class="modal-title fs-5" id="meuModalLabel">Conteúdo da Solicitação</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Fechar"></button>
                                     </div>
                                     <div class="modal-body">
                                         <form method="POST" action="processamento/processar_cancelamento_solicitacao.php" id="formCancelamento">
@@ -194,7 +176,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                             echo "<input type='hidden' name='produto[]' value='" . $row->$produto . "'>";
                                                             echo "<input type='hidden' name='quantidade_cancelada[]' value='" . $row->$quantidade . "'>";
                                                             echo "<input type='hidden' name='id_pedido' value='" . $_GET['id_pedido'] . "'>"; 
-                                                            echo "<input type='checkbox' name='cancelar_produto[]' value='" . $i . "'>"; 
+                                                            echo "<input class=\"custom-checkbox\" type='checkbox' name='cancelar_produto[]' value='" . $i . "'>"; 
                                                             echo "</td>";
                                                             echo "</tr>";
                                                         }

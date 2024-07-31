@@ -58,7 +58,7 @@ if (!isset($_SESSION['turma'])) {
         die("Conexão falhou: " . $conexao->connect_error);
     }
 
-    $sql = "SELECT id, nome_produto, preco FROM produto";
+    $sql = "SELECT * FROM produto";
     $resultado = $conexao->query($sql);
 
     if ($resultado->num_rows > 0) {
@@ -70,6 +70,10 @@ if (!isset($_SESSION['turma'])) {
         echo '<th>SKU</th>';
         echo '<th>Produto</th>';
         echo '<th>Preço</th>';
+        echo '<th>Unidade</th>';
+        echo '<th>NCM</th>';
+        echo '<th>CST</th>';
+        echo '<th>CFOP</th>';
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';
@@ -79,6 +83,10 @@ if (!isset($_SESSION['turma'])) {
             echo '<td>' . $row["id"] . '</td>';
             echo '<td>' . $row["nome_produto"] . '</td>';
             echo '<td>' . $row["preco"] . '</td>';
+            echo '<td>' . $row["unidade"] . '</td>';
+            echo '<td>' . $row["ncm"] . '</td>';
+            echo '<td>' . $row["cst"] . '</td>';
+            echo '<td>' . $row["cfop"] . '</td>';
             echo '</tr>';
         }
 
@@ -228,7 +236,7 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="ncm">
                                     <label for="ncm">NCM:</label>
-                                    <input type="text" id="ncm" name="ncm1" placeholder="Opcional">
+                                    <input type="text" id="ncm1" name="ncm1" placeholder="Opcional">
                                     <input type="text" id="ncm2" name="ncm2" placeholder="Opcional">
                                     <input type="text" id="ncm3" name="ncm3" placeholder="Opcional">
                                     <input type="text" id="ncm4" name="ncm4" placeholder="Opcional">
@@ -236,7 +244,7 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="cst">
                                     <label for="cst">CST:</label>
-                                    <input type="text" id="cst" name="cst1" placeholder="Opcional">
+                                    <input type="text" id="cst1" name="cst1" placeholder="Opcional">
                                     <input type="text" id="cst2" name="cst2" placeholder="Opcional">
                                     <input type="text" id="cst3" name="cst3" placeholder="Opcional">
                                     <input type="text" id="cst4" name="cst4" placeholder="Opcional">
@@ -244,7 +252,7 @@ if (!isset($_SESSION['turma'])) {
 
                                 <div class="cfop">
                                     <label for="cfop">CFOP:</label>
-                                    <input type="text" id="cfop" name="cfop1" placeholder="Opcional">
+                                    <input type="text" id="cfop1" name="cfop1" placeholder="Opcional">
                                     <input type="text" id="cfop2" name="cfop2" placeholder="Opcional">
                                     <input type="text" id="cfop3" name="cfop3" placeholder="Opcional">
                                     <input type="text" id="cfop4" name="cfop4" placeholder="Opcional">
@@ -317,12 +325,24 @@ if (!isset($_SESSION['turma'])) {
                                 var produtoInput = document.getElementById('produto' + produtoIndex);
                                 var valorInput = document.getElementById('valor' + produtoIndex);
                                 var unidadeSelect = document.getElementById('unidade' + produtoIndex);
+                                var ncmSelect = document.getElementById('ncm' + produtoIndex);
+                                var cstSelect = document.getElementById('cst' + produtoIndex);
+                                var cfopSelect = document.getElementById('cfop' + produtoIndex);
 
                                 if (produtoInput) {
                                     produtoInput.value = data.nome_produto;
                                 }
                                 if (valorInput) {
                                     valorInput.value = data.preco;
+                                }
+                                if (ncmSelect) {
+                                    ncmSelect.value = data.ncm;
+                                }
+                                if (cstSelect) {
+                                    cstSelect.value = data.cst;
+                                }
+                                if (cfopSelect) {
+                                    cfopSelect.value = data.cfop;
                                 }
                                 if (unidadeSelect && unidadeSelect.value.trim() === '') {
                                     unidadeSelect.value = 'UN';
