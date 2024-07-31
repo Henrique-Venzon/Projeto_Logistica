@@ -548,26 +548,20 @@
     </main>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Get the modal
             var modal = document.getElementById("myModal");
 
-            // Get the button that opens the modal
             var btn = document.getElementById("nota-ver");
 
-            // Get the <span> element that closes the modal
             var span = document.getElementsByClassName("close")[0];
 
-            // When the user clicks the button, open the modal 
             btn.onclick = function() {
                 modal.style.display = "block";
             }
 
-            // When the user clicks on <span> (x), close the modal
             span.onclick = function() {
                 modal.style.display = "none";
             }
 
-            // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
@@ -597,16 +591,13 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
         </script>
     <script>
-        // Código JavaScript para mostrar/esconder o input
         const checkboxes = document.querySelectorAll('input[name="cancelar_produto[]"]');
         const motivoCancelamento = document.getElementById('motivoCancelamento');
 
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', () => {
-                // Verifica se pelo menos uma checkbox está marcada
                 const peloMenosUmaMarcada = Array.from(checkboxes).some(cb => cb.checked);
 
-                // Mostra/esconde o input de acordo com o estado das checkboxes
                 motivoCancelamento.style.display = peloMenosUmaMarcada ? 'block' : 'none';
             });
         });
