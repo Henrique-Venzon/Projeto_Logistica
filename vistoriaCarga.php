@@ -63,6 +63,7 @@
                         <label for="pedido">Selecione o Pedido:</label>
                     </div>
                     <div class="select">
+                    <button id="generatePDF" style="position: absolute; top: 10px; right: 10px;">Gerar PDF</button>
                         <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                             <select name="pedido_selecionado" id="pedido">
                                 <option value="0">0</option>
@@ -121,7 +122,7 @@
                                         </div>
                                         <div id="myModal" class="modal">
                                             <div class="modal-content">
-                                            <button id="generatePDF" style="position: absolute; top: 10px; right: 10px;">Gerar PDF</button>
+                                            
 
                                                 <?php
                                                 include_once('include/conexao.php');

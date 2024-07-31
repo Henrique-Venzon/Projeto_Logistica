@@ -13,17 +13,17 @@
     </div>
     <button id="generate-pdf">gerar pdf</button>
     <script>
-        const btnGerate=document.querySelector("#generate-pdf")
+        const btnGenerate=document.querySelector("#generate-pdf");
 
-        btnGerate.addEventListener("click",() =>{
-            const content=document.querySelector("#content")
-            const optinos ={
+        btnGenerate.addEventListener("click",() =>{
+            const content=document.querySelector("#content");
+            const optinos = {
                 margin:[10,10,10,10],
                 filename:"arquivo.pdf",
                 html2canvas:{scale:2},
                 jsPDF {unit: "mm", format:"a4",orientation:"portrait"}
             };
-html2pdf().set(optinos).from(content).save()
+html2pdf().set(options).from(content).save();
         }
     );
     </script>
