@@ -199,6 +199,9 @@
     .fa-hands-holding{
         margin-left: 3px;
     }
+    .fa-boxes-stacked{
+        margin-left: 5px;
+    }
 
     @media only screen and (max-width: 600px) {
         i {
@@ -400,6 +403,12 @@
                     <a href="notaf.php" class="sidebar-link">
                         <i class="fa-solid fa-receipt"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="inventario.php" class="sidebar-link">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Inventário</span>
                     </a>
                 </li>
             <?php if ($_SESSION['tipo_login'] == 'professor')

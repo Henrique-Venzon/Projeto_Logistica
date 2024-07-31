@@ -424,7 +424,7 @@ $conn->close();
                         <div class="container-amostra-wrapper">
                             <div class="container-amostra">
                             <label for='valor_total_nota'>Valor Total da Nota sem desconto</label>
-                            <input  type="text" id='valor_total_nota' name='valor_total_nota'>
+                            <input type="text" id="valor_total_nota" name="valor_total_nota"  >
                                 
                             <label>O valor total com desconto é</label>
                             <input type="text" id="deconto" name="deconto">
@@ -435,8 +435,6 @@ $conn->close();
                             <label>O valor do ISSQN</label>
                             <input type="text" id="issqnto" name="issqnto">
                             <br>
-                            <button id="calissqn" onclick="issqn()">Valor ISSQN</button>
-                            <br>
                         </div>
                         </div>
                     </div>
@@ -446,6 +444,7 @@ $conn->close();
             </div>
         </div>
     </main>
+    
     <script src='danfe/autodanfe.js'></script>
     <script src='js/sidebar.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js'
