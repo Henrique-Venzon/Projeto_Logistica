@@ -36,6 +36,7 @@ if ($result->num_rows > 0) {
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/solicitacao.css">
+    <link rel="stylesheet" href="css/responsividade/solicitacaoResponsividade.css">
 </head>
 
 <body>
