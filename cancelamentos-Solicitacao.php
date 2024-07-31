@@ -105,7 +105,7 @@ if($qtd > 0){
         print "</div>";
 
 }else{
-    print "<p class='alert alert-danger'>Não encrontrou nenhum pedido</p>";
+    print "<p class='alert alert-danger'>Não encrontrou nenhum cancelamento.</p>";
 }
 
 ?>

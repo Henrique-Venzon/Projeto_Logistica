@@ -1,6 +1,6 @@
 @media only screen and (max-width: 600px) {
     .txtCont h1{
-        font-size: 40px;
+        font-size: 26px;
         color: #ffffff;
         text-shadow: 0px 0px 10px #000000;
     }
@@ -9,8 +9,8 @@
         height: 27%;
         background-color: #eaeaea; 
         margin: 25px;  
-        border-radius: 40px;
-        margin-bottom: 10px;
+        border-radius: 20px;
+        margin-bottom: 1px;
         transition: 2s ease-in-out;
         cursor: pointer;
         box-shadow: 0 0 7px #fff;
@@ -37,7 +37,7 @@
         text-transform: uppercase;
     }
     .cardsDocas p{
-        font-size: 13px;
+        font-size: 9px;
     }
     .tabela-scroll::-webkit-scrollbar {
         width: 15px;
