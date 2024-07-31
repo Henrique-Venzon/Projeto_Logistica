@@ -67,22 +67,22 @@ include_once('../include/conexao.php');
         return strtr($str, $unwanted_array);
     }
 
-    function insertIfNotExists($conn, $produto, $valor) {
+    function insertIfNotExists($conn, $produto, $valor,$ncm,$cst,$cfop,$unidade) {
         if ($produto != '') {
             $produto_normalizado = normalizeString($produto);
             $check_sql = "SELECT * FROM produto WHERE nome_produto_normalizado='$produto_normalizado'";
             $result = $conn->query($check_sql);
             if ($result->num_rows == 0) {
-                $insert_sql = "INSERT INTO produto (`nome_produto`, `nome_produto_normalizado`, `preco`) VALUES ('$produto', '$produto_normalizado', '$valor')";
+                $insert_sql = "INSERT INTO produto (`nome_produto`, `nome_produto_normalizado`,`preco`,`unidade`,`ncm`,`cst`,`cfop`) VALUES ('$produto', '$produto_normalizado', '$valor','$unidade', '$ncm', '$cst', '$cfop')";
                 $conn->query($insert_sql);
             }
         }
     }
 
-    insertIfNotExists($conn, $produto1, $valor1);
-    insertIfNotExists($conn, $produto2, $valor2);
-    insertIfNotExists($conn, $produto3, $valor3);
-    insertIfNotExists($conn, $produto4, $valor4);
+    insertIfNotExists($conn, $produto1, $valor1,$ncm1,$cst1,$cfop1,$unidade1);
+    insertIfNotExists($conn, $produto2, $valor2,$ncm2,$cst2,$cfop2,$unidade2);
+    insertIfNotExists($conn, $produto3, $valor3,$ncm3,$cst3,$cfop3,$unidade3);
+    insertIfNotExists($conn, $produto4, $valor4,$ncm4,$cst4,$cfop4,$unidade4);
     
     if ($conn->query($sql) === TRUE) {
         header('Location: ../criandoNotaFiscal.php?npedido=' . urlencode($npedido) . '&turma_id=' . urlencode($turma_id));
