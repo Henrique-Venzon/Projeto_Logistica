@@ -36,6 +36,7 @@ if ($result->num_rows > 0) {
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/solicitacao.css">
+    <link rel="stylesheet" href="css/responsividade/solicitacaoResponsividade.css">
 </head>
 
 <body>
@@ -84,13 +85,7 @@ if ($result->num_rows > 0) {
                                     <input type="number" id="quantidade4" name="quantidade4" min="0" placeholder="Opcional">
                                 </div>                          
                             </div>
-                            <div class="inputObs">
-                                <div>
-                                    <label for="Observacao">Observação</label>
-                                </div>
-                                <input id="Observacao" type="text" name="observacao" placeholder="Opcional">
-                            </div>
-
+                            
                             <div class="enviar">
                                 <input type="submit" value="Enviar">
                             </div>

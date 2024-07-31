@@ -424,17 +424,15 @@ $conn->close();
                         <div class="container-amostra-wrapper">
                             <div class="container-amostra">
                             <label for='valor_total_nota'>Valor Total da Nota sem desconto</label>
-                            <input type="text" id="valor_total_nota" name="valor_total_nota"  >
+                            <input type="text" id="valor_total_nota" name="valor_total_nota"  readonly>
                                 
                             <label>O valor total com desconto é</label>
-                            <input type="text" id="deconto" name="deconto">
+                            <input type="text" id="deconto" name="deconto" readonly>
                             
                             <label for='total_produtos'>Total dos Produtos</label>
-                            <input type="text" id='total_produtos' name='total_produtos'>
-                            <br>
+                            <input type="text" id='total_produtos' name='total_produtos' readonly>
                             <label>O valor do ISSQN</label>
-                            <input type="text" id="issqnto" name="issqnto">
-                            <br>
+                            <input type="text" id="issqnto" name="issqnto" readonly>
                         </div>
                         </div>
                     </div>

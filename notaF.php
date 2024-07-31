@@ -67,10 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 $npedido = $row_npedido["npedido"];
                             }
                         }
-                        $data_formatada = date("d/m/Y H:i:s", strtotime($row->data_hora_envio));
+                        $data_formatada = date("d/m/Y H:i:s", strtotime($row->data_hora_pedido));
                         print "<form method='post' action='nPedido.php'";
                         print "<tr>";
-                        print "<td>" . $row->id_notafiscal . "</td>";
+                        print "<td>" . $row->id . "</td>";
                         print "<td>" . $data_formatada . "</td>";
                         print "<td>
                             <button class=\"reset\" data-id=\"" . $npedido . "\"><span>ver</span></button>

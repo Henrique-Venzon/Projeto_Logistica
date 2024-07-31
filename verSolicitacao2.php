@@ -54,15 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         rel="stylesheet">
     <link rel="stylesheet" href="css/solicitacaoestoque.css">
     <style>
-        /* Estilos para o modal */
         #meuModal .modal-dialog {
             width: 80%;
-            /* Ajuste a largura conforme necessário */
             max-width: 800px;
-            /* Largura máxima do modal */
         }
 
-        /* Estilos para a tabela dentro do modal */
         #meuModal .table {
             width: 100%;
             border-collapse: collapse;
@@ -153,10 +149,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             ?>
                         </form>
 
-                        <!-- Botão para abrir o Modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#meuModal">
+                        <div class="container-cancelar">
+                        <button type="button" class="cancelar" data-bs-toggle="modal" data-bs-target="#meuModal">
                             Cancelar Algum Pedido
                         </button>
+                        </div>
 
                         <!-- Modal -->
                         <div class="modal fade" id="meuModal" tabindex="-1" aria-labelledby="meuModalLabel"
@@ -197,7 +194,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                             echo "<input type='hidden' name='produto[]' value='" . $row->$produto . "'>";
                                                             echo "<input type='hidden' name='quantidade_cancelada[]' value='" . $row->$quantidade . "'>";
                                                             echo "<input type='hidden' name='id_pedido' value='" . $_GET['id_pedido'] . "'>"; 
-                                                            echo "<input type='checkbox' name='cancelar_produto[]' value='" . $i . "'>"; // Enviar o índice $i
+                                                            echo "<input type='checkbox' name='cancelar_produto[]' value='" . $i . "'>"; 
                                                             echo "</td>";
                                                             echo "</tr>";
                                                         }
@@ -309,16 +306,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
         </script>
     <script>
-        // Código JavaScript para mostrar/esconder o input
         const checkboxes = document.querySelectorAll('input[name="cancelar_produto[]"]');
         const motivoCancelamento = document.getElementById('motivoCancelamento');
 
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', () => {
-                // Verifica se pelo menos uma checkbox está marcada
                 const peloMenosUmaMarcada = Array.from(checkboxes).some(cb => cb.checked);
 
-                // Mostra/esconde o input de acordo com o estado das checkboxes
                 motivoCancelamento.style.display = peloMenosUmaMarcada ? 'block' : 'none';
             });
         });

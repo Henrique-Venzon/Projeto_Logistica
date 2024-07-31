@@ -154,7 +154,8 @@ main{
     align-items: center;
   }
   .container-amostra input{
-    margin-top: 0.8%;
+    margin-top: 1.4%;
+    margin-bottom: 1.4%;
     text-align: center;
     border: none;
     background-color: #00000000;
@@ -162,6 +163,7 @@ main{
     font-size: 18px;
   }
   .container-amostra label{
+    margin-top: 1.4%;
     font-size: 19px;
   }
   .container-amostra::-webkit-scrollbar-track {

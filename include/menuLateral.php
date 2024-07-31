@@ -331,11 +331,11 @@
 
                     <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a id="linkContainer" style="margin-bottom: -1.4px;" href="container.php"
-                                class="sidebar-link">Container</a>
+                            <a href="vistoriaCarga.php" style="margin-top: -1.4px;" class="sidebar-link">Carga</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="vistoriaCarga.php" style="margin-top: -1.4px;" class="sidebar-link">Carga</a>
+                            <a id="linkContainer" style="margin-bottom: -1.4px;" href="container.php"
+                                class="sidebar-link">Container</a>
                         </li>
                     </ul>
                 </li>
@@ -387,7 +387,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="expedicao.php" class="sidebar-link">
                         <i class="fa-solid fa-truck-front"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Expedição</span>
                     </a>
