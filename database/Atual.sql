@@ -352,11 +352,11 @@ CREATE TABLE IF NOT EXISTS `nota_fiscal` (
   `base_calculo_issqn` decimal(10,2) DEFAULT NULL,
   `id_turma` int NOT NULL,
   `id_atividade` int NOT NULL,
+  `data_hora_pedido` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
-
 --
 -- Estrutura para tabela `pegado`
 --
