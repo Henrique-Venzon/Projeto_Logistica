@@ -130,8 +130,7 @@ if ($result->num_rows > 0) {
                                 <label for='cnpj'>CNPJ</label>
                                 <input type='text' id='cnpj' name='cnpj' required>
 
-                                <label for='inscricao_estadual_subs_tributaria'>Inscrição Estadual Sub.
-                                    Tributária</label>
+                                <label for='inscricao_estadual_subs_tributaria'>Inscrição Estadual Sub.Tributária</label>
                                 <input type='text' id='inscricao_estadual_subs_tributaria'
                                     name='inscricao_estadual_subs_tributaria'>
 
@@ -232,8 +231,7 @@ if ($result->num_rows > 0) {
                                 <input type='text' id='cnpj_cpf_transportador' name='cnpj_cpf_transportador'>
 
                                 <label for='inscricao_estadual_transportador'>Inscrição Estadual</label>
-                                <input type='text' id='inscricao_estadual_transportador'
-                                    name='inscricao_estadual_transportador'>
+                                <input type='text' id='inscricao_estadual_transportador' name='inscricao_estadual_transportador'>
 
                                 <label for='quantidade'>Quantidade</label>
                                 <input type='number' id='quantidade' name='quantidade'>
@@ -346,21 +344,17 @@ if ($result->num_rows > 0) {
                                 <input type='text' id='unid1' name='unid1' value=' <?php echo $unidade1; ?>' required>
 
                                 <label for='quantidade_prod1'>Quantidade</label>
-                                <input type='number' step='0.01' id='quantidade_prod1' name='quantidade_prod1'
-                                    value='<?php echo $quantidade1; ?>' required>
+                                <input type='number' step='0.01' id='quantidade_prod1' name='quantidade_prod1' value='<?php echo $quantidade1; ?>' required>
 
                                 <label for='valor_unitario1'>Valor Unitário</label>
-                                <input type='number' step='0.01' id='valor_unitario1' name='valor_unitario1'
-                                    value='<?php echo $valor1; ?>' required>
+                                <input type='number' step='0.01' id='valor_unitario1' name='valor_unitario1' value='<?php echo $valor1; ?>' required>
 
                                 <label for='valor_total_prod1'>Valor Total</label>
-                                <input type='number' step='0.01' id='valor_total_prod1' name='valor_total_prod1'
-                                    value='<?php echo $total1; ?>' required>
+                                <input type='number' step='0.01' id='valor_total_prod1' name='valor_total_prod1' value='<?php echo $total1; ?>' required>
 
                                 <h2> Produto 2 </h2>
                                 <label for='nome_produto2'>Nome do Produto</label>
-                                <input type='text' id='nome_produto2' name='nome_produto2'
-                                    value='<?php echo $produto2; ?>'>
+                                <input type='text' id='nome_produto2' name='nome_produto2' value='<?php echo $produto2; ?>'>
 
                                 <label for='ncm_sh2'>NCM/SH</label>
                                 <input type='text' id='ncm_sh2' name='ncm_sh2' value='<?php echo $ncm2; ?>'>
@@ -375,22 +369,18 @@ if ($result->num_rows > 0) {
                                 <input type='text' id='unid2' name='unid2' value='<?php echo $unidade2; ?>'>
 
                                 <label for='quantidade_prod2'>Quantidade</label>
-                                <input type='number' step='0.01' id='quantidade_prod2' name='quantidade_prod2'
-                                    value='<?php echo $quantidade2; ?>'>
+                                <input type='number' step='0.01' id='quantidade_prod2' name='quantidade_prod2' value='<?php echo $quantidade2; ?>'>
 
                                 <label for='valor_unitario2'>Valor Unitário</label>
-                                <input type='number' step='0.01' id='valor_unitario2' name='valor_unitario2'
-                                    value='<?php echo $valor2; ?>'>
+                                <input type='number' step='0.01' id='valor_unitario2' name='valor_unitario2' value='<?php echo $valor2; ?>'>
 
                                 <label for='valor_total_prod2'>Valor Total</label>
-                                <input type='number' step='0.01' id='valor_total_prod2' name='valor_total_prod2'
-                                    value='<?php echo $total2; ?>'>
+                                <input type='number' step='0.01' id='valor_total_prod2' name='valor_total_prod2' value='<?php echo $total2; ?>'>
 
 
                                 <h2> Produto 3 </h2>
                                 <label for='nome_produto3'>Nome do Produto</label>
-                                <input type='text' id='nome_produto3' name='nome_produto3'
-                                    value='<?php echo $produto3; ?>'>
+                                <input type='text' id='nome_produto3' name='nome_produto3' value='<?php echo $produto3; ?>'>
 
                                 <label for='ncm_sh3'>NCM/SH</label>
                                 <input type='text' id='ncm_sh3' name='ncm_sh3' value='<?php echo $ncm3; ?>'>
@@ -405,22 +395,18 @@ if ($result->num_rows > 0) {
                                 <input type='text' id='unid3' name='unid3' value='<?php echo $unidade3; ?>'>
 
                                 <label for='quantidade_prod3'>Quantidade</label>
-                                <input type='number' step='0.01' id='quantidade_prod3' name='quantidade_prod3'
-                                    value='<?php echo $quantidade3; ?>'>
+                                <input type='number' step='0.01' id='quantidade_prod3' name='quantidade_prod3' value='<?php echo $quantidade3; ?>'>
 
                                 <label for='valor_unitario3'>Valor Unitário</label>
-                                <input type='number' step='0.01' id='valor_unitario3' name='valor_unitario3'
-                                    value='<?php echo $valor3; ?>'>
+                                <input type='number' step='0.01' id='valor_unitario3' name='valor_unitario3' value='<?php echo $valor3; ?>'>
 
                                 <label for='valor_total_prod3'>Valor Total</label>
-                                <input type='number' step='0.01' id='valor_total_prod3' name='valor_total_prod3'
-                                    value='<?php echo $total3; ?>'>
+                                <input type='number' step='0.01' id='valor_total_prod3' name='valor_total_prod3' value='<?php echo $total3; ?>'>
 
 
                                 <h2> Produto 4 </h2>
                                 <label for='nome_produto4'>Nome do Produto</label>
-                                <input type='text' id='nome_produto4' name='nome_produto4'
-                                    value='<?php echo $produto4; ?>'>
+                                <input type='text' id='nome_produto4' name='nome_produto4' value='<?php echo $produto4; ?>'>
 
                                 <label for='ncm_sh4'>NCM/SH</label>
                                 <input type='text' id='ncm_sh4' name='ncm_sh4' value='<?php echo $ncm4; ?>'>
@@ -435,16 +421,13 @@ if ($result->num_rows > 0) {
                                 <input type='text' id='unid4' name='unid4' value='<?php echo $unidade4; ?>'>
 
                                 <label for='quantidade_prod4'>Quantidade</label>
-                                <input type='number' step='0.01' id='quantidade_prod4' name='quantidade_prod4'
-                                    value='<?php echo $quantidade4; ?>'>
+                                <input type='number' step='0.01' id='quantidade_prod4' name='quantidade_prod4' value='<?php echo $quantidade4; ?>'>
 
                                 <label for='valor_unitario4'>Valor Unitário</label>
-                                <input type='number' step='0.01' id='valor_unitario4' name='valor_unitario4'
-                                    value='<?php echo $valor4; ?>'>
+                                <input type='number' step='0.01' id='valor_unitario4' name='valor_unitario4' value='<?php echo $valor4; ?>'>
 
                                 <label for='valor_total_prod4'>Valor Total</label>
-                                <input type='number' step='0.01' id='valor_total_prod4' name='valor_total_prod4'
-                                    value='<?php echo $total4; ?>'>
+                                <input type='number' step='0.01' id='valor_total_prod4' name='valor_total_prod4' value='<?php echo $total4; ?>'>
                             </div>
 
                             <!-- Cálculo do ISSQN Section -->
