@@ -122,8 +122,6 @@
                                         </div>
                                         <div id="myModal" class="modal">
                                             <div class="modal-content">
-                                            
-
                                                 <?php
                                                 include_once('include/conexao.php');
 
@@ -141,7 +139,6 @@
                                                     echo '<thead>';
                                                     echo '<tr>';
                                                     echo '<th>ID</th>';
-                                   
                                                     echo '<th>NUMERO</th>';
                                                     echo '<th>SERIE</th>';
                                                     echo '<th>ENTRADA/SAÍDA</th>';
@@ -451,8 +448,6 @@
                                                 ?>
                                             </div>
                                         </div>
-
-
                                         <div class="doca">
                                             <label for="doca">Doca:</label>
                                             <select name='doca' id="doca">
