@@ -387,7 +387,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="expedicao.php" class="sidebar-link">
                         <i class="fa-solid fa-truck-front"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Expedição</span>
                     </a>

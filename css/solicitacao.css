@@ -44,7 +44,7 @@ input{
     display: block;
     margin-bottom: 3px;
     color: rgb(255, 255, 255);
-    font-size: 22px;
+    font-size: 30px;
     text-shadow: 0 0 5px black;
   }
   
@@ -107,19 +107,19 @@ input{
 .enviar{
     display: flex;
     justify-content: center;
-    margin-top: 1%;
+    margin-top: 2%;
     width: 100%;
     margin-bottom: 1.5%;
 }
 .enviar input{
-    width: 140px;
-    height: 45px;
+    width: 180px;
+    height: 54px;
     border-radius: 30px;
     border: solid 2px white;
     background-color: #000000;
     color: #fff;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 23px;
 }
 .enviar input:hover{
     transition: 1.5s;
@@ -134,7 +134,8 @@ input{
 
 .txtCont{
     text-align: center;
-    margin-top: 1%;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 .txtCont h1{
     font-size: 68px;
