@@ -52,7 +52,7 @@ input{
     height: 50px;
     border: 1.5px solid #ffffff;
     box-sizing: border-box;
-    width: 50%;
+    width: 420px;
     font-size: 18px;
     background-color: #f6f6f6;
     border-radius: 5px;
@@ -61,14 +61,13 @@ input{
     margin-top: 8px;
   }
   .produto {
-    margin-left: 22%;
     display: flex;
     flex-direction: column;
     text-align: center;
   }
   .produto select{
     text-align: center;
-    width: 340px;
+    width: 420px;
     padding: 8px;
     display: flex;
     font-size: 22px;
@@ -128,13 +127,17 @@ input{
     background-color: #ffffff;
     color: #000000;
 }
+.quantidade{
+  display: flex;
+  flex-direction: column;
+}
 
 .txtCont{
     text-align: center;
     margin-top: 1%;
 }
 .txtCont h1{
-    font-size: 60px;
+    font-size: 68px;
     color: #ffffff;
     text-shadow: 0px 0px 10px #000000;
 }
@@ -150,21 +153,4 @@ form h1{
     margin-top: 3%;
     color: #ffffff;
     text-shadow: 0px 0px 10px #000000;
-}
-.inputObs{
-    display: flex;
-    margin-top: 2%;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-.inputObs input{
-    height: 60px;
-    width: 240px;
-    text-align: center;
-}
-.inputObs label{
-    font-size: 24px;
-    color: white;
-    text-shadow: 0px 0px 5px black;
 }

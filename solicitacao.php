@@ -84,13 +84,7 @@ if ($result->num_rows > 0) {
                                     <input type="number" id="quantidade4" name="quantidade4" min="0" placeholder="Opcional">
                                 </div>                          
                             </div>
-                            <div class="inputObs">
-                                <div>
-                                    <label for="Observacao">Observação</label>
-                                </div>
-                                <input id="Observacao" type="text" name="observacao" placeholder="Opcional">
-                            </div>
-
+                            
                             <div class="enviar">
                                 <input type="submit" value="Enviar">
                             </div>
