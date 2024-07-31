@@ -161,4 +161,10 @@ main{
     width: 60px;
     font-size: 7.5px;
   }
+  .tabela-scroll {
+    max-height: 69vh; 
+  }
+  .tabela-scroll::-webkit-scrollbar {
+    width: 8px;
+  }
 }
