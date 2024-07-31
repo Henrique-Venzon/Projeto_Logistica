@@ -16,7 +16,7 @@
     <div id="container-formulario" class="container">
         <h1>Nota Fiscal</h1>
         <button id="autoDanfe">Preset1</button>
-        <button d="autoDanfe1">Preset2</button>
+        <button id="autoDanfe1">Preset2</button>
         <button id="autoDanfe2">Preset3</button>
         <button id="autoDanfe3">Preset4</button>
         <button id="autoDanfe4">Preset5</button>

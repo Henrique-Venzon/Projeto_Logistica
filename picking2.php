@@ -26,7 +26,7 @@ $id = $_GET['id']
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/movDocas.css">
+    <link rel="stylesheet" href="css/picking2.css">
 </head>
 
 <body>

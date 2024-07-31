@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/carga.css">
+    
 </head>
 
 <body>
@@ -62,6 +63,7 @@
                         <label for="pedido">Selecione o Pedido:</label>
                     </div>
                     <div class="select">
+                    <button id="generatePDF" style="position: absolute; top: 10px; right: 10px;">Gerar PDF</button>
                         <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                             <select name="pedido_selecionado" id="pedido">
                                 <option value="0">0</option>
@@ -120,6 +122,8 @@
                                         </div>
                                         <div id="myModal" class="modal">
                                             <div class="modal-content">
+                                            
+
                                                 <?php
                                                 include_once('include/conexao.php');
 
@@ -137,6 +141,7 @@
                                                     echo '<thead>';
                                                     echo '<tr>';
                                                     echo '<th>ID</th>';
+                                   
                                                     echo '<th>NUMERO</th>';
                                                     echo '<th>SERIE</th>';
                                                     echo '<th>ENTRADA/SAÍDA</th>';
@@ -446,6 +451,8 @@
                                                 ?>
                                             </div>
                                         </div>
+
+
                                         <div class="doca">
                                             <label for="doca">Doca:</label>
                                             <select name='doca' id="doca">
