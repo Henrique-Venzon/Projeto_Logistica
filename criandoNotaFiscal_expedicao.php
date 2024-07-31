@@ -145,8 +145,7 @@ if ($result->num_rows > 0) {
                             <div class='section'>
                                 <h2>Identificação do Remetente/Destinatário</h2>
                                 <label for='nome_razao_social_remetente'>Nome/Razão Social</label>
-                                <input type='text' id='nome_razao_social_remetente' name='nome_razao_social_remetente'
-                                    required>
+                                <input type='text' id='nome_razao_social_remetente' name='nome_razao_social_remetente' required>
 
                                 <label for='cnpj_cpf_remetente'>CNPJ/CPF</label>
                                 <input type='text' id='cnpj_cpf_remetente' name='cnpj_cpf_remetente' required>
@@ -158,8 +157,7 @@ if ($result->num_rows > 0) {
                                 <input type='text' id='telefone_remetente' name='telefone_remetente' required>
 
                                 <label for='inscricao_estadual_remetente'>Inscrição Estadual</label>
-                                <input type='text' id='inscricao_estadual_remetente'
-                                    name='inscricao_estadual_remetente'>
+                                <input type='text' id='inscricao_estadual_remetente' name='inscricao_estadual_remetente'>
 
                                 <label for='data_emissao'>Data de Emissão</label>
                                 <input type='date' id='data_emissao' name='data_emissao' required>
@@ -181,8 +179,7 @@ if ($result->num_rows > 0) {
                             <div class='section'>
                                 <h2>Cálculo do Imposto</h2>
                                 <label for='base_calculo_icms'>Base de Cálculo de ICMS</label>
-                                <input type='number' step='0.01' id='base_calculo_icms' name='base_calculo_icms'
-                                    required>
+                                <input type='number' step='0.01' id='base_calculo_icms' name='base_calculo_icms' required>
 
                                 <label for='valor_icms'>Valor do ICMS</label>
                                 <input type='number' step='0.01' id='valor_icms' name='valor_icms' required>
@@ -191,8 +188,7 @@ if ($result->num_rows > 0) {
                                 <input type='number' step='0.01' id='base_calculo_icms_st' name='base_calculo_icms_st'>
 
                                 <label for='valor_icms_substituicao'>Valor do ICMS Substituição</label>
-                                <input type='number' step='0.01' id='valor_icms_substituicao'
-                                    name='valor_icms_substituicao'>
+                                <input type='number' step='0.01' id='valor_icms_substituicao' name='valor_icms_substituicao'>
 
                                 <label for='valor_frete'>Valor do Frete</label>
                                 <input type='number' step='0.01' id='valor_frete' name='valor_frete'>
@@ -215,8 +211,7 @@ if ($result->num_rows > 0) {
                             <div class='section'>
                                 <h2>Transportador/Volumes Transportados</h2>
                                 <label for='nome_razao_social_transportador'>Nome/Razão Social</label>
-                                <input type='text' id='nome_razao_social_transportador'
-                                    name='nome_razao_social_transportador'>
+                                <input type='text' id='nome_razao_social_transportador' name='nome_razao_social_transportador'>
 
                                 <label for='frete_por_conta'>Frete por Conta</label>
                                 <input type='text' id='frete_por_conta' name='frete_por_conta'>
@@ -261,7 +256,7 @@ if ($result->num_rows > 0) {
                                 ${"cfop" . $i} = "";
                                 ${"unidade" . $i} = "";
                                 ${"quantidade" . $i} = "";
-                                ${"valor" . $i} = ""; // Valor (preço) do produto
+                                ${"valor" . $i} = "";
                                 ${"total" . $i} = "";
                             }
 
@@ -328,8 +323,7 @@ if ($result->num_rows > 0) {
                                 <h2>Dados do Produto/Serviço</h2>
                                 <h2> Produto 1 </h2>
                                 <label for='nome_produto1'>Nome do Produto</label>
-                                <input type='text' id='nome_produto1' name='nome_produto1'
-                                    value='<?php echo $produto1; ?>' required>
+                                <input type='text' id='nome_produto1' name='nome_produto1' value='<?php echo $produto1; ?>' required>
 
                                 <label for='ncm_sh1'>NCM/SH</label>
                                 <input type='text' id='ncm_sh1' name='ncm_sh1' value='<?php echo $ncm1; ?>' required>
