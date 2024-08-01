@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 01/08/2024 às 14:17
--- Versão do servidor: 8.0.36
--- Versão do PHP: 8.2.13
+-- Tempo de geração: 01/08/2024 às 23:20
+-- Versão do servidor: 8.3.0
+-- Versão do PHP: 8.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -108,14 +108,7 @@ CREATE TABLE IF NOT EXISTS `cancelamentos_pedidos` (
   `data_cancelamento` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `id_turma` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `cancelamentos_pedidos`
---
-
-INSERT INTO `cancelamentos_pedidos` (`id`, `id_carga`, `motivo`, `data_cancelamento`, `id_turma`) VALUES
-(2, 9, 'algo', '2024-08-01 14:00:44', 1);
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -134,16 +127,6 @@ CREATE TABLE IF NOT EXISTS `cancelamentos_solicitacao` (
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `cancelamentos_solicitacao`
---
-
-INSERT INTO `cancelamentos_solicitacao` (`id`, `id_solicitacao`, `produto`, `quantidade_cancelada`, `motivo`, `data_cancelamento`, `id_turma`) VALUES
-(1, 2, 'Leitor De Código De Barra', 1, 'Sem Estoque.', '2024-07-23 03:54:29', 1),
-(2, 4, 'Leitor De Código De Barra', 1, 'Sem Estoque.', '2024-07-23 04:07:19', 1),
-(3, 7, 'Leitor De Código De Barra', 213, 'Sem Estoque.', '2024-07-23 04:11:45', 1),
-(4, 15, 'Leitor De Código De Barra', 1, 'Seilakj', '2024-08-01 11:31:56', 1);
 
 -- --------------------------------------------------------
 
@@ -193,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `carga` (
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -254,14 +237,6 @@ CREATE TABLE IF NOT EXISTS `estoque` (
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `estoque`
---
-
-INSERT INTO `estoque` (`id`, `nome_produto`, `quantidade_enviada`, `posicao`, `id_turma`) VALUES
-(1, 'Leitor De Código De Barra', 6, 'A1', 1),
-(2, 'Teclado', 5, 'A1', 1);
 
 -- --------------------------------------------------------
 
@@ -376,17 +351,9 @@ CREATE TABLE IF NOT EXISTS `nota_fiscal` (
   `id_turma` int NOT NULL,
   `id_atividade` int NOT NULL,
   `data_hora_pedido` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `situacao` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `nota_fiscal`
---
-
-INSERT INTO `nota_fiscal` (`id`, `numero`, `serie`, `entrada_saida`, `chave_acesso`, `informacao_interna`, `nome_razao_social`, `sede`, `telefone`, `cep`, `protocolo_autorizacao`, `cnpj`, `inscricao_estadual_subs_tributaria`, `natureza_operacao`, `inscricao_estadual`, `nome_razao_social_remetente`, `cnpj_cpf_remetente`, `cep_remetente`, `telefone_remetente`, `inscricao_estadual_remetente`, `data_emissao`, `data_entrada_saida`, `hora_saida`, `fatura_duplicata`, `forma_pagamento`, `base_calculo_icms`, `valor_icms`, `base_calculo_icms_st`, `valor_icms_substituicao`, `total_produtos`, `valor_frete`, `valor_seguro`, `desconto`, `outras_despesas`, `valor_ipi`, `valor_total_nota`, `nome_razao_social_transportador`, `frete_por_conta`, `codigo_antt`, `placa_veiculo`, `cnpj_cpf_transportador`, `inscricao_estadual_transportador`, `quantidade`, `especie`, `marca`, `numeracao`, `peso_bruto`, `peso_liquido`, `nome_produto1`, `ncm_sh1`, `cst1`, `cfop1`, `unid1`, `quantidade_prod1`, `valor_unitario1`, `valor_total_prod1`, `nome_produto2`, `ncm_sh2`, `cst2`, `cfop2`, `unid2`, `quantidade_prod2`, `valor_unitario2`, `valor_total_prod2`, `nome_produto3`, `ncm_sh3`, `cst3`, `cfop3`, `unid3`, `quantidade_prod3`, `valor_unitario3`, `valor_total_prod3`, `nome_produto4`, `ncm_sh4`, `cst4`, `cfop4`, `unid4`, `quantidade_prod4`, `valor_unitario4`, `valor_total_prod4`, `inscricao_municipal`, `valor_total_servicos`, `base_calculo_issqn`, `id_turma`, `id_atividade`, `data_hora_pedido`) VALUES
-(3, '1', '1', '2024-08-01', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 150.00, 50.00, 20.00, 30.00, 15.00, 50.00, 285.00, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 5, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'teclado', '0', '0', '0', 'UN', 5.00, 30.00, 150.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, NULL, NULL, NULL, 1, 8, '2024-08-01 12:18:00'),
-(4, '1', '1', '2024-08-01', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 242.50, 50.00, 20.00, 30.00, 15.00, 50.00, 377.50, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 11, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'teclado', '0', '0', '0', 'UN', 6.00, 30.00, 180.00, 'mouse', '0', '0', '0', 'UN', 5.00, 12.50, 62.50, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, NULL, NULL, NULL, 1, 10, '2024-08-01 13:17:00'),
-(5, '1', '1', '2024-08-01', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 150.00, 50.00, 20.00, 30.00, 15.00, 50.00, 285.00, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 5, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'teclado', '0', '0', '0', 'UN', 5.00, 30.00, 150.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, NULL, NULL, NULL, 1, 9, '2024-08-01 13:58:48');
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -482,16 +449,9 @@ CREATE TABLE IF NOT EXISTS `nota_fiscal_expedicao` (
   `id_turma` int NOT NULL,
   `id_atividade` int NOT NULL,
   `data_hora_pedido` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `situacao` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `nota_fiscal_expedicao`
---
-
-INSERT INTO `nota_fiscal_expedicao` (`id`, `numero`, `serie`, `entrada_saida`, `chave_acesso`, `informacao_interna`, `nome_razao_social`, `sede`, `telefone`, `cep`, `protocolo_autorizacao`, `cnpj`, `inscricao_estadual_subs_tributaria`, `natureza_operacao`, `inscricao_estadual`, `nome_razao_social_remetente`, `cnpj_cpf_remetente`, `cep_remetente`, `telefone_remetente`, `inscricao_estadual_remetente`, `data_emissao`, `data_entrada_saida`, `hora_saida`, `fatura_duplicata`, `forma_pagamento`, `base_calculo_icms`, `valor_icms`, `base_calculo_icms_st`, `valor_icms_substituicao`, `total_produtos`, `valor_frete`, `valor_seguro`, `desconto`, `outras_despesas`, `valor_ipi`, `valor_total_nota`, `nome_razao_social_transportador`, `frete_por_conta`, `codigo_antt`, `placa_veiculo`, `cnpj_cpf_transportador`, `inscricao_estadual_transportador`, `quantidade`, `especie`, `marca`, `numeracao`, `peso_bruto`, `peso_liquido`, `nome_produto1`, `ncm_sh1`, `cst1`, `cfop1`, `unid1`, `quantidade_prod1`, `valor_unitario1`, `valor_total_prod1`, `nome_produto2`, `ncm_sh2`, `cst2`, `cfop2`, `unid2`, `quantidade_prod2`, `valor_unitario2`, `valor_total_prod2`, `nome_produto3`, `ncm_sh3`, `cst3`, `cfop3`, `unid3`, `quantidade_prod3`, `valor_unitario3`, `valor_total_prod3`, `nome_produto4`, `ncm_sh4`, `cst4`, `cfop4`, `unid4`, `quantidade_prod4`, `valor_unitario4`, `valor_total_prod4`, `inscricao_municipal`, `valor_total_servicos`, `base_calculo_issqn`, `id_turma`, `id_atividade`, `data_hora_pedido`) VALUES
-(2, '15', '1', '2024-08-01', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 0.00, 50.00, 20.00, 30.00, 15.00, 50.00, 135.00, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 1, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'Leitor De Código De Barra', '0', '0', '0', ' 0', 1.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, NULL, NULL, NULL, 1, 6, '2024-08-01 11:28:47'),
-(3, '17', '1', '2024-08-01', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 0.00, 50.00, 20.00, 30.00, 15.00, 50.00, 135.00, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 1, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'Leitor De Código De Barra', '0', '0', '0', ' 0', 1.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, NULL, NULL, NULL, 1, 17, '2024-08-01 12:26:36');
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -531,19 +491,6 @@ CREATE TABLE IF NOT EXISTS `picking` (
   UNIQUE KEY `unique_picking` (`id_pedido`,`produto`,`posicao`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
---
--- Despejando dados para a tabela `picking`
---
-
-INSERT INTO `picking` (`id`, `id_pedido`, `quantidade_solicitada`, `produto`, `posicao`, `quantidade`, `id_turma`) VALUES
-(1, 6, 5, 'Leitor De Código De Barra', 'A1', 5, 1),
-(2, 8, 5, 'Leitor De Código De Barra', 'A1', 5, 1),
-(3, 14, 1, 'Leitor De Código De Barra', 'A1', 1, 1),
-(4, 13, 2, 'Leitor De Código De Barra', 'A2', 2, 1),
-(5, 12, 4, 'Leitor De Código De Barra', 'A3', 4, 1),
-(6, 11, 5, 'Teclado', 'A1', 5, 1),
-(7, 10, 5, 'Leitor De Código De Barra', 'A2', 5, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -561,14 +508,7 @@ CREATE TABLE IF NOT EXISTS `picking_pegado` (
   `id_aluno` int NOT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `picking_pegado`
---
-
-INSERT INTO `picking_pegado` (`id`, `id_pedido`, `nome_produto`, `quantidade_enviada`, `posicao`, `id_carga`, `id_aluno`, `id_turma`) VALUES
-(1, 9, 'Leitor De Código De Barra', 5, 'A1', 9, 1, 1);
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -641,15 +581,7 @@ CREATE TABLE IF NOT EXISTS `solicitacao` (
   `quantidade4` int DEFAULT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
-
---
--- Despejando dados para a tabela `solicitacao`
---
-
-INSERT INTO `solicitacao` (`id`, `id_pedido`, `produto`, `quantidade`, `produto2`, `quantidade2`, `produto3`, `quantidade3`, `produto4`, `quantidade4`, `id_turma`) VALUES
-(16, 1, 'Leitor De Código De Barra', 5, '', 0, '', 0, '', 0, 1),
-(17, 1, 'Leitor De Código De Barra', 1, '', 0, '', 0, '', 0, 1);
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -720,14 +652,7 @@ CREATE TABLE IF NOT EXISTS `vistoriado` (
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Restrições para tabelas despejadas
---
-
---
--- Restrições para tabelas `cancelamentos_pedidos`
---
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
