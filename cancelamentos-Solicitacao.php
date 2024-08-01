@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php        
 
 include_once('include/conexao.php');
-$sql = "SELECT * FROM carga where turma_id = '".$_SESSION['turma']."' ORDER BY situacao ASC";
+$sql = "SELECT * FROM cancelamentos_solicitacao where id_turma = '".$_SESSION['turma']."'";
 
 $res = $conn->query($sql);
 
@@ -60,47 +60,30 @@ if($qtd > 0){
     print "<table class='table' >";
 
     print "<tr>";
-            print "<th>ID pedido</th>";
-            print "<th>N° Pedido</th>";
-            print "<th>Ver Pedido</th>";
+            print "<th>ID Pedido</th>";
+            print "<th>ID Solicitação</th>";
+            print "<th>Produto Cancelado</th>";
+            print "<th>Quantidade_Cancelada</th>";
+            print "<th>Motivo</th>";
+            print "<th>Data Cancelamento</th>";
             print "</tr>";
     
-        while($row = $res->fetch_object()){
-            print "<tr>";
-            print "<td>".$row->id."</td>";
-            print "<td>".$row->npedido."</td>";
-            print "<td>";
-            print $row->situacao;
-            print "</td>";
-            print "<td>";
-            print "<form action='processamento/deletar_pedido.php' method='post'>";
-            print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id . "'>";
-            print "<input type='hidden' name='numero_pedido' value='" . $row->id . "'>";
-            print "<button class=\"reset\" type='submit'><span>Excluir</span> </button>";
-            print "</form>";
-            print"</td>"; 
-            print "<td class=\"fechar\">";
-            print "<form action='processamento/fechar_atividade.php' method='post'>";
-            print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id . "'>";
-            print "<button type='submit' class=\"reset\" data-id=\"".$row->id."\"><span>Fechar Pedido</span></button>";
-            print"</form>";
-            print "</td>"; 
-            print "<td>";
-            print "<form action='nPedido.php' method='post'>";
-            print "<input type='hidden' name='npedido' value='" . $row->npedido . "'>";
-            print "<button class=\"reset\" type='submit'><span>Ver</span> </button>";
-            print "</form>";
-            print"</td>"; 
-            print "<td>";
-            print "<form action='criandoNotaFiscal.php' method='get'>";
-            print "<input type='hidden' name='npedido' value='" . $row->npedido . "'>";
-            print "<button class=\"reset\" type='submit'><span>Nota Fiscal</span> </button>";
-            print "</form>";
-            print"</td>"; 
-
-            print "</tr>";
-
-        }
+            while($row = $res->fetch_object()){
+                print "<tr>";
+                print "<td>".$row->id."</td>";
+                print "<td>".$row->id_solicitacao."</td>";
+                print "<td>".$row->produto."</td>";
+                print "<td>".$row->quantidade_cancelada."</td>";
+                print "<td>".$row->motivo."</td>";
+                
+                // Formatar a data
+                $data_formatada = date("d/m/Y H:i:s", strtotime($row->data_cancelamento)); 
+            
+                // Imprimir a data formatada (corrigido)
+                print "<td>" . $data_formatada . "</td>"; 
+            
+                print "</tr>";
+            }
         print "</table>";
         print "</div>";
 
