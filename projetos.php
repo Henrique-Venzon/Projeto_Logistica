@@ -96,16 +96,15 @@ if (isset($_SESSION['error'])) {
             ?>
         </div>
     </div>
-
     <div id="novaProfessor" class="nova-professor" style="display: none;">
         <h1 class="txt-titulo">Crie conta do professor</h1>
-        <form action="">
+        <form method="post" action="processamento/novo_professor.php">
             <label for="nome-professor">Nome:</label>
             <input type="text" id="nome-professor" name="username" placeholder="Nome">
             <label for="senha-professor">Senha:</label>
             <input type="password" id="senha-professor" name="password" placeholder="Senha">
             <label for="confirme-senha">Confirme a senha:</label>
-            <input type="password" id="confirme-senha" name="password" placeholder="Confirme a senha">
+            <input type="password" id="confirme-senha" name="confirm_password" placeholder="Confirme a senha">
             <button type="submit">Enviar</button>
         </form>
     </div>
