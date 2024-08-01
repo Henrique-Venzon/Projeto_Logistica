@@ -47,7 +47,7 @@ document.getElementById("autoDanfe").addEventListener("click", function () {
     "12.345.678/0001-12";
   document.getElementById("inscricao_estadual_transportador").value =
     "1234567890";
-  document.getElementById("quantidade").value = "10";
+  //document.getElementById("quantidade").value = "10";
   document.getElementById("especie").value = "Caixa";
   document.getElementById("marca").value = "Marca XYZ";
   document.getElementById("numeracao").value = "123456";
@@ -121,7 +121,7 @@ document.getElementById("autoDanfe1").addEventListener("click", function () {
     "87.654.321/0001-87";
   document.getElementById("inscricao_estadual_transportador").value =
     "8765432100";
-  document.getElementById("quantidade").value = "700";
+  //document.getElementById("quantidade").value = "700";
   document.getElementById("especie").value = "Caixa";
   document.getElementById("marca").value = "Marca DEF";
   document.getElementById("numeracao").value = "654321";
@@ -195,7 +195,7 @@ document.getElementById("autoDanfe2").addEventListener("click", function () {
     "54.987.321/0001-54";
   document.getElementById("inscricao_estadual_transportador").value =
     "5432109876";
-  document.getElementById("quantidade").value = "2000";
+  //document.getElementById("quantidade").value = "2000";
   document.getElementById("especie").value = "Caixa";
   document.getElementById("marca").value = "Marca GHI";
   document.getElementById("numeracao").value = "456789";
@@ -269,7 +269,7 @@ document.getElementById("autoDanfe3").addEventListener("click", function () {
     "76.543.210/0001-76";
   document.getElementById("inscricao_estadual_transportador").value =
     "6543210987";
-  document.getElementById("quantidade").value = "2500";
+  //document.getElementById("quantidade").value = "2500";
   document.getElementById("especie").value = "Palete";
   document.getElementById("marca").value = "Marca JKL";
   document.getElementById("numeracao").value = "654987";
@@ -342,7 +342,7 @@ document.getElementById("autoDanfe4").addEventListener("click", function () {
     "87.654.321/0001-87";
   document.getElementById("inscricao_estadual_transportador").value =
     "8765432100";
-  document.getElementById("quantidade").value = "800";
+  //document.getElementById("quantidade").value = "800";
   document.getElementById("especie").value = "Caixa";
   document.getElementById("marca").value = "Marca DEF";
   document.getElementById("numeracao").value = "654321";
@@ -416,7 +416,7 @@ document.getElementById("autoDanfe5").addEventListener("click", function () {
     "76.543.210/0001-76";
   document.getElementById("inscricao_estadual_transportador").value =
     "7654321098";
-  document.getElementById("quantidade").value = "700";
+  //document.getElementById("quantidade").value = "700";
   document.getElementById("especie").value = "Pallet";
   document.getElementById("marca").value = "Marca GHI";
   document.getElementById("numeracao").value = "987654";
@@ -445,179 +445,6 @@ document.getElementById("autoDanfe5").addEventListener("click", function () {
 
 document.getElementById("clearForm").addEventListener("click", function () {
   document.getElementById("danfeForm").reset();
-});
-document.getElementById("preset2").addEventListener("click", function () {
-  // Função para gerar uma string aleatória de letras e números
-  function getRandomString(length) {
-    let result = "";
-    const characters =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    const charactersLength = characters.length;
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-  }
-
-  // Função para gerar uma string aleatória de números
-  function getRandomNumberString(length) {
-    let result = "";
-    const characters = "0123456789";
-    const charactersLength = characters.length;
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-  }
-
-  // Função para gerar um número aleatório
-  function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  // Função para gerar um número decimal aleatório
-  function getRandomDecimal(min, max, decimals) {
-    return (Math.random() * (max - min) + min).toFixed(decimals);
-  }
-
-  // Função para gerar uma data aleatória
-  function getRandomDate(start, end) {
-    const date = new Date(
-      start.getTime() + Math.random() * (end.getTime() - start.getTime())
-    );
-    return date.toISOString().slice(0, 10);
-  }
-
-  // Função para gerar um horário aleatório
-  function getRandomTime() {
-    const date = new Date();
-    const hours = getRandomNumber(0, 23).toString().padStart(2, "0");
-    const minutes = getRandomNumber(0, 59).toString().padStart(2, "0");
-    const seconds = getRandomNumber(0, 59).toString().padStart(2, "0");
-    return `${hours}:${minutes}:${seconds}`;
-  }
-
-  // Preencher os campos com valores aleatórios
-  //document.getElementById("numero").value = getRandomNumber(1000, 9999);
-  document.getElementById("serie").value = getRandomNumberString(3);
-  document.getElementById("entrada_saida").value = getRandomDate(
-    new Date(2020, 0, 1),
-    new Date()
-  );
-  document.getElementById("chave_acesso").value = getRandomNumber(1000, 9999);
-  document.getElementById("cep").value = getRandomNumberString(8);
-  document.getElementById("protocolo_autorizacao").value = getRandomNumber(
-    1000,
-    9999
-  );
-
-  document.getElementById("cnpj").value = getRandomNumberString(14);
-
-  document.getElementById("cnpj_cpf_remetente").value =
-    getRandomNumberString(11);
-  document.getElementById("cep_remetente").value = getRandomNumberString(8);
-  document.getElementById("inscricao_estadual_remetente").value =
-    getRandomString(12);
-  document.getElementById("data_emissao").value = getRandomDate(
-    new Date(2020, 0, 1),
-    new Date()
-  );
-  document.getElementById("data_entrada_saida").value = getRandomDate(
-    new Date(2020, 0, 1),
-    new Date()
-  );
-  document.getElementById("base_calculo_icms").value = getRandomDecimal(
-    100,
-    1000,
-    2
-  );
-  document.getElementById("valor_icms").value = getRandomDecimal(10, 100, 2);
-  document.getElementById("base_calculo_icms_st").value = getRandomDecimal(
-    100,
-    1000,
-    2
-  );
-  document.getElementById("valor_icms_substituicao").value = getRandomDecimal(
-    10,
-    100,
-    2
-  );
-  //document.getElementById("total_produtos").value = getRandomDecimal(
-    //100,
-   // 1000,
-   // 2
- // );
-  document.getElementById("valor_frete").value = getRandomDecimal(10, 100, 2);
-  document.getElementById("valor_seguro").value = getRandomDecimal(10, 100, 2);
-  document.getElementById("desconto").value = getRandomDecimal(10, 100, 2);
-  document.getElementById("valor_ipi").value = getRandomDecimal(10, 100, 2);
-  document.getElementById("valor_total_nota").value = getRandomDecimal(
-    1000,
-    5000,
-    2
-  );
-  document.getElementById("codigo_antt").value = getRandomString(10);
-  document.getElementById("placa_veiculo").value =
-    getRandomString(3).toUpperCase() + "-" + getRandomNumberString(4);
-  document.getElementById("cnpj_cpf_transportador").value =
-    getRandomNumberString(14);
-  document.getElementById("inscricao_estadual_transportador").value =
-    getRandomString(12);
-  document.getElementById("quantidade").value = getRandomNumber(1, 100);
-  document.getElementById("numeracao").value = getRandomNumber(1000, 9999);
-  document.getElementById("peso_bruto").value = getRandomDecimal(1, 100, 2);
-  document.getElementById("peso_liquido").value = getRandomDecimal(1, 100, 2);
-  document.getElementById("cod_prod").value = getRandomString(10);
-  document.getElementById("ncm_sh").value = getRandomNumberString(8);
-  document.getElementById("cst").value = getRandomNumberString(3);
-  document.getElementById("cfop").value = getRandomNumberString(4);
-  document.getElementById("unid").value = getRandomString(3);
-  document.getElementById("quantidade_prod").value = getRandomDecimal(
-    1,
-    100,
-    2
-  );
-  document.getElementById("valor_unitario").value = getRandomDecimal(
-    1,
-    1000,
-    2
-  );
-  document.getElementById("valor_total_prod").value = getRandomDecimal(
-    1,
-    10000,
-    2
-  );
-  document.getElementById("base_calculo_icms_prod").value = getRandomDecimal(
-    1,
-    1000,
-    2
-  );
-  document.getElementById("valor_icms_prod").value = getRandomDecimal(
-    1,
-    100,
-    2
-  );
-  document.getElementById("valor_ipi_prod").value = getRandomDecimal(1, 100, 2);
-  document.getElementById("icms").value = getRandomDecimal(1, 100, 2);
-  document.getElementById("ipi").value = getRandomDecimal(1, 100, 2);
-  document.getElementById("inscricao_municipal").value =
-    getRandomNumberString(10);
-  document.getElementById("valor_total_servicos").value = getRandomDecimal(
-    1,
-    1000,
-    2
-  );
-  document.getElementById("base_calculo_issqn").value = getRandomDecimal(
-    1,
-    1000,
-    2
-  );
-  document.getElementById("outras_despesas").value = getRandomDecimal(
-    1,
-    1000,
-    2
-  );
-
 });
 
 function semdesco(){
@@ -788,7 +615,7 @@ document.getElementById("preset3").addEventListener("click", function () {
     getRandomNumberString(14);
   document.getElementById("inscricao_estadual_transportador").value =
     getRandomString(12);
-  document.getElementById("quantidade").value = getRandomNumber(1, 100);
+  //document.getElementById("quantidade").value = getRandomNumber(1, 100);
   document.getElementById("numeracao").value = getRandomNumber(1000, 9999);
   document.getElementById("peso_bruto").value = getRandomDecimal(1, 100, 2);
   document.getElementById("peso_liquido").value = getRandomDecimal(1, 100, 2);
