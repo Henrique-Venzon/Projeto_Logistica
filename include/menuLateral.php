@@ -318,20 +318,15 @@
                         <li class="sidebar-item">
                             <a style="margin-top: -1px;" href="cancelamento-Pedido.php" class="sidebar-link">Cancelamentos</a>
                         </li>
-                        
                     </ul>
                 </li>'
                     ?>
-
-
-
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                         data-bs-target="#Recebimentos" aria-expanded="false" aria-controls="Recebimentos">
                         <i class="fa-solid fa-hand-holding-hand"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Vistoria</span>
                     </a>
-
                     <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
                             <a href="vistoriaCarga.php" style="margin-top: -1.4px;" class="sidebar-link">Carga</a>
@@ -342,8 +337,6 @@
                         </li>
                     </ul>
                 </li>
-
-
                 <li class="sidebar-item">
                     <a href="docas.php" class="sidebar-link">
                         <i class="fa-solid fa-boxes-packing"></i>

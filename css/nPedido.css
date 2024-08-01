@@ -8,40 +8,26 @@
 .nota{
     color: white;
     text-shadow: 0px 0px 9px #000000;
-    font-size: 48px;
+    font-size: 35px;
 }
-.table{
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 0px;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-shadow: 0 0 7px black;
-    border-right: #000000 1px solid
+.tabela-scroll table{
+  color: #fff;
 }
-.table th,td{
-    border: solid 1.5px #000000;
-    border-left: none;
-    border-bottom: none;
-    font-size: 30px;
+table th, table td {
+  border: 1px solid #000000;
+  text-align: center;
+  padding: 3px;
 }
-.table th{
-    height: 50px;
-    border-top: none;
-    background-color: #000000;
+table td{
+  font-size: 12px;
+  background-color: #2c2c2c;
 }
-.table td{
-    height: 60px;
-    background-color: #333333;
+table th{
+  text-transform: uppercase;
+  font-size: 12px;
+  background-color: black;
+  color: #fff;
 }
-.reset{
-    border-radius: 80px;
-    height: 50px;
-    width: 170px;
-    font-size: 25px;
-}
-
 .table-inputs{
     border: 1.5px solid black;
     width: 88%;
@@ -54,7 +40,7 @@
 
 
 .tabela-scroll {
-    max-height: 69vh; 
+    max-height: 74.5vh; 
     overflow-y: auto; 
     outline: 1px solid #000;
 

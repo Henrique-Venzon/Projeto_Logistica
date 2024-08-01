@@ -48,7 +48,6 @@ if (!isset($_SESSION['turma'])) {
                 </div>
                 <div class="tabela-scroll">
                     
-                    <table class="table">
                         <?php
                         include_once ('include/conexao.php');
 
