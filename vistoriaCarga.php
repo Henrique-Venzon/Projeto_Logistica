@@ -462,29 +462,8 @@
                         <button type="button" class=" btn-primary" data-bs-toggle="modal" data-bs-target="#meuModal">
                             Cancelar
                         </button>
-
-                    
                                         </div>
-                                        <!-- Modal -->
-                        <div class="modal fade" id="meuModal" tabindex="-1" aria-labelledby="meuModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="meuModalLabel">Conteúdo da Solicitação</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Fechar"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        543
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Fechar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                        
                                         
                                         </div>
                                     </div>
@@ -547,6 +526,25 @@
             </div>
         </div>
     </main>
+    <div class="modal fade" id="meuModal" tabindex="-1" aria-labelledby="meuModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="meuModalLabel">Conteúdo da Solicitação</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Fechar"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        543
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var modal = document.getElementById("myModal");
