@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `cancelamentos_pedidos` (
   `motivo` text,
   `data_cancelamento` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `id_turma` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
@@ -728,6 +728,11 @@ CREATE TABLE IF NOT EXISTS `vistoriado` (
 --
 -- Restrições para tabelas `cancelamentos_pedidos`
 --
+ALTER TABLE `cancelamentos_pedidos`
+  ADD CONSTRAINT `cancelamentos_pedidos_ibfk_1` FOREIGN KEY (`id_carga`) REFERENCES `carga` (`id`),
+  ADD CONSTRAINT `cancelamentos_pedidos_ibfk_2` FOREIGN KEY (`id_turma`) REFERENCES `turma` (`id`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
