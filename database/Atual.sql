@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `cancelamentos_pedidos` (
   `motivo` text,
   `data_cancelamento` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `id_turma` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --

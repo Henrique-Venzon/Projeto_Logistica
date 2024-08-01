@@ -120,7 +120,6 @@ if (isset($_SESSION['error'])) {
                 <i id="sair2" class="fa-solid fa-person-running"></i>
                 </div>
                 <h2 class="title title-primary">Lista de Projetos</h2>
-                <p class="description description-primary">Projetos</p>
                 <button id="signup" class="btn btn-primary">
                     <h3>Acessar</h3>
                 </button>
