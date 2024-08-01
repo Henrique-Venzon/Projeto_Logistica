@@ -6,6 +6,7 @@
     font-family: 'Platypi';
 
 }
+
 .sair{
     position: absolute;
     top: 2%;
@@ -77,7 +78,59 @@ i{
     font-size: 15px;
 
 }
-
+.nova-professor {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.btn-aparecer{
+    width: 300px;
+    height: 48px;
+    border: none;
+    background-color: rgb(65, 65, 65);
+    color: #fff;
+    font-size: 22px;
+    border-radius: 24px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+.nova-professor form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.nova-professor h1{
+    font-size: 58px;
+    margin-bottom: 10px;
+}
+.nova-professor label{
+    color: #000;
+    margin-bottom: 10px;
+    font-size: 29px;
+}
+.lista-projetos{
+    text-align: center;
+}
+.nova-professor input{
+    border: 0.2px solid #000;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px 16px;
+}
+.nova-professor form button{
+    font-size: 22px;
+    margin-top: 18px;
+    width: 150px;
+    padding: 7px 0px;
+    border-radius: 22px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
   .tabela-scroll::-webkit-scrollbar-track {
     background-color: #fff;
   }
@@ -106,6 +159,7 @@ i{
 
 
 .container {
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;

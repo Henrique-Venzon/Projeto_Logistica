@@ -11,10 +11,9 @@
     ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/carga.css">
-    
+
 </head>
 
 <body>
@@ -26,7 +25,7 @@
         exit;
     }
 
-    include_once('include/conexao.php');
+    include_once ('include/conexao.php');
     $pedido_id_selecionado = 0;
 
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -49,8 +48,8 @@
     <?php include 'include/header.php'; ?>
 
     <main>
-        <?php 
-        include 'include/menuLateral.php'; 
+        <?php
+        include 'include/menuLateral.php';
         ?>
 
         <div class="DivDireita">
@@ -83,7 +82,7 @@
                     </div>
                     </form>
                 </div>
-              
+
                 <!-- Resultados da seleção do pedido -->
                 <?php if (!empty($pedido)) { ?>
                     <div class="tabela-scroll">
@@ -122,7 +121,7 @@
                                         <div id="myModal" class="modal">
                                             <div class="modal-content">
                                                 <?php
-                                                include_once('include/conexao.php');
+                                                include_once ('include/conexao.php');
 
                                                 if ($conexao->connect_error) {
                                                     die("Conexão falhou: " . $conexao->connect_error);
@@ -457,113 +456,116 @@
                                             </select>
                                         </div>
                                         <div class="cancelar">
-                                            <!-- Botão para abrir o Modal -->
-                        <h1>Cancelar</h1>
-                        <button type="button" class=" btn-primary" data-bs-toggle="modal" data-bs-target="#meuModal">
-                            Cancelar
-                        </button>
-
-                    
+                                            <h1>Cancelar</h1>
+                                            <button type="button" class=" btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#meuModal">
+                                                Cancelar
+                                            </button>
                                         </div>
-                                        <!-- Modal -->
-                        <div class="modal fade" id="meuModal" tabindex="-1" aria-labelledby="meuModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="meuModalLabel">Conteúdo da Solicitação</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Fechar"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        543
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Fechar</button>
+
+
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                                        
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tabelaComVistoria">
-                                    <table class='table'>
+                            <div class="tabelaComVistoria">
+                                <table class='table'>
+                                    <tr>
+                                        <th>Produto</th>
+                                        <th>Unidade</th>
+                                        <th>Quantidade</th>
+                                        <th>Valor</th>
+                                        <th>Faltando</th>
+                                        <th>Avariado</th>
+                                        <th>Total</th>
+                                    </tr>
+                                    <tr>
+                                        <td><?php echo $pedido['produto1']; ?></td>
+                                        <td><?php echo $pedido['unidade1']; ?></td>
+                                        <td>
+                                            <span id="quantidade1"><?php echo $pedido['quantidade1']; ?></span>
+                                            <input name="quantidade1" id="quantidadeInput1" type="text"
+                                                value="<?php echo $pedido['quantidade1']; ?>" style="display:none;" />
+                                            <input name="id" id="id" type="hidden" value="<?php echo $pedido['id']; ?>"
+                                                style="display:none;" />
+                                        </td>
+                                        <td><span id="valor1"><?php echo $pedido['valor1']; ?></span></td>
+                                        <td><button type="button" id="editar1" onclick="editarQuantidade(1)">editar</button>
+                                        </td>
+                                        <td><input type="number" name="avariado1" id="avariado1" min="0"
+                                                max="<?php echo $pedido['quantidade1']; ?>"></td>
+                                        <td id="total1"><?php echo $pedido['quantidade1'] * $pedido['valor1']; ?> Reais</td>
+                                    </tr>
+                                    <?php if (!empty($pedido['produto2'])) { ?>
                                         <tr>
-                                            <th>Produto</th>
-                                            <th>Unidade</th>
-                                            <th>Quantidade</th>
-                                            <th>Valor</th>
-                                            <th>Faltando</th>
-                                            <th>Avariado</th>
-                                            <th>Total</th>
-                                        </tr>
-                                        <tr>
-                                            <td><?php echo $pedido['produto1']; ?></td>
-                                            <td><?php echo $pedido['unidade1']; ?></td>
+                                            <td><?php echo $pedido['produto2']; ?></td>
+                                            <td><?php echo $pedido['unidade2']; ?></td>
                                             <td>
-                                                <span id="quantidade1"><?php echo $pedido['quantidade1']; ?></span>
-                                                <input name="quantidade1" id="quantidadeInput1" type="text"
-                                                    value="<?php echo $pedido['quantidade1']; ?>" style="display:none;" />
+                                                <span id="quantidade2"><?php echo $pedido['quantidade2']; ?></span>
+                                                <input name="quantidade2" id="quantidadeInput2" type="text"
+                                                    value="<?php echo $pedido['quantidade2']; ?>" style="display:none;" />
                                                 <input name="id" id="id" type="hidden" value="<?php echo $pedido['id']; ?>"
                                                     style="display:none;" />
                                             </td>
-                                            <td><span id="valor1"><?php echo $pedido['valor1']; ?></span></td>
-                                            <td><button type="button" id="editar1"
-                                                    onclick="editarQuantidade(1)">editar</button></td>
-                                            <td><input type="number" name="avariado1" id="avariado1" min="0" max="<?php echo $pedido['quantidade1']; ?>"></td>
-                                            <td id="total1"><?php echo $pedido['quantidade1'] * $pedido['valor1']; ?> Reais</td>
+                                            <td><span id="valor2"><?php echo $pedido['valor2']; ?></span></td>
+                                            <td><button type="button" id="editar2" onclick="editarQuantidade(2)">editar</button>
+                                            </td>
+                                            <td><input type="number" name="avariado2" id="avariado2" min="0"
+                                                    max="<?php echo $pedido['quantidade2']; ?>"></td>
+                                            <td id="total2"><?php echo $pedido['quantidade2'] * $pedido['valor2']; ?> Reais</td>
                                         </tr>
-                                        <?php if (!empty($pedido['produto2'])) { ?>
-                                            <tr>
-                                                <td><?php echo $pedido['produto2']; ?></td>
-                                                <td><?php echo $pedido['unidade2']; ?></td>
-                                                <td>
-                                                    <span id="quantidade2"><?php echo $pedido['quantidade2']; ?></span>
-                                                    <input name="quantidade2" id="quantidadeInput2" type="text"
-                                                        value="<?php echo $pedido['quantidade2']; ?>"
-                                                        style="display:none;" />
-                                                    <input name="id" id="id" type="hidden"
-                                                        value="<?php echo $pedido['id']; ?>" style="display:none;" />
-                                                </td>
-                                                <td><span id="valor2"><?php echo $pedido['valor2']; ?></span></td>
-                                                <td><button type="button" id="editar2"
-                                                        onclick="editarQuantidade(2)">editar</button></td>
-                                                <td><input type="number" name="avariado2" id="avariado2" min="0" max="<?php echo $pedido['quantidade2']; ?>"></td>
-                                                <td id="total2"><?php echo $pedido['quantidade2'] * $pedido['valor2']; ?> Reais</td>
-                                            </tr>
-                                        <?php } ?>
-                                    </table>
-                                </div>
-                                <div class="enviar">
-                                    <button type="submit">Enviar</button>
-                                </div>
+                                    <?php } ?>
+                                </table>
                             </div>
-                        </form>
+                            <div class="enviar">
+                                <button type="submit">Enviar</button>
+                            </div>
                     </div>
-                <?php } ?>
-            </div>
+                    </form>
+                </div>
+            <?php } ?>
+        </div>
         </div>
     </main>
+    <div class="modal fade" id="meuModal" tabindex="-1" aria-labelledby="meuModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="meuModalLabel">Cancelar Pedido</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="processamento/processar_cancelamento_solicitacao_carga.php" id="formCancelamento">
+                    <input type="hidden" name="id_pedido" value="<?php echo $pedido_id_selecionado; ?>"> 
+                    <div class="mb-3">
+                        <label for="motivo" class="form-label">Motivo do Cancelamento:</label>
+                        <textarea class="form-control" id="motivo" name="motivo" rows="3" required></textarea> 
+                    </div>
+                    <button type="submit" name="cancelar_pedido" class="btn btn-danger">Cancelar Pedido</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             var modal = document.getElementById("myModal");
 
             var btn = document.getElementById("nota-ver");
 
             var span = document.getElementsByClassName("close")[0];
 
-            btn.onclick = function() {
+            btn.onclick = function () {
                 modal.style.display = "block";
             }
 
-            span.onclick = function() {
+            span.onclick = function () {
                 modal.style.display = "none";
             }
 
-            window.onclick = function(event) {
+            window.onclick = function (event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
                 }

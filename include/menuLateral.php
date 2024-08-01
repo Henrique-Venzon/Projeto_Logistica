@@ -315,6 +315,9 @@
                         <li class="sidebar-item">
                             <a style="margin-top: -1px;" href="verPedido.php" class="sidebar-link">Ver pedidos</a>
                         </li>
+                        <li class="sidebar-item">
+                            <a style="margin-top: -1px;" href="cancelamento-Pedido.php" class="sidebar-link">Cancelamentos</a>
+                        </li>
                         
                     </ul>
                 </li>'
@@ -359,7 +362,8 @@
                         <span class="sidebar-text" style="margin-left:10px;">Estoque</span>
                     </a>
                 </li>
-
+            <?php if ($_SESSION['tipo_login'] == 'professor')
+                echo '
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                         data-bs-target="#solicitacao" aria-expanded="false" aria-controls="solicitacao">
@@ -379,7 +383,17 @@
                             <a style="margin-top: -1px;" href="cancelamentos-Solicitacao.php" class="sidebar-link">Cancelamentos</a>
                         </li>
                     </ul>
-                </li>
+                </li>'
+                    ?>
+                    <?php if ($_SESSION['tipo_login'] == 'aluno')
+                echo '
+                <li class="sidebar-item">
+                    <a href="verSolicitacao.php" class="sidebar-link">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Verificar solicitação</span>
+                    </a>
+                </li>'
+                    ?>
                 <li class="sidebar-item">
                     <a href="picking.php" class="sidebar-link">
                         <i class="fa-solid fa-hands-holding"></i>

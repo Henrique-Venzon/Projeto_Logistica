@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php        
 
 include_once('include/conexao.php');
-$sql = "SELECT * FROM cancelamentos_solicitacao where id_turma = '".$_SESSION['turma']."'";
+$sql = "SELECT * FROM cancelamentos_pedidos where id_turma = '".$_SESSION['turma']."'";
 
 $res = $conn->query($sql);
 
@@ -60,18 +60,14 @@ if($qtd > 0){
     print "<table class='table' >";
 
     print "<tr>";
-            print "<th>ID Solicitação</th>";
-            print "<th>Produto Cancelado</th>";
-            print "<th>Quantidade_Cancelada</th>";
+            print "<th>ID Carga</th>";
             print "<th>Motivo</th>";
             print "<th>Data Cancelamento</th>";
             print "</tr>";
     
             while($row = $res->fetch_object()){
                 print "<tr>";
-                print "<td>".$row->id_solicitacao."</td>";
-                print "<td>".$row->produto."</td>";
-                print "<td>".$row->quantidade_cancelada."</td>";
+                print "<td>".$row->id_carga."</td>";
                 print "<td>".$row->motivo."</td>";
                 
                 // Formatar a data

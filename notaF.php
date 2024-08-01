@@ -73,8 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         print "<td>" . $row->id . "</td>";
                         print "<td>" . $data_formatada . "</td>";
                         print "<td>
-                            <button class=\"reset\" data-id=\"" . $npedido . "\"><span>ver</span></button>
-                            <input name='npedido' type='hidden' value='" . $npedido . "'>
+                            <button class=\"reset\" data-id=\"" . $row->id . "\"><span>ver</span></button>
+                            <input name='npedido' type='hidden' value='" .$row->id . "'>
                             </td>";
                         print "</tr>";
                         print "</form>";

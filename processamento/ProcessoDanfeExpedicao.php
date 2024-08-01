@@ -91,7 +91,7 @@ $quantidade_prod4 = isset($_POST['quantidade_prod4']) ? $_POST['quantidade_prod4
 $valor_unitario4 = isset($_POST['valor_unitario4']) ? $_POST['valor_unitario4'] : 0;
 $valor_total_prod4 = isset($_POST['valor_total_prod4']) ? $_POST['valor_total_prod4'] : 0;
 // Consulta para obter o último id_atividade
-$sql = "SELECT MAX(id) AS last_id FROM carga WHERE turma_id='$id_turma' AND situacao='NotaFiscal'";
+$sql = "SELECT MAX(id) AS last_id FROM solicitacao WHERE id_turma='$id_turma'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
