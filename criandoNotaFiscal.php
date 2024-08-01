@@ -111,8 +111,7 @@ $conn->close();
                         <button id='autoDanfe3'>Preset 4</button>
                         <button id='autoDanfe4'>Preset 5</button>
                         <button id='autoDanfe5'>Preset 6</button>
-                        <button id='preset2'>Desconto Errado</button>
-                        <button id='preset3'>Desconto Certo</button> <!-- sempre confundia essa merda -->
+                        <button id='preset3'>Randomização</button> 
                     </div>
                     <div class='inputDanfe'>
                         <form action='processamento/ProcessoDanfe.php' method='post' id='danfeForm'>
@@ -164,7 +163,7 @@ $conn->close();
 
                             <!-- Identificação do Remetente/Destinatário Section -->
                             <div class='section'>
-                                <h2>Identificação do Remetente/Destinatário</h2>
+                                <h2>Identificação do Remetente</h2>
                                 <label for='nome_razao_social_remetente'>Nome/Razão Social</label>
                                 <input type='text' id='nome_razao_social_remetente' name='nome_razao_social_remetente'
                                     required>
@@ -255,8 +254,8 @@ $conn->close();
                                 <input type='text' id='inscricao_estadual_transportador'
                                     name='inscricao_estadual_transportador'>
 
-                                <label for='quantidade'>Quantidade</label>
-                                <input type='number' id='quantidade' name='quantidade'>
+                                <label for='quantidade'>Quantidade de produtos carregados</label>
+                                <input type='number' id='quantidade' name='quantidade' value="<?php $quantidadeTotal=$quantidade1+$quantidade2+$quantidade3+$quantidade4; echo $quantidadeTotal?>">>
 
                                 <label for='especie'>Espécie</label>
                                 <input type='text' id='especie' name='especie'>
@@ -424,15 +423,15 @@ $conn->close();
                         <div class="container-amostra-wrapper">
                             <div class="container-amostra">
                             <label for='valor_total_nota'>Valor Total da Nota sem desconto</label>
-                            <input type="text" id="valor_total_nota" name="valor_total_nota"  readonly>
+                            <input type="text" id="valor_total_nota" name="valor_total_nota"  >
                                 
                             <label>O valor total com desconto é</label>
-                            <input type="text" id="deconto" name="deconto" readonly>
+                            <input type="text" id="deconto" name="deconto" >
                             
                             <label for='total_produtos'>Total dos Produtos</label>
-                            <input type="text" id='total_produtos' name='total_produtos' readonly>
+                            <input type="text" id='total_produtos' name='total_produtos' >
                             <label>O valor do ISSQN</label>
-                            <input type="text" id="issqnto" name="issqnto" readonly>
+                            <input type="text" id="issqnto" name="issqnto" >
                         </div>
                         </div>
                     </div>
