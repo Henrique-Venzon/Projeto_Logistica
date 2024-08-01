@@ -8,7 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     } else {
         $turma_id = $conexao->real_escape_string($_POST['turma']);
-        $sql_notasfiscais = "DELETE FROM nota_fiscal_criada WHERE id_turma = " . $turma_id;
+        $sql_notasfiscais = "DELETE FROM nota_fiscal WHERE id_turma = " . $turma_id;
+        $sql_notasfiscais_expedicao = "DELETE FROM nota_fiscal_expedicao WHERE id_turma = " . $turma_id;
         $sql_docas = "DELETE FROM docas WHERE id_turma = " . $turma_id;
         $sql_estoque = "DELETE FROM estoque WHERE id_turma = " . $turma_id;
         $sql_carga = "DELETE FROM carga WHERE turma_id = " . $turma_id;
@@ -17,7 +18,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql_concluido = "DELETE FROM atividade_concluida WHERE id_turma = " . $turma_id;
         $sql_solicitacao = "DELETE FROM solicitacao WHERE id_turma = " . $turma_id;
         $sql_pegado = "DELETE FROM pegado WHERE id_turma = " . $turma_id;
+        $sql_picking = "DELETE FROM picking WHERE id_turma = " . $turma_id;
+        $sql_picking_pegado = "DELETE FROM picking_pegado WHERE id_turma = " . $turma_id;
+        $sql_cancelamentos_solicitacao="DELETE FROM cancelamentos_solicitacao WHERE id_turma = " . $turma_id;
+        $sql_movimentacao="DELETE FROM movimentacao WHERE id_turma = " . $turma_id;
         $conexao->query($sql_notasfiscais);
+        $conexao->query($sql_notasfiscais_expedicao);
+        $conexao->query($sql_picking);
+        $conexao->query($sql_picking_pegado);
+        $conexao->query($sql_cancelamentos_solicitacao);
+        $conexao->query($sql_movimentacao);
         $conexao->query($sql_estoque);
         $conexao->query($sql_pegado);
         $conexao->query($sql_solicitacao);

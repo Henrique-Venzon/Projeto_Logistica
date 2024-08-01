@@ -1,6 +1,7 @@
 <?php 
+session_start();
 include_once('../include/conexao.php');
-
+$turma=$_SESSION['turma'];
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cancelar_item'])) {
     $ids_solicitacao = $_POST['cancelar_produto']; 
     $produtos = $_POST['produto'];
@@ -36,8 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cancelar_item'])) {
                     $stmt_update_solicitacao->execute();
 
                     // Inserir o cancelamento na tabela 'cancelamentos_solicitacao'
-                    $stmt_insert_cancelamento = $conn->prepare("INSERT INTO cancelamentos_solicitacao (id_solicitacao, produto, quantidade_cancelada, motivo) VALUES (?, ?, ?, ?)");
-                    $stmt_insert_cancelamento->bind_param("isis", $id_solicitacao_real, $produto, $quantidade_cancelada, $motivo);
+                    $stmt_insert_cancelamento = $conn->prepare("INSERT INTO cancelamentos_solicitacao (id_solicitacao, produto, quantidade_cancelada, motivo,id_turma) VALUES (?, ?, ?, ?, ?)");
+                    $stmt_insert_cancelamento->bind_param("isisi", $id_solicitacao_real, $produto, $quantidade_cancelada, $motivo, $turma);
                     $stmt_insert_cancelamento->execute();
 
                     // Verificar se a quantidade ficou maior que zero (ou seja, o produto não foi totalmente cancelado)
