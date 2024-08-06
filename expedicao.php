@@ -18,7 +18,7 @@ $turma_id=$_SESSION['turma'];
     <meta charset="utf-8">
     <title>
         <?php
-        $tituloPag = 'Docas';
+        $tituloPag = 'Expedição';
         echo "$tituloPag";
         ?>
     </title>
@@ -50,10 +50,7 @@ $turma_id=$_SESSION['turma'];
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                $sql = "SELECT d.id_carga, d.id_doca, v.quantidade1, v.quantidade2, v.quantidade3, v.quantidade4 
-                        FROM docas d
-                        JOIN vistoriado v ON d.id_carga = v.id
-                        WHERE v.turma_id = '$turma_id'"; 
+                $sql = "SELECT * FROM "; 
 
                 $res = $conn->query($sql);
 

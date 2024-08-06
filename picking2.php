@@ -132,8 +132,8 @@ $id = $_GET['id']
                                         <button class='finalizar' type='submit' name='finalizar'>Finalizar</button>
                                     </form>
                                     <form method='post' action='processamento/cancelar_finalizar_expedicao.php' style='display:inline-block'>
-                                        <input type='hidden' name='produto_id' value='" . $row->id . "'>
-                                        <input type='hidden' name='id_pedido' value='" . $id . "'>
+                                        <input name='produto_id' value='" . $row->id . "' hidden>
+                                        <input name='id_pedido' value='" . $id . "' hidden>
                                         <td><button class='finalizar' type='submit' name='cancelar'>Cancelar</button></td>
                                     </form>
                                   </td>";
