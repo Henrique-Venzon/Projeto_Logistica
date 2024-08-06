@@ -34,7 +34,7 @@ $fatura_duplicata = $_POST['fatura_duplicata'];
 $forma_pagamento = $_POST['forma_pagamento'];
 $base_calculo_icms = $_POST['base_calculo_icms'];
 $valor_icms = $_POST['valor_icms'];
-$base_calculo_icms_st = $_POST['base_calculo_icms_st'];
+$base_calculo_icms_st = $_POST['base_calculo_icms_st']? $_POST['base_calculo_icms_st'] : 0;
 $valor_icms_substituicao = $_POST['valor_icms_substituicao'];
 $total_produtos = $_POST['total_produtos'];
 $valor_frete = $_POST['valor_frete'];
@@ -90,8 +90,9 @@ $unid4 = isset($_POST['unid4']) ? $_POST['unid4'] : '';
 $quantidade_prod4 = isset($_POST['quantidade_prod4']) ? $_POST['quantidade_prod4'] : 0;
 $valor_unitario4 = isset($_POST['valor_unitario4']) ? $_POST['valor_unitario4'] : 0;
 $valor_total_prod4 = isset($_POST['valor_total_prod4']) ? $_POST['valor_total_prod4'] : 0;
-// Consulta para obter o último id_atividade
-// Buscar o último ID inserido
+$inscricao_municipal = isset($_POST['inscricao_municipal']) ? $_POST['inscricao_municipal'] : 0;
+$valor_total_servicos = isset($_POST['valor_total_servicos']) ? $_POST['valor_total_servicos'] : 0;
+$base_calculo_issqn = isset($_POST['base_calculo_issqn']) ? $_POST['base_calculo_issqn'] : 0;
 
 
 $sql_id = "SELECT id FROM `carga` WHERE situacao='NotaFiscal' ORDER BY id DESC LIMIT 1";
@@ -104,14 +105,14 @@ if ($resultado_id->num_rows > 0) {
     $id_atividade = null;
 }
 $sql_a = "INSERT INTO nota_fiscal (
-    numero, serie, entrada_saida, chave_acesso, informacao_interna, nome_razao_social, sede, telefone, cep, protocolo_autorizacao, cnpj, inscricao_estadual_subs_tributaria, natureza_operacao, inscricao_estadual, nome_razao_social_remetente, cnpj_cpf_remetente, cep_remetente, telefone_remetente, inscricao_estadual_remetente, data_emissao, data_entrada_saida, hora_saida, fatura_duplicata, forma_pagamento, base_calculo_icms, valor_icms, base_calculo_icms_st, valor_icms_substituicao, total_produtos, valor_frete, valor_seguro, desconto, outras_despesas, valor_ipi, valor_total_nota, nome_razao_social_transportador, frete_por_conta, codigo_antt, placa_veiculo, cnpj_cpf_transportador, inscricao_estadual_transportador, quantidade, especie, marca, numeracao, peso_bruto, peso_liquido, nome_produto1, ncm_sh1, cst1, cfop1, unid1, quantidade_prod1, valor_unitario1, valor_total_prod1, nome_produto2, ncm_sh2, cst2, cfop2, unid2, quantidade_prod2, valor_unitario2, valor_total_prod2, nome_produto3, ncm_sh3, cst3, cfop3, unid3, quantidade_prod3, valor_unitario3, valor_total_prod3, nome_produto4, ncm_sh4, cst4, cfop4, unid4, quantidade_prod4, valor_unitario4, valor_total_prod4, id_turma, id_atividade,situacao)
+    numero, serie, entrada_saida, chave_acesso, informacao_interna, nome_razao_social, sede, telefone, cep, protocolo_autorizacao, cnpj, inscricao_estadual_subs_tributaria, natureza_operacao, inscricao_estadual, nome_razao_social_remetente, cnpj_cpf_remetente, cep_remetente, telefone_remetente, inscricao_estadual_remetente, data_emissao, data_entrada_saida, hora_saida, fatura_duplicata, forma_pagamento, base_calculo_icms, valor_icms, base_calculo_icms_st, valor_icms_substituicao, total_produtos, valor_frete, valor_seguro, desconto, outras_despesas, valor_ipi, valor_total_nota, nome_razao_social_transportador, frete_por_conta, codigo_antt, placa_veiculo, cnpj_cpf_transportador, inscricao_estadual_transportador, quantidade, especie, marca, numeracao, peso_bruto, peso_liquido, nome_produto1, ncm_sh1, cst1, cfop1, unid1, quantidade_prod1, valor_unitario1, valor_total_prod1, nome_produto2, ncm_sh2, cst2, cfop2, unid2, quantidade_prod2, valor_unitario2, valor_total_prod2, nome_produto3, ncm_sh3, cst3, cfop3, unid3, quantidade_prod3, valor_unitario3, valor_total_prod3, nome_produto4, ncm_sh4, cst4, cfop4, unid4, quantidade_prod4, valor_unitario4, valor_total_prod4, id_turma, id_atividade,inscricao_municipal,valor_total_servicos,base_calculo_issqn)
     VALUES (
-        '$numero', '$serie', '$entrada_saida', '$chave_acesso', '$informacao_interna', '$nome_razao_social', '$sede', '$telefone', '$cep', '$protocolo_autorizacao', '$cnpj', '$inscricao_estadual_subs_tributaria', '$natureza_operacao', '$inscricao_estadual', '$nome_razao_social_remetente', '$cnpj_cpf_remetente', '$cep_remetente', '$telefone_remetente', '$inscricao_estadual_remetente', '$data_emissao', '$data_entrada_saida', '$hora_saida', '$fatura_duplicata', '$forma_pagamento', '$base_calculo_icms', '$valor_icms', '$base_calculo_icms_st', '$valor_icms_substituicao', '$total_produtos', '$valor_frete', '$valor_seguro', '$desconto', '$outras_despesas', '$valor_ipi', '$valor_total_nota', '$nome_razao_social_transportador', '$frete_por_conta', '$codigo_antt', '$placa_veiculo', '$cnpj_cpf_transportador', '$inscricao_estadual_transportador', '$quantidade', '$especie', '$marca', '$numeracao', '$peso_bruto', '$peso_liquido', '$nome_produto1', '$ncm_sh1', '$cst1', '$cfop1', '$unid1', '$quantidade_prod1', '$valor_unitario1', '$valor_total_prod1', '$nome_produto2', '$ncm_sh2', '$cst2', '$cfop2', '$unid2', '$quantidade_prod2', '$valor_unitario2', '$valor_total_prod2', '$nome_produto3', '$ncm_sh3', '$cst3', '$cfop3', '$unid3', '$quantidade_prod3', '$valor_unitario3', '$valor_total_prod3', '$nome_produto4', '$ncm_sh4', '$cst4', '$cfop4', '$unid4', '$quantidade_prod4', '$valor_unitario4', '$valor_total_prod4', '$id_turma', '$id_atividade', 'Enviado')";
+        '$numero', '$serie', '$entrada_saida', '$chave_acesso', '$informacao_interna', '$nome_razao_social', '$sede', '$telefone', '$cep', '$protocolo_autorizacao', '$cnpj', '$inscricao_estadual_subs_tributaria', '$natureza_operacao', '$inscricao_estadual', '$nome_razao_social_remetente', '$cnpj_cpf_remetente', '$cep_remetente', '$telefone_remetente', '$inscricao_estadual_remetente', '$data_emissao', '$data_entrada_saida', '$hora_saida', '$fatura_duplicata', '$forma_pagamento', '$base_calculo_icms', '$valor_icms', '$base_calculo_icms_st', '$valor_icms_substituicao', '$total_produtos', '$valor_frete', '$valor_seguro', '$desconto', '$outras_despesas', '$valor_ipi', '$valor_total_nota', '$nome_razao_social_transportador', '$frete_por_conta', '$codigo_antt', '$placa_veiculo', '$cnpj_cpf_transportador', '$inscricao_estadual_transportador', '$quantidade', '$especie', '$marca', '$numeracao', '$peso_bruto', '$peso_liquido', '$nome_produto1', '$ncm_sh1', '$cst1', '$cfop1', '$unid1', '$quantidade_prod1', '$valor_unitario1', '$valor_total_prod1', '$nome_produto2', '$ncm_sh2', '$cst2', '$cfop2', '$unid2', '$quantidade_prod2', '$valor_unitario2', '$valor_total_prod2', '$nome_produto3', '$ncm_sh3', '$cst3', '$cfop3', '$unid3', '$quantidade_prod3', '$valor_unitario3', '$valor_total_prod3', '$nome_produto4', '$ncm_sh4', '$cst4', '$cfop4', '$unid4', '$quantidade_prod4', '$valor_unitario4', '$valor_total_prod4', '$id_turma', '$id_atividade', '$inscricao_municipal', '$valor_total_servicos', '$base_calculo_issqn')";
 
 if ($conn->query($sql_a) === TRUE) {
     if (!empty($id_atividade)) {
         $sql_b = "UPDATE carga SET situacao='enviado' WHERE id=$id_atividade";
-        echo "Consulta SQL para atualização: " . $sql_b; // Depuração
+        echo "Consulta SQL para atualização: " . $sql_b; 
         if ($conn->query($sql_b) === TRUE) {
             header('location:../containerP.php', true, 301);
             exit();

@@ -527,28 +527,29 @@
         </div>
     </main>
     <div class="modal fade" id="meuModal" tabindex="-1" aria-labelledby="meuModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="meuModalLabel">Cancelar Pedido</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-            </div>
-            <div class="modal-body">
-                <form method="POST" action="processamento/processar_cancelamento_solicitacao_carga.php" id="formCancelamento">
-                    <input type="hidden" name="id_pedido" value="<?php echo $pedido_id_selecionado; ?>"> 
-                    <div class="mb-3">
-                        <label for="motivo" class="form-label">Motivo do Cancelamento:</label>
-                        <textarea class="form-control" id="motivo" name="motivo" rows="3" required></textarea> 
-                    </div>
-                    <button type="submit" name="cancelar_pedido" class="btn btn-danger">Cancelar Pedido</button>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="meuModalLabel">Cancelar Pedido</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="processamento/processar_cancelamento_solicitacao_carga.php"
+                        id="formCancelamento">
+                        <input type="hidden" name="id_pedido" value="<?php echo $pedido_id_selecionado; ?>">
+                        <div class="mb-3">
+                            <label for="motivo" class="form-label">Motivo do Cancelamento:</label>
+                            <textarea class="form-control" id="motivo" name="motivo" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" name="cancelar_pedido" class="btn btn-danger">Cancelar Pedido</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var modal = document.getElementById("myModal");

@@ -113,7 +113,7 @@ if ($conn->query($sql_a) === TRUE) {
         $sql_b = "UPDATE carga SET situacao='enviado' WHERE id=$id_atividade";
         echo "Consulta SQL para atualização: " . $sql_b; // Depuração
         if ($conn->query($sql_b) === TRUE) {
-            header('location:../containerP.php', true, 301);
+            header('location:../solicitacao.php', true, 301);
             exit();
         } else {
             echo "Erro ao atualizar o registro: " . $conn->error;
