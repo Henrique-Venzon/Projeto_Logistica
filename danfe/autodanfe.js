@@ -17,9 +17,9 @@ document.getElementById("autoDanfe").addEventListener("click", function () {
     "1234567890";
   document.getElementById("natureza_operacao").value = "Venda";
   document.getElementById("inscricao_estadual").value = "1234567890";
-  document.getElementById("nome_razao_social_remetente").value = "Empresa XYZ";
+  //document.getElementById("nome_razao_social_remetente").value = "Empresa XYZ";
   document.getElementById("cnpj_cpf_remetente").value = "12.345.678/0001-12";
-  document.getElementById("cep_remetente").value = "12345-678";
+  //document.getElementById("cep_remetente").value = "12345-678";
   document.getElementById("telefone_remetente").value = "(11) 1234-5678";
   document.getElementById("inscricao_estadual_remetente").value = "1234567890";
   document.getElementById("data_emissao").value = "2023-06-18";
@@ -91,10 +91,10 @@ document.getElementById("autoDanfe1").addEventListener("click", function () {
     "0987654321";
   document.getElementById("natureza_operacao").value = "Compra";
   document.getElementById("inscricao_estadual").value = "0987654321";
-  document.getElementById("nome_razao_social_remetente").value = "Empresa DEF";
+  //document.getElementById("nome_razao_social_remetente").value = "Empresa DEF";
   document.getElementById("cnpj_cpf_remetente").value = "98.765.432/0001-87";
-  document.getElementById("cep_remetente").value = "87654-321";
-  document.getElementById("telefone_remetente").value = "(31) 99876-5432";
+  //document.getElementById("cep_remetente").value = "87654-321";
+  //document.getElementById("telefone_remetente").value = "(31) 99876-5432";
   document.getElementById("inscricao_estadual_remetente").value = "876543210";
   document.getElementById("data_emissao").value = "2024-07-01";
   document.getElementById("data_entrada_saida").value = "2024-07-02";
@@ -165,9 +165,9 @@ document.getElementById("autoDanfe2").addEventListener("click", function () {
     "5432109876";
   document.getElementById("natureza_operacao").value = "Importação";
   document.getElementById("inscricao_estadual").value = "5432109876";
-  document.getElementById("nome_razao_social_remetente").value = "Empresa GHI";
+  //document.getElementById("nome_razao_social_remetente").value = "Empresa GHI";
   document.getElementById("cnpj_cpf_remetente").value = "21.432.765/0001-21";
-  document.getElementById("cep_remetente").value = "78901-234";
+  //document.getElementById("cep_remetente").value = "78901-234";
   document.getElementById("telefone_remetente").value = "(51) 99876-5432";
   document.getElementById("inscricao_estadual_remetente").value = "345678910";
   document.getElementById("data_emissao").value = "2024-09-15";
@@ -239,9 +239,9 @@ document.getElementById("autoDanfe3").addEventListener("click", function () {
     "6543210987";
   document.getElementById("natureza_operacao").value = "Exportação";
   document.getElementById("inscricao_estadual").value = "6543210987";
-  document.getElementById("nome_razao_social_remetente").value = "Empresa JKL";
+  //document.getElementById("nome_razao_social_remetente").value = "Empresa JKL";
   document.getElementById("cnpj_cpf_remetente").value = "98.765.432/0001-98";
-  document.getElementById("cep_remetente").value = "89012-345";
+  //document.getElementById("cep_remetente").value = "89012-345";
   document.getElementById("telefone_remetente").value = "(61) 99876-5432";
   document.getElementById("inscricao_estadual_remetente").value = "210987654";
   document.getElementById("data_emissao").value = "2024-10-10";
@@ -312,9 +312,9 @@ document.getElementById("autoDanfe4").addEventListener("click", function () {
     "0987654321";
   document.getElementById("natureza_operacao").value = "Compra";
   document.getElementById("inscricao_estadual").value = "0987654321";
-  document.getElementById("nome_razao_social_remetente").value = "Empresa DEF";
+  //document.getElementById("nome_razao_social_remetente").value = "Empresa DEF";
   document.getElementById("cnpj_cpf_remetente").value = "98.765.432/0001-87";
-  document.getElementById("cep_remetente").value = "87654-321";
+  //document.getElementById("cep_remetente").value = "87654-321";
   document.getElementById("telefone_remetente").value = "(31) 99876-5432";
   document.getElementById("inscricao_estadual_remetente").value = "876543210";
   document.getElementById("data_emissao").value = "2024-07-01";
@@ -386,9 +386,9 @@ document.getElementById("autoDanfe5").addEventListener("click", function () {
     "6543210987";
   document.getElementById("natureza_operacao").value = "Venda";
   document.getElementById("inscricao_estadual").value = "6543210987";
-  document.getElementById("nome_razao_social_remetente").value = "Empresa GHI";
+  //document.getElementById("nome_razao_social_remetente").value = "Empresa GHI";
   document.getElementById("cnpj_cpf_remetente").value = "76.543.210/0001-76";
-  document.getElementById("cep_remetente").value = "54321-000";
+  //document.getElementById("cep_remetente").value = "54321-000";
   document.getElementById("telefone_remetente").value = "(41) 99876-5432";
   document.getElementById("inscricao_estadual_remetente").value = "7654321098";
   document.getElementById("data_emissao").value = "2024-07-10";
@@ -573,7 +573,7 @@ document.getElementById("preset3").addEventListener("click", function () {
 
   document.getElementById("cnpj_cpf_remetente").value =
     getRandomNumberString(11);
-  document.getElementById("cep_remetente").value = getRandomNumberString(8);
+  //document.getElementById("cep_remetente").value = getRandomNumberString(8);
   document.getElementById("inscricao_estadual_remetente").value =
     getRandomString(12);
   document.getElementById("data_emissao").value = getRandomDate(

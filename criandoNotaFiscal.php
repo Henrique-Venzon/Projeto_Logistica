@@ -66,6 +66,10 @@ if ($result->num_rows > 0) {
     $cfop2 = $row['cfop2'];
     $cfop3 = $row['cfop3'];
     $cfop4 = $row['cfop4'];
+    $nome_cliente = $row['cliente'];
+    $telefone_cliente = $row['Telefone'];
+    $cep_cliente = $row['CEP'];
+    $empresa_cliente = $row['Empresa'];
 } else {
     echo 'Nenhum resultado encontrado';
 }
@@ -129,7 +133,7 @@ $conn->close();
                                 <input type='text' id='chave_acesso' name='chave_acesso' required>
 
                                 <label for='informacao_interna'>Fornecedor</label>
-                                <input type='text' id='informacao_interna' name='informacao_interna'>
+                                <input type='text' id='informacao_interna' name='informacao_interna' required>
 
                                 <label for='nome_razao_social'>Nome/Razão Social</label>
                                 <input type='text' id='nome_razao_social' name='nome_razao_social' required>
@@ -151,35 +155,35 @@ $conn->close();
 
                                 <label for='inscricao_estadual_subs_tributaria'>Inscrição Estadual Sub.
                                     Tributária</label>
-                                <input type='text' id='inscricao_estadual_subs_tributaria'
-                                    name='inscricao_estadual_subs_tributaria'>
+                                <input type='text' id='inscricao_estadual_subs_tributaria' name='inscricao_estadual_subs_tributaria' required>
 
                                 <label for='natureza_operacao'>Natureza da Operação</label>
                                 <input type='text' id='natureza_operacao' name='natureza_operacao' required>
 
                                 <label for='inscricao_estadual'>Inscrição Estadual</label>
-                                <input type='text' id='inscricao_estadual' name='inscricao_estadual'>
+                                <input type='text' id='inscricao_estadual' name='inscricao_estadual'required>
                             </div>
 
                             <!-- Identificação do Remetente/Destinatário Section -->
                             <div class='section'>
                                 <h2>Identificação do Remetente</h2>
                                 <label for='nome_razao_social_remetente'>Nome/Razão Social</label>
-                                <input type='text' id='nome_razao_social_remetente' name='nome_razao_social_remetente'
-                                    required>
+                                <input type='text' id='nome_razao_social_remetente' name='nome_razao_social_remetente' value="<?php echo $nome_cliente ?> "required>
 
                                 <label for='cnpj_cpf_remetente'>CNPJ/CPF</label>
                                 <input type='text' id='cnpj_cpf_remetente' name='cnpj_cpf_remetente' required>
 
                                 <label for='cep_remetente'>CEP</label>
-                                <input type='text' id='cep_remetente' name='cep_remetente' required>
+                                <input type='text' id='cep_remetente' name='cep_remetente' value="<?php echo $cep_cliente?>" required>
 
                                 <label for='telefone_remetente'>Telefone</label>
-                                <input type='text' id='telefone_remetente' name='telefone_remetente' required>
+                                <input type='text' id='telefone_remetente' name='telefone_remetente' value="<?php echo $telefone_cliente?>" required>
+
+                                <label for='Empresa_remetente'>Empresa</label>
+                                <input type='text' id='Empresa_remetente' name='Empresa_remetente' value="<?php echo $empresa_cliente?>" required>
 
                                 <label for='inscricao_estadual_remetente'>Inscrição Estadual</label>
-                                <input type='text' id='inscricao_estadual_remetente'
-                                    name='inscricao_estadual_remetente'>
+                                <input type='text' id='inscricao_estadual_remetente' name='inscricao_estadual_remetente' required>
 
                                 <label for='data_emissao'>Data de Emissão</label>
                                 <input type='date' id='data_emissao' name='data_emissao' required>
@@ -201,33 +205,31 @@ $conn->close();
                             <div class='section'>
                                 <h2>Cálculo do Imposto</h2>
                                 <label for='base_calculo_icms'>Base de Cálculo de ICMS</label>
-                                <input type='number' step='0.01' id='base_calculo_icms' name='base_calculo_icms'
-                                    required>
+                                <input type='number' step='0.01' id='base_calculo_icms' name='base_calculo_icms' required>
 
                                 <label for='valor_icms'>Valor do ICMS</label>
                                 <input type='number' step='0.01' id='valor_icms' name='valor_icms' required>
 
                                 <label for='base_calculo_icms_st'>Base de Cálculo de ICMS ST</label>
-                                <input type='number' step='0.01' id='base_calculo_icms_st' name='base_calculo_icms_st'>
+                                <input type='number' step='0.01' id='base_calculo_icms_st' name='base_calculo_icms_st' required>
 
                                 <label for='valor_icms_substituicao'>Valor do ICMS Substituição</label>
-                                <input type='number' step='0.01' id='valor_icms_substituicao'
-                                    name='valor_icms_substituicao'>
+                                <input type='number' step='0.01' id='valor_icms_substituicao' name='valor_icms_substituicao' required>
 
                                 <label for='valor_frete'>Valor do Frete</label>
-                                <input type='number' step='0.01' id='valor_frete' name='valor_frete'>
+                                <input type='number' step='0.01' id='valor_frete' name='valor_frete' required>
 
                                 <label for='valor_seguro'>Valor do Seguro</label>
-                                <input type='number' step='0.01' id='valor_seguro' name='valor_seguro'>
+                                <input type='number' step='0.01' id='valor_seguro' name='valor_seguro' required>
 
                                 <label for='desconto'>Desconto</label>
-                                <input type='number' step='0.01' id='desconto' name='desconto'>
+                                <input type='number' step='0.01' id='desconto' name='desconto' required>
 
                                 <label for='outras_despesas'>Outras Despesas Acessórias</label>
-                                <input type='number' step='0.01' id='outras_despesas' name='outras_despesas'>
+                                <input type='number' step='0.01' id='outras_despesas' name='outras_despesas' required>
 
                                 <label for='valor_ipi'>Valor do IPI</label>
-                                <input type='number' step='0.01' id='valor_ipi' name='valor_ipi'>
+                                <input type='number' step='0.01' id='valor_ipi' name='valor_ipi' required>
                                 
                             </div>
 
@@ -235,42 +237,40 @@ $conn->close();
                             <div class='section'>
                                 <h2>Transportador/Volumes Transportados</h2>
                                 <label for='nome_razao_social_transportador'>Nome/Razão Social</label>
-                                <input type='text' id='nome_razao_social_transportador'
-                                    name='nome_razao_social_transportador'>
+                                <input type='text' id='nome_razao_social_transportador' name='nome_razao_social_transportador' required>
 
                                 <label for='frete_por_conta'>Frete por Conta</label>
-                                <input type='text' id='frete_por_conta' name='frete_por_conta'>
+                                <input type='text' id='frete_por_conta' name='frete_por_conta' required>
 
                                 <label for='codigo_antt'>Código ANTT</label>
-                                <input type='text' id='codigo_antt' name='codigo_antt'>
+                                <input type='text' id='codigo_antt' name='codigo_antt' required>
 
                                 <label for='placa_veiculo'>Placa do Veículo</label>
-                                <input type='text' id='placa_veiculo' name='placa_veiculo'>
+                                <input type='text' id='placa_veiculo' name='placa_veiculo' required>
 
                                 <label for='cnpj_cpf_transportador'>CNPJ/CPF</label>
-                                <input type='text' id='cnpj_cpf_transportador' name='cnpj_cpf_transportador'>
+                                <input type='text' id='cnpj_cpf_transportador' name='cnpj_cpf_transportador' required>
 
                                 <label for='inscricao_estadual_transportador'>Inscrição Estadual</label>
-                                <input type='text' id='inscricao_estadual_transportador'
-                                    name='inscricao_estadual_transportador'>
+                                <input type='text' id='inscricao_estadual_transportador' name='inscricao_estadual_transportador' required>
 
                                 <label for='quantidade'>Quantidade de produtos carregados</label>
-                                <input type='number' id='quantidade' name='quantidade' value="<?php $quantidadeTotal=$quantidade1+$quantidade2+$quantidade3+$quantidade4; echo $quantidadeTotal?>">>
+                                <input type='number' id='quantidade' name='quantidade' value="<?php $quantidadeTotal=$quantidade1+$quantidade2+$quantidade3+$quantidade4; echo $quantidadeTotal?>" required>
 
                                 <label for='especie'>Espécie</label>
-                                <input type='text' id='especie' name='especie'>
+                                <input type='text' id='especie' name='especie' required>
 
                                 <label for='marca'>Marca</label>
-                                <input type='text' id='marca' name='marca'>
+                                <input type='text' id='marca' name='marca' required>
 
                                 <label for='numeracao'>Numeração</label>
-                                <input type='text' id='numeracao' name='numeracao'>
+                                <input type='text' id='numeracao' name='numeracao' required>
 
                                 <label for='peso_bruto'>Peso Bruto</label>
-                                <input type='number' step='0.01' id='peso_bruto' name='peso_bruto'>
+                                <input type='number' step='0.01' id='peso_bruto' name='peso_bruto' required>
 
                                 <label for='peso_liquido'>Peso Líquido</label>
-                                <input type='number' step='0.01' id='peso_liquido' name='peso_liquido'>
+                                <input type='number' step='0.01' id='peso_liquido' name='peso_liquido' required>
                             </div>
 
                             <!-- Dados do Produto/Serviço Section -->
@@ -293,17 +293,13 @@ $conn->close();
                                 <input type='text' id='unid1' name='unid1' value='<?php echo $unidade1; ?>' required>
 
                                 <label for='quantidade_prod1'>Quantidade</label>
-                                <input type='number' step='0.01' id='quantidade_prod1' name='quantidade_prod1'
-                                    value='<?php echo $quantidade1; ?>' required>
+                                <input type='number' step='0.01' id='quantidade_prod1' name='quantidade_prod1' value='<?php echo $quantidade1; ?>' required>
 
                                 <label for='valor_unitario1'>Valor Unitário</label>
-                                <input type='number' step='0.01' id='valor_unitario1' name='valor_unitario1'
-                                    value='<?php echo $valor1; ?>' required>
+                                <input type='number' step='0.01' id='valor_unitario1' name='valor_unitario1' value='<?php echo $valor1; ?>' required>
 
                                 <label for='valor_total_prod1'>Valor Total</label>
-                                <input type='number' step='0.01' id='valor_total_prod1' name='valor_total_prod1'
-                                    value='<?php $total1 = $valor1 * $quantidade1;
-                                    echo $total1; ?>' required>
+                                <input type='number' step='0.01' id='valor_total_prod1' name='valor_total_prod1' value='<?php $total1 = $valor1 * $quantidade1; echo $total1; ?>' required>
                                 
                                 <h2> Produto 2 </h2>
                                 <label for='nome_produto2'>Nome do Produto</label>
@@ -322,17 +318,13 @@ $conn->close();
                                 <input type='text' id='unid2' name='unid2' value='<?php echo $unidade2; ?>'>
 
                                 <label for='quantidade_prod2'>Quantidade</label>
-                                <input type='number' step='0.01' id='quantidade_prod2' name='quantidade_prod2'
-                                    value='<?php echo $quantidade2; ?>'>
+                                <input type='number' step='0.01' id='quantidade_prod2' name='quantidade_prod2' value='<?php echo $quantidade2; ?>'>
 
                                 <label for='valor_unitario2'>Valor Unitário</label>
-                                <input type='number' step='0.01' id='valor_unitario2' name='valor_unitario2'
-                                    value='<?php echo $valor2; ?>'>
+                                <input type='number' step='0.01' id='valor_unitario2' name='valor_unitario2' value='<?php echo $valor2; ?>'>
 
                                 <label for='valor_total_prod2'>Valor Total</label>
-                                <input type='number' step='0.01' id='valor_total_prod2' name='valor_total_prod2'
-                                    value='<?php $total2 = $valor2 * $quantidade2;
-                                    echo $total2; ?>'>
+                                <input type='number' step='0.01' id='valor_total_prod2' name='valor_total_prod2' value='<?php $total2 = $valor2 * $quantidade2; echo $total2; ?>'>
                                 
                               
                                 <h2> Produto 3 </h2>
@@ -352,17 +344,13 @@ $conn->close();
                                 <input type='text' id='unid3' name='unid3' value='<?php echo $unidade3; ?>'>
 
                                 <label for='quantidade_prod3'>Quantidade</label>
-                                <input type='number' step='0.01' id='quantidade_prod3' name='quantidade_prod3'
-                                    value='<?php echo $quantidade3; ?>'>
+                                <input type='number' step='0.01' id='quantidade_prod3' name='quantidade_prod3' value='<?php echo $quantidade3; ?>'>
 
                                 <label for='valor_unitario3'>Valor Unitário</label>
-                                <input type='number' step='0.01' id='valor_unitario3' name='valor_unitario3'
-                                    value='<?php echo $valor3; ?>'>
+                                <input type='number' step='0.01' id='valor_unitario3' name='valor_unitario3' value='<?php echo $valor3; ?>'>
 
                                 <label for='valor_total_prod3'>Valor Total</label>
-                                <input type='number' step='0.01' id='valor_total_prod3' name='valor_total_prod3'
-                                    value='<?php $total3 = $valor3 * $quantidade3;
-                                    echo $total3; ?>'>
+                                <input type='number' step='0.01' id='valor_total_prod3' name='valor_total_prod3' value='<?php $total3 = $valor3 * $quantidade3; echo $total3; ?>'>
                               
                                 
                                 <h2> Produto 4 </h2>
@@ -382,17 +370,13 @@ $conn->close();
                                 <input type='text' id='unid4' name='unid4' value='<?php echo $unidade4; ?>'>
 
                                 <label for='quantidade_prod4'>Quantidade</label>
-                                <input type='number' step='0.01' id='quantidade_prod4' name='quantidade_prod4'
-                                    value='<?php echo $quantidade4; ?>'>
+                                <input type='number' step='0.01' id='quantidade_prod4' name='quantidade_prod4' value='<?php echo $quantidade4; ?>'>
 
                                 <label for='valor_unitario4'>Valor Unitário</label>
-                                <input type='number' step='0.01' id='valor_unitario4' name='valor_unitario4'
-                                    value='<?php echo $valor4; ?>'>
+                                <input type='number' step='0.01' id='valor_unitario4' name='valor_unitario4' value='<?php echo $valor4; ?>'>
 
                                 <label for='valor_total_prod4'>Valor Total</label>
-                                <input type='number' step='0.01' id='valor_total_prod4' name='valor_total_prod4'
-                                    value='<?php $total4 = $valor4 * $quantidade4;
-                                    echo $total4; ?>'>
+                                <input type='number' step='0.01' id='valor_total_prod4' name='valor_total_prod4' value='<?php $total4 = $valor4 * $quantidade4; echo $total4; ?>'>
                             </div>
                             
                             <!-- Cálculo do ISSQN Section -->

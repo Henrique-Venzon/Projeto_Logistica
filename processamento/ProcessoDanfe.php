@@ -34,7 +34,7 @@ $fatura_duplicata = $_POST['fatura_duplicata'];
 $forma_pagamento = $_POST['forma_pagamento'];
 $base_calculo_icms = $_POST['base_calculo_icms'];
 $valor_icms = $_POST['valor_icms'];
-$base_calculo_icms_st = $_POST['base_calculo_icms_st'];
+$base_calculo_icms_st = $_POST['base_calculo_icms_st']? $_POST['base_calculo_icms_st'] : 0;
 $valor_icms_substituicao = $_POST['valor_icms_substituicao'];
 $total_produtos = $_POST['total_produtos'];
 $valor_frete = $_POST['valor_frete'];
@@ -93,8 +93,6 @@ $valor_total_prod4 = isset($_POST['valor_total_prod4']) ? $_POST['valor_total_pr
 $inscricao_municipal = isset($_POST['inscricao_municipal']) ? $_POST['inscricao_municipal'] : 0;
 $valor_total_servicos = isset($_POST['valor_total_servicos']) ? $_POST['valor_total_servicos'] : 0;
 $base_calculo_issqn = isset($_POST['base_calculo_issqn']) ? $_POST['base_calculo_issqn'] : 0;
-// Consulta para obter o último id_atividade
-// Buscar o último ID inserido
 
 
 $sql_id = "SELECT id FROM `carga` WHERE situacao='NotaFiscal' ORDER BY id DESC LIMIT 1";
@@ -114,7 +112,7 @@ $sql_a = "INSERT INTO nota_fiscal (
 if ($conn->query($sql_a) === TRUE) {
     if (!empty($id_atividade)) {
         $sql_b = "UPDATE carga SET situacao='enviado' WHERE id=$id_atividade";
-        echo "Consulta SQL para atualização: " . $sql_b; // Depuração
+        echo "Consulta SQL para atualização: " . $sql_b; 
         if ($conn->query($sql_b) === TRUE) {
             header('location:../containerP.php', true, 301);
             exit();
