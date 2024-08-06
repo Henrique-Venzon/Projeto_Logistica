@@ -94,6 +94,7 @@ document.getElementById("autoDanfe1").addEventListener("click", function () {
   document.getElementById("nome_razao_social_remetente").value = "Empresa DEF";
   document.getElementById("cnpj_cpf_remetente").value = "98.765.432/0001-87";
   document.getElementById("cep_remetente").value = "87654-321";
+  
   document.getElementById("telefone_remetente").value = "(31) 99876-5432";
   document.getElementById("inscricao_estadual_remetente").value = "876543210";
   document.getElementById("data_emissao").value = "2024-07-01";

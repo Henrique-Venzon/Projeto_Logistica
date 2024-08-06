@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cancelar_pedido'])) {
         $stmt_update_carga = $conn->prepare("UPDATE carga SET situacao = 'cancelado' WHERE id = ?");
         $stmt_update_carga->bind_param("i", $id_carga_real);
         $stmt_update_carga->execute();
-        // Atualizar a situação do pedido para 'cancelado' na tabela 'carga'
         $stmt_update_nota = $conn->prepare("UPDATE nota_fiscal SET situacao = 'cancelado' WHERE id_atividade = ?");
         $stmt_update_nota->bind_param("i", $id_carga_real);
         $stmt_update_nota->execute();
