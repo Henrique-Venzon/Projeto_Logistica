@@ -96,42 +96,57 @@ $id = $_GET['id']
                     </div>
                     <div class="divpegar">
                         <h1 class="pegar">Finalizar</h1>
-                        <?php
-                        $sql_a = "SELECT * FROM picking_pegado where id_carga=$id and id_turma='" . $_SESSION['turma'] . "'";
-                        $res = $conn->query($sql_a);
-                        $qtd = $res->num_rows;
+                        <form method='post' action='processamento/processamento_expedicao.php'
+                            style="display:inline-block">
+                            <select name="id_doca">
+                                <option value="1">Doca 1</option>
+                                <option value="2">Doca 2</option>
+                                <option value="3">Doca 3</option>
+                                <option value="4">Doca 4</option>
+                            </select>
+                            <?php
+                            $sql_a = "SELECT * FROM picking_pegado where id_carga=$id and id_turma='" . $_SESSION['turma'] . "'";
+                            $res = $conn->query($sql_a);
+                            $qtd = $res->num_rows;
 
-                        if ($qtd > 0) {
-                            print "<div class='tabela-scroll'>";
-                            print "<table class='table' >";
-                            print "<tr>";
-                            print "<th>Produto</th>";
-                            print "<th>Quantidade</th>";
-                            print "<th>Posição</th>";
-                            print "<th>Finalizar</th>";
-                            print "</tr>";
-
-                            while ($row = $res->fetch_object()) {
+                            if ($qtd > 0) {
+                                print "<div class='tabela-scroll'>";
+                                print "<table class='table' >";
                                 print "<tr>";
-                                print "<td style='border-right:1px solid black;'>" . $row->nome_produto . "</td>";
-                                print "<td style='border-right:1px solid black;'>" . $row->quantidade_enviada . "</td>";
-                                print "<td style='border-right:1px solid black;'>" . $row->posicao . "</td>";
-                                print "<td>
-                                    <form method='post' action='processamento/processar_movimentacaoD1.php' style='display:inline-block'>
-                                        <input type='hidden' name='produto_id' value='" . $row->id . "'>
+                                print "<th>Produto</th>";
+                                print "<th>Quantidade</th>";
+                                print "<th>Posição</th>";
+                                print "<th>Finalizar</th>";
+                                print "<th>Cancelar</th>";
+                                print "</tr>";
+
+                                while ($row = $res->fetch_object()) {
+                                    print "<tr>";
+                                    print "<td style='border-right:1px solid black;'>" . $row->nome_produto . "</td>";
+                                    print "<td style='border-right:1px solid black;'>" . $row->quantidade_enviada . "</td>";
+                                    print "<td style='border-right:1px solid black;'>" . $row->posicao . "</td>";
+                                    print "<td>
+                                        <input type='hidden' name='id_pedido' value='" . $row->id . "'>
+                                        <input type='hidden' name='produto_id' value='" . $id . "'>
+                                        
                                         <button class='finalizar' type='submit' name='finalizar'>Finalizar</button>
                                     </form>
+                                    <form method='post' action='processamento/cancelar_finalizar_expedicao.php' style='display:inline-block'>
+                                        <input type='hidden' name='produto_id' value='" . $row->id . "'>
+                                        <input type='hidden' name='id_pedido' value='" . $id . "'>
+                                        <td><button class='finalizar' type='submit' name='cancelar'>Cancelar</button></td>
+                                    </form>
                                   </td>";
-                                print "</tr>";
+                                    print "</tr>";
+                                }
+                                print "</table>";
+                                print "</div>";
+                            } else {
+                                print "<div class='paragrafo'>";
+                                print "<p class='alert alert-danger'>Nenhum produto selecionado.</p>";
+                                print "</div>";
                             }
-                            print "</table>";
-                            print "</div>";
-                        } else {
-                            print "<div class='paragrafo'>";
-                            print "<p class='alert alert-danger'>Nenhum produto selecionado.</p>";
-                            print "</div>";
-                        }
-                        ?>
+                            ?>
                     </div>
                 </div>
             </div>
