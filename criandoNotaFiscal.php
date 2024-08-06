@@ -383,13 +383,13 @@ $conn->close();
                             <div class='section'>
                                 <h2>Cálculo do ISSQN</h2>
                                 <label for='inscricao_municipal'>Inscrição Municipal</label>
-                                <input type='text' id='inscricao_municipal' name='inscricao_municipal'>
+                                <input type='text' id='inscricao_municipal' name='inscricao_municipal' required>
 
                                 <label for='valor_total_servicos'>Valor Total dos Serviços</label>
-                                <input type='number' step='0.01' id='valor_total_servicos' name='valor_total_servicos'>
+                                <input type='number' step='0.01' id='valor_total_servicos' name='valor_total_servicos' required>
 
                                 <label for='base_calculo_issqn'>Base de Cálculo do ISSQN (%)</label>
-                                <input type='number' step='0.01' id='base_calculo_issqn' name='base_calculo_issqn'>
+                                <input type='number' step='0.01' id='base_calculo_issqn' name='base_calculo_issqn' required>
                             </div>
                             
                             
@@ -426,7 +426,7 @@ $conn->close();
         </div>
     </main>
     
-    <script src='danfe/autodanfe.js'></script>
+    <script src='js/autodanfe.js'></script>
     <script src='js/sidebar.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js'
         integrity='sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe'
