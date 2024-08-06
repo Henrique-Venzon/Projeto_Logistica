@@ -239,9 +239,29 @@
     @media only screen and (min-width: 601px) and (max-width: 1024px) {}
 
     @media only screen and (min-width: 1025px) and (max-width: 1440px) {}
+    .toggle-btn {
+            background-color: transparent;
+            cursor: pointer;
+            border: 0;
+            padding: 0.9rem 1.3rem;
+            align-items: center;
+        }
 
+        .toggle-btn i {
+            margin-left: 17px;
+            font-size: 34px;
+            color: white;
+        }
 
-    @media only screen and (min-width: 1441px) {
+        i {
+            font-size: 29.5px;
+        }
+
+        a.sidebar-link {
+            font-size: 1.1rem;
+        }
+
+    @media only screen and (min-width: 1440px) {
         .toggle-btn {
             background-color: transparent;
             cursor: pointer;
@@ -252,12 +272,12 @@
 
         .toggle-btn i {
             margin-left: 17px;
-            font-size: 37px;
+            font-size: 34px;
             color: white;
         }
 
         i {
-            font-size: 32px;
+            font-size: 29.5px;
         }
 
         a.sidebar-link {
@@ -397,13 +417,6 @@
                     <a href="expedicao.php" class="sidebar-link">
                         <i class="fa-solid fa-truck-front"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Expedição</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="fa-solid fa-clipboard"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Relatórios</span>
                     </a>
                 </li>
                 <li class="sidebar-item">

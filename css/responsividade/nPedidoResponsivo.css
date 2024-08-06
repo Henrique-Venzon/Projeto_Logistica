@@ -20,3 +20,16 @@
         font-size: 26px;
       }
 }
+@media only screen and (max-width:1440px) {
+  table th, table td {
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 1px;
+  }
+  table td{
+    font-size: 12px;
+  }
+  table th{
+    font-size: 13px;
+  }
+}
