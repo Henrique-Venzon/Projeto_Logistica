@@ -9,31 +9,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 <style>
-    algo{
-        color = blue;
-    }
+    
 
 </style>
 </head>
 
 <body>
-    <div id="content">
-        <h1>ola mundo</h1>
-        <input type="text" id=" alfo">
+    
+        <h1 >ola mundo</h1>
+        <label id ='mudança'>caralho</label>
+        <input type="number" id="alfo">
+        <button onclick='calcular()'>calcular</button>
         
         
-    </div>
+    
     <button  onclick="gerer()">gerar pdf</button>
+
+
+
     <script>
+        function calcular(){
+                var a = document.getElementById('alfo').value;
+
+                var tot= a * 50;
+                
+                document.getElementById('mudança').innerHTML = tot;
+                
+
+        }
         
     function gerer(){
-            orientation: 'p',
-            unity: 'mm',
-            <?php ?>    
+            var palavra = document.querySelector('h1');
+            var outro = document.querySelector('label');
+            
         var doc = new jsPDF();
-        doc.fromHTML(document.getElementById(alfo));
+        doc.fromHTML(palavra);
+        doc.fromHTML(outro.innerText);
+        
         doc.save('caralho.pdf');
     }
+
+
+
     </script>
 
 </body>
