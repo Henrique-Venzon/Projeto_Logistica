@@ -317,12 +317,9 @@ main{
   }
   #abrircancelar .modal-dialog {
     width: 80%;
-    /* Ajuste a largura conforme necessário */
     max-width: 800px;
-    /* Largura máxima do modal */
 }
 
-/* Estilos para a tabela dentro do modal */
 #abrircancelar .table {
     width: 100%;
     border-collapse: collapse;
@@ -438,5 +435,31 @@ main{
     height: 45px;
     width: 60px;
     font-size: 16px;
+}
+}
+@media only screen and (max-width: 1440px) {
+  .inf{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+}
+.modal table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.modal th,.modal td {
+  border: 1px solid #000000;
+  text-align: center;
+  padding: 3px;
+}
+.modal table td{
+  font-size: 12.5px;
+}
+.modal table th{
+  text-transform: uppercase;
+  font-size: 13px;
+  background-color: black;
+  color: #fff;
 }
 }

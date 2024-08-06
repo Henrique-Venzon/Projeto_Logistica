@@ -95,8 +95,6 @@ table th{
     box-sizing: border-box;
     font-family: 'Platypi';
 }
-
-
 main{
   width: 100%;
   display: flex;
