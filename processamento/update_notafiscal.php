@@ -94,7 +94,7 @@ $inscricao_municipal = isset($_POST['inscricao_municipal']) ? $_POST['inscricao_
 $valor_total_servicos = isset($_POST['valor_total_servicos']) ? $_POST['valor_total_servicos'] : 0;
 $base_calculo_issqn = isset($_POST['base_calculo_issqn']) ? $_POST['base_calculo_issqn'] : 0;
 
-$id_da_nota = $_POST['npedido']; 
+$id_da_nota = $_POST['id'];
 
 $sql = "UPDATE nota_fiscal SET 
     numero = '$numero', 
@@ -183,7 +183,7 @@ $sql = "UPDATE nota_fiscal SET
 WHERE id = $id_da_nota";
 
 if ($conn->query($sql) === TRUE) {
-    header('location:../verPedido.php',true,301);
+    header('location:verPedido.php',true,301);
     exit;
 }else{
     echo 'teste';

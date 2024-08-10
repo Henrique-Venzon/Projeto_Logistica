@@ -39,7 +39,7 @@ $id_carga = $_POST['id_carga'];
                 </div>
                 <div class="flex">
                     <div class="divpegar">
-                        <form method='post' action="processamento/selecionar_carga.php">
+                        <form method='post' action="processamento/concluir_processamento.php">
                             <h1 class="pegar">Pegar</h1>
                             <?php
                             include_once ('include/conexao.php');
@@ -87,7 +87,7 @@ $id_carga = $_POST['id_carga'];
                                         O pedido não está totalmente pronto!
                                     </div>';
                                     print '                        <DIV class="buttonEnviar">
-                                        <button disabled>Enviar</button>
+                                        <button type="submit" onclick="return confirm(\'Tem certeza de que deseja enviar o pedido mesmo que não esteja totalmente pronto?\')">Enviar</button>
                                     </DIV>';
                                 }
                             } else {

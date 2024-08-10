@@ -158,6 +158,9 @@ if ($result->num_rows > 0) {
                                 <label for='telefone_remetente'>Telefone</label>
                                 <input type='text' id='telefone_remetente' name='telefone_remetente' required>
 
+                                <label for='telefone_remetente'>Empresa</label>
+                                <input type='text' id='empresa_destinatario' name='empresa_destinatario' required>
+
                                 <label for='inscricao_estadual_remetente'>Inscrição Estadual</label>
                                 <input type='text' id='inscricao_estadual_remetente' name='inscricao_estadual_remetente'
                                     required>
@@ -229,7 +232,6 @@ if ($result->num_rows > 0) {
                                 <label for='placa_veiculo'>Placa do Veículo</label>
                                 <input type='text' id='placa_veiculo' name='placa_veiculo' required>
 
-                                <label for='cnpj_cpf_transportador'>CNPJ/CPF</label>
                                 <input type='text' id='cnpj_cpf_transportador' name='cnpj_cpf_transportador' required>
 
                                 <label for='inscricao_estadual_transportador'>Inscrição Estadual</label>

@@ -107,7 +107,8 @@ if ($result->num_rows > 0) {
     $inscricao_municipal = $row['inscricao_municipal'];
     $valor_total_servicos = $row['valor_total_servicos'];
     $base_calculo_issqn = $row['base_calculo_issqn']; 
-
+    $empresa = $row['Empresa']; 
+    $id = $row['id']; 
 } else {
     echo 'Nenhum resultado encontrado';
 }
@@ -214,7 +215,7 @@ $conn->close();
                                     value="<?php echo $telefone_remetente; ?>" required>
 
                                 <label for='Empresa_remetente'>Empresa</label>
-                                <input type='text' id='Empresa_remetente' name='Empresa_remetente' value='' required> 
+                                <input type='text' id='Empresa_remetente' name='Empresa_remetente' value='<?php echo $empresa ?>' required> 
                                  <!-- Verifique se este campo existe na sua tabela -->
 
                                 <label for='inscricao_estadual_remetente'>Inscrição Estadual</label>
@@ -454,7 +455,7 @@ $conn->close();
 
                                 <label for='valor_total_servicos'>Valor Total da Nota</label>
                                 <input type="number" id='valor_total_nota2' name='valor_total_nota' value='<?php echo $valor_total_nota; ?>'>
-                                <input type="hidden" id='valor_total_nota2' name='npedido' value='<?php echo $npedido; ?>'>
+                                <input type="hidden"  name='id' value='<?php echo $id; ?>'>
 
                             </div>
 
