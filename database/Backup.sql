@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 31/07/2024 às 14:03
+-- Tempo de geração: 06/08/2024 às 11:17
 -- Versão do servidor: 8.0.36
 -- Versão do PHP: 8.2.13
 
@@ -46,9 +46,7 @@ CREATE TABLE IF NOT EXISTS `aluno` (
 INSERT INTO `aluno` (`id`, `username`, `password`, `turma_id`) VALUES
 (1, 'PROFESSOR', 'PROFESSOR@SESISENAI2024', -1),
 (2, 'root.Att', 'teste', 1),
-(12, 'Matheus', 'Teste', 1),
-(94, 'Aluno 1', 'xSTt', 2),
-(95, 'Aluno 2', 'blFm', 2);
+(12, 'Matheus', 'Teste', 1);
 
 -- --------------------------------------------------------
 
@@ -99,6 +97,29 @@ CREATE TABLE IF NOT EXISTS `atividade_concluida` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `cancelamentos_pedidos`
+--
+
+DROP TABLE IF EXISTS `cancelamentos_pedidos`;
+CREATE TABLE IF NOT EXISTS `cancelamentos_pedidos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_carga` int DEFAULT NULL,
+  `motivo` text,
+  `data_cancelamento` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_turma` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `cancelamentos_pedidos`
+--
+
+INSERT INTO `cancelamentos_pedidos` (`id`, `id_carga`, `motivo`, `data_cancelamento`, `id_turma`) VALUES
+(2, 9, 'algo', '2024-08-01 14:00:44', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `cancelamentos_solicitacao`
 --
 
@@ -110,17 +131,19 @@ CREATE TABLE IF NOT EXISTS `cancelamentos_solicitacao` (
   `quantidade_cancelada` int DEFAULT NULL,
   `motivo` varchar(255) DEFAULT NULL,
   `data_cancelamento` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `cancelamentos_solicitacao`
 --
 
-INSERT INTO `cancelamentos_solicitacao` (`id`, `id_solicitacao`, `produto`, `quantidade_cancelada`, `motivo`, `data_cancelamento`) VALUES
-(1, 2, 'Leitor De Código De Barra', 1, 'Sem Estoque.', '2024-07-23 03:54:29'),
-(2, 4, 'Leitor De Código De Barra', 1, 'Sem Estoque.', '2024-07-23 04:07:19'),
-(3, 7, 'Leitor De Código De Barra', 213, 'Sem Estoque.', '2024-07-23 04:11:45');
+INSERT INTO `cancelamentos_solicitacao` (`id`, `id_solicitacao`, `produto`, `quantidade_cancelada`, `motivo`, `data_cancelamento`, `id_turma`) VALUES
+(1, 2, 'Leitor De Código De Barra', 1, 'Sem Estoque.', '2024-07-23 03:54:29', 1),
+(2, 4, 'Leitor De Código De Barra', 1, 'Sem Estoque.', '2024-07-23 04:07:19', 1),
+(3, 7, 'Leitor De Código De Barra', 213, 'Sem Estoque.', '2024-07-23 04:11:45', 1),
+(4, 15, 'Leitor De Código De Barra', 1, 'Seilakj', '2024-08-01 11:31:56', 1);
 
 -- --------------------------------------------------------
 
@@ -170,17 +193,16 @@ CREATE TABLE IF NOT EXISTS `carga` (
   `turma_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `turma_id` (`turma_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `carga`
 --
 
 INSERT INTO `carga` (`id`, `situacao`, `npedido`, `Empresa`, `cliente`, `Telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`, `data_pedido`, `data_entrega`, `turma_id`) VALUES
-(1, 'enviado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'Mouse', 'Motor', 'Óleo Diesel', 'UN', 'UN', 'UN', 'UN', 5, 5, 5, 5, 15.00, 8.00, 2800.00, 2.40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-07-31', '2024-08-01', 1),
-(2, 'NotaFiscal', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Mouse', '', '', '', 'UN', 'UN', ' ', ' ', 5, 0, 0, 0, 8.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-07-31', '2024-08-01', 1),
-(3, 'NotaFiscal', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'Teclado', 'teste', '', '', 'UN', 'UN', ' ', ' ', 5, 5, 0, 0, 15.00, 20.00, 0.00, 0.00, 0, 2, 0, 0, 0, 5, 0, 0, 0, 4, 0, 0, '2024-07-31', '2024-08-01', 1),
-(4, 'NotaFiscal', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'teclado', 'mouse', '', '', 'UN', 'UN', ' ', ' ', 5, 5, 0, 0, 30.00, 12.50, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-07-31', '2024-08-01', 1);
+(11, 'enviado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 30.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-08-01', '2024-08-02', 1),
+(12, 'enviado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 30.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-08-01', '2024-08-02', 1),
+(13, 'enviado', '1', 'Portonave', 'Matheus Yan', '4740028922', '88370904', 'teclado', '', '', '', 'UN', ' ', ' ', ' ', 5, 0, 0, 0, 30.00, 0.00, 0.00, 0.00, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2024-08-06', '2024-08-07', 1);
 
 -- --------------------------------------------------------
 
@@ -363,15 +385,129 @@ CREATE TABLE IF NOT EXISTS `nota_fiscal` (
   `id_turma` int NOT NULL,
   `id_atividade` int NOT NULL,
   `data_hora_pedido` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `situacao` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `nota_fiscal`
 --
 
-INSERT INTO `nota_fiscal` (`id`, `numero`, `serie`, `entrada_saida`, `chave_acesso`, `informacao_interna`, `nome_razao_social`, `sede`, `telefone`, `cep`, `protocolo_autorizacao`, `cnpj`, `inscricao_estadual_subs_tributaria`, `natureza_operacao`, `inscricao_estadual`, `nome_razao_social_remetente`, `cnpj_cpf_remetente`, `cep_remetente`, `telefone_remetente`, `inscricao_estadual_remetente`, `data_emissao`, `data_entrada_saida`, `hora_saida`, `fatura_duplicata`, `forma_pagamento`, `base_calculo_icms`, `valor_icms`, `base_calculo_icms_st`, `valor_icms_substituicao`, `total_produtos`, `valor_frete`, `valor_seguro`, `desconto`, `outras_despesas`, `valor_ipi`, `valor_total_nota`, `nome_razao_social_transportador`, `frete_por_conta`, `codigo_antt`, `placa_veiculo`, `cnpj_cpf_transportador`, `inscricao_estadual_transportador`, `quantidade`, `especie`, `marca`, `numeracao`, `peso_bruto`, `peso_liquido`, `nome_produto1`, `ncm_sh1`, `cst1`, `cfop1`, `unid1`, `quantidade_prod1`, `valor_unitario1`, `valor_total_prod1`, `nome_produto2`, `ncm_sh2`, `cst2`, `cfop2`, `unid2`, `quantidade_prod2`, `valor_unitario2`, `valor_total_prod2`, `nome_produto3`, `ncm_sh3`, `cst3`, `cfop3`, `unid3`, `quantidade_prod3`, `valor_unitario3`, `valor_total_prod3`, `nome_produto4`, `ncm_sh4`, `cst4`, `cfop4`, `unid4`, `quantidade_prod4`, `valor_unitario4`, `valor_total_prod4`, `inscricao_municipal`, `valor_total_servicos`, `base_calculo_issqn`, `id_turma`, `id_atividade`, `data_hora_pedido`) VALUES
-(1, '1', '1', '2024-07-31', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 14127.00, 50.00, 20.00, 30.00, 15.00, 50.00, 14262.00, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 10, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'Teclado', '0', '0', '0', 'UN', 5.00, 15.00, 75.00, 'Mouse', '0', '0', '0', 'UN', 5.00, 8.00, 40.00, 'Motor', '0', '0', '0', 'UN', 5.00, 2800.00, 14000.00, 'Óleo Diesel', '0', '0', '0', 'UN', 5.00, 2.40, 12.00, NULL, NULL, NULL, 1, 1, '2024-07-31 11:36:43');
+INSERT INTO `nota_fiscal` (`id`, `numero`, `serie`, `entrada_saida`, `chave_acesso`, `informacao_interna`, `nome_razao_social`, `sede`, `telefone`, `cep`, `protocolo_autorizacao`, `cnpj`, `inscricao_estadual_subs_tributaria`, `natureza_operacao`, `inscricao_estadual`, `nome_razao_social_remetente`, `cnpj_cpf_remetente`, `cep_remetente`, `telefone_remetente`, `inscricao_estadual_remetente`, `data_emissao`, `data_entrada_saida`, `hora_saida`, `fatura_duplicata`, `forma_pagamento`, `base_calculo_icms`, `valor_icms`, `base_calculo_icms_st`, `valor_icms_substituicao`, `total_produtos`, `valor_frete`, `valor_seguro`, `desconto`, `outras_despesas`, `valor_ipi`, `valor_total_nota`, `nome_razao_social_transportador`, `frete_por_conta`, `codigo_antt`, `placa_veiculo`, `cnpj_cpf_transportador`, `inscricao_estadual_transportador`, `quantidade`, `especie`, `marca`, `numeracao`, `peso_bruto`, `peso_liquido`, `nome_produto1`, `ncm_sh1`, `cst1`, `cfop1`, `unid1`, `quantidade_prod1`, `valor_unitario1`, `valor_total_prod1`, `nome_produto2`, `ncm_sh2`, `cst2`, `cfop2`, `unid2`, `quantidade_prod2`, `valor_unitario2`, `valor_total_prod2`, `nome_produto3`, `ncm_sh3`, `cst3`, `cfop3`, `unid3`, `quantidade_prod3`, `valor_unitario3`, `valor_total_prod3`, `nome_produto4`, `ncm_sh4`, `cst4`, `cfop4`, `unid4`, `quantidade_prod4`, `valor_unitario4`, `valor_total_prod4`, `inscricao_municipal`, `valor_total_servicos`, `base_calculo_issqn`, `id_turma`, `id_atividade`, `data_hora_pedido`, `situacao`) VALUES
+(3, '1', '1', '2024-08-01', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 150.00, 50.00, 20.00, 30.00, 15.00, 50.00, 285.00, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 5, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'teclado', '0', '0', '0', 'UN', 5.00, 30.00, 150.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, NULL, NULL, NULL, 1, 8, '2024-08-01 12:18:00', ''),
+(4, '1', '1', '2024-08-01', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 242.50, 50.00, 20.00, 30.00, 15.00, 50.00, 377.50, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 11, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'teclado', '0', '0', '0', 'UN', 6.00, 30.00, 180.00, 'mouse', '0', '0', '0', 'UN', 5.00, 12.50, 62.50, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, NULL, NULL, NULL, 1, 10, '2024-08-01 13:17:00', ''),
+(5, '1', '1', '2024-08-01', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 150.00, 50.00, 20.00, 30.00, 15.00, 50.00, 285.00, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 5, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'teclado', '0', '0', '0', 'UN', 5.00, 30.00, 150.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, NULL, NULL, NULL, 1, 9, '2024-08-01 13:58:48', ''),
+(6, '1', '1', '2024-08-01', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 150.00, 50.00, 20.00, 30.00, 15.00, 50.00, 285.00, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 5, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'teclado', '0', '0', '0', 'UN', 5.00, 30.00, 150.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, NULL, NULL, NULL, 1, 11, '2024-08-01 15:33:36', ''),
+(7, '1', '1', '2024-08-01', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 150.00, 50.00, 20.00, 30.00, 15.00, 50.00, 285.00, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 5, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'teclado', '0', '0', '0', 'UN', 5.00, 30.00, 150.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '2', 2.00, 5.00, 1, 12, '2024-08-01 15:38:40', ''),
+(8, '1', '1', '2024-08-06', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Matheus Yan ', '12.345.678/0001-12', '88370904', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 150.00, 50.00, 20.00, 30.00, 15.00, 50.00, 285.00, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 5, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'teclado', '0', '0', '0', 'UN', 5.00, 30.00, 150.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '', '0', '0', '0', ' ', 0.00, 0.00, 0.00, '0', 0.00, 0.00, 1, 13, '2024-08-06 11:06:29', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `nota_fiscal_expedicao`
+--
+
+DROP TABLE IF EXISTS `nota_fiscal_expedicao`;
+CREATE TABLE IF NOT EXISTS `nota_fiscal_expedicao` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `numero` varchar(100) NOT NULL,
+  `serie` varchar(100) NOT NULL,
+  `entrada_saida` date NOT NULL,
+  `chave_acesso` varchar(100) NOT NULL,
+  `informacao_interna` text,
+  `nome_razao_social` varchar(150) NOT NULL,
+  `sede` varchar(150) NOT NULL,
+  `telefone` varchar(50) NOT NULL,
+  `cep` varchar(20) NOT NULL,
+  `protocolo_autorizacao` varchar(100) NOT NULL,
+  `cnpj` varchar(20) NOT NULL,
+  `inscricao_estadual_subs_tributaria` varchar(50) DEFAULT NULL,
+  `natureza_operacao` varchar(150) NOT NULL,
+  `inscricao_estadual` varchar(50) DEFAULT NULL,
+  `nome_razao_social_remetente` varchar(150) NOT NULL,
+  `cnpj_cpf_remetente` varchar(20) NOT NULL,
+  `cep_remetente` varchar(20) NOT NULL,
+  `telefone_remetente` varchar(50) NOT NULL,
+  `inscricao_estadual_remetente` varchar(50) DEFAULT NULL,
+  `data_emissao` date NOT NULL,
+  `data_entrada_saida` date NOT NULL,
+  `hora_saida` time NOT NULL,
+  `fatura_duplicata` varchar(100) NOT NULL,
+  `forma_pagamento` varchar(100) NOT NULL,
+  `base_calculo_icms` decimal(10,2) NOT NULL,
+  `valor_icms` decimal(10,2) NOT NULL,
+  `base_calculo_icms_st` decimal(10,2) DEFAULT NULL,
+  `valor_icms_substituicao` decimal(10,2) DEFAULT NULL,
+  `total_produtos` decimal(10,2) NOT NULL,
+  `valor_frete` decimal(10,2) DEFAULT NULL,
+  `valor_seguro` decimal(10,2) DEFAULT NULL,
+  `desconto` decimal(10,2) DEFAULT NULL,
+  `outras_despesas` decimal(10,2) DEFAULT NULL,
+  `valor_ipi` decimal(10,2) DEFAULT NULL,
+  `valor_total_nota` decimal(10,2) NOT NULL,
+  `nome_razao_social_transportador` varchar(150) DEFAULT NULL,
+  `frete_por_conta` varchar(100) DEFAULT NULL,
+  `codigo_antt` varchar(100) DEFAULT NULL,
+  `placa_veiculo` varchar(100) DEFAULT NULL,
+  `cnpj_cpf_transportador` varchar(20) DEFAULT NULL,
+  `inscricao_estadual_transportador` varchar(50) DEFAULT NULL,
+  `quantidade` int DEFAULT NULL,
+  `especie` varchar(100) DEFAULT NULL,
+  `marca` varchar(100) DEFAULT NULL,
+  `numeracao` varchar(100) DEFAULT NULL,
+  `peso_bruto` decimal(10,2) DEFAULT NULL,
+  `peso_liquido` decimal(10,2) DEFAULT NULL,
+  `nome_produto1` text NOT NULL,
+  `ncm_sh1` varchar(100) NOT NULL,
+  `cst1` varchar(100) NOT NULL,
+  `cfop1` varchar(100) NOT NULL,
+  `unid1` varchar(100) NOT NULL,
+  `quantidade_prod1` decimal(10,2) NOT NULL,
+  `valor_unitario1` decimal(10,2) NOT NULL,
+  `valor_total_prod1` decimal(10,2) NOT NULL,
+  `nome_produto2` text,
+  `ncm_sh2` varchar(100) DEFAULT NULL,
+  `cst2` varchar(100) DEFAULT NULL,
+  `cfop2` varchar(100) DEFAULT NULL,
+  `unid2` varchar(100) DEFAULT NULL,
+  `quantidade_prod2` decimal(10,2) DEFAULT NULL,
+  `valor_unitario2` decimal(10,2) DEFAULT NULL,
+  `valor_total_prod2` decimal(10,2) DEFAULT NULL,
+  `nome_produto3` text,
+  `ncm_sh3` varchar(100) DEFAULT NULL,
+  `cst3` varchar(100) DEFAULT NULL,
+  `cfop3` varchar(100) DEFAULT NULL,
+  `unid3` varchar(100) DEFAULT NULL,
+  `quantidade_prod3` decimal(10,2) DEFAULT NULL,
+  `valor_unitario3` decimal(10,2) DEFAULT NULL,
+  `valor_total_prod3` decimal(10,2) DEFAULT NULL,
+  `nome_produto4` text,
+  `ncm_sh4` varchar(100) DEFAULT NULL,
+  `cst4` varchar(100) DEFAULT NULL,
+  `cfop4` varchar(100) DEFAULT NULL,
+  `unid4` varchar(100) DEFAULT NULL,
+  `quantidade_prod4` decimal(10,2) DEFAULT NULL,
+  `valor_unitario4` decimal(10,2) DEFAULT NULL,
+  `valor_total_prod4` decimal(10,2) DEFAULT NULL,
+  `inscricao_municipal` varchar(100) DEFAULT NULL,
+  `valor_total_servicos` decimal(10,2) DEFAULT NULL,
+  `base_calculo_issqn` decimal(10,2) DEFAULT NULL,
+  `id_turma` int NOT NULL,
+  `id_atividade` int NOT NULL,
+  `data_hora_pedido` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `situacao` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `nota_fiscal_expedicao`
+--
+
+INSERT INTO `nota_fiscal_expedicao` (`id`, `numero`, `serie`, `entrada_saida`, `chave_acesso`, `informacao_interna`, `nome_razao_social`, `sede`, `telefone`, `cep`, `protocolo_autorizacao`, `cnpj`, `inscricao_estadual_subs_tributaria`, `natureza_operacao`, `inscricao_estadual`, `nome_razao_social_remetente`, `cnpj_cpf_remetente`, `cep_remetente`, `telefone_remetente`, `inscricao_estadual_remetente`, `data_emissao`, `data_entrada_saida`, `hora_saida`, `fatura_duplicata`, `forma_pagamento`, `base_calculo_icms`, `valor_icms`, `base_calculo_icms_st`, `valor_icms_substituicao`, `total_produtos`, `valor_frete`, `valor_seguro`, `desconto`, `outras_despesas`, `valor_ipi`, `valor_total_nota`, `nome_razao_social_transportador`, `frete_por_conta`, `codigo_antt`, `placa_veiculo`, `cnpj_cpf_transportador`, `inscricao_estadual_transportador`, `quantidade`, `especie`, `marca`, `numeracao`, `peso_bruto`, `peso_liquido`, `nome_produto1`, `ncm_sh1`, `cst1`, `cfop1`, `unid1`, `quantidade_prod1`, `valor_unitario1`, `valor_total_prod1`, `nome_produto2`, `ncm_sh2`, `cst2`, `cfop2`, `unid2`, `quantidade_prod2`, `valor_unitario2`, `valor_total_prod2`, `nome_produto3`, `ncm_sh3`, `cst3`, `cfop3`, `unid3`, `quantidade_prod3`, `valor_unitario3`, `valor_total_prod3`, `nome_produto4`, `ncm_sh4`, `cst4`, `cfop4`, `unid4`, `quantidade_prod4`, `valor_unitario4`, `valor_total_prod4`, `inscricao_municipal`, `valor_total_servicos`, `base_calculo_issqn`, `id_turma`, `id_atividade`, `data_hora_pedido`, `situacao`) VALUES
+(2, '15', '1', '2024-08-01', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 0.00, 50.00, 20.00, 30.00, 15.00, 50.00, 135.00, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 1, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'Leitor De Código De Barra', '0', '0', '0', ' 0', 1.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, NULL, NULL, NULL, 1, 6, '2024-08-01 11:28:47', ''),
+(3, '17', '1', '2024-08-01', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 0.00, 50.00, 20.00, 30.00, 15.00, 50.00, 135.00, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 1, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'Leitor De Código De Barra', '0', '0', '0', ' 0', 1.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, NULL, NULL, NULL, 1, 17, '2024-08-01 12:26:36', ''),
+(4, '18', '1', '2024-08-06', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 0.00, 50.00, 20.00, 30.00, 15.00, 50.00, 135.00, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 5, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'Leitor De Código De Barra', '0', '0', '0', ' 0', 5.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, NULL, NULL, NULL, 1, 18, '2024-08-06 11:07:18', 'Enviado'),
+(5, '19', '1', '2024-08-06', '12345678901234567890123456789012345678901234', 'Informação interna XYZ', 'Empresa XYZ', 'Rua ABC, 123', '(11) 1234-5678', '12345-678', '123456', '12.345.678/0001-12', '1234567890', 'Venda', '1234567890', 'Empresa XYZ', '12.345.678/0001-12', '12345-678', '(11) 1234-5678', '1234567890', '2023-06-18', '2023-06-18', '12:00:00', 'Fatura 123', 'Boleto', 17.00, 180.00, 1200.00, 216.00, 0.00, 50.00, 20.00, 30.00, 15.00, 50.00, 135.00, 'Transportadora ABC', 'Destinatário', '1234567', 'ABC-1234', '12.345.678/0001-12', '1234567890', 2, 'Caixa', 'Marca XYZ', '123456', 100.00, 95.00, 'Leitor De Código De Barra', '0', '0', '0', ' 0', 2.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, '', '0', '0', '0', '0', 0.00, 0.00, 0.00, NULL, NULL, NULL, 1, 19, '2024-08-06 11:14:18', 'Enviado');
 
 -- --------------------------------------------------------
 
@@ -409,7 +545,7 @@ CREATE TABLE IF NOT EXISTS `picking` (
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_picking` (`id_pedido`,`produto`,`posicao`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `picking`
@@ -417,7 +553,12 @@ CREATE TABLE IF NOT EXISTS `picking` (
 
 INSERT INTO `picking` (`id`, `id_pedido`, `quantidade_solicitada`, `produto`, `posicao`, `quantidade`, `id_turma`) VALUES
 (1, 6, 5, 'Leitor De Código De Barra', 'A1', 5, 1),
-(2, 8, 5, 'Leitor De Código De Barra', 'A1', 5, 1);
+(2, 8, 5, 'Leitor De Código De Barra', 'A1', 5, 1),
+(3, 14, 1, 'Leitor De Código De Barra', 'A1', 1, 1),
+(4, 13, 2, 'Leitor De Código De Barra', 'A2', 2, 1),
+(5, 12, 4, 'Leitor De Código De Barra', 'A3', 4, 1),
+(6, 11, 5, 'Teclado', 'A1', 5, 1),
+(7, 10, 5, 'Leitor De Código De Barra', 'A2', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -436,7 +577,14 @@ CREATE TABLE IF NOT EXISTS `picking_pegado` (
   `id_aluno` int NOT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `picking_pegado`
+--
+
+INSERT INTO `picking_pegado` (`id`, `id_pedido`, `nome_produto`, `quantidade_enviada`, `posicao`, `id_carga`, `id_aluno`, `id_turma`) VALUES
+(1, 9, 'Leitor De Código De Barra', 5, 'A1', 9, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -509,16 +657,17 @@ CREATE TABLE IF NOT EXISTS `solicitacao` (
   `quantidade4` int DEFAULT NULL,
   `id_turma` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `solicitacao`
 --
 
 INSERT INTO `solicitacao` (`id`, `id_pedido`, `produto`, `quantidade`, `produto2`, `quantidade2`, `produto3`, `quantidade3`, `produto4`, `quantidade4`, `id_turma`) VALUES
-(9, 1, 'Leitor De Código De Barra', 5, '', 0, '', 0, '', 0, 1),
-(10, 1, 'Leitor De Código De Barra', 5, '', 0, '', 0, '', 0, 1),
-(11, 2, 'Teclado', 5, '', 0, '', 0, '', 0, 1);
+(16, 1, 'Leitor De Código De Barra', 5, '', 0, '', 0, '', 0, 1),
+(17, 1, 'Leitor De Código De Barra', 1, '', 0, '', 0, '', 0, 1),
+(18, 2, 'Leitor De Código De Barra', 5, '', 0, '', 0, '', 0, 1),
+(19, 1, 'Leitor De Código De Barra', 2, '', 0, '', 0, '', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -538,8 +687,7 @@ CREATE TABLE IF NOT EXISTS `turma` (
 
 INSERT INTO `turma` (`id`) VALUES
 (-1),
-(1),
-(2);
+(1);
 
 -- --------------------------------------------------------
 

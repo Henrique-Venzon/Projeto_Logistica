@@ -50,7 +50,7 @@ $turma_id=$_SESSION['turma'];
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                $sql = "SELECT * FROM "; 
+                $sql = "SELECT DISTINCT id_pedido FROM expedicao where id_turma='$turma_id'";
 
                 $res = $conn->query($sql);
 
@@ -65,18 +65,12 @@ $turma_id=$_SESSION['turma'];
 
                     while ($row = $res->fetch_object()) {
 
-                        if (
-                            (isset($row->quantidade1) && $row->quantidade1 > 0) ||
-                            (isset($row->quantidade2) && $row->quantidade2 > 0) ||
-                            (isset($row->quantidade3) && $row->quantidade3 > 0) ||
-                            (isset($row->quantidade4) && $row->quantidade4 > 0)
-                        ) {
+                        {
                             print "<tr>";
-                            print "<td>" . $row->id_carga . "</td>";
+                            print "<td>" . $row->id_pedido . "</td>";
                             print "<td>";
-                            print "<form action='pedidoDoca.php' method='post'>";
-                            print "<input type='hidden' name='id_carga' value='" . $row->id_carga . "'>";
-                            print "<input type='hidden' name='id_doca' value='" . $row->id_doca . "'>";
+                            print "<form action='expedicao2.php' method='post'>";
+                            print "<input type='hidden' name='id_carga' value='" . $row->id_pedido . "'>";
                             print "<button type='submit'><span>Ver</span></button>";
                             print "</form>";
                             print "</td>";

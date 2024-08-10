@@ -82,7 +82,6 @@ $id = $_GET['id']
                                         <?php endwhile; ?>
                                     </tbody>
                                 </table>
-                                <!-- Botão Enviar dentro do formulário, mas fora da tabela -->
                                 <div class="buttonEnviar">
                                     <button type="submit">Enviar</button>
                                 </div>
@@ -126,8 +125,8 @@ $id = $_GET['id']
                                     print "<td style='border-right:1px solid black;'>" . $row->quantidade_enviada . "</td>";
                                     print "<td style='border-right:1px solid black;'>" . $row->posicao . "</td>";
                                     print "<td>
-                                        <input type='hidden' name='id_pedido' value='" . $row->id . "'>
-                                        <input type='hidden' name='produto_id' value='" . $id . "'>
+                                        <input type='hidden' name='id_pedido' value='" . $id . "'>
+                                        <input type='hidden' name='produto_id' value='" . $row->id . "'>
                                         
                                         <button class='finalizar' type='submit' name='finalizar'>Finalizar</button>
                                     </form>

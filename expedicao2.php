@@ -1,154 +1,112 @@
 <?php
+$id_aluno = 1;
 session_start();
 if (!isset($_SESSION['id'])) {
     header("Location: index.php");
     exit;
 }
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $npedido_ver = $_POST['npedido'];
-}
 if (!isset($_SESSION['turma'])) {
     header("Location: index.php");
     exit;
 }
+$turma = $_SESSION['turma'];
+$id_carga = $_POST['id_carga'];
 ?>
 <!DOCTYPE html>
+<html>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/amem.svg">
-
     <meta charset="utf-8">
-    <title><?php
-    $tituloPag = 'Ver Pedidos';
-    echo "$tituloPag";
-    ?></title>
+    <title><?php $tituloPag = 'Movimentação';
+    echo "$tituloPag"; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
-
-    <link rel="stylesheet" href="css/nPedido.css">
-    <link rel="stylesheet" href="css/responsividade/nPedidoResponsivo.css">
+    <link rel="stylesheet" href="css/movDocas.css">
 </head>
 
 <body>
-    <?php
-  include_once('include/conexao.php');
-
-    $sql = "SELECT * FROM nota_fiscal WHERE id = $notafiscal";
-
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while ($row = $result->fetch_assoc()) {
-            $npedido = $row['npedido'];
-            
-        }
-    } else {
-        echo "0 results";
-    }
-    $conn->close();
-
-    ?>
-    <?php
-    include 'include/header.php'
-        ?>
+    <?php include 'include/header.php'; ?>
     <main>
-        <?php
-        include 'include/menuLateral.php';
-
-        ?>
+        <?php include 'include/menuLateral.php'; ?>
         <div class="DivDireita">
             <div class="table-inputs">
-                <div class="txt">
-                    <h1 class="nota">Expedição</h1>
-                    <h1 id="v" class="voltar">Voltar</h1>
+                <div class="txtCont">
+                    <h1>Doca 1</h1>
                 </div>
-                <div class="tabela-scroll">
-                    
-                    <table class="table">
-                        <tr>
-                            <th>Produto</th>
+                <div class="flex">
+                    <div class="divpegar">
+                        <form method='post' action="processamento/selecionar_carga.php">
+                            <h1 class="pegar">Pegar</h1>
                             <?php
-                            if ($produto2 != '')
-                                print "
-                        <th>Produto 2</th>";
-                            if ($produto3 != '')
-                                print "
-                        <th>Produto 3</th>";
-                            if ($produto4 != '')
-                                print "
-                        <th>Produto 4</th>"; ?>
+                            include_once ('include/conexao.php');
 
-                        </tr>
-                        <tr>
-                            <td><?php echo $produto1; ?></td>
-                            <?php if ($produto2 != '')
-                                echo '<td>' . $produto2 . '</td>'; ?>
-                            <?php if ($produto3 != '')
-                                echo '<td>' . $produto3 . '</td>'; ?>
-                            <?php if ($produto4 != '')
-                                echo '<td>' . $produto4 . '</td>'; ?>
-                        </tr>
-                        <tr>
-                            <th>Unidade </th>
-                            <?php
-                            if ($unidade2 != ' ')
-                                print "
-                        <th>unidade 2</th>";
-                            if ($unidade3 != ' ')
-                                print "
-                        <th>unidade 3 </th>";
-                            if ($unidade4 != ' ')
-                                print "
-                        <th>unidade 4</th>"; ?>
-                        </tr>
-                        <tr>
-                            <td><?php echo $unidade1; ?></td>
-                            <?php if ($unidade2 != ' ')
-                                echo '<td>' . $unidade2 . '</td>'; ?>
-                            <?php if ($unidade3 != ' ')
-                                echo '<td>' . $unidade3 . '</td>'; ?>
-                            <?php if ($unidade4 != ' ')
-                                echo '<td>' . $unidade4 . '</td>'; ?>
-                        </tr>
-                        <tr>
-                            <th>Quantidade </th>
-                            <?php
-                            if ($quantidade2 != '0')
-                                print "
-                        <th>quantidade 2</th>";
-                            if ($quantidade3 != '0')
-                                print "
-                        <th>qantidade 3</th>";
-                            if ($quantidade4 != '0')
-                                print "
-                        <th>quantidade 4</th>"; ?>
-                        </tr>
-                        <tr>
-                            <td><?php echo $quantidade1; ?></td>
-                            <?php if ($quantidade2 != '0')
-                                echo '<td>' . $quantidade2 . '</td>'; ?>
-                            <?php if ($quantidade3 != '0')
-                                echo '<td>' . $quantidade3 . '</td>'; ?>
-                            <?php if ($quantidade4 != '0')
-                                echo '<td>' . $quantidade4 . '</td>'; ?>
-                        </tr>
-                        
-                    </table>
+                            $sql = "SELECT * FROM `expedicao` where id_pedido='$id_carga' and id_turma='" . $_SESSION['turma'] . "'";
+                            $res = $conn->query($sql);
+                            $qtd = $res->num_rows;
+
+                            if ($qtd > 0) {
+                                print "<div class=\"tabela-scroll\">";
+                                print "<table class='table' >";
+                                print "<tr>";
+                                print "<th>Produto</th>";
+                                print "<th>Quantidade</th>";
+                                print "<th>Doca</th>";
+                                print "</tr>";
+
+                                while ($row = $res->fetch_object()) {
+                                    echo "<tr>";
+                                    echo "<td style=\"border-right:1px solid black;\">" . $row->nome_produto . "</td>";
+                                    echo "<td style=\"border-right:1px solid black;\">" . $row->quantidade_enviada . "</td>";
+                                    echo "<td style=\"border-right:1px solid black;\">" . $row->id_doca . "</td>";
+                                    echo "<input class=\"custom-checkbox\" type=\"hidden\" name=\"id_carga\" value=\"" . $row->id_pedido . "\">";
+                                    echo "</tr>";
+                                }
+                                print "</table>";
+                                print "</div>";
+
+                                $sql_picking = "SELECT COUNT(*) as total_picking FROM picking WHERE id_pedido = '$id_carga'";
+                                $res_picking = $conn->query($sql_picking);
+                                $row_picking = $res_picking->fetch_object();
+                                $total_picking = $row_picking->total_picking;
+
+                                $sql_picking_pegado = "SELECT COUNT(*) as total_picking_pegado FROM picking_pegado WHERE id_pedido = '$id_carga'";
+                                $res_picking_pegado = $conn->query($sql_picking_pegado);
+                                $row_picking_pegado = $res_picking_pegado->fetch_object();
+                                $total_picking_pegado = $row_picking_pegado->total_picking_pegado;
+
+                                if ($total_picking == $total_picking_pegado) {
+                                    print '                        <DIV class="buttonEnviar">
+                                        <button>Enviar</button>
+                                    </DIV>';
+                                } else {
+                                    print '<div class="alert alert-warning" role="alert">
+                                        O pedido não está totalmente pronto!
+                                    </div>';
+                                    print '                        <DIV class="buttonEnviar">
+                                        <button disabled>Enviar</button>
+                                    </DIV>';
+                                }
+                            } else {
+                                print "<p class='alert alert-danger'>Não encontrou nenhum pedido nas docas.</p>";
+                            }
+                            ?>
+                        </form>
+                    </div>
                 </div>
+
             </div>
-        </div>
+    </div>
     </main>
 
-
-    <script src="js/ver.js"></script>
+    <script src="js/movimentar.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

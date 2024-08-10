@@ -342,8 +342,7 @@
                 </li>'
                     ?>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                        data-bs-target="#Recebimentos" aria-expanded="false" aria-controls="Recebimentos">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#Recebimentos" aria-expanded="false" aria-controls="Recebimentos">
                         <i class="fa-solid fa-hand-holding-hand"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Vistoria</span>
                     </a>
