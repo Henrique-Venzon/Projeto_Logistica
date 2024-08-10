@@ -44,7 +44,7 @@ $id = $_GET['id']
 
                         <?php
                         // Consulta para obter os produtos
-                        $sql = "SELECT id, id_pedido, produto, quantidade_solicitada, posicao FROM picking WHERE id_pedido=$id AND id_turma='" . $_SESSION['turma'] . "'";
+                        $sql = "SELECT * FROM picking WHERE id_pedido=$id AND id_turma='" . $_SESSION['turma'] . "'";
                         $res = $conn->query($sql);
 
                         // Verifique se há resultados
@@ -65,13 +65,13 @@ $id = $_GET['id']
                                         <?php while ($row = $res->fetch_object()): ?>
                                             <tr>
                                                 <td><?php echo $row->produto; ?></td>
-                                                <td><?php echo $row->quantidade_solicitada; ?></td>
+                                                <td><?php echo $row->quantidade; ?></td>
                                                 <td><?php echo $row->posicao; ?></td>
                                                 <!-- Campos ocultos com os dados dos produtos -->
                                                 <input type="hidden" name="nome_produto[<?php echo $row->id; ?>]"
                                                     value="<?php echo $row->produto; ?>">
                                                 <input type="hidden" name="quantidade_solicitada[<?php echo $row->id; ?>]"
-                                                    value="<?php echo $row->quantidade_solicitada; ?>">
+                                                    value="<?php echo $row->quantidade; ?>">
                                                 <input type="hidden" name="posicao[<?php echo $row->id; ?>]"
                                                     value="<?php echo $row->posicao; ?>">
                                                 <input type="hidden" name="id_carga[<?php echo $row->id; ?>]"
@@ -118,24 +118,29 @@ $id = $_GET['id']
                                 print "<th>Finalizar</th>";
                                 print "<th>Cancelar</th>";
                                 print "</tr>";
-
+    
                                 while ($row = $res->fetch_object()) {
                                     print "<tr>";
                                     print "<td style='border-right:1px solid black;'>" . $row->nome_produto . "</td>";
                                     print "<td style='border-right:1px solid black;'>" . $row->quantidade_enviada . "</td>";
                                     print "<td style='border-right:1px solid black;'>" . $row->posicao . "</td>";
-                                    print "<td>
-                                        <input type='hidden' name='id_pedido' value='" . $id . "'>
-                                        <input type='hidden' name='produto_id' value='" . $row->id . "'>
-                                        
-                                        <button class='finalizar' type='submit' name='finalizar'>Finalizar</button>
-                                    </form>
-                                    <form method='post' action='processamento/cancelar_finalizar_expedicao.php' style='display:inline-block'>
-                                        <input name='produto_id' value='" . $row->id . "' hidden>
-                                        <input name='id_pedido' value='" . $id . "' hidden>
-                                        <td><button class='finalizar' type='submit' name='cancelar'>Cancelar</button></td>
-                                    </form>
-                                  </td>";
+                                    print "<td>";
+    
+                                    // Formulário para finalizar o item
+                                    print "<form method='post' action='processamento/processamento_expedicao.php' style='display:inline-block'>";
+                                    print "<input type='hidden' name='id_pedido' value='" . $id . "'>";
+                                    print "<input type='hidden' name='produto_id' value='" . $row->id . "'>";
+                                    print "<button class='finalizar' type='submit' name='finalizar'>Finalizar</button>";
+                                    print "</form>";
+    
+                                    // Formulário para cancelar o item
+                                    print "<form method='post' action='processamento/cancelar_finalizar_expedicao.php' style='display:inline-block'>";
+                                    print "<input name='produto_id' value='" . $row->id . "' hidden>";
+                                    print "<input name='id_pedido' value='" . $id . "' hidden>";
+                                    print "<td><button class='finalizar' type='submit' name='cancelar'>Cancelar</button></td>";
+                                    print "</form>";
+    
+                                    print "</td>";
                                     print "</tr>";
                                 }
                                 print "</table>";

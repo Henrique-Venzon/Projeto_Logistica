@@ -514,6 +514,44 @@
                                             <td id="total2"><?php echo $pedido['quantidade2'] * $pedido['valor2']; ?> Reais</td>
                                         </tr>
                                     <?php } ?>
+                                    <?php if (!empty($pedido['produto3'])) { ?>
+                                        <tr>
+                                            <td><?php echo $pedido['produto3']; ?></td>
+                                            <td><?php echo $pedido['unidade3']; ?></td>
+                                            <td>
+                                                <span id="quantidade3"><?php echo $pedido['quantidade3']; ?></span>
+                                                <input name="quantidade3" id="quantidadeInput3" type="text"
+                                                    value="<?php echo $pedido['quantidade3']; ?>" style="display:none;" />
+                                                <input name="id" id="id" type="hidden" value="<?php echo $pedido['id']; ?>"
+                                                    style="display:none;" />
+                                            </td>
+                                            <td><span id="valor3"><?php echo $pedido['valor3']; ?></span></td>
+                                            <td><button type="button" id="editar3" onclick="editarQuantidade(3)">editar</button>
+                                            </td>
+                                            <td><input type="number" name="avariado3" id="avariado3" min="0"
+                                                    max="<?php echo $pedido['quantidade3']; ?>"></td>
+                                            <td id="total3"><?php echo $pedido['quantidade3'] * $pedido['valor3']; ?> Reais</td>
+                                        </tr>
+                                    <?php } ?>
+                                    <?php if (!empty($pedido['produto4'])) { ?>
+                                        <tr>
+                                            <td><?php echo $pedido['produto4']; ?></td>
+                                            <td><?php echo $pedido['unidade4']; ?></td>
+                                            <td>
+                                                <span id="quantidade4"><?php echo $pedido['quantidade4']; ?></span>
+                                                <input name="quantidade4" id="quantidadeInput4" type="text"
+                                                    value="<?php echo $pedido['quantidade4']; ?>" style="display:none;" />
+                                                <input name="id" id="id" type="hidden" value="<?php echo $pedido['id']; ?>"
+                                                    style="display:none;" />
+                                            </td>
+                                            <td><span id="valor4"><?php echo $pedido['valor4']; ?></span></td>
+                                            <td><button type="button" id="editar4" onclick="editarQuantidade(4)">editar</button>
+                                            </td>
+                                            <td><input type="number" name="avariado4" id="avariado4" min="0"
+                                                    max="<?php echo $pedido['quantidade4']; ?>"></td>
+                                            <td id="total4"><?php echo $pedido['quantidade4'] * $pedido['valor4']; ?> Reais</td>
+                                        </tr>
+                                    <?php } ?>
                                 </table>
                             </div>
                             <div class="enviar">
