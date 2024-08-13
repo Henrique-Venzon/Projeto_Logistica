@@ -82,7 +82,7 @@ $id = $_GET['id']
                                         <?php endwhile; ?>
                                     </tbody>
                                 </table>
-                                <div class="buttonEnviar">
+                                <div class="buttonEnviar" id="botao-enviar" style="display: none;">
                                     <button type="submit">Enviar</button>
                                 </div>
                             </form>
@@ -97,12 +97,12 @@ $id = $_GET['id']
                         <h1 class="pegar">Finalizar</h1>
                         <form method='post' action='processamento/processamento_expedicao.php'>
                             <div class="doca">
-                            <select class="doca_id" name="id_doca">
-                                <option value="1">Doca 1</option>
-                                <option value="2">Doca 2</option>
-                                <option value="3">Doca 3</option>
-                                <option value="4">Doca 4</option>
-                            </select>
+                                <select class="doca_id" name="id_doca">
+                                    <option value="1">Doca 1</option>
+                                    <option value="2">Doca 2</option>
+                                    <option value="3">Doca 3</option>
+                                    <option value="4">Doca 4</option>
+                                </select>
                             </div>
                             <?php
                             $sql_a = "SELECT * FROM picking_pegado where id_carga=$id and id_turma='" . $_SESSION['turma'] . "'";
@@ -119,28 +119,28 @@ $id = $_GET['id']
                                 print "<th>Finalizar</th>";
                                 print "<th>Cancelar</th>";
                                 print "</tr>";
-    
+
                                 while ($row = $res->fetch_object()) {
                                     print "<tr>";
                                     print "<td style='border-right:1px solid black;'>" . $row->nome_produto . "</td>";
                                     print "<td style='border-right:1px solid black;'>" . $row->quantidade_enviada . "</td>";
                                     print "<td style='border-right:1px solid black;'>" . $row->posicao . "</td>";
                                     print "<td>";
-    
+
                                     // Formulário para finalizar o item
                                     print "<form method='post' action='processamento/processamento_expedicao.php' style='display:inline-block'>";
                                     print "<input type='hidden' name='id_pedido' value='" . $id . "'>";
                                     print "<input type='hidden' name='produto_id' value='" . $row->id . "'>";
                                     print "<button class='finalizar' type='submit' name='finalizar'>Finalizar</button>";
                                     print "</form>";
-    
+
                                     // Formulário para cancelar o item
                                     print "<form method='post' action='processamento/cancelar_finalizar_expedicao.php' style='display:inline-block'>";
                                     print "<input name='produto_id' value='" . $row->id . "' hidden>";
                                     print "<input name='id_pedido' value='" . $id . "' hidden>";
                                     print "<td><button class='finalizar' type='submit' name='cancelar'>Cancelar</button></td>";
                                     print "</form>";
-    
+
                                     print "</td>";
                                     print "</tr>";
                                 }
@@ -152,6 +152,16 @@ $id = $_GET['id']
                                 print "</div>";
                             }
                             ?>
+                            <?php
+                            if (isset($_SESSION['error_message'])) {
+                                // Apenas mostra as divs se a variável $_SESSION['error_message'] estiver definida
+                                echo '<div class="paragrafo2">';
+                                echo '<p class="alert alert-danger">' . $_SESSION['error_message'] . '</p>';
+                                echo '</div>';
+                            }
+                            ?>
+
+
                     </div>
                 </div>
             </div>
@@ -163,6 +173,43 @@ $id = $_GET['id']
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
         </script>
+    <script>
+        // Seleciona todas as caixas de seleção
+        const checkboxes = document.querySelectorAll('.custom-checkbox');
+        const botaoEnviar = document.getElementById('botao-enviar');
+
+        // Adiciona um evento de mudança para cada caixa de seleção
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                // Verifica se pelo menos uma caixa de seleção está marcada
+                const algumaCheckboxMarcada = Array.from(checkboxes).some(checkbox => checkbox.checked);
+
+                // Mostra ou oculta o botão de envio com base no estado das caixas de seleção
+                botaoEnviar.style.display = algumaCheckboxMarcada ? 'block' : 'none';
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('click', function () {
+            fetch('processamento/limpar_mensagem_erro.php')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro ao limpar mensagem de erro.');
+                    }
+                    const divErro = document.querySelector('.paragrafo2');
+                    if (divErro) {
+                        divErro.remove();
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                }
+                );
+        });
+    </script>
+</body>
+
+</html>
 </body>
 
 </html>

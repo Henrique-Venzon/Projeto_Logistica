@@ -77,5 +77,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header('Location: ../picking2.php?id=' . urlencode($id_pedido));
             exit;
         }
+        header('Location: ../picking2.php?id=' . urlencode($id_pedido));
+        exit;
     }
+    header('Location: ../picking2.php?id=' . urlencode($id_pedido));
+    exit;
 }
+header('Location: ../picking2.php?id=' . urlencode($id_pedido));
+exit;
