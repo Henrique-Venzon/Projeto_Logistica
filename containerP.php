@@ -50,61 +50,61 @@ if (!isset($_SESSION['turma'])) {
                 <h1 id="verSku">SKUS</h1>
 
                 <div id="myModal" class="modal">
-  <div class="modal-content">
-    <?php
-  include_once('include/conexao.php');
+                    <div class="modal-content">
+                        <?php
+                        include_once ('include/conexao.php');
 
-    if ($conexao->connect_error) {
-        die("Conexão falhou: " . $conexao->connect_error);
-    }
+                        if ($conexao->connect_error) {
+                            die("Conexão falhou: " . $conexao->connect_error);
+                        }
 
-    $sql = "SELECT * FROM produto";
-    $resultado = $conexao->query($sql);
+                        $sql = "SELECT * FROM produto";
+                        $resultado = $conexao->query($sql);
 
-    if ($resultado->num_rows > 0) {
-        echo '<span class="close">&times;</span>';
-        echo '<div class="scrollSku">'; 
-        echo '<table>';
-        echo '<thead>';
-        echo '<tr>';
-        echo '<th>SKU</th>';
-        echo '<th>Produto</th>';
-        echo '<th>Preço</th>';
-        echo '<th>Unidade</th>';
-        echo '<th>NCM</th>';
-        echo '<th>CST</th>';
-        echo '<th>CFOP</th>';
-        echo '</tr>';
-        echo '</thead>';
-        echo '<tbody>';
+                        if ($resultado->num_rows > 0) {
+                            echo '<span class="close">&times;</span>';
+                            echo '<div class="scrollSku">';
+                            echo '<table>';
+                            echo '<thead>';
+                            echo '<tr>';
+                            echo '<th>SKU</th>';
+                            echo '<th>Produto</th>';
+                            echo '<th>Preço</th>';
+                            echo '<th>Unidade</th>';
+                            echo '<th>NCM</th>';
+                            echo '<th>CST</th>';
+                            echo '<th>CFOP</th>';
+                            echo '</tr>';
+                            echo '</thead>';
+                            echo '<tbody>';
 
-        while ($row = $resultado->fetch_assoc()) {
-            echo '<tr>';
-            echo '<td>' . $row["id"] . '</td>';
-            echo '<td>' . $row["nome_produto"] . '</td>';
-            echo '<td>' . $row["preco"] . '</td>';
-            echo '<td>' . $row["unidade"] . '</td>';
-            echo '<td>' . $row["ncm"] . '</td>';
-            echo '<td>' . $row["cst"] . '</td>';
-            echo '<td>' . $row["cfop"] . '</td>';
-            echo '</tr>';
-        }
+                            while ($row = $resultado->fetch_assoc()) {
+                                echo '<tr>';
+                                echo '<td>' . $row["id"] . '</td>';
+                                echo '<td>' . $row["nome_produto"] . '</td>';
+                                echo '<td>' . $row["preco"] . '</td>';
+                                echo '<td>' . $row["unidade"] . '</td>';
+                                echo '<td>' . $row["ncm"] . '</td>';
+                                echo '<td>' . $row["cst"] . '</td>';
+                                echo '<td>' . $row["cfop"] . '</td>';
+                                echo '</tr>';
+                            }
 
-        echo '</tbody>';
-        echo '</table>';
-        echo '</div>';
-    } else {
-        echo '<div class="flexresult">';
-        echo '<span class="close close1">&times;</span>';
-        echo '<h1 class="resultado">Nenhuma sku cadastrada</h1>';
-        echo '</div>';
-    }
+                            echo '</tbody>';
+                            echo '</table>';
+                            echo '</div>';
+                        } else {
+                            echo '<div class="flexresult">';
+                            echo '<span class="close close1">&times;</span>';
+                            echo '<h1 class="resultado">Nenhuma sku cadastrada</h1>';
+                            echo '</div>';
+                        }
 
-    // Fecha a conexão
-    $conexao->close();
-    ?>
-  </div>
-</div>
+                        // Fecha a conexão
+                        $conexao->close();
+                        ?>
+                    </div>
+                </div>
 
 
                 <div class="txtCont">
@@ -128,15 +128,18 @@ if (!isset($_SESSION['turma'])) {
                             <div class="colunas1 colunadata coluna1cell">
                                 <div class="numeroPedido">
                                     <label for="num">N° pedido:</label>
-                                    <input class="nPedido" id="num" type="number" name="npedido" min="0" required placeholder="Obrigatório">
+                                    <input class="nPedido" id="num" type="number" name="npedido" min="0" required
+                                        placeholder="Obrigatório">
                                 </div>
                                 <div class="inicio">
                                     <label for="data_pedido">Data do Pedido:</label>
-                                    <input class="data_pedido" id="data_pedido" type="date" name="data_pedido" required placeholder="Obrigatório">
+                                    <input class="data_pedido" id="data_pedido" type="date" name="data_pedido" required
+                                        placeholder="Obrigatório">
                                 </div>
                                 <div class="entrega">
                                     <label for="data_entrega">Data de entrega:</label>
-                                    <input class="data_entrega" id="data_entrega" type="date" name="data_entrega" required placeholder="Obrigatório">
+                                    <input class="data_entrega" id="data_entrega" type="date" name="data_entrega"
+                                        required placeholder="Obrigatório">
                                 </div>
                             </div>
                             <div class="colunas1">
@@ -162,108 +165,112 @@ if (!isset($_SESSION['turma'])) {
 
                             <div class="colunas">
                                 <div class="divisaoPhone">
-                                <div class="sku">
-                                    <label for="sku">Sku:</label>
-                                    <input class="sku" type="text" id="sku1" name="sku1" placeholder="Opcional">
-                                    <input class="sku" type="text" id="sku2" name="sku2" placeholder="Opcional">
-                                    <input class="sku" type="text" id="sku3" name="sku3" placeholder="Opcional">
-                                    <input class="sku" type="text" id="sku4" name="sku4" placeholder="Opcional">
-                                </div>
-                                <div class="produto">
-                                    <label for="produto">Nome do Produto:</label>
-                                    <input type="text" id="produto1" name="produto1" required placeholder="Obrigatório">
-                                    <input type="text" id="produto2" name="produto2" placeholder="Opcional">
-                                    <input type="text" id="produto3" name="produto3" placeholder="Opcional">
-                                    <input type="text" id="produto4" name="produto4" placeholder="Opcional">
-                                </div>
+                                    <div class="sku">
+                                        <label for="sku">Sku:</label>
+                                        <input class="sku" type="text" id="sku1" name="sku1" placeholder="Opcional">
+                                        <input class="sku" type="text" id="sku2" name="sku2" placeholder="Opcional">
+                                        <input class="sku" type="text" id="sku3" name="sku3" placeholder="Opcional">
+                                        <input class="sku" type="text" id="sku4" name="sku4" placeholder="Opcional">
+                                    </div>
+                                    <div class="produto">
+                                        <label for="produto">Nome do Produto:</label>
+                                        <input type="text" id="produto1" name="produto1" required
+                                            placeholder="Obrigatório">
+                                        <input type="text" id="produto2" name="produto2" placeholder="Opcional">
+                                        <input type="text" id="produto3" name="produto3" placeholder="Opcional">
+                                        <input type="text" id="produto4" name="produto4" placeholder="Opcional">
+                                    </div>
 
-                                <div class="unidade">
-                                    <label for="unidade">Unidade:</label>
-                                    <select id="unidade1" name="unidade1" required>
-                                        <option value="UN">UN</option>
-                                        <option value="RL">RL</option>
-                                        <option value="FD">FD</option>
-                                        <option value="KG">KG</option>
-                                        <option value="L">L</option>
-                                    </select>
-                                    <select id="unidade2" name="unidade2">
-                                        <option value=" "> </option>
-                                        <option value="UN">UN</option>
-                                        <option value="RL">RL</option>
-                                        <option value="FD">FD</option>
-                                        <option value="KG">KG</option>
-                                        <option value="L">L</option>
-                                    </select>
-                                    <select id="unidade3" name="unidade3">
-                                        <option value=" "> </option>
-                                        <option value="UN">UN</option>
-                                        <option value="RL">RL</option>
-                                        <option value="FD">FD</option>
-                                        <option value="KG">KG</option>
-                                        <option value="L">L</option>
-                                    </select>
-                                    <select id="unidade4" name="unidade4">
-                                        <option value=" "> </option>
-                                        <option value="UN">UN</option>
-                                        <option value="RL">RL</option>
-                                        <option value="FD">FD</option>
-                                        <option value="KG">KG</option>
-                                        <option value="L">L</option>
-                                    </select>
-                                </div>
+                                    <div class="unidade">
+                                        <label for="unidade">Unidade:</label>
+                                        <select id="unidade1" name="unidade1" required>
+                                            <option value="UN">UN</option>
+                                            <option value="RL">RL</option>
+                                            <option value="FD">FD</option>
+                                            <option value="KG">KG</option>
+                                            <option value="L">L</option>
+                                        </select>
+                                        <select id="unidade2" name="unidade2">
+                                            <option value=" "> </option>
+                                            <option value="UN">UN</option>
+                                            <option value="RL">RL</option>
+                                            <option value="FD">FD</option>
+                                            <option value="KG">KG</option>
+                                            <option value="L">L</option>
+                                        </select>
+                                        <select id="unidade3" name="unidade3">
+                                            <option value=" "> </option>
+                                            <option value="UN">UN</option>
+                                            <option value="RL">RL</option>
+                                            <option value="FD">FD</option>
+                                            <option value="KG">KG</option>
+                                            <option value="L">L</option>
+                                        </select>
+                                        <select id="unidade4" name="unidade4">
+                                            <option value=" "> </option>
+                                            <option value="UN">UN</option>
+                                            <option value="RL">RL</option>
+                                            <option value="FD">FD</option>
+                                            <option value="KG">KG</option>
+                                            <option value="L">L</option>
+                                        </select>
+                                    </div>
 
-                                <div class="quantidade">
-                                    <label for="quantidade">Quantidade:</label>
-                                    <input type="number" id="quantidade1" name="quantidade1" min="0" required
-                                        placeholder="Obrigatório">
-                                    <input type="number" id="quantidade2" name="quantidade2" min="0"
-                                        placeholder="Opcional">
-                                    <input type="number" id="quantidade3" name="quantidade3" min="0"
-                                        placeholder="Opcional">
-                                    <input type="number" id="quantidade4" name="quantidade4" min="0"
-                                        placeholder="Opcional">
+                                    <div class="quantidade">
+                                        <label for="quantidade">Quantidade:</label>
+                                        <input type="number" id="quantidade1" name="quantidade1" min="0" required
+                                            placeholder="Obrigatório">
+                                        <input type="number" id="quantidade2" name="quantidade2" min="0"
+                                            placeholder="Opcional">
+                                        <input type="number" id="quantidade3" name="quantidade3" min="0"
+                                            placeholder="Opcional">
+                                        <input type="number" id="quantidade4" name="quantidade4" min="0"
+                                            placeholder="Opcional">
+                                    </div>
                                 </div>
-                                </div>                                
                                 <div class="divisaoPhone">
-                                <div class="valor">
-                                    <label for="valor">Valor Unitário:</label>
-                                    <input type="number" id="valor1" name="valor1" step="0.01" required
-                                        placeholder="Obrigatório">
-                                    <input type="number" id="valor2" name="valor2" step="0.01" placeholder="Opcional">
-                                    <input type="number" id="valor3" name="valor3" step="0.01" placeholder="Opcional">
-                                    <input type="number" id="valor4" name="valor4" step="0.01" placeholder="Opcional">
-                                </div>
+                                    <div class="valor">
+                                        <label for="valor">Valor Unitário:</label>
+                                        <input type="number" id="valor1" name="valor1" step="0.01" required
+                                            placeholder="Obrigatório">
+                                        <input type="number" id="valor2" name="valor2" step="0.01"
+                                            placeholder="Opcional">
+                                        <input type="number" id="valor3" name="valor3" step="0.01"
+                                            placeholder="Opcional">
+                                        <input type="number" id="valor4" name="valor4" step="0.01"
+                                            placeholder="Opcional">
+                                    </div>
 
-                                <div class="ncm">
-                                    <label for="ncm">NCM:</label>
-                                    <input type="text" id="ncm1" name="ncm1" placeholder="Opcional">
-                                    <input type="text" id="ncm2" name="ncm2" placeholder="Opcional">
-                                    <input type="text" id="ncm3" name="ncm3" placeholder="Opcional">
-                                    <input type="text" id="ncm4" name="ncm4" placeholder="Opcional">
-                                </div>
+                                    <div class="ncm">
+                                        <label for="ncm">NCM:</label>
+                                        <input type="text" id="ncm1" name="ncm1" placeholder="Opcional">
+                                        <input type="text" id="ncm2" name="ncm2" placeholder="Opcional">
+                                        <input type="text" id="ncm3" name="ncm3" placeholder="Opcional">
+                                        <input type="text" id="ncm4" name="ncm4" placeholder="Opcional">
+                                    </div>
 
-                                <div class="cst">
-                                    <label for="cst">CST:</label>
-                                    <input type="text" id="cst1" name="cst1" placeholder="Opcional">
-                                    <input type="text" id="cst2" name="cst2" placeholder="Opcional">
-                                    <input type="text" id="cst3" name="cst3" placeholder="Opcional">
-                                    <input type="text" id="cst4" name="cst4" placeholder="Opcional">
-                                </div>
+                                    <div class="cst">
+                                        <label for="cst">CST:</label>
+                                        <input type="text" id="cst1" name="cst1" placeholder="Opcional">
+                                        <input type="text" id="cst2" name="cst2" placeholder="Opcional">
+                                        <input type="text" id="cst3" name="cst3" placeholder="Opcional">
+                                        <input type="text" id="cst4" name="cst4" placeholder="Opcional">
+                                    </div>
 
-                                <div class="cfop">
-                                    <label for="cfop">CFOP:</label>
-                                    <input type="text" id="cfop1" name="cfop1" placeholder="Opcional">
-                                    <input type="text" id="cfop2" name="cfop2" placeholder="Opcional">
-                                    <input type="text" id="cfop3" name="cfop3" placeholder="Opcional">
-                                    <input type="text" id="cfop4" name="cfop4" placeholder="Opcional">
+                                    <div class="cfop">
+                                        <label for="cfop">CFOP:</label>
+                                        <input type="text" id="cfop1" name="cfop1" placeholder="Opcional">
+                                        <input type="text" id="cfop2" name="cfop2" placeholder="Opcional">
+                                        <input type="text" id="cfop3" name="cfop3" placeholder="Opcional">
+                                        <input type="text" id="cfop4" name="cfop4" placeholder="Opcional">
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                             <div class="enviar">
                                 <input type="submit" onclick="exibirMensagem()">
                             </div>
                         </form>
-                        
+
                     </div>
 
                 </div>
@@ -344,8 +351,8 @@ if (!isset($_SESSION['turma'])) {
                                 if (cfopSelect) {
                                     cfopSelect.value = data.cfop;
                                 }
-                                if (unidadeSelect && unidadeSelect.value.trim() === '') {
-                                    unidadeSelect.value = 'UN';
+                                if (unidadeSelect) {
+                                    unidadeSelect.value = data.unidade;
                                 }
                             })
                             .catch(error => console.error('Erro:', error));
@@ -359,6 +366,31 @@ if (!isset($_SESSION['turma'])) {
             checkAndUpdateUnitSelect('produto4', 'unidade4');
         });
 
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', function (event) {
+                let camposValidos = true;
+
+                for (let i = 1; i <= 4; i++) {
+                    const produtoInput = document.getElementById(`produto${i}`);
+                    const quantidadeInput = document.getElementById(`quantidade${i}`);
+                    const valorInput = document.getElementById(`valor${i}`);
+
+                    if (produtoInput.value.trim() !== "" && (quantidadeInput.value.trim() === "" || valorInput.value.trim() === "")) {
+                        camposValidos = false;
+                        alert(`Preencha a quantidade e o valor para o produto da linha ${i}`);
+                        event.preventDefault();
+                        break;
+                    }
+                }
+                if (camposValidos) {
+                    return true;
+                }
+            });
+        });
     </script>
 </body>
 
