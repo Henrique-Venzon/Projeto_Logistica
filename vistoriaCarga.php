@@ -474,7 +474,6 @@
                                         <th>Unidade</th>
                                         <th>Quantidade</th>
                                         <th>Valor</th>
-                                        <th>Faltando</th>
                                         <th>Avariado</th>
                                         <th>Total</th>
                                     </tr>
@@ -489,7 +488,6 @@
                                                 style="display:none;" />
                                         </td>
                                         <td><span id="valor1"><?php echo $pedido['valor1']; ?></span></td>
-                                        <td><button type="button" id="editar1" onclick="editarQuantidade(1)">editar</button>
                                         </td>
                                         <td><input type="number" name="avariado1" id="avariado1" min="0"
                                                 max="<?php echo $pedido['quantidade1']; ?>"></td>
@@ -507,7 +505,6 @@
                                                     style="display:none;" />
                                             </td>
                                             <td><span id="valor2"><?php echo $pedido['valor2']; ?></span></td>
-                                            <td><button type="button" id="editar2" onclick="editarQuantidade(2)">editar</button>
                                             </td>
                                             <td><input type="number" name="avariado2" id="avariado2" min="0"
                                                     max="<?php echo $pedido['quantidade2']; ?>"></td>
@@ -526,7 +523,6 @@
                                                     style="display:none;" />
                                             </td>
                                             <td><span id="valor3"><?php echo $pedido['valor3']; ?></span></td>
-                                            <td><button type="button" id="editar3" onclick="editarQuantidade(3)">editar</button>
                                             </td>
                                             <td><input type="number" name="avariado3" id="avariado3" min="0"
                                                     max="<?php echo $pedido['quantidade3']; ?>"></td>
@@ -545,7 +541,6 @@
                                                     style="display:none;" />
                                             </td>
                                             <td><span id="valor4"><?php echo $pedido['valor4']; ?></span></td>
-                                            <td><button type="button" id="editar4" onclick="editarQuantidade(4)">editar</button>
                                             </td>
                                             <td><input type="number" name="avariado4" id="avariado4" min="0"
                                                     max="<?php echo $pedido['quantidade4']; ?>"></td>

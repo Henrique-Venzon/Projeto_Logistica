@@ -79,14 +79,14 @@ $id_carga = $_POST['id_carga'];
                                 $total_picking_pegado = $row_picking_pegado->total_picking_pegado;
 
                                 if ($total_picking == $total_picking_pegado) {
-                                    print '                        <DIV class="buttonEnviar">
+                                    print '<DIV class="buttonEnviar">
                                         <button>Enviar</button>
                                     </DIV>';
                                 } else {
                                     print '<div class="alert alert-warning" role="alert">
                                         O pedido não está totalmente pronto!
                                     </div>';
-                                    print '                        <DIV class="buttonEnviar">
+                                    print '<DIV class="buttonEnviar">
                                         <button type="submit" onclick="return confirm(\'Tem certeza de que deseja enviar o pedido mesmo que não esteja totalmente pronto?\')">Enviar</button>
                                     </DIV>';
                                 }
