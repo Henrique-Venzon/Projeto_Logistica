@@ -231,7 +231,7 @@ if ($result->num_rows > 0) {
 
                                 <label for='placa_veiculo'>Placa do Veículo</label>
                                 <input type='text' id='placa_veiculo' name='placa_veiculo' required>
-
+                                <label for='placa_veiculo'>CNPJ/CPF do motorista</label>
                                 <input type='text' id='cnpj_cpf_transportador' name='cnpj_cpf_transportador' required>
 
                                 <label for='inscricao_estadual_transportador'>Inscrição Estadual</label>
