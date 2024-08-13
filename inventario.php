@@ -26,9 +26,8 @@ if (($_SESSION['tipo_login'] != 'professor')) {
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="css/estiloInicio.css">
+    <link rel="stylesheet" href="css/inventario.css">
     <script src="js/reveal.js" defer></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
@@ -39,12 +38,15 @@ if (($_SESSION['tipo_login'] != 'professor')) {
         <?php
         include 'include/menuLateral.php'
             ?>
-
-        </main<h2>Pesquisa no Estoque</h2>
+<div class="DivDireita">
+<div class="table-inputs">
+        <div class="txt">
+            <h1>Pesquisa no Estoque</h1>
+        </div>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-            <label for="search">Pesquisar (ID, ID Doca, Nome, Quantidade Enviada, Posição):</label>
+            <label for="search">Pesquisar (ID, Nome, Quantidade, Posição):</label>
             <input type="text" id="search" name="search">
-            <input type="submit" value="Pesquisar">
+            <input class="enviar" type="submit" value="Pesquisar">
             <?php
             include_once ('include/conexao.php');
 
@@ -86,6 +88,10 @@ if (($_SESSION['tipo_login'] != 'professor')) {
 
 
             ?>
+</form>
+</div>
+</div>
+
 
     </main>
 
