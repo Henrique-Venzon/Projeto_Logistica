@@ -104,7 +104,7 @@
         top: 0;
         left: 100px;
         padding: 0;
-        min-width: 13rem;
+        min-width: 14rem;
         display: none;
     }
 

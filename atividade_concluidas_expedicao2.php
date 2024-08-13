@@ -19,13 +19,13 @@ $id_carga = $_POST['id_carga'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/amem.svg">
     <meta charset="utf-8">
-    <title><?php $tituloPag = 'Movimentação';
+    <title><?php $tituloPag = 'Atividades';
     echo "$tituloPag"; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/movDocas.css">
+    <link rel="stylesheet" href="css/expedicao2.css">
 </head>
 
 <body>
@@ -35,7 +35,7 @@ $id_carga = $_POST['id_carga'];
         <div class="DivDireita">
             <div class="table-inputs">
                 <div class="txtCont">
-                    <h1>Doca 1</h1>
+                    <h1>Atividades</h1>
                 </div>
                 <div class="flex">
                     <div class="divpegar">

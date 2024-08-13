@@ -25,7 +25,7 @@ $id_carga = $_POST['id_carga'];
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/movDocas.css">
+    <link rel="stylesheet" href="css/expedicao2.css">
 </head>
 
 <body>
@@ -35,7 +35,7 @@ $id_carga = $_POST['id_carga'];
         <div class="DivDireita">
             <div class="table-inputs">
                 <div class="txtCont">
-                    <h1>Doca 1</h1>
+                    <h1>Vistoria e Confirmação</h1>
                 </div>
                 <div class="flex">
                     <div class="divpegar">

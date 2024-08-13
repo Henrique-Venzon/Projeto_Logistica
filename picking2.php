@@ -95,14 +95,15 @@ $id = $_GET['id']
                     </div>
                     <div class="divpegar">
                         <h1 class="pegar">Finalizar</h1>
-                        <form method='post' action='processamento/processamento_expedicao.php'
-                            style="display:inline-block">
-                            <select name="id_doca">
+                        <form method='post' action='processamento/processamento_expedicao.php'>
+                            <div class="doca">
+                            <select class="doca_id" name="id_doca">
                                 <option value="1">Doca 1</option>
                                 <option value="2">Doca 2</option>
                                 <option value="3">Doca 3</option>
                                 <option value="4">Doca 4</option>
                             </select>
+                            </div>
                             <?php
                             $sql_a = "SELECT * FROM picking_pegado where id_carga=$id and id_turma='" . $_SESSION['turma'] . "'";
                             $res = $conn->query($sql_a);

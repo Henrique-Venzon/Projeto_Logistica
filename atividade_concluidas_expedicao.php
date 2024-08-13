@@ -18,7 +18,7 @@ $turma_id=$_SESSION['turma'];
     <meta charset="utf-8">
     <title>
         <?php
-        $tituloPag = 'Expedição';
+        $tituloPag = 'Atividades';
         echo "$tituloPag";
         ?>
     </title>
@@ -41,7 +41,7 @@ $turma_id=$_SESSION['turma'];
         <div class="DivDireita">
             <div class="table-inputs">
                 <div class="text">
-                    <h1>Expedição</h1>
+                    <h1>Atividade Concluídas</h1>
                 </div>
                 <?php
          include_once('include/conexao.php');
