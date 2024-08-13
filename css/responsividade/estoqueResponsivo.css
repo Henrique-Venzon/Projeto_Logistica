@@ -115,7 +115,7 @@
 }
 
 .pesquisa input{
-    font-size: 12px;
+    font-size: 15px;
 }
 .input1{
     margin-top: 5px;
@@ -147,8 +147,8 @@
     flex-wrap: wrap;
 }
 .card{
-    margin: 7px;
-    width: 20%;
+    margin: 5px;
+    width: 28%;
     height: 40px;
     border-radius: 30px;
     background-color: #1c1c1c;
@@ -169,7 +169,7 @@
     font-size: 15px;
 }
 }
-@media only screen and (max-width: 1440px) {
+@media only screen and (min-width: 1440px) {
     .card{
         margin: 10px;
         width: 21%;

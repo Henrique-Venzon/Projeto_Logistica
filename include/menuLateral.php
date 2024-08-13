@@ -213,9 +213,6 @@
             font-size: 20px;
         }
 
-        #sidebar.expand {
-            width: 160px;
-        }
 
         #sidebar {
             width: 80px;
@@ -245,28 +242,6 @@
     @media only screen and (min-width: 601px) and (max-width: 1024px) {}
 
     @media only screen and (min-width: 1025px) and (max-width: 1440px) {}
-
-    .toggle-btn {
-        background-color: transparent;
-        cursor: pointer;
-        border: 0;
-        padding: 0.9rem 1.3rem;
-        align-items: center;
-    }
-
-    .toggle-btn i {
-        margin-left: 17px;
-        font-size: 34px;
-        color: white;
-    }
-
-    i {
-        font-size: 29.5px;
-    }
-
-    a.sidebar-link {
-        font-size: 1.1rem;
-    }
 
     @media only screen and (min-width: 1440px) {
         .toggle-btn {
