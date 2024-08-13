@@ -99,33 +99,47 @@ if ($result->num_rows > 0) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-    <script>
-        function validateForm() {
-            let form = document.getElementById('solicitacaoForm');
-            let produto2 = document.getElementById('produto2').value.trim();
-            let quantidade2 = document.getElementById('quantidade2').value.trim();
-            let produto3 = document.getElementById('produto3').value.trim();
-            let quantidade3 = document.getElementById('quantidade3').value.trim();
-            let produto4 = document.getElementById('produto4').value.trim();
-            let quantidade4 = document.getElementById('quantidade4').value.trim();
+        <script>
+    function validateForm() {
+        let form = document.getElementById('solicitacaoForm');
+        let produto = document.getElementById('produto').value;
+        let produto2 = document.getElementById('produto2').value;
+        let produto3 = document.getElementById('produto3').value;
+        let produto4 = document.getElementById('produto4').value;
+        let quantidade2 = document.getElementById('quantidade2').value;
+        let quantidade3 = document.getElementById('quantidade3').value;
+        let quantidade4 = document.getElementById('quantidade4').value;
 
-            if ((produto2 && !quantidade2) || (!produto2 && quantidade2)) {
-                alert("Se um produto opcional for selecionado, a quantidade correspondente deve ser preenchida e vice-versa.");
-                return false;
-            }
-            if ((produto3 && !quantidade3) || (!produto3 && quantidade3)) {
-                alert("Se um produto opcional for selecionado, a quantidade correspondente deve ser preenchida e vice-versa.");
-                return false;
-            }
-            if ((produto4 && !quantidade4) || (!produto4 && quantidade4)) {
-                alert("Se um produto opcional for selecionado, a quantidade correspondente deve ser preenchida e vice-versa.");
-                return false;
-            }
-            return true;
+        // Verifica se os produtos opcionais foram selecionados sem quantidade correspondente
+        if ((produto2 && !quantidade2) || (!produto2 && quantidade2)) {
+            alert("Se um produto opcional for selecionado, a quantidade correspondente deve ser preenchida e vice-versa.");
+            return false;
+        }
+        if ((produto3 && !quantidade3) || (!produto3 && quantidade3)) {
+            alert("Se um produto opcional for selecionado, a quantidade correspondente deve ser preenchida e vice-versa.");
+            return false;
+        }
+        if ((produto4 && !quantidade4) || (!produto4 && quantidade4)) {
+            alert("Se um produto opcional for selecionado, a quantidade correspondente deve ser preenchida e vice-versa.");
+            return false;
         }
 
-        document.getElementById('solicitacaoForm').onsubmit = validateForm;
-    </script>
+        // Verifica se o mesmo produto (diferente de '') foi selecionado em mais de um select
+        let produtosSelecionados = [produto, produto2, produto3, produto4].filter(p => p !== '');
+        let produtosUnicos = produtosSelecionados.filter((item, index) => {
+            return produtosSelecionados.indexOf(item) === index;
+        });
+
+        if (produtosUnicos.length !== produtosSelecionados.length) {
+            alert("Você não pode selecionar o mesmo produto duas vezes.");
+            return false;
+        }
+
+        return true;
+    }
+
+    document.getElementById('solicitacaoForm').onsubmit = validateForm;
+</script>
 </body>
 </html>
 
