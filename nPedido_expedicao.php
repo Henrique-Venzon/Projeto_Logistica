@@ -52,7 +52,7 @@ if (!isset($_SESSION['turma'])) {
                         include_once ('include/conexao.php');
 
                         if (isset($npedido)) {
-                            $sql = "SELECT *  FROM nota_fiscal WHERE id = $npedido";
+                            $sql = "SELECT *  FROM nota_fiscal_expedicao WHERE id = $npedido";
                             $resultado = $conexao->query($sql);
 
                             echo '<table>';

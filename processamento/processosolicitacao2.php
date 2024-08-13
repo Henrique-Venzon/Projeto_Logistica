@@ -13,48 +13,79 @@ if (isset($_POST['id_pedido'], $_POST['quantidadeS'], $_POST['produto'], $_POST[
     $quantidadeS = $_POST['quantidadeS'];
     $produto = $_POST['produto'];
     $posicao = $_POST['posicao'];
-    $quantidade = $_POST['quantidade'];
+    $quantidade = $_POST['quantidade']; //quantidade que
+
+    // Array para controlar a quantidade já retirada de cada produto/pedido
+    $quantidades_retiradas = array();
 
     for ($i = 0; $i < count($produto); $i++) {
         $current_id_pedido = $id_pedido[$i];
-        $current_quantidadeS = $quantidadeS[$i];
+        $current_quantidadeS = $quantidadeS[$i]; // Quantidade total solicitada
         $current_produto = $produto[$i];
         $current_posicao = $posicao[$i];
-        $current_quantidade = $quantidade[$i];
+        $current_quantidade = $quantidade[$i]; // Quantidade a retirar desta posição
 
         // Verifica se já existe uma linha com o mesmo id_pedido, produto e posicao
         $check_stmt = $conn->prepare("SELECT id, quantidade FROM picking WHERE id_pedido = ? AND produto = ? AND posicao = ?");
-        $check_stmt->bind_param("iss", $current_id_pedido, $current_produto, $current_posicao); // "iss" -> id_pedido é int, produto é string, posicao é string
+        $check_stmt->bind_param("iss", $current_id_pedido, $current_produto, $current_posicao);
         $check_stmt->execute();
         $result = $check_stmt->get_result();
 
-        if ($result->num_rows > 0) {
-            // Se existir, atualiza a linha existente
-            $row = $result->fetch_assoc();
-            $new_quantidade = $row['quantidade'] + $current_quantidade;
-
-
-            $update_stmt = $conn->prepare("UPDATE picking SET quantidade_solicitada = ?, quantidade = ?, id_turma = ? WHERE id_pedido = ? AND produto = ? AND posicao = ?");
-            $update_stmt->bind_param("iiisss", $current_quantidadeS, $new_quantidade, $turma, $current_id_pedido, $current_produto, $current_posicao);
-            $update_stmt->execute();
-            $update_stmt->close();
-        } else {
-            // Se não existir, insere uma nova linha
-            $stmt = $conn->prepare("INSERT INTO picking (id_pedido, quantidade_solicitada, produto, posicao, quantidade, id_turma) VALUES (?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("iissii", $current_id_pedido, $current_quantidadeS, $current_produto, $current_posicao, $current_quantidade, $turma);
-            $stmt->execute();
-            $stmt->close();
+        // Calcula a quantidade restante a ser retirada para esta linha da solicitação
+        $quantidade_restante_na_linha = $current_quantidadeS; // Inicializa com a quantidade total da linha
+        if (isset($quantidades_retiradas[$current_id_pedido][$current_produto])) {
+            $quantidade_restante_na_linha -= $quantidades_retiradas[$current_id_pedido][$current_produto];
         }
 
-        // Atualiza a tabela solicitacao
-        for ($j = 1; $j <= 4; $j++) {
-            $produto_field = ($j == 1) ? "produto" : "produto" . $j;
-            $quantidade_field = ($j == 1) ? "quantidade" : "quantidade" . $j;
+        // Verifica se ainda há quantidade a ser retirada DESTA LINHA
+        if ($quantidade_restante_na_linha > 0) {
+            // Ajusta a quantidade a ser retirada, se necessário
+            $current_quantidade = min($current_quantidade, $quantidade_restante_na_linha);
 
-            $update_solicitacao_stmt = $conn->prepare("UPDATE solicitacao SET $quantidade_field = $quantidade_field - ? WHERE id = ? AND $produto_field = ?");
-            $update_solicitacao_stmt->bind_param("iis", $current_quantidade, $current_id_pedido, $current_produto); // "iis" -> current_quantidade é int, current_id_pedido é int, current_produto é string
-            $update_solicitacao_stmt->execute();
-            $update_solicitacao_stmt->close();
+            if ($result->num_rows > 0) {
+                // Se existir, atualiza a linha existente
+                $row = $result->fetch_assoc();
+                $new_quantidade = $row['quantidade'] + $current_quantidade;
+
+                $update_stmt = $conn->prepare("UPDATE picking SET quantidade_solicitada = ?, quantidade = ?, id_turma = ? WHERE id_pedido = ? AND produto = ? AND posicao = ?");
+                $update_stmt->bind_param("iiisss", $current_quantidadeS, $new_quantidade, $turma, $current_id_pedido, $current_produto, $current_posicao);
+                $update_stmt->execute();
+                $update_stmt->close();
+            } else {
+                // Se não existir, insere uma nova linha
+                $stmt = $conn->prepare("INSERT INTO picking (id_pedido, quantidade_solicitada, produto, posicao, quantidade, id_turma) VALUES (?, ?, ?, ?, ?, ?)");
+                $stmt->bind_param("iissii", $current_id_pedido, $current_quantidadeS, $current_produto, $current_posicao, $current_quantidade, $turma);
+                $stmt->execute();
+                $stmt->close();
+            }
+
+            // Atualiza a quantidade já retirada
+            if (!isset($quantidades_retiradas[$current_id_pedido][$current_produto])) {
+                $quantidades_retiradas[$current_id_pedido][$current_produto] = 0;
+            }
+            $quantidades_retiradas[$current_id_pedido][$current_produto] += $current_quantidade;
+
+            // Atualiza a tabela solicitacao, decrementando APENAS a quantidade retirada nesta iteração
+            // Busca a linha correspondente na tabela solicitacao
+            $sql_solicitacao = "SELECT * FROM `solicitacao` WHERE id_turma='$turma' AND `id`=" . $current_id_pedido;
+            $res_solicitacao = $conn->query($sql_solicitacao);
+            $row_solicitacao = $res_solicitacao->fetch_object();
+
+            for ($j = 1; $j <= 4; $j++) {
+                $produto_field = ($j == 1) ? "produto" : "produto" . $j;
+                $quantidade_field = ($j == 1) ? "quantidade" : "quantidade" . $j;
+
+                // Verifica se o produto da linha atual corresponde ao produto da iteração
+                if ($current_produto == $row_solicitacao->$produto_field) {
+                    $update_solicitacao_stmt = $conn->prepare("UPDATE solicitacao SET $quantidade_field = $quantidade_field - ? WHERE id = ? AND $produto_field = ?");
+                    $update_solicitacao_stmt->bind_param("iis", $current_quantidade, $current_id_pedido, $current_produto);
+                    $update_solicitacao_stmt->execute();
+                    $update_solicitacao_stmt->close();
+
+                    // Sai do loop após atualizar a quantidade correta
+                    break;
+                }
+            }
         }
     }
 

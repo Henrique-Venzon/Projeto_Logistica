@@ -50,7 +50,7 @@ $turma_id=$_SESSION['turma'];
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                $sql = "SELECT DISTINCT id_pedido FROM expedicao where id_turma='$turma_id' ORDER BY id_pedido ASC";
+                $sql = "SELECT DISTINCT id_pedido FROM atividade_concluida_expedicao where id_turma='$turma_id' ORDER BY id_pedido ASC";
 
                 $res = $conn->query($sql);
 
@@ -69,7 +69,7 @@ $turma_id=$_SESSION['turma'];
                             print "<tr>";
                             print "<td>" . $row->id_pedido . "</td>";
                             print "<td>";
-                            print "<form action='expedicao2.php' method='post'>";
+                            print "<form action='atividade_concluidas_expedicao2.php' method='post'>";
                             print "<input type='hidden' name='id_carga' value='" . $row->id_pedido . "'>";
                             print "<button type='submit'><span>Ver</span></button>";
                             print "</form>";

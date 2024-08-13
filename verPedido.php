@@ -67,6 +67,7 @@ if($qtd > 0){
             print "<th class=\"fechar\">Fechar Pedido</th>";
             print "<th>Ver Pedido</th>";
             print "<th>Arrumar Nota Fiscal</th>";
+            print "<th>Modificar Nota Fiscal</th>";
             print "</tr>";
     
         while($row = $res->fetch_object()){
@@ -90,15 +91,31 @@ if($qtd > 0){
             print"</form>";
             print "</td>"; 
             print "<td>";
-            print "<form action='nPedido.php' method='post'>";
-            print "<input type='hidden' name='npedido' value='" . $row->npedido . "'>";
+            print "<form action='nPedido.php' method='get'>";
+
+            $sql_nota = "SELECT id FROM nota_fiscal WHERE id_atividade = " . $row->id;
+            $result_nota = $conn->query($sql_nota);
+
+            if ($result_nota->num_rows > 0) {
+                $id_nota_fiscal = $result_nota->fetch_assoc()['id'];
+            } else {
+                $id_nota_fiscal = null;
+            }
+
+            print "<input type='hidden' name='npedido' value='" . $id_nota_fiscal . "'>";
             print "<button class=\"reset\" type='submit'><span>Ver</span> </button>";
             print "</form>";
             print"</td>"; 
             print "<td>";
             print "<form action='criandoNotaFiscal.php' method='get'>";
             print "<input type='hidden' name='npedido' value='" . $row->npedido . "'>";
-            print "<button class=\"reset\" type='submit'><span>Nota Fiscal</span> </button>";
+            print "<button class=\"reset\" type='submit'><span>Arrumar</span> </button>";
+            print "</form>";
+            print"</td>"; 
+            print "<td>";
+            print "<form action='modificandoNotaFiscal.php' method='get'>";
+            print "<input type='hidden' name='npedido' value='" . $row->id . "'>";
+            print "<button class=\"reset\" type='submit'><span>Modificar</span> </button>";
             print "</form>";
             print"</td>"; 
 

@@ -39,50 +39,56 @@ if (!isset($_SESSION['id'])) {
                     <h1>Picking</h1>
                 </div>
                 <?php
-              include_once('include/conexao.php');
+                include_once ('include/conexao.php');
 
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                    // Selecionando apenas o ID do picking
-                    $sql_after = "SELECT id,id_pedido FROM picking where id_turma='".$_SESSION['turma'] ."'";
-                    $res = $conn->query($sql_after);
-                
-                    $sql_after2 = "SELECT id,id_pedido FROM picking_pegado where id_turma='".$_SESSION['turma'] ."'";
-                    $res2 = $conn->query($sql_after2);
-                
-                    // Buscar todos os resultados como arrays associativos
-                    $resultados = array_merge($res->fetch_all(MYSQLI_ASSOC), $res2->fetch_all(MYSQLI_ASSOC));
-                
-                    if (!empty($resultados)) { // Verificar se o array combinado está vazio
-                        echo "<div class=\"tabela-scroll\">";
-                        echo "<table class='table'>";
-                        echo "<tr>";
-                        echo "<th>Nº Solicitação</th>";
-                        echo "<th style=\"border-right:none;\">Ver Picking</th>";
-                        echo "</tr>";
-                
-                        // Iterar sobre o array combinado
-                        foreach ($resultados as $row) {
-                            $id = $row['id'];
-                            $id_pedido = $row['id_pedido'];
+                // Usando UNION para combinar as consultas e DISTINCT para remover duplicatas
+                $sql_after = "SELECT id_pedido, id FROM picking WHERE id_turma='" . $_SESSION['turma'] . "' 
+                              UNION 
+                              SELECT id_pedido, id FROM picking_pegado WHERE id_turma='" . $_SESSION['turma'] . "'
+                              ORDER BY id_pedido";
+
+                $res = $conn->query($sql_after);
+
+                if ($res->num_rows > 0) {
+                    echo "<div class=\"tabela-scroll\">";
+                    echo "<table class='table'>";
+                    echo "<tr>";
+                    echo "<th>Nº Solicitação</th>";
+                    echo "<th style=\"border-right:none;\">Ver Picking</th>";
+                    echo "</tr>";
+
+                    $ids_unicos = array(); // Array para armazenar os IDs únicos
+
+                    while ($row = $res->fetch_assoc()) {
+                        $id = $row['id'];
+                        $id_pedido = $row['id_pedido'];
+
+                        // Verifica se o ID já foi adicionado
+                        if (!in_array($id_pedido, $ids_unicos)) {
+                            $ids_unicos[] = $id_pedido; // Adiciona o ID ao array de IDs únicos
+
                             echo "<tr>";
-                            echo "<td>" . $id . "</td>";
+                            echo "<td>" . $id_pedido . "</td>";
                             echo "<td>";
                             echo "<form method='get' action='picking2.php'>";
                             echo "<button class=\"reset\" type=\"submit\"><span>ver</span></button>";
-                            echo "<input name='id' type='hidden' value='" . $id_pedido . "'>"; 
+                            echo "<input name='id' type='hidden' value='" . $id_pedido . "'>";
                             echo "</form>";
                             echo "</td>";
                             echo "</tr>";
                         }
-                
-                        echo "</table>";
-                        echo "</div>";
-                    } else {
-                        echo "<p class='alert alert-danger'>Não encontrou nenhuma solicitação feita.</p>";
                     }
+
+                    echo "</table>";
+                    echo "</div>";
+                } else {
+                    echo "<p class='alert alert-danger'>Não encontrou nenhuma solicitação feita.</p>";
+                }
+
                 $conn->close();
                 ?>
             </div>

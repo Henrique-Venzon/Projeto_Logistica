@@ -196,10 +196,12 @@
         margin-left: 6px;
         margin-right: 3px;
     }
-    .fa-hands-holding{
+
+    .fa-hands-holding {
         margin-left: 3px;
     }
-    .fa-boxes-stacked{
+
+    .fa-boxes-stacked {
         margin-left: 5px;
     }
 
@@ -219,10 +221,11 @@
         #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
             left: 80px;
         }
-        .sidebar-logo h1{
-        font-size: 15px;
-        margin-left: -10%;
-    }
+
+        .sidebar-logo h1 {
+            font-size: 15px;
+            margin-left: -10%;
+        }
 
     }
 
@@ -240,8 +243,29 @@
 
     @media only screen and (min-width: 1025px) and (max-width: 1440px) {}
 
+    .toggle-btn {
+        background-color: transparent;
+        cursor: pointer;
+        border: 0;
+        padding: 0.9rem 1.3rem;
+        align-items: center;
+    }
 
-    @media only screen and (min-width: 1441px) {
+    .toggle-btn i {
+        margin-left: 17px;
+        font-size: 34px;
+        color: white;
+    }
+
+    i {
+        font-size: 29.5px;
+    }
+
+    a.sidebar-link {
+        font-size: 1.1rem;
+    }
+
+    @media only screen and (min-width: 1440px) {
         .toggle-btn {
             background-color: transparent;
             cursor: pointer;
@@ -252,12 +276,12 @@
 
         .toggle-btn i {
             margin-left: 17px;
-            font-size: 37px;
+            font-size: 34px;
             color: white;
         }
 
         i {
-            font-size: 32px;
+            font-size: 29.5px;
         }
 
         a.sidebar-link {
@@ -335,6 +359,10 @@
                             <a id="linkContainer" style="margin-bottom: -1.4px;" href="container.php"
                                 class="sidebar-link">Container</a>
                         </li>
+                        <li class="sidebar-item">
+                            <a id="linkContainer" style="margin-bottom: -1.4px;" href="notaF.php"
+                                class="sidebar-link">Nota Fiscal</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="sidebar-item">
@@ -375,10 +403,13 @@
                         <li class="sidebar-item">
                             <a style="margin-top: -1px;" href="cancelamentos-Solicitacao.php" class="sidebar-link">Cancelamentos</a>
                         </li>
+                       <li class="sidebar-item">
+                            <a style="margin-top: -1px;" href="atividade_concluidas_expedicao.php" class="sidebar-link">Atividades Concluidas</a>
+                        </li>
                     </ul>
                 </li>'
                     ?>
-                    <?php if ($_SESSION['tipo_login'] == 'aluno')
+            <?php if ($_SESSION['tipo_login'] == 'aluno')
                 echo '
                 <li class="sidebar-item">
                     <a href="verSolicitacao.php" class="sidebar-link">
@@ -399,19 +430,13 @@
                         <span class="sidebar-text" style="margin-left:10px;">Expedição</span>
                     </a>
                 </li>
-
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="fa-solid fa-clipboard"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Relatórios</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="notaf.php" class="sidebar-link">
+                    <a href="notaf_expedicao.php" class="sidebar-link">
                         <i class="fa-solid fa-receipt"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal</span>
+                        <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal Expedição</span>
                     </a>
                 </li>
+
                 <li class="sidebar-item">
                     <a href="inventario.php" class="sidebar-link">
                         <i class="fa-solid fa-boxes-stacked"></i>

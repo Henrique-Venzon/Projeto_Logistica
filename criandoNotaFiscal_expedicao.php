@@ -110,7 +110,7 @@ if ($result->num_rows > 0) {
                                 <input type='text' id='chave_acesso' name='chave_acesso' required>
 
                                 <label for='informacao_interna'>Fornecedor</label>
-                                <input type='text' id='informacao_interna' name='informacao_interna'>
+                                <input type='text' id='informacao_interna' name='informacao_interna' required>
 
                                 <label for='nome_razao_social'>Nome/Razão Social</label>
                                 <input type='text' id='nome_razao_social' name='nome_razao_social' required>
@@ -133,13 +133,13 @@ if ($result->num_rows > 0) {
                                 <label for='inscricao_estadual_subs_tributaria'>Inscrição Estadual
                                     Sub.Tributária</label>
                                 <input type='text' id='inscricao_estadual_subs_tributaria'
-                                    name='inscricao_estadual_subs_tributaria'>
+                                    name='inscricao_estadual_subs_tributaria' required>
 
                                 <label for='natureza_operacao'>Natureza da Operação</label>
                                 <input type='text' id='natureza_operacao' name='natureza_operacao' required>
 
                                 <label for='inscricao_estadual'>Inscrição Estadual</label>
-                                <input type='text' id='inscricao_estadual' name='inscricao_estadual'>
+                                <input type='text' id='inscricao_estadual' name='inscricao_estadual' required>
                             </div>
 
                             <!-- Identificação do Remetente/Destinatário Section -->
@@ -158,9 +158,12 @@ if ($result->num_rows > 0) {
                                 <label for='telefone_remetente'>Telefone</label>
                                 <input type='text' id='telefone_remetente' name='telefone_remetente' required>
 
+                                <label for='telefone_remetente'>Empresa</label>
+                                <input type='text' id='empresa_destinatario' name='empresa_destinatario' required>
+
                                 <label for='inscricao_estadual_remetente'>Inscrição Estadual</label>
-                                <input type='text' id='inscricao_estadual_remetente'
-                                    name='inscricao_estadual_remetente'>
+                                <input type='text' id='inscricao_estadual_remetente' name='inscricao_estadual_remetente'
+                                    required>
 
                                 <label for='data_emissao'>Data de Emissão</label>
                                 <input type='date' id='data_emissao' name='data_emissao' required>
@@ -189,26 +192,27 @@ if ($result->num_rows > 0) {
                                 <input type='number' step='0.01' id='valor_icms' name='valor_icms' required>
 
                                 <label for='base_calculo_icms_st'>Base de Cálculo de ICMS ST</label>
-                                <input type='number' step='0.01' id='base_calculo_icms_st' name='base_calculo_icms_st'>
+                                <input type='number' step='0.01' id='base_calculo_icms_st' name='base_calculo_icms_st'
+                                    required>
 
                                 <label for='valor_icms_substituicao'>Valor do ICMS Substituição</label>
                                 <input type='number' step='0.01' id='valor_icms_substituicao'
-                                    name='valor_icms_substituicao'>
+                                    name='valor_icms_substituicao' required>
 
                                 <label for='valor_frete'>Valor do Frete</label>
-                                <input type='number' step='0.01' id='valor_frete' name='valor_frete'>
+                                <input type='number' step='0.01' id='valor_frete' name='valor_frete' required>
 
                                 <label for='valor_seguro'>Valor do Seguro</label>
-                                <input type='number' step='0.01' id='valor_seguro' name='valor_seguro'>
+                                <input type='number' step='0.01' id='valor_seguro' name='valor_seguro'>required
 
                                 <label for='desconto'>Desconto</label>
-                                <input type='number' step='0.01' id='desconto' name='desconto'>
+                                <input type='number' step='0.01' id='desconto' name='desconto' required>
 
                                 <label for='outras_despesas'>Outras Despesas Acessórias</label>
-                                <input type='number' step='0.01' id='outras_despesas' name='outras_despesas'>
+                                <input type='number' step='0.01' id='outras_despesas' name='outras_despesas' required>
 
                                 <label for='valor_ipi'>Valor do IPI</label>
-                                <input type='number' step='0.01' id='valor_ipi' name='valor_ipi'>
+                                <input type='number' step='0.01' id='valor_ipi' name='valor_ipi' required>
 
                             </div>
 
@@ -217,95 +221,158 @@ if ($result->num_rows > 0) {
                                 <h2>Transportador/Volumes Transportados</h2>
                                 <label for='nome_razao_social_transportador'>Nome/Razão Social</label>
                                 <input type='text' id='nome_razao_social_transportador'
-                                    name='nome_razao_social_transportador'>
+                                    name='nome_razao_social_transportador' required>
 
                                 <label for='frete_por_conta'>Frete por Conta</label>
-                                <input type='text' id='frete_por_conta' name='frete_por_conta'>
+                                <input type='text' id='frete_por_conta' name='frete_por_conta' required>
 
                                 <label for='codigo_antt'>Código ANTT</label>
-                                <input type='text' id='codigo_antt' name='codigo_antt'>
+                                <input type='text' id='codigo_antt' name='codigo_antt' required>
 
                                 <label for='placa_veiculo'>Placa do Veículo</label>
-                                <input type='text' id='placa_veiculo' name='placa_veiculo'>
+                                <input type='text' id='placa_veiculo' name='placa_veiculo' required>
 
-                                <label for='cnpj_cpf_transportador'>CNPJ/CPF</label>
-                                <input type='text' id='cnpj_cpf_transportador' name='cnpj_cpf_transportador'>
+                                <input type='text' id='cnpj_cpf_transportador' name='cnpj_cpf_transportador' required>
 
                                 <label for='inscricao_estadual_transportador'>Inscrição Estadual</label>
                                 <input type='text' id='inscricao_estadual_transportador'
-                                    name='inscricao_estadual_transportador'>
+                                    name='inscricao_estadual_transportador' required>
 
                                 <label for='quantidade'>Quantidade de produtos carregados</label>
                                 <input type='number' id='quantidade' name='quantidade' value="<?php $quantidadeTotal = $quantidade1 + $quantidade2 + $quantidade3 + $quantidade4;
-                                echo $quantidadeTotal ?>">
+                                echo $quantidadeTotal ?>" required>
 
                                 <label for='especie'>Espécie</label>
-                                <input type='text' id='especie' name='especie'>
+                                <input type='text' id='especie' name='especie' required>
 
                                 <label for='marca'>Marca</label>
-                                <input type='text' id='marca' name='marca'>
+                                <input type='text' id='marca' name='marca' required>
 
                                 <label for='numeracao'>Numeração</label>
-                                <input type='text' id='numeracao' name='numeracao'>
+                                <input type='text' id='numeracao' name='numeracao' required>
 
                                 <label for='peso_bruto'>Peso Bruto</label>
-                                <input type='number' step='0.01' id='peso_bruto' name='peso_bruto'>
+                                <input type='number' step='0.01' id='peso_bruto' name='peso_bruto' required>
 
                                 <label for='peso_liquido'>Peso Líquido</label>
-                                <input type='number' step='0.01' id='peso_liquido' name='peso_liquido'>
+                                <input type='number' step='0.01' id='peso_liquido' name='peso_liquido' required>
                             </div>
                             <?php
 
-                            // Obtém o ID da solicitação via GET
-                            $id_solicitacao = isset($_GET['id']) ? $_GET['id'] : null;
+                            $sql = "SELECT 
+                                s.produto AS produto1, 
+                                s.produto2 AS produto2, 
+                                s.produto3 AS produto3, 
+                                s.produto4 AS produto4, 
+                                s.quantidade AS quantidade1, 
+                                s.quantidade2 AS quantidade2, 
+                                s.quantidade3 AS quantidade3, 
+                                s.quantidade4 AS quantidade4,
+                                p1.ncm AS ncm1,
+                                p1.cst AS cst1,
+                                p1.cfop AS cfop1,
+                                p1.unidade AS unidade1,
+                                p1.preco AS valor1,
+                                p2.ncm AS ncm2,
+                                p2.cst AS cst2,
+                                p2.cfop AS cfop2,
+                                p2.unidade AS unidade2,
+                                p2.preco AS valor2,
+                                p3.ncm AS ncm3,
+                                p3.cst AS cst3,
+                                p3.cfop AS cfop3,
+                                p3.unidade AS unidade3,
+                                p3.preco AS valor3,
+                                p4.ncm AS ncm4,
+                                p4.cst AS cst4,
+                                p4.cfop AS cfop4,
+                                p4.unidade AS unidade4,
+                                p4.preco AS valor4
+                            FROM solicitacao s
+                            LEFT JOIN produto p1 ON s.produto = p1.nome_produto
+                            LEFT JOIN produto p2 ON s.produto2 = p2.nome_produto
+                            LEFT JOIN produto p3 ON s.produto3 = p3.nome_produto
+                            LEFT JOIN produto p4 ON s.produto4 = p4.nome_produto
+                            WHERE s.id = ?";
 
-                            // Variáveis para armazenar os dados dos produtos
-                            
-                            if ($id_solicitacao) {
-                                // Consulta SQL para buscar os produtos da solicitação
-                                $sql = "SELECT * FROM solicitacao WHERE id = ?";
-                                $stmt = $conn->prepare($sql);
-                                $stmt->bind_param("i", $id_solicitacao);
-                                $stmt->execute();
-                                $result = $stmt->get_result();
+                            $stmt = $conn->prepare($sql);
+                            $stmt->bind_param("i", $id);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
 
-                                if ($result->num_rows > 0) {
-                                    $row = $result->fetch_assoc();
+                            // Inicializando as variáveis com valores padrão
+                            $produto1 = $produto2 = $produto3 = $produto4 = '';
+                            $unidade1 = $unidade2 = $unidade3 = $unidade4 = 'UN';
+                            $quantidade1 = 0;
+                            $quantidade2 = 0;
+                            $quantidade3 = 0;
+                            $quantidade4 = 0;
+                            $valor1 = 0.00; 
+                            $valor2 = 0.00; 
+                            $valor3 = 0.00;
+                            $valor4 = 0.00;
+                            $ncm1 = 0;
+                            $ncm2 = 0;
+                            $ncm3 = 0;
+                            $ncm4 = 0;
+                            $cst1 = 0;
+                            $cst2 = 0;
+                            $cst3 = 0;
+                            $cst4 = 0;
+                            $cfop1 = 0;
+                            $cfop2 = 0;
+                            $cfop3 = 0;
+                            $cfop4 = 0;
 
-                                    // Loop pelos 4 possíveis produtos
-                                    for ($i = 1; $i <= 4; $i++) {
-                                        // Verifica se o produto existe na solicitação
-                                        if (!empty($row['produto' . $i])) {
-                                            $nomeProduto = $row['produto' . $i];
+                            // Verificando se há resultados
+                            if ($result->num_rows > 0) {
+                                // Pegando o resultado como um array associativo
+                                $row = $result->fetch_assoc();
 
-                                            // Consulta SQL para buscar informações do produto na tabela 'produtos'
-                                            $sqlProduto = "SELECT * FROM produtos WHERE nome_produto = ?";
-                                            $stmtProduto = $conn->prepare($sqlProduto);
-                                            $stmtProduto->bind_param("s", $nomeProduto);
-                                            $stmtProduto->execute();
-                                            $resultProduto = $stmtProduto->get_result();
+                                // Atribuindo os valores às variáveis
+                                $produto1 = $row['produto1'];
+                                $produto2 = $row['produto2'] ? $row['produto2'] : '';;
+                                $produto3 = $row['produto3'] ? $row['produto3'] : '';
+                                $produto4 = $row['produto4'] ? $row['produto4'] : '';;
 
-                                            if ($resultProduto->num_rows > 0) {
-                                                $rowProduto = $resultProduto->fetch_assoc();
+                                $quantidade1 = $row['quantidade1'];
+                                $quantidade2 = $row['quantidade2'] ? $row['quantidade2'] : 0;
+                                $quantidade3 = $row['quantidade3'] ? $row['quantidade3'] : 0;
+                                $quantidade4 = $row['quantidade4'] ? $row['quantidade4'] : 0;
 
-                                                // Atribui os valores às variáveis correspondentes
-                                                ${"produto" . $i} = $rowProduto['nome_produto'];
-                                                ${"ncm" . $i} = $rowProduto['ncm_sh'];
-                                                ${"cst" . $i} = $rowProduto['cst'];
-                                                ${"cfop" . $i} = $rowProduto['cfop'];
-                                                ${"unidade" . $i} = $rowProduto['unidade'];
-                                                ${"valor" . $i} = $rowProduto['preco'];
-                                                ${"quantidade" . $i} = $row['quantidade' . $i];
-                                                ${"total" . $i} = ${"quantidade" . $i} * ${"valor" . $i};
-                                            }
+                                $ncm1 = $row['ncm1'] ? $row['ncm1'] : 0;
+                                $ncm2 = $row['ncm2'] ? $row['ncm2'] : 0;
+                                $ncm3 = $row['ncm3'] ? $row['ncm3'] : 0;
+                                $ncm4 = $row['ncm4'] ? $row['ncm4'] : 0;
 
-                                            $stmtProduto->close();
-                                        }
-                                    }
-                                } else {
-                                    echo "Solicitação não encontrada.";
-                                }
+                                $cst1 = $row['cst1'] ? $row['cst1'] : 0;
+                                $cst2 = $row['cst2'] ? $row['cst2'] : 0;
+                                $cst3 = $row['cst3'] ? $row['cst3'] : 0;
+                                $cst4 = $row['cst4'] ? $row['cst4'] : 0;
+
+                                $cfop1 = $row['cfop1'] ? $row['cfop1'] : 0;
+                                $cfop2 = $row['cfop2'] ? $row['cfop2'] : 0;
+                                $cfop3 = $row['cfop3'] ? $row['cfop3'] : 0;
+                                $cfop4 = $row['cfop4'] ? $row['cfop4'] : 0;
+
+                                $unidade1 = $row['unidade1'] ? $row['unidade1'] : '';
+                                $unidade2 = $row['unidade2'] ? $row['unidade2'] : '';
+                                $unidade3 = $row['unidade3'] ? $row['unidade3'] : '';
+                                $unidade4 = $row['unidade4'] ? $row['unidade4'] : '';
+
+                                $valor1 = $row['valor1'];
+                                $valor2 = $row['valor2']? $row['valor2'] : 0;
+                                $valor3 = $row['valor3']? $row['valor3'] : 0;
+                                $valor4 = $row['valor4']? $row['valor4'] : 0;
+
+
+
+                            } else {
+                                echo 'Nenhum resultado encontrado';
                             }
+
+                            $stmt->close();
+                            $conn->close();
                             ?>
                             <!-- Dados do Produto/Serviço Section -->
                             <div class='section'>
@@ -433,13 +500,15 @@ if ($result->num_rows > 0) {
                             <div class='section'>
                                 <h2>Cálculo do ISSQN</h2>
                                 <label for='inscricao_municipal'>Inscrição Municipal</label>
-                                <input type='text' id='inscricao_municipal' name='inscricao_municipal'>
+                                <input type='text' id='inscricao_municipal' name='inscricao_municipal' required>
 
                                 <label for='valor_total_servicos'>Valor Total dos Serviços</label>
-                                <input type='number' step='0.01' id='valor_total_servicos' name='valor_total_servicos'>
+                                <input type='number' step='0.01' id='valor_total_servicos' name='valor_total_servicos'
+                                    required>
 
                                 <label for='base_calculo_issqn'>Base de Cálculo do ISSQN (%)</label>
-                                <input type='number' step='0.01' id='base_calculo_issqn' name='base_calculo_issqn'>
+                                <input type='number' step='0.01' id='base_calculo_issqn' name='base_calculo_issqn'
+                                    required>
                             </div>
 
 

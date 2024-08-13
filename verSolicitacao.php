@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                $sql_after = "SELECT id FROM solicitacao WHERE id_turma = '" . $_SESSION['turma'] . "' ORDER BY id ASC";
+                $sql_after = "SELECT DISTINCT id FROM solicitacao WHERE id_turma = '" . $_SESSION['turma'] . "' ORDER BY id ASC";
                 $res = $conn->query($sql_after);
                 $qtd = $res->num_rows;
 

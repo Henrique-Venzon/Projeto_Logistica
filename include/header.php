@@ -118,7 +118,12 @@
 }
    
   }
-  @media only screen and (min-width: 1441px) {
+  @media only screen and (min-width: 1440px) {
+    .logo img{
+    margin-left: 9%;
+    height: 55px;
+    width: 55px;
+}
   }
   
   
