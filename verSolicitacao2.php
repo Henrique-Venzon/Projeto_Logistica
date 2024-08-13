@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="DivDireita">
             <div class="table-inputs">
                 <div class="txtCont">
-                    <h1>Doca 1</h1>
+                    <h1>Solicitção</h1>
                 </div>
                 <div class="flex">
                     <div class="divpegar">

@@ -167,7 +167,6 @@ input{
       max-height: 64vh; 
       overflow-y: auto; 
         outline: 1px solid #747474;
-        width: 500px;
       }
       
 }

@@ -44,7 +44,6 @@ if (!isset($_SESSION['turma'])) {
             <div class="table-inputs">
                 <div class="txt">
                     <h1 class="nota">Nota Fiscal Do Pedido</h1>
-                    <h1 id="v" class="voltar">Voltar</h1>
                 </div>
                 <div class="tabela-scroll">
                     
