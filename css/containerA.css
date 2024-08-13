@@ -10,7 +10,7 @@ main{
 }
 .tabela-scroll {
     margin-top: 20px;
-    max-height: 64.5vh; 
+    max-height: 71vh; 
     overflow-y: auto; 
     outline: 1px solid black;
     background-color: #333333;
@@ -52,7 +52,6 @@ main{
     display: grid;
     width: 75%;
     text-align: center;
-    padding: 2%;
     border-radius: 20px;
     border: solid 1px black;
     margin-left: 12%;
@@ -62,7 +61,7 @@ main{
     display: grid;
     width: 68%;
     text-align: center;
-    height: 60%;
+    height: 50%;
     border-radius: 20px;
     border: solid 1px black;
     margin-left: 14%;
@@ -71,18 +70,13 @@ main{
     font-size: 140%;
     color: white;
     text-shadow: 0px 0px 8px black;
-    margin-bottom: 2%;
-    margin-top: 2%;
-    
+    margin-bottom: 1%;
+    margin-top: 1%;
 }
-
-
 
 .input-group input[type="checkbox"] {
     display: none;
 }
-
-
 
 .input-group label::before {
     content: '';
@@ -184,7 +178,7 @@ main{
     margin-top: 1%;
 }
 .txtCont h1{
-    font-size: 60px;
+    font-size: 50px;
     color: #ffffff;
     text-shadow: 0px 0px 10px #000000;
 }
@@ -195,7 +189,7 @@ main{
     text-align: center;
 }
 form h1{
-    margin-top: 3%;
+    margin-top: 1%;
     color: #ffffff;
     text-shadow: 0px 0px 10px #000000;
 }
