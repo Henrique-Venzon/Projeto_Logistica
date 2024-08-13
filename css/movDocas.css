@@ -97,6 +97,7 @@ main{
     display: flex;
   }
   .divpegar{
+    display: flex;
     width: 40%;
     flex-direction: column;
     margin-inline: 4%;
@@ -200,4 +201,8 @@ input{
         text-transform: uppercase;
         font-size: 17px;
     }
+    .flex{
+        display: grid;
+        place-items: center;
+      }
 }
