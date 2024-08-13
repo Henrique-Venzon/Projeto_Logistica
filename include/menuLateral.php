@@ -204,6 +204,9 @@
     .fa-boxes-stacked {
         margin-left: 5px;
     }
+    .fa-check-to-slot{
+        margin-left: 5px;
+    }
 
     @media only screen and (max-width: 600px) {
         i {
@@ -398,9 +401,6 @@
                                 class="sidebar-link">Criar solicitação</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="verSolicitacao.php" style="margin-top: -1.4px;" class="sidebar-link">Verificar solicitação</a>
-                        </li>
-                        <li class="sidebar-item">
                             <a style="margin-top: -1px;" href="cancelamentos-Solicitacao.php" class="sidebar-link">Cancelamentos</a>
                         </li>
                        <li class="sidebar-item">
@@ -409,15 +409,12 @@
                     </ul>
                 </li>'
                     ?>
-            <?php if ($_SESSION['tipo_login'] == 'aluno')
-                echo '
                 <li class="sidebar-item">
                     <a href="verSolicitacao.php" class="sidebar-link">
-                        <i class="fa-solid fa-bell"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Verificar solicitação</span>
+                      <i class="fa-solid fa-check-to-slot"></i>
+                        <span class="sidebar-text" style="margin-left:10px;">Verificar Solicitação</span>
                     </a>
-                </li>'
-                    ?>
+                </li>
                 <li class="sidebar-item">
                     <a href="picking.php" class="sidebar-link">
                         <i class="fa-solid fa-hands-holding"></i>
@@ -433,7 +430,7 @@
                 <li class="sidebar-item">
                     <a href="notaf_expedicao.php" class="sidebar-link">
                         <i class="fa-solid fa-receipt"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal Expedição</span>
+                        <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal Saída</span>
                     </a>
                 </li>
 

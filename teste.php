@@ -16,7 +16,12 @@
 
 <body>
     
-        <h1 >ola mundo</h1>
+        <h1 id="1">ola rafasf</h1>
+        <h1 id="2">ola mundo</h1>
+        <h1 id="3">ola muaffasndo</h1>
+        <h1 id="4">ola mundo</h1>
+        <h1 id="5">ola mufsando</h1>
+        
         <label id ='mudança'>caralho</label>
         <input type="number" id="alfo">
         <button onclick='calcular()'>calcular</button>
@@ -39,10 +44,11 @@
         }
         
     function gerer(){
+        var doc = new jsPDF();
             var palavra = document.querySelector('h1');
             var outro = document.querySelector('label');
             
-        var doc = new jsPDF();
+        
         doc.fromHTML(palavra);
         doc.fromHTML(outro.innerText);
         

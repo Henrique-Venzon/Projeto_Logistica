@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Platypi';
+}
+main{
+    width: 100%;
+    display: flex;
+}
+.DivDireita{
+    flex-grow: 1;
+    background-color: #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.table-inputs{
+    border: 1.5px solid black;
+    width: 88%;
+    height: 95%;
+    background-color: #1c1c1c;
+    box-shadow: 0px 0px  10px black;
+    border-radius: 40px; 
+}
+.txt{
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.txt h1{
+    font-size: 56px;
+    color: #fff;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+}
+form input{
+    width: 40%;
+    margin-top: 1.5%;
+    font-size: 20px;
+    padding: 6px 0;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 0 10px #c0c0c0;
+    border: solid 1px #000;
+}
+form label{
+    font-size: 30px;
+}
+.enviar{
+    width: 14%;
+    padding: 8px 0;
+    color: #000;
+    background-color: #fff;
+    border-radius: 12px;
+    font-size: 22px;
+    margin-bottom: 1.5%;
+    text-transform: uppercase;
+}
+table{
+    width: 80%;
+    text-align: center;
+    max-height: 40vh;
+    overflow-y: auto;
+}
+th,td{
+    border: solid 1px #fff;
+    padding: 12px;
+    font-size: 27px;
+}
