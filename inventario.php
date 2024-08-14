@@ -34,7 +34,7 @@ if (!isset($_SESSION['id'])) {
         <div class="DivDireita">
             <div class="table-inputs">
                 <div class="txt">
-                    <h1>Pesquisa no Estoque</h1>
+                    <h1>Inventário</h1>
                 </div>
                 <form method="post" action="">
                     <label for="search">Pesquisar:</label>
