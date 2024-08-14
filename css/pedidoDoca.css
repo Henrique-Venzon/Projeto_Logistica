@@ -139,8 +139,8 @@ select::-webkit-scrollbar {
     border-radius: 5px; 
   }
 .table select{
-    font-size: 22px;
-    padding: 5px;
+    font-size: 18px;
+    padding: 1px;
 }
 .buttonEnviar{
     display: flex;

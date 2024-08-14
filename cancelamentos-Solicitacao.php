@@ -62,7 +62,7 @@ if($qtd > 0){
     print "<tr>";
             print "<th>ID Solicitação</th>";
             print "<th>Produto Cancelado</th>";
-            print "<th>Quantidade_Cancelada</th>";
+            print "<th>Quantidade Cancelada</th>";
             print "<th>Motivo</th>";
             print "<th>Data Cancelamento</th>";
             print "</tr>";
