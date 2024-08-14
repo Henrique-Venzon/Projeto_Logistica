@@ -12,5 +12,17 @@
     .table td{
         height: 50px;
     }
-    
+    .table button{
+        color: white;
+        width: 70px;
+        height: 38px;
+        padding: 4px;
+        font-size: 16px;
+        border-radius: 15PX;
+
+      }
+      .table button:hover{
+        transform: scale(1);
+      }
+      
 }

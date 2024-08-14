@@ -170,3 +170,38 @@ select::-webkit-scrollbar {
     padding: 3px;
 }
 }
+@media only screen and (max-width: 600px) {
+.nomet h1{
+    font-size: 20px;
+}
+.table th,td{
+    font-size: 6.8px;
+}
+.table th{
+    height: 38px;
+}
+.table td{
+    height: 38px;
+}
+
+.table input{
+  width: 36px;
+  border-radius: 8px;
+  font-size: 9px;
+  padding: 2px;
+}
+
+.table select{
+  font-size: 6px;
+  padding: 0px;
+}
+
+.buttonEnviar button{
+  padding: 3px;
+  padding-inline: 7px;
+  text-transform: uppercase;
+  border-radius: 15px;
+  font-size: 15px;
+}
+
+}

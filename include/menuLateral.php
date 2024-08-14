@@ -52,21 +52,19 @@
     }
 
     .toggle-btn i {
-        margin-left: 17px;
+        margin-left: 14px;
         font-size: 37px;
         color: white;
     }
 
     i {
-        font-size: 22px;
+        font-size: 29.5px;
     }
 
 
     .sidebar-logo {
         margin: auto 0;
     }
-
-
 
     #sidebar:not(.expand) .sidebar-logo,
     #sidebar:not(.expand) a.sidebar-link span {
@@ -210,9 +208,11 @@
 
     @media only screen and (max-width: 600px) {
         i {
-            font-size: 20px;
+            font-size: 18px;
         }
-
+        #sidebar.expand {
+            width: 145px;
+        }
 
         #sidebar {
             width: 80px;
@@ -223,27 +223,31 @@
         }
 
         .sidebar-logo h1 {
-            font-size: 15px;
+            font-size: 11px;
             margin-left: -10%;
         }
-
-    }
-
-
-    .toggle-btn i {
+        .toggle-btn i {
         margin-left: 14px;
-        font-size: 22px;
+        font-size: 20px;
     }
 
     a.sidebar-link {
-        font-size: 0.64rem;
+        font-size: 0.50rem;
     }
+    .fa-user {
+        margin-left: 7px;
+        margin-right: 5px;
+    }
+    }
+
+
+    
 
     @media only screen and (min-width: 601px) and (max-width: 1024px) {}
 
     @media only screen and (min-width: 1025px) and (max-width: 1440px) {}
 
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: 1440px) and (max-width: 1480px){
         .toggle-btn {
             background-color: transparent;
             cursor: pointer;
@@ -253,13 +257,13 @@
         }
 
         .toggle-btn i {
-            margin-left: 17px;
-            font-size: 34px;
+            margin-left: 13px;
+            font-size: 35px;
             color: white;
         }
 
         i {
-            font-size: 29.5px;
+            font-size: 25.5px;
         }
 
         a.sidebar-link {

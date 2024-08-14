@@ -115,21 +115,19 @@
 }
 
 .pesquisa input{
-    font-size: 15px;
+    font-size: 13px;
 }
 .input1{
     margin-top: 5px;
-    padding:2px 4px;
+    padding:2px 3px;
     text-align: center;
-    border-radius: 20px 20px 0px 0px;
-    border: 1.5px solid #187ec2;
+
 }
 .input2{
     margin-top: 5px;
-    padding:2px 4px;
+    padding:2px 3px;
     text-align: center;
-    border-radius: 0px 0px 20px 20px ;
-    border: 1.5px solid #187ec2;
+
 }
 
 
