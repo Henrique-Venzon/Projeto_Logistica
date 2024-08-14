@@ -96,7 +96,7 @@ if (!isset($_SESSION['id'])) {
                         echo "</table>";
                         echo "</div>";
                     } else {
-                        echo "Nenhum resultado encontrado.";
+                        echo "<p>Nenhum resultado encontrado.</p>";
                     }
                     $stmt->close();
                 }

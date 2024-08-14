@@ -92,3 +92,9 @@ select{
     text-align: center;
     font-size: 21px;
 }
+p{
+    margin-top: 40px;
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+}

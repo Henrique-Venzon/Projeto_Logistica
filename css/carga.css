@@ -350,8 +350,14 @@ main{
   }
 
   .inf{
-    width: 80%;
+    width: 100%;
 }
+.cancelar button,.nFiscal button{
+  font-size: 9px;
+  padding: 2px 3px;
+  border-radius: 10px;
+}
+  
   .table{
     font-size: 8px;
     width: inherit;
@@ -366,17 +372,19 @@ main{
   }
   
 .table input{
-    width: 40px;
+    width: 30px;
     height: 20px;
     border-radius: 8px;
 }
 .table td{
-    font-size: 8px;
+    font-size: 7px;
 }
-
+.nulo{
+  display: none;
+}
 .table th{
     height: 30px;
-    font-size: 8px;
+    font-size: 7px;
 }
 .table td{
     height: 50px;
@@ -388,9 +396,12 @@ main{
     border-radius: 10px;
     font-size: 8px;
 }
+.npedido{
+  margin-left: -10px;
+}
 .npedido,.nFiscal,.doca,.cancelar{
     height: 60px;
-    width: 80px;
+    width: 70px;
     padding: 4px;
     outline: 1.5px solid #ffffff;
     border-radius: 11px;
@@ -401,6 +412,9 @@ main{
     color: white;
 
 }
+.nFiscal{
+  display: none;
+}
 .npedido h1, .nFiscal h1,.cancelar h1 {
     border-bottom: 1px solid #ffffff;
     padding-bottom: 8px;
@@ -408,11 +422,11 @@ main{
     width: inherit;
   }
   .doca{
-    font-size: 10px;
+    font-size: 9px;
     margin-bottom: 10px;
 }
 .doca select{
-    width:60px;
+    width:50px;
 }
 .doca label{
     margin-bottom: 6px;

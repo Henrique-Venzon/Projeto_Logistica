@@ -471,7 +471,7 @@
                                 <table class='table'>
                                     <tr>
                                         <th>Produto</th>
-                                        <th>Unidade</th>
+                                        <th class="nulo">Unidade</th>
                                         <th>Quantidade</th>
                                         <th>Valor</th>
                                         <th>Avariado</th>
@@ -479,7 +479,7 @@
                                     </tr>
                                     <tr>
                                         <td><?php echo $pedido['produto1']; ?></td>
-                                        <td><?php echo $pedido['unidade1']; ?></td>
+                                        <td class="nulo"><?php echo $pedido['unidade1']; ?></td>
                                         <td>
                                             <span id="quantidade1"><?php echo $pedido['quantidade1']; ?></span>
                                             <input name="quantidade1" id="quantidadeInput1" type="text"
@@ -496,7 +496,7 @@
                                     <?php if (!empty($pedido['produto2'])) { ?>
                                         <tr>
                                             <td><?php echo $pedido['produto2']; ?></td>
-                                            <td><?php echo $pedido['unidade2']; ?></td>
+                                            <td class="nulo"><?php echo $pedido['unidade2']; ?></td>
                                             <td>
                                                 <span id="quantidade2"><?php echo $pedido['quantidade2']; ?></span>
                                                 <input name="quantidade2" id="quantidadeInput2" type="text"
@@ -514,7 +514,7 @@
                                     <?php if (!empty($pedido['produto3'])) { ?>
                                         <tr>
                                             <td><?php echo $pedido['produto3']; ?></td>
-                                            <td><?php echo $pedido['unidade3']; ?></td>
+                                            <td class="nulo"><?php echo $pedido['unidade3']; ?></td>
                                             <td>
                                                 <span id="quantidade3"><?php echo $pedido['quantidade3']; ?></span>
                                                 <input name="quantidade3" id="quantidadeInput3" type="text"
@@ -532,7 +532,7 @@
                                     <?php if (!empty($pedido['produto4'])) { ?>
                                         <tr>
                                             <td><?php echo $pedido['produto4']; ?></td>
-                                            <td><?php echo $pedido['unidade4']; ?></td>
+                                            <td class="nulo"><?php echo $pedido['unidade4']; ?></td>
                                             <td>
                                                 <span id="quantidade4"><?php echo $pedido['quantidade4']; ?></span>
                                                 <input name="quantidade4" id="quantidadeInput4" type="text"
