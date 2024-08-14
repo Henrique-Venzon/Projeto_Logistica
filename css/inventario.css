@@ -40,6 +40,7 @@ form{
     color: #fff;
     text-align: center;
     align-items: center;
+    justify-content: center;
 }
 form input{
     width: 40%;
@@ -69,9 +70,25 @@ table{
     text-align: center;
     max-height: 40vh;
     overflow-y: auto;
+    color: #fff;
 }
 th,td{
     border: solid 1px #fff;
     padding: 12px;
     font-size: 27px;
+}
+th{
+    background-color: #0a0a0a;
+}
+td{
+    background-color: #363636;
+}
+.centro-table{
+    display: flex;
+    justify-content: center;
+}
+select{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 21px;
 }

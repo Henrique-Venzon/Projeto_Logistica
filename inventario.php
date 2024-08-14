@@ -77,7 +77,8 @@ if (!isset($_SESSION['id'])) {
                     $result = $stmt->get_result();
 
                     if ($result->num_rows > 0) {
-                        echo "<table border='1'>
+                        echo "<div class=\"centro-table\">
+                        <table border='1'>
                         <tr>
                             <th>ID</th>
                             <th>Nome do Produto</th>
@@ -93,6 +94,7 @@ if (!isset($_SESSION['id'])) {
                         </tr>";
                         }
                         echo "</table>";
+                        echo "</div>";
                     } else {
                         echo "Nenhum resultado encontrado.";
                     }
