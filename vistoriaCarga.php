@@ -59,11 +59,11 @@
                 </div>
                 <div class="inputPedido">
                     <div class="label">
-                        <label for="pedido">Selecione o Pedido:</label>
+                        <label for="pedido1">Selecione o Pedido:</label>
                     </div>
                     <div class="select">
                         <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                            <select name="pedido_selecionado" id="pedido">
+                            <select name="pedido_selecionado" id="pedido1" style="display:block;">
                                 <option value="0">0</option>
                                 <?php
                                 $sql = "SELECT id, npedido FROM carga WHERE situacao='enviado' and turma_id = '" . $_SESSION['turma'] . "'";
