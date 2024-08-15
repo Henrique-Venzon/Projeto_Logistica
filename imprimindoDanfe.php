@@ -8,6 +8,7 @@ session_start();
 <html>
 
 <head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/amem.svg">
     <meta charset="utf-8">
@@ -340,6 +341,7 @@ session_start();
     // Fecha a conexão
     $conexao->close();
     ?>
+    <Input type="submit" onclick="imprimir()" name="PDF" value="algo">Imprimir PDF</Input>
 </body>
 
 </html>
