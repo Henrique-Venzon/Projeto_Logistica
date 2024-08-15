@@ -13,44 +13,47 @@
     align-items: center;
 }
 .table1{
- width: 75%;
+ width: 38.4vw;
  height: 60vh;
  text-align: center;
 }
 .table1 th{
-    font-size: 16px;
-    padding: 1px;
+    font-size: 9px;
+    padding: 0.4px;
     text-transform: uppercase;
     border: 2px solid #000;
 }
 .table1 td{
-    font-size: 15px;
-    padding: 1px;
+    font-size: 9px;
+    padding: 0.4x;
     text-transform: uppercase;
     border: 2px solid #000;
 }
 .table2{
     text-align: center;
-    width:45%;
+    width:55%;
 }
 .table2 th{
-    font-size: 16px;
-    padding: 1px;
+    font-size: 9px;
+    padding: 0.4px;
     text-transform: uppercase;
     border-right: 2px solid #000;
+    border-left: 2px solid #000;
     border-bottom: 2px solid #000;
 }
 .table2 td{
-    font-size: 15px;
-    padding: 1px;
+    font-size: 9px;
+    padding: 0.4px;
     text-transform: uppercase;
+    border-left: 2px solid #000;
     border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+
 
 }
 .divisao{
-    width: 74.8%;
-    outline: 2px solid #000;
     display: flex;
+    flex-direction: row;
 }
 .Imagem-nome img{
     padding: 2px 0;
@@ -65,5 +68,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 55%;
+    border-right: solid 2px #000;
+    border-bottom: 2px solid #000;
+    width:105%;
+}
+#btn{
+    margin-top: 50px;
+    padding: 8px 12px;
+    background-color: rgb(100, 193, 255);
+    font-size: 20px;
+    border: none;
+    border-radius: 16px;
+    box-shadow:  0 0 8px #727272;
 }

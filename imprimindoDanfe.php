@@ -8,8 +8,9 @@ session_start();
 <html>
 
 <head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="shortcut icon" href="img/amem.svg">
     <meta charset="utf-8">
     <title><?php $tituloPag = 'Danfe';
@@ -344,7 +345,7 @@ session_start();
         echo '</table>';
         echo'<div class="Imagem-nome"> ';
         echo'<h1>LogConnect</h1>';
-        echo'<img src="img/amem.svg" alt="logo">';
+        echo'<img src="img/amem.png" alt="logo">';
         echo '</div>';
         echo '</div>';
     }
@@ -353,9 +354,12 @@ session_start();
     $conexao->close();
     ?>
     </div>
-</body>
 
-</html>
 </body>
+<script>
+    setTimeout(function imp(){
+        window.print();
 
+},1000);
+</script>
 </html>
