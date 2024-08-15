@@ -13,19 +13,19 @@
     align-items: center;
 }
 .table1{
- width: 38.4vw;
+ width: 710px;
  height: 60vh;
  text-align: center;
 }
 .table1 th{
-    font-size: 9px;
-    padding: 0.4px;
+    font-size: 8px;
+    padding: 0.2px;
     text-transform: uppercase;
     border: 2px solid #000;
 }
 .table1 td{
-    font-size: 9px;
-    padding: 0.4x;
+    font-size: 8px;
+    padding: 0.2px;
     text-transform: uppercase;
     border: 2px solid #000;
 }
@@ -34,16 +34,16 @@
     width:55%;
 }
 .table2 th{
-    font-size: 9px;
-    padding: 0.4px;
+    font-size: 8px;
+    padding: 0.2px;
     text-transform: uppercase;
     border-right: 2px solid #000;
     border-left: 2px solid #000;
     border-bottom: 2px solid #000;
 }
 .table2 td{
-    font-size: 9px;
-    padding: 0.4px;
+    font-size: 8px;
+    padding: 0.2px;
     text-transform: uppercase;
     border-left: 2px solid #000;
     border-right: 2px solid #000;
@@ -54,6 +54,7 @@
 .divisao{
     display: flex;
     flex-direction: row;
+    width: 710px;
 }
 .Imagem-nome img{
     padding: 2px 0;
@@ -70,7 +71,7 @@
     align-items: center;
     border-right: solid 2px #000;
     border-bottom: 2px solid #000;
-    width:105%;
+    padding: 3px 20px;
 }
 #btn{
     margin-top: 50px;
