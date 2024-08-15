@@ -32,4 +32,13 @@
   table th{
     font-size: 13px;
   }
+  .baixar-pdf{
+    margin-top: 12px;
+    padding: 3px 18px;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 21px;
+    box-shadow: 0 0 10px #c2c2c2;
+  }
 }

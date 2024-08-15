@@ -53,7 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
         <link rel="stylesheet" href="css/solicitacaoestoque.css">
-        <link rel="stylesheet" href="css/responsividade/solicitacaoEstoqueResponsivo.css">
 
 </head>
 
@@ -156,8 +155,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             $qtd = $res->num_rows;
 
                                             if ($qtd > 0) {
-                                                echo "<div id=\"tabelaScroll\" class=\"tabela-scroll\">";
-                                                echo "<table class='table'>";
+                                                echo "<table class='table4'>";
                                                 echo "<tr>";
                                                 echo "<th>Produto</th>";
                                                 echo "<th>Quantidade Solicitada</th>";
@@ -185,7 +183,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 }
 
                                                 echo "</table>";
-                                                echo "</div>";
                                                 echo "<div id='motivoCancelamento' style='display: none;'>
                                                 <label for='motivo'>Motivo do Cancelamento:</label><br>
                                                 <input type='text' id='motivo' name='motivo' class='form-control'>

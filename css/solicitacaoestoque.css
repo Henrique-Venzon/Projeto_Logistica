@@ -318,6 +318,32 @@ main{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.table4{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 0 0 7px black;
+    border-right: #000000 1px solid;
+    width: 760px;
+}
+.table4 th,td{
+    border: solid 1.5px #000000;
+    border-left: none;
+    border-bottom: none;
+    font-size: 22px;
+}
+.table4 th{
+    height: 50px;
+    border-top: none;
+    background-color: #000000;
+}
+.table4 td{
+    height: 60px;
+    background-color: #333333;
+}
 @media only screen and (max-width: 1440px) {
     .card{
         margin: 6px;
