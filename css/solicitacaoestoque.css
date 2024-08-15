@@ -26,7 +26,22 @@ main{
     color: #ffffff;
     text-shadow: 0px 0px 10px #000000;
 }
+.tableScroll{ 
+    max-height: 380px;
+    overflow-y: auto;
+    padding: 0;
+}
 
+.tableScroll::-webkit-scrollbar {
+    width: 7px;
+  }
+  .tableScroll::-webkit-scrollbar-track {
+    background-color: #bdbdbd; 
+  }
+  
+  .tableScroll::-webkit-scrollbar-thumb {
+    background-color: #000000; 
+  }
 .table{
     font-size: 30px;
     text-align: center;
