@@ -17,9 +17,12 @@ session_start();
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="css/imprimirDanfe.css">
+
 </head>
 
 <body>
+    <div class="centro">
     <?php
     include_once('include/conexao.php');
 
@@ -31,7 +34,7 @@ session_start();
         $sql = "SELECT *  FROM nota_fiscal WHERE id = $notafiscal";
         $resultado = $conexao->query($sql);
 
-        echo '<table>';
+        echo '<table class="table1">';
         echo '<thead>';
         echo '<tr>';
         echo '<th>ID</th>';
@@ -242,16 +245,6 @@ session_start();
                 echo '<td>' . $peso_liquido . '</td>';
                 echo '</tr>';
                 echo '<tr>';
-                echo '<th>Inscrição Municipal</th>';
-                echo '<th>Valor Total Serviços</th>';
-                echo '<th>Base Cálculo ISSQN</th>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<td>' . $inscricao_municipal . '</td>';
-                echo '<td>' . $valor_total_servicos . '</td>';
-                echo '<td>' . $base_calculo_issqn . '</td>';
-                echo '</tr>';
-                echo '<tr>';
                 echo '<th>Produto 1</th>';
                 echo '<th>QUANTIDADE 1</th>';
                 echo '<th>UNIDADE 1</th>';
@@ -331,15 +324,34 @@ session_start();
                 echo '<td>' . $ncm_sh4 . '</td>';
                 echo '<td>' . $valor_total_prod4 . '</td>';
                 echo '</tr>';
+                echo '</table>';
+                echo '<div class="divisao">';
+                echo '<table class="table2">';
+                echo '<tr>';
+                echo '<th>Inscrição Municipal</th>';
+                echo '<th>Valor Total Serviços</th>';
+                echo '<th>Base Cálculo ISSQN</th>';
+                echo '</tr>';
+                echo '<tr>';
+                echo '<td>' . $inscricao_municipal . '</td>';
+                echo '<td>' . $valor_total_servicos . '</td>';
+                echo '<td>' . $base_calculo_issqn . '</td>';
+                echo '</tr>';
             }
         }
 
         echo '</table>';
+        echo'<div class="Imagem-nome"> ';
+        echo'<h1>LogConnect</h1>';
+        echo'<img src="img/amem.svg" alt="logo">';
+        echo '</div>';
+        echo '</div>';
     }
 
     // Fecha a conexão
     $conexao->close();
     ?>
+    </div>
 </body>
 
 </html>
