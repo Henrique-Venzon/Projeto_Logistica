@@ -103,7 +103,9 @@ if ($result->num_rows > 0) {
     $id_atividade = $row['last_id'];
 } else {
     echo "Nenhum registro encontrado na tabela carga.";
-    $id_atividade = null;
+
+    $id_atividade = null; 
+
 }
 
 $sql_a = "INSERT INTO nota_fiscal_expedicao (
