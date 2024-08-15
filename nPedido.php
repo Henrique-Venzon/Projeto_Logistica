@@ -369,7 +369,7 @@ if (!isset($_SESSION['turma'])) {
                         <?php
                         echo '
                             <center>
-                                <button type="submit">Baixar PDF</button>
+                                <button class="baixar-pdf" type="submit">Baixar PDF</button>
                             </center>'
                             ?>
                     </form>
