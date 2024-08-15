@@ -1,3 +1,9 @@
+<?php 
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    $notafiscal = $_GET['npedido'];
+}
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
