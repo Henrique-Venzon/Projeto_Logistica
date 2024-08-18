@@ -12,7 +12,6 @@ if ($conn->connect_error) {
 }
 $turma = $_SESSION['turma'];
 
-// Calcula o valor total em itens
 $sql_valor_total = "SELECT SUM(p.preco * e.quantidade_enviada) AS valor_total
                     FROM produto p
                     INNER JOIN estoque e ON p.nome_produto = e.nome_produto
@@ -21,7 +20,6 @@ $sql_valor_total = "SELECT SUM(p.preco * e.quantidade_enviada) AS valor_total
 $result_valor_total = $conn->query($sql_valor_total);
 $valor_total = 0;
 
-// Tratamento de erro caso não tenha nada no estoque
 if ($result_valor_total->num_rows > 0) {
     $row = $result_valor_total->fetch_assoc();
     if (isset($row["valor_total"])) {
