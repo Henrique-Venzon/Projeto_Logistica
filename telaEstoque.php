@@ -11,6 +11,23 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 $turma = $_SESSION['turma'];
+
+// Calcula o valor total em itens
+$sql_valor_total = "SELECT SUM(p.preco * e.quantidade_enviada) AS valor_total
+                    FROM produto p
+                    INNER JOIN estoque e ON p.nome_produto = e.nome_produto
+                    WHERE e.id_turma = $turma";
+
+$result_valor_total = $conn->query($sql_valor_total);
+$valor_total = 0;
+
+// Tratamento de erro caso não tenha nada no estoque
+if ($result_valor_total->num_rows > 0) {
+    $row = $result_valor_total->fetch_assoc();
+    if (isset($row["valor_total"])) {
+        $valor_total = $row["valor_total"];
+    }
+}
 ?>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -86,6 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <p class="vermelho">Cor Vermelha: Quantidade insuficiente.</p>
                                 <p class="ciano">Cor Ciano: Quantidade exata.</p>
                                 <p class="verde">Cor Verde: Quantidade a mais.</p>
+                                <p class="verde">Valor Total em itens: R$ <?php echo number_format($valor_total, 2, ',', '.'); ?></p>
                             </div>
                         </div>
                     </div>
