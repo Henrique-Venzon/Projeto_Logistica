@@ -101,9 +101,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <p class="vermelho">Cor Vermelha: Quantidade insuficiente.</p>
                                 <p class="ciano">Cor Ciano: Quantidade exata.</p>
                                 <p class="verde">Cor Verde: Quantidade a mais.</p>
-                                <p class="verde">Valor Total em itens: R$ <?php echo number_format($valor_total, 2, ',', '.'); ?></p>
                             </div>
                         </div>
+                        <div class="caixa-valor">
+                    <h3>Valor Total em itens:<br> R$ <?php echo number_format($valor_total, 2, ',', '.'); ?></h3>
+                    </div>
                     </div>
                     <div class="tabelaPosicoes">
                         <div class="posicoes">
@@ -157,6 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
