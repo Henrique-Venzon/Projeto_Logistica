@@ -101,6 +101,7 @@ main{
     width: 40%;
     flex-direction: column;
     margin-inline: 4%;
+    
   }
 input{
     width: 30px;
@@ -138,9 +139,11 @@ input{
     padding: 6.5px;
     padding-inline: 12px;
     text-transform: uppercase;
+    display: flex;
     border-radius: 15px;
     font-size: 21px;
     transition: 0.8s ease-in-out;
+    margin-left: 42%;
 }
 .buttonEnviar button:hover{
     background-color: #000;
@@ -150,6 +153,7 @@ input{
 .buttonEnviar{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 1.3%;
     margin-top: 1.3%;
 }
