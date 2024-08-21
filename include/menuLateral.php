@@ -211,11 +211,11 @@
             font-size: 18px;
         }
         #sidebar.expand {
-            width: 145px;
+            width: 148px;
         }
 
         #sidebar {
-            width: 80px;
+            width: 75px;
         }
 
         #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
@@ -223,7 +223,7 @@
         }
 
         .sidebar-logo h1 {
-            font-size: 11px;
+            font-size: 10.5px;
             margin-left: -10%;
         }
         .toggle-btn i {

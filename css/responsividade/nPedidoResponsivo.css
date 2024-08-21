@@ -19,6 +19,11 @@
       .p{
         font-size: 26px;
       }
+      .tabela-scroll::-webkit-scrollbar {
+        height: 5px; 
+        width: 5px;
+        border-right: 1px solid black;
+      }
 }
 @media only screen and (max-width:1440px) {
   table th, table td {

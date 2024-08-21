@@ -388,7 +388,53 @@ input:-webkit-autofill {
     position: relative;
     z-index: -1;
 }
-
+.btn-aparecer{
+    width: 400px;
+    height: 85px;
+    border: none;
+    background-color: rgb(65, 65, 65);
+    color: #fff;
+    font-size: 27px;
+    border-radius: 24px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+.nova-professor form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.nova-professor h1{
+    font-size: 68px;
+    margin-bottom: 10px;
+}
+.nova-professor label{
+    color: #000;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+.lista-projetos{
+    text-align: center;
+}
+.nova-professor input{
+    border: 0.2px solid #000;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 32px;
+    padding: 5px 16px;
+}
+.nova-professor form button{
+    font-size: 27px;
+    margin-top: 18px;
+    width: 280px;
+    padding: 15px 10px;
+    border-radius: 22px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
 
 @keyframes deslocamentoEsq {
 
@@ -462,7 +508,6 @@ input:-webkit-autofill {
         width: 100%;
         height: 100%;
     }
-
     .content::before {
         width: 100%;
         height: 40%;
@@ -473,7 +518,7 @@ input:-webkit-autofill {
         flex-direction: column;
         justify-content: space-around;
     }
-
+    
     .first-column, .second-column {
         width: 100%;
     }
@@ -482,76 +527,80 @@ input:-webkit-autofill {
         top: 60%;
         left: 0;
         border-radius: 0;
-
+        
     }
-
+    
     .form {
         width: 90%;
     }
     .table{
         font-size: 20px;
     }
-        .form {
-            width: 100%;
-        }
-        .first-column {
-            text-align: center;
-            width: 50%;
-            z-index: 10;
-        }
-        .second-column {
-            width: 50%;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .title {
-            font-size: 28px;
-    
-        }
-        .title-primary {
-            font-size: 110px;
-            margin-bottom: 3%;
-        }
-        .title-second {
-            font-size: 75px;
-        }
-        .description {
-            font-size: 20px;
-    
-        }
-        .description-primary {
-            font-size: 46px;
-        }
-        .description-second {
-            font-size: 46px;
-            margin-bottom:3vh;
+    .form {
+        width: 100%;
+    }
+    .first-column {
+        text-align: center;
+        width: 50%;
+        z-index: 10;
+    }
+    .second-column {
+        width: 50%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .title {
+        font-size: 28px;
         
-        }
-        .btn {
-    font-size: 30px;
-    width: 300px;
-
-}
-        .acessar{
-            font-size: 22px;
-          }
-
-          .editar{
-            font-size: 22px;
-          }
-
-        .excluir{
-            font-size: 22px;
-        }
- 
-          .table {
-            font-size: 38px;
-          }      
+    }
+    .title-primary {
+        font-size: 110px;
+        margin-bottom: 3%;
+    }
+    .title-second {
+        font-size: 75px;
+    }
+    .description {
+        font-size: 20px;
+        
+    }
+    .description-primary {
+        font-size: 46px;
+    }
+    .description-second {
+        font-size: 46px;
+        margin-bottom:3vh;
+        
+    }
+    .btn {
+        font-size: 30px;
+        width: 300px;
+        
+    }
+    .acessar{
+        font-size: 22px;
+    }
+    
+    .editar{
+        font-size: 22px;
+    }
+    
+    .excluir{
+        font-size: 22px;
+    }
+    
+    .table {
+        font-size: 38px;
+    }      
+    .aumentar{
+        padding: 8px 12px;
+        font-size: 32px;
+    }
     
     /* ANIMAÇÃO MOBILE CSS*/
-
+    
     @keyframes deslocamentoEsq {
 
         from {

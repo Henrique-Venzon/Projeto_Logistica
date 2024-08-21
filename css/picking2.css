@@ -178,7 +178,10 @@ input{
     font-size: 24px;
     padding: 4px;
 }
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 600px){
+    
+}
+@media only screen and (min-width: 1440px) and (max-width:1480px) {
     .finalizar{
         padding-inline: 2px;
         background-color: #fff;
@@ -188,6 +191,9 @@ input{
     }
     .table th,td{
         font-size: 16px;
+    }
+    .buttonEnviar button{
+        margin-left: 39%;
     }
     .tabela-scroll {
         margin-top: 1%;

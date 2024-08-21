@@ -1,0 +1,28 @@
+@media only screen and (max-width: 600px) {
+    .table th,td{
+        font-size: 7px;
+        padding: 0;
+    }
+    .table th{
+        height: 40px;
+    
+    }
+    .table td{
+        height: 40px;
+    }
+
+      .tabela-scroll::-webkit-scrollbar {
+        height: 5px; 
+        width: 4px;
+        border-right: 1px solid black;
+      }
+      .text h1{
+        font-size: 20px;
+      }
+      .data-resposivo{
+        display: block;
+      }
+      .data-resposivo-pc{
+        display: none;
+      }
+}

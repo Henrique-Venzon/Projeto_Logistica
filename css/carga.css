@@ -354,10 +354,10 @@ main{
 }
 .cancelar button,.nFiscal button{
   font-size: 9px;
-  padding: 2px 3px;
+  padding: 2px 1px;
   border-radius: 10px;
 }
-  
+
   .table{
     font-size: 8px;
     width: inherit;
@@ -401,14 +401,14 @@ main{
 }
 .npedido,.nFiscal,.doca,.cancelar{
     height: 60px;
-    width: 70px;
+    width: 65px;
     padding: 4px;
     outline: 1.5px solid #ffffff;
     border-radius: 11px;
 }
 
 .inf h1{
-    font-size: 12px;
+    font-size: 11px;
     color: white;
 
 }
@@ -417,7 +417,7 @@ main{
 }
 .npedido h1, .nFiscal h1,.cancelar h1 {
     border-bottom: 1px solid #ffffff;
-    padding-bottom: 8px;
+    padding-bottom: 5px;
     margin-bottom: 8px;
     width: inherit;
   }
@@ -430,7 +430,7 @@ main{
 }
 .doca label{
     margin-bottom: 6px;
-    font-size: 14px;
+    font-size: 12px;
     padding-bottom: 4px;
     margin-bottom: 4px;
 }
@@ -451,7 +451,7 @@ main{
     font-size: 16px;
 }
 }
-@media only screen and (max-width: 1440px) {
+@media only screen and (min-width: 1440px) and (max-width:1480px){
   .inf{
     display: flex;
     justify-content: space-around;
@@ -465,7 +465,7 @@ main{
 .modal th,.modal td {
   border: 1px solid #000000;
   text-align: center;
-  padding: 3px;
+  padding: 2px;
 }
 .modal table td{
   font-size: 12.5px;

@@ -113,7 +113,7 @@
   }
   .tabela-scroll::-webkit-scrollbar {
     height: 5px; 
-    width: 15px;
+    width: 5px;
     border-right: 1px solid black;
   }
   
@@ -144,4 +144,6 @@ main{
     align-items: center;
     justify-content: center;  
 }
-
+.data-resposivo{
+  display: none;
+}

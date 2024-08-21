@@ -105,6 +105,7 @@ $turma = $_SESSION['turma'];
                                     <form method='post' action='processamento/processar_movimentacaoD1.php' style='display:inline-block'>
                                         <input type='hidden' name='produto_id' value='" . $row->id . "'>
                                         <button class=\"finalizar\" type='submit' name='finalizar'>Finalizar</button>
+                                        <button class=\"finalizar-cel\" type='submit' name='finalizar'>Ok</button>
                                     </form>
                                   </td>";
                             print "</tr>";
@@ -112,9 +113,7 @@ $turma = $_SESSION['turma'];
                         print "</table>";
                         print "</div>";
                     } else {
-                        print"<div class=\"paragrafo\">";
                         print "<p class='alert alert-danger'>Nenhum produto selecionado.</p>";
-                        print"</div>";
                     }
                     ?>
                 </div>
