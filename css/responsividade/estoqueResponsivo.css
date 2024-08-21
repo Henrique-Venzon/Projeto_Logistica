@@ -173,6 +173,7 @@
 }
 }
 @media only screen and (min-width: 1440px) and (max-width:1480px){
+
     .card{
         margin: 10px;
         width: 21%;
@@ -209,7 +210,9 @@
         border: 1.5px solid #187ec2;
     }
     .caixa-valor{
-        margin-top:45%;
+        margin-left: 1%;
+        margin-top: 39%;
+        position: absolute;
         padding: 5px 20px;
         border-radius: 20px;
     }

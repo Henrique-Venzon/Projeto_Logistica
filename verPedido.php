@@ -26,8 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/verPedidos.css">
-    <link rel="stylesheet" href="css/responsividade/verpedidoResponsivo.css">
+    <link rel="stylesheet" href="css/verPedidoCorreto.css">
 </head>
 
 <body>
@@ -60,10 +59,12 @@ if($qtd > 0){
     print "<table class='table' >";
 
     print "<tr>";
-            print "<th>ID pedido</th>";
+            print "<th class=\"fechar\">ID pedido</th>";
+            print "<th class=\"no-pc\">ID</th>";
             print "<th class=\"fechar\">N° Pedido</th>";
             print"<th>Situação</th>";
-            print "<th>Excluir Pedido</th>";
+            print "<th class=\"fechar\">Excluir Pedido</th>";
+            print "<th class=\"no-pc\">Excluir</th>";
             print "<th class=\"fechar\">Fechar Pedido</th>";
             print "<th>Ver Pedido</th>";
             print "<th class=\"fechar\">Arrumar Nota Fiscal</th>";

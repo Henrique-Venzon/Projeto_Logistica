@@ -178,7 +178,7 @@ input{
         height: 17px;
     }
     .tabela-scroll{
-        max-height: 300px;
+        max-height: 200px;
         width: 52vw;
     }
     .alert{
@@ -189,6 +189,9 @@ input{
     .pegar{
         font-size: 22px;
     }
+    .tabela-scroll::-webkit-scrollbar {
+        width: 4px; 
+      }
     .buttonEnviar button{
         margin-top: 10px;
         background-color: #fff;
@@ -244,7 +247,7 @@ input{
         border: solid 1.5px #000000;
         border-left: none;
         border-bottom: none;
-        font-size: 23px;
+        font-size: 21.6px;
     }
     .table th{
         height: 50px;
@@ -260,7 +263,7 @@ input{
       max-height: 64vh; 
       overflow-y: auto; 
         outline: 1px solid #747474;
-        width: 500px;
+        width: 480px;
       }
       .finalizar{
         padding: 4px 6px;
