@@ -117,7 +117,7 @@ $id = $_GET['id']
                                 print "<th>Quantidade</th>";
                                 print "<th>Posição</th>";
                                 print "<th>Finalizar</th>";
-                                print "<th>Cancelar</th>";
+                                print "<th class=\"cancelar\">Cancelar</th>";
                                 print "</tr>";
 
                                 while ($row = $res->fetch_object()) {
@@ -135,10 +135,10 @@ $id = $_GET['id']
                                     print "</form>";
 
                                     // Formulário para cancelar o item
-                                    print "<form method='post' action='processamento/cancelar_finalizar_expedicao.php' style='display:inline-block'>";
+                                    print "<form class='cancelar' method='post' action='processamento/cancelar_finalizar_expedicao.php' style='display:inline-block'>";
                                     print "<input name='produto_id' value='" . $row->id . "' hidden>";
                                     print "<input name='id_pedido' value='" . $id . "' hidden>";
-                                    print "<td><button class='finalizar' type='submit' name='cancelar'>Cancelar</button></td>";
+                                    print "<td class='cancelar'><button class='cancelar finalizar'  type='submit' name='cancelar'>Cancelar</button></td>";
                                     print "</form>";
 
                                     print "</td>";

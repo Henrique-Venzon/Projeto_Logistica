@@ -63,10 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="DivDireita">
             <div class="table-inputs">
                 <div class="txtCont">
-                    <h1>Solicitção</h1>
+                    <h1>Solicitação</h1>
                 </div>
                 <div class="flex">
-                    <div class="divpegar">
+                    <div class="divpegar esquerda">
                         <form method='post' action="processamento/processosolicitacao2.php">
                             <h1 class="pegar">Pegar</h1>
                             <?php
@@ -80,7 +80,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 echo "<table id='table' class='table'>";
                                 echo "<tr>";
                                 echo "<th>Produto</th>";
-                                echo "<th>Quantidade Solicitada</th>";
+                                echo "<th class=\"quantidade-pc\">Quantidade Solicitada</th>";
+                                echo "<th class=\"quantidade-cell\">Quantidade</th>";
                                 echo "<th>Posição</th>";
                                 echo "<th>Quantidade</th>";
                                 echo "</tr>";
@@ -158,7 +159,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 echo "<table class='table4'>";
                                                 echo "<tr>";
                                                 echo "<th>Produto</th>";
-                                                echo "<th>Quantidade Solicitada</th>";
+                                                echo "<th class=\"quantidade-pc\">Quantidade Solicitada</th>";
+                                                echo "<th class=\"quantidade-cell\">Quantidade</th>";
                                                 echo "<th>Cancelar</th>";
                                                 echo "</tr>";
 
@@ -207,9 +209,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
 
                     </div>
-                    <div class="divpegar">
-                        <h1 class="pegar">Estoque</h1>
-                        <div class="stock">
+                    <div class="divpegar div-estoque">
+                        <h1 class="pegar div-estoque">Estoque</h1>
+                        <div class="stock div-estoque">
                             <div class="tabelaPesquisa">
                                 <div class="pesquisa">
                                     <form id="formPesquisa" method="POST" action="">

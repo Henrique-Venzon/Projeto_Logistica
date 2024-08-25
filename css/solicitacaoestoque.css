@@ -76,8 +76,9 @@ main{
     box-shadow: 0px 0px  10px black;
     border-radius: 40px; 
 }
-
-
+.quantidade-cell{
+display: none;
+}
 .tabela-scroll {
     margin-top: 1%;
   max-height: 64vh; 
@@ -188,7 +189,7 @@ main{
 
 }
 .pesquisa h1{
-    font-size: 55px;
+    font-size: 50px;
     margin-bottom: 10px;
     color: #187ec2;
     text-shadow: 0 0 8px #ffffff;
@@ -243,6 +244,7 @@ main{
     display: flex;
     flex-wrap: wrap;
 }
+
 .card{
     margin: 7px;
     width: 20%;
@@ -344,16 +346,106 @@ main{
     height: 60px;
     background-color: #333333;
 }
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 600px) {
+    .div-estoque{
+        display: none;
+    }
+    .quantidade-pc{
+        display: none;
+    }
+    .quantidade-cell{
+        display: block;
+    }
+    .txtCont h1{
+        font-size: 20px;
+    }
+    .flex{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    .tabela-scroll {
+        width:100%;
+      }
+    .esquerda{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .table{
+        text-align: center;
+        margin-bottom: 0px;
+    }
+    .table th,td{
+        border: solid 1px #000000;
+        font-size: 8px;
+    }
+    .table th{
+        padding: 1px 0;
+        height: 30px;
+        border-top: none;
+        background-color: #000000;
+    }
+    .table4{
+        border-right: #000000 1px solid;
+        width: 300px;
+    }
+    .table4 th,td{
+        border: solid 1px #000000;
+        font-size: 12px;
+    }
+    .table4 th{
+        height: 40px;
+    }
+    .table4 td{
+        height: 40px;
+    }
+    #meuModal .modal-dialog {
+        width: 90%;
+        max-width: 800px;
+    }
+    .table td{
+        height: 50px;
+        background-color: #333333;
+    }
+    .cancelar{
+        padding: 6px 6px;
+        border-radius: 6px;
+        font-size: 12px;
+    }
+    .custom-checkbox {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .custom-checkbox:checked {
+        background-color: rgb(0, 31, 172);
+        border-color: white;
+    }
+    
+    .custom-checkbox:checked::after {
+        content: '\2713'; 
+        font-size: 11px;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+@media only screen and (min-width: 1440px) and (max-width: 1480px) {
+    .buttonPesquisa{
+        margin-left: 35%;
+    }
     .card{
         margin: 6px;
         width: 20%;
-        height: 70px;
+        height: 65x;
         border-radius: 30px;
         background-color: #1c1c1c;
     }
     .pesquisa h1{
-        font-size: 50px;
+        font-size: 45px;
         margin-bottom: 10px;
         color: #187ec2;
         text-shadow: 0 0 8px #ffffff;

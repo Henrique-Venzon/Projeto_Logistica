@@ -178,9 +178,88 @@ input{
     font-size: 24px;
     padding: 4px;
 }
-@media only screen and (max-width: 600px){
+    @media only screen and (max-width: 600px) {
+        .txtCont h1{
+            font-size: 28px;
+        }
+        .flex{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+          }
+          input{
+            width: 17px;
+            height: 17px;
+        }
+        .tabela-scroll{
+            max-height: 180px;
+            width: 52vw;
+        }
+        .alert{
+            font-size: 18px;
+            padding: 0;
+            width: 100%;
+        }
+        .pegar{
+            font-size: 22px;
+        }
+        .doca select{
+            border: 2px solid #000000;
+            box-shadow: 0 0 10px #b8b8b8;
+            font-size: 16px;
+            padding: 4px;
+        }
+        .tabela-scroll::-webkit-scrollbar {
+            width: 4px; 
+          }
+          .cancelar{
+            display: none;
+          }
+        .buttonEnviar button{
+            margin-top: 10px;
+            background-color: #fff;
+            border: 0.8px solid black;
+            color: #000;
+            padding: 4px 7px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+        .table th,td{
+            border: solid 0.6px #000000;
+            font-size: 7px;
+            padding-inline: 0;
+            text-align: center;
+        }
+        .table th{
+            height: 40px;
+        }
+        .table td{
+            height: 40px;
+        }
+        .divpegar{
+            display: flex;
+            width: 70%;
+            flex-direction: column;
+            align-items: center;
+          }
+          
+        .finalizar-cel{
+            display: block;
+            padding: 2px 4px;
+            background-color: #fff;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-size: 8px;
+        }
+        .finalizar{
+            padding: 4px 1px;
+            background-color: #fff;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-size: 9px;
+        }
+    }
     
-}
 @media only screen and (min-width: 1440px) and (max-width:1480px) {
     .finalizar{
         padding-inline: 2px;
