@@ -9,7 +9,9 @@
     .table td{
         height: 50px;
     }
-
+    .nota{
+      font-size: 20px;
+    }
     .voltar{
         font-size: 12px;
       }

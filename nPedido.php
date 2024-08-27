@@ -29,7 +29,8 @@ if (!isset($_SESSION['turma'])) {
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/nPedido.css">
-    <link rel="stylesheet" href="css/responsividade/nPedidoResponsivo.css">
+    <link rel="stylesheet" href="css/responsividade/notaFiscal.css">
+
 </head>
 
 <body>
@@ -44,8 +45,8 @@ if (!isset($_SESSION['turma'])) {
             <div class="table-inputs">
                 <div class="txt">
                     <h1 class="nota">Nota Fiscal Do Pedido</h1>
-                    <h1 id="v" class="voltar">Voltar</h1>
                 </div>
+                <div class="centro-table">
                 <div class="tabela-scroll">
 
                     <?php
@@ -373,6 +374,7 @@ if (!isset($_SESSION['turma'])) {
                             </center>'
                             ?>
                     </form>
+                </div>
                 </div>
             </div>
     </main>

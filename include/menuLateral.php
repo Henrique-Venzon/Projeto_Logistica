@@ -219,7 +219,7 @@
         }
 
         #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
-            left: 80px;
+            left: 75px;
         }
 
         .sidebar-logo h1 {

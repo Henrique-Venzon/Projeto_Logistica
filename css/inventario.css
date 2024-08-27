@@ -65,11 +65,27 @@ form label{
     margin-bottom: 1.5%;
     text-transform: uppercase;
 }
-table{
-    width: 80%;
-    text-align: center;
-    max-height: 40vh;
+.tabela-scroll{
+    max-height: 45vh;
     overflow-y: auto;
+    outline: 1px solid #ffffff;
+    width: 80%;
+}
+.tabela-scroll::-webkit-scrollbar {
+    height: 5px;
+    width: 8px;
+    border-right: 1px solid black;
+  }
+  .tabela-scroll::-webkit-scrollbar-track {
+    background-color: #ffffff; 
+  }
+  
+  .tabela-scroll::-webkit-scrollbar-thumb {
+    background-color: #000000;
+  }
+table{
+    width: 100%;
+    text-align: center;
     color: #fff;
 }
 th,td{
@@ -110,7 +126,8 @@ p{
     }
     table{
         width: 80%;
-        max-height: 60vh;
+        max-height: 200px;
+        overflow-y: auto;
     }
     th,td{
         border: solid 1px #fff;
