@@ -198,6 +198,7 @@ input{
     font-size: 20px;
 }
 @media only screen and (max-width: 600px) {
+
     .txtCont h1{
         font-size: 20px;
     }
@@ -210,6 +211,9 @@ input{
         padding: 6px 4px;
         font-size: 16px;
     }
+    .button-meio{
+        display: none;
+      }
     #nota-ver{
         margin-top: 2%;
         padding: 6px 12px;
