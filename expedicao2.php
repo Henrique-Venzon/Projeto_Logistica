@@ -111,14 +111,8 @@ $id_carga = $_POST['id_carga'];
     <div id="myModal" class="modal">
         <div class="modal-content">
             <?php
-            include_once('include/conexao.php');
 
-            if ($conexao->connect_error) {
-                die("Conexão falhou: " . $conexao->connect_error);
-            }
-
-            if (isset($notafiscal)) {
-                $sql = "SELECT *  FROM nota_fiscal WHERE id = $notafiscal";
+                $sql = "SELECT *  FROM nota_fiscal_expedicao WHERE numero =  $id_carga";
                 $resultado = $conexao->query($sql);
 
                 echo '<span class="close">&times;</span>';
@@ -364,6 +358,7 @@ $id_carga = $_POST['id_carga'];
                         echo '<td>' . $valor_total_prod1 . '</td>';
                         echo '</tr>';
                         echo '<tr>';
+                        if($nome_produto2 != ''){
                         echo '<th>Produto 2</th>';
                         echo '<th>QUANTIDADE 2</th>';
                         echo '<th>UNIDADE 2</th>';
@@ -383,7 +378,9 @@ $id_carga = $_POST['id_carga'];
                         echo '<td>' . $ncm_sh2 . '</td>';
                         echo '<td>' . $valor_total_prod2 . '</td>';
                         echo '</tr>';
+                        }
                         echo '<tr>';
+                        if($nome_produto3 != ''){
                         echo '<th>Produto 3</th>';
                         echo '<th>QUANTIDADE 3</th>';
                         echo '<th>UNIDADE 3</th>';
@@ -403,7 +400,9 @@ $id_carga = $_POST['id_carga'];
                         echo '<td>' . $ncm_sh3 . '</td>';
                         echo '<td>' . $valor_total_prod3 . '</td>';
                         echo '</tr>';
+                        }
                         echo '<tr>';
+                        if($nome_produto4 != ''){
                         echo '<th>Produto 4</th>';
                         echo '<th>QUANTIDADE 4</th>';
                         echo '<th>UNIDADE 4</th>';
@@ -423,13 +422,13 @@ $id_carga = $_POST['id_carga'];
                         echo '<td>' . $ncm_sh4 . '</td>';
                         echo '<td>' . $valor_total_prod4 . '</td>';
                         echo '</tr>';
+                        }
                     }
                 }
 
                 echo '</tbody>';
                 echo '</table>';
                 echo '</div>';
-            }
 
             // Fecha a conexão
             $conexao->close();
