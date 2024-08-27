@@ -78,6 +78,7 @@ if (!isset($_SESSION['id'])) {
 
                     if ($result->num_rows > 0) {
                         echo "<div class=\"centro-table\">
+                        <div class=\"tabela-scroll\">
                         <table border='1'>
                         <tr>
                             <th>ID</th>
@@ -94,6 +95,7 @@ if (!isset($_SESSION['id'])) {
                         </tr>";
                         }
                         echo "</table>";
+                        echo "</div>";
                         echo "</div>";
                     } else {
                         echo "<p>Nenhum resultado encontrado.</p>";
