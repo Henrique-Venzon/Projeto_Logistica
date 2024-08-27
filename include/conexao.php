@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "matrei89_";
-$password = "08RCtaV2r)";
+$username = "root";
+$password = "";
 $dbname = "matrei89_logistica";
 
 // Create connection
