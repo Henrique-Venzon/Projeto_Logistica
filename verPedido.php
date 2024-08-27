@@ -65,8 +65,6 @@ if($qtd > 0){
             print"<th>Situação</th>";
             print "<th class=\"fechar\">Excluir Pedido</th>";
             print "<th class=\"no-pc\">Excluir</th>";
-            print "<th class=\"fechar\">Fechar Pedido</th>";
-            print "<th>Ver Pedido</th>";
             print "<th class=\"fechar\">Arrumar Nota Fiscal</th>";
             print "<th class=\"fechar\">Modificar Nota Fiscal</th>";
             print "</tr>";
@@ -85,28 +83,7 @@ if($qtd > 0){
             print "<button class=\"reset\" type='submit'><span>Excluir</span> </button>";
             print "</form>";
             print"</td>"; 
-            print "<td class=\"fechar\">";
-            print "<form action='processamento/fechar_atividade.php' method='post'>";
-            print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id . "'>";
-            print "<button type='submit' class=\"reset\" data-id=\"".$row->id."\"><span>Fechar Pedido</span></button>";
-            print"</form>";
-            print "</td>"; 
-            print "<td>";
-            print "<form action='nPedido.php' method='get'>";
-
-            $sql_nota = "SELECT id FROM nota_fiscal WHERE id_atividade = " . $row->id;
-            $result_nota = $conn->query($sql_nota);
-
-            if ($result_nota->num_rows > 0) {
-                $id_nota_fiscal = $result_nota->fetch_assoc()['id'];
-            } else {
-                $id_nota_fiscal = null;
-            }
-
-            print "<input type='hidden' name='npedido' value='" . $id_nota_fiscal . "'>";
-            print "<button class=\"reset\" type='submit'><span>Ver</span> </button>";
-            print "</form>";
-            print"</td>"; 
+            
             print "<td class=\"fechar\">";
             print "<form action='criandoNotaFiscal.php' method='get'>";
             print "<input type='hidden' name='npedido' value='" . $row->npedido . "'>";

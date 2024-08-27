@@ -461,7 +461,6 @@ $conn->close();
 
 
                             <div class='button-group'>
-                                <button type='button' id='clearForm'>Apagar tudo</button>
                                 <button type='submit' id='enviar'>Enviar</button>
                             </div>
 

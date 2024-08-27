@@ -38,13 +38,12 @@ if (!isset($_SESSION['id'])) {
                 </div>
                 <form method="post" action="">
                     <label for="search">Pesquisar:</label>
-                    <input type="text" id="search" name="search">
                     <select name="search_type">
-                        <option value="id">ID</option>
                         <option value="nome_produto">Nome do Produto</option>
                         <option value="quantidade_enviada">Quantidade</option>
                         <option value="posicao">Posição</option>
                     </select>
+                    <input type="text" id="search" name="search">
                     <input class="enviar" type="submit" value="Pesquisar">
                 </form>
 
@@ -56,7 +55,7 @@ if (!isset($_SESSION['id'])) {
                     $searchType = $_POST['search_type'];
 
                     // Prepara a query SQL com base no tipo de pesquisa
-                    $sql = "SELECT id, nome_produto, quantidade_enviada, posicao FROM estoque WHERE ";
+                    $sql = "SELECT id, nome_produto, quantidade_enviada, posicao, id_turma FROM estoque WHERE  ";
                     if ($searchType === 'nome_produto') {
                         $sql .= "nome_produto LIKE ?"; 
                     } else {
@@ -85,6 +84,7 @@ if (!isset($_SESSION['id'])) {
                             <th>Nome do Produto</th>
                             <th>Quantidade</th>
                             <th>Posição</th>
+                            <th>Projeto</th>
                         </tr>";
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>
@@ -92,6 +92,7 @@ if (!isset($_SESSION['id'])) {
                             <td>" . $row["nome_produto"] . "</td>
                             <td>" . $row["quantidade_enviada"] . "</td>
                             <td>" . $row["posicao"] . "</td>
+                            <td>" . $row["id_turma"] . "</td>
                         </tr>";
                         }
                         echo "</table>";

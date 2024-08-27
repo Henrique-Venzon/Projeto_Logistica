@@ -183,7 +183,7 @@ $sql = "UPDATE nota_fiscal SET
 WHERE id = $id_da_nota";
 
 if ($conn->query($sql) === TRUE) {
-    header('location:verPedido.php',true,301);
+    header('location: ../verPedido.php',true,301);
     exit;
 }else{
     echo 'teste';

@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="flex">
                     <div class="divpegar esquerda">
                         <form method='post' action="processamento/processosolicitacao2.php">
-                            <h1 class="pegar">Pegar</h1>
+                            <h1 class="pegar">DEFINIR</h1>
                             <?php
 
                             $sql = "SELECT * FROM `solicitacao` WHERE id_turma='$turma' AND `id`=" . $_GET['id_pedido'] . " ORDER BY `solicitacao`.`id` ASC";
@@ -100,8 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             echo "<input type='hidden' value='" . $_GET['id_pedido'] . "' name='id_pedido[]'>";
 
                                             echo "<td style=\"border-right:1px solid black;\">
-                                                    <select name='posicao[]'>
-                                                        <option></option>
+                                                    <select  name='posicao[]'>
                                                         <option>A1</option>
                                                         <option>A2</option>
                                                         <option>A3</option>
@@ -119,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                         <option>D3</option>
                                                         <option>D4</option>
                                                     </select></td>";
-                                            echo "<td style=\"border-right:1px solid black;\"><input type='number' name='quantidade[]' value='0' min='0' max='" . $row->$quantidade . "'></td>";
+                                            echo "<td style=\"border-right:1px solid black;\"><input type='number' name='quantidade[]' value='0' min='1' max='" . $row->$quantidade . "'></td>";
                                             echo "</tr>";
                                         }
                                     }

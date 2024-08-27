@@ -96,7 +96,7 @@
                                         </div>
                                         <div class="nFiscal">
                                             <h1>Nota Fiscal</h1>
-                                            <button type="button" id="nota-ver">
+                                            <button  type="button" id="nota-ver">
                                                 <?php
                                                 if ($pedido_id_selecionado != 0) {
                                                     $sql_atividade = "SELECT id FROM carga WHERE id='" . $pedido_id_selecionado . "' AND turma_id = '" . $_SESSION['turma'] . "'";
