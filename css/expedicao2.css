@@ -210,6 +210,16 @@ input{
         padding: 6px 4px;
         font-size: 16px;
     }
+    #nota-ver{
+        margin-top: 2%;
+        padding: 6px 12px;
+        font-size: 13px;
+        border-radius: 12px;
+        border: none;
+        background: #fff;
+        color: #000;
+        box-shadow: #000 0 0 8px;
+      }
 }
 @media only screen and (min-width: 1440px) and (max-width:1480px) {
     .table{
@@ -242,6 +252,25 @@ input{
       max-height: 64vh; 
       overflow-y: auto; 
         outline: 1px solid #747474;
+      }
+      .modal table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      
+      .modal th,.modal td {
+        border: 1px solid #000000;
+        text-align: center;
+        padding: 2px;
+      }
+      .modal table td{
+        font-size: 12.5px;
+      }
+      .modal table th{
+        text-transform: uppercase;
+        font-size: 13px;
+        background-color: black;
+        color: #fff;
       }
       
 }

@@ -65,7 +65,7 @@ if($qtd > 0){
             print"<th>Situação</th>";
             print "<th class=\"fechar\">Excluir Pedido</th>";
             print "<th class=\"no-pc\">Excluir</th>";
-            print "<th class=\"fechar\">Arrumar Nota Fiscal</th>";
+            print "<th >Arrumar Nota Fiscal</th>";
             print "<th class=\"fechar\">Modificar Nota Fiscal</th>";
             print "</tr>";
     
@@ -84,7 +84,7 @@ if($qtd > 0){
             print "</form>";
             print"</td>"; 
             
-            print "<td class=\"fechar\">";
+            print "<td >";
             print "<form action='criandoNotaFiscal.php' method='get'>";
             print "<input type='hidden' name='npedido' value='" . $row->npedido . "'>";
             print "<button class=\"reset\" type='submit'><span>Arrumar</span> </button>";

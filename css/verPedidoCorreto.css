@@ -174,10 +174,7 @@ main{
     .fechar{
         display: none;
     }
-    .table th{
-        height: 40px;
-    
-    }
+
     .table td{
         height: 50px;
     }
