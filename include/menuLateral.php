@@ -202,7 +202,8 @@
     .fa-boxes-stacked {
         margin-left: 5px;
     }
-    .fa-check-to-slot{
+
+    .fa-check-to-slot {
         margin-left: 5px;
     }
 
@@ -210,6 +211,7 @@
         i {
             font-size: 18px;
         }
+
         #sidebar.expand {
             width: 148px;
         }
@@ -226,28 +228,30 @@
             font-size: 10.5px;
             margin-left: -10%;
         }
+
         .toggle-btn i {
-        margin-left: 14px;
-        font-size: 20px;
+            margin-left: 14px;
+            font-size: 20px;
+        }
+
+        a.sidebar-link {
+            font-size: 0.50rem;
+        }
+
+        .fa-user {
+            margin-left: 7px;
+            margin-right: 5px;
+        }
     }
 
-    a.sidebar-link {
-        font-size: 0.50rem;
-    }
-    .fa-user {
-        margin-left: 7px;
-        margin-right: 5px;
-    }
-    }
 
 
-    
 
     @media only screen and (min-width: 601px) and (max-width: 1024px) {}
 
     @media only screen and (min-width: 1025px) and (max-width: 1440px) {}
 
-    @media only screen and (min-width: 1440px) and (max-width: 1480px){
+    @media only screen and (min-width: 1440px) and (max-width: 1480px) {
         .toggle-btn {
             background-color: transparent;
             cursor: pointer;
@@ -342,8 +346,8 @@
                                 class="sidebar-link">Container</a>
                         </li>
                         <li class="sidebar-item">
-                            <a id="linkContainer" style="margin-bottom: -1.4px;" href="notaF.php"
-                                class="sidebar-link">Nota Fiscal</a>
+                            <a id="linkContainer" style="margin-bottom: -1.4px;" href="notaF.php" class="sidebar-link">Nota
+                                Fiscal</a>
                         </li>
                     </ul>
                 </li>
@@ -390,7 +394,7 @@
                     ?>
                 <li class="sidebar-item">
                     <a href="verSolicitacao.php" class="sidebar-link">
-                      <i class="fa-solid fa-check-to-slot"></i>
+                        <i class="fa-solid fa-check-to-slot"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Verificar Solicitação</span>
                     </a>
                 </li>
@@ -412,13 +416,15 @@
                         <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal Saída</span>
                     </a>
                 </li>
-
+            <?php if ($_SESSION['tipo_login'] == 'professor')
+                echo '
                 <li class="sidebar-item">
                     <a href="inventario.php" class="sidebar-link">
-                        <i class="fa-solid fa-boxes-stacked"></i>
+                    <i class="fa-solid fa-user"></i>
                         <span class="sidebar-text" style="margin-left:10px;">Inventário</span>
                     </a>
-                </li>
+                </li>'
+                    ?>
             <?php if ($_SESSION['tipo_login'] == 'professor')
                 echo '
             <li class="sidebar-item">
