@@ -11,6 +11,9 @@
 .text h1{
     font-size: 22px;
 }
+.nota{
+    font-size: 22px;
+}
 .fechar{
     display: none;
 }

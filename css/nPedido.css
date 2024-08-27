@@ -55,10 +55,11 @@ table th{
   }
   .tabela-scroll::-webkit-scrollbar {
     height: 5px; 
-    width: 15px;
+    width: 4px;
     border-right: 1px solid black;
 
   }
+  
   .voltar{
     position: absolute;
     left: 80%;

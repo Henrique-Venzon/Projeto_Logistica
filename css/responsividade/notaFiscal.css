@@ -1,0 +1,64 @@
+@media only screen and (max-width: 600px) {
+    .nota{
+        margin-top: 5%;
+        margin-bottom: 7%;
+        font-size: 13px;
+    }
+    .baixar-pdf{
+        display: none;
+    }
+    table{
+        padding: 0;
+    }
+    table td{
+        font-size:6.3px;
+        transform: scaleY(1.2);
+      }
+      table th{
+        font-size: 6.3px;
+        transform: scaleY(1.2);
+      }
+      table th, table td {
+        text-align: center;
+        padding: 10px 1px;
+        vertical-align: middle; 
+       }
+      .tabela-scroll{
+        max-height: 73.5vh;
+        max-width:51vw;
+        overflow-y: auto;
+        overflow-x: auto;
+        display: flex;
+      }
+      .centro-table{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+}
+@media only screen and (min-width: 1440px) and (max-width:1480px){
+    .baixar-pdf{
+        margin-top: 16x;
+        padding: 4px 18px;
+        background-color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        box-shadow: 0 0 10px #c2c2c2;
+      }
+      table th, table td {
+        border: 1px solid #000000;
+        text-align: center;
+        padding: 2px;
+      }
+      table td{
+        font-size: 10.5px;
+        background-color: #2c2c2c;
+      }
+      table th{
+        text-transform: uppercase;
+        font-size: 10.5px;
+        background-color: black;
+        color: #fff;
+      }
+}
