@@ -138,7 +138,7 @@ $id = $_GET['id']
                                     print "<form class='cancelar' method='post' action='processamento/cancelar_finalizar_expedicao.php' style='display:inline-block'>";
                                     print "<input name='produto_id' value='" . $row->id . "' hidden>";
                                     print "<input name='id_pedido' value='" . $id . "' hidden>";
-                                    print "<td class='cancelar'><button class='cancelar finalizar;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;i'  type='submit' name='cancelar'>Cancelar</button></td>";
+                                    print "<td class='cancelar'><button class='finalizar'  type='submit' name='cancelar'>Cancelar</button></td>";
                                     print "</form>";
 
                                     print "</td>";
