@@ -350,6 +350,14 @@ display: none;
     .div-estoque{
         display: none;
     }
+    .buttonEnviar button{
+    color: #000;
+    padding: 5px 12px;
+    text-transform: uppercase;
+    border-radius: 11px;
+    font-size: 15px;
+    transition: 0.8s ease-in-out;
+    }
     .quantidade-pc{
         display: none;
     }
