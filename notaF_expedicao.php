@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php
            include_once('include/conexao.php');
 
-                $sql_after = "SELECT * FROM nota_fiscal_expedicao where id_turma = '".$_SESSION['turma']."'";
+                $sql_after = "SELECT * FROM nota_fiscal_expedicao where situacao ='Enviado' and id_turma = '".$_SESSION['turma']."'";
                 $res = $conn->query($sql_after);
                 $qtd = $res->num_rows;
 

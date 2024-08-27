@@ -5,7 +5,7 @@ if (!isset($_SESSION['id'])) {
     exit;
 }
 
-include_once ('include/conexao.php');
+include_once('include/conexao.php');
 
 // Checar conexão
 if ($conn->connect_error) {
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="css/solicitacaoestoque.css">
+    <link rel="stylesheet" href="css/solicitacaoestoque.css">
 
 </head>
 
@@ -134,9 +134,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </form>
 
                         <div class="container-cancelar">
-                        <button type="button" class="cancelar" data-bs-toggle="modal" data-bs-target="#meuModal">
-                            Cancelar Algum Pedido
-                        </button>
+                            <button type="button" class="cancelar" data-bs-toggle="modal" data-bs-target="#meuModal">
+                                Cancelar Pedido
+                            </button>
                         </div>
 
                         <!-- Modal -->
@@ -149,55 +149,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                     <div class="modal-body">
                                         <form method="POST" action="processamento/processar_cancelamento_solicitacao.php" id="formCancelamento">
-                                            <?php
-                                            $sql = "SELECT * FROM `solicitacao` WHERE id_turma='$turma' AND `id`=" . $_GET['id_pedido'] . " ORDER BY `solicitacao`.`id` ASC";
-                                            $res = $conn->query($sql);
-                                            $qtd = $res->num_rows;
-
-                                            if ($qtd > 0) {
-                                                echo "<table class='table4'>";
-                                                echo "<tr>";
-                                                echo "<th>Produto</th>";
-                                                echo "<th class=\"quantidade-pc\">Quantidade Solicitada</th>";
-                                                echo "<th class=\"quantidade-cell\">Quantidade</th>";
-                                                echo "<th>Cancelar</th>";
-                                                echo "</tr>";
-
-                                                while ($row = $res->fetch_object()) {
-                                                    for ($i = 1; $i <= 4; $i++) {
-                                                        $produto = "produto" . ($i == 1 ? "" : $i);
-                                                        $quantidade = "quantidade" . ($i == 1 ? "" : $i);
-
-                                                        if (!empty($row->$produto) && !empty($row->$quantidade)) {
-                                                            echo "<tr>";
-                                                            echo "<td style=\"border-right:1px solid black;\">" . $row->$produto . "</td>";
-                                                            echo "<td style=\"border-right:1px solid black;\">" . $row->$quantidade . "</td>";
-                                                            echo "<td style=\"border-right:1px solid black;\">";
-                                                            echo "<input type='hidden' name='produto[]' value='" . $row->$produto . "'>";
-                                                            echo "<input type='hidden' name='quantidade_cancelada[]' value='" . $row->$quantidade . "'>";
-                                                            echo "<input type='hidden' name='id_pedido' value='" . $_GET['id_pedido'] . "'>"; 
-                                                            echo "<input class=\"custom-checkbox\" type='checkbox' name='cancelar_produto[]' value='" . $i . "'>"; 
-                                                            echo "</td>";
-                                                            echo "</tr>";
-                                                        }
-                                                    }
-                                                }
-
-                                                echo "</table>";
-                                                echo "<div id='motivoCancelamento' style='display: none;'>
-                                                <label for='motivo'>Motivo do Cancelamento:</label><br>
-                                                <input type='text' id='motivo' name='motivo' class='form-control'>
-                                                </div>";
-                                                echo "<div class='buttonEnviar'> <button type='submit' name='cancelar_item'>Enviar</button></div>";
-                                            } else {
-                                                echo "<p class='alert alert-danger'>Não encontrou nenhum pedido nas docas.</p>";
-                                            }
-                                            $conn->close();
-                                            ?>
-
-
-
-                                        </form>
+                                            <form method="POST" action="processamento/processar_cancelamento_solicitacao_carga.php" id="formCancelamento">
+                                                <input type="hidden" name="id_pedido" value="<?php echo $_GET['id_pedido']; ?>">
+                                                <div class="mb-3">
+                                                    <label for="motivo" class="form-label">Motivo do Cancelamento:</label>
+                                                    <textarea class="form-control" id="motivo" name="motivo" rows="3" required></textarea>
+                                                </div>
+                                                <button type="submit" name="cancelar_pedido"
+                                                    class="btn btn-danger">Cancelar Pedido</button>
+                                            </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"

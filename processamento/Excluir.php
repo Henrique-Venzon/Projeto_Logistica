@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql_pegado = "DELETE FROM pegado WHERE id_turma = " . $turma_id;
         $sql_picking = "DELETE FROM picking WHERE id_turma = " . $turma_id;
         $sql_picking_pegado = "DELETE FROM picking_pegado WHERE id_turma = " . $turma_id;
-        $sql_cancelamentos_solicitacao="DELETE FROM cancelamentos_solicitacao WHERE id_turma = " . $turma_id;
+        $sql_cancelamentos_solicitacao="DELETE FROM cancelamentos_solocitacao WHERE id_turma = " . $turma_id;
         $sql_movimentacao="DELETE FROM movimentacao WHERE id_turma = " . $turma_id;
         $expedicao="DELETE FROM expedicao WHERE id_turma = " . $turma_id;
         $cancelamentos_pedidos="DELETE FROM cancelamentos_pedidos WHERE id_turma = " . $turma_id;

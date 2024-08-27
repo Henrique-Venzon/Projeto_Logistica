@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/verPedidos.css">
-    <link rel="stylesheet" href="css/responsividade/cancelamento-responsivo.css">
+    <link rel="stylesheet" href="css/responsividade/verpedidoResponsivo.css">
 </head>
 
 <body>
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php        
 
 include_once('include/conexao.php');
-$sql = "SELECT * FROM cancelamentos_solicitacao where id_turma = '".$_SESSION['turma']."'";
+$sql = "SELECT * FROM cancelamentos_solocitacao where id_turma = '".$_SESSION['turma']."'";
 
 $res = $conn->query($sql);
 
@@ -60,29 +60,58 @@ if($qtd > 0){
     print "<table class='table' >";
 
     print "<tr>";
-            print "<th class=\"data-resposivo-pc\>ID Solicitação</th>";
-            print "<th class=\"data-resposivo\">ID</th>";
-            print "<th>Produto Cancelado</th>";
-            print "<th>Quantidade Cancelada</th>";
+            print "<th>ID Carga</th>";
             print "<th>Motivo</th>";
-            print "<th class=\"data-resposivo-pc\">Data Cancelamento</th>";
-            print "<th class=\"data-resposivo\">Data</th>";
+            print "<th>Data Cancelamento</th>";
             print "</tr>";
     
             while($row = $res->fetch_object()){
                 print "<tr>";
-                print "<td>".$row->id_solicitacao."</td>";
-                print "<td>".$row->produto."</td>";
-                print "<td>".$row->quantidade_cancelada."</td>";
+                print "<td>".$row->id_carga."</td>";
                 print "<td>".$row->motivo."</td>";
                 
                 // Formatar a data
                 $data_formatada = date("d/m/Y H:i:s", strtotime($row->data_cancelamento)); 
             
                 // Imprimir a data formatada (corrigido)
+
                 print "<td>" . $data_formatada . "</td>"; 
             
                 print "</tr>";
+            }
+        print "</table>";
+        print "</div>";
+
+}else{
+    print "<p class='alert alert-danger'>Não encrontrou nenhum cancelamento.</p>";
+}
+$sql = "SELECT * FROM nota_fiscal_expedicao where situacao='cancelado' and id_turma = '".$_SESSION['turma']."'";
+
+$res = $conn->query($sql);
+
+$qtd = $res->num_rows;
+
+if($qtd > 0){
+    print "<div class=\"tabela-scroll\">";
+    print "<table class='table' >";
+
+    print "<tr>";
+            print "<th>Nota Fiscal</th>";
+            print "<th>Ver</th>";
+            print "</tr>";
+    
+            while($row = $res->fetch_object()){
+                print "<form method='get' action='nPedido_expedicao.php'";
+                print "<tr>";
+                print "<td>" . $row->numero . "</td>";
+                print "<td>
+                    <button class=\"reset\" data-id=\"" . $row->id . "\"><span>ver</span></button>
+                    <input name='npedido' type='hidden' value='" .$row->id . "'>
+                    </td>";
+                print "</tr>";
+                print "</form>";
+                
+            
             }
         print "</table>";
         print "</div>";
