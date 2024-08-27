@@ -25,7 +25,7 @@
         exit;
     }
 
-    include_once ('include/conexao.php');
+    include_once('include/conexao.php');
     $pedido_id_selecionado = 0;
 
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -121,7 +121,7 @@
                                         <div id="myModal" class="modal">
                                             <div class="modal-content">
                                                 <?php
-                                                include_once ('include/conexao.php');
+                                                include_once('include/conexao.php');
 
                                                 if ($conexao->connect_error) {
                                                     die("Conexão falhou: " . $conexao->connect_error);
@@ -637,6 +637,21 @@
 
                 motivoCancelamento.style.display = peloMenosUmaMarcada ? 'block' : 'none';
             });
+        });
+    </script>
+    <script>
+        const form = document.querySelector('form'); // Seleciona o formulário
+        let enviado = false; // Flag para controlar o envio
+
+        form.addEventListener('submit', (event) => {
+            if (enviado) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+                console.log("Formulário já enviado. Aguarde.");
+            } else {
+                enviado = true;
+                console.log("Formulário enviado.");
+                // O código do seu formulário continua aqui...
+            }
         });
     </script>
 </body>
