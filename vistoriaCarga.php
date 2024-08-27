@@ -25,7 +25,7 @@
         exit;
     }
 
-    include_once ('include/conexao.php');
+    include_once('include/conexao.php');
     $pedido_id_selecionado = 0;
 
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -59,11 +59,11 @@
                 </div>
                 <div class="inputPedido">
                     <div class="label">
-                        <label for="pedido">Selecione o Pedido:</label>
+                        <label for="pedido1">Selecione o Pedido:</label>
                     </div>
                     <div class="select">
                         <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                            <select name="pedido_selecionado" id="pedido">
+                            <select name="pedido_selecionado" id="pedido1" style="display:block;">
                                 <option value="0">0</option>
                                 <?php
                                 $sql = "SELECT id, npedido FROM carga WHERE situacao='enviado' and turma_id = '" . $_SESSION['turma'] . "'";
@@ -121,7 +121,7 @@
                                         <div id="myModal" class="modal">
                                             <div class="modal-content">
                                                 <?php
-                                                include_once ('include/conexao.php');
+                                                include_once('include/conexao.php');
 
                                                 if ($conexao->connect_error) {
                                                     die("Conexão falhou: " . $conexao->connect_error);
@@ -374,65 +374,71 @@
                                                             echo '<td>' . $valor_total_prod1 . '</td>';
                                                             echo '</tr>';
                                                             echo '<tr>';
-                                                            echo '<th>Produto 2</th>';
-                                                            echo '<th>QUANTIDADE 2</th>';
-                                                            echo '<th>UNIDADE 2</th>';
-                                                            echo '<th>VALOR UN 2</th>';
-                                                            echo '<th>CFOP 2</th>';
-                                                            echo '<th>CST 2</th>';
-                                                            echo '<th>NCM 2</th>';
-                                                            echo '<th>VALOR TOTAL 2</th>';
-                                                            echo '</tr>';
+                                                            if ($nome_produto2 != '') {
+                                                                echo '<th>Produto 2</th>';
+                                                                echo '<th>QUANTIDADE 2</th>';
+                                                                echo '<th>UNIDADE 2</th>';
+                                                                echo '<th>VALOR UN 2</th>';
+                                                                echo '<th>CFOP 2</th>';
+                                                                echo '<th>CST 2</th>';
+                                                                echo '<th>NCM 2</th>';
+                                                                echo '<th>VALOR TOTAL 2</th>';
+                                                                echo '</tr>';
+                                                                echo '<tr>';
+                                                                echo '<td>' . $nome_produto2 . '</td>';
+                                                                echo '<td>' . $quantidade_prod2 . '</td>';
+                                                                echo '<td>' . $unid2 . '</td>';
+                                                                echo '<td>' . $valor_unitario2 . '</td>';
+                                                                echo '<td>' . $cfop2 . '</td>';
+                                                                echo '<td>' . $cst2 . '</td>';
+                                                                echo '<td>' . $ncm_sh2 . '</td>';
+                                                                echo '<td>' . $valor_total_prod2 . '</td>';
+                                                                echo '</tr>';
+                                                            }
                                                             echo '<tr>';
-                                                            echo '<td>' . $nome_produto2 . '</td>';
-                                                            echo '<td>' . $quantidade_prod2 . '</td>';
-                                                            echo '<td>' . $unid2 . '</td>';
-                                                            echo '<td>' . $valor_unitario2 . '</td>';
-                                                            echo '<td>' . $cfop2 . '</td>';
-                                                            echo '<td>' . $cst2 . '</td>';
-                                                            echo '<td>' . $ncm_sh2 . '</td>';
-                                                            echo '<td>' . $valor_total_prod2 . '</td>';
-                                                            echo '</tr>';
+                                                            if ($nome_produto3 != '') {
+                                                                echo '<th>Produto 3</th>';
+                                                                echo '<th>QUANTIDADE 3</th>';
+                                                                echo '<th>UNIDADE 3</th>';
+                                                                echo '<th>VALOR UN 3</th>';
+                                                                echo '<th>CFOP 3</th>';
+                                                                echo '<th>CST 3</th>';
+                                                                echo '<th>NCM 3</th>';
+                                                                echo '<th>VALOR TOTAL 3</th>';
+                                                                echo '</tr>';
+                                                                echo '<tr>';
+                                                                echo '<td>' . $nome_produto3 . '</td>';
+                                                                echo '<td>' . $quantidade_prod3 . '</td>';
+                                                                echo '<td>' . $unid3 . '</td>';
+                                                                echo '<td>' . $valor_unitario3 . '</td>';
+                                                                echo '<td>' . $cfop3 . '</td>';
+                                                                echo '<td>' . $cst3 . '</td>';
+                                                                echo '<td>' . $ncm_sh3 . '</td>';
+                                                                echo '<td>' . $valor_total_prod3 . '</td>';
+                                                                echo '</tr>';
+                                                            }
                                                             echo '<tr>';
-                                                            echo '<th>Produto 3</th>';
-                                                            echo '<th>QUANTIDADE 3</th>';
-                                                            echo '<th>UNIDADE 3</th>';
-                                                            echo '<th>VALOR UN 3</th>';
-                                                            echo '<th>CFOP 3</th>';
-                                                            echo '<th>CST 3</th>';
-                                                            echo '<th>NCM 3</th>';
-                                                            echo '<th>VALOR TOTAL 3</th>';
-                                                            echo '</tr>';
-                                                            echo '<tr>';
-                                                            echo '<td>' . $nome_produto3 . '</td>';
-                                                            echo '<td>' . $quantidade_prod3 . '</td>';
-                                                            echo '<td>' . $unid3 . '</td>';
-                                                            echo '<td>' . $valor_unitario3 . '</td>';
-                                                            echo '<td>' . $cfop3 . '</td>';
-                                                            echo '<td>' . $cst3 . '</td>';
-                                                            echo '<td>' . $ncm_sh3 . '</td>';
-                                                            echo '<td>' . $valor_total_prod3 . '</td>';
-                                                            echo '</tr>';
-                                                            echo '<tr>';
-                                                            echo '<th>Produto 4</th>';
-                                                            echo '<th>QUANTIDADE 4</th>';
-                                                            echo '<th>UNIDADE 4</th>';
-                                                            echo '<th>VALOR UN 4</th>';
-                                                            echo '<th>CFOP 4</th>';
-                                                            echo '<th>CST 4</th>';
-                                                            echo '<th>NCM 4</th>';
-                                                            echo '<th>VALOR TOTAL 4</th>';
-                                                            echo '</tr>';
-                                                            echo '<tr>';
-                                                            echo '<td>' . $nome_produto4 . '</td>';
-                                                            echo '<td>' . $quantidade_prod4 . '</td>';
-                                                            echo '<td>' . $unid4 . '</td>';
-                                                            echo '<td>' . $valor_unitario4 . '</td>';
-                                                            echo '<td>' . $cfop4 . '</td>';
-                                                            echo '<td>' . $cst4 . '</td>';
-                                                            echo '<td>' . $ncm_sh4 . '</td>';
-                                                            echo '<td>' . $valor_total_prod4 . '</td>';
-                                                            echo '</tr>';
+                                                            if ($nome_produto4 != '') {
+                                                                echo '<th>Produto 4</th>';
+                                                                echo '<th>QUANTIDADE 4</th>';
+                                                                echo '<th>UNIDADE 4</th>';
+                                                                echo '<th>VALOR UN 4</th>';
+                                                                echo '<th>CFOP 4</th>';
+                                                                echo '<th>CST 4</th>';
+                                                                echo '<th>NCM 4</th>';
+                                                                echo '<th>VALOR TOTAL 4</th>';
+                                                                echo '</tr>';
+                                                                echo '<tr>';
+                                                                echo '<td>' . $nome_produto4 . '</td>';
+                                                                echo '<td>' . $quantidade_prod4 . '</td>';
+                                                                echo '<td>' . $unid4 . '</td>';
+                                                                echo '<td>' . $valor_unitario4 . '</td>';
+                                                                echo '<td>' . $cfop4 . '</td>';
+                                                                echo '<td>' . $cst4 . '</td>';
+                                                                echo '<td>' . $ncm_sh4 . '</td>';
+                                                                echo '<td>' . $valor_total_prod4 . '</td>';
+                                                                echo '</tr>';
+                                                            }
                                                         }
                                                     }
 
@@ -471,7 +477,7 @@
                                 <table class='table'>
                                     <tr>
                                         <th>Produto</th>
-                                        <th>Unidade</th>
+                                        <th class="nulo">Unidade</th>
                                         <th>Quantidade</th>
                                         <th>Valor</th>
                                         <th>Avariado</th>
@@ -479,7 +485,7 @@
                                     </tr>
                                     <tr>
                                         <td><?php echo $pedido['produto1']; ?></td>
-                                        <td><?php echo $pedido['unidade1']; ?></td>
+                                        <td class="nulo"><?php echo $pedido['unidade1']; ?></td>
                                         <td>
                                             <span id="quantidade1"><?php echo $pedido['quantidade1']; ?></span>
                                             <input name="quantidade1" id="quantidadeInput1" type="text"
@@ -496,7 +502,7 @@
                                     <?php if (!empty($pedido['produto2'])) { ?>
                                         <tr>
                                             <td><?php echo $pedido['produto2']; ?></td>
-                                            <td><?php echo $pedido['unidade2']; ?></td>
+                                            <td class="nulo"><?php echo $pedido['unidade2']; ?></td>
                                             <td>
                                                 <span id="quantidade2"><?php echo $pedido['quantidade2']; ?></span>
                                                 <input name="quantidade2" id="quantidadeInput2" type="text"
@@ -514,7 +520,7 @@
                                     <?php if (!empty($pedido['produto3'])) { ?>
                                         <tr>
                                             <td><?php echo $pedido['produto3']; ?></td>
-                                            <td><?php echo $pedido['unidade3']; ?></td>
+                                            <td class="nulo"><?php echo $pedido['unidade3']; ?></td>
                                             <td>
                                                 <span id="quantidade3"><?php echo $pedido['quantidade3']; ?></span>
                                                 <input name="quantidade3" id="quantidadeInput3" type="text"
@@ -532,7 +538,7 @@
                                     <?php if (!empty($pedido['produto4'])) { ?>
                                         <tr>
                                             <td><?php echo $pedido['produto4']; ?></td>
-                                            <td><?php echo $pedido['unidade4']; ?></td>
+                                            <td class="nulo"><?php echo $pedido['unidade4']; ?></td>
                                             <td>
                                                 <span id="quantidade4"><?php echo $pedido['quantidade4']; ?></span>
                                                 <input name="quantidade4" id="quantidadeInput4" type="text"
@@ -637,6 +643,21 @@
 
                 motivoCancelamento.style.display = peloMenosUmaMarcada ? 'block' : 'none';
             });
+        });
+    </script>
+    <script>
+        const form = document.querySelector('form'); // Seleciona o formulário
+        let enviado = false; // Flag para controlar o envio
+
+        form.addEventListener('submit', (event) => {
+            if (enviado) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+                console.log("Formulário já enviado. Aguarde.");
+            } else {
+                enviado = true;
+                console.log("Formulário enviado.");
+                // O código do seu formulário continua aqui...
+            }
         });
     </script>
 </body>

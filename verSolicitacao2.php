@@ -53,7 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
         <link rel="stylesheet" href="css/solicitacaoestoque.css">
-        <link rel="stylesheet" href="css/responsividade/solicitacaoEstoqueResponsivo.css">
 
 </head>
 
@@ -64,12 +63,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="DivDireita">
             <div class="table-inputs">
                 <div class="txtCont">
-                    <h1>Solicitção</h1>
+                    <h1>Solicitação</h1>
                 </div>
                 <div class="flex">
-                    <div class="divpegar">
+                    <div class="divpegar esquerda">
                         <form method='post' action="processamento/processosolicitacao2.php">
-                            <h1 class="pegar">Pegar</h1>
+                            <h1 class="pegar">DEFINIR</h1>
                             <?php
 
                             $sql = "SELECT * FROM `solicitacao` WHERE id_turma='$turma' AND `id`=" . $_GET['id_pedido'] . " ORDER BY `solicitacao`.`id` ASC";
@@ -81,7 +80,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 echo "<table id='table' class='table'>";
                                 echo "<tr>";
                                 echo "<th>Produto</th>";
-                                echo "<th>Quantidade Solicitada</th>";
+                                echo "<th class=\"quantidade-pc\">Quantidade Solicitada</th>";
+                                echo "<th class=\"quantidade-cell\">Quantidade</th>";
                                 echo "<th>Posição</th>";
                                 echo "<th>Quantidade</th>";
                                 echo "</tr>";
@@ -100,8 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             echo "<input type='hidden' value='" . $_GET['id_pedido'] . "' name='id_pedido[]'>";
 
                                             echo "<td style=\"border-right:1px solid black;\">
-                                                    <select name='posicao[]'>
-                                                        <option></option>
+                                                    <select  name='posicao[]'>
                                                         <option>A1</option>
                                                         <option>A2</option>
                                                         <option>A3</option>
@@ -119,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                         <option>D3</option>
                                                         <option>D4</option>
                                                     </select></td>";
-                                            echo "<td style=\"border-right:1px solid black;\"><input type='number' name='quantidade[]' value='0' min='0' max='" . $row->$quantidade . "'></td>";
+                                            echo "<td style=\"border-right:1px solid black;\"><input type='number' name='quantidade[]' value='0' min='1' max='" . $row->$quantidade . "'></td>";
                                             echo "</tr>";
                                         }
                                     }
@@ -156,11 +155,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             $qtd = $res->num_rows;
 
                                             if ($qtd > 0) {
-                                                echo "<div id=\"tabelaScroll\" class=\"tabela-scroll\">";
-                                                echo "<table class='table'>";
+                                                echo "<table class='table4'>";
                                                 echo "<tr>";
                                                 echo "<th>Produto</th>";
-                                                echo "<th>Quantidade Solicitada</th>";
+                                                echo "<th class=\"quantidade-pc\">Quantidade Solicitada</th>";
+                                                echo "<th class=\"quantidade-cell\">Quantidade</th>";
                                                 echo "<th>Cancelar</th>";
                                                 echo "</tr>";
 
@@ -185,7 +184,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 }
 
                                                 echo "</table>";
-                                                echo "</div>";
                                                 echo "<div id='motivoCancelamento' style='display: none;'>
                                                 <label for='motivo'>Motivo do Cancelamento:</label><br>
                                                 <input type='text' id='motivo' name='motivo' class='form-control'>
@@ -210,9 +208,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
 
                     </div>
-                    <div class="divpegar">
-                        <h1 class="pegar">Estoque</h1>
-                        <div class="stock">
+                    <div class="divpegar div-estoque">
+                        <h1 class="pegar div-estoque">Estoque</h1>
+                        <div class="stock div-estoque">
                             <div class="tabelaPesquisa">
                                 <div class="pesquisa">
                                     <form id="formPesquisa" method="POST" action="">

@@ -730,6 +730,8 @@ setInterval(function issqn(){
     let campo3 = document.getElementById('total_produtos2');
       campo3.value = total;
   },1000)
+
+
   
-  
+
 

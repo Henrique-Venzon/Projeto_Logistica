@@ -11,6 +11,21 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 $turma = $_SESSION['turma'];
+
+$sql_valor_total = "SELECT SUM(p.preco * e.quantidade_enviada) AS valor_total
+                    FROM produto p
+                    INNER JOIN estoque e ON p.nome_produto = e.nome_produto
+                    WHERE e.id_turma = $turma";
+
+$result_valor_total = $conn->query($sql_valor_total);
+$valor_total = 0;
+
+if ($result_valor_total->num_rows > 0) {
+    $row = $result_valor_total->fetch_assoc();
+    if (isset($row["valor_total"])) {
+        $valor_total = $row["valor_total"];
+    }
+}
 ?>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -88,6 +103,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <p class="verde">Cor Verde: Quantidade a mais.</p>
                             </div>
                         </div>
+                        <div class="caixa-valor">
+                    <h3>Valor Total em itens:<br> R$ <?php echo number_format($valor_total, 2, ',', '.'); ?></h3>
+                    </div>
                     </div>
                     <div class="tabelaPosicoes">
                         <div class="posicoes">
@@ -141,6 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>

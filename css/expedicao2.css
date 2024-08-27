@@ -49,7 +49,7 @@ main{
     background-color: #000000;
 }
 .table td{
-    height: 60px;
+    height: 50px;
     background-color: #333333;
 }
 
@@ -63,7 +63,68 @@ main{
     border-radius: 40px; 
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .close{
+    font-size: 30px;
+    margin-left: 97%;
+    cursor: pointer;
+    margin-bottom: 0.5%;
+    transition: 0.2s ease-in-out;
+  }
+  .close:hover{
+    color: red;
+  }
+  .modal-content {
+    background-color: white;
+    margin: 2% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 95%;
+  }
+  
+  .modal table {
+    width: 100%;
+    border-collapse: collapse;
+  }
 
+  .modal th,.modal td {
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 8px;
+  }
+  .modal table td{
+    font-size: 11px;
+  }
+  .modal table th{
+    text-transform: uppercase;
+    font-size: 11.5px;
+    background-color: black;
+    color: #fff;
+  }
+  #nota-ver{
+    padding: 6px 15px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
+    background: #fff;
+    color: #000;
+    box-shadow: #000 0 0 8px;
+  }
+  .button-meio{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+  }
 .tabela-scroll {
     margin-top: 1%;
   max-height: 64vh; 
@@ -136,7 +197,35 @@ input{
     text-transform: uppercase;
     font-size: 20px;
 }
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 600px) {
+
+    .txtCont h1{
+        font-size: 20px;
+    }
+    .table th,td{
+        border: solid 1.5px #000000;
+        font-size: 11px;
+    }
+    .buttonEnviar button{
+        color: #000;
+        padding: 6px 4px;
+        font-size: 16px;
+    }
+    .button-meio{
+        display: none;
+      }
+    #nota-ver{
+        margin-top: 2%;
+        padding: 6px 12px;
+        font-size: 13px;
+        border-radius: 12px;
+        border: none;
+        background: #fff;
+        color: #000;
+        box-shadow: #000 0 0 8px;
+      }
+}
+@media only screen and (min-width: 1440px) and (max-width:1480px) {
     .table{
         font-size: 20px;
         text-align: center;
@@ -167,6 +256,25 @@ input{
       max-height: 64vh; 
       overflow-y: auto; 
         outline: 1px solid #747474;
+      }
+      .modal table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      
+      .modal th,.modal td {
+        border: 1px solid #000000;
+        text-align: center;
+        padding: 2px;
+      }
+      .modal table td{
+        font-size: 12.5px;
+      }
+      .modal table th{
+        text-transform: uppercase;
+        font-size: 13px;
+        background-color: black;
+        color: #fff;
       }
       
 }

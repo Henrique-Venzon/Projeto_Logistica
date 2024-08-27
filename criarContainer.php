@@ -97,7 +97,7 @@ if (!isset($_SESSION['turma'])) {
                         </div>
                         <div class="juntar">
                             <label for="">Temperatura:</label>
-                            <input type="text" name="temperatura" id="temperatura" placeholder="Opcional">
+                            <input type="number" name="temperatura" id="temperatura" placeholder="Opcional">
                         </div>
                         <div class="juntar">
                             <label for="">Lacre SIF:</label>

@@ -1,17 +1,17 @@
 @media only screen and (max-width: 600px) {
     .txtCont h1 {
-        margin-top: 3%;
-        font-size: 20px;
+        margin-top: 4%;
+        font-size: 18px;
     }
     #verSku {
         border-radius: 25px;
         background-color: #ffffff;
-        padding: 7px 11px;
+        padding: 4px 7px;
         cursor: pointer;
-        margin-top: 3%;
+        margin-top: 4%;
         margin-left: 5%;
         position: absolute;
-        font-size: 13px;
+        font-size: 11px;
         color: #000000;
         text-shadow: 0px 0px 10px #ffffff;
     }

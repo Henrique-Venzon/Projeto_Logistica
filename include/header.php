@@ -71,7 +71,7 @@
 @media only screen and (max-width: 600px) {
     .sair{
     position: absolute;
-    left: 90%; 
+    left: 94%; 
     transform: translateX(-50%);
 }
     .logo h1{
@@ -95,7 +95,7 @@
     display: none;
 }
 .nomeLogin{
-    left: 70%;
+    left: 67%;
 }
 .nomeLogin h1{
     font-size: 100%;

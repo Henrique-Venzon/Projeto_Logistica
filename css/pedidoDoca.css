@@ -139,8 +139,8 @@ select::-webkit-scrollbar {
     border-radius: 5px; 
   }
 .table select{
-    font-size: 22px;
-    padding: 5px;
+    font-size: 18px;
+    padding: 1px;
 }
 .buttonEnviar{
     display: flex;
@@ -164,9 +164,47 @@ select::-webkit-scrollbar {
     border: 0.8px solid #ffffff;
     color: #fff;
 }
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 1440px) and (max-width: 1480px) {
   .table select{
     font-size: 17px;
     padding: 3px;
 }
+}
+@media only screen and (max-width: 600px) {
+.nomet h1{
+    font-size: 18px;
+}
+.nulo{
+  display: none;
+}
+.table th,td{
+    font-size: 6.8px;
+}
+.table th{
+    height: 38px;
+}
+.table td{
+    height: 38px;
+}
+
+.table input{
+  width: 36px;
+  border-radius: 8px;
+  font-size: 9px;
+  padding: 2px;
+}
+
+.table select{
+  font-size: 6px;
+  padding: 0px;
+}
+
+.buttonEnviar button{
+  padding: 3px;
+  padding-inline: 7px;
+  text-transform: uppercase;
+  border-radius: 15px;
+  font-size: 15px;
+}
+
 }

@@ -2,16 +2,8 @@ window.revelar = ScrollReveal({reset:true})
 
 revelar.reveal('.bv',
     {
-    duration: 1800,
+    duration: 3000,
     delay:200,
-    distance: '100px',
-    origin: 'bottom'
-})
-
-revelar.reveal('.txt-titulo',
-    {
-    duration: 1500,
-    delay:200,
-    distance: '100px',
+    distance: '250px',
     origin: 'bottom'
 })

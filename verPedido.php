@@ -26,8 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/verPedidos.css">
-    <link rel="stylesheet" href="css/responsividade/verpedidoResponsivo.css">
+    <link rel="stylesheet" href="css/verPedidoCorreto.css">
 </head>
 
 <body>
@@ -60,20 +59,20 @@ if($qtd > 0){
     print "<table class='table' >";
 
     print "<tr>";
-            print "<th>ID pedido</th>";
-            print "<th>N° Pedido</th>";
+            print "<th class=\"fechar\">ID pedido</th>";
+            print "<th class=\"no-pc\">ID</th>";
+            print "<th class=\"fechar\">N° Pedido</th>";
             print"<th>Situação</th>";
-            print "<th>Excluir Pedido</th>";
-            print "<th class=\"fechar\">Fechar Pedido</th>";
-            print "<th>Ver Pedido</th>";
-            print "<th>Arrumar Nota Fiscal</th>";
-            print "<th>Modificar Nota Fiscal</th>";
+            print "<th class=\"fechar\">Excluir Pedido</th>";
+            print "<th class=\"no-pc\">Excluir</th>";
+            print "<th >Arrumar Nota Fiscal</th>";
+            print "<th class=\"fechar\">Modificar Nota Fiscal</th>";
             print "</tr>";
     
         while($row = $res->fetch_object()){
             print "<tr>";
             print "<td>".$row->id."</td>";
-            print "<td>".$row->npedido."</td>";
+            print "<td class=\"fechar\">".$row->npedido."</td>";
             print "<td>";
             print $row->situacao;
             print "</td>";
@@ -84,35 +83,14 @@ if($qtd > 0){
             print "<button class=\"reset\" type='submit'><span>Excluir</span> </button>";
             print "</form>";
             print"</td>"; 
-            print "<td class=\"fechar\">";
-            print "<form action='processamento/fechar_atividade.php' method='post'>";
-            print "<input type='hidden' name='id_atividade_ver_perdido' value='" . $row->id . "'>";
-            print "<button type='submit' class=\"reset\" data-id=\"".$row->id."\"><span>Fechar Pedido</span></button>";
-            print"</form>";
-            print "</td>"; 
-            print "<td>";
-            print "<form action='nPedido.php' method='get'>";
-
-            $sql_nota = "SELECT id FROM nota_fiscal WHERE id_atividade = " . $row->id;
-            $result_nota = $conn->query($sql_nota);
-
-            if ($result_nota->num_rows > 0) {
-                $id_nota_fiscal = $result_nota->fetch_assoc()['id'];
-            } else {
-                $id_nota_fiscal = null;
-            }
-
-            print "<input type='hidden' name='npedido' value='" . $id_nota_fiscal . "'>";
-            print "<button class=\"reset\" type='submit'><span>Ver</span> </button>";
-            print "</form>";
-            print"</td>"; 
-            print "<td>";
+            
+            print "<td >";
             print "<form action='criandoNotaFiscal.php' method='get'>";
             print "<input type='hidden' name='npedido' value='" . $row->npedido . "'>";
             print "<button class=\"reset\" type='submit'><span>Arrumar</span> </button>";
             print "</form>";
             print"</td>"; 
-            print "<td>";
+            print "<td class=\"fechar\">";
             print "<form action='modificandoNotaFiscal.php' method='get'>";
             print "<input type='hidden' name='npedido' value='" . $row->id . "'>";
             print "<button class=\"reset\" type='submit'><span>Modificar</span> </button>";

@@ -130,9 +130,9 @@ if (isset($_SESSION['error'])) {
                 <form class="form" action='processamento/adicionarturma.php' method="POST">
 
                     <label class="label-input" for=""></label>
-                    <input type="number" placeholder="Código do Projeto" name='codigo_projeto' required>
+                    <input class="aumentar" type="number" placeholder="Código do Projeto" name='codigo_projeto' required>
                     <label class="label-input" for=""></label>
-                    <input type="number" placeholder="Número de Alunos" name='qtd_alunos'
+                    <input class="aumentar" type="number" placeholder="Número de Alunos" name='qtd_alunos'
                         oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                         min="1" maxlength="2" required>
 

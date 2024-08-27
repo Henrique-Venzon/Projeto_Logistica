@@ -124,7 +124,6 @@ if ($result->num_rows > 0) {
             return false;
         }
 
-        // Verifica se o mesmo produto (diferente de '') foi selecionado em mais de um select
         let produtosSelecionados = [produto, produto2, produto3, produto4].filter(p => p !== '');
         let produtosUnicos = produtosSelecionados.filter((item, index) => {
             return produtosSelecionados.indexOf(item) === index;

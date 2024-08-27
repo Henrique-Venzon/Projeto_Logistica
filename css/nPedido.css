@@ -37,7 +37,15 @@ table th{
     border-radius: 40px; 
 }
 
-
+.baixar-pdf{
+  margin-top: 22px;
+  padding: 4px 18px;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 26px;
+  box-shadow: 0 0 10px #c2c2c2;
+}
 
 .tabela-scroll {
     max-height: 74.5vh; 
@@ -47,10 +55,11 @@ table th{
   }
   .tabela-scroll::-webkit-scrollbar {
     height: 5px; 
-    width: 15px;
+    width: 4px;
     border-right: 1px solid black;
 
   }
+  
   .voltar{
     position: absolute;
     left: 80%;

@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Platypi';
+}
+.centro{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.table1{
+ width: 710px;
+ height: 60vh;
+ text-align: center;
+}
+.table1 th{
+    font-size: 8px;
+    padding: 0.2px;
+    text-transform: uppercase;
+    border: 2px solid #000;
+}
+.table1 td{
+    font-size: 8px;
+    padding: 0.2px;
+    text-transform: uppercase;
+    border: 2px solid #000;
+}
+.table2{
+    text-align: center;
+    width:55%;
+}
+.table2 th{
+    font-size: 8px;
+    padding: 0.2px;
+    text-transform: uppercase;
+    border-right: 2px solid #000;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+.table2 td{
+    font-size: 8px;
+    padding: 0.2px;
+    text-transform: uppercase;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+
+
+}
+.divisao{
+    display: flex;
+    flex-direction: row;
+    width: 710px;
+}
+.Imagem-nome img{
+    padding: 2px 0;
+    height: 60px;
+    margin-left: 30px;
+}
+.Imagem-nome h1{
+    font-size: 40px;
+}
+.Imagem-nome{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: solid 2px #000;
+    border-bottom: 2px solid #000;
+    padding: 3px 20px;
+}
+#btn{
+    margin-top: 50px;
+    padding: 8px 12px;
+    background-color: rgb(100, 193, 255);
+    font-size: 20px;
+    border: none;
+    border-radius: 16px;
+    box-shadow:  0 0 8px #727272;
+}

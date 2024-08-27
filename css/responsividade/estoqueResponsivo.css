@@ -5,7 +5,9 @@
     color: #ffffff;
     text-shadow: 0px 0px 10px #000000;
 }
-
+.valor-estoque{
+    display: none;
+}
 .table{
     text-align: center;
     margin-bottom: 0px;
@@ -115,21 +117,19 @@
 }
 
 .pesquisa input{
-    font-size: 15px;
+    font-size: 13px;
 }
 .input1{
     margin-top: 5px;
-    padding:2px 4px;
+    padding:2px 3px;
     text-align: center;
-    border-radius: 20px 20px 0px 0px;
-    border: 1.5px solid #187ec2;
+
 }
 .input2{
     margin-top: 5px;
-    padding:2px 4px;
+    padding:2px 3px;
     text-align: center;
-    border-radius: 0px 0px 20px 20px ;
-    border: 1.5px solid #187ec2;
+
 }
 
 
@@ -168,8 +168,12 @@
 .card h1{
     font-size: 15px;
 }
+.caixa-valor{
+    display: none;
 }
-@media only screen and (min-width: 1440px) {
+}
+@media only screen and (min-width: 1440px) and (max-width:1480px){
+
     .card{
         margin: 10px;
         width: 21%;
@@ -178,15 +182,17 @@
         background-color: #1c1c1c;
     }
     .descricao{
-        margin-top: 5%;
+        margin-top: 8%;
         height: 17%;
+        margin-bottom: 5%;
     }
     .pesquisa{
         border-radius: 20%;
-        height: 55%;
+        height: 42%;
+        margin-top: -2%;
     }
     .pesquisa input{
-        font-size: 20px;
+        font-size: 17px;
         
     }
     .input1{
@@ -203,4 +209,12 @@
         border-radius: 0px 0px 20px 20px ;
         border: 1.5px solid #187ec2;
     }
+    .caixa-valor{
+        margin-left: 1%;
+        margin-top: 39%;
+        position: absolute;
+        height: 10%;
+        border-radius: 14px;
+    }
+
 }

@@ -176,3 +176,46 @@ main{
     height: 1px;
     width: 6px;
   }
+  @media only screen and (max-width: 600px) {
+    .container-amostra-wrapper{
+      display: none;
+    }
+    .presets{
+      margin-top: 15px;
+      margin-bottom: 15px;
+      display: flex;
+    }
+    .presets button{
+      padding: 6px 4px;
+      border: none;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    button{
+      font-size: 9px;
+      transition: 0.3s ease-in-out;
+    }
+    .text h1{
+      font-size: 18px;
+    }
+    #autoDanfe5{
+      display: none;
+    }
+    #autoDanfe4{
+      display: none;
+    }
+    #autoDanfe3{
+      display: none;
+    }
+    #autoDanfe2{
+      display: none;
+    }
+    .section label{
+      font-size: 14px;
+      margin: 4px;
+      color: #fff;
+    }
+    .section h2{
+      font-size: 16px;
+    }
+  }

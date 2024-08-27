@@ -40,6 +40,7 @@ form{
     color: #fff;
     text-align: center;
     align-items: center;
+    justify-content: center;
 }
 form input{
     width: 40%;
@@ -64,14 +65,106 @@ form label{
     margin-bottom: 1.5%;
     text-transform: uppercase;
 }
-table{
-    width: 80%;
-    text-align: center;
-    max-height: 40vh;
+.tabela-scroll{
+    max-height: 45vh;
     overflow-y: auto;
+    outline: 1px solid #ffffff;
+    width: 80%;
+}
+.tabela-scroll::-webkit-scrollbar {
+    height: 5px;
+    width: 8px;
+    border-right: 1px solid black;
+  }
+  .tabela-scroll::-webkit-scrollbar-track {
+    background-color: #ffffff; 
+  }
+  
+  .tabela-scroll::-webkit-scrollbar-thumb {
+    background-color: #000000;
+  }
+table{
+    width: 100%;
+    text-align: center;
+    color: #fff;
 }
 th,td{
     border: solid 1px #fff;
     padding: 12px;
     font-size: 27px;
+}
+th{
+    background-color: #0a0a0a;
+}
+td{
+    background-color: #363636;
+}
+.centro-table{
+    display: flex;
+    justify-content: center;
+}
+select{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 21px;
+}
+p{
+    margin-top: 40px;
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+}
+@media only screen and (max-width: 600px) {
+    p{
+        font-size: 15px;
+    }
+    select{
+        margin-top: 10px;
+        margin-bottom: 18px;
+        text-align: center;
+        font-size: 15px;
+    }
+    table{
+        width: 80%;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    th,td{
+        border: solid 1px #fff;
+        padding: 6px 4px;
+        font-size: 10px;
+    }
+    .txt h1{
+        font-size: 20px;
+        color: #fff;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    form input{
+        width: 70%;
+        margin-top: 1.5%;
+        font-size: 12px;
+        padding: 6px 5px;
+        border-radius:6px;
+    }
+    form label{
+        font-size: 17px;
+    }
+    .enviar{
+        width: 60%;
+        padding: 5px 0;
+        color: #000;
+        background-color: #fff;
+        border-radius: 12px;
+        font-size: 17px;
+        margin-top: 2%;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
 }

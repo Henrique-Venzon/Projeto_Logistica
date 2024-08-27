@@ -78,7 +78,7 @@ if (!isset($_SESSION['turma'])) {
                     <table class="table">
                         <tr>
                             <th>Produto</th>
-                            <th>Unidade</th>
+                            <th class="nulo">Unidade</th>
                             <th>Quantidade Em Espera</th>
                             <th>Quantidade Por Posição</th>
                             <th>Posição</th>
@@ -87,7 +87,7 @@ if (!isset($_SESSION['turma'])) {
                         <tr>
                             <td><?php echo $produto1; ?></td>
                             <input name="produto1" type="hidden" value="<?php echo $produto1 ?>">
-                            <td><?php echo $unidade1; ?></td>
+                            <td class="nulo"><?php echo $unidade1; ?></td>
                             <td><?php echo $quantidade1; ?></td>
                             <input name="id_doca" type="hidden" value="<?php echo $id_doca ?>">
                             <input name="id_carga_select" type="hidden" value="<?php echo $id_carga_select ?>">
@@ -116,7 +116,7 @@ if (!isset($_SESSION['turma'])) {
                         <tr>
                             <td><?php echo $produto2; ?></td>
                             <input name="produto2" type="hidden" value="<?php echo $produto2; ?>">
-                            <td><?php echo $unidade2; ?></td>
+                            <td class="nulo"><?php echo $unidade2; ?></td>
                             <td><?php echo $quantidade2; ?></td>
                             <td><input type="number" name="quantidade_enviada2" min=0 max="<?php echo $quantidade2; ?>"></td>
                             <td><select name="posicao2">
@@ -143,7 +143,7 @@ if (!isset($_SESSION['turma'])) {
                         <tr>
                             <td><?php echo $produto3; ?></td>
                             <input name="produto3" type="hidden" value="<?php echo $produto3; ?>">
-                            <td><?php echo $unidade3; ?></td>
+                            <td class="nulo"><?php echo $unidade3; ?></td>
                             <td><?php echo $quantidade3; ?></td>
                             <td><input type="number" name="quantidade_enviada3" min=0 max="<?php echo $quantidade3; ?>"></td>
                             <td><select name="posicao3">
@@ -170,7 +170,7 @@ if (!isset($_SESSION['turma'])) {
                         <tr>
                             <td><?php echo $produto4; ?></td>
                             <input name="produto4" type="hidden" value="<?php echo $produto4; ?>">
-                            <td><?php echo $unidade4; ?></td>
+                            <td class="nulo"><?php echo $unidade4; ?></td>
                             <td><?php echo $quantidade4; ?></td>
                             <td><input type="number" name="quantidade_enviada4" min=0 max="<?php echo $quantidade4; ?>"></td>
                             <td><select name="posicao4">
