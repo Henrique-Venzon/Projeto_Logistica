@@ -56,7 +56,7 @@ $res = $conn->query($sql);
 $qtd = $res->num_rows;
 
 if($qtd > 0){
-    print "<div class=\"tabela-scroll\">";
+    print "<div class=\"tabela-scroll8\">";
     print "<table class='table' >";
 
     print "<tr>";
@@ -92,7 +92,7 @@ $res = $conn->query($sql);
 $qtd = $res->num_rows;
 
 if($qtd > 0){
-    print "<div class=\"tabela-scroll\">";
+    print "<div class=\"tabela-scroll8\">";
     print "<table class='table' >";
 
     print "<tr>";

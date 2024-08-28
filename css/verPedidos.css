@@ -147,3 +147,21 @@ main{
 .data-resposivo{
   display: none;
 }
+.tabela-scroll8{
+  margin-top: 5vh;
+  max-height: 32vh;
+  overflow-y: auto;
+}
+.tabela-scroll8::-webkit-scrollbar {
+  height: 5px; 
+  width: 8px;
+  border-right: 1px solid black;
+}
+
+.tabela-scroll8::-webkit-scrollbar-track {
+  background-color: #ffffff; 
+}
+
+.tabela-scroll8::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
