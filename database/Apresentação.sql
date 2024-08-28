@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `cancelamentos_pedidos` (
 -- Estrutura para tabela `cancelamentos_solocitacao`
 --
 
-DROP TABLE IF EXISTS `cancelamentos_solocitacao`;
+DROP TABLE IF EXISTS `cancelamentos_solicitacao`;
 CREATE TABLE IF NOT EXISTS `cancelamentos_solocitacao` (
   `id` int NOT NULL AUTO_INCREMENT,
   `id_carga` int DEFAULT NULL,
@@ -676,6 +676,4 @@ CREATE TABLE IF NOT EXISTS `vistoriado` (
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
