@@ -247,16 +247,6 @@ session_start();
                         echo '<td>' . $peso_liquido . '</td>';
                         echo '</tr>';
                         echo '<tr>';
-                        echo '<th>Inscrição Municipal</th>';
-                        echo '<th>Valor Total Serviços</th>';
-                        echo '<th>Base Cálculo ISSQN</th>';
-                        echo '</tr>';
-                        echo '<tr>';
-                        echo '<td>' . $inscricao_municipal . '</td>';
-                        echo '<td>' . $valor_total_servicos . '</td>';
-                        echo '<td>' . $base_calculo_issqn . '</td>';
-                        echo '</tr>';
-                        echo '<tr>';
                         echo '<th>Produto 1</th>';
                         echo '<th>QUANTIDADE 1</th>';
                         echo '<th>UNIDADE 1</th>';
@@ -277,7 +267,6 @@ session_start();
                         echo '<td>' . $valor_total_prod1 . '</td>';
                         echo '</tr>';
                         echo '<tr>';
-                        if($nome_produto2 != ''){
                         echo '<th>Produto 2</th>';
                         echo '<th>QUANTIDADE 2</th>';
                         echo '<th>UNIDADE 2</th>';
@@ -297,9 +286,7 @@ session_start();
                         echo '<td>' . $ncm_sh2 . '</td>';
                         echo '<td>' . $valor_total_prod2 . '</td>';
                         echo '</tr>';
-                        }
                         echo '<tr>';
-                        if($nome_produto3 != ''){
                         echo '<th>Produto 3</th>';
                         echo '<th>QUANTIDADE 3</th>';
                         echo '<th>UNIDADE 3</th>';
@@ -319,9 +306,7 @@ session_start();
                         echo '<td>' . $ncm_sh3 . '</td>';
                         echo '<td>' . $valor_total_prod3 . '</td>';
                         echo '</tr>';
-                        }
                         echo '<tr>';
-                        if($nome_produto4 != ''){
                         echo '<th>Produto 4</th>';
                         echo '<th>QUANTIDADE 4</th>';
                         echo '<th>UNIDADE 4</th>';
@@ -341,11 +326,22 @@ session_start();
                         echo '<td>' . $ncm_sh4 . '</td>';
                         echo '<td>' . $valor_total_prod4 . '</td>';
                         echo '</tr>';
-                        }
             }
         }
 
         echo '</table>';
+        echo '<div class="divisao">';
+        echo '<table class="table2">';
+        echo '<tr>';
+        echo '<th>Inscrição Municipal</th>';
+        echo '<th>Valor Total Serviços</th>';
+        echo '<th>Base Cálculo ISSQN</th>';
+        echo '</tr>';
+        echo '<tr>';
+        echo '<td>' . $inscricao_municipal . '</td>';
+        echo '<td>' . $valor_total_servicos . '</td>';
+        echo '<td>' . $base_calculo_issqn . '</td>';
+        echo '</tr>';
         echo'<div class="Imagem-nome"> ';
         echo'<h1>LogConnect</h1>';
         echo'<img src="img/amem.png" alt="logo">';
