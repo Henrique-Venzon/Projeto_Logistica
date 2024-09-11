@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="br">
 
 <head>
 
@@ -27,14 +27,20 @@
                 <p class="description description-second">Entre com seu registro de aluno:</p>
                 <form class="form" action='processamento/processarlogin.php' method="POST">
                     <label class="label-input" for=""></label>
+                    <label>
                         <input type="text" placeholder="Nome" name="Usuario">
-                    
+                    </label>
+
                     <label class="label-input" for=""></label>
+                    <label>
                         <input type="password" placeholder="Senha" name='Senha'>
-                    
+                    </label>
+
                     <label class="label-input" for=""></label>
+                    <label>
                         <input min=1 type="number" placeholder="Turma" name='turma'>
-                    
+                    </label>
+
 
                     <button class="btn btn-second" value="aluno" type='submit' name='action'>
                         <h3 class="ajeitarcadastro">Entrar</h3>
@@ -56,11 +62,15 @@
                 <form class="form" action='processamento/processarlogin.php' method="POST">
 
                     <label class="label-input" for=""></label>
+                    <label>
                         <input type="text" placeholder="Nome" name='Usuario'>
-                    
+                    </label>
+
                     <label class="label-input" for=""></label>
+                    <label>
                         <input type="password" placeholder="Senha" name='Senha'>
-                    
+                    </label>
+
 
                     <button class="btn btn-second" value="professor" name="action" type='submit'>
                         <h3>Entrar</h3>
