@@ -1,4 +1,4 @@
-<?php
+<?php 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $notafiscal = $_GET['npedido'];
 }
@@ -8,23 +8,23 @@ session_start();
 <html>
 
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-            integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="shortcut icon" href="img/amem.svg">
     <meta charset="utf-8">
     <title><?php $tituloPag = 'Danfe';
-        echo "$tituloPag"; ?></title>
+    echo "$tituloPag"; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="css/imprimirDanfe.css">
+        rel="stylesheet">
+        <link rel="stylesheet" href="css/imprimirDanfe.css">
 
 </head>
 
 <body>
-<div class="centro">
+    <div class="centro">
     <?php
     include_once('include/conexao.php');
 
@@ -137,205 +137,205 @@ session_start();
                 $valor_total_servicos = $row["valor_total_servicos"];
                 $base_calculo_issqn = $row["base_calculo_issqn"];
                 echo '<tr>';
-                echo '<td>' . $id . '</td>';
-                echo '<td>' . $numero . '</td>';
-                echo '<td>' . $serie . '</td>';
-                echo '<td>' . $entrada_saida . '</td>';
-                echo '<td>' . $chave_acesso . '</td>';
-                echo '<td>' . $informacao_interna . '</td>';
-                echo '<td>' . $sede . '</td>';
-                echo '<td>' . $nome_razao_social . '</td>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<th>telefone</th>';
-                echo '<th>cep</th>';
-                echo '<th>protocolo autorização</th>';
-                echo '<th>Cnpj</th>';
-                echo '<th>inscrição estadual subs tributaria</th>';
-                echo '<th>inscrição estadual</th>';
-                echo '<th>natureza operação</th>';
-                echo '<th>nome razão social remetente</th>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<td>' . $telefone . '</td>';
-                echo '<td>' . $cep . '</td>';
-                echo '<td>' . $protocolo_autorizacao . '</td>';
-                echo '<td>' . $cnpj . '</td>';
-                echo '<td>' . $inscricao_estadual_subs_tributaria . '</td>';
-                echo '<td>' . $inscricao_estadual . '</td>';
-                echo '<td>' . $natureza_operacao . '</td>';
-                echo '<td>' . $nome_razao_social_remetente . '</td>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<th>cnpj/cpf remetente</th>';
-                echo '<th>cep remetente</th>';
-                echo '<th>telefone remetente</th>';
-                echo '<th>inscrição estadual remetente</th>';
-                echo '<th>data emissão</th>';
-                echo '<th>data entrada saída</th>';
-                echo '<th>hora saída</th>';
-                echo '<th>fatura/duplicata</th>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<td>' . $cnpj_cpf_remetente . '</td>';
-                echo '<td>' . $cep_remetente . '</td>';
-                echo '<td>' . $telefone_remetente . '</td>';
-                echo '<td>' . $inscricao_estadual_remetente . '</td>';
-                echo '<td>' . $data_emissao . '</td>';
-                echo '<td>' . $data_entrada_saida . '</td>';
-                echo '<td>' . $hora_saida . '</td>';
-                echo '<td>' . $fatura_duplicata . '</td>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<th>forma pagamento</th>';
-                echo '<th>base calculo icms</th>';
-                echo '<th>valor icms</th>';
-                echo '<th>valor base icms st</th>';
-                echo '<th>valor icms substituição</th>';
-                echo '<th>Total de Produtos</th>';
-                echo '<th>Valor Frete</th>';
-                echo '<th>Valor Seguro</th>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<td>' . $forma_pagamento . '</td>';
-                echo '<td>' . $base_calculo_icms . '</td>';
-                echo '<td>' . $valor_icms . '</td>';
-                echo '<td>' . $base_calculo_icms_st . '</td>';
-                echo '<td>' . $valor_icms_substituicao . '</td>';
-                echo '<td>' . $total_produtos . '</td>';
-                echo '<td>' . $valor_frete . '</td>';
-                echo '<td>' . $valor_seguro . '</td>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<th>Desconto</th>';
-                echo '<th>Outras Despesas</th>';
-                echo '<th>Valor Ipi</th>';
-                echo '<th>Valor Total Nota</th>';
-                echo '<th>Nome Razao Social Transportador</th>';
-                echo '<th>Frete Por Conta</th>';
-                echo '<th>Código ANTT</th>';
-                echo '<th>Placa Veículo</th>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<td>' . $desconto . '</td>';
-                echo '<td>' . $outras_despesas . '</td>';
-                echo '<td>' . $valor_ipi . '</td>';
-                echo '<td>' . $valor_total_nota . '</td>';
-                echo '<td>' . $nome_razao_social_transportador . '</td>';
-                echo '<td>' . $frete_por_conta . '</td>';
-                echo '<td>' . $codigo_antt . '</td>';
-                echo '<td>' . $placa_veiculo . '</td>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<th>Cnpj/Cpf Transportador</th>';
-                echo '<th>Inscrição Estadual Transportador</th>';
-                echo '<th>Quantidadde</th>';
-                echo '<th>Especie</th>';
-                echo '<th>Marca</th>';
-                echo '<th>Numeração</th>';
-                echo '<th>Peso Bruto</th>';
-                echo '<th>Peso Líquido</th>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<td>' . $cnpj_cpf_transportador . '</td>';
-                echo '<td>' . $inscricao_estadual_transportador . '</td>';
-                echo '<td>' . $quantidade . '</td>';
-                echo '<td>' . $especie . '</td>';
-                echo '<td>' . $marca . '</td>';
-                echo '<td>' . $numeracao . '</td>';
-                echo '<td>' . $peso_bruto . '</td>';
-                echo '<td>' . $peso_liquido . '</td>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<th>Inscrição Municipal</th>';
-                echo '<th>Valor Total Serviços</th>';
-                echo '<th>Base Cálculo ISSQN</th>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<td>' . $inscricao_municipal . '</td>';
-                echo '<td>' . $valor_total_servicos . '</td>';
-                echo '<td>' . $base_calculo_issqn . '</td>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<th>Produto 1</th>';
-                echo '<th>QUANTIDADE 1</th>';
-                echo '<th>UNIDADE 1</th>';
-                echo '<th>VALOR UN 1</th>';
-                echo '<th>CFOP 1</th>';
-                echo '<th>CST 1</th>';
-                echo '<th>NCM 1</th>';
-                echo '<th>VALOR TOTAL 1</th>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<td>' . $nome_produto1 . '</td>';
-                echo '<td>' . $quantidade_prod1 . '</td>';
-                echo '<td>' . $unid1 . '</td>';
-                echo '<td>' . $valor_unitario1 . '</td>';
-                echo '<td>' . $cfop1 . '</td>';
-                echo '<td>' . $cst1 . '</td>';
-                echo '<td>' . $ncm_sh1 . '</td>';
-                echo '<td>' . $valor_total_prod1 . '</td>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<th>Produto 2</th>';
-                echo '<th>QUANTIDADE 2</th>';
-                echo '<th>UNIDADE 2</th>';
-                echo '<th>VALOR UN 2</th>';
-                echo '<th>CFOP 2</th>';
-                echo '<th>CST 2</th>';
-                echo '<th>NCM 2</th>';
-                echo '<th>VALOR TOTAL 2</th>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<td>' . $nome_produto2 . '</td>';
-                echo '<td>' . $quantidade_prod2 . '</td>';
-                echo '<td>' . $unid2 . '</td>';
-                echo '<td>' . $valor_unitario2 . '</td>';
-                echo '<td>' . $cfop2 . '</td>';
-                echo '<td>' . $cst2 . '</td>';
-                echo '<td>' . $ncm_sh2 . '</td>';
-                echo '<td>' . $valor_total_prod2 . '</td>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<th>Produto 3</th>';
-                echo '<th>QUANTIDADE 3</th>';
-                echo '<th>UNIDADE 3</th>';
-                echo '<th>VALOR UN 3</th>';
-                echo '<th>CFOP 3</th>';
-                echo '<th>CST 3</th>';
-                echo '<th>NCM 3</th>';
-                echo '<th>VALOR TOTAL 3</th>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<td>' . $nome_produto3 . '</td>';
-                echo '<td>' . $quantidade_prod3 . '</td>';
-                echo '<td>' . $unid3 . '</td>';
-                echo '<td>' . $valor_unitario3 . '</td>';
-                echo '<td>' . $cfop3 . '</td>';
-                echo '<td>' . $cst3 . '</td>';
-                echo '<td>' . $ncm_sh3 . '</td>';
-                echo '<td>' . $valor_total_prod3 . '</td>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<th>Produto 4</th>';
-                echo '<th>QUANTIDADE 4</th>';
-                echo '<th>UNIDADE 4</th>';
-                echo '<th>VALOR UN 4</th>';
-                echo '<th>CFOP 4</th>';
-                echo '<th>CST 4</th>';
-                echo '<th>NCM 4</th>';
-                echo '<th>VALOR TOTAL 4</th>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<td>' . $nome_produto4 . '</td>';
-                echo '<td>' . $quantidade_prod4 . '</td>';
-                echo '<td>' . $unid4 . '</td>';
-                echo '<td>' . $valor_unitario4 . '</td>';
-                echo '<td>' . $cfop4 . '</td>';
-                echo '<td>' . $cst4 . '</td>';
-                echo '<td>' . $ncm_sh4 . '</td>';
-                echo '<td>' . $valor_total_prod4 . '</td>';
-                echo '</tr>';
+                        echo '<td>' . $id . '</td>';
+                        echo '<td>' . $numero . '</td>';
+                        echo '<td>' . $serie . '</td>';
+                        echo '<td>' . $entrada_saida . '</td>';
+                        echo '<td>' . $chave_acesso . '</td>';
+                        echo '<td>' . $informacao_interna . '</td>';
+                        echo '<td>' . $sede . '</td>';
+                        echo '<td>' . $nome_razao_social . '</td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<th>telefone</th>';
+                        echo '<th>cep</th>';
+                        echo '<th>protocolo autorização</th>';
+                        echo '<th>Cnpj</th>';
+                        echo '<th>inscrição estadual subs tributaria</th>';
+                        echo '<th>inscrição estadual</th>';
+                        echo '<th>natureza operação</th>';
+                        echo '<th>nome razão social remetente</th>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td>' . $telefone . '</td>';
+                        echo '<td>' . $cep . '</td>';
+                        echo '<td>' . $protocolo_autorizacao . '</td>';
+                        echo '<td>' . $cnpj . '</td>';
+                        echo '<td>' . $inscricao_estadual_subs_tributaria . '</td>';
+                        echo '<td>' . $inscricao_estadual . '</td>';
+                        echo '<td>' . $natureza_operacao . '</td>';
+                        echo '<td>' . $nome_razao_social_remetente . '</td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<th>cnpj/cpf remetente</th>';
+                        echo '<th>cep remetente</th>';
+                        echo '<th>telefone remetente</th>';
+                        echo '<th>inscrição estadual remetente</th>';
+                        echo '<th>data emissão</th>';
+                        echo '<th>data entrada saída</th>';
+                        echo '<th>hora saída</th>';
+                        echo '<th>fatura/duplicata</th>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td>' . $cnpj_cpf_remetente . '</td>';
+                        echo '<td>' . $cep_remetente . '</td>';
+                        echo '<td>' . $telefone_remetente . '</td>';
+                        echo '<td>' . $inscricao_estadual_remetente . '</td>';
+                        echo '<td>' . $data_emissao . '</td>';
+                        echo '<td>' . $data_entrada_saida . '</td>';
+                        echo '<td>' . $hora_saida . '</td>';
+                        echo '<td>' . $fatura_duplicata . '</td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<th>forma pagamento</th>';
+                        echo '<th>base calculo icms</th>';
+                        echo '<th>valor icms</th>';
+                        echo '<th>valor base icms st</th>';
+                        echo '<th>valor icms substituição</th>';
+                        echo '<th>Total de Produtos</th>';
+                        echo '<th>Valor Frete</th>';
+                        echo '<th>Valor Seguro</th>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td>' . $forma_pagamento . '</td>';
+                        echo '<td>' . $base_calculo_icms . '</td>';
+                        echo '<td>' . $valor_icms . '</td>';
+                        echo '<td>' . $base_calculo_icms_st . '</td>';
+                        echo '<td>' . $valor_icms_substituicao . '</td>';
+                        echo '<td>' . $total_produtos . '</td>';
+                        echo '<td>' . $valor_frete . '</td>';
+                        echo '<td>' . $valor_seguro . '</td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<th>Desconto</th>';
+                        echo '<th>Outras Despesas</th>';
+                        echo '<th>Valor Ipi</th>';
+                        echo '<th>Valor Total Nota</th>';
+                        echo '<th>Nome Razao Social Transportador</th>';
+                        echo '<th>Frete Por Conta</th>';
+                        echo '<th>Código ANTT</th>';
+                        echo '<th>Placa Veículo</th>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td>' . $desconto . '</td>';
+                        echo '<td>' . $outras_despesas . '</td>';
+                        echo '<td>' . $valor_ipi . '</td>';
+                        echo '<td>' . $valor_total_nota . '</td>';
+                        echo '<td>' . $nome_razao_social_transportador . '</td>';
+                        echo '<td>' . $frete_por_conta . '</td>';
+                        echo '<td>' . $codigo_antt . '</td>';
+                        echo '<td>' . $placa_veiculo . '</td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<th>Cnpj/Cpf Transportador</th>';
+                        echo '<th>Inscrição Estadual Transportador</th>';
+                        echo '<th>Quantidadde</th>';
+                        echo '<th>Especie</th>';
+                        echo '<th>Marca</th>';
+                        echo '<th>Numeração</th>';
+                        echo '<th>Peso Bruto</th>';
+                        echo '<th>Peso Líquido</th>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td>' . $cnpj_cpf_transportador . '</td>';
+                        echo '<td>' . $inscricao_estadual_transportador . '</td>';
+                        echo '<td>' . $quantidade . '</td>';
+                        echo '<td>' . $especie . '</td>';
+                        echo '<td>' . $marca . '</td>';
+                        echo '<td>' . $numeracao . '</td>';
+                        echo '<td>' . $peso_bruto . '</td>';
+                        echo '<td>' . $peso_liquido . '</td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<th>Inscrição Municipal</th>';
+                        echo '<th>Valor Total Serviços</th>';
+                        echo '<th>Base Cálculo ISSQN</th>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td>' . $inscricao_municipal . '</td>';
+                        echo '<td>' . $valor_total_servicos . '</td>';
+                        echo '<td>' . $base_calculo_issqn . '</td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<th>Produto 1</th>';
+                        echo '<th>QUANTIDADE 1</th>';
+                        echo '<th>UNIDADE 1</th>';
+                        echo '<th>VALOR UN 1</th>';
+                        echo '<th>CFOP 1</th>';
+                        echo '<th>CST 1</th>';
+                        echo '<th>NCM 1</th>';
+                        echo '<th>VALOR TOTAL 1</th>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td>' . $nome_produto1 . '</td>';
+                        echo '<td>' . $quantidade_prod1 . '</td>';
+                        echo '<td>' . $unid1 . '</td>';
+                        echo '<td>' . $valor_unitario1 . '</td>';
+                        echo '<td>' . $cfop1 . '</td>';
+                        echo '<td>' . $cst1 . '</td>';
+                        echo '<td>' . $ncm_sh1 . '</td>';
+                        echo '<td>' . $valor_total_prod1 . '</td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<th>Produto 2</th>';
+                        echo '<th>QUANTIDADE 2</th>';
+                        echo '<th>UNIDADE 2</th>';
+                        echo '<th>VALOR UN 2</th>';
+                        echo '<th>CFOP 2</th>';
+                        echo '<th>CST 2</th>';
+                        echo '<th>NCM 2</th>';
+                        echo '<th>VALOR TOTAL 2</th>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td>' . $nome_produto2 . '</td>';
+                        echo '<td>' . $quantidade_prod2 . '</td>';
+                        echo '<td>' . $unid2 . '</td>';
+                        echo '<td>' . $valor_unitario2 . '</td>';
+                        echo '<td>' . $cfop2 . '</td>';
+                        echo '<td>' . $cst2 . '</td>';
+                        echo '<td>' . $ncm_sh2 . '</td>';
+                        echo '<td>' . $valor_total_prod2 . '</td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<th>Produto 3</th>';
+                        echo '<th>QUANTIDADE 3</th>';
+                        echo '<th>UNIDADE 3</th>';
+                        echo '<th>VALOR UN 3</th>';
+                        echo '<th>CFOP 3</th>';
+                        echo '<th>CST 3</th>';
+                        echo '<th>NCM 3</th>';
+                        echo '<th>VALOR TOTAL 3</th>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td>' . $nome_produto3 . '</td>';
+                        echo '<td>' . $quantidade_prod3 . '</td>';
+                        echo '<td>' . $unid3 . '</td>';
+                        echo '<td>' . $valor_unitario3 . '</td>';
+                        echo '<td>' . $cfop3 . '</td>';
+                        echo '<td>' . $cst3 . '</td>';
+                        echo '<td>' . $ncm_sh3 . '</td>';
+                        echo '<td>' . $valor_total_prod3 . '</td>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<th>Produto 4</th>';
+                        echo '<th>QUANTIDADE 4</th>';
+                        echo '<th>UNIDADE 4</th>';
+                        echo '<th>VALOR UN 4</th>';
+                        echo '<th>CFOP 4</th>';
+                        echo '<th>CST 4</th>';
+                        echo '<th>NCM 4</th>';
+                        echo '<th>VALOR TOTAL 4</th>';
+                        echo '</tr>';
+                        echo '<tr>';
+                        echo '<td>' . $nome_produto4 . '</td>';
+                        echo '<td>' . $quantidade_prod4 . '</td>';
+                        echo '<td>' . $unid4 . '</td>';
+                        echo '<td>' . $valor_unitario4 . '</td>';
+                        echo '<td>' . $cfop4 . '</td>';
+                        echo '<td>' . $cst4 . '</td>';
+                        echo '<td>' . $ncm_sh4 . '</td>';
+                        echo '<td>' . $valor_total_prod4 . '</td>';
+                        echo '</tr>';
             }
         }
 
@@ -352,9 +352,9 @@ session_start();
         echo '<td>' . $valor_total_servicos . '</td>';
         echo '<td>' . $base_calculo_issqn . '</td>';
         echo '</tr>';
-        echo '<div class="Imagem-nome"> ';
-        echo '<h1>LogConnect</h1>';
-        echo '<img src="img/amem.png" alt="logo">';
+        echo'<div class="Imagem-nome"> ';
+        echo'<h1>LogConnect</h1>';
+        echo'<img src="img/amem.png" alt="logo">';
         echo '</div>';
         echo '</div>';
     }
@@ -362,13 +362,13 @@ session_start();
     // Fecha a conexão
     $conexao->close();
     ?>
-</div>
+    </div>
 
 </body>
 <script>
-    setTimeout(function imp() {
+    setTimeout(function imp(){
         window.print();
 
-    }, 1000);
+},1000);
 </script>
 </html>
