@@ -47,7 +47,6 @@ if (!isset($_SESSION['id'])) {
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                // Usando UNION para combinar as consultas e DISTINCT para remover duplicatas
                 $sql_after = "SELECT id_pedido, id FROM picking WHERE id_turma='" . $_SESSION['turma'] . "' 
                               UNION 
                               SELECT id_pedido, id FROM picking_pegado WHERE id_turma='" . $_SESSION['turma'] . "'
