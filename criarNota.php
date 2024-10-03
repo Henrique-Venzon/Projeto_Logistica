@@ -24,22 +24,22 @@ if (!isset($_SESSION['turma'])) {
 
     <meta charset="utf-8">
     <title><?php
-    $tituloPag = 'Ver Pedidos';
-    echo "$tituloPag";
-    ?></title>
+        $tituloPag = 'Ver Pedidos';
+        echo "$tituloPag";
+        ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
 
     <link rel="stylesheet" href="css/nPedido.css">
 </head>
 
 <body>
 <?php
-  include_once('include/conexao.php');
+include_once('include/conexao.php');
 
-$sql = "SELECT `placa`, `NomeMotorista`, `container`, `navio`, `tipo`, `lacre`, `LacreSif`, `IMD`, `NOnu`, `npedido`, `Empresa`, `cliente`, `telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`, `Temperatura`, `turma_id` FROM transporte where turma_id = '".$_SESSION['turma']."' and `npedido`='" . $npedido_ver . "'  ";
+$sql = "SELECT `placa`, `NomeMotorista`, `container`, `navio`, `tipo`, `lacre`, `LacreSif`, `IMD`, `NOnu`, `npedido`, `Empresa`, `cliente`, `telefone`, `CEP`, `produto1`, `produto2`, `produto3`, `produto4`, `unidade1`, `unidade2`, `unidade3`, `unidade4`, `quantidade1`, `quantidade2`, `quantidade3`, `quantidade4`, `valor1`, `valor2`, `valor3`, `valor4`, `ncm1`, `ncm2`, `ncm3`, `ncm4`, `cst1`, `cst2`, `cst3`, `cst4`, `cfop1`, `cfop2`, `cfop3`, `cfop4`, `Temperatura`, `turma_id` FROM transporte where turma_id = '" . $_SESSION['turma'] . "' and `npedido`='" . $npedido_ver . "'  ";
 
 $result = $conn->query($sql);
 
@@ -97,26 +97,24 @@ if ($result->num_rows > 0) {
 $conn->close();
 
 
-
-
 ?>
+<?php
+include 'include/header.php'
+?>
+<main>
     <?php
-    include 'include/header.php'
-        ?>
-    <main>
-        <?php
-        include 'include/menuLateral.php';
+    include 'include/menuLateral.php';
 
-        ?>
-        <div class="DivDireita">
-            <div class="table-inputs">
+    ?>
+    <div class="DivDireita">
+        <div class="table-inputs">
 
-                <div class="text">
-                    <h1>Pedidos</h1>
-                </div>
-                <div class="tabela-scroll">
-                <Div class="nomet">   
-                <h1>Cliente</h1>
+            <div class="text">
+                <h1>Pedidos</h1>
+            </div>
+            <div class="tabela-scroll">
+                <Div class="nomet">
+                    <h1>Cliente</h1>
                 </Div>
                 <table class="table">
                     <tr>
@@ -134,26 +132,29 @@ $conn->close();
                         <td><?php echo $telefone; ?></td>
                     </tr>
                 </table>
-                <Div class="nomet">   
-                <h1>Produto</h1>
+                <Div class="nomet">
+                    <h1>Produto</h1>
                 </Div>
-                    <table class="table">
+                <table class="table">
                     <tr>
                         <th>Produto 1</th>
                         <?php
-                        if ($produto2!='') print"
+                        if ($produto2 != '') print"
                         <th>Produto 2</th>";
-                        if ($produto3!='') print"
+                        if ($produto3 != '') print"
                         <th>Produto 3</th>";
-                        if ($produto4!='') print"
-                        <th>Produto 4</th>";?>
+                        if ($produto4 != '') print"
+                        <th>Produto 4</th>"; ?>
 
                     </tr>
                     <tr>
                         <td><?php echo $produto1; ?></td>
-                        <td><?php if ($produto2=='')$produto2='Não Inserido';echo $produto2; ?></td>
-                        <td><?php if ($produto3=='')$produto3='Não Inserido';echo $produto3; ?></td>
-                        <td><?php if ($produto4=='')$produto4='Não Inserido';echo $produto4; ?></td>
+                        <td><?php if ($produto2 == '') $produto2 = 'Não Inserido';
+                            echo $produto2; ?></td>
+                        <td><?php if ($produto3 == '') $produto3 = 'Não Inserido';
+                            echo $produto3; ?></td>
+                        <td><?php if ($produto4 == '') $produto4 = 'Não Inserido';
+                            echo $produto4; ?></td>
                     </tr>
                     <tr>
                         <th>Unidade 1</th>
@@ -163,9 +164,12 @@ $conn->close();
                     </tr>
                     <tr>
                         <td><?php echo $unidade1; ?></td>
-                        <td><?php if ($unidade2==' ')$unidade2='Não Inserido';echo $unidade2; ?></td>
-                        <td><?php if ($unidade3==' ')$unidade3='Não Inserido';echo $unidade3; ?></td>
-                        <td><?php if ($unidade4==' ')$unidade4='Não Inserido';echo $unidade4; ?></td>
+                        <td><?php if ($unidade2 == ' ') $unidade2 = 'Não Inserido';
+                            echo $unidade2; ?></td>
+                        <td><?php if ($unidade3 == ' ') $unidade3 = 'Não Inserido';
+                            echo $unidade3; ?></td>
+                        <td><?php if ($unidade4 == ' ') $unidade4 = 'Não Inserido';
+                            echo $unidade4; ?></td>
                     </tr>
                     <tr>
                         <th>Quantidade 1</th>
@@ -228,8 +232,8 @@ $conn->close();
                         <td><?php echo $cst4; ?></td>
                     </tr>
                 </table>
-                <Div class="nomet">   
-                <h1>Transporte</h1>
+                <Div class="nomet">
+                    <h1>Transporte</h1>
                 </Div>
                 <table class="table">
                     <tr>
@@ -262,15 +266,15 @@ $conn->close();
                     </tr>
 
                 </table>
-            </div>                           
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
 
-    <script src="js/ver.js"></script>
-    <script src="js/sidebar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+<script src="js/ver.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
 </body>

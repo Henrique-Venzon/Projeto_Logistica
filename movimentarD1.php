@@ -19,31 +19,31 @@ $turma = $_SESSION['turma'];
     <link rel="shortcut icon" href="img/amem.svg">
     <meta charset="utf-8">
     <title><?php $tituloPag = 'Movimentação';
-    echo "$tituloPag"; ?></title>
+        echo "$tituloPag"; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
     <link rel="stylesheet" href="css/movDocas.css">
 </head>
 
 <body>
-    <?php include 'include/header.php'; ?>
-    <main>
-        <?php include 'include/menuLateral.php'; ?>
-        <div class="DivDireita">
-            <div class="table-inputs">
-                <div class="txtCont">
-                    <h1>Doca 1</h1>
-                </div>
-                <div class="flex">
-                    <div class="divpegar">
+<?php include 'include/header.php'; ?>
+<main>
+    <?php include 'include/menuLateral.php'; ?>
+    <div class="DivDireita">
+        <div class="table-inputs">
+            <div class="txtCont">
+                <h1>Doca 1</h1>
+            </div>
+            <div class="flex">
+                <div class="divpegar">
                     <form method='post' action="processamento/selecionar_carga.php">
                         <h1 class="pegar">Pegar</h1>
                         <?php
-                       include_once('include/conexao.php');
+                        include_once('include/conexao.php');
 
-                        $sql = "SELECT * FROM `movimentacao` where id_doca='1' and id_turma='".$_SESSION['turma']."' ORDER BY `movimentacao`.`id` ASC";
+                        $sql = "SELECT * FROM `movimentacao` where id_doca='1' and id_turma='" . $_SESSION['turma'] . "' ORDER BY `movimentacao`.`id` ASC";
                         $res = $conn->query($sql);
                         $qtd = $res->num_rows;
 
@@ -64,8 +64,8 @@ $turma = $_SESSION['turma'];
                                 echo "<td style=\"border-right:1px solid black;\">" . $row->posicao . "</td>";
                                 echo "<input class=\"custom-checkbox\" type=\"hidden\" name=\"id_carga\" value=\"" . $row->id_carga . "\">";
                                 echo "<td><input class=\"custom-checkbox\" type=\"checkbox\" name=\"produtos_selecionados[]\" value=\"" . $row->id . "\"></td>";
-                                echo"<input type='hidden' name='doca' value='D1'>";
-                                echo"<input type='hidden' name='doca_id_real' value='1'>";
+                                echo "<input type='hidden' name='doca' value='D1'>";
+                                echo "<input type='hidden' name='doca_id_real' value='1'>";
                                 echo "</tr>";
                             }
                             print "</table>";
@@ -78,11 +78,11 @@ $turma = $_SESSION['turma'];
                         }
                         ?>
                     </form>
-                    </div>
-                    <div class="divpegar">
+                </div>
+                <div class="divpegar">
                     <h1 class="pegar">Finalizar</h1>
                     <?php
-                    $sql = "SELECT * FROM pegado where id_doca=1 and id_turma='".$_SESSION['turma']."'";
+                    $sql = "SELECT * FROM pegado where id_doca=1 and id_turma='" . $_SESSION['turma'] . "'";
                     $res = $conn->query($sql);
                     $qtd = $res->num_rows;
 
@@ -117,16 +117,16 @@ $turma = $_SESSION['turma'];
                     }
                     ?>
                 </div>
-                </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
-    <script src="js/movimentar.js"></script>
-    <script src="js/sidebar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+<script src="js/movimentar.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
-    </script>
+</script>
 </body>
 
 </html>

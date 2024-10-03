@@ -82,7 +82,7 @@ if ($result->num_rows > 0) {
                                     <input type="number" id="quantidade" name="quantidade" min="1" required placeholder="Obrigatório">
                                     <input type="number" id="quantidade2" name="quantidade2" min="0" placeholder="Opcional">
                                     <input type="number" id="quantidade3" name="quantidade3" min="0" placeholder="Opcional">
-                                    <input type="number" id="quantidade4" name="quantidade4" min="0" placeholder="Opcional">
+                                    <input type="number" id="quantidade4" name="quantidade4" min="0" placeholder="Opcional">F
                                 </div>                          
                             </div>
                             

@@ -1,5 +1,5 @@
 <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
-    rel="stylesheet">
+      rel="stylesheet">
 <script src="https://kit.fontawesome.com/6934df05fc.js" crossorigin="anonymous"></script>
 
 <style>
@@ -20,7 +20,6 @@
         height: 92.05vh;
         background-color: #1c1c1c;
     }
-
 
 
     .d-flex {
@@ -106,7 +105,7 @@
         display: none;
     }
 
-    #sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    #sidebar:not(.expand) .sidebar-item:hover .has-dropdown + .sidebar-dropdown {
         display: block;
         width: 100%;
         opacity: 1;
@@ -245,11 +244,11 @@
     }
 
 
+    @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    }
 
-
-    @media only screen and (min-width: 601px) and (max-width: 1024px) {}
-
-    @media only screen and (min-width: 1025px) and (max-width: 1440px) {}
+    @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    }
 
     @media only screen and (min-width: 1440px) and (max-width: 1480px) {
         .toggle-btn {
@@ -306,7 +305,7 @@
                         <span class="sidebar-text" style="margin-left:10px;">Alunos</span>
                     </a>
                 </li>'
-                    ?>
+            ?>
             <?php if ($_SESSION['tipo_login'] == 'professor')
                 echo '
                 <li class="sidebar-item">
@@ -330,45 +329,45 @@
                         </li>
                     </ul>
                 </li>'
-                    ?>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                        data-bs-target="#Recebimentos" aria-expanded="false" aria-controls="Recebimentos">
-                        <i class="fa-solid fa-hand-holding-hand"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Vistoria</span>
-                    </a>
-                    <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                        <li class="sidebar-item">
-                            <a href="vistoriaCarga.php" style="margin-top: -1.4px;" class="sidebar-link">Carga</a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a id="linkContainer" style="margin-bottom: -1.4px;" href="container.php"
-                                class="sidebar-link">Container</a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a id="linkContainer" style="margin-bottom: -1.4px;" href="notaF.php" class="sidebar-link">Nota
-                                Fiscal</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-item">
-                    <a href="docas.php" class="sidebar-link">
-                        <i class="fa-solid fa-boxes-packing"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Doca</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="movimentacaoDoca.php" class="sidebar-link">
-                        <i class="fa-solid fa-people-carry-box"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Movimentação</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="telaEstoque.php" class="sidebar-link">
-                        <i class="fa-solid fa-warehouse"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Estoque</span>
-                    </a>
-                </li>
+            ?>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                   data-bs-target="#Recebimentos" aria-expanded="false" aria-controls="Recebimentos">
+                    <i class="fa-solid fa-hand-holding-hand"></i>
+                    <span class="sidebar-text" style="margin-left:10px;">Vistoria</span>
+                </a>
+                <ul id="Recebimentos" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a href="vistoriaCarga.php" style="margin-top: -1.4px;" class="sidebar-link">Carga</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a id="linkContainer" style="margin-bottom: -1.4px;" href="container.php"
+                           class="sidebar-link">Container</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a id="linkContainer" style="margin-bottom: -1.4px;" href="notaF.php" class="sidebar-link">Nota
+                            Fiscal</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a href="docas.php" class="sidebar-link">
+                    <i class="fa-solid fa-boxes-packing"></i>
+                    <span class="sidebar-text" style="margin-left:10px;">Doca</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="movimentacaoDoca.php" class="sidebar-link">
+                    <i class="fa-solid fa-people-carry-box"></i>
+                    <span class="sidebar-text" style="margin-left:10px;">Movimentação</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="telaEstoque.php" class="sidebar-link">
+                    <i class="fa-solid fa-warehouse"></i>
+                    <span class="sidebar-text" style="margin-left:10px;">Estoque</span>
+                </a>
+            </li>
             <?php if ($_SESSION['tipo_login'] == 'professor')
                 echo '
                 <li class="sidebar-item">
@@ -391,31 +390,31 @@
                         </li>
                     </ul>
                 </li>'
-                    ?>
-                <li class="sidebar-item">
-                    <a href="verSolicitacao.php" class="sidebar-link">
-                        <i class="fa-solid fa-check-to-slot"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Verificar Solicitação</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="picking.php" class="sidebar-link">
-                        <i class="fa-solid fa-hands-holding"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Picking</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="expedicao.php" class="sidebar-link">
-                        <i class="fa-solid fa-truck-front"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Expedição</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="notaf_expedicao.php" class="sidebar-link">
-                        <i class="fa-solid fa-receipt"></i>
-                        <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal Saída</span>
-                    </a>
-                </li>
+            ?>
+            <li class="sidebar-item">
+                <a href="verSolicitacao.php" class="sidebar-link">
+                    <i class="fa-solid fa-check-to-slot"></i>
+                    <span class="sidebar-text" style="margin-left:10px;">Verificar Solicitação</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="picking.php" class="sidebar-link">
+                    <i class="fa-solid fa-hands-holding"></i>
+                    <span class="sidebar-text" style="margin-left:10px;">Picking</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="expedicao.php" class="sidebar-link">
+                    <i class="fa-solid fa-truck-front"></i>
+                    <span class="sidebar-text" style="margin-left:10px;">Expedição</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="notaf_expedicao.php" class="sidebar-link">
+                    <i class="fa-solid fa-receipt"></i>
+                    <span class="sidebar-text" style="margin-left:10px;">Nota Fiscal Saída</span>
+                </a>
+            </li>
             <?php if ($_SESSION['tipo_login'] == 'professor')
                 echo '
                 <li class="sidebar-item">
@@ -424,7 +423,7 @@
                         <span class="sidebar-text" style="margin-left:10px;">Inventário</span>
                     </a>
                 </li>'
-                    ?>
+            ?>
             <?php if ($_SESSION['tipo_login'] == 'professor')
                 echo '
             <li class="sidebar-item">
@@ -433,16 +432,20 @@
                 <span class="sidebar-text" style="margin-left:10px;">Projetos</span>
                 </a>
             </li>'
-                    ?>
-        </aside>
-    </div>
-    <script>
+            ?>
+    </aside>
+</div>
+<script>
 
-        if (<?php echo json_encode($_SESSION['tipo_login']); ?> == 'professor') {
+    if (<?php echo json_encode($_SESSION['tipo_login']); ?> == 'professor'
+    )
+    {
         document.getElementById('linkContainer').setAttribute('href', 'containerA.php');
-        //Control c + control v a linha de cima colocar um id no texto e mudar o nome do arquivo aqui.
-    } else if (<?php echo json_encode($_SESSION['tipo_login']); ?> == 'aluno') {
+    }
+    else
+    if (<?php echo json_encode($_SESSION['tipo_login']); ?> == 'aluno'
+    )
+    {
         document.getElementById('linkContainer').setAttribute('href', 'containerA.php');
-        //Control c + control v a linha de cima colocar um id no texto e mudar o nome do arquivo aqui.
     }
 </script>
