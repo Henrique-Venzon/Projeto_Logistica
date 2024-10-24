@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="422be8a6-a4fd-42cc-84d4-262d5cdab3aa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/picking.php" beforeDir="false" afterPath="$PROJECT_DIR$/picking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventario.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +62,7 @@
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/reism/Downloads/SA-main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/AquaMundi&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -77,14 +79,14 @@
 }</component>
   <component name="QodanaReportsService">
     <option name="descriptions">
-      <ReportDescription localRun="true" path="C:\Users\reism\AppData\Local\Temp\qodana_output1\qodana.sarif.json" reportGuid="d3ee55e8-0e94-40f0-9fea-bce7ce50eef2" reportId="Projeto_Logistica/qodana/2024-09-25" />
+      <ReportDescription localRun="true" path="C:\Users\reism\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="67d56e5e-6142-45ab-ae7b-b9bd7f9b39d6" reportId="Projeto_Logistica/qodana/2024-10-03" />
     </option>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PS-242.21829.154" />
-        <option value="bundled-php-predefined-a98d8de5180a-4d9f4c849d09-com.jetbrains.php.sharedIndexes-PS-242.21829.154" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PS-242.23339.16" />
+        <option value="bundled-php-predefined-a98d8de5180a-90914f2295cb-com.jetbrains.php.sharedIndexes-PS-242.23339.16" />
       </set>
     </attachedChunks>
   </component>
@@ -105,6 +107,9 @@
       <workItem from="1726311423580" duration="822000" />
       <workItem from="1726333593319" duration="44000" />
       <workItem from="1727278060542" duration="201000" />
+      <workItem from="1727962110499" duration="1882000" />
+      <workItem from="1728383401674" duration="439000" />
+      <workItem from="1729686057044" duration="103000" />
     </task>
     <servers />
   </component>
